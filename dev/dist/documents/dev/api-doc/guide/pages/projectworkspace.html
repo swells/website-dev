@@ -1,0 +1,893 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>6.3 Working with the Project Workspace APIs 8.0.0</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/architecture.html"><strong>2</strong><span>Web Service API Architecture</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/overview.html"><strong>3</strong><span>Web Service API Overview</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/working.html"><strong>4</strong><span>Working with the Web Service APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingusers.html"><strong>5</strong><span>Working with the User APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingprojects.html"><strong>6</strong><span>Working with the Project APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingjobs.html"><strong>7</strong><span>Working with the Job APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingrepository.html"><strong>8</strong><span>Working with the Repository APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingeventstream.html"><strong>9</strong><span>Working with the Event Stream API</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/encodings.html"><strong>10</strong><span>Web Service API Data Encodings</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/explorer.html"><strong>11</strong><span>The API Explorer Tool</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/741changehistory.html"><strong>12</strong><span>API Changes in 7.4.1</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/74changehistory.html"><strong>13</strong><span>API Changes in 7.4</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/73changehistory.html"><strong>14</strong><span>API Changes in 7.3</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/72changehistory.html"><strong>15</strong><span>API Changes in 7.2</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/71changehistory.html"><strong>16</strong><span>API Changes in 7.1</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/70changehistory.html"><strong>17</strong><span>API Changes in 7.0</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/62changehistory.html"><strong>18</strong><span>API Changes in 6.2</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        
+    </div>
+    <p>DeployR API</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../../guide/workingusers.html">&lt;&lt; <strong>5</strong><span>Working with the User APIs</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../../guide/workingjobs.html"><strong>7</strong><span>Working with the Job APIs</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>6.3 Working with the Project Workspace APIs - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Microsoft Corporation</p>
+
+                    <p><strong>Version:</strong> 8.0.0</p>
+
+                    
+                </div>
+
+                
+                <div id="table-of-content">
+                    <h2>Table of Contents</h2>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#projectworkspacelist"><strong>6.1</strong><span>/r/project/workspace/list</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#projectworkspaceget"><strong>6.2</strong><span>/r/project/workspace/get</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#projectworkspaceupload"><strong>6.3</strong><span>/r/project/workspace/upload</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#projectworkspacetransfer"><strong>6.4</strong><span>/r/project/workspace/transfer</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#projectworkspacepush"><strong>6.5</strong><span>/r/project/workspace/push</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#projectworkspacesave"><strong>6.6</strong><span>/r/project/workspace/save</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#projectworkspacestore"><strong>6.7</strong><span>/r/project/workspace/store</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#projectworkspaceload"><strong>6.8</strong><span>/r/project/workspace/load</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#projectworkspacedelete"><strong>6.9</strong><span>/r/project/workspace/delete</span></a>
+                    </div>
+                    
+                </div>
+                
+
+                
+
+<h2 id="projectworkspace">6.3 Working with the Project Workspace APIs</h2>
+The project workspace APIs facilitate working with objects found in the project workspace.<p class="paragraph"/><h4>Workspace Object Retrieval</h4>
+<ol>
+<li>Retrieve a summary list of objects found in the workspace using the <a href="../guide/single.html#projectworkspacelist" class="guide">/r/project/workspace/list</a> call.</li>
+<li>Retrieve a DeployR-encoded representation of one or more objects found in the workspace using the <a href="../guide/single.html#projectworkspaceget" class="guide">/r/project/workspace/get</a> call.</li>
+</ol><p class="paragraph"/><h4>Workspace Object Creation</h4><p class="paragraph"/>Typically objects are created in the workspace when commands are executed. However, there are a number of APIs that allow the direct creation of objects in the workspace:
+<ol>
+<li>Upload an object into the workspace from a file on the users computer using the <a href="../guide/single.html#projectworkspaceupload" class="guide">/r/project/workspace/upload</a> call.</li>
+<li>Transfer an object into the workspace from a URL using the <a href="../guide/single.html#projectworkspacetransfer" class="guide">/r/project/workspace/transfer</a> call.</li>
+<li>Push an object into the workspace from a DeployR-encoded object using the <a href="../guide/single.html#projectworkspacepush" class="guide">/r/project/workspace/push</a> call.</li>
+</ol><p class="paragraph"/><h4>Workspace Objects and the Repository</h4>
+<ol>
+<li>Workspace objects can be stored directly to the repository using the <a href="../guide/single.html#projectworkspacestore" class="guide">/r/project/workspace/store</a> call.</li>
+<li>Repository-managed files containing R binary objects can be loaded directly to the workspace using the <a href="../guide/single.html#projectworkspaceload" class="guide">/r/project/workspace/load</a> call.</li>
+</ol><p class="paragraph"/>
+
+
+<h2 id="projectworkspacelist">6.3.1 /r/project/workspace/list</h2>
+This call lists the objects in the workspace for the specified project.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>GET<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>project – specifies the project identifier</li>
+<li>root - (optional) specifies the object graph root</li>
+<li>clazz - (optional) specifies the R class based filter</li>
+<li>filter - (optional) specifies the R object name based filter</li>
+<li>restrict - (optional) if true, limits returned objects to object types with supported DeployR-encoding</li>
+<li>pagesize - (optional) specifies the page size for paging results in response markup</li>
+<li>pageoffset - (optional) specifies the page offset for paging results in response markup</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+project=PROJECT&#45;4f9fe8bf&#45;9425&#45;4f2c&#45;aa15&#45;5d94818988f9</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/project/workspace/list"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"project"</span>: &#123;
+                <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"Demo Analysis"</span>,
+                <span class="java&#45;quote">"project"</span>: <span class="java&#45;quote">"PROJECT&#45;4f9fe8bf&#45;9425&#45;4f2c&#45;aa15&#45;5d94818988f9"</span>,
+                <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Predicting retail sales."</span>,
+                <span class="java&#45;quote">"longdescr"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                <span class="java&#45;quote">"authors"</span>: &#91;
+                    <span class="java&#45;quote">"george"</span>
+                &#93;,
+                <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">false</span>,
+                <span class="java&#45;quote">"lastmodified"</span>: 1378321615345,
+                <span class="java&#45;quote">"live"</span>: <span class="java&#45;keyword">true</span>,
+                <span class="java&#45;quote">"cookie"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"origin"</span>: <span class="java&#45;quote">"Project original."</span>
+            &#125;,
+            <span class="java&#45;quote">"workspace"</span>: &#123;
+                <span class="java&#45;quote">"objects"</span>: &#91;
+                    &#123;
+                        <span class="java&#45;quote">"branch"</span>: <span class="java&#45;keyword">false</span>,
+                        <span class="java&#45;quote">"rclass"</span>: <span class="java&#45;quote">"character"</span>,
+                        <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"x_character"</span>,
+                        <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"primitive"</span>,
+                        <span class="java&#45;quote">"xdf"</span>: <span class="java&#45;keyword">null</span>
+                    &#125;,
+                    &#123;
+                        <span class="java&#45;quote">"branch"</span>: <span class="java&#45;keyword">true</span>,
+                        <span class="java&#45;quote">"rclass"</span>: <span class="java&#45;quote">"data.frame"</span>,
+                        <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"x_dataframe"</span>,
+                        <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"dataframe"</span>,
+                        <span class="java&#45;quote">"xdf"</span>: <span class="java&#45;keyword">null</span>
+                    &#125;,
+                    &#123;
+                        <span class="java&#45;quote">"branch"</span>: <span class="java&#45;keyword">false</span>,
+                        <span class="java&#45;quote">"rclass"</span>: <span class="java&#45;quote">"matrix"</span>,
+                        <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"x_matrix"</span>,
+                        <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"matrix"</span>,
+                        <span class="java&#45;quote">"xdf"</span>: <span class="java&#45;keyword">null</span>
+                    &#125;
+                &#93;
+            &#125;,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"675987FAFA41B1F169CFC5AB3EC5F563"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/project/workspace/list<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;project&#62;</span>
+      <span class="xml&#45;tag">&#60;project&#62;</span>PROJECT&#45;4f9fe8bf&#45;9425&#45;4f2c&#45;aa15&#45;5d94818988f9<span class="xml&#45;tag">&#60;/project&#62;</span>
+      <span class="xml&#45;tag">&#60;name&#62;</span>Demo Analysis<span class="xml&#45;tag">&#60;/name&#62;</span>
+      <span class="xml&#45;tag">&#60;descr&#62;</span>Predicting retail sales.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+      <span class="xml&#45;tag">&#60;longdescr/&#62;</span>
+      <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;authors&#62;</span>
+        <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;/authors&#62;</span>
+      <span class="xml&#45;tag">&#60;shared/&#62;</span>
+      <span class="xml&#45;tag">&#60;lastmodified&#62;</span>1378321739728<span class="xml&#45;tag">&#60;/lastmodified&#62;</span>
+      <span class="xml&#45;tag">&#60;live&#62;</span>true<span class="xml&#45;tag">&#60;/live&#62;</span>
+      <span class="xml&#45;tag">&#60;cookie&#62;</span>&#60;!&#91;CDATA&#91;  &#93;&#93;&#62;<span class="xml&#45;tag">&#60;/cookie&#62;</span>
+      <span class="xml&#45;tag">&#60;origin&#62;</span>Project original.<span class="xml&#45;tag">&#60;/origin&#62;</span>
+    <span class="xml&#45;tag">&#60;/project&#62;</span>
+    <span class="xml&#45;tag">&#60;workspace&#62;</span>
+      <span class="xml&#45;tag">&#60;objects&#62;</span>
+        <span class="xml&#45;tag">&#60;object&#62;</span>
+          <span class="xml&#45;tag">&#60;type&#62;</span>primitive<span class="xml&#45;tag">&#60;/type&#62;</span>
+          <span class="xml&#45;tag">&#60;rclass&#62;</span>character<span class="xml&#45;tag">&#60;/rclass&#62;</span>
+          <span class="xml&#45;tag">&#60;branch/&#62;</span>
+          <span class="xml&#45;tag">&#60;xdf/&#62;</span>
+          <span class="xml&#45;tag">&#60;name&#62;</span>x_character<span class="xml&#45;tag">&#60;/name&#62;</span>
+        <span class="xml&#45;tag">&#60;/object&#62;</span>
+        <span class="xml&#45;tag">&#60;object&#62;</span>
+          <span class="xml&#45;tag">&#60;type&#62;</span>dataframe<span class="xml&#45;tag">&#60;/type&#62;</span>
+          <span class="xml&#45;tag">&#60;rclass&#62;</span>data.frame<span class="xml&#45;tag">&#60;/rclass&#62;</span>
+          <span class="xml&#45;tag">&#60;branch&#62;</span>true<span class="xml&#45;tag">&#60;/branch&#62;</span>
+          <span class="xml&#45;tag">&#60;xdf/&#62;</span>
+          <span class="xml&#45;tag">&#60;name&#62;</span>x_dataframe<span class="xml&#45;tag">&#60;/name&#62;</span>
+        <span class="xml&#45;tag">&#60;/object&#62;</span>
+        <span class="xml&#45;tag">&#60;object&#62;</span>
+          <span class="xml&#45;tag">&#60;type&#62;</span>matrix<span class="xml&#45;tag">&#60;/type&#62;</span>
+          <span class="xml&#45;tag">&#60;rclass&#62;</span>matrix<span class="xml&#45;tag">&#60;/rclass&#62;</span>
+          <span class="xml&#45;tag">&#60;branch/&#62;</span>
+          <span class="xml&#45;tag">&#60;xdf/&#62;</span>
+          <span class="xml&#45;tag">&#60;name&#62;</span>x_matrix<span class="xml&#45;tag">&#60;/name&#62;</span>
+        <span class="xml&#45;tag">&#60;/object&#62;</span>
+      <span class="xml&#45;tag">&#60;/objects&#62;</span>
+    <span class="xml&#45;tag">&#60;/workspace&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>675987FAFA41B1F169CFC5AB3EC5F563<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div><p class="paragraph"/>
+
+
+<h2 id="projectworkspaceget">6.3.2 /r/project/workspace/get</h2>
+This call retrieves DeployR-encoded objects from the workspace for the specified project.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>GET<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>project – specifies the project identifier</li>
+<li>name - specifies a comma-separated list of object names</li>
+<li>root - (optional) specifies the object graph root</li>
+<li>start - (optional) specifies the offset into object data</li>
+<li>length - (optional) specifies the segment of object data to retrieve</li>
+<li>infinity - (optional) specifies a custom value for Infinity appearing in R object data returned on the call, otherwise Infinity is represented by 0x7ff0000000000000L</li>
+<li>nan - (optional) specifies custom value for NaN appearing in R object data returned on the call, otherwise NaN is represented by null</li>
+<li>encodeDataFramePrimitiveAsVector - (optional) if true, data.frame primitives are encoded vectors in R object data returned on call</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+project=PROJECT&#45;4f9fe8bf&#45;9425&#45;4f2c&#45;aa15&#45;5d94818988f9
+name=autos_data</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/project/workspace/get"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"project"</span>: &#123;
+                <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"Demo Analysis"</span>,
+                <span class="java&#45;quote">"project"</span>: <span class="java&#45;quote">"PROJECT&#45;4f9fe8bf&#45;9425&#45;4f2c&#45;aa15&#45;5d94818988f9"</span>,
+                <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Predicting retail sales."</span>
+                <span class="java&#45;quote">"longdescr"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                <span class="java&#45;quote">"authors"</span>: &#91;
+                    <span class="java&#45;quote">"george"</span>
+                &#93;,
+                <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">false</span>,
+                <span class="java&#45;quote">"lastmodified"</span>: 1378321946753,
+                <span class="java&#45;quote">"live"</span>: <span class="java&#45;keyword">true</span>,
+                <span class="java&#45;quote">"cookie"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"origin"</span>: <span class="java&#45;quote">"Project original."</span>,
+            &#125;,
+            <span class="java&#45;quote">"workspace"</span>: &#123;
+                <span class="java&#45;quote">"object"</span>: &#123;
+                    <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"x_matrix"</span>,
+                    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"matrix"</span>,
+                    <span class="java&#45;quote">"rclass"</span>: <span class="java&#45;quote">"matrix"</span>,
+                    <span class="java&#45;quote">"value"</span>: &#91;
+                        &#91;
+                            1,
+                            3,
+                            12
+                        &#93;,
+                        &#91;
+                            2,
+                            11,
+                            13
+                        &#93;
+                    &#93;
+                &#125;
+            &#125;,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"675987FAFA41B1F169CFC5AB3EC5F563"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/project/workspace/get<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;project&#62;</span>
+      <span class="xml&#45;tag">&#60;project&#62;</span>PROJECT&#45;4f9fe8bf&#45;9425&#45;4f2c&#45;aa15&#45;5d94818988f9<span class="xml&#45;tag">&#60;/project&#62;</span>
+      <span class="xml&#45;tag">&#60;name&#62;</span>Demo Analysis<span class="xml&#45;tag">&#60;/name&#62;</span>
+      <span class="xml&#45;tag">&#60;descr&#62;</span>Predicting retail sales.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+      <span class="xml&#45;tag">&#60;longdescr/&#62;</span>
+      <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;authors&#62;</span>
+        <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;/authors&#62;</span>
+      <span class="xml&#45;tag">&#60;shared/&#62;</span>
+      <span class="xml&#45;tag">&#60;lastmodified&#62;</span>1378321884721<span class="xml&#45;tag">&#60;/lastmodified&#62;</span>
+      <span class="xml&#45;tag">&#60;live&#62;</span>true<span class="xml&#45;tag">&#60;/live&#62;</span>
+      <span class="xml&#45;tag">&#60;cookie&#62;</span>&#60;!&#91;CDATA&#91;  &#93;&#93;&#62;<span class="xml&#45;tag">&#60;/cookie&#62;</span>
+      <span class="xml&#45;tag">&#60;origin&#62;</span>Project original.<span class="xml&#45;tag">&#60;/origin&#62;</span>
+    <span class="xml&#45;tag">&#60;/project&#62;</span>
+    <span class="xml&#45;tag">&#60;workspace&#62;</span>
+      <span class="xml&#45;tag">&#60;object&#62;</span>
+        <span class="xml&#45;tag">&#60;name&#62;</span>x_matrix<span class="xml&#45;tag">&#60;/name&#62;</span>
+        <span class="xml&#45;tag">&#60;type&#62;</span>matrix<span class="xml&#45;tag">&#60;/type&#62;</span>
+        <span class="xml&#45;tag">&#60;rclass&#62;</span>matrix<span class="xml&#45;tag">&#60;/rclass&#62;</span>
+        <span class="xml&#45;tag">&#60;values&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>1.0, 3.0, 12.0<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>2.0, 11.0, 13.0<span class="xml&#45;tag">&#60;/value&#62;</span>
+        <span class="xml&#45;tag">&#60;/values&#62;</span>
+      <span class="xml&#45;tag">&#60;/object&#62;</span>
+    <span class="xml&#45;tag">&#60;/workspace&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>675987FAFA41B1F169CFC5AB3EC5F563<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div><p class="paragraph"/>
+
+
+<h2 id="projectworkspaceupload">6.3.3 /r/project/workspace/upload</h2>
+This call uploads a binary object from file into the workspace for the specified project.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>POST<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>project – specifies the project identifier</li>
+<li>name - specifies the name of the object file</li>
+<li>file - ...file content...</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+project=PROJECT&#45;4f9fe8bf&#45;9425&#45;4f2c&#45;aa15&#45;5d94818988f9
+name=data.R
+file= ...file content...</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/project/workspace/upload"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"project"</span>: &#123;
+                <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"Demo Analysis"</span>,
+                <span class="java&#45;quote">"project"</span>: <span class="java&#45;quote">"PROJECT&#45;4f9fe8bf&#45;9425&#45;4f2c&#45;aa15&#45;5d94818988f9"</span>,
+                <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Predicting retail sales."</span>
+                <span class="java&#45;quote">"longdescr"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                <span class="java&#45;quote">"authors"</span>: &#91;
+                    <span class="java&#45;quote">"george"</span>
+                &#93;,
+                <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">false</span>,
+                <span class="java&#45;quote">"lastmodified"</span>: 1378321946753,
+                <span class="java&#45;quote">"live"</span>: <span class="java&#45;keyword">true</span>,
+                <span class="java&#45;quote">"cookie"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"origin"</span>: <span class="java&#45;quote">"Project original."</span>,
+            &#125;,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"675987FAFA41B1F169CFC5AB3EC5F563"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/project/workspace/upload<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;project&#62;</span>
+      <span class="xml&#45;tag">&#60;project&#62;</span>PROJECT&#45;4f9fe8bf&#45;9425&#45;4f2c&#45;aa15&#45;5d94818988f9<span class="xml&#45;tag">&#60;/project&#62;</span>
+      <span class="xml&#45;tag">&#60;name&#62;</span>Demo Analysis<span class="xml&#45;tag">&#60;/name&#62;</span>
+      <span class="xml&#45;tag">&#60;descr&#62;</span>Predicting retail sales.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+      <span class="xml&#45;tag">&#60;longdescr/&#62;</span>
+      <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;authors&#62;</span>
+        <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;/authors&#62;</span>
+      <span class="xml&#45;tag">&#60;shared/&#62;</span>
+      <span class="xml&#45;tag">&#60;lastmodified&#62;</span>1378321884721<span class="xml&#45;tag">&#60;/lastmodified&#62;</span>
+      <span class="xml&#45;tag">&#60;live&#62;</span>true<span class="xml&#45;tag">&#60;/live&#62;</span>
+      <span class="xml&#45;tag">&#60;cookie&#62;</span>&#60;!&#91;CDATA&#91;  &#93;&#93;&#62;<span class="xml&#45;tag">&#60;/cookie&#62;</span>
+      <span class="xml&#45;tag">&#60;origin&#62;</span>Project original.<span class="xml&#45;tag">&#60;/origin&#62;</span>
+    <span class="xml&#45;tag">&#60;/project&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>675987FAFA41B1F169CFC5AB3EC5F563<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div>
+
+
+
+<h2 id="projectworkspacetransfer">6.3.4 /r/project/workspace/transfer</h2>
+This call transfers a binary object from a URL into the workspace for the specified project.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>POST<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>project – specifies the project identifier</li>
+<li>name - specifies the name of the object file found on the URL</li>
+<li>url - specifies the URL</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+project=PROJECT&#45;4f9fe8bf&#45;9425&#45;4f2c&#45;aa15&#45;5d94818988f9
+name=data.R
+url=http://host/context/data.R</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong>
+<div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/project/workspace/transfer"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"project"</span>: &#123;
+                <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"Demo Analysis"</span>,
+                <span class="java&#45;quote">"project"</span>: <span class="java&#45;quote">"PROJECT&#45;4f9fe8bf&#45;9425&#45;4f2c&#45;aa15&#45;5d94818988f9"</span>,
+                <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Predicting retail sales."</span>
+                <span class="java&#45;quote">"longdescr"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                <span class="java&#45;quote">"authors"</span>: &#91;
+                    <span class="java&#45;quote">"george"</span>
+                &#93;,
+                <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">false</span>,
+                <span class="java&#45;quote">"lastmodified"</span>: 1378321946753,
+                <span class="java&#45;quote">"live"</span>: <span class="java&#45;keyword">true</span>,
+                <span class="java&#45;quote">"cookie"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"origin"</span>: <span class="java&#45;quote">"Project original."</span>,
+            &#125;,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"675987FAFA41B1F169CFC5AB3EC5F563"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/project/workspace/transfer<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;project&#62;</span>
+      <span class="xml&#45;tag">&#60;project&#62;</span>PROJECT&#45;4f9fe8bf&#45;9425&#45;4f2c&#45;aa15&#45;5d94818988f9<span class="xml&#45;tag">&#60;/project&#62;</span>
+      <span class="xml&#45;tag">&#60;name&#62;</span>Demo Analysis<span class="xml&#45;tag">&#60;/name&#62;</span>
+      <span class="xml&#45;tag">&#60;descr&#62;</span>Predicting retail sales.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+      <span class="xml&#45;tag">&#60;longdescr/&#62;</span>
+      <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;authors&#62;</span>
+        <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;/authors&#62;</span>
+      <span class="xml&#45;tag">&#60;shared/&#62;</span>
+      <span class="xml&#45;tag">&#60;lastmodified&#62;</span>1378321884721<span class="xml&#45;tag">&#60;/lastmodified&#62;</span>
+      <span class="xml&#45;tag">&#60;live&#62;</span>true<span class="xml&#45;tag">&#60;/live&#62;</span>
+      <span class="xml&#45;tag">&#60;cookie&#62;</span>&#60;!&#91;CDATA&#91;  &#93;&#93;&#62;<span class="xml&#45;tag">&#60;/cookie&#62;</span>
+      <span class="xml&#45;tag">&#60;origin&#62;</span>Project original.<span class="xml&#45;tag">&#60;/origin&#62;</span>
+    <span class="xml&#45;tag">&#60;/project&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>675987FAFA41B1F169CFC5AB3EC5F563<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div>
+
+
+
+<h2 id="projectworkspacepush">6.3.5 /r/project/workspace/push</h2>
+This call pushes a DeployR-encoded object into the workspace for the specified project.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>POST<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>project – specifies the project identifier</li>
+<li>inputs - (optional) DeployR-encoded object inputs</li>
+<li>csvinputs - (optional) comma-separated list of primitive name/value inputs</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+project=PROJECT&#45;4f9fe8bf&#45;9425&#45;4f2c&#45;aa15&#45;5d94818988f9
+inputs=&#123; <span class="java&#45;quote">"mydata"</span> : &#123; <span class="java&#45;quote">"type"</span> : <span class="java&#45;quote">"vector"</span>, <span class="java&#45;quote">"value"</span> : &#91;1,2,3&#93; &#125; &#125;
+csvinputs=gender,female,age,45</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/project/workspace/push"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"project"</span>: &#123;
+                <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"Demo Analysis"</span>,
+                <span class="java&#45;quote">"project"</span>: <span class="java&#45;quote">"PROJECT&#45;4f9fe8bf&#45;9425&#45;4f2c&#45;aa15&#45;5d94818988f9"</span>,
+                <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Predicting retail sales."</span>
+                <span class="java&#45;quote">"longdescr"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                <span class="java&#45;quote">"authors"</span>: &#91;
+                    <span class="java&#45;quote">"george"</span>
+                &#93;,
+                <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">false</span>,
+                <span class="java&#45;quote">"lastmodified"</span>: 1378321946753,
+                <span class="java&#45;quote">"live"</span>: <span class="java&#45;keyword">true</span>,
+                <span class="java&#45;quote">"cookie"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"origin"</span>: <span class="java&#45;quote">"Project original."</span>,
+            &#125;,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"675987FAFA41B1F169CFC5AB3EC5F563"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/project/workspace/push<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;project&#62;</span>
+      <span class="xml&#45;tag">&#60;project&#62;</span>PROJECT&#45;4f9fe8bf&#45;9425&#45;4f2c&#45;aa15&#45;5d94818988f9<span class="xml&#45;tag">&#60;/project&#62;</span>
+      <span class="xml&#45;tag">&#60;name&#62;</span>Demo Analysis<span class="xml&#45;tag">&#60;/name&#62;</span>
+      <span class="xml&#45;tag">&#60;descr&#62;</span>Predicting retail sales.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+      <span class="xml&#45;tag">&#60;longdescr/&#62;</span>
+      <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;authors&#62;</span>
+        <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;/authors&#62;</span>
+      <span class="xml&#45;tag">&#60;shared/&#62;</span>
+      <span class="xml&#45;tag">&#60;lastmodified&#62;</span>1378321884721<span class="xml&#45;tag">&#60;/lastmodified&#62;</span>
+      <span class="xml&#45;tag">&#60;live&#62;</span>true<span class="xml&#45;tag">&#60;/live&#62;</span>
+      <span class="xml&#45;tag">&#60;cookie&#62;</span>&#60;!&#91;CDATA&#91;  &#93;&#93;&#62;<span class="xml&#45;tag">&#60;/cookie&#62;</span>
+      <span class="xml&#45;tag">&#60;origin&#62;</span>Project original.<span class="xml&#45;tag">&#60;/origin&#62;</span>
+    <span class="xml&#45;tag">&#60;/project&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>675987FAFA41B1F169CFC5AB3EC5F563<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div>
+
+
+
+<h2 id="projectworkspacesave">6.3.6 /r/project/workspace/save</h2>
+This call saves the workspace to a file in the working directory for the specified project.<p class="paragraph"/>If the  <em class="italic">name</em>  parameter is specified on the call then only the named object is saved as a binary object file to the working directory. Otherwise the entire contents of the workspace are saved.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>POST<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>project – specifies the project identifier</li>
+<li>name - (optional) specifies a named object for saving</li>
+<li>descr - (optional) specifies a description to accompany the saved file</li>
+<li>version - (optional) if true, the new file will be renamed to avoid overwriting</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+project=PROJECT&#45;4f9fe8bf&#45;9425&#45;4f2c&#45;aa15&#45;5d94818988f9
+name=x_matrix
+descr=Saved from workspace.</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/project/workspace/save"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"project"</span>: &#123;
+                <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"Demo Analysis"</span>,
+                <span class="java&#45;quote">"project"</span>: <span class="java&#45;quote">"PROJECT&#45;4f9fe8bf&#45;9425&#45;4f2c&#45;aa15&#45;5d94818988f9"</span>,
+                <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Predicting retail sales."</span>
+                <span class="java&#45;quote">"longdescr"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                <span class="java&#45;quote">"authors"</span>: &#91;
+                    <span class="java&#45;quote">"george"</span>
+                &#93;,
+                <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">false</span>,
+                <span class="java&#45;quote">"lastmodified"</span>: 1378321946753,
+                <span class="java&#45;quote">"live"</span>: <span class="java&#45;keyword">true</span>,
+                <span class="java&#45;quote">"cookie"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"origin"</span>: <span class="java&#45;quote">"Project original."</span>,
+            &#125;,
+            <span class="java&#45;quote">"directory"</span>: &#123;
+                <span class="java&#45;quote">"file"</span>: &#123;
+                    <span class="java&#45;quote">"filename"</span>: <span class="java&#45;quote">"x_matrix.rData"</span>,
+                    <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Saved matrix from workspace."</span>
+                    <span class="java&#45;quote">"length"</span>: 101,
+                    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"application/octet&#45;stream"</span>,
+                    <span class="java&#45;quote">"category"</span>: <span class="java&#45;quote">"R"</span>,
+                    <span class="java&#45;quote">"lastmodified"</span>: 1378322423000,
+                    <span class="java&#45;quote">"url"</span>: <span class="java&#45;quote">"http://dhost:dport/deployr/r/project/
+                    directory/download/
+                    PROJECT&#45;4f9fe8bf&#45;9425&#45;4f2c&#45;aa15&#45;5d94818988f9/x_matrix.rData"</span>
+                &#125;
+            &#125;,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"675987FAFA41B1F169CFC5AB3EC5F563"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/project/workspace/save<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;project&#62;</span>
+      <span class="xml&#45;tag">&#60;project&#62;</span>PROJECT&#45;4f9fe8bf&#45;9425&#45;4f2c&#45;aa15&#45;5d94818988f9<span class="xml&#45;tag">&#60;/project&#62;</span>
+      <span class="xml&#45;tag">&#60;name&#62;</span>Demo Analysis<span class="xml&#45;tag">&#60;/name&#62;</span>
+      <span class="xml&#45;tag">&#60;descr&#62;</span>Predicting retail sales.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+      <span class="xml&#45;tag">&#60;longdescr/&#62;</span>
+      <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;authors&#62;</span>
+        <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;/authors&#62;</span>
+      <span class="xml&#45;tag">&#60;shared/&#62;</span>
+      <span class="xml&#45;tag">&#60;lastmodified&#62;</span>1378321884721<span class="xml&#45;tag">&#60;/lastmodified&#62;</span>
+      <span class="xml&#45;tag">&#60;live&#62;</span>true<span class="xml&#45;tag">&#60;/live&#62;</span>
+      <span class="xml&#45;tag">&#60;cookie&#62;</span>&#60;!&#91;CDATA&#91;  &#93;&#93;&#62;<span class="xml&#45;tag">&#60;/cookie&#62;</span>
+      <span class="xml&#45;tag">&#60;origin&#62;</span>Project original.<span class="xml&#45;tag">&#60;/origin&#62;</span>
+    <span class="xml&#45;tag">&#60;/project&#62;</span>
+    <span class="xml&#45;tag">&#60;directory&#62;</span>
+      <span class="xml&#45;tag">&#60;file&#62;</span>
+        <span class="xml&#45;tag">&#60;filename&#62;</span>x_matrix.rData<span class="xml&#45;tag">&#60;/filename&#62;</span>
+        <span class="xml&#45;tag">&#60;descr&#62;</span>Saved matrix from workspace.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+        <span class="xml&#45;tag">&#60;length&#62;</span>101<span class="xml&#45;tag">&#60;/length&#62;</span>
+        <span class="xml&#45;tag">&#60;type&#62;</span>application/octet&#45;stream<span class="xml&#45;tag">&#60;/type&#62;</span>
+        <span class="xml&#45;tag">&#60;category&#62;</span>R<span class="xml&#45;tag">&#60;/category&#62;</span>
+        <span class="xml&#45;tag">&#60;lastmodified&#62;</span>1378322492000<span class="xml&#45;tag">&#60;/lastmodified&#62;</span>
+        <span class="xml&#45;tag">&#60;url&#62;</span>http://dhost:dport/deployr/r/project/
+        directory/download/
+        PROJECT&#45;4f9fe8bf&#45;9425&#45;4f2c&#45;aa15&#45;5d94818988f9/x_matrix.rData<span class="xml&#45;tag">&#60;/url&#62;</span>
+      <span class="xml&#45;tag">&#60;/file&#62;</span>
+    <span class="xml&#45;tag">&#60;/directory&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>675987FAFA41B1F169CFC5AB3EC5F563<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div>
+
+
+
+<h2 id="projectworkspacestore">6.3.7 /r/project/workspace/store</h2>
+This call stores the workspace as a binary object to the repository.<p class="paragraph"/>If the  <em class="italic">name</em>  parameter is specified on the call, then only the named object is stored as a binary object in the repository. Otherwise the entire contents of the workspace are stored.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>POST<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>project – specifies the project identifier</li>
+<li>name - (optional) specifies a named object for storing</li>
+<li>descr - (optional) specifies a description to accompany the saved file</li>
+<li>tags - (optional) specifies tag words to associate with the repository file</li>
+<li>restricted - (optional) comma-separated list of role names, which makes the file visible to  <em class="italic">authenticated</em>  users with these roles</li>
+<li>shared - (optional) if true, the file will be  <em class="italic">shared</em> , which makes the file visible to  <em class="italic">authenticated</em>  users</li>
+<li>published - (optional) if true, the file will be  <em class="italic">published</em> , which makes the file visible to  <em class="italic">authenticated</em>  and  <em class="italic">anonymous</em>  users</li>
+<li>newversion - (optional) if true, the new file will be renamed to avoid overwriting</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+project=PROJECT&#45;4f9fe8bf&#45;9425&#45;4f2c&#45;aa15&#45;5d94818988f9
+descr=Store from workspace.</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/project/workspace/store"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"project"</span>: &#123;
+                <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"Demo Analysis"</span>,
+                <span class="java&#45;quote">"project"</span>: <span class="java&#45;quote">"PROJECT&#45;4f9fe8bf&#45;9425&#45;4f2c&#45;aa15&#45;5d94818988f9"</span>,
+                <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Predicting retail sales."</span>
+                <span class="java&#45;quote">"longdescr"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                <span class="java&#45;quote">"authors"</span>: &#91;
+                    <span class="java&#45;quote">"george"</span>
+                &#93;,
+                <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">false</span>,
+                <span class="java&#45;quote">"lastmodified"</span>: 1378321946753,
+                <span class="java&#45;quote">"live"</span>: <span class="java&#45;keyword">true</span>,
+                <span class="java&#45;quote">"cookie"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"origin"</span>: <span class="java&#45;quote">"Project original."</span>,
+            &#125;,
+            <span class="java&#45;quote">"repository"</span>: &#123;
+                <span class="java&#45;quote">"file"</span>: &#123;
+                    <span class="java&#45;quote">"latestby"</span>: <span class="java&#45;quote">"george"</span>,
+                    <span class="java&#45;quote">"url"</span>: <span class="java&#45;quote">"http://dhost:dport/deployr/r/
+                    repository/file/download/george/x_matrix.rData"</span>,
+                    <span class="java&#45;quote">"filename"</span>: <span class="java&#45;quote">"x_matrix.rData"</span>,
+                    <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                    <span class="java&#45;quote">"authors"</span>: &#91;
+                        <span class="java&#45;quote">"george"</span>
+                    &#93;,
+                    <span class="java&#45;quote">"version"</span>: <span class="java&#45;keyword">null</span>,
+                    <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Stored matrix from workspace."</span>
+                    <span class="java&#45;quote">"tags"</span>: <span class="java&#45;keyword">null</span>,
+                    <span class="java&#45;quote">"length"</span>: 101,
+                    <span class="java&#45;quote">"md5"</span>: <span class="java&#45;quote">"8a42ec2b108587b526f9c69d2e183a06"</span>,
+                    <span class="java&#45;quote">"category"</span>: <span class="java&#45;quote">"R"</span>,
+                    <span class="java&#45;quote">"restricted"</span>: <span class="java&#45;keyword">null</span>,
+                    <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">false</span>,
+                    <span class="java&#45;quote">"published"</span>: <span class="java&#45;keyword">false</span>,
+                    <span class="java&#45;quote">"access"</span>: <span class="java&#45;quote">"Private"</span>,
+                    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"application/octet&#45;stream"</span>,
+                    <span class="java&#45;quote">"lastModified"</span>: 1378322785349
+                &#125;
+            &#125;,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"675987FAFA41B1F169CFC5AB3EC5F563"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/project/workspace/store<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;project&#62;</span>
+      <span class="xml&#45;tag">&#60;project&#62;</span>PROJECT&#45;4f9fe8bf&#45;9425&#45;4f2c&#45;aa15&#45;5d94818988f9<span class="xml&#45;tag">&#60;/project&#62;</span>
+      <span class="xml&#45;tag">&#60;name&#62;</span>Demo Analysis<span class="xml&#45;tag">&#60;/name&#62;</span>
+      <span class="xml&#45;tag">&#60;descr&#62;</span>Predicting retail sales.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+      <span class="xml&#45;tag">&#60;longdescr/&#62;</span>
+      <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;authors&#62;</span>
+        <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;/authors&#62;</span>
+      <span class="xml&#45;tag">&#60;shared/&#62;</span>
+      <span class="xml&#45;tag">&#60;lastmodified&#62;</span>1378321884721<span class="xml&#45;tag">&#60;/lastmodified&#62;</span>
+      <span class="xml&#45;tag">&#60;live&#62;</span>true<span class="xml&#45;tag">&#60;/live&#62;</span>
+      <span class="xml&#45;tag">&#60;cookie&#62;</span>&#60;!&#91;CDATA&#91;  &#93;&#93;&#62;<span class="xml&#45;tag">&#60;/cookie&#62;</span>
+      <span class="xml&#45;tag">&#60;origin&#62;</span>Project original.<span class="xml&#45;tag">&#60;/origin&#62;</span>
+    <span class="xml&#45;tag">&#60;/project&#62;</span>
+    <span class="xml&#45;tag">&#60;repository&#62;</span>
+      <span class="xml&#45;tag">&#60;file&#62;</span>
+        <span class="xml&#45;tag">&#60;filename&#62;</span>x_matrix.rData<span class="xml&#45;tag">&#60;/filename&#62;</span>
+        <span class="xml&#45;tag">&#60;descr&#62;</span>Stored matrix from workspace.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+        <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+        <span class="xml&#45;tag">&#60;version/&#62;</span>
+        <span class="xml&#45;tag">&#60;tags/&#62;</span>
+        <span class="xml&#45;tag">&#60;authors&#62;</span>
+          <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+        <span class="xml&#45;tag">&#60;/authors&#62;</span>
+        <span class="xml&#45;tag">&#60;latestby&#62;</span>george<span class="xml&#45;tag">&#60;/latestby&#62;</span>
+        <span class="xml&#45;tag">&#60;length&#62;</span>101<span class="xml&#45;tag">&#60;/length&#62;</span>
+        <span class="xml&#45;tag">&#60;type&#62;</span>application/octet&#45;stream<span class="xml&#45;tag">&#60;/type&#62;</span>
+        <span class="xml&#45;tag">&#60;md5&#62;</span>8a42ec2b108587b526f9c69d2e183a06<span class="xml&#45;tag">&#60;/md5&#62;</span>
+        <span class="xml&#45;tag">&#60;category&#62;</span>R<span class="xml&#45;tag">&#60;/category&#62;</span>
+        <span class="xml&#45;tag">&#60;restricted/&#62;</span>
+        <span class="xml&#45;tag">&#60;shared/&#62;</span>
+        <span class="xml&#45;tag">&#60;published/&#62;</span>
+        <span class="xml&#45;tag">&#60;access&#62;</span>Private<span class="xml&#45;tag">&#60;/access&#62;</span>
+        <span class="xml&#45;tag">&#60;lastModified&#62;</span>1378322649779<span class="xml&#45;tag">&#60;/lastModified&#62;</span>
+        <span class="xml&#45;tag">&#60;url&#62;</span>http://dhost:dport/deployr/r/repository/
+        file/download/george/x_matrix.rData<span class="xml&#45;tag">&#60;/url&#62;</span>
+      <span class="xml&#45;tag">&#60;/file&#62;</span>
+    <span class="xml&#45;tag">&#60;/repository&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>675987FAFA41B1F169CFC5AB3EC5F563<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div>
+
+
+
+<h2 id="projectworkspaceload">6.3.8 /r/project/workspace/load</h2>
+This call loads a binary object from a file in the repository into the workspace for the specified project.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>POST<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>project – specifies the project identifier</li>
+<li>filename - specifies the repository file name</li>
+<li>author - specifies the repository file author</li>
+<li>version - (optional) specifies the repository file version</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+project=PROJECT&#45;4f9fe8bf&#45;9425&#45;4f2c&#45;aa15&#45;5d94818988f9
+filename=mydata.rData
+author=testuser</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/project/workspace/load"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"project"</span>: &#123;
+                <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"Demo Analysis"</span>,
+                <span class="java&#45;quote">"project"</span>: <span class="java&#45;quote">"PROJECT&#45;4f9fe8bf&#45;9425&#45;4f2c&#45;aa15&#45;5d94818988f9"</span>,
+                <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Predicting retail sales."</span>
+                <span class="java&#45;quote">"longdescr"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                <span class="java&#45;quote">"authors"</span>: &#91;
+                    <span class="java&#45;quote">"george"</span>
+                &#93;,
+                <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">false</span>,
+                <span class="java&#45;quote">"lastmodified"</span>: 1378321946753,
+                <span class="java&#45;quote">"live"</span>: <span class="java&#45;keyword">true</span>,
+                <span class="java&#45;quote">"cookie"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"origin"</span>: <span class="java&#45;quote">"Project original."</span>,
+            &#125;,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"675987FAFA41B1F169CFC5AB3EC5F563"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/project/workspace/load<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;project&#62;</span>
+      <span class="xml&#45;tag">&#60;project&#62;</span>PROJECT&#45;4f9fe8bf&#45;9425&#45;4f2c&#45;aa15&#45;5d94818988f9<span class="xml&#45;tag">&#60;/project&#62;</span>
+      <span class="xml&#45;tag">&#60;name&#62;</span>Demo Analysis<span class="xml&#45;tag">&#60;/name&#62;</span>
+      <span class="xml&#45;tag">&#60;descr&#62;</span>Predicting retail sales.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+      <span class="xml&#45;tag">&#60;longdescr/&#62;</span>
+      <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;authors&#62;</span>
+        <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;/authors&#62;</span>
+      <span class="xml&#45;tag">&#60;shared/&#62;</span>
+      <span class="xml&#45;tag">&#60;lastmodified&#62;</span>1378321884721<span class="xml&#45;tag">&#60;/lastmodified&#62;</span>
+      <span class="xml&#45;tag">&#60;live&#62;</span>true<span class="xml&#45;tag">&#60;/live&#62;</span>
+      <span class="xml&#45;tag">&#60;cookie&#62;</span>&#60;!&#91;CDATA&#91;  &#93;&#93;&#62;<span class="xml&#45;tag">&#60;/cookie&#62;</span>
+      <span class="xml&#45;tag">&#60;origin&#62;</span>Project original.<span class="xml&#45;tag">&#60;/origin&#62;</span>
+    <span class="xml&#45;tag">&#60;/project&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>675987FAFA41B1F169CFC5AB3EC5F563<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div>
+
+
+
+<h2 id="projectworkspacedelete">6.3.9 /r/project/workspace/delete</h2>
+This call deletes an object from the workspace for the specified project.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>POST<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>project – specifies the project identifier</li>
+<li>name - specifies the object name</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+project=PROJECT&#45;4f9fe8bf&#45;9425&#45;4f2c&#45;aa15&#45;5d94818988f9
+name=mydata</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/project/workspace/delete"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"project"</span>: &#123;
+                <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"Demo Analysis"</span>,
+                <span class="java&#45;quote">"project"</span>: <span class="java&#45;quote">"PROJECT&#45;4f9fe8bf&#45;9425&#45;4f2c&#45;aa15&#45;5d94818988f9"</span>,
+                <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Predicting retail sales."</span>
+                <span class="java&#45;quote">"longdescr"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                <span class="java&#45;quote">"authors"</span>: &#91;
+                    <span class="java&#45;quote">"george"</span>
+                &#93;,
+                <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">false</span>,
+                <span class="java&#45;quote">"lastmodified"</span>: 1378321946753,
+                <span class="java&#45;quote">"live"</span>: <span class="java&#45;keyword">true</span>,
+                <span class="java&#45;quote">"cookie"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"origin"</span>: <span class="java&#45;quote">"Project original."</span>,
+            &#125;,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"675987FAFA41B1F169CFC5AB3EC5F563"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/project/workspace/delete<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;project&#62;</span>
+      <span class="xml&#45;tag">&#60;project&#62;</span>PROJECT&#45;4f9fe8bf&#45;9425&#45;4f2c&#45;aa15&#45;5d94818988f9<span class="xml&#45;tag">&#60;/project&#62;</span>
+      <span class="xml&#45;tag">&#60;name&#62;</span>Demo Analysis<span class="xml&#45;tag">&#60;/name&#62;</span>
+      <span class="xml&#45;tag">&#60;descr&#62;</span>Predicting retail sales.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+      <span class="xml&#45;tag">&#60;longdescr/&#62;</span>
+      <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;authors&#62;</span>
+        <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;/authors&#62;</span>
+      <span class="xml&#45;tag">&#60;shared/&#62;</span>
+      <span class="xml&#45;tag">&#60;lastmodified&#62;</span>1378321884721<span class="xml&#45;tag">&#60;/lastmodified&#62;</span>
+      <span class="xml&#45;tag">&#60;live&#62;</span>true<span class="xml&#45;tag">&#60;/live&#62;</span>
+      <span class="xml&#45;tag">&#60;cookie&#62;</span>&#60;!&#91;CDATA&#91;  &#93;&#93;&#62;<span class="xml&#45;tag">&#60;/cookie&#62;</span>
+      <span class="xml&#45;tag">&#60;origin&#62;</span>Project original.<span class="xml&#45;tag">&#60;/origin&#62;</span>
+    <span class="xml&#45;tag">&#60;/project&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>675987FAFA41B1F169CFC5AB3EC5F563<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div>
+
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../../guide/workingusers.html">&lt;&lt; <strong>5</strong><span>Working with the User APIs</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../../guide/workingjobs.html"><strong>7</strong><span>Working with the Job APIs</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    Copyright (c) 2009-2016 Microsoft Corporation
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

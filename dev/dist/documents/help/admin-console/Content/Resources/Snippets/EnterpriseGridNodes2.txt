@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <body>
+        <table style="width: 100%;border-left-style: solid;border-left-width: 1px;border-right-style: solid;border-right-width: 1px;border-top-style: solid;border-top-width: 1px;border-bottom-style: solid;border-bottom-width: 1px; background-color: #d7f1dd;">
+            <col />
+            <tbody>
+                <tr style="background-color: #d7f1dd;">
+                    <td style="background-color: #d7f1dd;"><span class="Important">Important!</span> &#160;With <MadCap:variable name="Variables.Pro" style="font-weight: bold;" />, you can dynamically scale the overall workload capacity by enabling and disabling the number of grid nodes and by designating these nodes to specific modes of operation. The grid can then automatically distribute the workload across the set of enabled nodes.  <MadCap:variable name="Variables.OSS" /> includes only the local node, <b><MadCap:variable name="Variables.Brand" /> Default Node</b>, and therefore does not provide any load balancing capabilities. Upgrade to <MadCap:variable name="Variables.Pro" /> today.</td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

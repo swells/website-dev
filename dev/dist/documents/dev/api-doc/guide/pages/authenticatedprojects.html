@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>1.4.2 Authenticated Projects 8.0.0</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/architecture.html"><strong>2</strong><span>Web Service API Architecture</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/overview.html"><strong>3</strong><span>Web Service API Overview</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/working.html"><strong>4</strong><span>Working with the Web Service APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingusers.html"><strong>5</strong><span>Working with the User APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingprojects.html"><strong>6</strong><span>Working with the Project APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingjobs.html"><strong>7</strong><span>Working with the Job APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingrepository.html"><strong>8</strong><span>Working with the Repository APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingeventstream.html"><strong>9</strong><span>Working with the Event Stream API</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/encodings.html"><strong>10</strong><span>Web Service API Data Encodings</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/explorer.html"><strong>11</strong><span>The API Explorer Tool</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/741changehistory.html"><strong>12</strong><span>API Changes in 7.4.1</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/74changehistory.html"><strong>13</strong><span>API Changes in 7.4</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/73changehistory.html"><strong>14</strong><span>API Changes in 7.3</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/72changehistory.html"><strong>15</strong><span>API Changes in 7.2</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/71changehistory.html"><strong>16</strong><span>API Changes in 7.1</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/70changehistory.html"><strong>17</strong><span>API Changes in 7.0</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/62changehistory.html"><strong>18</strong><span>API Changes in 6.2</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        
+    </div>
+    <p>DeployR API</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../../guide/architecture.html"><strong>2</strong><span>Web Service API Architecture</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>1.4.2 Authenticated Projects - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Microsoft Corporation</p>
+
+                    <p><strong>Version:</strong> 8.0.0</p>
+
+                    
+                </div>
+
+                
+
+                
+
+<h2 id="authenticatedprojects">1.4.2 Authenticated Projects</h2>
+An  <em class="italic">authenticated project</em>  is a project created by an  <em class="italic">authenticated</em>  user. There are three types of  <em class="italic">authenticated</em>  project:
+<ol>
+<li>Temporary Project</li>
+<li>User Blackbox Project</li>
+<li>Persistent Project</li>
+</ol><p class="paragraph"/> <em class="italic">Authenticatd projects</em>  can be created using the following API calls:
+<ol>
+<li><a href="../guide/single.html#projectcreate" class="guide">/r/project/create</a> | Creates a new temporary, user blackbox or persistent project</li>
+<li><a href="../guide/single.html#projectpool" class="guide">/r/project/pool</a> | Creates a pool of temporary projects</li>
+</ol><p class="paragraph"/> <em class="italic">Authenticated</em>  users own projects. Each  <em class="italic">authenticated</em>  user can create zero, one or more projects. Each project is allocated its own workspace and working directory on the server and maintains its own set of R package dependencies along with a full R command history. A user can execute R code on a project using the <a href="../guide/single.html#projectexecutecode" class="guide">/r/project/execute/code</a> and <a href="../guide/single.html#projectexecutescript" class="guide">/r/project/execute/script</a> calls and retrieve the R command history for the project using the <a href="../guide/single.html#projectexecutehistory" class="guide">/r/project/execute/history</a> call.<p class="paragraph"/>Note: Given an  <em class="italic">authenticated</em>  user can do everything an  <em class="italic">anonymous</em>  user can do on the API it is possible for an  <em class="italic">authenticated</em>  user to create and work with  <em class="italic">anonymous projects</em>  as described in the section <a href="../guide/single.html#anonymousprojects" class="guide">Anonymous Projects</a>.<p class="paragraph"/><h4>Temporary Projects</h4><p class="paragraph"/>Temporary projects are useful when an application needs to maintain the same R session for the duration of an  <em class="italic">authenticated</em>  user's session within the application. Once the user makes an explicit call on <a href="../guide/single.html#projectclose" class="guide">/r/project/close</a> or simply signs-out of the application the temporary project and all associated state are permanently deleted by the server.<p class="paragraph"/>A user can create a temporary project by omitting the  <em class="italic">name</em>  parameter on the <a href="../guide/single.html#projectcreate" class="guide">/r/project/create</a> call or they can create a pool of temporary projects using the <a href="../guide/single.html#projectpool" class="guide">/r/project/pool</a> call.<p class="paragraph"/><blockquote class="note">
+<strong class="bold">Important!</strong> All  <em class="italic">unnamed projects</em>  are  <em class="italic">temporary projects</em> .
+</blockquote><p class="paragraph"/><h4>User Blackbox Projects</h4><p class="paragraph"/>A user blackbox project is a special type of temporary project that limits API access on the underlying R session. User blackbox projects are most useful when an application developer wants to associate a temporary project with a user without granting that user unfettered access to the underlying R session.<p class="paragraph"/>There are two types of data  that can be returned when executing an R script on a user blackbox project:
+<ol>
+<li>Unnamed plots generated by the R graphics device on the execution are returned as results</li>
+<li>Named workspace objects identified on the  <em class="italic">robjects</em>  parameter can be returned as DeployR-encoded R objects</li>
+</ol><p class="paragraph"/>All files in a user blackbox project's working directory are completely hidden from the user.<p class="paragraph"/>User blackbox projects can be created using the  <em class="italic">blackbox</em>  parameter on the following API calls:
+<ul class="star">
+<li><a href="../guide/single.html#projectcreate" class="guide">/r/project/create</a> | Creates a new project</li>
+<li><a href="../guide/single.html#projectpool" class="guide">/r/project/pool</a> | Creates a pool of temporary projects</li>
+</ul><p class="paragraph"/>User blackbox projects permit only the following subset of project-related API calls:
+<ul class="star">
+<li><a href="../guide/single.html#projectexecutescript" class="guide">/r/project/execute/script</a> | Executes a script on project</li>
+<li><a href="../guide/single.html#projectexecuteinterrupt" class="guide">/r/project/execute/interrupt</a> | Interrupts a code execution on project</li>
+<li><a href="../guide/single.html#projectping" class="guide">/r/project/ping</a> | Pings a project</li>
+<li><a href="../guide/single.html#projectrecycle" class="guide">/r/project/recycle</a> | Recycles a project R session</li>
+<li><a href="../guide/single.html#projectclose" class="guide">/r/project/close</a> | Closes a project</li>
+</ul><p class="paragraph"/>This set of API calls on user blackbox projects are collectively known as the  <em class="italic">User Blackbox API Controls</em> .<p class="paragraph"/>A user blackbox project also ensure that none of the R code from the R scripts that are executed on that project is ever returned in the response markup.<p class="paragraph"/><h4>Persistent Projects</h4><p class="paragraph"/>Persistent projects are useful when an application needs to maintain the same R session across multiple user sessions within the application. A persistent project is stored indefinitely in the server unless it is explicitly deleted by the user. Whenever users return to the server their own persistent projects are available so that, users can pick up where they last left off. In this way, persistent projects can be developed over days, weeks, months even years.<p class="paragraph"/>The server stores the following state for each persistent project:
+<ul class="star">
+<li>Project workspace.</li>
+<li>Project working directory.</li>
+<li>Project package dependencies.</li>
+<li>Project R command history and associated results.</li>
+</ul><p class="paragraph"/>An  <em class="italic">authenticated</em>  user can create a persistent project by specifying a value for the  <em class="italic">name</em>  parameter on the <a href="../guide/single.html#projectcreate" class="guide">/r/project/create</a> call. Alternatively, if a user is working on a temporary project then that project can become persistent once the user makes a call on <a href="../guide/single.html#projectsave" class="guide">/r/project/save</a> which has the effect of naming the project.<p class="paragraph"/><blockquote class="note">
+<strong class="bold">Important!</strong> All  <em class="italic">named projects</em>  are  <em class="italic">persistent projects</em> .
+</blockquote><p class="paragraph"/><blockquote class="note">
+Please refer to the section <a href="../guide/single.html#workingprojects" class="guide">Working with Projects</a> for a detailed description of all  <em class="italic">authenticated project</em>  related APIs.
+</blockquote><p class="paragraph"/>
+
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item next-right"><a href="../../guide/architecture.html"><strong>2</strong><span>Web Service API Architecture</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    Copyright (c) 2009-2016 Microsoft Corporation
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

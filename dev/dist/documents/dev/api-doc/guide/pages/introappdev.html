@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>1.2 Introducing R for App Developers 8.0.0</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/architecture.html"><strong>2</strong><span>Web Service API Architecture</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/overview.html"><strong>3</strong><span>Web Service API Overview</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/working.html"><strong>4</strong><span>Working with the Web Service APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingusers.html"><strong>5</strong><span>Working with the User APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingprojects.html"><strong>6</strong><span>Working with the Project APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingjobs.html"><strong>7</strong><span>Working with the Job APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingrepository.html"><strong>8</strong><span>Working with the Repository APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingeventstream.html"><strong>9</strong><span>Working with the Event Stream API</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/encodings.html"><strong>10</strong><span>Web Service API Data Encodings</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/explorer.html"><strong>11</strong><span>The API Explorer Tool</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/741changehistory.html"><strong>12</strong><span>API Changes in 7.4.1</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/74changehistory.html"><strong>13</strong><span>API Changes in 7.4</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/73changehistory.html"><strong>14</strong><span>API Changes in 7.3</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/72changehistory.html"><strong>15</strong><span>API Changes in 7.2</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/71changehistory.html"><strong>16</strong><span>API Changes in 7.1</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/70changehistory.html"><strong>17</strong><span>API Changes in 7.0</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/62changehistory.html"><strong>18</strong><span>API Changes in 6.2</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        
+    </div>
+    <p>DeployR API</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../../guide/architecture.html"><strong>2</strong><span>Web Service API Architecture</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>1.2 Introducing R for App Developers - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Microsoft Corporation</p>
+
+                    <p><strong>Version:</strong> 8.0.0</p>
+
+                    
+                </div>
+
+                
+
+                
+
+<h2 id="introappdev">1.2 Introducing R for App Developers</h2>
+<h4>R Analytics Web Services</h4><p class="paragraph"/>While data scientists can work with R directly in a console window or IDE, application developers need a different set of tools to leverage R inside applications. The DeployR API exposes R analytics Web services, making the full capabilities of R available to application developers on a simple yet powerful Web services API.<p class="paragraph"/><h4>Analytics Web Service Integration</h4><p class="paragraph"/>As an application developer integrating with DeployR-managed analytics Web services, typically your interest is in executing R code, not writing it. Data scientists with R programming skills write R code. With one-click in the  <em class="italic">DeployR Repository Manager</em>  this R code can be turned into a DeployR-managed analytics Web service. Once R code is exposed by DeployR as a service, an application can make API calls to pass inputs to the service, execute the service and retrieve outputs from the service. Those outputs can include R object data, R graphics output such as plots and charts, and any file data written to the working directory associated the current R session.<p class="paragraph"/>Each time a service is executed on the API, the service makes use of an R session that is managed by DeployR as a  <em class="italic"><strong class="bold">project</strong></em>  on behalf of the application. Depending on the nature and requirements of your application you can choose to execute services on  <em class="italic">anonymous projects</em>  or on  <em class="italic">authenticated projects</em> .<p class="paragraph"/><strong class="bold"><a href="../guide/single.html#anonymousprojects" class="guide">Anonymous Projects</a></strong>
+<ol>
+<li> <em class="italic"><strong class="bold">Stateless projects</strong></em>  are useful when an application needs an R session to make a one-off request. It may help to think of a stateless project as a disposable R session, that is used once and then discarded. There are many types of application workflows that can benefit from working with stateless projects.</li>
+<li> <em class="italic"><strong class="bold">HTTP blackbox projects</strong></em>  make stateful R sessions available to  <em class="italic">anonymous</em>  users. HTTP blackbox projects are useful when an application needs to maintain the same R session for the duration of an  <em class="italic">anonymous</em>  user's HTTP session.</li>
+</ol><p class="paragraph"/><strong class="bold"><a href="../guide/single.html#authenticatedprojects" class="guide">Authenticated Projects</a></strong>
+<ol>
+<li> <em class="italic"><strong class="bold">Temporary projects</strong></em>  are useful when an application needs to maintain the same R session for the duration of an  <em class="italic">authenticated</em>  user's session within the application.</li>
+<li> <em class="italic"><strong class="bold">User blackbox projects</strong></em>  are a special type of temporary project that limits API access on the underlying R session. User blackbox projects are most useful when an application developer wants to associate a temporary project with a user without granting that user unfettered access to the underlying R session.</li>
+<li> <em class="italic"><strong class="bold">Persistent projects</strong></em>  are useful when an application needs to maintain the same R session across multiple user sessions within the application. Each time a user executes R code on their persistent project the accumulated R objects in the workspace as well as files in the working directory from previous service executions are available. A persistent project remains available indefinitely to the user until they decide to explicitly delete it.</li>
+</ol><p class="paragraph"/>To simplify integration of R analytics Web services using the DeployR API, we provide several client libraries, which are currently available for Java, JavaScript and .NET developers. A major benefit of using these client libraries is that they simplify making calls, encoding data, and handling response markup on the API.
+
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item next-right"><a href="../../guide/architecture.html"><strong>2</strong><span>Web Service API Architecture</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    Copyright (c) 2009-2016 Microsoft Corporation
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

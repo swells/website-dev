@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="DeployR - Simple R analytics integration for application developers.">
+<meta name="keywords" content="R,Simple,DeployR,Java,JavaScript,.NET,Statistics,Big Data">
+<meta name="author" content="Microsoft Corporation">
+<meta name="google-site-verification" content="BQWjliQil8coeYFDfd-nee7j5GDJ0p-6lU4abeJiAZU">
+
+<!--<time itemprop="buildDate" datetime="Wednesday, March 16th, 2016, 9:47:05 AM PDT"></time>-->
+
+<title>
+  DeployR &middot; Case Studies
+</title>
+
+<!-- Favicons -->
+<link rel="shortcut icon" href="../assets/img/favicon.png" type="image/png" >
+<link rel="icon" href="../assets/img/favicon.png" type="image/png">
+
+<!-- Bootstrap styles -->
+<link rel="stylesheet" href="../assets/css/vendor/bootstrap/bootstrap.min.css">
+
+<!-- Documentation extras -->
+<link href="../assets/css/github.css" rel="stylesheet">
+
+<!-- Glyphicons -->
+<link rel="stylesheet" href="../assets/css/vendor/glyphicons/glyphicons.min.css">
+<link rel="stylesheet" href="../assets/css/vendor/glyphicons/filetypes.min.css">
+<link rel="stylesheet" href="../assets/css/vendor/glyphicons/social.min.css">
+
+<!-- Google Webfonts -->
+<link href="//fonts.googleapis.com/css?family=Open+Sans:400,700,600" rel="stylesheet" type="text/css">
+
+<!-- LayerSlider styles -->
+<link rel="stylesheet" href="../assets/css/vendor/layerslider/layerslider.min.css" type="text/css">
+
+<!-- Grove Styles (switch for different color schemes, e.g. "styles-cleanblue.css") -->
+<link rel="stylesheet" href="../assets/css/styles-blue.css" id="grove-styles">
+
+<!-- Site Styles -->
+<link href="../assets/css/site.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <link rel="stylesheet" href="../assets/css/ie8.css">        
+  <script src="../assets/js/vendor/google/html5-3.6-respond-1.1.0.min.js"></script>
+<![endif]-->
+
+<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery/jquery-1.9.1.min.js"><\/script>')</script>
+<!-- jQuery with jQuery Easing, and jQuery Transit JS -->
+     
+<!-- LayerSlider from Kreatura Media with Transitions -->
+<script src="../assets/js/vendor/layerslider/greensock.js" type="text/javascript"></script>
+<script src="../assets/js/vendor/layerslider/layerslider.transitions.js" type="text/javascript"></script>
+<script src="../assets/js/vendor/layerslider/layerslider.kreaturamedia.jquery.js" type="text/javascript"></script>
+
+<!-- Grove Layerslider initiation script -->
+<script src="../assets/js/grove-slider.js" type="text/javascript"></script>
+
+<!-- GA for DeployR-site -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-6984166-13', 'auto');
+  ga('send', 'pageview');
+</script>
+  </head>
+  <body data-spy="scroll" data-target="#sidenav">
+    <a class="sr-only" href="#content">Skip to main content</a>
+
+    <!-- master nav -->
+    <header>
+   <nav class="navbar navbar-default grove-navbar" role="navigation">
+      <div class="container">
+         <div class="navbar-header">
+            <a href="#" class="grove-toggle" data-toggle="collapse" data-target=".grove-nav">   
+            <i class="glyphicons show_lines"></i>  
+            </a>
+            <a href="/" class="navbar-brand">
+            <img src="../assets/img/rLogo.png" alt="DeployR"> DeployR
+            </a>
+         </div>
+         <div class="collapse navbar-collapse grove-nav">
+            <ul class="nav navbar-nav">
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Data Scientists <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/data-scientist">Getting Started</a></li>
+                <!--<li><a href="#">Learn-by-Example Tutorial</a></li>-->
+                     <li><a href="/documents/dev/scientist-portable-code">Portable R Code Guide</a></li>
+                     <li><a href="/documents/help/repo-man">Repository Manager Help</a></li>
+                     <li><a href="/documents/getting-started/data-scientist#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Application Developers <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/application-developer">Getting Started</a></li>
+                     <!--<li><a href="#">Learn-by-Example Tutorial</a></li>-->
+                     <li><a href="/documents/dev/rbroker">RBroker Framework Tutorial</a></li>
+                     <li><a href="/documents/dev/clientlib">Client Library Tutorial</a></li>
+                     <li><a href="/documents/dev/api-doc">API Reference Guide</a></li>
+                     <li><a href="/docanddown">Library Downloads</a></li>
+                     <li><a href="/documents/getting-started/application-developer/#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Administrators <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/administrator">Getting Started</a></li>
+                     <li><a href="/documents/admin/install">Installation & Configuration</a></li>
+                     <li><a href="/documents/admin/security">Security</a></li>
+                     <li><a href="/documents/admin/r-package-mgmt">R Package Management</a></li>
+                     <li><a href="/documents/help/admin-console">Administration Console Help</a></li>
+                     <li><a href="/documents/admin/troubleshoot">Troubleshooting</a></li>
+                     <li><a href="/documents/getting-started/administrator/#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">
+                  Community <b class="caret"></b>
+                  </a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="http://go.microsoft.com/fwlink/?LinkID=708535" target="_blank">Forum / Discussion Group</a></li>
+                     <li><a href="/faq">FAQs</a></li>
+                  </ul>
+               </li>
+              <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Download<b class="caret"></b></a>            
+                  <ul class="dropdown-menu pull-right">   
+                    <li><a href="/download">Download DeployR</a></li>
+                    <li><a href="/documents/admin/install">Install DeployR</a></li>
+                    <li><a href="/releases/">Release History</a></li>
+                  </ul>
+            </ul>
+         </div>
+         <!-- /.navbar-collapse -->
+      </div>
+   </nav>
+</header>
+
+
+    <!-- page title -->
+    <div class="widewrapper pagetitle strong-highlight">
+   <div class="container">
+      <h1>Case Studies <small></small></h1>
+      <span class="product-version">
+         Version 8.1.0
+         
+      </span>
+   </div>
+</div>
+  
+    <div class="widewrapper sf-wrapper">
+      <div class="container content" role="main">
+        <div>
+          
+
+ <div>
+    <div class="headline">
+       Samples built with DeployR
+    </div>
+    
+<div class="large-features">
+	<div class="feature">
+		<div class="row">
+			<div class="col-md-6  "> 
+            <img src="../assets/img/construction.png" alt="Under Construction" align="right">
+                </div>
+			<div class="col-md-6 description ">
+				<h3 class="with-icon">
+					<i class="glyphicons film"></i>					
+                     Under Construction
+				</h3>
+				<p> 
+                    This page under construction
+				</p>
+			</div>
+		</div>
+	</div>         
+</div>
+
+ </div>
+
+        </div>    
+      </div>
+      <div class="push"></div>
+    </div>
+
+    <!-- Footer
+    ================================================== -->
+
+    <footer class="widewrapper footer bs-footer" role="contentinfo">
+  <div class="container">
+    <div class="row footer">
+      <div class="col-sm-3">
+        <h4>Get Started</h4>
+        <ul class="grove-list">
+          <li><a href="/documents/getting-started/about">About DeployR</a></li>
+          <li><a href="/download">Download DeployR</a></li>
+          <li><a href="/documents/admin/install">Install DeployR</a></li>
+          <li><a href="/documents/admin/troubleshoot">Troubleshooting & Diagnostics</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>Develop</h4>
+        <ul class="grove-list">
+          <li><a href="/dev">Get Client Developer Tools</a></li>
+            <li><a href="/docanddown#rbroker">RBroker Framework</a></li>
+          <li><a href="/docanddown#clientlib">API Client Libraries</a></li>
+          <li><a target="_blank" href="/documents/dev/api-doc">API Reference Guide</a></li>
+          <li><a target="_blank" href="/documents/help/repo-man">Repository Manager</a></li>
+         <!-- <li><a href="/docanddown#integration">3rd Party Tool Integration</a></li>-->
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>Manage</h4>
+          <ul class="grove-list">
+            <li><a target="_blank" href="/documents/help/admin-console">Administration Console</a></li>
+            <li><a href="/documents/admin/security">Security Guide</a></li>
+            <li><a href="/documents/admin/throughput">Scale & Throughput</a></li>
+            <li><a href="/documents/admin/highavail">High Availability</a></li>
+            <li><a href="/documents/admin/bigdata">Managing Big Data</a></li>
+          </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>DeployR 8.1.0</h4>
+          <ul class="grove-list">
+            <li><a href="/license">License Information</a></li>
+      	    <li><a href="/documents/admin/whats-new/">What's New in 8.1.0</a></li>
+	          <li><a href="http://go.microsoft.com/fwlink/?LinkID=708535" target="_blank">Join the DeployR Forum</a></li>
+	          <li><a href="/releases/">Release Archives</a></li>
+          </ul>
+         <div><small> &copy; 2015 Microsoft Corporation</small></div>
+      </div>    
+    </div>
+  </div>          
+</footer> 
+
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<script src="../assets/js/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="../assets/js/vendor/modernizr/modernizr.js"></script>
+<script src="../assets/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<!-- Google Analytics (click event)
+================================================== -->
+
+<script>
+   $('.ga-track').on('click', function() {
+      try { 
+        var label = $(this).data('ga') || $(this).text();
+        ga('send', 'event', 'button', 'click', label);
+      } catch (err) {}
+   });
+</script>
+
+<!-- TOC
+================================================= -->
+<script>
+  // back to top
+  setTimeout(function () {
+     var $sideBar = $('.bs-sidebar');
+     if (!$sideBar) { return; }
+     $sideBar.affix({
+     offset: {
+     top: function () {
+        var offsetTop = $sideBar.offset().top
+        var sideBarMargin = parseInt($sideBar.children(0).css('margin-top'), 10)
+        var navOuterHeight = $('.bs-docs-nav').height()
+        return (this.top = offsetTop - navOuterHeight - sideBarMargin)
+      }
+      , bottom: function () {
+        return (this.bottom = $('.bs-footer').outerHeight(true))
+      }
+    }
+    })
+  }, 100)
+</script>
+
+<script>
+  $('.tab-content div').each(function( index ) {
+    if(index === 0) { $(this).addClass('active'); }
+  });
+
+  $('.code-tabs a').click(function (e) {
+  });
+
+</script>
+
+     
+  </body>
+</html>

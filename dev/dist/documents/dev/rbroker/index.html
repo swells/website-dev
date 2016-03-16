@@ -1,0 +1,2143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="DeployR - Simple R analytics integration for application developers.">
+<meta name="keywords" content="R,Simple,DeployR,Java,JavaScript,.NET,Statistics,Big Data">
+<meta name="author" content="Microsoft Corporation">
+<meta name="google-site-verification" content="BQWjliQil8coeYFDfd-nee7j5GDJ0p-6lU4abeJiAZU">
+
+<!--<time itemprop="buildDate" datetime="Wednesday, March 16th, 2016, 9:47:06 AM PDT"></time>-->
+
+<title>
+  DeployR &middot; RBroker Framework Tutorial
+</title>
+
+<!-- Favicons -->
+<link rel="shortcut icon" href="../../../assets/img/favicon.png" type="image/png" >
+<link rel="icon" href="../../../assets/img/favicon.png" type="image/png">
+
+<!-- Bootstrap styles -->
+<link rel="stylesheet" href="../../../assets/css/vendor/bootstrap/bootstrap.min.css">
+
+<!-- Documentation extras -->
+<link href="../../../assets/css/github.css" rel="stylesheet">
+
+<!-- Glyphicons -->
+<link rel="stylesheet" href="../../../assets/css/vendor/glyphicons/glyphicons.min.css">
+<link rel="stylesheet" href="../../../assets/css/vendor/glyphicons/filetypes.min.css">
+<link rel="stylesheet" href="../../../assets/css/vendor/glyphicons/social.min.css">
+
+<!-- Google Webfonts -->
+<link href="//fonts.googleapis.com/css?family=Open+Sans:400,700,600" rel="stylesheet" type="text/css">
+
+<!-- LayerSlider styles -->
+<link rel="stylesheet" href="../../../assets/css/vendor/layerslider/layerslider.min.css" type="text/css">
+
+<!-- Grove Styles (switch for different color schemes, e.g. "styles-cleanblue.css") -->
+<link rel="stylesheet" href="../../../assets/css/styles-blue.css" id="grove-styles">
+
+<!-- Site Styles -->
+<link href="../../../assets/css/site.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <link rel="stylesheet" href="../../../assets/css/ie8.css">        
+  <script src="../../../assets/js/vendor/google/html5-3.6-respond-1.1.0.min.js"></script>
+<![endif]-->
+
+<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../../assets/js/vendor/jquery/jquery-1.9.1.min.js"><\/script>')</script>
+<!-- jQuery with jQuery Easing, and jQuery Transit JS -->
+     
+<!-- LayerSlider from Kreatura Media with Transitions -->
+<script src="../../../assets/js/vendor/layerslider/greensock.js" type="text/javascript"></script>
+<script src="../../../assets/js/vendor/layerslider/layerslider.transitions.js" type="text/javascript"></script>
+<script src="../../../assets/js/vendor/layerslider/layerslider.kreaturamedia.jquery.js" type="text/javascript"></script>
+
+<!-- Grove Layerslider initiation script -->
+<script src="../../../assets/js/grove-slider.js" type="text/javascript"></script>
+
+<!-- GA for DeployR-site -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-6984166-13', 'auto');
+  ga('send', 'pageview');
+</script>
+  </head>
+  <body data-spy="scroll" data-target="#sidenav">
+    <a class="sr-only" href="#content">Skip to main content</a>
+
+    <!-- master nav -->
+    <header>
+   <nav class="navbar navbar-default grove-navbar" role="navigation">
+      <div class="container">
+         <div class="navbar-header">
+            <a href="#" class="grove-toggle" data-toggle="collapse" data-target=".grove-nav">   
+            <i class="glyphicons show_lines"></i>  
+            </a>
+            <a href="/" class="navbar-brand">
+            <img src="../../../assets/img/rLogo.png" alt="DeployR"> DeployR
+            </a>
+         </div>
+         <div class="collapse navbar-collapse grove-nav">
+            <ul class="nav navbar-nav">
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Data Scientists <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/data-scientist">Getting Started</a></li>
+                <!--<li><a href="#">Learn-by-Example Tutorial</a></li>-->
+                     <li><a href="/documents/dev/scientist-portable-code">Portable R Code Guide</a></li>
+                     <li><a href="/documents/help/repo-man">Repository Manager Help</a></li>
+                     <li><a href="/documents/getting-started/data-scientist#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Application Developers <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/application-developer">Getting Started</a></li>
+                     <!--<li><a href="#">Learn-by-Example Tutorial</a></li>-->
+                     <li><a href="/documents/dev/rbroker">RBroker Framework Tutorial</a></li>
+                     <li><a href="/documents/dev/clientlib">Client Library Tutorial</a></li>
+                     <li><a href="/documents/dev/api-doc">API Reference Guide</a></li>
+                     <li><a href="/docanddown">Library Downloads</a></li>
+                     <li><a href="/documents/getting-started/application-developer/#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Administrators <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/administrator">Getting Started</a></li>
+                     <li><a href="/documents/admin/install">Installation & Configuration</a></li>
+                     <li><a href="/documents/admin/security">Security</a></li>
+                     <li><a href="/documents/admin/r-package-mgmt">R Package Management</a></li>
+                     <li><a href="/documents/help/admin-console">Administration Console Help</a></li>
+                     <li><a href="/documents/admin/troubleshoot">Troubleshooting</a></li>
+                     <li><a href="/documents/getting-started/administrator/#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">
+                  Community <b class="caret"></b>
+                  </a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="http://go.microsoft.com/fwlink/?LinkID=708535" target="_blank">Forum / Discussion Group</a></li>
+                     <li><a href="/faq">FAQs</a></li>
+                  </ul>
+               </li>
+              <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Download<b class="caret"></b></a>            
+                  <ul class="dropdown-menu pull-right">   
+                    <li><a href="/download">Download DeployR</a></li>
+                    <li><a href="/documents/admin/install">Install DeployR</a></li>
+                    <li><a href="/releases/">Release History</a></li>
+                  </ul>
+            </ul>
+         </div>
+         <!-- /.navbar-collapse -->
+      </div>
+   </nav>
+</header>
+
+
+    <!-- page title -->
+    <div class="widewrapper pagetitle strong-highlight">
+   <div class="container">
+      <h1>RBroker Framework Tutorial <small></small></h1>
+      <span class="product-version">
+         Version 8.1.0
+         
+      </span>
+   </div>
+</div>
+  
+    <div class="widewrapper sf-wrapper">
+      <div class="container content" role="main">
+        <div>
+          
+<div class="row"><div class="col-md-3" id="sidenav"><div class="bs-sidebar hidden-print hidden-xs hidden-sm" role="complementary"><ul class="nav bs-sidenav"><li class="active"><a href="#introduction">Introduction</a><ul class="nav"><li><a class="toc-section-0" href="#blocks">Basic Building Blocks</a></li><li><a class="toc-section-0" href="#model">Basic Programming Model</a></li><li><a class="toc-section-0" href="#programming">Hello World Example</a></li></ul></li><li><a href="#runtimes">RBroker Runtime Options</a><ul class="nav"><li><a class="toc-section-0" href="#discrete">Discrete Task Runtime</a></li><li><a class="toc-section-0" href="#pooled">Pooled Task Runtime</a></li><li><a class="toc-section-0" href="#background">Background Task Runtime</a></li></ul></li><li><a href="#resources">RBroker Resource Management</a><ul class="nav"></ul></li><li><a href="#priority">RTask Priority Execution</a><ul class="nav"></ul></li><li><a href="#simulation">Client Application Simulations</a><ul class="nav"></ul></li><li><a href="#profiling">Client Application Profiling</a><ul class="nav"></ul></li><li><a href="#gridprimer">Grid Resource Management</a><ul class="nav"></ul></li></ul><div class="related"><h3 id="download-developer-tools">Download Developer Tools</h3>
+<p><a href="/docanddown/#rbroker">Download client developer tools and documentation for Java, JavaScript or .NET</a>.</p>
+</div></div></div><div class="col-md-9" role="main"><div class="container-fluid content doc-content"><h1 id="introduction">Introduction</h1>
+
+<p>The RBroker Framework is the simplest way to integrate DeployR-enabled
+analytics Web services inside any Java, JavaScript or .NET application.  This
+document introduces the basic building blocks exposed by the 
+framework, explains the programming model encouraged by the framework,
+and demonstrates the framework in action using language-specific code samples.</p>
+<div class="alert alert-warning"><strong>Important! </strong>
+The RBroker Framework is designed to support transactional, on-demand
+analytics, where each invocation on an analytics Web service
+is a standalone operation that executes on a stateless R session environment.
+If your application requires a long-lived stateful R session environment,
+then please see the <a href="/docanddown#clientlib">DeployR Client Libraries</a>, which offer support
+for stateful operations on DeployR-managed Projects.
+</div>
+
+<div class="alert alert-info">
+    <strong>Try Out Our Examples! </strong>
+    Explore the RBroker Framework examples for 
+             <a target="_blank" href="https://github.com/Microsoft/java-example-rbroker-basics">Java,</a> 
+            <a target="_blank" href="https://github.com/Microsoft/js-rbroker-framework">Javascript,</a> and 
+            <a target="_blank" href="https://github.com/Microsoft/dotnet-rbroker-framework">.NET.</a> Find them under the <code>examples</code> directory of each Github repository.  Additional sample applications are also <a href="http://github.com/deployr?query=example" target="_blank">available on GitHub.</a>
+</div>
+
+<h2 id="blocks">Basic Building Blocks</h2>
+
+<p>The RBroker Framework defines three simple building blocks:</p>
+<ol>
+<li><b>RBroker</b>: an RTask execution engine</li>
+<li><b>RTask</b>: an executable representing any analytics Web service</li>
+<li><b>RTaskResult</b>: a collection of result data for an instance of RTask</li>
+</ol>
+<p>These building blocks are described in further detail in the following
+sections.</p>
+<h3 id="building-block-1-rbroker">Building Block 1: RBroker</h3>
+<p>At its most fundamental level, an RBroker is an RTask execution engine,
+exposing a simple interface to be used by client application developers to 
+submit RTask for execution. However, an RBroker engine handles more than simple
+execution. Specifically, an RBroker engine is responsible for the following:</p>
+<ol>
+<li>Queuing RTask requests on behalf of client applications</li>
+<li>Acquiring a dedicated R session for the purposes of executing each RTask</li>
+<li>Initiating optional R session pre-initialization for each RTask</li>
+<li>Launching the execution of each RTask</li>
+<li>Handling execution success or failure responses for each RTask</li>
+<li>Returning RTaskResult result data for each RTask to client applications</li>
+</ol>
+<p>An RBroker takes on these responsibilities so that client application
+developers don&#39;t have to.</p>
+<h3 id="building-block-2-rtask">Building Block 2: RTask</h3>
+<p>An RTask is an executable description of any DeployR-enabled
+analytics Web service. </p>
+<p>There are three distinct styles of analytics Web service available to client application developers. <br/>They are based on:</p>
+<ol>
+<li>Repository-managed R scripts</li>
+<li>Arbitrary blocks of R code</li>
+<li>URL-addressable R scripts</li>
+</ol>
+<p>Each style of analytics Web service is supported when instantiating 
+instances of RTask. To execute any RTask, submit the RTask to an
+instance of RBroker.</p>
+<h3 id="building-block-3-rtaskresult">Building Block 3: RTaskResult</h3>
+<p>An RTaskResult provides the client application access to RTask result
+data. Such result data may include:</p>
+<ol>
+<li>RTask generated R console output</li>
+<li>RTask generated graphics device plots</li>
+<li>RTask generated working directory files</li>
+<li>RTask generated R object workspace data</li>
+</ol>
+<p>RTaskResult data can be read, displayed, processed, stored, or further
+distributed by client applications.</p>
+<h2 id="model">Basic Programming Model</h2>
+
+<p>The basic programming model when working with the RBroker framework is as follows:</p>
+<ol>
+<li><p>Create an instance of RBroker within your application.</p>
+</li>
+<li><p>Create one or more instances of RTask within your application.</p>
+</li>
+<li><p>Submit these RTasks to your instance of RBroker for execution.</p>
+</li>
+<li><p>Integrate the results of your RTasks returned by RBroker within your
+application.</p>
+</li>
+</ol>
+<p>As this basic programming model indicates, when using the RBroker framework,
+your application logic can focus entirely on defining your R analytics tasks
+and integrating your R analytics task results. The inherent complexity of
+managing both client-side DeployR API calls and server-side R session
+lifecycles is handled entirely by RBroker, which greatly simplifies client
+application development.</p>
+<h2 id="programming">Hello World Example</h2>
+
+<p>The following code snippets provide the ubiquituous &quot;Hello World&quot; example
+for the RBroker framework. Each snippet provides a brief demonstration of how the
+RBroker framework basic programming model is accomplished in Java, JavaScript
+and C# code respectively.</p>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-V1K-hX6OMag-0" data-toggle="tab" data-type="">Java</a></li><li class=""><a href="#tab-V1K-hX6OMag-1" data-toggle="tab" data-type="">JavaScript</a></li><li class=""><a href="#tab-V1K-hX6OMag-2" data-toggle="tab" data-type="">C#</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-V1K-hX6OMag-0"><p></p>
+<pre><code>//
+// 1. Create an instance of RBroker.
+//
+// Typically, a client application will require only a single
+// instance of RBroker.
+//
+// An RBrokerFactory is provided to facilitate the creation of
+// RBroker instances.
+//
+RBroker rBroker =
+    RBrokerFactory.discreteTaskBroker(brokerCfg);
+
+//
+// 2. Define an instance of RTask.
+//
+// This RTask describes an analytics Web service based on a
+// repository-managed R script: /george/demo/regression.R.
+//
+RTask rTask = RTaskFactory.discreteTask(&quot;regression&quot;,
+                                        &quot;demo&quot;,
+                                        &quot;george&quot;,
+                                        version,
+                                        taskOptions);
+
+
+//
+// 3. Submit the instance of RTask to RBroker for execution.
+//
+// The RBroker.submit() call is non-blocking so an instance
+// of RTaskToken is returned immediately.
+//
+RTaskToken rTaskToken = rBroker.submit(rTask);
+
+//
+// 4. Retrieve the RTask result.
+// 
+// An RTaskResult provides a client application access to RTask
+// results, including R console output, generated plots or files,
+// and DeployR-encoded R object workspace data.
+//
+// While this example demonstrates a synchronous approach to RTaskResult
+// handling, the RBRoker framework also supports an asynchronous model.
+// The asynchronous model is recommended for all but the most simple integrations.
+//
+RTaskResult rTaskResult = rTaskToken.getResult();</code></pre>
+<p></p></div><div class="tab-pane" id="tab-V1K-hX6OMag-1"><p></p>
+<pre><code>// Browser --&gt; window.rbroker
+&lt;script src=&quot;rbroker.js&quot;&gt;&lt;/script&gt;
+
+// Node.js
+#!/bin/env node
+var rbroker = require(&#39;rbroker&#39;);
+
+//
+// 1. Create an instance of RBroker.
+//
+// Typically, a client application will require only a single
+// instance of RBroker.
+//
+// An RBrokerFactory is provided to facilitate the creation of
+// RBroker instances.
+//
+var dsBroker = rbroker.discreteTaskBroker(brokerCfg);
+
+//
+// 2. Define an instance of RTask.
+//
+// This RTask describes an analytics Web service based on a
+// repository-managed R script: /george/demo/regression.R.
+//
+var rTask = rbroker.discreteTask({ 
+    filename: &#39;regression&#39;,
+    directory: &#39;demo&#39;,
+    author: &#39;george&#39;,
+    version: version
+    // more options...
+});
+
+//
+// 3. Submit the instance of RTask to RBroker for execution.
+//
+// The RBroker.submit() call is non-blocking so an instance
+// of RTaskToken is returned immediately.
+//
+var rTaskToken = dsBroker.submit(rTask);
+
+//
+// 4. Retrieve the RTask result.
+// 
+// An RTaskResult provides a client application access to RTask
+// results, including R console output, generated plots or files,
+// and DeployR-encoded R object workspace data.
+//
+rTasktoken.complete(function(rTask, rTaskResult) {
+   // result...
+});  
+
+//
+// Or combine Steps (3 and 4) above into a single chain using `.complete()`
+//
+dsBroker.submit(rTask)
+   .complete(function(rTask, rTaskResult) {
+      // result...
+   });</code></pre>
+<p></p></div><div class="tab-pane" id="tab-V1K-hX6OMag-2"><p></p>
+<pre><code>//
+// 1. Create an instance of RBroker.
+//
+// Typically, a client application will require only a single
+// instance of RBroker.
+//
+// An RBrokerFactory is provided to facilitate the creation of
+// RBroker instances.
+//
+RBroker rBroker = RBrokerFactory.discreteTaskBroker(brokerCfg);
+
+//
+// 2. Define an instance of RTask.
+//
+// This RTask describes an analytics Web service based on a
+// repository-managed R script: /george/demo/regression.R.
+//
+DiscreteTaskOptions taskOptions = new DiscreteTaskOptions();
+RTask rTask = RTaskFactory.discreteTask(&quot;regression&quot;,
+                                        &quot;demo&quot;,
+                                        &quot;george&quot;,
+                                        &quot;&quot;,
+                                        taskOptions);
+
+
+//
+// 3. Submit the instance of RTask to RBroker for execution.
+//
+// The RBroker.submit() call is non-blocking so an instance
+// of RTaskToken is returned immediately.
+//
+RTaskToken rTaskToken = rBroker.submit(rTask);
+
+//
+// 4. Retrieve the RTask result.
+// 
+// An RTaskResult provides a client application access to RTask
+// results, including R console output, generated plots or files,
+// and DeployR-encoded R object workspace data.
+//
+// While this example demonstrates a synchronous approach to RTaskResult
+// handling, the RBRoker framework also supports an asynchronous model.
+// The asynchronous model is recommended for all but the most simple integrations.
+//
+RTaskResult rTaskResult = rTaskToken.getResult();</code></pre>
+<p></p></div></div><p></p>
+<div class="alert alert-info">
+  <strong>&#39;Try Out Our Examples! </strong>
+  After downloading the RBroker Framework, you can find basic examples that complement this tutorial under the <code>deployr/examples</code> directory.  Additionally, find more comprehensive examples on <a href="http://github.com/deployr" target="_blank">GitHub</a>.
+</div>
+
+
+<h1 id="runtimes">RBroker Runtime Options</h1>
+
+<p>The RBroker Framework defines three simple building blocks 
+(RBroker, RTask and RTaskResult), which can be
+instantiated in a number of ways to allow client
+application solutions to leverage distinct runtime characteristics
+from the framework.</p>
+<p>Currently, there are three RBroker runtimes available. These runtimes are
+identified as:</p>
+<ol>
+<li><a href="#discrete">Discrete Task Runtime</a></li>
+<li><a href="#pooled">Pooled Task Runtime</a></li>
+<li><a href="#background">Background Task Runtime</a></li>
+</ol>
+<div class="alert alert-warning"><strong>Important! </strong>
+When contemplating any RBroker-based solution, a developer must first
+decide which runtime to use.
+</div>
+
+<p>The following sections detail the characteristics of each RBroker runtime
+and provide guidance to help developers make the correct runtime selection
+based on their specific needs.</p>
+<h2 id="discrete">Discrete Task Runtime</h2>
+
+<p>The Discrete Task Runtime acquires DeployR grid resources per RTask
+on-demand, which has a number of important consequences at runtime.
+These consequences are:</p>
+<ol>
+<li><p>If an appropriate slot on the grid can be acquired by the RBroker,
+then an RTask will be executed.</p>
+</li>
+<li><p>If an appropriate slot on the grid can not be acquired by the the
+RBroker, then the RTask result will indicate an <code>RGridException</code> failure.</p>
+</li>
+<li><p>Any RTask indicating an <code>RGridException</code> failure can be resubmitted to
+the RBroker.</p>
+ <div class="alert alert-warning"><strong>Important! </strong>
+ It is the responsibility of the client application
+ developer to decide whether such RTasks should be resubmitted to RBroker,
+ logged by the application, and/or reported to the end-user.
+ </div>
+</li>
+<li><p>This runtime supports a <code>maxConcurrency</code> configuration property that
+limits the maximum number of RTasks that the RBroker will attempt to
+execute in parallel. All RTasks submitted in excess of this limit are
+automatically queued by the RBroker, which ensures that no more than <code>maxConcurrency</code>
+RTasks are executing on the runtime at any one time.</p>
+</li>
+<li><p>Tuning the <code>maxConcurrency</code> property to reflect the real-world limits
+determined by grid resources provisioned by the DeployR system administrator
+is an important step when deploying solutions on the Discrete Task Runtime.</p>
+ <div class="alert alert-warning"><strong>Important! </strong>
+ See the <a href="#gridprimer">Grid Resource Management</a> section of this
+ tutorial for guidance when setting <code>maxConcurrency</code> for your RBroker
+ instance.
+ </div>
+
+</li>
+</ol>
+<h3 id="discrete-task-runtime-suitability">Discrete Task Runtime Suitability</h3>
+<p>This type of runtime is well-suited to all forms of RBroker prototyping as well as for public facing production deployments. If you anticipate anonymous users making use of DeployR analytics Web services, then this runtime is for you.</p>
+<div class="alert alert-info"><strong>Tip! </strong>
+If that does not sound like a suitable RBroker runtime for your client
+application, then consider the <a href="#pooled">Pooled Task Runtime</a> or the
+<a href="#background">Background Task Runtime</a>.
+</div>
+
+<h3 id="discrete-task-runtime-programming-model">Discrete Task Runtime Programming Model</h3>
+<p>The Discrete Task Runtime is supported by the DiscreteTaskBroker. This
+broker executes instances of DiscreteTask.  The R session environment
+allocated on the grid per DiscreteTask can be pre-initialized using
+DiscreteTaskOptions.</p>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-N1cWhQ6dfTg-0" data-toggle="tab" data-type="">Java</a></li><li class=""><a href="#tab-N1cWhQ6dfTg-1" data-toggle="tab" data-type="">JavaScript</a></li><li class=""><a href="#tab-N1cWhQ6dfTg-2" data-toggle="tab" data-type="">C#</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-N1cWhQ6dfTg-0"><p></p>
+<pre><code>//
+// 1. Create an instance of DiscreteTaskBroker.
+//
+RBroker rBroker =
+    RBrokerFactory.discreteTaskBroker(brokerCfg);
+
+//
+// 2.1 Create an instance of DiscreteTask.
+//
+// This RTask describes an analytics Web service based on a
+// repository-managed R script: /george/demo/regression.R.
+//
+RTask rTask = RTaskFactory.discreteTask(&quot;regression&quot;,
+                                        &quot;demo&quot;,
+                                        &quot;george&quot;,
+                                        version,
+                                        discreteTaskOptions);
+
+//
+// 2.2 Create an instance of DiscreteTask.
+//
+// RTasks describing analytics Web services based on arbitrary
+// blocks of R code are not supported by DiscreteTaskBroker.
+//
+
+//
+// 2.3. Create an instance of DiscreteTask.
+//
+// This RTask describes an analytics Web service based on a
+// URL-addressable R script: [regressionURL]
+//
+// This type of RTask is available only when executing on
+// behalf of an authenticated user with POWER_USER permissions.
+//
+RTask rTask = RTaskFactory.discreteTask(regressionURL,
+                                        discreteTaskOptions);
+
+//
+// 3. Submit instance of RTask to RBroker for execution.
+//
+RTaskToken rTaskToken = rBroker.submit(rTask);</code></pre>
+<p></p></div><div class="tab-pane" id="tab-N1cWhQ6dfTg-1"><p></p>
+<pre><code>// Browser --&gt; window.rbroker
+&lt;script src=&quot;rbroker.js&quot;&gt;&lt;/script&gt;
+
+// Node.js
+#!/bin/env node
+var rbroker = require(&#39;rbroker&#39;);
+
+//
+// 1. Create an instance of DiscreteTaskBroker.
+//
+var dsBroker = rbroker.discreteTaskBroker(brokerCfg);
+
+//
+// 2.1 Create an instance of DiscreteTask.
+//
+// This RTask describes an analytics Web service based on a
+// repository-managed R script: /george/demo/regression.R.
+//
+var rTask = rbroker.discreteTask({ 
+    filename: &#39;regression&#39;,
+    directory: &#39;demo&#39;,
+    author: &#39;george&#39;,
+    version: version
+    // more discrete-task-options...
+});
+
+//
+// 2.2 Create an instance of DiscreteTask.
+//
+// RTasks describing analytics Web services based on arbitrary
+// blocks of R code are not supported by DiscreteTaskBroker.
+//
+var rTask = rbroker.discreteTask({ 
+  code: codeBlock 
+  // more pooled-task-options...
+});
+
+//
+// 2.3. Create an instance of DiscreteTask.
+//
+// This RTask describes an analytics Web service based on a
+// URL-addressable R script: [regressionURL]
+//
+// This type of RTask is available only when executing on
+// behalf of an authenticated user with POWER_USER permissions.
+//
+var rTask = rbroker.discreteTask({ 
+    externalsource: regressionURL
+    // more discrete-task-options...
+});
+
+//
+// 3. Submit instance of RTask to RBroker for execution.
+//
+var rTaskToken = dsBroker.submit(rTask);</code></pre>
+<p></p></div><div class="tab-pane" id="tab-N1cWhQ6dfTg-2"><p></p>
+<pre><code>//
+// 1. Create an instance of DiscreteTaskBroker.
+//
+RBroker rBroker = RBrokerFactory.discreteTaskBroker(brokerCfg);
+
+//
+// 2.1 Create an instance of DiscreteTask.
+//
+// This RTask describes an analytics Web service based on a
+// repository-managed R script: /george/demo/regression.R.
+//
+RTask rTask = RTaskFactory.discreteTask(&quot;regression&quot;,
+                                        &quot;demo&quot;,
+                                        &quot;george&quot;,
+                                        &quot;&quot;,
+                                        discreteTaskOptions);
+
+//
+// 2.2 Create an instance of DiscreteTask.
+//
+// RTasks describing analytics Web services based on arbitrary
+// blocks of R code are not supported by DiscreteTaskBroker.
+//
+
+//
+// 2.3. Create an instance of DiscreteTask.
+//
+// This RTask describes an analytics Web service based on a
+// URL-addressable R script: [regressionURL]
+//
+// This type of RTask is available only when executing on
+// behalf of an authenticated user with POWER_USER permissions.
+//
+RTask rTask = RTaskFactory.discreteTask(regressionURL, discreteTaskOptions);
+
+//
+// 3. Submit instance of RTask to RBroker for execution.
+//
+RTaskToken rTaskToken = rBroker.submit(rTask);</code></pre>
+<p></p></div></div><p></p>
+<p><br/></p>
+<h3 id="discrete-task-runtime-authentication">Discrete Task Runtime Authentication</h3>
+<p>RBroker authentication is optional for this type of runtime, therefore RTask can
+be executed on behalf of an authenticated user or anonymously. Whether
+to use authentication or not depends on your specific deployment
+goals.</p>
+<h3 id="discrete-task-runtime-persistence">Discrete Task Runtime Persistence</h3>
+<p>When RTask are executed on behalf of an authenticated user, optional
+persistence to the DeployR-repository post-execution is supported.
+See storageOptions on DiscreteTaskOptions as documented on the
+<a href="/docanddown#rbroker">RBroker Framework API</a>. When RTasks are executed
+anonymously, persistence to the DeployR-repository post-execution
+is unsupported.</p>
+<h2 id="pooled">Pooled Task Runtime</h2>
+
+<p>The Pooled Task Runtime acquires a dedicated pool of DeployR grid
+resources at startup, which has a number of important consequences at runtime.
+These consequences are:</p>
+<ol>
+<li><p>The time taken to initialize the dedicated grid resource pool for
+this runtime depends on the nature of the PooledCreationOptions
+indicated on the PooledBrokerConfig and the size of the pool itself.</p>
+</li>
+<li><p>Every RTask submitted to the RBroker is guaranteed to execute
+eventually. There is no possibility of failure due to grid resource
+exhaustion.</p>
+</li>
+<li><p>This runtime supports a <code>maxConcurrency</code> configuration property that
+limits the maximum number of RTasks that the RBroker will attempt to
+execute in parallel. By definition, the <code>maxConcurrency</code> limit determines
+the size of the pool.</p>
+</li>
+<li><p>All RTasks submitted in excess of this limit are
+automatically queued, which ensures that no more than <code>maxConcurrency</code> RTasks
+are executing on the runtime at any one time.</p>
+</li>
+<li><p>Tuning the <code>maxConcurrency</code> property to reflect the real-world limits
+determined by grid resources provisioned by the DeployR system administrator
+is an important step when deploying solutions on the Pooled Task Runtime.</p>
+ <div class="alert alert-warning"><strong>Important! </strong>
+ See the <a href="#gridprimer">Grid Resource Management</a> section of this
+ tutorial for guidance when setting <code>maxConcurrency</code> for your RBroker
+ instance.
+ </div>
+
+
+</li>
+</ol>
+<h3 id="pooled-task-runtime-suitability">Pooled Task Runtime Suitability</h3>
+<p>This type of runtime is well suited to production deployments where consistent runtime semantics are required. If you anticipate a high-volume RTask workload, then this runtime is for you. Remember to size the pool in line with expected workload.</p>
+<div class="alert alert-info"><strong>Tip! </strong>
+If that does not sound like a suitable RBroker runtime for your client
+application, then consider the <a href="#discrete">Discrete Task Runtime</a> or the
+<a href="#background">Background Task Runtime</a>.
+</div>
+
+<h3 id="pooled-task-runtime-programming-model">Pooled Task Runtime Programming Model</h3>
+<p>The Pooled Task Runtime is supported by the PooledTaskBroker. This
+broker executes instances of PooledTask.  The R session environment
+assigned to handle the execution of each PooledTask can be
+pre-initialized using PooledTaskOptions.</p>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-EJoZ2QpOGag-0" data-toggle="tab" data-type="">Java</a></li><li class=""><a href="#tab-EJoZ2QpOGag-1" data-toggle="tab" data-type="">JavaScript</a></li><li class=""><a href="#tab-EJoZ2QpOGag-2" data-toggle="tab" data-type="">C#</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-EJoZ2QpOGag-0"><p></p>
+<pre><code>//
+// 1. Create an instance of PooledTaskBroker.
+//
+RBroker rBroker =
+    RBrokerFactory.pooledTaskBroker(brokerCfg);
+
+//
+// 2.1 Create an instance of PooledTask.
+//
+// This RTask describes an analytics Web service based on a
+// repository-managed R script: /george/demo/regression.R.
+//
+RTask rTask = RTaskFactory.pooledTask(&quot;regression&quot;,
+                                      &quot;demo&quot;,
+                                      &quot;george&quot;,
+                                      version,
+                                      pooledTaskOptions);
+
+//
+// 2.2 Create another instance of PooledTask.
+//
+// This RTask describes an analytics Web service based on an
+// arbitrary block of R code: [codeBlock]
+//
+RTask rTask = RTaskFactory.pooledTask(codeBlock,
+                                      pooledTaskOptions);
+
+//
+// 2.3. Create a third instance of PooledTask.
+//
+// This RTask describes an analytics Web service based on a
+// URL-addressable R script: [regressionURL]
+//
+// This type of RTask is available only when executing on
+// behalf of an authenticated user with POWER_USER permissions.
+//
+RTask rTask = RTaskFactory.pooledTask(regressionURL,
+                                      pooledTaskOptions);
+
+//
+// 3. Submit instance of RTask to RBroker for execution.
+//
+RTaskToken rTaskToken = rBroker.submit(rTask);</code></pre>
+<p></p></div><div class="tab-pane" id="tab-EJoZ2QpOGag-1"><p></p>
+<pre><code>// Browser --&gt; window.rbroker
+&lt;script src=&quot;rbroker.js&quot;&gt;&lt;/script&gt;
+
+// Node.js
+#!/bin/env node
+var rbroker = require(&#39;rbroker&#39;);
+
+//
+// 1. Create an instance of PooledTaskBroker.
+//
+var pooledBroker = rbroker.pooledTaskBroker(brokerCfg);
+
+//
+// 2.1 Create an instance of PooledTask.
+//
+// This RTask describes an analytics Web service based on a
+// repository-managed R script: /george/demo/regression.R.
+//
+var rTask = rbroker.pooledTask({ 
+    filename: &#39;regression&#39;,
+    directory: &#39;demo&#39;,
+    author: &#39;george&#39;,
+    version: version
+    // more pooled-task-options...
+});
+
+//
+// 2.2 Create another instance of PooledTask.
+//
+// This RTask describes an analytics Web service based on an
+// arbitrary block of R code: [codeBlock]
+//
+var rTask = rbroker.pooledTask({ 
+  code: codeBlock 
+  // more pooled-task-options...
+});
+
+//
+// 2.3. Create a third instance of PooledTask.
+//
+// This RTask describes an analytics Web service based on a
+// URL-addressable R script: [regressionURL]
+//
+// This type of RTask is available only when executing on
+// behalf of an authenticated user with POWER_USER permissions.
+//
+var rTask = rbroker.pooledTask({ 
+  externalsource: regressionURL
+  // more pooled-task-options...
+});
+
+//
+// 3. Submit instance of RTask to RBroker for execution.
+//
+var rTaskToken = pooledBroker.submit(rTask);</code></pre>
+<p></p></div><div class="tab-pane" id="tab-EJoZ2QpOGag-2"><p></p>
+<pre><code>//
+// 1. Create an instance of PooledTaskBroker.
+//
+RBroker rBroker = RBrokerFactory.pooledTaskBroker(brokerCfg);
+
+//
+// 2.1 Create an instance of PooledTask.
+//
+// This RTask describes an analytics Web service based on a
+// repository-managed R script: /george/demo/regression.R.
+//
+RTask rTask = RTaskFactory.pooledTask(&quot;regression&quot;,
+                                      &quot;demo&quot;,
+                                      &quot;george&quot;,
+                                      &quot;&quot;,
+                                      pooledTaskOptions);
+
+//
+// 2.2 Create another instance of PooledTask.
+//
+// This RTask describes an analytics Web service based on an
+// arbitrary block of R code: [codeBlock]
+//
+RTask rTask = RTaskFactory.pooledTask(codeBlock, pooledTaskOptions);
+
+//
+// 2.3. Create a third instance of PooledTask.
+//
+// This RTask describes an analytics Web service based on a
+// URL-addressable R script: [regressionURL]
+//
+// This type of RTask is available only when executing on
+// behalf of an authenticated user with POWER_USER permissions.
+//
+RTask rTask = RTaskFactory.pooledTask(regressionURL, pooledTaskOptions);
+
+//
+// 3. Submit instance of RTask to RBroker for execution.
+//
+RTaskToken rTaskToken = rBroker.submit(rTask);</code></pre>
+<p></p></div></div><p></p>
+<p><br/></p>
+<h3 id="pooled-task-runtime-authentication">Pooled Task Runtime Authentication</h3>
+<p>RBroker authentication is required for this type of runtime, therefore RTask will
+always execute on behalf of an authenticated user. In many instances,
+this user may represent your client application, and not individual
+end-users.</p>
+<h3 id="pooled-task-runtime-persistence">Pooled Task Runtime Persistence</h3>
+<p>Since RTasks executed on this type of runtime are executing on behalf of
+an authenticated user, optional persistence to the DeployR-repository
+following an execution is supported. See storageOptions on
+PooledTaskOptions as documented on the <a href="/docanddown#rbroker">RBroker Framework
+API</a>.</p>
+<h3 id="pooled-task-runtime-resource-management">Pooled Task Runtime Resource Management</h3>
+<p>While this runtime is ideal for high-volume RTask environments, it is
+important to proactively manage server-side resources dedicated to the pool.
+One such resource that requires special attention is the DeployR database.</p>
+<p>Each RTask results in meta-data, and sometimes data, being persisted to the
+DeployR database. This data is preserved in the database until the
+PooledTaskBroker is ultimately released. Given this runtime could
+theoretically service hundreds of thousands or even millions of RTask
+we recommend that you periodically release and rebuild your pool which
+allows the DeployR server to flush old RTask data from the system.</p>
+<h2 id="background">Background Task Runtime</h2>
+
+<p>The Background Task Runtime acquires DeployR grid resources per RTask
+based on the server-side management of asynchronous grid
+resources. This has a number of important consequences at runtime:</p>
+<ol>
+<li><p>Unlike the other runtimes, this runtime only schedules RTasks for
+execution. It delegates actual execution to the server-side job scheduling manager.</p>
+</li>
+<li><p>Every RTask submitted to the RBroker is guaranteed to execute
+eventually. There is no possibility of failure due to grid resource
+exhaustion.</p>
+</li>
+<li><p>This runtime does not support a <code>maxConcurrency</code> configuration
+property. The server-side job scheduling manager maintains its own
+queuing systems that function independently of the RBroker configuration.</p>
+</li>
+</ol>
+<h3 id="background-task-runtime-suitability">Background Task Runtime Suitability</h3>
+<p>This type of runtime is well-suited to deployments that require
+periodic, scheduled or batch processing.</p>
+<div class="alert alert-info"><strong>Tip! </strong>
+If that does not sound like a suitable RBroker runtime for your client
+application consider the <a href="#discrete"><em>Discrete Task Runtime</em></a> or the
+<a href="#pooled"><em>Pooled Task Runtime</em></a>.
+</div>
+
+<h3 id="2-background-task-runtime-programming-model">2. Background Task Runtime Programming Model</h3>
+<p>The background task runtime is supported by the BackgroundTaskBroker. This
+broker schedules instances of BackgroundTask for execution on the server.
+The R session environment that is assigned to handle the execution of each
+BackgroundTask can be pre-initialized using BackgroundTaskOptions.</p>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-VJ2b3XpdMag-0" data-toggle="tab" data-type="">Java</a></li><li class=""><a href="#tab-VJ2b3XpdMag-1" data-toggle="tab" data-type="">JavaScript</a></li><li class=""><a href="#tab-VJ2b3XpdMag-2" data-toggle="tab" data-type="">C#</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-VJ2b3XpdMag-0"><p></p>
+<pre><code>//
+// 1. Create an instance of BackgroundTaskBroker.
+//
+RBroker rBroker =
+    RBrokerFactory.backgroundTaskBroker(brokerCfg);
+
+//
+// 2.1 Create an instance of BackgroundTask.
+//
+// This RTask describes an analytics Web service based on a
+// repository-managed R script: /george/demo/regression.R.
+//
+RTask rTask = RTaskFactory.backgroundTask(&quot;Sample Task&quot;,
+                                          &quot;Sample description&quot;,
+                                          &quot;regression&quot;,
+                                          &quot;demo&quot;,
+                                          &quot;george&quot;,
+                                          version,
+                                          backgroundTaskOptions);
+
+//
+// 2.2 Create another instance of BackgroundTask.
+//
+// This RTask describes an analytics Web services based on an
+// arbitrary block of R code: [codeBlock]
+//
+RTask rTask = RTaskFactory.backgroundTask(&quot;Sample Task&quot;,
+                                          &quot;Sample description&quot;,
+                                          codeBlock,
+                                          backgroundTaskOptions);
+
+//
+// 2.3. Create a third instance of BackgroundTask.
+//
+// This RTask describes an analytics Web service based on a
+// URL-addressable R script: [regressionURL]
+//
+// This type of RTask is available only when executing on
+// behalf of an authenticated user with POWER_USER permissions.
+//
+RTask rTask = RTaskFactory.backgroundTask(&quot;Sample Task&quot;,
+                                          &quot;Sample description&quot;,
+                                          regressionURL,
+                                          backgroundTaskOptions);
+
+//
+// 3. Submit instance of RTask to RBroker for execution.
+//
+RTaskToken rTaskToken = rBroker.submit(rTask);</code></pre>
+<p></p></div><div class="tab-pane" id="tab-VJ2b3XpdMag-1"><p></p>
+<pre><code>// Browser --&gt; window.rbroker
+&lt;script src=&quot;rbroker.js&quot;&gt;&lt;/script&gt;
+
+// Node.js
+#!/bin/env node
+var rbroker = require(&#39;rbroker&#39;);
+
+//
+// 1. Create an instance of BackgroundTaskBroker.
+//
+var bgBroker = rbroker.backgroundTaskBroker(brokerCfg);
+
+//
+// 2.1 Create an instance of BackgroundTask.
+//
+// This RTask describes an analytics Web service based on a
+// repository-managed R script: /george/demo/regression.R.
+//
+var rTask = rbroker.backgroundTask({
+  name: &#39;Sample Task&#39;,
+  descr: &#39;Sample description&#39;,
+  rscriptname: &#39;regression&#39;,
+  rscriptdirectory: &#39;demo&#39;,
+  rscriptauthor: &#39;george&#39;,
+  rscriptversion: version
+  // more background-task-options...
+});
+
+//
+// 2.2 Create another instance of BackgroundTask.
+//
+// This RTask describes an analytics Web services based on an
+// arbitrary block of R code: [codeBlock]
+//
+var rTask = rbroker.backgroundTask({
+  name: &#39;Sample Task&#39;,
+  descr: &#39;Sample description&#39;,
+  code: codeBlock
+  // more background-task-options...
+});
+
+//
+// 2.3. Create a third instance of BackgroundTask.
+//
+// This RTask describes an analytics Web service based on a
+// URL-addressable R script: [regressionURL]
+//
+// This type of RTask is available only when executing on
+// behalf of an authenticated user with POWER_USER permissions.
+//
+var rTask = rbroker.backgroundTask({
+  name: &#39;Sample Task&#39;,
+  descr: &#39;Sample description&#39;,
+  externalsource: regressionURL
+  // more background-task-options...
+});
+
+//
+// 3. Submit instance of RTask to RBroker for execution.
+//
+var rTaskToken = bgBroker.submit(rTask);</code></pre>
+<p></p></div><div class="tab-pane" id="tab-VJ2b3XpdMag-2"><p></p>
+<pre><code>//
+// 1. Create an instance of BackgroundTaskBroker.
+//
+RBroker rBroker = RBrokerFactory.backgroundTaskBroker(brokerCfg);
+
+//
+// 2.1 Create an instance of BackgroundTask.
+//
+// This RTask describes an analytics Web service based on a
+// repository-managed R script: /george/demo/regression.R.
+//
+RTask rTask = RTaskFactory.backgroundTask(&quot;Sample Task&quot;,
+                                          &quot;Sample description&quot;,
+                                          &quot;regression&quot;,
+                                          &quot;demo&quot;,
+                                          &quot;george&quot;,
+                                          &quot;&quot;,
+                                          backgroundTaskOptions);
+
+//
+// 2.2 Create another instance of BackgroundTask.
+//
+// This RTask describes an analytics Web services based on an
+// arbitrary block of R code: [codeBlock]
+//
+RTask rTask = RTaskFactory.backgroundTask(&quot;Sample Task&quot;,
+                                          &quot;Sample description&quot;,
+                                          codeBlock,
+                                          backgroundTaskOptions);
+
+//
+// 2.3. Create a third instance of BackgroundTask.
+//
+// This RTask describes an analytics Web service based on a
+// URL-addressable R script: [regressionURL]
+//
+// This type of RTask is available only when executing on
+// behalf of an authenticated user with POWER_USER permissions.
+//
+RTask rTask = RTaskFactory.backgroundTask(&quot;Sample Task&quot;,
+                                          &quot;Sample description&quot;,
+                                          regressionURL,
+                                          backgroundTaskOptions);
+
+//
+// 3. Submit instance of RTask to RBroker for execution.
+//
+RTaskToken rTaskToken = rBroker.submit(rTask);</code></pre>
+<p></p></div></div><p></p>
+<p><br/></p>
+<h3 id="background-task-runtime-authentication">Background Task Runtime Authentication</h3>
+<p>RBroker authentication is required for this type of runtime, therefore RTask will
+always execute on behalf of an authenticated user. In many instances,
+that user may represent your client application, and not individual
+end-users.</p>
+<h3 id="background-task-runtime-persistence">Background Task Runtime Persistence</h3>
+<p>Since RTasks executed on this type of runtime are executing on behalf of
+an authenticated user, optional persistence to the DeployR-repository
+following an execution is supported. See storageOptions on
+BackgroundTaskOptions as documented on the <a href="/docanddown#rbroker">RBroker Framework
+API</a>.</p>
+<div class="alert alert-success"><strong>Note: </strong>
+Result data are not directly available on RTaskResult. Instead a DeployR
+Job identifier is returned. An application developer must use an
+appropriate <a href="/docanddown#clientlib">DeployR Client Library</a> that supports APIs
+for the retrieval of results persisted by the BackgroundTask on
+DeployR Job.
+</div>
+
+
+<h1 id="resources">RBroker Resource Management</h1>
+
+<p>While each RBroker runtime automatically manages all DeployR-related
+client-side and server-side resources on behalf of client applications,
+it is the responsibility of the application developer to make an explicit call 
+on RBroker to release any residual resources associated with the broker instance
+whenever a client application terminates.</p>
+<p>The following code snippets demonstrate the mechanism:</p>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-NkpZ37auG6g-0" data-toggle="tab" data-type="">Java</a></li><li class=""><a href="#tab-NkpZ37auG6g-1" data-toggle="tab" data-type="">JavaScript</a></li><li class=""><a href="#tab-NkpZ37auG6g-2" data-toggle="tab" data-type="">C#</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-NkpZ37auG6g-0"><p></p>
+<pre><code>//
+// Release resources held by RBroker.
+//
+// Upon application termination, release any client-side and
+// server-side resources held by the instance of RBroker.
+//
+rBroker.shutdown();</code></pre>
+<p></p></div><div class="tab-pane" id="tab-NkpZ37auG6g-1"><p></p>
+<pre><code>//
+// Release resources held by RBroker.
+//
+// Upon application termination, release any client-side and
+// server-side resources held by the instance of RBroker.
+//
+rBroker.shutdown()
+  .then(function() {
+     // successful shutdown...
+  });</code></pre>
+<p></p></div><div class="tab-pane" id="tab-NkpZ37auG6g-2"><p></p>
+<pre><code>//
+// Release resources held by RBroker.
+//
+// Upon application termination, release any client-side and
+// server-side resources held by the instance of RBroker.
+//
+rBroker.shutdown();</code></pre>
+<p></p></div></div><p></p>
+<div class="alert alert-warning"><strong>Important! </strong>
+This step is especially important for applications that make use of the
+<a href="#pooled">Pooled Task Broker Runtime</a> since significant DeployR grid
+resources associated with that runtime will remain unavailable until
+explicitly released.
+</div>
+
+
+<h1 id="priority">RTask Priority Execution</h1>
+
+<p>Each RBroker runtime maintains a basic FIFO queue for RTask. Each RTask
+on that FIFO queue is eventually submitted to the DeployR server for
+execution. By default, RTask are executed in this FIFO order.</p>
+<p>However, there are times when FIFO semantics get in the way of desired
+client application semantics. For example, when a high priority RTask
+generated by the client application needs to take precedence
+over any existing RTasks that may already be in the FIFO queue.</p>
+<p>Each RBroker runtime has built-in support for high priority RTasks.
+When RTasks are submitted as high priority, they jump the default FIFO
+queue and form their own priority FIFO queue. The following code snippets
+demonstrate how this mechanism works in practice:</p>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-4kRbh7Tuf6x-0" data-toggle="tab" data-type="">Java</a></li><li class=""><a href="#tab-4kRbh7Tuf6x-1" data-toggle="tab" data-type="">JavaScript</a></li><li class=""><a href="#tab-4kRbh7Tuf6x-2" data-toggle="tab" data-type="">C#</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-4kRbh7Tuf6x-0"><p></p>
+<pre><code>//
+// 1. RTask Standard Execution
+//
+// Uses the default RBroker FIFO-queue.
+//
+RTaskToken rTaskToken = rBroker.submit(rTask);
+
+//
+// 2. RTask Priority Execution
+//
+// Uses the priority RBroker FIFO-queue.
+//
+RTaskToken rTaskToken = rBroker.submit(rTask, true);</code></pre>
+<p></p></div><div class="tab-pane" id="tab-4kRbh7Tuf6x-1"><p></p>
+<pre><code>//
+// 1. RTask Standard Execution
+//
+// Uses the default RBroker FIFO-queue.
+//
+var rTaskToken = rBroker.submit(rTask);
+
+//
+// 2. RTask Priority Execution
+//
+// Uses the priority RBroker FIFO-queue.
+//
+var rTaskToken = rBroker.submit(rTask, true);</code></pre>
+<p></p></div><div class="tab-pane" id="tab-4kRbh7Tuf6x-2"><p></p>
+<pre><code>//
+// 1. RTask Standard Execution
+//
+// Uses the default RBroker FIFO-queue.
+//
+RTaskToken rTaskToken = rBroker.submit(rTask);
+
+//
+// 2. RTask Priority Execution
+//
+// Uses the priority RBroker FIFO-queue.
+//
+RTaskToken rTaskToken = rBroker.submit(rTask, true);</code></pre>
+<p></p></div></div><p></p>
+<p>All RTasks on the priority FIFO queue are guaranteed to be executed by
+the RBroker before any attempt is made to execute RTasks on the default
+FIFO queue.</p>
+<h1 id="simulation">Client Application Simulations</h1>
+
+<p>When evaluating any new software technology, one of the first things you are
+likely to come across is the ubiquituous &quot;Hello World&quot; sample application.
+Not to be outdone, we provide our own <a href="#programming">&quot;Hello World&quot; sample application</a>
+for the RBroker framework.</p>
+<p>While such sample applications provide a great starting point for any
+new technology, they can only take you so far. This section discusses client
+application simulations, which is one of the key tools that is built into
+the RBroker framework that will help you go a whole lot further.</p>
+<p>As a client application developer interested in integrating analytics Web
+services into your custom client application you really have two
+technical challenges that need solving:</p>
+<ol>
+<li><p>How best to build or extend your custom client application to facilitate
+the integration of analytics Web services?</p>
+</li>
+<li><p>How best to integrate analytics Web services to ensure your
+application meets runtime performance goals?</p>
+</li>
+</ol>
+<p>On the first challenge, we offer no particular guidance, since you
+already know best in such matters. However, on the second challenge, we believe there are key questions that can and should be asked and answered before full integration
+commences, such as:</p>
+<ol>
+<li><p>What RBroker runtime should my application be using?</p>
+</li>
+<li><p>What is the best configuration for my RBroker runtime based on
+anticipated workload and throughput requirements?</p>
+</li>
+<li><p>How can assumptions be verified regarding throughput and overall
+performance of the integration?</p>
+</li>
+</ol>
+<p>If client application developers can answer these kinds of questions without
+first having to build a complete client application to test drive each
+scenario, it can make life a lot simpler.</p>
+<p>It is for this reason that the RBroker framework supports client
+application simulations. These simulations are headless client
+applications that are designed to drive RTask requests through an
+RBroker instance in order to help developers test, measure and optimize
+their RBroker integration.</p>
+<p>To run a client application simulation simply create a simulation that
+implements the appropriate interface and then ask an instance of RBroker to
+run the simulation. The following code snippets demonstrate the mechanism.</p>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-E1yfhQ6ufTx-0" data-toggle="tab" data-type="">Java</a></li><li class=""><a href="#tab-E1yfhQ6ufTx-1" data-toggle="tab" data-type="">JavaScript</a></li><li class=""><a href="#tab-E1yfhQ6ufTx-2" data-toggle="tab" data-type="">C#</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-E1yfhQ6ufTx-0"><p></p>
+<pre><code>//
+// 1. Create an instance of RBroker.
+//
+RBroker rBroker = RBrokerFactory.discreteTaskBroker(brokerCfg);
+
+
+//
+// 2. Create an instance of RTaskAppSimulator.
+//
+// This is your client application simulation. The logic of your
+// simulation can be as simple or as complex as you wish, giving you the
+// flexibility to simulate anything from the most simple to the most
+// complex use cases.
+// 
+
+SampleAppSimulation simulation = new SampleAppSimulation(rBroker);
+
+//
+// 3. Launch RTaskAppSimulator simulation.
+//
+// The RBroker will automatically launch and execute your simulation
+// when the simulateApp(RTaskAppSimulator) method is called.
+//
+rBroker.simulateApp(simulation);</code></pre>
+<p></p></div><div class="tab-pane" id="tab-E1yfhQ6ufTx-1"><p></p>
+<pre><code>//
+// 1. Create an instance of RBroker.
+//
+var broker = rbroker.discreteTaskBroker(brokerCfg);
+
+//
+// 2. Create an `app simulator` - SampleAppSimulation
+//
+// This is your client application simulation. The logic of your
+// simulation can be as simple or as complex as you wish, giving you the
+// flexibility to simulate anything from the most simple to the most
+// complex use cases.
+// 
+
+var simulator = {
+   simulateApp: function(dBroker) {
+      // implementation...
+   }  
+};
+
+//
+// 3. Launch RTaskAppSimulator simulation.
+//
+// The RBroker will automatically launch and execute your simulation
+// when the simulateApp(simulator) method is called.
+//
+broker.simulateApp(simulator);</code></pre>
+<p></p></div><div class="tab-pane" id="tab-E1yfhQ6ufTx-2"><p>
+//
+// 1. Create an instance of RBroker.
+//
+RBroker rBroker = RBrokerFactory.discreteTaskBroker(brokerCfg);</p>
+<p>//
+// 2. Create an instance of RTaskAppSimulator.
+//
+// This is your client application simulation. The logic of your
+// simulation can be as simple or as complex as you wish, giving you the
+// flexibility to simulate anything from the most simple to the most
+// complex use cases.
+// </p>
+<p>SampleAppSimulation simulation = new SampleAppSimulation(rBroker);</p>
+<p>//
+// 3. Launch RTaskAppSimulator simulation.
+//
+// The RBroker will automatically launch and execute your simulation
+// when the simulateApp(RTaskAppSimulator) method is called.
+//
+rBroker.simulateApp(simulation);</p>
+<p></p></div></div><p></p>
+<p>Now that we have seen how the basic mechanism works for launching client
+application simulations, let&#39;s take a look at the simulation itself. The
+following code snippets demonstrate the most simple simulation
+imaginable, the execution of a single RTask.</p>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-VJef2X6Of6x-0" data-toggle="tab" data-type="">Java</a></li><li class=""><a href="#tab-VJef2X6Of6x-1" data-toggle="tab" data-type="">JavaScript</a></li><li class=""><a href="#tab-VJef2X6Of6x-2" data-toggle="tab" data-type="">C#</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-VJef2X6Of6x-0"><p></p>
+<pre><code>//
+// 1. SampleAppSimulation
+//
+// Demonstrates the simulation of a single RTask execution.
+//
+public class SampleAppSimulation implements RTaskAppSimulator,
+                                            RTaskListener {
+
+    //
+    // RTaskAppSimulator interface.
+    //
+    // This represents a complete client application simulation.
+    //
+    public void simulateApp(RBroker rBroker) {
+
+
+        //
+        // 1. Prepare RTask(s) for simulation.
+        //
+        // In the example, we will simply simulate the execution
+        // of a single RTask.
+        //
+
+        RTask rTask = RTaskFactory.discreteTask(&quot;regression&quot;,
+                                                &quot;demo&quot;,
+                                                &quot;testuser&quot;,
+                                                null, null);
+        try {
+
+            RTaskToken taskToken = rBroker.submit(rTask);
+
+        } catch(Exception ex) {
+            // Exception on simulation, handle as appropriate.
+        }
+    }
+
+    //
+    // RTaskListener interface.
+    //
+
+    public void onTaskCompleted(RTask rTask, RTaskResult rTaskResult) {
+        // Completed RTask. Handle as appropriate.
+    }
+
+    public void onTaskError(RTask rTask, Throwable throwable) {
+        // Failed RTask. Handle as appropriate.
+    }
+
+}</code></pre>
+<p></p></div><div class="tab-pane" id="tab-VJef2X6Of6x-1"><p></p>
+<pre><code>//
+// 1. SampleAppSimulation
+//
+// Demonstrates the simulation of a single RTask execution.
+//
+var SampleAppSimulation = {
+
+    //
+    // Simulator interface `simulateApp(broker)`
+    //
+    // This represents a complete client application simulation.
+    //
+    simulateApp: function (broker) {
+
+        broker.complete(function (rTask, rTaskResult) {
+            // Completed RTask. Handle as appropriate.            
+        })
+        .error(function (err) {
+            // Failed RTask. Handle as appropriate.            
+        });        
+
+        //
+        // 1. Prepare RTask(s) for simulation.
+        //
+        // In the example, we will simply simulate the execution
+        // of a single RTask.
+        //
+        var rTask = rbroker.discreteTask({ 
+            filename: &#39;rtScore&#39;,            
+            directory: &#39;demo&#39;,
+            author: &#39;testuser&#39;            
+        });
+
+        var taskToken = dBroker.submit(rTask);        
+    } 
+};</code></pre>
+<p></p></div><div class="tab-pane" id="tab-VJef2X6Of6x-2"><p></p>
+<pre><code>//
+// 1. SampleAppSimulation
+//
+// Demonstrates the simulation of a single RTask execution.
+//
+public class SampleAppSimulation : RTaskAppSimulator, RTaskListener 
+{
+
+    //
+    // RTaskAppSimulator interface.
+    //
+    // This represents a complete client application simulation.
+    //
+    public void simulateApp(RBroker rBroker) 
+    {
+
+
+        //
+        // 1. Prepare RTask(s) for simulation.
+        //
+        // In the example, we will simply simulate the execution
+        // of a single RTask.
+        //
+
+        RTask rTask = RTaskFactory.discreteTask(&quot;regression&quot;,
+                                                &quot;demo&quot;,
+                                                &quot;testuser&quot;,
+                                                &quot;&quot;, null);
+        try 
+        {
+            RTaskToken taskToken = rBroker.submit(rTask);
+        } 
+        catch(Exception ex)
+        {
+            // Exception on simulation, handle as appropriate.
+        }
+    }
+
+    //
+    // RTaskListener interface.
+    //
+
+    public void onTaskCompleted(RTask rTask, RTaskResult rTaskResult)
+    {
+        // Completed RTask. Handle as appropriate.
+    }
+
+    public void onTaskError(RTask rTask, String error) 
+    {
+        // Failed RTask. Handle as appropriate.
+    }
+
+}</code></pre>
+<p></p></div></div><p></p>
+<p>As you can see, asynchronous callbacks from RBroker allow you to track
+the progress of the simulation.</p>
+<p>Now, let&#39;s consider the building of a simulation of a real-time scoring engine, which is 
+something a little more sophisticated. The following code snippets
+demonstrate what&#39;s involved.</p>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-NJ-G37Tuz6l-0" data-toggle="tab" data-type="">Java</a></li><li class=""><a href="#tab-NJ-G37Tuz6l-1" data-toggle="tab" data-type="">JavaScript</a></li><li class=""><a href="#tab-NJ-G37Tuz6l-2" data-toggle="tab" data-type="">C#</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-NJ-G37Tuz6l-0"><p></p>
+<pre><code>public class SampleAppSimultation implements RTaskAppSimulator,
+                                             RTaskListener {
+
+    private long SIMULATE_TOTAL_TASK_COUNT = 1000;
+    private long SIMULATE_TASK_RATE_PER_MINUTE = 200L;
+
+    /*
+     * RTaskAppSimulator method.
+     */
+
+    public void simulateApp(RBroker rBroker) {
+
+        /*
+         * Submit task(s) to RBroker for execution.
+         */
+
+        //
+        // In the example, we simulate the execution of
+        // SIMULATE_TOTAL_TASK_COUNT RTask.
+        //
+
+        for(int tasksPushedToBroker = 0;
+                tasksPushedToBroker&lt;SIMULATE_TOTAL_TASK_COUNT;
+                tasksPushedToBroker++) {
+
+            try {
+
+                //
+                // Prepare RTask for real-time scoring.
+                //
+                // In this example, we pass along a unique customer ID
+                // with each RTask. In a real-world application, the input
+                // parameters on each RTask will vary depending on need,
+                // such as customer database record keys and supplementary
+                // parameter data to facilitate the scoring.
+                //
+
+                PooledTaskOptions taskOptions =
+                                    new PooledTaskOptions();
+                taskOptions.rinputs = Arrays.asList((RData)
+                   RDataFactory.createNumeric(&quot;customerid&quot;, tasksPushedToBroker));
+                taskOptions.routputs = Arrays.asList(&quot;score&quot;);
+
+                RTask rTask = RTaskFactory.pooledTask(&quot;rtScore&quot;,
+                                                      &quot;demo&quot;,
+                                                      &quot;testuser&quot;,
+                                                      null,
+                                                      taskOptions);
+
+                RTaskToken taskToken = rBroker.submit(rTask);
+
+                //
+                // The following logic controls the simulated rate of
+                // RTasks being submitted to the RBroker, essentially
+                // controlling the simulated workload.
+                //
+
+                if(tasksPushedToBroker &lt;
+                        (SIMULATE_TOTAL_TASK_COUNT - 1)) {
+
+
+                    try {
+
+                        if(SIMULATE_TASK_RATE_PER_MINUTE != 0L) {
+
+                            long staggerLoadInterval =
+                                60L / SIMULATE_TASK_RATE_PER_MINUTE;
+                            Thread.currentThread().sleep(
+                                            staggerLoadInterval * 1000);
+                        }
+
+                    } catch(InterruptedException iex) {}
+                }
+
+            } catch(Exception ex) {
+                // Exception on simulation. Handle as appropriate.
+            }
+        }
+
+    }
+
+    /*
+     * RTaskListener interface.
+     */
+
+    public void onTaskCompleted(RTask rTask, RTaskResult rTaskResult) {
+        // Completed RTask. Handle as appropriate.
+    }
+
+    public void onTaskError(RTask rTask, Throwable throwable) {
+        // Failed RTask. Handle as appropriate.
+    }
+}</code></pre>
+<p></p></div><div class="tab-pane" id="tab-NJ-G37Tuz6l-1"><p></p>
+<pre><code>
+var SIMULATE_TOTAL_TASK_COUNT     = 1000,
+    SIMULATE_TASK_RATE_PER_MINUTE = 200,
+    simulationStartTime           = 0,
+    simulationStartTime           = new Date().getTime(),
+    sleep                         = 0;
+
+var SampleAppSimultation = {
+
+    simulateApp: function (broker) {
+
+        function staggeredLoad(tasksPushedToBroker, sleep) {          
+           //
+           // Prepare RTask for real-time scoring.
+           //
+           // In this example, we pass along a unique customer ID
+           // with each RTask. In a real-world application, the input
+           // parameters on each RTask will vary depending on need,
+           // such as customer database record keys and supplementary
+           // parameter data to facilitate the scoring.
+           //
+           setTimeout(function() {
+             var rTask = rbroker.pooledTask({
+                filename: &#39;rtScore&#39;,
+                directory: &#39;demo&#39;,
+                author: &#39;testuser&#39;,
+                rinputs: [ { 
+                  type: RType.RNUMERIC, 
+                  name: &#39;customerid&#39;, 
+                  value: tasksPushedToBroker
+                } ],
+                routputs: [&#39;score&#39;]              
+              });
+
+             broker.submit(rTask, false);
+           }, sleep);
+        }
+
+        broker.complete(function (rTask, rTaskResult) {
+            // Completed RTask. Handle as appropriate.
+        })
+        .error(function (err) {
+            // Failed RTask. Handle as appropriate.
+        });           
+
+        //
+        // In the example, we simulate the execution of
+        // SIMULATE_TOTAL_TASK_COUNT RTask.
+        //
+        for(var tasksPushedToBroker = 0;
+                tasksPushedToBroker &lt; SIMULATE_TOTAL_TASK_COUNT;
+                tasksPushedToBroker++) {
+
+           //
+           // The following logic controls the simulated rate of
+           // RTasks being submitted to the RBroker, essentially
+           // controlling the simulated workload.
+           //
+           if(tasksPushedToBroker &lt; (SIMULATE_TOTAL_TASK_COUNT - 1)) {              
+              if(SIMULATE_TASK_RATE_PER_MINUTE !== 0) {
+                 var staggerLoadInterval = 60 / SIMULATE_TASK_RATE_PER_MINUTE;
+                 sleep += (staggerLoadInterval * 1000);                 
+              }
+              staggeredLoad(tasksPushedToBroker, sleep);
+            }
+        }
+    } 
+};</code></pre>
+<p></p></div><div class="tab-pane" id="tab-NJ-G37Tuz6l-2"><p></p>
+<pre><code>public class SampleAppSimultation : RTaskAppSimulator, RTaskListener
+ {
+
+    RTask rTask;
+    RTaskToken rToken;
+    int SIMULATE_TOTAL_TASK_COUNT = 100;
+    int SIMULATE_TASK_RATE_PER_MINUTE = 200;
+
+    /*
+     * RTaskAppSimulator method.
+     */
+
+    public void simulateApp(RBroker rBroker)
+    {
+
+        /*
+         * Submit task(s) to RBroker for execution.
+         */
+
+        //
+        // In the example, we simulate the execution of
+        // SIMULATE_TOTAL_TASK_COUNT RTask.
+        //
+
+        for( int tasksPushedToBroker = 0; tasksPushedToBroker &lt; SIMULATE_TOTAL_TASK_COUNT; tasksPushedToBroker++)
+        {
+
+            try 
+            {
+
+                //
+                // Prepare RTask for real-time scoring.
+                //
+                // In this example, we pass along a unique customer ID
+                // with each RTask. In a real-world application, the input
+                // parameters on each RTask will vary depending on need,
+                // such as customer database record keys and supplementary
+                // parameter data to facilitate the scoring.
+                //
+                PooledTaskOptions taskOptions = new PooledTaskOptions();
+
+                List&lt;String&gt; outputs = new List&lt;String&gt;();
+                outputs.Add(&quot;score&quot;);
+                taskOptions.routputs = outputs;
+
+                List&lt;RData&gt; inputs = new List&lt;RData&gt;();
+                inputs.Add(RDataFactory.createNumeric(&quot;customerid&quot;, tasksPushedToBroker));
+                taskOptions.rinputs = inputs;
+
+
+                RTask rTask = RTaskFactory.pooledTask(&quot;rtScore&quot;,
+                                                      &quot;demo&quot;,
+                                                      &quot;testuser&quot;,
+                                                      &quot;&quot;,
+                                                      taskOptions);
+
+                RTaskToken taskToken = rBroker.submit(rTask);
+
+                //
+                // The following logic controls the simulated rate of
+                // RTasks being submitted to the RBroker, essentially
+                // controlling the simulated workload.
+                //
+
+                if(tasksPushedToBroker &lt;(SIMULATE_TOTAL_TASK_COUNT - 1))
+                {
+                    if(SIMULATE_TASK_RATE_PER_MINUTE != 0) 
+                    {
+                        int staggerLoadInterval = 60 / SIMULATE_TASK_RATE_PER_MINUTE;
+                        Thread.Sleep(staggerLoadInterval * 1000);
+                    }
+                }
+
+            } 
+            catch(Exception ex) 
+            {
+                // Exception on simulation. Handle as appropriate.
+            }
+        }
+
+    }
+
+    /*
+     * RTaskListener interface.
+     */
+
+    public void onTaskCompleted(RTask rTask, RTaskResult rTaskResult) 
+    {
+        // Completed RTask. Handle as appropriate.
+    }
+
+    public void onTaskError(RTask rTask, String error) 
+    {
+        // Failed RTask. Handle as appropriate.
+    }
+}</code></pre>
+<p></p></div></div><p></p>
+<p>By running client application simulations, experiencing live execution
+result data and execution failures, and observing overall throughput, a
+client application developer can learn how to tune the RBroker runtime and
+RTask options for predictable, even optimal runtime performance.</p>
+<p>And to aid further in the measurement of analytics Web service runtime
+performance, developers can take advantage of yet another feature of the
+RBroker framework, <a href="#profiling">client application profiling</a>.</p>
+<h1 id="profiling">Client Application Profiling</h1>
+
+<p>As we just learned, the <a href="#simulation">client application simulation</a> feature of the
+RBroker framework helps you quickly answer key integration questions by
+supporting rapid, iterative experimentation and testing. The
+client application profiling feature extends these capabilities by helping
+you to accurately measure the runtime impact of each simulated test, which can
+greatly improve the quality of any integration.</p>
+<p>The client application profiling features are also available
+beyond simulations, so production environments can also make use of this
+feature, for example, to maintain audit logs that detail the runtime
+performance details of each analytics Web service invocation.</p>
+<p>As with most things in the RBroker framework, it is very simple to activate
+this feature. First, note that each RTaskResult has built-in profiling data.
+Second, each RBroker runtime generates runtime profiling events. By registering the appropriate asynchronous listener, a client application can receive these profiling events.</p>
+<p>The following code snippets extend the sample demonstrated in
+the <a href="#simulation">client application simulation</a> chapter with support
+for handling runtime profiling events.</p>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-Nkzf3m6OGag-0" data-toggle="tab" data-type="">Java</a></li><li class=""><a href="#tab-Nkzf3m6OGag-1" data-toggle="tab" data-type="">JavaScript</a></li><li class=""><a href="#tab-Nkzf3m6OGag-2" data-toggle="tab" data-type="">C#</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-Nkzf3m6OGag-0"><p></p>
+<pre><code>//
+// 1. SampleAppSimulation
+//
+// Demonstrates the simulation of a single RTask execution.
+//
+public class SampleAppSimulation implements RTaskAppSimulator,
+                                            RTaskListener,
+                                            RBrokerListener {
+
+    private final RBroker rBroker;
+
+    public SampleAppSimulation(RBroker rBroker) {
+        this.rBroker = rBroker;
+        rBroker.addTaskListener(this);
+    }
+
+    //
+    // RTaskAppSimulator interface.
+    //
+    // This represents a complete client application simulation.
+    //
+    public void simulateApp(RBroker rBroker) {
+
+
+        //
+        // 1. Prepare RTask(s) for simulation.
+        //
+        // In the example, we will simulate the execution
+        // of a single RTask.
+        //
+
+        RTask rTask = RTaskFactory.discreteTask(&quot;regression&quot;,
+                                                &quot;demo&quot;,
+                                                &quot;testuser&quot;,
+                                                null, null);
+        try {
+
+            RTaskToken taskToken = rBroker.submit(rTask);
+
+        } catch(Exception ex) {
+            // Exception on simulation. Handle as appropriate.
+        }
+    }
+
+    //
+    // RTaskListener interface.
+    //
+
+    public void onTaskCompleted(RTask rTask, RTaskResult rTaskResult) {
+        //
+        // For profiling, see the RTaskResult.getTimeOn*() properties.
+        //
+    }
+
+    public void onTaskError(RTask rTask, Throwable throwable) {
+        //
+        // Failed RTask. Handle as appropriate.
+        //
+    }
+
+
+    //
+    // RBrokerListener interface.
+    //
+
+    public void onRuntimeError(Throwable throwable) {
+        // Runtime exception. Handle as appropriate.
+    }
+
+    public void onRuntimeStats(RBrokerRuntimeStats stats, int maxConcurrency) {
+        //
+        // For profiling, see the RBrokerRuntimeStats.getTimeOn*() properties.
+        //
+    }
+
+}</code></pre>
+<p></p></div><div class="tab-pane" id="tab-Nkzf3m6OGag-1"><p></p>
+<pre><code>
+var rbroker = require(&#39;rbroker&#39;);
+
+//
+// 1. SampleAppSimulation
+//
+// Demonstrates the simulation of a single RTask execution.
+//
+var SampleAppSimulation = {
+
+    //
+    // Simulator interface `simulateApp(broker)`
+    //
+    // This represents a complete client application simulation.
+    //
+    simulateApp: function (broker) {
+
+        broker.complete(function (rTask, rTaskResult) {
+           //
+           // For profiling, see the `rTaskResult` properties.
+           //            
+        })
+        .error(function (err) {
+           //
+           // Failed RTask. Handle as appropriate.
+           //
+        })
+        .progress(function(stats) {
+           //
+           // For profiling, see the `stats` properties.
+           //
+        }) 
+        .idle(function () { 
+           //
+           // Nothing pending 
+           //
+        });
+
+        //
+        // 1. Prepare RTask(s) for simulation.
+        //
+        // In the example, we will simply simulate the execution
+        // of a single RTask.
+        //
+        var rTask = rbroker.discreteTask({ 
+            filename: &#39;rtScore&#39;,            
+            directory: &#39;demo&#39;,
+            author: &#39;testuser&#39;            
+        });
+
+        var taskToken = dBroker.submit(rTask);        
+    } 
+};</code></pre>
+<p></p></div><div class="tab-pane" id="tab-Nkzf3m6OGag-2"><p></p>
+<pre><code>//
+// 1. SampleAppSimulation
+//
+// Demonstrates the simulation of a single RTask execution.
+//
+public class SampleAppSimulation : RTaskAppSimulator, RTaskListener, RBrokerListener 
+{
+
+    private RBroker rBroker;
+
+    public SampleAppSimulation(RBroker rBroker) 
+    {
+        this.rBroker = rBroker;
+        rBroker.addTaskListener(this);
+    }
+
+    //
+    // RTaskAppSimulator interface.
+    //
+    // This represents a complete client application simulation.
+    //
+    public void simulateApp(RBroker rBroker) 
+    {
+
+        //
+        // 1. Prepare RTask(s) for simulation.
+        //
+        // In the example, we will simulate the execution
+        // of a single RTask.
+        //
+
+        RTask rTask = RTaskFactory.discreteTask(&quot;regression&quot;,
+                                                &quot;demo&quot;,
+                                                &quot;testuser&quot;,
+                                                &quot;&quot;, null);
+        try 
+        {
+            RTaskToken taskToken = rBroker.submit(rTask);
+
+        } catch(Exception ex) 
+        {
+            // Exception on simulation. Handle as appropriate.
+        }
+    }
+
+    //
+    // RTaskListener interface.
+    //
+
+    public void onTaskCompleted(RTask rTask, RTaskResult rTaskResult) 
+    {
+        //
+        // For profiling, see the RTaskResult.getTimeOn*() properties.
+        //
+    }
+
+    public void onTaskError(RTask rTask, String error) 
+    {
+        //
+        // Failed RTask. Handle as appropriate.
+        //
+    }
+
+
+    //
+    // RBrokerListener interface.
+    //
+
+    public void onRuntimeError(String error)
+    {
+        // Runtime exception. Handle as appropriate.
+    }
+
+    public void onRuntimeStats(RBrokerRuntimeStats stats, int maxConcurrency) 
+    {
+        //
+        // For profiling, see the RBrokerRuntimeStats.getTimeOn*() properties.
+        //
+    }
+}</code></pre>
+<p></p></div></div><p></p>
+<h1 id="gridprimer">Grid Resource Management</h1>
+
+<p>This short primer is provided as a note for client application developers.
+The guidance presented here should prove useful when considering
+suitable values for <code>maxConcurrency</code> on an RBrokerConfig or when
+discussing DeployR grid resources with a DeployR system administrator.</p>
+<h3 id="what-is-the-deployr-grid-">What is the DeployR Grid?</h3>
+<p>The DeployR grid is a flexible, network of collaborating nodes that
+contribute resources (memory, CPU, disk) to the DeployR server in order to
+facilitate the execution of a myriad of different types of operations,
+many of which are exposed by the RBroker Framework.</p>
+<h3 id="how-is-the-deployr-grid-configured-">How is the DeployR Grid Configured?</h3>
+<p>To simplify grid management for the system administrator, the DeployR grid
+identifies three distinct types of operation, known as <strong>anonymous</strong>,
+<strong>authenticated</strong> and <strong>asynchronous</strong> operations respectively. These names
+simply provide a high-level description for related sets of runtime
+operations that share common characteristics.</p>
+<p>Typically, each node on the grid can be configured by the server administrator
+to support just one type of operation. For example, the administrator could
+designate a node to asynchronous operations only. If the administrator
+does not want to limit the availability of the resources on a particular
+grid node to a single type of operation they can assign a special <strong>mixed mode</strong>
+operating type to the node. This designation permits any operation to take advantage
+of the grid node resources at runtime.</p>
+<h3 id="how-does-the-deployr-grid-configuration-impact-on-rbroker-">How Does the DeployR Grid Configuration Impact on RBroker?</h3>
+<p>Each RBroker runtime automatically acquires grid resources at runtime on
+behalf of the client application. The exact nature of the resources acquired
+by each runtime are discussed here:</p>
+<p>The <a href="#discrete">Discrete Task Runtime</a> submits all tasks, whether executing
+on behalf of an authenticated or anonymous RBroker, to run on grid nodes
+configured for anonymous operations. If the server can not find an available
+slot on that subset of grid nodes, then the task may execute on a grid node
+configured for mixed mode operations.</p>
+<div class="alert alert-info"><strong>Tip! </strong>
+If your DiscreteTaskBroker instance is returning RTaskResults that indicate
+RGridException, then consider speaking to your DeployR system administrator about
+provisioning additional resources for anonymous operations.
+<br/><br/>
+<b>DeployR Open</b> customers are limited to the resources provided by 
+the single default grid node. <b>DeployR Enterprise</b> customers can request
+additional resources for existing grid nodes or even additional grid nodes.
+<br/><br/>
+In either case, additional resources will support greater levels of concurrent
+workload. Once provisioned, make sure to increase the <code>maxConcurrency</code>
+configuration option on your instance of RBroker to take full advantage of
+the new resources on the grid.
+</div>
+
+<p>The <a href="#pooled"><em>Pooled Task Runtime</em></a> submits all tasks to run on grid
+nodes configured for authenticated operations. If the server can not find an
+available slot on that subset of grid nodes, then the task may execute on a grid
+node configured for mixed mode operations.</p>
+<div class="alert alert-info"><strong>Tip! </strong>
+If the size of the pool allocated to your PooledTaskBroker is less than
+requested by your <code>maxConcurrency</code> configuration option on your instance of
+RBroker, then consider speaking to your DeployR system administrator about
+provisioning additional grid nodes for authenticated operations.
+<br/><br/>
+<b>DeployR Open</b> customers are limited to the resources provided by 
+the single default grid node. <b>DeployR Enterprise</b> customers can request
+additional resources for existing grid nodes or even additional grid nodes.
+<br/><br/>
+Also you may want to discuss increasing the per-authenticated user concurrent
+operation limit, which is a setting found under <strong>Server Policies</strong> in the
+Administration Console. Ultimately, this setting determines the maximum
+pool size  that a single instance of an authenticated PooledTaskBroker can allocate.
+</div>
+
+<p>The <a href="#background"><em>Background Task Runtime</em></a> submits all tasks to run on grid
+nodes configured for asynchronous operations. If the server can not find an
+available slot on that subset of grid nodes then the task may execute on a grid
+node configured for mixed mode operations.</p>
+<div class="alert alert-info"><strong>Tip! </strong>
+If you feel that too many of your BackgroundTask are waiting on a queue
+pending available resources, then consider speaking with your DeployR system
+administrator about provisioning additional grid nodes for
+asynchronous operations to allow greater levels of concurrent
+workload.
+<br/><br/>
+<b>DeployR Open</b> customers are limited to the resources provided by 
+the single default grid node. <b>DeployR Enterprise</b> customers can request
+additional resources for existing grid nodes or even additional grid nodes.
+<br/><br/>
+</div>
+</div></div></div>
+        </div>    
+      </div>
+      <div class="push"></div>
+    </div>
+
+    <!-- Footer
+    ================================================== -->
+
+    <footer class="widewrapper footer bs-footer" role="contentinfo">
+  <div class="container">
+    <div class="row footer">
+      <div class="col-sm-3">
+        <h4>Get Started</h4>
+        <ul class="grove-list">
+          <li><a href="/documents/getting-started/about">About DeployR</a></li>
+          <li><a href="/download">Download DeployR</a></li>
+          <li><a href="/documents/admin/install">Install DeployR</a></li>
+          <li><a href="/documents/admin/troubleshoot">Troubleshooting & Diagnostics</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>Develop</h4>
+        <ul class="grove-list">
+          <li><a href="/dev">Get Client Developer Tools</a></li>
+            <li><a href="/docanddown#rbroker">RBroker Framework</a></li>
+          <li><a href="/docanddown#clientlib">API Client Libraries</a></li>
+          <li><a target="_blank" href="/documents/dev/api-doc">API Reference Guide</a></li>
+          <li><a target="_blank" href="/documents/help/repo-man">Repository Manager</a></li>
+         <!-- <li><a href="/docanddown#integration">3rd Party Tool Integration</a></li>-->
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>Manage</h4>
+          <ul class="grove-list">
+            <li><a target="_blank" href="/documents/help/admin-console">Administration Console</a></li>
+            <li><a href="/documents/admin/security">Security Guide</a></li>
+            <li><a href="/documents/admin/throughput">Scale & Throughput</a></li>
+            <li><a href="/documents/admin/highavail">High Availability</a></li>
+            <li><a href="/documents/admin/bigdata">Managing Big Data</a></li>
+          </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>DeployR 8.1.0</h4>
+          <ul class="grove-list">
+            <li><a href="/license">License Information</a></li>
+      	    <li><a href="/documents/admin/whats-new/">What's New in 8.1.0</a></li>
+	          <li><a href="http://go.microsoft.com/fwlink/?LinkID=708535" target="_blank">Join the DeployR Forum</a></li>
+	          <li><a href="/releases/">Release Archives</a></li>
+          </ul>
+         <div><small> &copy; 2015 Microsoft Corporation</small></div>
+      </div>    
+    </div>
+  </div>          
+</footer> 
+
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<script src="../../../assets/js/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="../../../assets/js/vendor/modernizr/modernizr.js"></script>
+<script src="../../../assets/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<!-- Google Analytics (click event)
+================================================== -->
+
+<script>
+   $('.ga-track').on('click', function() {
+      try { 
+        var label = $(this).data('ga') || $(this).text();
+        ga('send', 'event', 'button', 'click', label);
+      } catch (err) {}
+   });
+</script>
+
+<!-- TOC
+================================================= -->
+<script>
+  // back to top
+  setTimeout(function () {
+     var $sideBar = $('.bs-sidebar');
+     if (!$sideBar) { return; }
+     $sideBar.affix({
+     offset: {
+     top: function () {
+        var offsetTop = $sideBar.offset().top
+        var sideBarMargin = parseInt($sideBar.children(0).css('margin-top'), 10)
+        var navOuterHeight = $('.bs-docs-nav').height()
+        return (this.top = offsetTop - navOuterHeight - sideBarMargin)
+      }
+      , bottom: function () {
+        return (this.bottom = $('.bs-footer').outerHeight(true))
+      }
+    }
+    })
+  }, 100)
+</script>
+
+<script>
+  $('.tab-content div').each(function( index ) {
+    if(index === 0) { $(this).addClass('active'); }
+  });
+
+  $('.code-tabs a').click(function (e) {
+  });
+
+</script>
+
+     
+  </body>
+</html>

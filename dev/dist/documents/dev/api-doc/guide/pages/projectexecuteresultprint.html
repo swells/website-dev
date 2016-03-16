@@ -1,0 +1,168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>6.2.8 /r/project/execute/result/print 3.0</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/architecture.html"><strong>2</strong><span>Web Service API Architecture</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/overview.html"><strong>3</strong><span>Web Service API Overview</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/working.html"><strong>4</strong><span>Working with the Web Service APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingusers.html"><strong>5</strong><span>Working with the User APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingprojects.html"><strong>6</strong><span>Working with the Project APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingjobs.html"><strong>7</strong><span>Working with the Job APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingrepository.html"><strong>8</strong><span>Working with the Repository APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/encodings.html"><strong>9</strong><span>Web Service API Data Encodings</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/libraries.html"><strong>10</strong><span>Web Service API Client Libraries</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/explorer.html"><strong>11</strong><span>The API Explorer Tool</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        
+    </div>
+    <p>RevoDeployR API</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../../guide/workingusers.html">&lt;&lt; <strong>5</strong><span>Working with the User APIs</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../../guide/workingjobs.html"><strong>7</strong><span>Working with the Job APIs</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>6.2.8 /r/project/execute/result/print - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Revolution Analytics</p>
+
+                    <p><strong>Version:</strong> 3.0</p>
+
+                    
+                </div>
+
+                
+
+                
+
+<h2 id="projectexecuteresultprint">6.2.8 /r/project/execute/result/print</h2>
+This call prints the execution results to a PDF document for the specified project.<p class="paragraph"/>By specifying a value for the  <em class="italic">execution</em>  parameter the caller can print only results on the specified executions. By specifying a value for the  <em class="italic">filename</em>  parameter the caller can print a specific result on the specified execution.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>GET<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>project – specifies the project identifier</li>
+<li>execution - (optional) specifies a comma-separated list of execution identifiers</li>
+<li>filename - (optional) specifies a result file name</li>
+<li>report - (optional) if true, the PDF document includes summary execution details alongside results</li>
+<li>landscape - (optional) if true, the PDF document will be printed using landscape orientation</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+project=PROJECT&#45;c2cbcb44&#45;4c50&#45;4065&#45;9abe&#45;17ae74791838
+execution=EXEC&#45;76b503a3&#45;3c2f&#45;4114&#45;b4b2&#45;e3b1b6f88657</pre></div><p class="paragraph"/><strong class="bold">Response</strong><p class="paragraph"/>Content-Type: application/pdf<p class="paragraph"/>
+
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../../guide/workingusers.html">&lt;&lt; <strong>5</strong><span>Working with the User APIs</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../../guide/workingjobs.html"><strong>7</strong><span>Working with the Job APIs</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                    <div class="menu-block"><h1 class="menu-title" onclick="toggleRef(this.parentNode.childNodes[1])">Client Library Sample Code</h1><div class="menu-sub">
+                        
+                            
+                            <div class="menu-item"><a href="../../ref/Client%20Library%20Sample%20Code/Java%20Client%20Library.html">Java Client Library</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../../ref/Client%20Library%20Sample%20Code/Javascript%20Client%20Library.html">Javascript Client Library</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../../ref/Client%20Library%20Sample%20Code/dotNET%20Client%20Library.html">dotNET Client Library</a>
+                            </div>
+                            
+                            </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    Copyright (c) Revolution Analytics 2013.
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

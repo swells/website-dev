@@ -1,0 +1,183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>11.2 Learning the API 8.0.0</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/architecture.html"><strong>2</strong><span>Web Service API Architecture</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/overview.html"><strong>3</strong><span>Web Service API Overview</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/working.html"><strong>4</strong><span>Working with the Web Service APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingusers.html"><strong>5</strong><span>Working with the User APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingprojects.html"><strong>6</strong><span>Working with the Project APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingjobs.html"><strong>7</strong><span>Working with the Job APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingrepository.html"><strong>8</strong><span>Working with the Repository APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingeventstream.html"><strong>9</strong><span>Working with the Event Stream API</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/encodings.html"><strong>10</strong><span>Web Service API Data Encodings</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/explorer.html"><strong>11</strong><span>The API Explorer Tool</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/741changehistory.html"><strong>12</strong><span>API Changes in 7.4.1</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/74changehistory.html"><strong>13</strong><span>API Changes in 7.4</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/73changehistory.html"><strong>14</strong><span>API Changes in 7.3</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/72changehistory.html"><strong>15</strong><span>API Changes in 7.2</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/71changehistory.html"><strong>16</strong><span>API Changes in 7.1</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/70changehistory.html"><strong>17</strong><span>API Changes in 7.0</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/62changehistory.html"><strong>18</strong><span>API Changes in 6.2</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        
+    </div>
+    <p>DeployR API</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../../guide/encodings.html">&lt;&lt; <strong>10</strong><span>Web Service API Data Encodings</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../../guide/741changehistory.html"><strong>12</strong><span>API Changes in 7.4.1</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>11.2 Learning the API - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Microsoft Corporation</p>
+
+                    <p><strong>Version:</strong> 8.0.0</p>
+
+                    
+                </div>
+
+                
+
+                
+
+<h2 id="explorerdetails">11.2 Learning the API</h2>
+Use the functionality found under each tab in API Explorer to interact with and invoke a subset of the full API. Each of these tabs is described in the following sections.<p class="paragraph"/><h4>1. DeployR Tab</h4><p class="paragraph"/>The DeployR tab is the starting point in the API Explorer. This tab gives the user access to the full set of <a href="../guide/single.html#workingusers" class="guide">User APIs</a>.<p class="paragraph"/>When a user first launches the API Explorer the DeployR tab and the Repo Scripts tab are the only tabs enabled in the API Tabs Panel. In order to gain access to additional tabs you must first sign-in to DeployR.<p class="paragraph"/>Once you successfully authenticates with DeployR the following tabs are activated:<p class="paragraph"/><img border="0" class="center" src="../img/../img/explorer_tabs_authenticated.png"></img>
+<ul class="star">
+<li>DeployR</li>
+<li>Projects</li>
+<li>Repo Files</li>
+<li>Jobs</li>
+</ul><p class="paragraph"/><blockquote class="note">
+ <em class="italic"><strong class="bold">Important!</strong></em>  When you sign out of DeployR, most tabs are automatically disabled except the default DeployR tab and the Repo Scripts tab, which are always enabled.
+</blockquote><p class="paragraph"/><h4>2. Projects Tab</h4><p class="paragraph"/>The Projects tab provides access to the full set of <a href="../guide/single.html#workingprojects" class="guide">Project Management APIs</a>.<p class="paragraph"/>Once you select a specific project from the list of projects displayed under this tab, the following set of additional project-specific tabs are enabled in addition to those enabled earlier:<p class="paragraph"/><img border="0" class="center" src="../img/../img/explorer_tabs_project.png"></img>
+<ul class="star">
+<li>Console</li>
+<li>Workspace</li>
+<li>Directory</li>
+<li>Packages</li>
+<li>About</li>
+</ul><p class="paragraph"/>The functionality found under these tabs allows you to interact with APIs on the selected project.<p class="paragraph"/><blockquote class="note">
+ <em class="italic"><strong class="bold">Important!</strong></em>  Clearing the active selection in the list of projects displayed under the Projects tab will automatically disable the complete set of project-specific tabs.
+</blockquote><p class="paragraph"/><h4>3. Console Tab</h4><p class="paragraph"/>The Console tab offers access to the full set of <a href="../guide/single.html#projectexecution" class="guide">Project Execution APIs</a>.<p class="paragraph"/><h4>4. Workspace Tab</h4><p class="paragraph"/>The Workspace tab offers access to the full set of <a href="../guide/single.html#projectworkspace" class="guide">Project Workspace APIs</a>.<p class="paragraph"/><h4>5. Directory Tab</h4><p class="paragraph"/>The Directory tab offers access to the full set of <a href="../guide/single.html#projectdirectory" class="guide">Project Directory APIs</a>.<p class="paragraph"/><h4>6. Packages Tab</h4><p class="paragraph"/>The Packages tab offers access to the full set of <a href="../guide/single.html#projectpackages" class="guide">Project Package APIs</a>.<p class="paragraph"/><h4>7. About Tab</h4><p class="paragraph"/>The About tab offers access to the <a href="../guide/single.html#projectabout" class="guide">/r/project/about</a> and <a href="../guide/single.html#projectaboutupdate" class="guide">/r/project/about/update</a> APIs. These APIs appear in their own tab simply due to space constraints in the UI.<p class="paragraph"/><h4>8. Repo Files Tab</h4><p class="paragraph"/>The Repo Files tab offers access to the full set of <a href="../guide/single.html#repositoryfiles" class="guide">Repository File APIs</a>.<p class="paragraph"/><h4>9. Jobs Tab</h4><p class="paragraph"/>The Jobs tab offers access to the full set of <a href="../guide/single.html#workingjobs" class="guide">Job APIs</a>.<p class="paragraph"/><h4>10. Repo Scripts Tab</h4><p class="paragraph"/>The Repo Scripts tab offers access to the full set of <a href="../guide/single.html#repositoryscripts" class="guide">Repository Script APIs</a>.<p class="paragraph"/><blockquote class="note">
+ <em class="italic"><strong class="bold">Important!</strong></em>  Hovering your mouse over most UI elements in the API Explorer reveals helpful tooltips.
+</blockquote>
+
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../../guide/encodings.html">&lt;&lt; <strong>10</strong><span>Web Service API Data Encodings</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../../guide/741changehistory.html"><strong>12</strong><span>API Changes in 7.4.1</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    Copyright (c) 2009-2016 Microsoft Corporation
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="index.xml" data-mc-path-to-help-system="../../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-toc-path="User Accounts">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" />
+        <link href="../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" />
+        <link href="../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" /><title>User Account Properties</title>
+        <link href="../Resources/Stylesheets/admin-console-help.css" rel="stylesheet" type="text/css" />
+        <script src="../../Resources/Scripts/custom.modernizr.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/foundation.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/plugins.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/require.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/require.config.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkTop"><a href="../../index.html#Topics/user-properties.htm">Open topic with navigation</a>
+        </p>
+        <h2 class="Heading2">User Account Properties</h2>
+        <p>For each user, there are a number of properties that can be defined. The properties of a new account are described in the following table.</p>
+        <p>&#160;</p>
+        <table class="table_2">
+            <col style="width: 109px;" />
+            <col />
+            <tr>
+                <td class="td_2">
+                    <p class="TableHeading">Property</p>
+                </td>
+                <td class="td_3">
+                    <p class="TableHeading">Description</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_4">
+                    <p class="Code_1">Enabled</p>
+                </td>
+                <td class="td_5">
+                    <p class="TableData">When <span class="UIElementChar">Enabled</span> is selected, the user account is active, thereby allowing this user to access <span class="VariablesBrand">DeployR</span> services on the API. If you uncheck this box, the account is disabled and the user will not have access to the console or the API calls. </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_4">
+                    <p class="Code_1">Username</p>
+                </td>
+                <td class="td_5">
+                    <p class="TableData">Enter a unique name consisting of at least three alphanumeric characters, but no spaces or symbols.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_4">
+                    <p class="Code_1">Display name</p>
+                </td>
+                <td class="td_5">
+                    <p class="TableData">Enter a display name of any combination of up to 50 alphanumeric characters or spaces. When the user logs into the Administration Console, this name appears in the upper right.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_4">
+                    <p class="Code_1">Password / Verify Password</p>
+                </td>
+                <td class="td_5">
+                    <p class="TableData">Enter the new password and re-enter it a second time to confirm.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_4">
+                    <p class="Code_1">Password Expired</p>
+                </td>
+                <td class="td_5">
+                    <p class="TableData">Whenever this checkbox is selected, the user will be redirected to the <span class="VariablesBrand">DeployR</span> Account Password Reset page the next time the user attempts to login so that they can define a new password. This applies only to basic authentication.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_4">
+                    <p class="Code_1">Account Locked</p>
+                </td>
+                <td class="td_5">
+                    <p class="TableData">When this checkbox is selected, the user account is locked. The user will not be permitted to log into the console. This applies only to basic authentication.</p>
+                </td>
+            </tr>
+            <!--            <tr>
+                <td class="td_4">
+                    <p class="Code_1">Email</p>
+                </td>
+                <td class="td_5">
+                    <p class="TableData">This field is not currently used. In the future, email notifications may be delivered to this address.</p>
+                </td>
+            </tr>
+-->
+            <tr>
+                <td class="td_4">
+                    <p class="Code_1">R boundary</p>
+                </td>
+                <td class="td_5">
+                    <p class="TableData">Optionally, assign a <a href="boundaries-intro.htm">boundary</a> to the user. Boundaries impose a set of runtime constraints on the user when he or she executes code or scripts on the API. <br /><span class="NoteChar">Note</span>: Grid node boundaries take precedence over user boundaries, and user boundaries take precedence over the server-wide default boundary. </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_4">
+                    <p class="Code_1">Roles</p>
+                </td>
+                <td class="td_5">
+                    <p class="TableData">Assign <a href="role-intro.htm">roles</a> in order to grant the user permissions to execute API calls, access the Administration Console, access some or all of the event streams, and access certain scripts. If you do not specify any roles, then the <span class="Code_1">BASIC_USER</span> is automatically assigned. </p>
+                </td>
+            </tr>
+        </table>
+        <p>&#160;</p>
+        <p class="related"><a href="javascript:void(0);" class="MCHelpControl MCHelpControl-Related relatedTopics" data-mc-topics="Creating &amp; Managing User Accounts|user-intro.htm||Creating New User Accounts|user-new-account.htm||Deleting User Accounts|user-delete-account.htm||Exporting User Accounts |user-exporting.htm||Importing User Accounts |user-importing.htm||Preconfigured User Accounts |user-defaults.htm||Viewing and Editing User Accounts|user-view-edit.htm"><span class="MCHelpControl-RelatedHotSpot_"><img class="MCHelpControl_Image_Icon" src="../../Skins/Default/Stylesheets/Images/transparent.gif" height="16" width="16" alt="Related Topics Icon" />Related Topics</span></a>
+        </p>
+    </body>
+</html>

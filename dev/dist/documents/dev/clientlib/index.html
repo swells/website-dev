@@ -1,0 +1,3016 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="DeployR - Simple R analytics integration for application developers.">
+<meta name="keywords" content="R,Simple,DeployR,Java,JavaScript,.NET,Statistics,Big Data">
+<meta name="author" content="Microsoft Corporation">
+<meta name="google-site-verification" content="BQWjliQil8coeYFDfd-nee7j5GDJ0p-6lU4abeJiAZU">
+
+<!--<time itemprop="buildDate" datetime="Wednesday, March 16th, 2016, 9:47:06 AM PDT"></time>-->
+
+<title>
+  DeployR &middot; Client Library Tutorial
+</title>
+
+<!-- Favicons -->
+<link rel="shortcut icon" href="../../../assets/img/favicon.png" type="image/png" >
+<link rel="icon" href="../../../assets/img/favicon.png" type="image/png">
+
+<!-- Bootstrap styles -->
+<link rel="stylesheet" href="../../../assets/css/vendor/bootstrap/bootstrap.min.css">
+
+<!-- Documentation extras -->
+<link href="../../../assets/css/github.css" rel="stylesheet">
+
+<!-- Glyphicons -->
+<link rel="stylesheet" href="../../../assets/css/vendor/glyphicons/glyphicons.min.css">
+<link rel="stylesheet" href="../../../assets/css/vendor/glyphicons/filetypes.min.css">
+<link rel="stylesheet" href="../../../assets/css/vendor/glyphicons/social.min.css">
+
+<!-- Google Webfonts -->
+<link href="//fonts.googleapis.com/css?family=Open+Sans:400,700,600" rel="stylesheet" type="text/css">
+
+<!-- LayerSlider styles -->
+<link rel="stylesheet" href="../../../assets/css/vendor/layerslider/layerslider.min.css" type="text/css">
+
+<!-- Grove Styles (switch for different color schemes, e.g. "styles-cleanblue.css") -->
+<link rel="stylesheet" href="../../../assets/css/styles-blue.css" id="grove-styles">
+
+<!-- Site Styles -->
+<link href="../../../assets/css/site.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <link rel="stylesheet" href="../../../assets/css/ie8.css">        
+  <script src="../../../assets/js/vendor/google/html5-3.6-respond-1.1.0.min.js"></script>
+<![endif]-->
+
+<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../../assets/js/vendor/jquery/jquery-1.9.1.min.js"><\/script>')</script>
+<!-- jQuery with jQuery Easing, and jQuery Transit JS -->
+     
+<!-- LayerSlider from Kreatura Media with Transitions -->
+<script src="../../../assets/js/vendor/layerslider/greensock.js" type="text/javascript"></script>
+<script src="../../../assets/js/vendor/layerslider/layerslider.transitions.js" type="text/javascript"></script>
+<script src="../../../assets/js/vendor/layerslider/layerslider.kreaturamedia.jquery.js" type="text/javascript"></script>
+
+<!-- Grove Layerslider initiation script -->
+<script src="../../../assets/js/grove-slider.js" type="text/javascript"></script>
+
+<!-- GA for DeployR-site -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-6984166-13', 'auto');
+  ga('send', 'pageview');
+</script>
+  </head>
+  <body data-spy="scroll" data-target="#sidenav">
+    <a class="sr-only" href="#content">Skip to main content</a>
+
+    <!-- master nav -->
+    <header>
+   <nav class="navbar navbar-default grove-navbar" role="navigation">
+      <div class="container">
+         <div class="navbar-header">
+            <a href="#" class="grove-toggle" data-toggle="collapse" data-target=".grove-nav">   
+            <i class="glyphicons show_lines"></i>  
+            </a>
+            <a href="/" class="navbar-brand">
+            <img src="../../../assets/img/rLogo.png" alt="DeployR"> DeployR
+            </a>
+         </div>
+         <div class="collapse navbar-collapse grove-nav">
+            <ul class="nav navbar-nav">
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Data Scientists <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/data-scientist">Getting Started</a></li>
+                <!--<li><a href="#">Learn-by-Example Tutorial</a></li>-->
+                     <li><a href="/documents/dev/scientist-portable-code">Portable R Code Guide</a></li>
+                     <li><a href="/documents/help/repo-man">Repository Manager Help</a></li>
+                     <li><a href="/documents/getting-started/data-scientist#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Application Developers <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/application-developer">Getting Started</a></li>
+                     <!--<li><a href="#">Learn-by-Example Tutorial</a></li>-->
+                     <li><a href="/documents/dev/rbroker">RBroker Framework Tutorial</a></li>
+                     <li><a href="/documents/dev/clientlib">Client Library Tutorial</a></li>
+                     <li><a href="/documents/dev/api-doc">API Reference Guide</a></li>
+                     <li><a href="/docanddown">Library Downloads</a></li>
+                     <li><a href="/documents/getting-started/application-developer/#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Administrators <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/administrator">Getting Started</a></li>
+                     <li><a href="/documents/admin/install">Installation & Configuration</a></li>
+                     <li><a href="/documents/admin/security">Security</a></li>
+                     <li><a href="/documents/admin/r-package-mgmt">R Package Management</a></li>
+                     <li><a href="/documents/help/admin-console">Administration Console Help</a></li>
+                     <li><a href="/documents/admin/troubleshoot">Troubleshooting</a></li>
+                     <li><a href="/documents/getting-started/administrator/#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">
+                  Community <b class="caret"></b>
+                  </a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="http://go.microsoft.com/fwlink/?LinkID=708535" target="_blank">Forum / Discussion Group</a></li>
+                     <li><a href="/faq">FAQs</a></li>
+                  </ul>
+               </li>
+              <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Download<b class="caret"></b></a>            
+                  <ul class="dropdown-menu pull-right">   
+                    <li><a href="/download">Download DeployR</a></li>
+                    <li><a href="/documents/admin/install">Install DeployR</a></li>
+                    <li><a href="/releases/">Release History</a></li>
+                  </ul>
+            </ul>
+         </div>
+         <!-- /.navbar-collapse -->
+      </div>
+   </nav>
+</header>
+
+
+    <!-- page title -->
+    <div class="widewrapper pagetitle strong-highlight">
+   <div class="container">
+      <h1>Client Library Tutorial <small></small></h1>
+      <span class="product-version">
+         Version 8.1.0
+         
+      </span>
+   </div>
+</div>
+  
+    <div class="widewrapper sf-wrapper">
+      <div class="container content" role="main">
+        <div>
+          
+<div class="row"><div class="col-md-3" id="sidenav"><div class="bs-sidebar hidden-print hidden-xs hidden-sm" role="complementary"><ul class="nav bs-sidenav"><li class="active"><a href="#introduction">Introduction</a><ul class="nav"><li><a class="toc-section-0" href="#overview">API Overview</a></li><li><a class="toc-section-0" href="#helloworld">Hello World Example</a></li></ul></li><li><a href="#connection">Getting Connected</a><ul class="nav"></ul></li><li><a href="#authentication">Authentication</a><ul class="nav"></ul></li><li><a href="#authservices">Authenticated Services</a><ul class="nav"><li><a class="toc-section-0" href="#authprojects">Project Services</a></li><li><a class="toc-section-0" href="#background">Background Job Services</a></li><li><a class="toc-section-0" href="#repository">Repository Services</a></li></ul></li><li><a href="#anonservices">Anonymous Services</a><ul class="nav"><li><a class="toc-section-0" href="#anonprojects">Project Services</a></li></ul></li><li><a href="#execmodel">Standard Execution Model</a><ul class="nav"></ul></li><li><a href="#encoding">R Object Data Encoding</a><ul class="nav"></ul></li><li><a href="#decoding">R Object Data Decoding</a><ul class="nav"></ul></li></ul><div class="related"><h3 id="download-developer-tools">Download Developer Tools</h3>
+<p><a href="/docanddown/#clientlib">Download client developer tools and documentation for Java, JavaScript or .NET</a>.</p>
+</div></div></div><div class="col-md-9" role="main"><div class="container-fluid content doc-content"><h1 id="introduction">Introduction</h1>
+
+<p>The DeployR API exposes a wide range of R analytics services to client
+application developers. These services are exposed using standards based
+JSON/XML and are delivered as Web services over HTTP(s). This standards
+based approach makes it possible to integrate DeployR services within just
+about any client application environment.</p>
+<p>To further simplify the integration of DeployR services within client
+applications several client libraries are provided for Java, JavaScript
+and .NET developers. These native client libraries provide a number of
+significant advantages over working directly with the raw API, including
+simplified service calls, encoding of call parameter data, and automatic
+handling of response markup on the API.</p>
+<div class="alert alert-info">
+    <strong>Try Out Our Examples!</strong>
+    Explore the client library examples for 
+            <a target="_blank" href="https://github.com/Microsoft/java-example-client-basics">Java,</a> 
+            <a target="_blank" href="https://github.com/Microsoft/js-client-library/releases">Javascript,</a> and 
+            <a target="_blank" href="https://github.com/Microsoft/dotnet-client-library">.NET.</a>  Find them under the <code>examples</code> directory of each Github repository. Additional sample applications are also <a href="http://github.com/deployr?query=example" target="_blank">available on GitHub.</a>
+</div>
+
+<div class="alert alert-info"><strong>Tip! </strong>
+Check out the <a href="/docanddown/#rbroker"><em>RBroker Framework</em></a> for a simple yet powerful
+alternative to working with the client libraries. The framework
+handles a lot of the complexity in building real world client
+applications so you don&#39;t have to.
+</div>
+
+
+<h2 id="overview">API Overview</h2>
+
+<p>This section briefly introduces the  top-level R analytics services exposed
+on the DeployR API:</p>
+<ul>
+<li><p><b>User Services @ /r/user/*</b></p>
+<p>Providing the basic authentication mechanisms for end-users and client
+applications that need to avail of <a href="#authservices"><em>authenticated services</em></a>
+on the API.</p>
+</li>
+</ul>
+<ul>
+<li><p><b>Project Services @ /r/project/*</b></p>
+<p>Providing <a href="#authservices"><em>authenticated services</em></a> related to stateful,
+and optionally persistent, R session environments and analytics Web service
+execution.</p>
+</li>
+</ul>
+<ul>
+<li><p><b>Background Job Services @ /r/job/*</b></p>
+<p>Providing <a href="#authservices"><em>authenticated services</em></a> related to persistent
+R session environments for scheduled or periodic analytics Web service
+executions.</p>
+</li>
+<li><p><b>Repository Services @ /r/repository/*</b></p>
+<p>Providing <a href="#authservices"><em>authenticated services</em></a> related to R script,
+model and data file persistence plus <em>authenticated</em> and <a href="#anonservices"><em>anonymous
+services</em></a> related to analytics Web service execution.</p>
+</li>
+</ul>
+<div class="alert alert-success"><strong>Note! </strong>
+All services on the DeployR API are documented in detail in the
+<a href="/documents/dev/api-doc" target="_blank">
+API Reference Guide</a>.
+</div>
+
+
+<p><br/></p>
+<h2 id="helloworld">Hello World Example</h2>
+
+<p>The following code snippets provide the ubiquituous &quot;Hello World&quot; example
+for the client libraries, demonstrating the basic programming model used
+when working with the client libraries in Java and JavaScript, and C#
+respectively.</p>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-41Ix3QTuzTl-0" data-toggle="tab" data-type="">Java</a></li><li class=""><a href="#tab-41Ix3QTuzTl-1" data-toggle="tab" data-type="">JavaScript</a></li><li class=""><a href="#tab-41Ix3QTuzTl-2" data-toggle="tab" data-type="">C#</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-41Ix3QTuzTl-0"><p></p>
+<pre><code>//
+// 1. Establish a connection to DeployR.
+//
+// This example assumes the DeployR server is running on localhost.
+//
+String deployrEndpoint = &quot;http://localhost:8100/deployr&quot;;
+RClient rClient = RClientFactory.createClient(deployrEndpoint);
+
+//
+// 2. Execute an analytics Web service based on a repository-managed
+// R script: /george/demo/regression.R.
+//
+RScriptExecution exec =
+    rClient.executeScript(&quot;regression&quot;, &quot;demo&quot;, &quot;george&quot;, null);
+
+//
+// 3. Retrieve the analytics Web service execution results.
+// 
+// An RScriptExecution provides a client application access to 
+// results including R console output, generated plots or files
+// and DeployR-encoded R object workspace data.
+//
+
+String console = exec.about().console;
+List&lt;RProjectResult&gt; plots = exec.about().results;
+List&lt;RProjectFile&gt; files = exec.about().artifacts;
+List&lt;RData&gt; objects = exec.about().workspaceObjects;</code></pre>
+<p></p></div><div class="tab-pane" id="tab-41Ix3QTuzTl-1"><p></p>
+<pre><code>//
+// 1. Establish a connection to DeployR.
+//
+// This example assumes the DeployR server is running on localhost.
+//
+deployr.configure({ host: &#39;http://localhost:8100&#39; });
+
+// 
+// 2. Execute an analytics Web service based on a repository-managed
+// R script: /george/demo/regression.R.
+// 
+deployr.io(&#39;/r/repository/script/execute&#39;)
+  .data({ author: &#39;george&#39;, directory: &#39;demo&#39;, filename: &#39;regression&#39; })
+  .end(function(res) {
+     //
+     // 3. Retrieve the analytics Web service execution results.
+     // 
+     var exec = res.get(&#39;execution&#39;);
+     var workspace = res.get(&#39;workspace&#39;);
+     var console = exec.console;
+     var plots = exec.results;
+     var files = exec.artifacts;
+     var objects = workspace.objects;
+  });</code></pre>
+<p></p></div><div class="tab-pane" id="tab-41Ix3QTuzTl-2"><p></p>
+<pre><code>//
+// 1. Establish a connection to DeployR.
+//
+// This example assumes the DeployR server is running on localhost.
+//
+String deployrEndpoint = &quot;http://localhost:7300/deployr&quot;;
+RClient rClient = RClientFactory.createClient(deployrEndpoint);
+
+//
+// 2. Execute an analytics Web service based on a repository-managed
+// R script: /george/demo/regression.R.
+//
+RScriptExecution exec = rClient.executeScript(&quot;regression&quot;, &quot;demo&quot;, &quot;george&quot;, &quot;&quot;);
+
+//
+// 3. Retrieve the analytics Web service execution results.
+// 
+// An RScriptExecution provides a client application access to 
+// results including R console output, generated plots or files
+// and DeployR-encoded R object workspace data.
+//
+
+String console = exec.about().console;
+List&lt;RProjectResult&gt; plots = exec.about().results;
+List&lt;RProjectFile&gt; files = exec.about().artifacts;
+List&lt;RData&gt; objects = exec.about().workspaceObjects;</code></pre>
+<p></p></div></div><p></p>
+<div class="alert alert-info">
+  <strong>Try Out Our Examples! </strong>
+  After downloading the client library, you can find basic examples that complement this tutorial under the <code>rbroker/examples</code> directory.  Additionally, find more comprehensive examples on <a href="http://github.com/deployr" target="_blank">GitHub</a>.
+</div>
+
+
+<h1 id="connection">Getting Connected</h1>
+
+<p>The first step for any client application developer using the client libraries is to establish a connection with the DeployR server. A connection is established as follows:</p>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-EkPxhm6OzTe-0" data-toggle="tab" data-type="">Java</a></li><li class=""><a href="#tab-EkPxhm6OzTe-1" data-toggle="tab" data-type="">JavaScript</a></li><li class=""><a href="#tab-EkPxhm6OzTe-2" data-toggle="tab" data-type="">C#</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-EkPxhm6OzTe-0"><p></p>
+<pre><code>//
+// 1. Establish a connection to DeployR.
+//
+// The RClientFactory is provided to simplify the establishment and
+// eventual release of RClient connections.
+//
+// This example assumes the DeployR server is running on localhost.
+//
+String deployrEndpoint = &quot;http://localhost:8100/deployr&quot;;
+RClient rClient = RClientFactory.createClient(deployrEndpoint);</code></pre>
+<p></p></div><div class="tab-pane" id="tab-EkPxhm6OzTe-1"><p></p>
+<pre><code>//
+// 1. Establish a connection to DeployR.
+// 
+// deployr.configure( { host: &#39;&#39; } ) is provided to simplify the establishment 
+// of client connections.
+//
+// This example assumes the DeployR server is running on http://localhost:8100.
+//
+
+//
+// Browser - Same Origin does not need the deployr.configure({ host: &#39;&#39; }) step.
+// Browser - Cross-origin resource sharing (CORS) requests do.
+// 
+deployr.configure( { host: &#39;http://DIFFERENT_DOMAIN:8100&#39;, cors: true });
+
+//
+// Node.js -  No CORS is needed in Node.js
+//
+
+#!/usr/bin/env node
+deployr.configure( { host: &#39;http://localhost:8100&#39; });
+deployr.configure( { host: &#39;http://DIFFERENT_DOMAIN:8100&#39; });</code></pre>
+<p></p></div><div class="tab-pane" id="tab-EkPxhm6OzTe-2"><p></p>
+<pre><code>//
+// 1. Establish a connection to DeployR.
+//
+// The RClientFactory is provided to simplify the establishment and
+// eventual release of RClient connections.
+//
+// This example assumes the DeployR server is running on localhost.
+//
+String deployrEndpoint = &quot;http://localhost:7300/deployr&quot;;
+RClient rClient = RClientFactory.createClient(deployrEndpoint);</code></pre>
+<p></p></div></div><p></p>
+<h1 id="authentication">Authentication</h1>
+
+<p>Once a connection to the DeployR server has been established the next
+step for a client application developer is to decide if end-users or the
+application itself needs access to <a href="#overview"><em>authenticated services</em></a>
+on the API.</p>
+<p>If <em>authenticated project</em>, <em>background job</em> or <em>repository</em>  management
+services are needed by the application then the application must first
+authenticate. If an application only uses <a href="#anonservices"><em>anonymous services</em></a>
+then the application can operate <em>anonymously</em>, without ever authenticating.</p>
+<p>The following code snippets demonstrate how to authenticate using the
+client libraries:</p>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-Vy_en76dMpl-0" data-toggle="tab" data-type="">Java</a></li><li class=""><a href="#tab-Vy_en76dMpl-1" data-toggle="tab" data-type="">JavaScript</a></li><li class=""><a href="#tab-Vy_en76dMpl-2" data-toggle="tab" data-type="">C#</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-Vy_en76dMpl-0"><p></p>
+<pre><code>//
+// 1. Authenticate an end-user or client application.
+//
+// The RBasicAuthentication supports basic username/password authentication.
+// The RUser returned represents an authenticated end-user or application.
+//
+RAuthentication authToken = new RBasicAuthentication(&quot;george&quot;, &quot;s3cret&quot;);
+RUser rUser = rClient.login(authToken);</code></pre>
+<p></p></div><div class="tab-pane" id="tab-Vy_en76dMpl-1"><p></p>
+<pre><code>//
+// Same Origin Request
+//
+// 1. Authenticate an end-user or client application.
+//
+// deployr.io(&#39;/r/user/login&#39;) supports basic username/password authentication.
+// The JSON returned represents an authenticated end-user or application.
+//
+deployr.io(&#39;/r/user/login&#39;)
+  .data({ username: &#39;george&#39;, password: &#39;s3cret&#39; })
+  .end(function(res) {
+       var rUser = res.deployr.response.user;
+  });
+
+//
+// Cross-origin resource sharing (CORS) Request
+//
+deployr.configure( { host: &#39;http://dhost:8100&#39;, cors: true })
+  .io(&#39;/r/user/login&#39;)
+  .data({ username: &#39;george&#39;, password: &#39;s3cret&#39; })
+  .end(function(res) {
+       var rUser = res.deployr.response.user;
+  });</code></pre>
+<p></p></div><div class="tab-pane" id="tab-Vy_en76dMpl-2"><p></p>
+<pre><code>//
+// 1. Authenticate an end-user or client application.
+//
+// The RBasicAuthentication supports basic username/password authentication.
+// The RUser returned represents an authenticated end-user or application.
+//
+RAuthentication authToken = new RBasicAuthentication(&quot;george&quot;, &quot;s3cret&quot;);
+RUser rUser = rClient.login(authToken);</code></pre>
+<p></p></div></div><p></p>
+<div class="alert alert-warning"><strong>Important! </strong>
+Authenticated users not only have access to <em>authenticated services</em> on the
+API, they also have much broader access to R scripts, models and data
+files stored in the repository compared to <em>anonymous</em> users.
+</div>
+
+
+
+<h1 id="authservices">Authenticated Services</h1>
+
+<p>An <em>authenticated</em> user or simply an authenticated client application has
+access to the full range of <em>authenticated services</em> offered on the DeployR
+API. These services are categorized as follows:</p>
+<ol>
+<li><a href="#authprojects">Authenticated Project Services</a></li>
+<li><a href="#background">Background Job Services</a></li>
+<li><a href="#repository">Repository Management Services</a></li>
+</ol>
+<p>The following sections introduce the services themselves and demonstrate how
+the client libraries make these services available.</p>
+<p><br/></p>
+<h2 id="authprojects">Project Services</h2>
+
+<p>A project is simply a DeployR-managed R session.  Any project created by an
+authenticated user is referred to as an <em>authenticated project</em>. There are
+three types of <em>authenticated project</em>:</p>
+<ol>
+<li><p>Temporary Project - a stateful, transient R session offering unrestricted
+API access that lives only for the duration of the current user HTTP
+session or until explicitly closed.</p>
+</li>
+<li><p>User Blackbox Project - a stateful, transient R session offering
+restricted API access that lives only for the duration of the current user
+HTTP session.</p>
+</li>
+<li><p>Persistent Project - a stateful, persistent R session offering
+unrestricted API access can can live indefiitely, across multiple user
+HTTP sessions.</p>
+</li>
+</ol>
+<p>Each type of <em>authenticated project</em> is provided to support distinct workflows
+within client applications.</p>
+<div class="alert alert-info"><strong>Tip! </strong>
+See the <a href="/documents/dev/api-doc/guide/introduction.html#authenticatedprojects" target="_blank">
+Authenticated Projects</a> chapter in the <em>API Reference Guide</em> for further
+details.
+</div>
+
+
+<p>Project Services are most easily understood when considered as a
+collection of related services:</p>
+<ol>
+<li>Project Creation Services</li>
+<li>Project Execution Services</li>
+<li>Project Workspace Services</li>
+<li>Project Directory Services</li>
+<li>Project Package Services</li>
+</ol>
+<p>The following sections demonstrate working with some of the key features
+associated with each family of services within the client libraries.</p>
+<h3 id="1-project-creation-services">1. Project Creation Services</h3>
+<p>These services support the creation of <em>authenticated projects</em>. The
+following code snippets demonstrate some of the ways the client libraries
+make these services available.</p>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-Nytx3maOfpg-0" data-toggle="tab" data-type="">Java</a></li><li class=""><a href="#tab-Nytx3maOfpg-1" data-toggle="tab" data-type="">JavaScript</a></li><li class=""><a href="#tab-Nytx3maOfpg-2" data-toggle="tab" data-type="">C#</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-Nytx3maOfpg-0"><p></p>
+<pre><code>//
+// 1. Create a temporary project.
+//
+RProject blac = rUser.createProject();
+
+//
+// 2. Create a user blackbox project.
+//
+ProjectCreationOptions options = new ProjectCreationOptions();
+options.blackbox = true;
+RProject blackbox  = rUser.createProject(options);
+
+//
+// 3. Create a persistent project.
+//
+// Simply naming a project created by an authenticated user causes
+// that project to become a persistent project.
+//
+RProject persistent = rUser.createProject(&quot;Demo Project&quot;,
+                            &quot;Sample persistent project&quot;);
+
+//
+// 4. Create a pool of temporary projects.
+//
+// Project pools can be very convenient when a client application needs
+// to service multiple concurrent users or requests. The _options_ parameter
+// can be used to custom initialize all projects in the pool.
+//
+List&lt;RProject&gt; projectPool = rUser.createProjectPool(poolSize, options);</code></pre>
+<p></p></div><div class="tab-pane" id="tab-Nytx3maOfpg-1"><p></p>
+<pre><code>//
+// 1. Create a temporary project.
+//
+deployr.io(&#39;/r/project/create&#39;)  
+  .end(function(res) {
+       var project = res.deployr.response.project;
+  });
+
+//
+// 2. Create a user blackbox project.
+//
+deployr.io(&#39;/r/project/create&#39;)  
+  .data({ blackbox: true })
+  .end(function(res) {
+       var blackbox = res.deployr.response.project;
+  });
+
+//
+// 3. Create a persistent project.
+//
+// Simply naming a project created by an authenticated user causes
+// that project to become a persistent project.
+//
+deployr.io(&#39;/r/project/create&#39;)  
+  .data({ 
+    projectname: &#39;Demo Project&#39;, 
+    projectdesrc: &#39;Sample persistent project&#39;
+  })
+  .end(function(res) {
+       var persistent = res.deployr.response.project;
+  });
+
+//
+// 4. Create a pool of temporary projects.
+//
+// Project pools can be very convenient when a client application needs
+// to service multiple concurrent users or requests. The _options_ parameter
+// can be used to custom initialize all projects in the pool.
+//
+deployr.io(&#39;/r/project/pool&#39;)  
+  .data({ poolsize: poolsize }) // additional options
+  .end(function(res) {
+       var projectPool = res.deployr.response.projects;
+  });</code></pre>
+<p></p></div><div class="tab-pane" id="tab-Nytx3maOfpg-2"><p></p>
+<pre><code>//
+// 1. Create a temporary project.
+//
+RProject blac = rUser.createProject();
+
+//
+// 2. Create a user blackbox project.
+//
+ProjectCreationOptions options = new ProjectCreationOptions();
+options.blackbox = true;
+RProject blackbox  = rUser.createProject(options);
+
+//
+// 3. Create a persistent project.
+//
+// Simply naming a project created by an authenticated user causes
+// that project to become a persistent project.
+//
+RProject persistent = rUser.createProject(&quot;Demo Project&quot;,
+                            &quot;Sample persistent project&quot;);
+
+//
+// 4. Create a pool of temporary projects.
+//
+// Project pools can be very convenient when a client application needs
+// to service multiple concurrent users or requests. The _options_ parameter
+// can be used to custom initialize all projects in the pool.
+//
+List&lt;RProject&gt; projectPool = rUser.createProjectPool(poolSize, options);</code></pre>
+<p></p></div></div><p></p>
+<p><br/></p>
+<h3 id="2-project-execution-services">2. Project Execution Services</h3>
+<p>These services support the execution of analytics Web services on
+<em>authenticated projects</em>. The following code snippets demonstrate some
+of the ways the client libraries make these services available.</p>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-E1cg3Q6uMTx-0" data-toggle="tab" data-type="">Java</a></li><li class=""><a href="#tab-E1cg3Q6uMTx-1" data-toggle="tab" data-type="">JavaScript</a></li><li class=""><a href="#tab-E1cg3Q6uMTx-2" data-toggle="tab" data-type="">C#</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-E1cg3Q6uMTx-0"><p></p>
+<pre><code>//
+// 1. Execute an analytics Web service based on a repository-managed
+// R script: /george/demo/regression.R.
+//
+RProjectExecution exec =
+    rProject.executeScript(&quot;regression&quot;, &quot;demo&quot;, &quot;george&quot;, null);
+
+//
+// 2. Execute an analytics Web service based on an arbitrary block
+// of R code: [codeBlock]
+//
+RProjectExecution exec = rProject.executeCode(codeBlock);
+
+//
+// 3. Execute an analytics Web service based on a URL-addressable
+// R script: [regressionURL]
+//
+RProjectExecution exec = rProject.executeExternal(regressionURL);
+
+//
+// 4. Retrieve the analytics Web service execution results.
+// 
+// Regardless of what style of execution service is used the RProjectExecution
+// response provides access to results including R console output, generated
+// plots or files and DeployR-encoded R object workspace data.
+//
+String console = exec.about().console;
+List&lt;RProjectResult&gt; plots = exec.about().results;
+List&lt;RProjectFile&gt; files = exec.about().artifacts;
+List&lt;RData&gt; objects = exec.about().workspaceObjects;</code></pre>
+<p></p></div><div class="tab-pane" id="tab-E1cg3Q6uMTx-1"><p></p>
+<pre><code>//
+// 1. Execute an analytics Web service based on a repository-managed
+// R script: /george/demo/regression.R.
+//
+deployr.io(&#39;/r/project/execute/script&#39;)  
+  .data({ 
+    filename: &#39;regression&#39;, 
+    directory: &#39;demo&#39;,
+    author: &#39;george&#39;,
+    project: rProject
+  })
+  .end(function(res) {
+     var exec = res.deployr.response.execution;
+  });
+
+//
+// 2. Execute an analytics Web service based on an arbitrary block
+// of R code: [codeBlock]
+//
+deployr.io(&#39;/r/project/execute/code&#39;)  
+  .data({ code: codeBlock, project: rProject })
+  .end(function(res) {
+     var exec = res.deployr.response.execution;
+  });
+
+//
+// 3. Execute an analytics Web service based on a URL-addressable
+// R script: [regressionURL]
+//
+deployr.io(&#39;/r/project/execute/code&#39;)  
+  .data({ project: rProject, externalsource: regressionURL })
+  .end(function(res) {
+     var exec = res.deployr.response.execution;
+  });
+
+//
+// 4. Retrieve the analytics Web service execution results.
+// 
+// Regardless of what style of execution service is used /r/project/execution/* 
+// responses provide access to results including R console output, generated 
+// plots or files and DeployR-encoded R object workspace data.
+//
+var about = res.deplor.response;
+var console = about.execution.console;
+var plots = about.execution.results;
+var files = about.execution.artifacts;
+var objects = about.workspace.objects;</code></pre>
+<p></p></div><div class="tab-pane" id="tab-E1cg3Q6uMTx-2"><p></p>
+<pre><code>//
+// 1. Execute an analytics Web service based on a repository-managed
+// R script: /george/demo/regression.R.
+//
+ProjectExecutionOptions options = new ProjectExecutionOptions();
+RProjectExecution exec = rProject.executeScript(&quot;regression&quot;, &quot;demo&quot;, &quot;george&quot;, options);
+
+//
+// 2. Execute an analytics Web service based on an arbitrary block
+// of R code: [codeBlock]
+//
+exec = rProject.executeCode(codeBlock);
+
+//
+// 3. Execute an analytics Web service based on a URL-addressable
+// R script: [regressionURL]
+//
+exec = rProject.executeExternal(regressionURL, options);
+
+//
+// 4. Retrieve the analytics Web service execution results.
+// 
+// Regardless of what style of execution service is used the RProjectExecution
+// response provides access to results including R console output, generated
+// plots or files and DeployR-encoded R object workspace data.
+//
+String console = exec.about().console;
+List&lt;RProjectResult&gt; plots = exec.about().results;
+List&lt;RProjectFile&gt; files = exec.about().artifacts;
+List&lt;RData&gt; objects = exec.about().workspaceObjects;</code></pre>
+<p></p></div></div><p></p>
+<div class="alert alert-info"><strong>Tip! </strong>
+All executions services support a <a href="/documents/dev/api-doc/guide/70changehistory.html#standardexecutionmodel" target="_blank">
+standard execution model</a> defined on the DeployR API.
+</div>
+
+<p><br/></p>
+<h3 id="3-project-workspace-services">3. Project Workspace Services</h3>
+<p>These services support the manipulation and management of R workspace
+objects within <em>authenticated projects</em>. The following code snippets
+demonstrate some of the ways the client libraries make these services
+available.</p>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-NkjehQpufpl-0" data-toggle="tab" data-type="">Java</a></li><li class=""><a href="#tab-NkjehQpufpl-1" data-toggle="tab" data-type="">JavaScript</a></li><li class=""><a href="#tab-NkjehQpufpl-2" data-toggle="tab" data-type="">C#</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-NkjehQpufpl-0"><p></p>
+<pre><code>
+//
+// 1. Create R object data in the workspace by executing an arbitrary
+// block of R code.
+//
+RProjectExecution exec = rProject.executeCode(&quot;x &lt;- rnorm(5)&quot;);
+
+//
+// 2. Create R object data in the workspace by pushing DeployR-encoded data
+// from the client application.
+//
+// 2.1 Prepare sample R object vector data.
+// 2.2 Use RDataFactory to encode the sample R object vector data.
+// 2.3 Push encoded R object into the workspace.
+//
+List&lt;Double&gt; vectorValues = Arrays.asList(10, 11, 12, 13, 14);
+RData encodedVector =
+    RDataFactory.createNumericVector(&quot;samplev&quot;, vectorValues);
+rProject.pushObject(encodedVector);
+
+//
+// 3. Retrieve the DeployR-encoding of an R object from the workspace.
+//
+RData encodedVector = rProject.getObject(&quot;samplev&quot;);
+
+//
+// 4. Store R object data from the workspace as a binary object file (.rData)
+// in the repository.
+//
+RRepositoryFile repositoryFile =
+    rProject.storeObject(&quot;samplev&quot;, &quot;Object data description.&quot;,
+                                     true, null, false, false);</code></pre>
+<p></p></div><div class="tab-pane" id="tab-NkjehQpufpl-1"><p></p>
+<pre><code>// **Sequential execution while remaining asynchronous**
+
+// --------------------------------------------------------------------------
+// 1. Create R object data in the workspace by executing an arbitrary
+// block of R code.
+// --------------------------------------------------------------------------
+deployr.io(&#39;/r/project/execute/code&#39;)  
+  .data({ project: rProject, code: &#39;x &lt;- rnorm(5)&#39; })
+  .end()
+  // --------------------------------------------------------------------------
+  // 2. Create R object data in the workspace by pushing DeployR-encoded data
+  // from the client application.
+  //
+  // 2.1 Prepare sample R object vector data.
+  // 2.2 Use RDataFactory to encode the sample R object vector data.
+  // 2.3 Push encoded R object into the workspace.
+  // --------------------------------------------------------------------------
+  .io(&#39;/r/project/workspace/push&#39;)  
+  .data({ project: rProject })
+  .rinput({ 
+     type: deployr.RDataType.RNUMERIC_VECTOR, 
+     name: &#39;samplev&#39;, 
+     value: [10, 11, 12, 13, 14]
+  })
+  .end()
+  // --------------------------------------------------------------------------
+  // 3. Retrieve the DeployR-encoding of an R object from the workspace.
+  // --------------------------------------------------------------------------
+  .io(&#39;/r/project/workspace/get&#39;)  
+  .data({ project: rProject, name: &#39;samplev&#39; })
+  .end()
+  // --------------------------------------------------------------------------
+  // 4. Store R object data from the workspace as a binary object file (.rData)
+  // in the repository.
+  // --------------------------------------------------------------------------
+  .io(&#39;/r/project/directory/store&#39;)  
+  .data({ 
+    filename: &#39;samplev&#39;, 
+    desrc: &#39;Object data description.&#39;,
+    project: rProject,
+    newversion: true
+  })
+  .end();</code></pre>
+<p></p></div><div class="tab-pane" id="tab-NkjehQpufpl-2"><p></p>
+<pre><code>//
+// 1. Create R object data in the workspace by executing an arbitrary
+// block of R code.
+//
+RProjectExecution exec = rProject.executeCode(&quot;x &lt;- rnorm(5)&quot;);
+
+//
+// 2. Create R object data in the workspace by pushing DeployR-encoded data
+// from the client application.
+//
+// 2.1 Prepare sample R object vector data.
+// 2.2 Use RDataFactory to encode the sample R object vector data.
+// 2.3 Push encoded R object into the workspace.
+//
+List&lt;Double?&gt; vectorValues = new List&lt;Double?&gt;(){10, 11, 12, 13, 14};
+RData encodedVector = RDataFactory.createNumericVector(&quot;samplev&quot;, vectorValues);
+rProject.pushObject(encodedVector);
+
+//
+// 3. Retrieve the DeployR-encoding of an R object from the workspace.
+//
+encodedVector = rProject.getObject(&quot;samplev&quot;);
+
+//
+// 4. Store R object data from the workspace as a binary object file (.rData)
+// in the repository.
+//
+RRepositoryFile repositoryFile = rProject.storeObject(&quot;samplev&quot;, &quot;Object data description.&quot;,
+                                     true, false, false, null);</code></pre>
+<p></p></div></div><p></p>
+<p><br/></p>
+<h3 id="4-project-directory-services">4. Project Directory Services</h3>
+<p>These services support the manipulation and management of R working
+directory files within <em>authenticated projects</em>. The following code
+snippets demonstrate some of the ways the client libraries make these
+services available.</p>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-NJ3l3mT_GTx-0" data-toggle="tab" data-type="">Java</a></li><li class=""><a href="#tab-NJ3l3mT_GTx-1" data-toggle="tab" data-type="">JavaScript</a></li><li class=""><a href="#tab-NJ3l3mT_GTx-2" data-toggle="tab" data-type="">C#</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-NJ3l3mT_GTx-0"><p></p>
+<pre><code>//
+// 1. Transfer a url-addressable file into the working directory.
+//
+// Demonstrates transferring a file from fileURL location into the working
+// directory. In this example, the name of the file created in the working
+// directory is data.csv.
+//
+DirectoryUploadOptions options = new DirectoryUploadOptions();
+options.filename = &quot;data.csv&quot;;
+RProjectFile file = rProject.transferFile(fileURL, options);
+
+//
+// 2. Load a repository-managed file into the working directory.
+//
+RRepositoryFile repoFile =
+    rUser.fetchFile(&quot;data.csv&quot;, &quot;demo&quot;, &quot;george&quot;, null);
+RProjectFile projectFile = rProject.loadFile(repoFile);</code></pre>
+<p></p></div><div class="tab-pane" id="tab-NJ3l3mT_GTx-1"><p></p>
+<pre><code>//
+// 1. Transfer a url-addressable file into the working directory.
+//
+deployr.io(&#39;/r/project/directory/transfer&#39;)  
+  .data({ project: rProject, url: fileURL }) // additional options
+  .end();
+
+//
+// 2. Load a repository-managed file into the working directory.
+//
+deployr.io(&#39;/r/repository/file/fetch&#39;)  
+  .data({ filename: &#39;data.csv&#39;, directory: &#39;demo&#39;, author: &#39;george&#39; }) 
+  .end()
+  .io(&#39;/r/project/directory/load&#39;)  
+  .data({ project: rProject, filename: &#39;data.csv&#39; }) 
+  .end();</code></pre>
+<p></p></div><div class="tab-pane" id="tab-NJ3l3mT_GTx-2"><p></p>
+<pre><code>//
+// 1. Transfer a url-addressable file into the working directory.
+//
+DirectoryUploadOptions options = new DirectoryUploadOptions();
+RProjectFile file = rProject.transferFile(fileURL, options);
+
+//
+// 2. Load a repository-managed file into the working directory.
+//
+RRepositoryFile repoFile = rUser.fetchFile(&quot;data.csv&quot;, &quot;demo&quot;, &quot;george&quot;, &quot;&quot;);
+RProjectFile projectFile = rProject.loadFile(repoFile);</code></pre>
+<p></p></div></div><p></p>
+<p><br/></p>
+<h3 id="5-project-package-services">5. Project Package Services</h3>
+<p>These services support the manipulation and management of R packages
+within <em>authenticated projects</em>. The following code snippets demonstrate
+some of the ways the client libraries make these services available.</p>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-N1ax3QpdGax-0" data-toggle="tab" data-type="">Java</a></li><li class=""><a href="#tab-N1ax3QpdGax-1" data-toggle="tab" data-type="">JavaScript</a></li><li class=""><a href="#tab-N1ax3QpdGax-2" data-toggle="tab" data-type="">C#</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-N1ax3QpdGax-0"><p></p>
+<pre><code>//
+// 1. List R packages attached on the project.
+//
+List&lt;RProjectPackage&gt; pkgs = rProject.listPackages(false);
+
+//
+// 2. Attach an R package to the project.
+//
+List&lt;RProjectPackage&gt; pkgs = rProject.attachPackage(&quot;ggplot2&quot;, &quot;???&quot;);</code></pre>
+<p></p></div><div class="tab-pane" id="tab-N1ax3QpdGax-1"><p></p>
+<pre><code>//
+// 1. List R packages attached on the project.
+//
+deployr.io(&#39;/r/project/package/list&#39;)
+  .data({ project: rProject }) 
+  .end(function(res) {
+     var pkgs = res.deployr.response.packages;
+  });
+
+//
+// 2. Attach an R package to the project.
+//
+deployr.io(&#39;/r/project/package/attach&#39;)
+  .data({ project: rProject, name: &#39;ggplot2&#39; }) 
+  .end(function(res) {
+     var pkgs = res.deployr.response.packages;
+  });</code></pre>
+<p></p></div><div class="tab-pane" id="tab-N1ax3QpdGax-2"><p></p>
+<pre><code>//
+// 1. List R packages attached on the project.
+//
+List&lt;RProjectPackage&gt; pkgs = rProject.listPackages(false);
+
+//
+// 2. Attach an R package to the project.
+//
+pkgs = rProject.attachPackage(&quot;ggplot2&quot;, &quot;???&quot;);</code></pre>
+<p></p></div></div><p></p>
+<p><br/></p>
+<h2 id="background">Background Job Services</h2>
+
+<p>A background job is simply a request to execute an R analytics Web
+services in the background, possibly at some future time and date. By
+default, the result of that execution will be stored as a <em>persistent
+project</em> on behalf of the <em>authenticated</em> user making the request.</p>
+<div class="alert alert-info"><strong>Tip! </strong>
+By default, each background job execution stores it&#39;s results in a
+<em>persistent project</em>. Persistent projects are discussed in the
+<a href="#authprojects"><em>Authenticated Project Service</em></a> chapter of this guide.
+</div>
+
+<p>Each job moves through a simple lifecyle on the server, starting with
+submission, followed by queueing, running and eventually reaching a
+completion state indicating success or failure. The status of each background
+job can be queried, jobs can be cancelled and when a job completes the
+<em>authenticated</em> user that sumitted the job can collect the results of the
+execution.</p>
+<p>The following code snippets demonstrate some of the ways the client libraries
+make these services available.</p>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-VJRgnXTdGpl-0" data-toggle="tab" data-type="">Java</a></li><li class=""><a href="#tab-VJRgnXTdGpl-1" data-toggle="tab" data-type="">JavaScript</a></li><li class=""><a href="#tab-VJRgnXTdGpl-2" data-toggle="tab" data-type="">C#</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-VJRgnXTdGpl-0"><p></p>
+<pre><code>//
+// 1. Submit a background job for scheduled execution of an analytics Web
+// service based on a repository-managed R script: /george/demo/regression.R.
+//
+// Note: the options parameter is optional but can be used on any job
+// execution call to:
+//
+// (a) Schedule the current job for execution at some future time/date.
+// (b) Set scheduling priority level for the current job.
+// (c) Request the automatic storage of specific job results to the
+// repository, such as binary R object or file data.
+//
+JobExecutionOptions options = new JobExecutionOptions();
+options.priority = JobExecutionOptions.HIGH_PRIORITY;
+
+RJob job =
+    rUser.submitJobScript(&quot;Sample Job&quot;, &quot;Sample Description&quot;,
+                          &quot;regression&quot;, &quot;demo&quot;, &quot;george&quot;, null, options);
+
+//
+// 2. Submit a background job for scheduled execution of an analytics Web
+// service based on an arbitrary block of R code: [codeBlock]
+//
+RJob job = rUser.submitJobCode(&quot;Sample Job&quot;, &quot;Sample description.&quot;,
+                                                codeBlock, options);
+
+//
+// 3. Submit a background job for scheduled execution of an analytics Web
+// service based on a URL-addressable R script: [regressionURL]
+//
+RJob job = rUser.submitJobExternal(&quot;Sample Job&quot;, &quot;Sample description.&quot;,
+                                                regressionURL, options);
+
+//
+// 4. Query that execution status of a background job.
+//
+RJobDetails details = job.query();
+
+if(details.status.equals(RJob.COMPLETED)) {
+
+    //
+    // Retrieve the results of the background job execution, typically
+    // found within the associated RProject.
+    //
+    RProject project = rUser.getProject(details.project);
+}</code></pre>
+<p></p></div><div class="tab-pane" id="tab-VJRgnXTdGpl-1"><p></p>
+<pre><code>//
+// 1. Submit a background job for scheduled execution of an analytics Web
+// service based on a repository-managed R script: /george/demo/regression.R.
+//
+// Note: the options parameter is optional but can be used on any job
+// execution call to:
+//
+// (a) Schedule the current job for execution at some future time/date.
+// (b) Set scheduling priority level for the current job.
+// (c) Request the automatic storage of specific job results to the
+// repository, such as binary R object or file data.
+//
+deployr.io(&#39;/r/job/submit&#39;)
+  .data({ 
+     rscriptauthor: &#39;george&#39;
+     rscriptdirectory: &#39;demo&#39;,
+     name: &#39;regression&#39;,
+     priority: &#39;high&#39; // `low` (default), `medium` or `high`
+  }) 
+  .end(function(res) {
+     var job = res.deployr.response.job;
+  });
+
+//
+// 2. Submit a background job for scheduled execution of an analytics Web
+// service based on an arbitrary block of R code: [codeBlock]
+//
+deployr.io(&#39;/r/job/submit&#39;)
+  .data({ name: &#39;Sample Job&#39;, descr: &#39;Sample description.&#39;, code: codeBlock }) 
+  .end(function(res) {
+     var job = res.deployr.response.job;
+  });
+
+//
+// 3. Submit a background job for scheduled execution of an analytics Web
+// service based on a URL-addressable R script: [regressionURL]
+//
+deployr.io(&#39;/r/job/submit&#39;)
+  .data({ 
+     name: &#39;Sample Job&#39;, 
+     descr: &#39;Sample description.&#39;, 
+     externalsource: regressionURL 
+  }) 
+  .end(function(res) {
+     var job = res.deployr.response.job;
+  });
+
+//
+// 4. Query that execution status of a background job.
+//
+deployr.io(&#39;/r/job/query&#39;)
+  .data({ job: rJob })
+  .end(function(res) {
+     var details = res.deployr.response.job;
+
+     if (details.status === deployr.RJob.COMPLETED) {
+        //
+        // Retrieve the results of the background job execution, typically
+        // found within the associated RProject.
+        //
+        deployr.io(&#39;/r/project/about&#39;)
+          .data({ project: details.project })
+          .end();
+     }
+  });</code></pre>
+<p></p></div><div class="tab-pane" id="tab-VJRgnXTdGpl-2"><p></p>
+<pre><code>//
+// 1. Submit a background job for scheduled execution of an analytics Web
+// service based on a repository-managed R script: /george/demo/regression.R.
+//
+// Note: the options parameter is optional but can be used on any job
+// execution call to:
+//
+// (a) Schedule the current job for execution at some future time/date.
+// (b) Set scheduling priority level for the current job.
+// (c) Request the automatic storage of specific job results to the
+// repository, such as binary R object or file data.
+//
+JobExecutionOptions options = new JobExecutionOptions();
+options.priority = JobExecutionOptions.HIGH_PRIORITY;
+
+RJob job = rUser.submitJobScript(&quot;Sample Job&quot;, &quot;Sample Description&quot;,
+                            &quot;regression&quot;, &quot;demo&quot;, &quot;george&quot;, null, options);
+
+//
+// 2. Submit a background job for immediate execution of an analytics Web
+// service based on an arbitrary block of R code: [codeBlock]
+//
+job = rUser.submitJobCode(&quot;Sample Job&quot;, &quot;Sample description.&quot;, codeBlock, options);
+
+//
+// 3. Submit a background job for immediate execution of an analytics Web
+// service based on a URL-addressable R script: [regressionURL]
+//
+job = rUser.submitJobExternal(&quot;Sample Job&quot;, &quot;Sample description.&quot;, regressionURL, options);
+
+//
+// 4. Query that execution status of a background job.
+//
+RJobDetails details = job.query();
+
+if(details.status == RJob.COMPLETED) {
+
+    //
+    // Retrieve the results of the background job execution, typically
+    // found within the associated RProject.
+    //
+    RProject project = rUser.getProject(details.project);
+}
+}</code></pre>
+<p></p></div></div><p></p>
+<div class="alert alert-info"><strong>Tip! </strong>
+All executions services support the <a href="/documents/dev/api-doc/guide/70changehistory.html#standardexecutionmodel" target="_blank">
+standard execution model</a> defined on the DeployR API.
+</div>
+
+
+<p><br/></p>
+<h2 id="repository">Repository Services</h2>
+
+<p>The  <a href="/documents/help/repo-man/" target="_blank">Repository Manager</a>
+is a tool, delivered as an easy-to-use Web interface, that serves as a
+bridge between the R scripts, models, and data created in existing
+analytics tools and the deployment of that work into the DeployR repository
+to support the development of client applications and integrations.</p>
+<p>That tool uses the full range of <em>repository services</em> on the DeployR
+API to deliver it&#39;s many <em>file</em> and <em>directory</em> related functionalities. Your
+own applications can also leverage these sames services as needed. The
+following code snippets demonstrate some of the ways the client libraries
+make these services available.</p>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-VyyZn7puz6x-0" data-toggle="tab" data-type="">Java</a></li><li class=""><a href="#tab-VyyZn7puz6x-1" data-toggle="tab" data-type="">JavaScript</a></li><li class=""><a href="#tab-VyyZn7puz6x-2" data-toggle="tab" data-type="">C#</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-VyyZn7puz6x-0"><p></p>
+<pre><code>//
+// 1. List repository-managed directories belonging to the authenticated
+// user.
+//
+List&lt;RRepositoryDirectory&gt; dirs = rUser.listDirectories();
+
+//
+// 2. List repository-managed directories along with file listings
+// per directory belonging to authenticated user.
+//
+List&lt;RRepositoryDirectory&gt; dirs =
+    rUser.listDirectories(true, false, false, false);
+for(RRepositoryDirectory dir : dirs) {
+    List&lt;RRepositoryFile&gt; files = dir.about().files;
+}
+
+//
+// 3. List repository-managed files, independent of directories, belonging
+// to the authenticated user.
+//
+List&lt;RRepositoryFile&gt; files = rUser.listFiles();
+for(RRepositoryFile file : files) {
+    URL fileURL = file.download();
+}
+
+//
+// 4. List repository-managed files, independent of directories, belonging
+// to the authenticated user and also include files shared or published by
+// other users.
+//
+List&lt;RRepositoryFile&gt; repoFiles = rUser.listFiles(false, true, true);
+
+//
+// 5. Upload a file to the repository on behalf of the authenticated
+// user.
+//
+InputStream fis = new FileInputStream(new File(&quot;report.pdf&quot;));
+RepoUploadOptions options = new RepoUploadOptions();
+options.filename = &quot;report.pdf&quot;;
+options.directory = &quot;examples&quot;;
+options.descr = &quot;Quarterly report.&quot;;
+RRepositoryFile repoFile = rUser.uploadFile(fis, options);</code></pre>
+<p></p></div><div class="tab-pane" id="tab-VyyZn7puz6x-1"><p></p>
+<pre><code>//
+// 1. List repository-managed directories belonging to the authenticated user.
+//
+deployr.io(&#39;/r/repository/directory/list&#39;)
+  .end(function(res) {
+     var dirs = res.deployr.repository.directories;
+  });
+
+//
+// 2. List repository-managed directories along with file listings
+// per directory belonging to authenticated user.
+//
+deployr.io(&#39;/r/repository/directory/list&#39;)
+  .data({ userfiles: true })
+  .end(function(res) {
+     var dirs = res.deployr.repository.directories;
+     dirs.forEach(function(dir) {
+        var files = dir.files;
+     });
+  });
+
+//
+// 3. List repository-managed files, independent of directories, belonging
+// to the authenticated user.
+//
+deployr.io(&#39;/r/repository/file/list&#39;)
+  .end(function(res) {
+     var files = res.deployr.repository.files;
+     files.forEach(function(file) {
+         deployr.io(&#39;/r/repository/file/download&#39;)
+           .data({ filename: file.filename })
+           .end();
+     });
+  });
+
+//
+// 4. List repository-managed files, independent of directories, belonging
+// to the authenticated user and also include files shared or published by
+// other users.
+//
+deployr.io(&#39;/r/repository/file/list&#39;)
+  .data({ shared: true, published: true })
+  .end(function(res) {
+    var repoFiles = res.deployr.repository.files;
+  });
+
+//
+// Browser
+//
+// 5. Upload a file to the repository on behalf of the authenticated user.
+// 
+// Assuming element on page:
+// `&lt;input id=&quot;report-pdf&quot; type=&quot;file&quot;&gt;`
+//
+var file = document.getElementById(&#39;report-pdf&#39;).files[0];
+
+deployr.io(&#39;/r/repository/file/upload&#39;)
+  .data({ 
+     filename: &#39;report.pdf&#39;, 
+     directory: &#39;examples&#39;,
+     descr: &#39;Quarterly report.&#39;
+  })
+  .attach(file)
+  .end(function(res) {
+    var repoFile = res.deployr.repository.file;
+  });
+
+//
+// Node.js
+//
+// 5. Upload a file to the repository on behalf of the authenticated user.
+//
+
+#!/usr/bin/env node
+deployr.io(&#39;/r/repository/file/upload&#39;)
+  .data({ 
+     filename: &#39;report.pdf&#39;, 
+     directory: &#39;examples&#39;,
+     descr: &#39;Quarterly report.&#39;
+  })
+  .attach(&#39;report.pdf&#39;)
+  .end(function(res) {
+    var repoFile = res.deployr.repository.file;
+  });</code></pre>
+<p></p></div><div class="tab-pane" id="tab-VyyZn7puz6x-2"><p></p>
+<pre><code>//
+// 1. List repository-managed directories belonging to the authenticated
+// user.
+//
+List&lt;RRepositoryDirectory&gt; dirs = rUser.listDirectories();
+
+//
+// 2. List repository-managed directories along with file listings
+// per directory belonging to authenticated user.
+//
+dirs = rUser.listDirectories(true, false, false, false, &quot;&quot;);
+foreach(RRepositoryDirectory dir in dirs) 
+{
+    List&lt;RRepositoryFile&gt; rfiles = dir.about().files;
+}
+
+//
+// 3. List repository-managed files, independent of directories, belonging
+// to the authenticated user.
+//
+List&lt;RRepositoryFile&gt; files = rUser.listFiles();
+foreach(RRepositoryFile file in files) 
+{
+    String fileURL = file.download();
+}
+
+//
+// 4. List repository-managed files, independent of directories, belonging
+// to the authenticated user and also include files shared or published by
+// other users.
+//
+List&lt;RRepositoryFile&gt; repoFiles = rUser.listFiles(false, true, true);
+
+//
+// 5. Upload a file to the repository on behalf of the authenticated
+// user.
+//
+String fileName = &quot;report.pdf&quot;;
+RepoUploadOptions options = new RepoUploadOptions();
+options.filename = &quot;report.pdf&quot;;
+options.directory = &quot;examples&quot;;
+options.descr = &quot;Quarterly report.&quot;;
+RRepositoryFile repoFile = rUser.uploadFile(fileName, options);</code></pre>
+<p></p></div></div><p></p>
+<div class="alert alert-info"><strong>Tip! </strong>
+See the <a href="/documents/dev/api-doc/guide/workingrepository.html" target="_blank">
+Working with the Repository APIs</a> chapter in the <em>API Reference Guide</em> for
+detailed information regarding working with repository-managed files and directories.
+</div>
+
+
+<h1 id="anonservices">Anonymous Services</h1>
+
+<p>An <em>anonymous</em> user, being any user that has not authenticated with the DeployR
+server, only has access to <em>anonymous services</em> offered on the DeployR API.
+There is just one single services category for <em>anonymous services</em>:</p>
+<ol>
+<li><a href="#anonprojects">Anonymous Project Services</a></li>
+</ol>
+<p>The following section introduces the services themselves and demonstrate how
+the client libraries make these services available.</p>
+<p><br/></p>
+<h2 id="anonprojects">Project Services</h2>
+
+<p>A project is simply a DeployR-managed R session. Any project created
+by an anonymous user is known as an <em>anonymous project</em>. In practice,
+anonymous projects are automatically created by DeployR on behalf of
+anonymous users each time they execute an analytics Web service.</p>
+<p>There are two types of <em>anonymous project</em>:</p>
+<ol>
+<li>Stateless Project - a stateless, transient R session that lives only
+for the duration of the analytics Web service execution.</li>
+<li>HTTP Blackbox Project - a stateful, transient R session that lives
+only for the duration of the current user HTTP session.</li>
+</ol>
+<div class="alert alert-info"><strong>Tip! </strong>
+While <em>anonymous project services</em> are provided primarily for <em>anonymous</em>
+users, these same service calls are also available to <em>authenticated</em> users.
+</div>
+
+<p>The following code snippets demonstrate how the client libraries make
+these services available.</p>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-EklZ37pdf6e-0" data-toggle="tab" data-type="">Java</a></li><li class=""><a href="#tab-EklZ37pdf6e-1" data-toggle="tab" data-type="">JavaScript</a></li><li class=""><a href="#tab-EklZ37pdf6e-2" data-toggle="tab" data-type="">C#</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-EklZ37pdf6e-0"><p></p>
+<pre><code>//
+// 1. Execute an analytics Web service based on a repository-managed
+// R script: /george/demo/regression.R using a Stateless Project.
+//
+RScriptExecution exec =
+    rClient.executeScript(&quot;regression&quot;, &quot;demo&quot;, &quot;george&quot;, null);
+
+//
+// 2. Execute an analytics Web service based on a repository-managed
+// R script: /george/demo/regression.R using a HTTP Blackbox Project.
+//
+AnonymousProjectExecutionOptions options =
+    new AnonymousProjectExecutionOptions();
+options.blackbox = true;
+RScriptExecution exec =
+    rClient.executeScript(&quot;regression&quot;, &quot;demo&quot;, &quot;george&quot;, null, options);
+
+//
+// 3. Execute an analytics Web service based on a URL-addressable
+// R script: [regressionURL] using a Stateless Project.
+//
+// Note: while this style of execution uses a Stateless Project it is only
+// available to authenticated users that have been granted POWER_USER
+// permissions by the DeployR administrator.
+//
+RScriptExecution exec = rClient.executeExternal(regressionURL, options);</code></pre>
+<p></p></div><div class="tab-pane" id="tab-EklZ37pdf6e-1"><p></p>
+<pre><code>//
+// 1. Execute an analytics Web service based on a repository-managed
+// R script: /george/demo/regression.R using a Stateless Project.
+//
+deployr.io(&#39;/r/repository/script/execute&#39;)
+  .data({ author: &#39;george&#39;, directory: &#39;demo&#39;, filename: &#39;regression&#39; })
+  .end(function(res) {
+    var exec = res.deployr.repository.execution;
+  });
+
+//
+// 2. Execute an analytics Web service based on a repository-managed
+// R script: /george/demo/regression.R using a HTTP Blackbox Project.
+//
+deployr.io(&#39;/r/repository/script/execute&#39;)
+  .data({ 
+     author: &#39;george&#39;, 
+     directory: &#39;demo&#39;, 
+     filename: &#39;regression&#39;,
+     blackbox: true
+  })
+  .end(function(res) {
+    var exec = res.deployr.repository.execution;
+  });
+
+//
+// 3. Execute an analytics Web service based on a URL-addressable
+// R script: [regressionURL] using a Stateless Project.
+//
+// Note: while this style of execution uses a Stateless Project it is only
+// available to authenticated users that have been granted POWER_USER
+// permissions by the DeployR administrator.
+//
+deployr.io(&#39;/r/repository/script/execute&#39;)
+  .data({ externalsource: regressionURL })    
+  .end(function(res) {
+    var exec = res.deployr.repository.execution;
+  });</code></pre>
+<p></p></div><div class="tab-pane" id="tab-EklZ37pdf6e-2"><p></p>
+<pre><code>//
+// 1. Execute an analytics Web service based on a repository-managed
+// R script: /george/demo/regression.R using a Stateless Project.
+//
+RScriptExecution exec =
+    rClient.executeScript(&quot;regression&quot;, &quot;demo&quot;, &quot;george&quot;, &quot;&quot;);
+
+//
+// 2. Execute an analytics Web service based on a repository-managed
+// R script: /george/demo/regression.R using a HTTP Blackbox Project.
+//
+AnonymousProjectExecutionOptions options =
+    new AnonymousProjectExecutionOptions();
+options.blackbox = true;
+exec = rClient.executeScript(&quot;regression&quot;, &quot;demo&quot;, &quot;george&quot;, &quot;&quot;, options);
+
+//
+// 3. Execute an analytics Web service based on a URL-addressable
+// R script: [regressionURL] using a Stateless Project.
+//
+// Note: while this style of execution uses a Stateless Project it is only
+// available to authenticated users that have been granted POWER_USER
+// permissions by the DeployR administrator.
+//
+exec = rClient.executeExternal(regressionURL, options);</code></pre>
+<p></p></div></div><p></p>
+<div class="alert alert-info"><strong>Tip! </strong>
+See the <a href="/documents/dev/api-doc/guide/introduction.html#anonymousprojects" target="_blank">
+Anonymous Projects</a> chapter in the <em>API Reference Guide</em> for further
+details.
+</div>
+
+
+
+<h1 id="execmodel">Standard Execution Model</h1>
+
+<p>The DeployR API supports a standard set of parameters across all execution APIs which are commonly know as the standard execution model. A summary of those execution APIs are shown here:</p>
+<ul>
+<li><a href="/documents/dev/api-doc/guide/single.html#projectexecutecode" target="_blank">/r/project/execute/code</a></li>
+<li><a href="/documents/dev/api-doc/guide/single.html#projectexecutescript" target="_blank">/r/project/execute/script</a></li>
+<li><a href="/documents/dev/api-doc/guide/single.html#repositoryscriptexecute" target="_blank">/r/repository/script/execute</a></li>
+<li><a href="/documents/dev/api-doc/guide/single.html#repositoryscriptrender" target="_blank">/r/repository/script/render</a></li>
+<li><a href="/documents/dev/api-doc/guide/single.html#jobsubmit" target="_blank">/r/job/submit</a></li>
+<li><a href="/documents/dev/api-doc/guide/single.html#jobschedule" target="_blank">/r/job/schedule</a></li>
+</ul>
+<p>Conceptually this standard set of parameters can be categorized into three groups: <em>pre-execution</em>, <em>on-execution</em> and <em>post-execution</em> parameters.</p>
+<h3 id="pre-execution-parameters">Pre-Execution Parameters</h3>
+<p>The <em>pre-execution</em> parameters allow the caller to <em>pre-heat</em> the R session with DeployR-encoded R data, binary R object data, and file data taken from a number of different sources. The following code snippets demonstrate how to use these parameters using the client libraries:</p>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-EkbbhQ6dMpe-0" data-toggle="tab" data-type="">Java</a></li><li class=""><a href="#tab-EkbbhQ6dMpe-1" data-toggle="tab" data-type="">JavaScript</a></li><li class=""><a href="#tab-EkbbhQ6dMpe-2" data-toggle="tab" data-type="">C#</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-EkbbhQ6dMpe-0"><p></p>
+<pre><code>//
+// ProjectExecutionOptions: used to pass standard execution model
+// parameters on execution calls. All fields are optional.
+//
+ProjectExecutionOptions options = new ProjectExecutionOptions();
+
+//
+// Parameter: inputs
+// Allows the caller to pass DeployR-encoded R object values as inputs.
+// These inputs are turned into R objects in the workspace before the execution begins.
+//
+RData rNum = RDataFactory.createNumeric(&quot;num&quot;, 10.0);
+Date date = new GregorianCalendar(2015, 3, 2).getTime();
+RDate rDate = RDataFactory.createDate(&quot;date&quot;, date, &quot;yyyy-MM-dd&quot;);
+List&lt;RData&gt; rinputs = Arrays.asList(rNum, rDate);
+options.rinputs = rinputs;
+
+//
+// Parameter: csvinputs
+// Allows the caller to pass R object primitive values as comma-separated
+// name/value pairs. These inputs are turned into R object string literals in the
+// workspace before the execution begins.
+//
+options.csvinputs = &quot;num,10.0,expired,false&quot;;
+
+//
+// Parameter: preloadobject[name | directory | author | (optional) version]
+// Allows the caller to load one or more binary R objects (.rData) from the
+// repository into the workspace before the execution begins.
+//
+// Specify comma-separated values on the filename, directory and author fields
+// on your ProjectPreloadOptions instance if you want to load two or more binary R objects.
+//
+ProjectPreloadOptions preloadWorkspace = new ProjectPreloadOptions();
+preloadWorkspace.filename = &quot;model.R&quot;;
+preloadWorkspace.directory = &quot;example&quot;;
+preloadWorkspace.author = &quot;testuser&quot;;
+options.preloadWorkspace = preloadWorkspace;
+
+//
+// Parameter: preloadfile[name | directory | author | (optional) version]
+// Allows the caller to load one or more files from the repository into the
+// working directory before the execution begins. 
+//
+// Specify comma-separated values on the filename, directory and author fields
+// on your ProjectPreloadOptions instance if you want to load two or more files.
+//
+ProjectPreloadOptions preloadDirectory = new ProjectPreloadOptions();
+preloadDirectory.filename = &quot;model.R&quot;;
+preloadDirectory.directory = &quot;example&quot;;
+preloadDirectory.author = &quot;testuser&quot;;
+options.preloadDirectory = preloadDirectory;
+
+//
+// Parameter: preloadbydirectory
+// Allows the caller to load all files within one or more repository-managed
+// directories into the working directory before the execution begins.
+//
+// Specify comma-separated value on the preloadByDirectory field on your
+// ProjectExecutionOptions instance if you want to load the files found
+// within two or more directories.
+//
+preloadDirectory.preloadByDirectory = &quot;production-models&quot;;
+
+//
+// Parameter: adopt[directory | workspace | packages]
+// Allow the caller to load a pre-existing project workspace, project working
+// directory and/or project package dependencies before the execution begins.
+//
+// Specify the same project identifier on all adoption option fields to adopt
+// everything from a single DeployR project. Omit the project identifier on
+// any of the adoption option fields if that data is not required on your
+// execution. Specify multiple different project identifiers on the adoption
+// option fields if you require data from multiple projects on your execution.
+//
+ProjectAdoptionOptions adoptionOptions = new ProjectAdoptionOptions();
+adoptionOptions.adoptDirectory = &quot;PROJECT-e2edd15f-dd67-42f6-8d82-90a2a5a669ca&quot;;
+adoptionOptions.adoptWorkspace = null;
+adoptionOptions.adoptPackages = &quot;PROJECT-4f9fe8bf-9425-4f2c-aa15-5d94818988f9&quot;;
+options.adoptionOptions = adoptionOptions;</code></pre>
+<p></p></div><div class="tab-pane" id="tab-EkbbhQ6dMpe-1"><p></p>
+<pre><code class="language-js"><span class="comment">//</span>
+<span class="comment">// All options are supiled in a simple object literal hash and passed to the</span>
+<span class="comment">// request's `.data(options)` function.</span>
+<span class="comment">//</span>
+
+<span class="comment">//</span>
+<span class="comment">// ProjectExecutionOptions: used to pass standard execution model</span>
+<span class="comment">// parameters on execution calls. All fields are optional.</span>
+<span class="comment">//</span>
+<span class="keyword">var</span> options = {};
+
+<span class="comment">//</span>
+<span class="comment">// Parameter: rinputs</span>
+<span class="comment">// Allows the caller to pass DeployR-encoded R object values as inputs.</span>
+<span class="comment">// These inputs are turned into R objects in the workspace before the execution </span>
+<span class="comment">// begins.</span>
+<span class="comment">//</span>
+<span class="keyword">var</span> RIn = deployr.RInput;
+<span class="keyword">var</span> rinputs = [ RIn.numeric(<span class="string">'num'</span>, <span class="number">10.0</span>), RIn.date(<span class="string">'date'</span>, <span class="keyword">new</span> Date()) ];
+
+deployr.io(api)
+  .rinputs(rinputs)
+
+<span class="comment">//</span>
+<span class="comment">// Parameter: csvinputs</span>
+<span class="comment">// Allows the caller to pass R object primitive values as comma-separated</span>
+<span class="comment">// name/value pairs. These inputs are turned into R object string literals in </span>
+<span class="comment">// the workspace before the execution begins.</span>
+<span class="comment">//</span>
+options.csvinputs = <span class="string">'num,10.0,expired,false'</span>;
+
+<span class="comment">//</span>
+<span class="comment">// Preload Object Parameters: </span>
+<span class="comment">//   - preloadobjectname </span>
+<span class="comment">//   - preloadobjectdirectory</span>
+<span class="comment">//   - preloadobjectauthor</span>
+<span class="comment">//   - preloadobjectversion (optional) </span>
+<span class="comment">//</span>
+<span class="comment">// Allows the caller to load one or more binary R objects (.rData) from the</span>
+<span class="comment">// repository into the workspace before the execution begins.</span>
+<span class="comment">//</span>
+<span class="comment">// Specify comma-separated values on the filename, directory and author fields</span>
+<span class="comment">// on your `Project Preload Options` if you want to load two or more binary</span>
+<span class="comment">// R objects.</span>
+<span class="comment">//</span>
+options.preloadobjectfilename = <span class="string">'model.R'</span>;
+options.preloadobjectdirectory = <span class="string">'example'</span>;
+options.preloadobjectauthor = <span class="string">'testuser'</span>;
+
+<span class="comment">//</span>
+<span class="comment">// Preload File Parameters: </span>
+<span class="comment">//   - preloadfilename</span>
+<span class="comment">//   - preloadfiledirectory</span>
+<span class="comment">//   - preloadfileauthor</span>
+<span class="comment">//   - preloadfileversion (optional)</span>
+<span class="comment">// Allows the caller to load one or more files from the repository into the</span>
+<span class="comment">// working directory before the execution begins. </span>
+<span class="comment">//</span>
+<span class="comment">// Specify comma-separated values on the filename, directory and author fields</span>
+<span class="comment">// on your `Project Preload Options` if you want to load two or more files.</span>
+<span class="comment">//</span>
+options.preloadfilename = <span class="string">'model.R'</span>;
+options.preloadfiledirectory = <span class="string">'example'</span>;
+options.preloadfileauthor = <span class="string">'testuser'</span>;
+
+<span class="comment">//</span>
+<span class="comment">// Parameter: preloadbydirectory</span>
+<span class="comment">// Allows the caller to load all files within one or more repository-managed</span>
+<span class="comment">// directories into the working directory before the execution begins.</span>
+<span class="comment">//</span>
+<span class="comment">// Specify comma-separated value on the preloadByDirectory field on your</span>
+<span class="comment">// `Project Execution Options` if you want to load the files found within two </span>
+<span class="comment">// or more directories.</span>
+<span class="comment">//</span>
+options.preloadbydirectory = <span class="string">'production-models'</span>;
+
+<span class="comment">//</span>
+<span class="comment">// Adopt Parameters: </span>
+<span class="comment">//   - adoptdirectory</span>
+<span class="comment">//   - adoptworkspace</span>
+<span class="comment">//   - adpotpackages</span>
+<span class="comment">//</span>
+<span class="comment">// Allow the caller to load a pre-existing project workspace, project working</span>
+<span class="comment">// directory and/or project package dependencies before the execution begins.</span>
+<span class="comment">//</span>
+<span class="comment">// Specify the same project identifier on all adoption option fields to adopt</span>
+<span class="comment">// everything from a single DeployR project. Omit the project identifier on</span>
+<span class="comment">// any of the adoption option fields if that data is not required on your</span>
+<span class="comment">// execution. Specify multiple different project identifiers on the adoption</span>
+<span class="comment">// option fields if you require data from multiple projects on your execution.</span>
+<span class="comment">//</span>
+options.adoptdirectory = <span class="string">'PROJECT-e2edd15f-dd67-42f6-8d82-90a2a5a669ca'</span>;
+options.adoptworkspace = <span class="literal">null</span>;
+options.adoptpackages = <span class="string">'PROJECT-4f9fe8bf-9425-4f2c-aa15-5d94818988f9'</span>;</code></pre>
+<p></p></div><div class="tab-pane" id="tab-EkbbhQ6dMpe-2"><p></p>
+<pre><code>//
+// ProjectExecutionOptions: used to pass standard execution model
+// parameters on execution calls. All fields are optional.
+//
+ProjectExecutionOptions options = new ProjectExecutionOptions();
+
+//
+// Parameter: inputs
+// Allows the caller to pass DeployR-encoded R object values as inputs.
+// These inputs are turned into R objects in the workspace before the execution begins.
+//
+RData rNum = RDataFactory.createNumeric(&quot;num&quot;, 10.0);
+DateTime dateval = new DateTime(2014, 3, 2);
+RDate rDate = RDataFactory.createDate(&quot;date&quot;, dateval, &quot;yyyy-MM-dd&quot;);
+options.rinputs.Add(rNum);
+options.rinputs.Add(rDate);
+
+//
+// Parameter: csvrinputs
+// Allows the caller to pass R object primitive values as comma-separated
+// name/value pairs. These inputs are turned into R object string literals in the
+// workspace before the execution begins.
+//
+options.csvrinputs = &quot;num,10.0,expired,false&quot;;
+
+//
+// Parameter: preloadobject[name | directory | author | (optional) version]
+// Allows the caller to load one or more binary R objects (.rData) from the
+// repository into the workspace before the execution begins.
+//
+// Specify comma-separated values on the filename, directory and author fields
+// on your ProjectPreloadOptions instance if you want to load two or more binary R objects.
+//
+ProjectPreloadOptions preloadWorkspace = new ProjectPreloadOptions();
+preloadWorkspace.filename = &quot;model.rData&quot;;
+preloadWorkspace.directory = &quot;example&quot;;
+preloadWorkspace.author = &quot;testuser&quot;;
+options.preloadWorkspace = preloadWorkspace;
+
+//
+// Parameter: preloadfile[name | directory | author | (optional) version]
+// Allows the caller to load one or more files from the repository into the
+// working directory before the execution begins. 
+//
+// Specify comma-separated values on the filename, directory and author fields
+// on your ProjectPreloadOptions instance if you want to load two or more files.
+//
+ProjectPreloadOptions preloadDirectory = new ProjectPreloadOptions();
+preloadDirectory.filename = &quot;model.rData&quot;;
+preloadDirectory.directory = &quot;example&quot;;
+preloadDirectory.author = &quot;testuser&quot;;
+options.preloadDirectory = preloadDirectory;
+
+
+//
+// Parameter: adopt[directory | workspace | packages]
+// Allow the caller to load a pre-existing project workspace, project working
+// directory and/or project package dependencies before the execution begins.
+//
+// Specify the same project identifier on all adoption option fields to adopt
+// everything from a single DeployR project. Omit the project identifier on
+// any of the adoption option fields if that data is not required on your
+// execution. Specify multiple different project identifiers on the adoption
+// option fields if you require data from multiple projects on your execution.
+//
+ProjectAdoptionOptions adoptionOptions = new ProjectAdoptionOptions();
+adoptionOptions.adoptDirectory = &quot;PROJECT-e2edd15f-dd67-42f6-8d82-90a2a5a669ca&quot;;
+adoptionOptions.adoptWorkspace = null;
+adoptionOptions.adoptPackages = &quot;PROJECT-4f9fe8bf-9425-4f2c-aa15-5d94818988f9&quot;;
+options.adoptionOptions = adoptionOptions;</code></pre>
+<p></p></div></div><p></p>
+<h3 id="on-execution-parameters">On-Execution Parameters</h3>
+<p>The <em>on-execution</em> parameters allow the caller to control certain aspects of the R session environment itself. The following code snippets demonstrate how to use these parameters using the client libraries:</p>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-41f-37aOM6x-0" data-toggle="tab" data-type="">Java</a></li><li class=""><a href="#tab-41f-37aOM6x-1" data-toggle="tab" data-type="">JavaScript</a></li><li class=""><a href="#tab-41f-37aOM6x-2" data-toggle="tab" data-type="">C#</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-41f-37aOM6x-0"><p></p>
+<pre><code>//
+// ProjectExecutionOptions: used to pass standard execution model
+// parameters on execution calls. All fields are optional.
+//
+ProjectExecutionOptions options = new ProjectExecutionOptions();
+
+//
+// Parameter: echooff
+// Controls whether R commands executing on the call will appear in
+// the console output returned on the response markup. R commands
+// are echoed to console output by default.
+//
+options.echooff = true | false;
+
+//
+// Parameter: consoleoff
+// Controls whether console output will be returned on the response markup.
+// Console output is returned by default.
+//
+// For efficiency reasons, enabling consoleoff is recommended if the
+// expected volume of console output generated on a given execution
+// is high and that output is not a required return value on your call.
+//
+options.consoleoff = true | false;
+
+//
+// Parameter: enableConsoleEvents
+// Controls whether console events are delivered in realtime on the event
+// stream for the current execution. Console events are disabled by default.
+//
+// This parameter should only be enabled in environments where the rate
+// of executions is low, such as when end-users are manually testing code
+// executions. This parameter must be disabled when you are operating in
+// a high-volume transactional environment in order to avoid degrading the
+// server&#39;s runtime performance.
+//
+options.enableConsoleEvents = true | false;
+
+//
+// Parameter: graphics | graphicsWidth | graphicsHeight
+// Controls which graphics device is used (png, svg) on the execution and
+// the default demensions for images on that device.
+//
+options.graphics = &quot;svg&quot;;</code></pre>
+<p></p></div><div class="tab-pane" id="tab-41f-37aOM6x-1"><p></p>
+<pre><code class="language-js"><span class="comment">//</span>
+<span class="comment">// All options are supiled in a simple object literal hash and passed to the</span>
+<span class="comment">// request's `.data(options)` function.</span>
+<span class="comment">//</span>
+
+<span class="comment">//</span>
+<span class="comment">// ProjectExecutionOptions: used to pass standard execution model</span>
+<span class="comment">// parameters on execution calls. All fields are optional.</span>
+<span class="comment">//</span>
+<span class="keyword">var</span> options = {};
+
+<span class="comment">//</span>
+<span class="comment">// Parameter: echooff</span>
+<span class="comment">// Controls whether R commands executing on the call will appear in</span>
+<span class="comment">// the console output returned on the response markup. R commands</span>
+<span class="comment">// are echoed to console output by default.</span>
+<span class="comment">//</span>
+options.echooff = <span class="literal">true</span> | <span class="literal">false</span>;
+
+<span class="comment">//</span>
+<span class="comment">// Parameter: consoleoff</span>
+<span class="comment">// Controls whether console output will be returned on the response markup.</span>
+<span class="comment">// Console output is returned by default.</span>
+<span class="comment">//</span>
+<span class="comment">// For efficiency reasons, enabling consoleoff is recommended if the</span>
+<span class="comment">// expected volume of console output generated on a given execution</span>
+<span class="comment">// is high and that output is not a required return value on your call.</span>
+<span class="comment">//</span>
+options.consoleoff = <span class="literal">true</span> | <span class="literal">false</span>;
+
+<span class="comment">//</span>
+<span class="comment">// Parameter: enableConsoleEvents</span>
+<span class="comment">// Controls whether console events are delivered in realtime on the event</span>
+<span class="comment">// stream for the current execution. Console events are disabled by default.</span>
+<span class="comment">//</span>
+<span class="comment">// This parameter should only be enabled in environments where the rate</span>
+<span class="comment">// of executions is low, such as when end-users are manually testing code</span>
+<span class="comment">// executions. This parameter must be disabled when you are operating in</span>
+<span class="comment">// a high-volume transactional environment in order to avoid degrading the</span>
+<span class="comment">// server's runtime performance.</span>
+<span class="comment">//</span>
+options.enableConsoleEvents = <span class="literal">true</span> | <span class="literal">false</span>;
+
+<span class="comment">//</span>
+<span class="comment">// Parameter: graphics | graphicsWidth | graphicsHeight</span>
+<span class="comment">// Controls which graphics device is used (png, svg) on the execution and</span>
+<span class="comment">// the default demensions for images on that device.</span>
+<span class="comment">//</span>
+options.graphics = <span class="string">'svg'</span>;</code></pre>
+<p></p></div><div class="tab-pane" id="tab-41f-37aOM6x-2"><p></p>
+<pre><code>//
+// ProjectExecutionOptions: used to pass standard execution model
+// parameters on execution calls. All fields are optional.
+//
+ProjectExecutionOptions options = new ProjectExecutionOptions();
+
+//
+// Parameter: echooff
+// Controls whether R commands executing on the call will appear in
+// the console output returned on the response markup. R commands
+// are echoed to console output by default.
+//
+options.echooff = true | false;
+
+//
+// Parameter: consoleoff
+// Controls whether console output will be returned on the response markup.
+// Console output is returned by default.
+//
+// For efficiency reasons, enabling consoleoff is recommended if the
+// expected volume of console output generated on a given execution
+// is high and that output is not a required return value on your call.
+//
+options.consoleoff = true | false;
+
+//
+// Parameter: enableConsoleEvents
+// Controls whether console events are delivered in realtime on the event
+// stream for the current execution. Console events are disabled by default.
+//
+// This parameter should only be enabled in environments where the rate
+// of executions is low, such as when end-users are manually testing code
+// executions. This parameter must be disabled when you are operating in
+// a high-volume transactional environment in order to avoid degrading the
+// server&#39;s runtime performance.
+//
+options.enableConsoleEvents = true | false;
+
+//
+// Parameter: graphicsDevice | graphicsWidth | graphicsHeight
+// Controls which graphics device is used (png, svg) on the execution and
+// the default demensions for images on that device.
+//
+options.graphicsDevice = &quot;svg&quot;;</code></pre>
+<p></p></div></div><p></p>
+<h3 id="post-execution-parameters">Post-Execution Parameters</h3>
+<p>The <em>post-execution</em> parameters allow the caller to retrieve data from the R session on the response markup and/or store data from the R session into the repository. It is important to note that the <em>post-execution</em> parameters that support storing data into the repository are only available to <em>authenticated</em> users on these calls. The following code snippets demonstrate how to use these parameters using the client libraries:</p>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-EyQb27TOzpg-0" data-toggle="tab" data-type="">Java</a></li><li class=""><a href="#tab-EyQb27TOzpg-1" data-toggle="tab" data-type="">JavaScript</a></li><li class=""><a href="#tab-EyQb27TOzpg-2" data-toggle="tab" data-type="">C#</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-EyQb27TOzpg-0"><p></p>
+<pre><code>//
+// ProjectExecutionOptions: used to pass standard execution model
+// parameters on execution calls. All fields are optional.
+//
+ProjectExecutionOptions options = new ProjectExecutionOptions();
+
+//
+// Parameter: storeobject
+// Allows the caller to specify a comma-separated list of workspace
+// objects to be stored in the repository after the execution completes.
+//
+// The storedirectory parameter can be used in conjunction with the
+// storeobject parameter. It allows the caller to specify a target
+// repository directory for the stored object or objects.
+//
+// The storepublic parameter can be used in conjunction with the
+// storeobject parameter. When enabled, the stored object file in the
+// DeployR repository will automatically be assigned public access.
+//
+// The storenewversion parameter can be used in conjunction with the
+// storeobject parameter. When enabled, a new version of the stored
+// object file will be created within the DeployR repository, ensuring
+// old versions of the same file will be preserved.
+//
+// Note, an object called &quot;mtcars&quot; will be saved as a binary R object
+// file called mtcars.R within the DeployR repository.
+//
+ProjectStorageOptions storageOptions = new ProjectStorageOptions();
+storageOptions.objects = &quot;mtcars&quot;;
+storageOptions.directory = &quot;examples&quot;;
+storageOptions.published = true;
+storageOptions.newversion = false;
+options.storageOptions = storageOptions;
+
+//
+// Parameter: storeworkspace
+// Allows the caller to store the entire workspace in the repository
+// after the execution completes.
+//
+// The storedirectory parameter can be used in conjunction with the
+// storeworkspace parameter. It allows the caller to specify a target
+// repository directory for the stored workspace.
+//
+// The storepublic parameter can be used in conjunction with the
+// storeworkspace parameter. When enabled, the stored workspace file in
+// the DeployR repository will automatically be assigned public access.
+//
+// The storenewversion parameter can be used in conjunction with the
+// storeworkspace parameter. When enabled, a new version of the stored
+// workspace file will be created within the DeployR repository, ensuring
+// old versions of the same file will be preserved.
+//
+// Note, the workspace will be saved as a binary R object file using the
+// name specified on the storeworkspace parameter.
+//
+ProjectStorageOptions storageOptions = new ProjectStorageOptions();
+storageOptions.workspace = &quot;workspace-Mar18-2015.R&quot;;
+storageOptions.directory = &quot;examples&quot;;
+storageOptions.published = false;
+storageOptions.newversion = true;
+options.storageOptions = storageOptions;
+
+//
+// Parameter: storefile
+// Allows the caller to specify a comma-separated list of working
+// directory files to be stored in the repository after the execution
+// completes.
+//
+// The storedirectory parameter can be used in conjunction with the
+// storefile parameter. It allows the caller to specify a target
+// repository directory for the stored file or files.
+//
+// The storepublic parameter can be used in conjunction with the
+// storedirectory parameter. When enabled, the stored directory file
+// in the DeployR repository will automatically be assigned public access.
+//
+// The storenewversion parameter can be used in conjunction with the
+// storedirectory parameter. When enabled, a new version of the stored
+// directory file will be created within the DeployR repository, ensuring
+// old versions of the same file will be preserved.
+//
+// Note, each files indicated on the storefile parameter will be will
+// be saved using the name indicated within the DeployR repository.
+//
+ProjectStorageOptions storageOptions = new ProjectStorageOptions();
+storageOptions.files = &quot;data.csv, scores.rData&quot;;
+storageOptions.directory = &quot;examples&quot;;
+storageOptions.published = true;
+storageOptions.newversion = true;
+options.storageOptions = storageOptions;
+
+//
+// Parameter: infinity | nan | encodeDataFramePrimitiveAsVector
+// Allow the caller to control how DeployR-encoded R object data is
+// encoded in the response markkup.
+//
+// Infinity is encoded as 0x7ff0000000000000L by default.
+// Nan is encoded as null by default.
+// Primitive within dataframes are encoded as primitives by default.
+//
+options.infinity = ;
+options.nan = null;
+options.encodeDataFramePrimitiveAsVector = true;</code></pre>
+<p></p></div><div class="tab-pane" id="tab-EyQb27TOzpg-1"><p></p>
+<pre><code class="language-js"><span class="comment">//</span>
+<span class="comment">// All options are supiled in a simple object literal hash and passed to the</span>
+<span class="comment">// request's `.data(options)` function.</span>
+<span class="comment">//</span>
+
+<span class="comment">//</span>
+<span class="comment">// ProjectExecutionOptions: used to pass standard execution model</span>
+<span class="comment">// parameters on execution calls. All fields are optional.</span>
+<span class="comment">//</span>
+<span class="keyword">var</span> options = {};
+
+<span class="comment">//</span>
+<span class="comment">// Store Object Parameters: </span>
+<span class="comment">//   - robjects</span>
+<span class="comment">//   - storedirectory</span>
+<span class="comment">//   - storepublished</span>
+<span class="comment">//   - storenewversion </span>
+<span class="comment">//</span>
+<span class="comment">// Allows the caller to specify a comma-separated list of workspace</span>
+<span class="comment">// objects to be stored in the repository after the execution completes.</span>
+<span class="comment">//</span>
+<span class="comment">// The `storedirectory` parameter can be used in conjunction with the</span>
+<span class="comment">// `storeobject` parameter. It allows the caller to specify a target</span>
+<span class="comment">// repository directory for the stored object or objects.</span>
+<span class="comment">//</span>
+<span class="comment">// The `storepublic` parameter can be used in conjunction with the</span>
+<span class="comment">// storeobject parameter. When enabled, the stored object file in the</span>
+<span class="comment">// DeployR repository will automatically be assigned public access.</span>
+<span class="comment">//</span>
+<span class="comment">// The `storenewversion` parameter can be used in conjunction with the</span>
+<span class="comment">// `storeobject` parameter. When enabled, a new version of the stored</span>
+<span class="comment">// object file will be created within the DeployR repository, ensuring</span>
+<span class="comment">// old versions of the same file will be preserved.</span>
+<span class="comment">//</span>
+<span class="comment">// Note, an object called "mtcars" will be saved as a binary R object</span>
+<span class="comment">// file called mtcars.R within the DeployR repository.</span>
+<span class="comment">//</span>
+options.robjects = <span class="string">'mtcars'</span>;
+options.storedirectory = <span class="string">'examples'</span>;
+options.storepublished = <span class="literal">true</span>;
+options.storenewversion = <span class="literal">false</span>;
+
+<span class="comment">//</span>
+<span class="comment">// Store Workspace Parameters: </span>
+<span class="comment">//   - storeworkspace</span>
+<span class="comment">//   - storedirectory</span>
+<span class="comment">//   - storepublished</span>
+<span class="comment">//   - storenewversion</span>
+<span class="comment">//</span>
+<span class="comment">// Allows the caller to store the entire workspace in the repository</span>
+<span class="comment">// after the execution completes.</span>
+<span class="comment">//</span>
+<span class="comment">// The `storedirectory` parameters can be used in conjunction with the</span>
+<span class="comment">// `storeworkspace` parameter. It allows the caller to specify a target</span>
+<span class="comment">// repository directory for the stored workspace.</span>
+<span class="comment">//</span>
+<span class="comment">// The `storepublic` parameters can be used in conjunction with the</span>
+<span class="comment">// `storeworkspace` parameter. When enabled, the stored workspace file in</span>
+<span class="comment">// the DeployR repository will automatically be assigned public access.</span>
+<span class="comment">//</span>
+<span class="comment">// The `storenewversion` parameters can be used in conjunction with the</span>
+<span class="comment">// `storeworkspace` parameter. When enabled, a new version of the stored</span>
+<span class="comment">// workspace file will be created within the DeployR repository, ensuring</span>
+<span class="comment">// old versions of the same file will be preserved.</span>
+<span class="comment">//</span>
+<span class="comment">// Note, the workspace will be saved as a binary R object file using the</span>
+<span class="comment">// name specified on the storeworkspace parameter.</span>
+<span class="comment">//</span>
+options.storeworkspace = <span class="string">'workspace-Mar18-2015.R'</span>;
+options.storedirectory = <span class="string">'examples'</span>;
+options.storepublished = <span class="literal">false</span>;
+options.storenewversion = <span class="literal">true</span>;
+
+<span class="comment">//</span>
+<span class="comment">// Store File Parameters: </span>
+<span class="comment">//   - storefile</span>
+<span class="comment">//   - storedirectory</span>
+<span class="comment">//   - storepublished</span>
+<span class="comment">//   - storenewversion</span>
+<span class="comment">//</span>
+<span class="comment">// Allows the caller to specify a comma-separated list of working</span>
+<span class="comment">// directory files to be stored in the repository after the execution</span>
+<span class="comment">// completes.</span>
+<span class="comment">//</span>
+<span class="comment">// The `storedirectory` parameter can be used in conjunction with the</span>
+<span class="comment">// storefile parameter. It allows the caller to specify a target</span>
+<span class="comment">// repository directory for the stored file or files.</span>
+<span class="comment">//</span>
+<span class="comment">// The `storepublic` parameters can be used in conjunction with the</span>
+<span class="comment">// storedirectory parameter. When enabled, the stored directory file</span>
+<span class="comment">// in the DeployR repository will automatically be assigned public access.</span>
+<span class="comment">//</span>
+<span class="comment">// The `storenewversion` parameters can be used in conjunction with the</span>
+<span class="comment">// storedirectory parameter. When enabled, a new version of the stored</span>
+<span class="comment">// directory file will be created within the DeployR repository, ensuring</span>
+<span class="comment">// old versions of the same file will be preserved.</span>
+<span class="comment">//</span>
+<span class="comment">// Note, each files indicated on the `store file` parameters will be will</span>
+<span class="comment">// be saved using the name indicated within the DeployR repository.</span>
+<span class="comment">//</span>
+options.storefile = <span class="string">'data.csv, scores.rData'</span>;
+options.storedirectory = <span class="string">'examples'</span>;
+options.storepublished = <span class="literal">true</span>;
+options.storenewversion = <span class="literal">true</span>;
+
+<span class="comment">//</span>
+<span class="comment">// Parameter: infinity | nan | encodeDataFramePrimitiveAsVector</span>
+<span class="comment">// Allow the caller to control how DeployR-encoded R object data is</span>
+<span class="comment">// encoded in the response markkup.</span>
+<span class="comment">//</span>
+<span class="comment">// Infinity is encoded as 0x7ff0000000000000L by default.</span>
+<span class="comment">// Nan is encoded as null by default.</span>
+<span class="comment">// Primitive within dataframes are encoded as primitives by default.</span>
+<span class="comment">//</span>
+options.infinity = ;
+options.nan = <span class="literal">null</span>;
+options.encodeDataFramePrimitiveAsVector = <span class="literal">true</span>;</code></pre>
+<p></p></div><div class="tab-pane" id="tab-EyQb27TOzpg-2"><p></p>
+<pre><code>//
+// ProjectExecutionOptions: used to pass standard execution model
+// parameters on execution calls. All fields are optional.
+//
+ProjectExecutionOptions options = new ProjectExecutionOptions();
+
+//
+// Parameter: storeobject
+// Allows the caller to specify a comma-separated list of workspace
+// objects to be stored in the repository after the execution completes.
+//
+// The storedirectory parameter can be used in conjunction with the
+// storeobject parameter. It allows the caller to specify a target
+// repository directory for the stored object or objects.
+//
+// The storepublic parameter can be used in conjunction with the
+// storeobject parameter. When enabled, the stored object file in the
+// DeployR repository will automatically be assigned public access.
+//
+// The storenewversion parameter can be used in conjunction with the
+// storeobject parameter. When enabled, a new version of the stored
+// object file will be created within the DeployR repository, ensuring
+// old versions of the same file will be preserved.
+//
+// Note, an object called &quot;mtcars&quot; will be saved as a binary R object
+// file called mtcars.rData within the DeployR repository.
+//
+ProjectStorageOptions storageOptions = new ProjectStorageOptions();
+storageOptions.objects = &quot;mtcars&quot;;
+storageOptions.directory = &quot;examples&quot;;
+storageOptions.published = true;
+storageOptions.newVersion = false;
+options.storageOptions = storageOptions;
+
+//
+// Parameter: storeworkspace
+// Allows the caller to store the entire workspace in the repository
+// after the execution completes.
+//
+// The storedirectory parameter can be used in conjunction with the
+// storeworkspace parameter. It allows the caller to specify a target
+// repository directory for the stored workspace.
+//
+// The storepublic parameter can be used in conjunction with the
+// storeworkspace parameter. When enabled, the stored workspace file in
+// the DeployR repository will automatically be assigned public access.
+//
+// The storenewversion parameter can be used in conjunction with the
+// storeworkspace parameter. When enabled, a new version of the stored
+// workspace file will be created within the DeployR repository, ensuring
+// old versions of the same file will be preserved.
+//
+// Note, the workspace will be saved as a binary R object file using the
+// name specified on the storeworkspace parameter.
+//
+storageOptions.workspace = &quot;workspace-Mar18-2015.rData&quot;;
+storageOptions.directory = &quot;examples&quot;;
+storageOptions.published = false;
+storageOptions.newVersion = true;
+options.storageOptions = storageOptions;
+
+//
+// Parameter: storefile
+// Allows the caller to specify a comma-separated list of working
+// directory files to be stored in the repository after the execution
+// completes.
+//
+// The storedirectory parameter can be used in conjunction with the
+// storefile parameter. It allows the caller to specify a target
+// repository directory for the stored file or files.
+//
+// The storepublic parameter can be used in conjunction with the
+// storedirectory parameter. When enabled, the stored directory file
+// in the DeployR repository will automatically be assigned public access.
+//
+// The storenewversion parameter can be used in conjunction with the
+// storedirectory parameter. When enabled, a new version of the stored
+// directory file will be created within the DeployR repository, ensuring
+// old versions of the same file will be preserved.
+//
+// Note, each files indicated on the storefile parameter will be will
+// be saved using the name indicated within the DeployR repository.
+//
+storageOptions.files = &quot;data.csv, scores.rData&quot;;
+storageOptions.directory = &quot;examples&quot;;
+storageOptions.published = true;
+storageOptions.newVersion = true;
+options.storageOptions = storageOptions;
+
+//
+// Parameter: infinity | nan | encodeDataFramePrimitiveAsVector
+// Allow the caller to control how DeployR-encoded R object data is
+// encoded in the response markkup.
+//
+// Infinity is encoded as 0x7ff0000000000000L by default.
+// Nan is encoded as null by default.
+// Primitive within dataframes are encoded as primitives by default.
+//
+options.infinity = &quot;&quot;;
+options.nan = null;
+options.encodeDataFramePrimitiveAsVector = true;</code></pre>
+<p></p></div></div><p></p>
+<h1 id="encoding">R Object Data Encoding</h1>
+
+<p>DeployR-specific encodings are used to encode R object data passing into
+and out of the DeployR server. Each of the client libraries provide support
+that simplifies the task of encoding R object data for sending to the
+DeployR server.</p>
+<p>Encoded R object data can be sent on the <em>inputs</em> parameter on the following calls:</p>
+<ul>
+<li><a href="/documents/dev/api-doc/guide/single.html#projectexecutecode" target="_blank">/r/project/execute/code</a></li>
+<li><a href="/documents/dev/api-doc/guide/single.html#projectexecutescript" target="_blank">/r/project/execute/script</a></li>
+<li><a href="/documents/dev/api-doc/guide/single.html#repositoryscriptexecute" target="_blank">/r/repository/script/execute</a></li>
+<li><a href="/documents/dev/api-doc/guide/single.html#repositoryscriptrender" target="_blank">/r/repository/script/render</a></li>
+<li><a href="/documents/dev/api-doc/guide/single.html#jobsubmit" target="_blank">/r/job/submit</a></li>
+<li><a href="/documents/dev/api-doc/guide/single.html#jobschedule" target="_blank">/r/job/schedule</a></li>
+<li><a href="/documents/dev/api-doc/guide/single.html#projectworkspacepush" target="_blank">/r/project/workspace/push</a></li>
+</ul>
+<p>See the <a href="#execmodel">Standard Execution Model</a> section of this documentation for details describing how DeployR-encoded R object data can be sent using the <em>inputs</em> parameter on these calls.</p>
+<p>DeployR-specific encodings are provided for the following classes of R object:</p>
+<ul>
+<li>character, integer, numeric and logical</li>
+<li>Date, POSIXct and POSIXlt</li>
+<li>vector, matrix</li>
+<li>ordered, factor</li>
+<li>list, data.frame.</li>
+</ul>
+<p>The following code snippets demonstrate the mechanism for creating these
+types of encodings using the client libraries.
+The following code snippets demonstrate the mechanism for creating these
+types of encodings using the client libraries.</p>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-NJV-hQpufae-0" data-toggle="tab" data-type="">Java</a></li><li class=""><a href="#tab-NJV-hQpufae-1" data-toggle="tab" data-type="">JavaScript</a></li><li class=""><a href="#tab-NJV-hQpufae-2" data-toggle="tab" data-type="">C#</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-NJV-hQpufae-0"><p></p>
+<pre><code>//
+// 1. Encode an R logical value.
+//
+RBoolean bool = RDataFactory.createBoolean(&quot;bool&quot;, true);
+
+//
+// 2. Encode an R numeric value.
+//
+RNumeric num = RDataFactory.createNumeric(&quot;num&quot;, 10.0);
+
+//
+// 3. Encode an R literal value.
+//
+RString str = RDataFactory.createString(&quot;str&quot;, &quot;hello&quot;);
+
+
+//
+// 4. Encode an R date.
+//
+Date dateval = new GregorianCalendar(2014, 3, 2).getTime();
+RDate date = RDataFactory.createDate(&quot;date&quot;, dateval, &quot;yyyy-MM-dd&quot;);
+
+//
+// 5. Encode an R logical vector.
+//
+List&lt;Boolean&gt; bvv = new ArrayList&lt;Boolean&gt;();
+bvv.add(true);
+bvv.add(false);
+RBooleanVector boolvec = RDataFactory.createBooleanVector(&quot;boolvec&quot;, bvv);
+
+//
+// 6. Encode an R numeric vector.
+//
+List&lt;Double&gt; nvv = new ArrayList&lt;Double&gt;();
+nvv.add(10.0);
+nvv.add(20.0);
+RNumericVector numvec = RDataFactory.createNumericVector(&quot;numvec&quot;, nvv);
+
+//
+// 7. Encode an R literal vector.
+//
+List&lt;String&gt; svv = new ArrayList&lt;String&gt;();
+svv.add(&quot;hello&quot;);
+svv.add(&quot;world&quot;);
+RStringVector strvec = RDataFactory.createStringVector(&quot;strvec&quot;, svv);
+
+//
+// 8. Encode an R date vector.
+//
+List&lt;Date&gt; dvv = new ArrayList&lt;Date&gt;();
+dvv.add(new GregorianCalendar(2014, 10, 10).getTime());
+dvv.add(new GregorianCalendar(2014, 11, 11).getTime());
+RStringVector datevec =
+    RDataFactory.createStringVector(&quot;datevec&quot;, dvv, &quot;yyyy-MM-dd&quot;);
+
+//
+// 9. Encode an R POSIX date vector.
+//
+List&lt;Date&gt; dvv = new ArrayList&lt;Date&gt;();
+dvv.add(new GregorianCalendar(2014, 10, 10, 10, 30, 30).getTime());
+dvv.add(new GregorianCalendar(2014, 11, 11, 10, 30, 30).getTime());
+RStringVector posixvec =
+    RDataFactory.createStringVector(&quot;posixvec&quot;, dvv, &quot;yyyy-MM-dd HH:mm:ss z&quot;);
+
+//
+// 10. Encode an R logical matrix.
+//
+List&lt;Boolean&gt; bml = new ArrayList&lt;Boolean&gt;();
+bml.add(new Boolean(true));
+bml.add(new Boolean(true));
+List&lt;List&lt;Boolean&gt;&gt; bmv = new ArrayList&lt;List&lt;Boolean&gt;&gt;();
+bmv.add(bml);
+RBooleanMatrix boolmat = RDataFactory.createBooleanMatrix(&quot;boolmat&quot;, bmv);
+
+//
+// 11. Encode an R numeric matrix.
+//
+List&lt;Double&gt; nml = new ArrayList&lt;Double&gt;();
+nml.add(new Double(10.0));
+nml.add(new Double(20.0));
+List&lt;List&lt;Double&gt;&gt; nmv = new ArrayList&lt;List&lt;Double&gt;&gt;();
+nmv.add(nml);
+RNumericMatrix nummat = RDataFactory.createNumericMatrix(&quot;nummat&quot;, nmv);
+
+//
+// 12. Encode an R literal matrix.
+//
+List&lt;String&gt; sml = new ArrayList&lt;String&gt;();
+sml.add(new String(&quot;hello&quot;));
+sml.add(new String(&quot;world&quot;));
+List&lt;List&lt;String&gt;&gt; smv = new ArrayList&lt;List&lt;String&gt;&gt;();
+smv.add(sml);
+RStringMatrix strmat = RDataFactory.createStringMatrix(&quot;strmat&quot;, smv);
+
+//
+// 13. Encode an R list.
+//
+List&lt;RData&gt; lv = new ArrayList&lt;RData&gt;();
+lv.add(RDataFactory.createNumeric(&quot;n1&quot;, 10.0));
+lv.add(RDataFactory.createNumeric(&quot;n2&quot;, 10.0));
+RList numlist = RDataFactory.createList(&quot;numlist&quot;, lv);
+
+//
+// 14. Encode an R data.frame.
+//
+List&lt;Double&gt; rnvv = new ArrayList();
+rnvval.add(new Double(1.0));
+rnvval.add(new Double(2.0));
+RNumericVector rnv  = RDataFactory.createNumericVector(&quot;rnv&quot;, rnvval);
+List&lt;Date&gt; rdvval = new ArrayList&lt;Date&gt;();
+rdvval.add(new Date());
+rdvval.add(new Date());
+RDateVector rdv =
+    RDataFactory.createDateVector(&quot;rdv&quot;, rdvval, &quot;yyyy-MM-dd&quot;);
+List&lt;RData&gt; dfv = new ArrayList&lt;RData&gt;();
+dfv.add(rnv);
+dfv.add(rdv);
+List&lt;RData&gt; df = RDataFactory.createDataFrame(&quot;numdf&quot;, dfv);
+
+//
+// 15. Encode an R factor.
+//
+List&lt;String&gt; rfval = new ArrayList&lt;String&gt;();
+rfval.add(&quot;a&quot;);
+rfval.add(&quot;b&quot;);
+rfval.add(&quot;d&quot;);
+rfval.add(&quot;e&quot;);
+RFactor factor = RDataFactory.createFactor(name, rfval, false);</code></pre>
+<p></p></div><div class="tab-pane" id="tab-NJV-hQpufae-1"><p></p>
+<pre><code>var RInput = deployr.RInput;
+
+//
+// 1. Encode an R logical value.
+//
+var bool = RInput.logical(&#39;bool&#39;, true);
+
+// --or--
+deployr.io(...)
+  .logical(&#39;bool&#39;, true)
+
+//
+// 2. Encode an R numeric value.
+//
+var num = RInput.numeric(&#39;num&#39;, 10.0);
+
+// --or--
+deployr.io(...)
+  .numeric(&#39;num&#39;, 10.0)
+
+//
+// 3. Encode an R literal value.
+//
+var str = RInput.character(&#39;str&#39;, &#39;hello&#39;);
+
+// --or--
+deployr.io(...)
+  .character(&#39;str&#39;, &#39;hello&#39;)
+
+//
+// 4. Encode an R date.
+//
+var dateval = new Date(2014, 3, 2);
+var date = RInput.date(&#39;date&#39;, dateval);
+
+// --or--
+deployr.io(...)
+  .date(&#39;date&#39;, dateval)
+
+//
+// 5. Encode an R logical vector.
+//
+var bvv = [];
+bvv.push(RInput.logical(&#39;item1&#39;, true));
+bvv.push(RInput.logical(&#39;item1&#39;, true));
+var boolvec = RInput.logicalVector(&#39;boolvec&#39;, bvv);
+
+// --or--
+deployr.io(...)
+  .logicalVector(&#39;boolvec&#39;, bvv)
+
+//
+// 6. Encode an R numeric vector.
+//
+var nvv = [];
+nvv.push(RInput.numeric(&#39;item1&#39;, 10.0));
+nvv.push(RInput.numeric(&#39;item1&#39;, 20.0));
+var numvec = RInput.numericVector(&#39;numvec&#39;, nvv);
+
+// --or--
+deployr.io(...)
+  .numericVector(&#39;numvec&#39;, nvv)
+
+//
+// 7. Encode an R literal vector.
+//
+var svv = [];
+svv.push(RInput.character(&#39;item1&#39;, &#39;hello&#39;));
+svv.push(RInput.character(&#39;item2&#39;, &#39;world&#39;));
+var strvec = RInput.characterVector(&#39;strvec&#39;, svv);
+
+// --or--
+deployr.io(...)
+  .characterVector(&#39;strvec&#39;, svv)
+
+//
+// 8. Encode an R date vector.
+//
+var dvv = [];
+dvv.push(RInput.date(&#39;item1&#39;, new Date()));
+dvv.push(RInput.date(&#39;item2&#39;, new Date()));
+var datevec = RInput.dateVector(&#39;dvv&#39;, dvv);
+
+// --or--
+deployr.io(...)
+  .dateVector(&#39;dvv&#39;, dvv)
+
+//
+// 9. Encode an R POSIX date vector.
+//
+var dvv = [];
+dvv.push(RInput.posix(&#39;item1&#39;, new Date()));
+dvv.push(RInput.posix(&#39;item2&#39;, new Date()));
+var posixvec = RInput.posixVector(&#39;posixvec&#39;, dvv);
+
+// --or--
+deployr.io(...)
+  .posixVector(&#39;posixvec&#39;, dvv)
+
+//
+// 10. Encode an R logical matrix.
+//
+var bml = [];
+var bmv = [];
+bml.push(RInput.logical(&#39;item1&#39;, true));
+bml.push(RInput.logical(&#39;item2&#39;, true));
+bmv.push(bml);
+var boolmat = RInput.logicalMatrix(&#39;boolmat&#39;, bmv)
+
+// --or--
+deployr.io(...)
+  .logicalMatrix(&#39;boolmat&#39;, bmv)
+
+//
+// 11. Encode an R numeric matrix.
+//
+var nml = [];
+var nmv = [];
+nml.push(RInput.numeric(&#39;item1&#39;, 10.0));
+nml.push(RInput.numeric(&#39;item2&#39;, 20.0));
+nmv.push(nml);
+var nummat = RInput.numericMatrix(&#39;nummat&#39;, nmv)
+
+// --or--
+deployr.io(...)
+  .numericMatrix(&#39;nummat&#39;, nmv)
+
+//
+// 12. Encode an R literal matrix.
+//
+var sml = [];
+var smv = [];
+sml.push(RInput.character(&#39;item1&#39;, &#39;hello&#39;));
+sml.push(RInput.character(&#39;item2&#39;, &#39;world&#39;));
+smv.push(sml);
+var strmat = RInput.characterMatrix(&#39;strmat&#39;, smv)
+
+// --or--
+deployr.io(...)
+  .characterMatrix(&#39;strmat&#39;, smv)
+
+//
+// 13. Encode an R list.
+//
+var lv = [];
+lv.push(RInput.numeric(&#39;n1&#39;, 10.0));
+lv.push(RInput.numeric(&#39;n2&#39;, 10.0));
+
+// --or--
+deployr.io(...)
+  .list(&#39;numlist&#39;, lv)
+
+//
+// 14. Encode an R data.frame.
+//
+var rnval = [];
+rnval.push(RInput.numeric(&#39;item1&#39;, 1.0));
+rnval.push(RInput.numeric(&#39;item2&#39;, 2.0));
+var rnv  = RInput.numericVector(&#39;rnv&#39;, rnvval);
+var rdvval = [];
+rdvval.push(RInput.date(&#39;item3&#39;, new Date()));
+rdvval.push(RInput.date(&#39;item4&#39;, new Date()));
+var rdv = RInput.dateVector(&#39;rdv&#39;, rdvval);
+var dfv = [];
+dfv.push(rnv);
+dfv.push(rdf);
+var df = RInput.dataframe(&#39;numdef&#39;, dfv);
+
+// --or--
+deployr.io(...)
+  .dataframe(&#39;numdf&#39;, dfv)
+
+//
+// 15. Encode an R factor.
+//
+var rfval = [];
+rfval.push(&#39;a&#39;);
+rfval.push(&#39;b&#39;);
+rfval.push(&#39;d&#39;);
+rfval.push(&#39;e&#39;);
+var factor = RInput.factor(&#39;rfval&#39;, rfval);
+
+// --or--
+deployr.io(...)
+  .factor(&#39;rfval&#39;, rfval);</code></pre>
+<p></p></div><div class="tab-pane" id="tab-NJV-hQpufae-2"><p></p>
+<pre><code>//
+// 1. Encode an R logical value.
+//
+RBoolean rBool = RDataFactory.createBoolean(&quot;bool&quot;, true);
+
+//
+// 2. Encode an R numeric value.
+//
+RNumeric rNum = RDataFactory.createNumeric(&quot;num&quot;, 10.0);
+
+//
+// 3. Encode an R literal value.
+//
+RString rString = RDataFactory.createString(&quot;str&quot;, &quot;hello&quot;);
+
+
+//
+// 4. Encode an R date.
+//
+DateTime dateval = new DateTime(2014, 3, 2);
+RDate rDate = RDataFactory.createDate(&quot;date&quot;, dateval, &quot;yyyy-MM-dd&quot;);
+
+//
+// 5. Encode an R logical vector.
+//
+List&lt;Boolean?&gt; boolVector = new List&lt;Boolean?&gt;();
+boolVector.Add(true);
+boolVector.Add(false);
+RBooleanVector rBoolVector = RDataFactory.createBooleanVector(&quot;boolvec&quot;, boolVector);
+
+//
+// 6. Encode an R numeric vector.
+//
+List&lt;Double?&gt; numVector = new List&lt;Double?&gt;();
+numVector.Add(10.0);
+numVector.Add(20.0);
+RNumericVector rNumericVector = RDataFactory.createNumericVector(&quot;numvec&quot;, numVector);
+
+//
+// 7. Encode an R literal vector.
+//
+List&lt;String&gt; strVector = new List&lt;String&gt;();
+strVector.Add(&quot;hello&quot;);
+strVector.Add(&quot;world&quot;);
+RStringVector rStringVector = RDataFactory.createStringVector(&quot;strvec&quot;, strVector);
+
+//
+// 8. Encode an R date vector.
+//
+List&lt;String&gt; dateVector = new List&lt;String&gt;();
+dateVector.Add(new DateTime(2014, 10, 10).ToString());
+dateVector.Add(new DateTime(2014, 11, 11).ToString());
+RDateVector rDateVector =
+    RDataFactory.createDateVector(&quot;datevec&quot;, dateVector, &quot;yyyy-MM-dd&quot;);
+
+
+//
+// 9. Encode an R logical matrix.
+//
+List&lt;Boolean?&gt; boolVec = new List&lt;Boolean?&gt;();
+boolVec.Add(true);
+boolVec.Add(true);
+List&lt;List&lt;Boolean?&gt;&gt; boolMatrix = new List&lt;List&lt;Boolean?&gt;&gt;();
+boolMatrix.Add(boolVec);
+RBooleanMatrix rBoolMatrix = RDataFactory.createBooleanMatrix(&quot;boolmat&quot;, boolMatrix);
+
+//
+// 10. Encode an R numeric matrix.
+//
+List&lt;Double?&gt; numVec = new List&lt;Double?&gt;();
+numVec.Add(10.0);
+numVec.Add(20.0);
+List&lt;List&lt;Double?&gt;&gt; numMatrix = new List&lt;List&lt;Double?&gt;&gt;();
+numMatrix.Add(numVec);
+RNumericMatrix rNumMatrix = RDataFactory.createNumericMatrix(&quot;nummat&quot;, numMatrix);
+
+//
+// 11. Encode an R literal matrix.
+//
+List&lt;String&gt; strVec = new List&lt;String&gt;();
+strVec.Add(&quot;hello&quot;);
+strVec.Add(&quot;world&quot;);
+List&lt;List&lt;String&gt;&gt; strMatrix = new List&lt;List&lt;String&gt;&gt;();
+strMatrix.Add(strVec);
+RStringMatrix rStrMatrix = RDataFactory.createStringMatrix(&quot;strmat&quot;, strMatrix);
+
+//
+// 12. Encode an R list.
+//
+List&lt;RData&gt; listRData = new List&lt;RData&gt;();
+listRData.Add(RDataFactory.createNumeric(&quot;n1&quot;, 10.0));
+listRData.Add(RDataFactory.createNumeric(&quot;n2&quot;, 20.0));
+RList numlist = RDataFactory.createList(&quot;numlist&quot;, listRData);
+
+//
+// 13. Encode an R data.frame.
+//
+List&lt;Double?&gt; numVect = new List&lt;Double?&gt;();
+numVect.Add(1.0);
+numVect.Add(2.0);
+RNumericVector rNumVector = RDataFactory.createNumericVector(&quot;rnv&quot;, numVect);
+List&lt;String&gt; dateVec = new List&lt;String&gt;();
+dateVec.Add(new DateTime(2014,1,2).ToString());
+dateVec.Add(new DateTime(2014,1,3).ToString());
+RDateVector rDateVect = RDataFactory.createDateVector(&quot;rdv&quot;, dateVec, &quot;yyyy-MM-dd&quot;);
+List&lt;RData&gt; dfVector = new List&lt;RData&gt;();
+dfVector.Add(rNumVector);
+dfVector.Add(rDateVector);
+RDataFrame rDataFrame = RDataFactory.createDataFrame(&quot;numdf&quot;, dfVector);
+
+//
+// 15. Encode an R factor.
+//
+List&lt;String&gt; factorVector = new List&lt;String&gt;();
+factorVector.Add(&quot;a&quot;);
+factorVector.Add(&quot;b&quot;);
+factorVector.Add(&quot;d&quot;);
+factorVector.Add(&quot;e&quot;);
+RFactor rFactor = RDataFactory.createFactor(&quot;myfactor&quot;, factorVector);</code></pre>
+<p></p></div></div><p></p>
+<div class="alert alert-info"><strong>Tip! </strong>
+See the <a href="/documents/dev/api-doc/guide/encodings.html" target="_blank">
+Web Service API Data Encodings</a> chapter in the API Reference Guide
+for further details.
+</div>
+
+
+
+<h1 id="decoding">R Object Data Decoding</h1>
+
+<p>DeployR-specific encodings are used to encode R object data passing into and out of the DeployR server. Each of the client libraries provide support that simplifies the task of decoding R object data being returned from the DeployR server. </p>
+<p>One or more R objects can be returned as DeployR-encoded objects in the response markup on any of the following execution calls:</p>
+<ul>
+<li><a href="/documents/dev/api-doc/guide/single.html#projectexecutecode" target="_blank">/r/project/execute/code</a></li>
+<li><a href="/documents/dev/api-doc/guide/single.html#projectexecutescript" target="_blank">/r/project/execute/script</a></li>
+<li><a href="/documents/dev/api-doc/guide/single.html#repositoryscriptexecute" target="_blank">/r/repository/script/execute</a></li>
+<li><a href="/documents/dev/api-doc/guide/single.html#repositoryscriptrender" target="_blank">/r/repository/script/render</a></li>
+</ul>
+<p>The following code snippets demonstrate the mechanism for requesting DeployR-encoded objects to be returned on these calls:</p>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-EJHZ27auGTx-0" data-toggle="tab" data-type="">Java</a></li><li class=""><a href="#tab-EJHZ27auGTx-1" data-toggle="tab" data-type="">JavaScript</a></li><li class=""><a href="#tab-EJHZ27auGTx-2" data-toggle="tab" data-type="">C#</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-EJHZ27auGTx-0"><p></p>
+<pre><code>//
+// ProjectExecutionOptions: use the _robjects_ parameter to request
+// one or more R objects to be returned as DeployR-encoded objects
+// on the response markup.
+//
+// In this example, following the execution the &quot;mtcars&quot; and the
+// &quot;score&quot; workspace objects will be returned on the call.
+//
+ProjectExecutionOptions options = new ProjectExecutionOptions();
+options.routputs = Arrays.asList(&quot;mtcars&quot;, &quot;score&quot;);</code></pre>
+<p></p></div><div class="tab-pane" id="tab-EJHZ27auGTx-1"><p></p>
+<pre><code class="language-js"><span class="comment">//</span>
+<span class="comment">// ProjectExecutionOptions: use the `robjects` or `robject` parameter to request</span>
+<span class="comment">// one or more R objects to be returned as DeployR-encoded objects on the </span>
+<span class="comment">// response markup.</span>
+<span class="comment">//</span>
+<span class="comment">// In this example, following the execution the "mtcars" and the "score" </span>
+<span class="comment">// workspace objects will be returned on the call.</span>
+<span class="comment">//</span>
+deployr.io(api)
+ .routputs([ <span class="string">'mtcars'</span>, <span class="string">'score'</span> ])
+
+<span class="comment">// --- or ---</span>
+
+deployr.io(api)
+ .routput(<span class="string">'mtcars'</span>)
+ .routput(<span class="string">'score'</span>)</code></pre>
+<p></p></div><div class="tab-pane" id="tab-EJHZ27auGTx-2"><p></p>
+<pre><code>//
+// ProjectExecutionOptions: use the _robjects_ parameter to request
+// one or more R objects to be returned as DeployR-encoded objects
+// on the response markup.
+//
+// In this example, following the execution the &quot;mtcars&quot; and the
+// &quot;score&quot; workspace objects will be returned on the call.
+//
+ProjectExecutionOptions options = new ProjectExecutionOptions();
+options.routputs.Add(&quot;mtcars&quot;);
+options.routputs.Add(&quot;score&quot;);</code></pre>
+<p></p></div></div><p></p>
+<p>When working with temporary or persistent DeployR projects R objects can also be returned as DeployR-encoded objects in the response markup on the following workspace call:</p>
+<ul>
+<li><a href="/documents/dev/api-doc/guide/single.html#projectworkspaceget" target="_blank">/r/project/workspace/get</a></li>
+</ul>
+<p>The following code snippet demonstrates the mechanism for requesting DeployR-encoded objects to be returned on this call:</p>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-E1IZhQ6dMpx-0" data-toggle="tab" data-type="">Java</a></li><li class=""><a href="#tab-E1IZhQ6dMpx-1" data-toggle="tab" data-type="">JavaScript</a></li><li class=""><a href="#tab-E1IZhQ6dMpx-2" data-toggle="tab" data-type="">C#</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-E1IZhQ6dMpx-0"><p></p>
+<pre><code>//
+// RProject.getObject(String objectName)
+// RProject.getObject(String objectName, boolean encodeDataFramePrimitiveAsVector)
+// RProject.getObject(List&lt;String&gt; objectNames)
+// RProject.getObject(List&lt;String&gt; objectNames, boolean encodeDataFramePrimitiveAsVector)
+//
+// In this example, following the execution the &quot;mtcars&quot; and the
+// &quot;score&quot; workspace objects will be returned on the call.
+//
+List&lt;String&gt; objectNames = Arrays.asList(&quot;mtcars&quot;, &quot;score&quot;);
+List&lt;RData&gt; rDataList = rProject.getObject(objectNames, true);</code></pre>
+<p></p></div><div class="tab-pane" id="tab-E1IZhQ6dMpx-1"><p></p>
+<pre><code class="language-js"><span class="comment">//</span>
+<span class="comment">// </span>
+<span class="comment">// var obj = response.workspace(objectName);</span>
+<span class="comment">//</span>
+<span class="comment">// -- or --</span>
+<span class="comment">//</span>
+<span class="comment">// var workspace = response.workspace();</span>
+<span class="comment">//</span>
+<span class="comment">// In this example, following the execution the "mtcars" and the</span>
+<span class="comment">// "score" workspace objects will be returned on the call.</span>
+<span class="comment">//</span>
+
+deployr.io(api)
+  .end(<span class="function"><span class="keyword">function</span><span class="params">(response)</span> {</span>
+     <span class="keyword">var</span> mtcars = response.workspace(<span class="string">'mtcars'</span>);
+     <span class="keyword">var</span> score = response.workspace(<span class="string">'score'</span>);
+   });</code></pre>
+<p></p></div><div class="tab-pane" id="tab-E1IZhQ6dMpx-2"><p></p>
+<pre><code>//
+// RProject.getObject(String objectName)
+// RProject.getObject(String objectName, boolean encodeDataFramePrimitiveAsVector)
+// RProject.getObjects(List&lt;String&gt; objectNames, boolean encodeDataFramePrimitiveAsVector)
+//
+// In this example, following the execution the &quot;mtcars&quot; and the
+// &quot;score&quot; workspace objects will be returned on the call.
+//
+RData rDataMtcars = rProject.getObject(&quot;mtcars&quot;, true);
+RData rDataScore = rProject.getObject(&quot;score&quot;, true);</code></pre>
+<p></p></div></div><p></p>
+<p>Encodings are provided for the following classes of R object:</p>
+<ul>
+<li>character, integer, numeric and logical</li>
+<li>Date, POSIXct and POSIXlt</li>
+<li>vector, matrix</li>
+<li>ordered, factor</li>
+<li>list, data.frame.</li>
+</ul>
+<p>The method for decoding these DeployR-encoded objects within a
+client application depends on the specific client library being used.
+The following code snippets demonstrate the mechanism for decoding
+R objects in order to retrieve their values using the client libraries:</p>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-EJvWhmTuGTg-0" data-toggle="tab" data-type="">Java</a></li><li class=""><a href="#tab-EJvWhmTuGTg-1" data-toggle="tab" data-type="">JavaScript</a></li><li class=""><a href="#tab-EJvWhmTuGTg-2" data-toggle="tab" data-type="">C#</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-EJvWhmTuGTg-0"><p></p>
+<pre><code>//
+// Java Client Library R Object Decoding
+// 
+// The Java client library always returns DeployR-encoded objects
+// as an instance of com.revo.deployr.client.data.RData.
+//
+// To decode an instance of RData in order to retrieve the value
+// of the object you must determine the concrete implementation
+// class of the RData instance. The concrete class provides a
+// getValue() method with an appropriate return type.
+//
+// There are two approaches available to Java client developers.
+//
+
+//
+// (1) Explicit Casting of RData to Concrete Class
+//
+// This approach can be used if you know the underlying
+// concrete class for your instance of RData ahead of time.
+//
+// The set of available concrete classes for RData are defined
+// in the com.revo.deployr.client.data package.
+//
+RData rData = rProject.getObject(&quot;mtcars&quot;);
+RDataFrame mtcars = (RDataFrame) rData;
+List&lt;RData&gt; values = mtcars.getValue();
+
+//
+// (2) Runtime Detection of RData underlying Concrete Class
+//
+// This approach can be used if you are working with multiple
+// objects or if the underlying concrete class for each
+// instance of RData is simply unknown ahead of time.
+//
+// The set of available concrete classes for RData are defined
+// in the com.revo.deployr.client.data package.
+//
+List&lt;String&gt; objectNames = Arrays.asList(&quot;mtcars&quot;, &quot;score&quot;);
+List&lt;RData&gt; rDataList = rProject.getObjects(objectNames);
+
+for(RData rData : rDataList) {
+
+  if(rData instanceof RDataFrame) {
+    List&lt;RData&gt; values = ((RDataFrame) rData).getValue();
+    processDataFrame(rData.getName(), values);
+  } else
+  if(rData instanceof RNumeric) {
+    double value = ((RNumeric) rData).getValue();
+    processNumeric(rData.getName(), value);
+  }
+  // else..if..etc...
+
+}</code></pre>
+<p></p></div><div class="tab-pane" id="tab-EJvWhmTuGTg-1"><p></p>
+<pre><code class="language-js">
+<span class="comment">//</span>
+<span class="comment">// JavaScript Client Library R Object Decoding</span>
+<span class="comment">// </span>
+<span class="comment">// The Java client library always returns DeployR-encoded objects as object </span>
+<span class="comment">// literals.</span>
+<span class="comment">//</span>
+<span class="comment">// There are two approaches available to JavaScript client developers.</span>
+<span class="comment">//</span>
+
+<span class="comment">//</span>
+<span class="comment">// (1) Explicit "Casting" of `R Data` </span>
+<span class="comment">//</span>
+<span class="comment">// This approach can be used if you know the underlying type of the RData on the</span>
+<span class="comment">// response ahead of time.</span>
+<span class="comment">//</span>
+<span class="keyword">var</span> mtcars = response.workspace(<span class="string">'mtcars'</span>); <span class="comment">// dataframe</span>
+<span class="keyword">var</span> value = mtcars.value;
+
+<span class="comment">//</span>
+<span class="comment">// (2) Runtime Detection of `R Data` </span>
+<span class="comment">//</span>
+<span class="comment">// This approach can be used if you are working with multiple objects or if the </span>
+<span class="comment">// RData is simply unknown ahead of time on the response.</span>
+<span class="comment">//</span>
+<span class="keyword">var</span> objects = response.workspace();
+
+<span class="keyword">for</span> (<span class="keyword">var</span> obj <span class="keyword">in</span> objects) {
+  <span class="keyword">if</span> (obj.type === <span class="string">'dataframe'</span>) {
+     processDataFrame(obj.name, obj.value);
+  } <span class="keyword">else</span> <span class="keyword">if</span> (obj.type === <span class="string">'numeric'</span>) {
+     processNumeric(obj.name, obj.value);
+  }
+  <span class="comment">// else..if..etc...</span>
+}</code></pre>
+<p></p></div><div class="tab-pane" id="tab-EJvWhmTuGTg-2"><p></p>
+<pre><code>//
+// .NET Client Library R Object Decoding
+// 
+// The .NET client library always returns DeployR-encoded objects
+// as an instance of RData.
+//
+// To decode an instance of RData in order to retrieve the value
+// of the object you must determine the concrete implementation
+// class of the RData instance. The concrete class provides a
+// Value method with an appropriate return type.
+//
+// There are two approaches available to .NET client developers.
+//
+
+//
+// (1) Explicit Casting of RData to Concrete Class
+//
+// This approach can be used if you know the underlying
+// concrete class for your instance of RData ahead of time.
+//
+//
+RData rData = rProject.getObject(&quot;mtcars&quot;);
+RDataFrame mtcars = (RDataFrame) rData;
+List&lt;RData&gt; values = (List&lt;RData&gt;)mtcars.Value;
+
+//
+// (2) Runtime Detection of RData underlying Concrete Class
+//
+// This approach can be used if you are working with multiple
+// objects or if the underlying concrete class for each
+// instance of RData is simply unknown ahead of time.
+//
+//
+List&lt;String&gt; objectNames = new List&lt;String&gt;{&quot;mtcars&quot;, &quot;score&quot;};
+List&lt;RData&gt; rDataList = rProject.getObjects(objectNames, true);
+
+foreach(RData rDataVal in rDataList) 
+{
+
+    if(rDataVal.GetType() == typeof(RDataFrame)) 
+    {
+        List&lt;RData&gt; vals = (List&lt;RData&gt;)rDataVal.Value;
+        //write your own function to parse a dataframe
+        processDataFrame(rDataVal.Name, vals);
+    } 
+    else if(rDataVal.GetType() == typeof(RNumeric)) 
+    {
+        Double value = (Double)rDataVal.Value;
+    }
+    // else..if..etc...
+}</code></pre>
+<p></p></div></div><p></p>
+</div></div></div>
+        </div>    
+      </div>
+      <div class="push"></div>
+    </div>
+
+    <!-- Footer
+    ================================================== -->
+
+    <footer class="widewrapper footer bs-footer" role="contentinfo">
+  <div class="container">
+    <div class="row footer">
+      <div class="col-sm-3">
+        <h4>Get Started</h4>
+        <ul class="grove-list">
+          <li><a href="/documents/getting-started/about">About DeployR</a></li>
+          <li><a href="/download">Download DeployR</a></li>
+          <li><a href="/documents/admin/install">Install DeployR</a></li>
+          <li><a href="/documents/admin/troubleshoot">Troubleshooting & Diagnostics</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>Develop</h4>
+        <ul class="grove-list">
+          <li><a href="/dev">Get Client Developer Tools</a></li>
+            <li><a href="/docanddown#rbroker">RBroker Framework</a></li>
+          <li><a href="/docanddown#clientlib">API Client Libraries</a></li>
+          <li><a target="_blank" href="/documents/dev/api-doc">API Reference Guide</a></li>
+          <li><a target="_blank" href="/documents/help/repo-man">Repository Manager</a></li>
+         <!-- <li><a href="/docanddown#integration">3rd Party Tool Integration</a></li>-->
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>Manage</h4>
+          <ul class="grove-list">
+            <li><a target="_blank" href="/documents/help/admin-console">Administration Console</a></li>
+            <li><a href="/documents/admin/security">Security Guide</a></li>
+            <li><a href="/documents/admin/throughput">Scale & Throughput</a></li>
+            <li><a href="/documents/admin/highavail">High Availability</a></li>
+            <li><a href="/documents/admin/bigdata">Managing Big Data</a></li>
+          </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>DeployR 8.1.0</h4>
+          <ul class="grove-list">
+            <li><a href="/license">License Information</a></li>
+      	    <li><a href="/documents/admin/whats-new/">What's New in 8.1.0</a></li>
+	          <li><a href="http://go.microsoft.com/fwlink/?LinkID=708535" target="_blank">Join the DeployR Forum</a></li>
+	          <li><a href="/releases/">Release Archives</a></li>
+          </ul>
+         <div><small> &copy; 2015 Microsoft Corporation</small></div>
+      </div>    
+    </div>
+  </div>          
+</footer> 
+
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<script src="../../../assets/js/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="../../../assets/js/vendor/modernizr/modernizr.js"></script>
+<script src="../../../assets/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<!-- Google Analytics (click event)
+================================================== -->
+
+<script>
+   $('.ga-track').on('click', function() {
+      try { 
+        var label = $(this).data('ga') || $(this).text();
+        ga('send', 'event', 'button', 'click', label);
+      } catch (err) {}
+   });
+</script>
+
+<!-- TOC
+================================================= -->
+<script>
+  // back to top
+  setTimeout(function () {
+     var $sideBar = $('.bs-sidebar');
+     if (!$sideBar) { return; }
+     $sideBar.affix({
+     offset: {
+     top: function () {
+        var offsetTop = $sideBar.offset().top
+        var sideBarMargin = parseInt($sideBar.children(0).css('margin-top'), 10)
+        var navOuterHeight = $('.bs-docs-nav').height()
+        return (this.top = offsetTop - navOuterHeight - sideBarMargin)
+      }
+      , bottom: function () {
+        return (this.bottom = $('.bs-footer').outerHeight(true))
+      }
+    }
+    })
+  }, 100)
+</script>
+
+<script>
+  $('.tab-content div').each(function( index ) {
+    if(index === 0) { $(this).addClass('active'); }
+  });
+
+  $('.code-tabs a').click(function (e) {
+  });
+
+</script>
+
+     
+  </body>
+</html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="DeployR - Simple R analytics integration for application developers.">
+<meta name="keywords" content="R,Simple,DeployR,Java,JavaScript,.NET,Statistics,Big Data">
+<meta name="author" content="Microsoft Corporation">
+<meta name="google-site-verification" content="BQWjliQil8coeYFDfd-nee7j5GDJ0p-6lU4abeJiAZU">
+
+<!--<time itemprop="buildDate" datetime="Wednesday, March 16th, 2016, 9:47:06 AM PDT"></time>-->
+
+<title>
+  DeployR &middot; Getting Started - Data Scientists
+</title>
+
+<!-- Favicons -->
+<link rel="shortcut icon" href="../../../assets/img/favicon.png" type="image/png" >
+<link rel="icon" href="../../../assets/img/favicon.png" type="image/png">
+
+<!-- Bootstrap styles -->
+<link rel="stylesheet" href="../../../assets/css/vendor/bootstrap/bootstrap.min.css">
+
+<!-- Documentation extras -->
+<link href="../../../assets/css/github.css" rel="stylesheet">
+
+<!-- Glyphicons -->
+<link rel="stylesheet" href="../../../assets/css/vendor/glyphicons/glyphicons.min.css">
+<link rel="stylesheet" href="../../../assets/css/vendor/glyphicons/filetypes.min.css">
+<link rel="stylesheet" href="../../../assets/css/vendor/glyphicons/social.min.css">
+
+<!-- Google Webfonts -->
+<link href="//fonts.googleapis.com/css?family=Open+Sans:400,700,600" rel="stylesheet" type="text/css">
+
+<!-- LayerSlider styles -->
+<link rel="stylesheet" href="../../../assets/css/vendor/layerslider/layerslider.min.css" type="text/css">
+
+<!-- Grove Styles (switch for different color schemes, e.g. "styles-cleanblue.css") -->
+<link rel="stylesheet" href="../../../assets/css/styles-blue.css" id="grove-styles">
+
+<!-- Site Styles -->
+<link href="../../../assets/css/site.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <link rel="stylesheet" href="../../../assets/css/ie8.css">        
+  <script src="../../../assets/js/vendor/google/html5-3.6-respond-1.1.0.min.js"></script>
+<![endif]-->
+
+<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../../assets/js/vendor/jquery/jquery-1.9.1.min.js"><\/script>')</script>
+<!-- jQuery with jQuery Easing, and jQuery Transit JS -->
+     
+<!-- LayerSlider from Kreatura Media with Transitions -->
+<script src="../../../assets/js/vendor/layerslider/greensock.js" type="text/javascript"></script>
+<script src="../../../assets/js/vendor/layerslider/layerslider.transitions.js" type="text/javascript"></script>
+<script src="../../../assets/js/vendor/layerslider/layerslider.kreaturamedia.jquery.js" type="text/javascript"></script>
+
+<!-- Grove Layerslider initiation script -->
+<script src="../../../assets/js/grove-slider.js" type="text/javascript"></script>
+
+<!-- GA for DeployR-site -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-6984166-13', 'auto');
+  ga('send', 'pageview');
+</script>
+  </head>
+  <body data-spy="scroll" data-target="#sidenav">
+    <a class="sr-only" href="#content">Skip to main content</a>
+
+    <!-- master nav -->
+    <header>
+   <nav class="navbar navbar-default grove-navbar" role="navigation">
+      <div class="container">
+         <div class="navbar-header">
+            <a href="#" class="grove-toggle" data-toggle="collapse" data-target=".grove-nav">   
+            <i class="glyphicons show_lines"></i>  
+            </a>
+            <a href="/" class="navbar-brand">
+            <img src="../../../assets/img/rLogo.png" alt="DeployR"> DeployR
+            </a>
+         </div>
+         <div class="collapse navbar-collapse grove-nav">
+            <ul class="nav navbar-nav">
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Data Scientists <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/data-scientist">Getting Started</a></li>
+                <!--<li><a href="#">Learn-by-Example Tutorial</a></li>-->
+                     <li><a href="/documents/dev/scientist-portable-code">Portable R Code Guide</a></li>
+                     <li><a href="/documents/help/repo-man">Repository Manager Help</a></li>
+                     <li><a href="/documents/getting-started/data-scientist#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Application Developers <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/application-developer">Getting Started</a></li>
+                     <!--<li><a href="#">Learn-by-Example Tutorial</a></li>-->
+                     <li><a href="/documents/dev/rbroker">RBroker Framework Tutorial</a></li>
+                     <li><a href="/documents/dev/clientlib">Client Library Tutorial</a></li>
+                     <li><a href="/documents/dev/api-doc">API Reference Guide</a></li>
+                     <li><a href="/docanddown">Library Downloads</a></li>
+                     <li><a href="/documents/getting-started/application-developer/#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Administrators <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/administrator">Getting Started</a></li>
+                     <li><a href="/documents/admin/install">Installation & Configuration</a></li>
+                     <li><a href="/documents/admin/security">Security</a></li>
+                     <li><a href="/documents/admin/r-package-mgmt">R Package Management</a></li>
+                     <li><a href="/documents/help/admin-console">Administration Console Help</a></li>
+                     <li><a href="/documents/admin/troubleshoot">Troubleshooting</a></li>
+                     <li><a href="/documents/getting-started/administrator/#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">
+                  Community <b class="caret"></b>
+                  </a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="http://go.microsoft.com/fwlink/?LinkID=708535" target="_blank">Forum / Discussion Group</a></li>
+                     <li><a href="/faq">FAQs</a></li>
+                  </ul>
+               </li>
+              <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Download<b class="caret"></b></a>            
+                  <ul class="dropdown-menu pull-right">   
+                    <li><a href="/download">Download DeployR</a></li>
+                    <li><a href="/documents/admin/install">Install DeployR</a></li>
+                    <li><a href="/releases/">Release History</a></li>
+                  </ul>
+            </ul>
+         </div>
+         <!-- /.navbar-collapse -->
+      </div>
+   </nav>
+</header>
+
+
+    <!-- page title -->
+    <div class="widewrapper pagetitle strong-highlight">
+   <div class="container">
+      <h1>Getting Started - Data Scientists <small></small></h1>
+      <span class="product-version">
+         Version 8.1.0
+         
+      </span>
+   </div>
+</div>
+  
+    <div class="widewrapper sf-wrapper">
+      <div class="container content" role="main">
+        <div>
+          
+<div class="row"><div class="col-md-3" id="sidenav"><div class="bs-sidebar hidden-print hidden-xs hidden-sm" role="complementary"><ul class="nav bs-sidenav"><li class="active"><a href="#introduction">Introduction</a><ul class="nav"></ul></li><li><a href="#develop">Develop Analytics</a><ul class="nav"></ul></li><li><a href="#test">Test Analytics</a><ul class="nav"></ul></li><li><a href="#collaborate">Collaborate</a><ul class="nav"><li><a class="toc-section-0" href="#approach">Guidance</a></li><li><a class="toc-section-0" href="#howtoshare">On-Server Collaboration</a></li><li><a class="toc-section-0" href="#noaccess">Off-Server Collaboration</a></li></ul></li><li><a href="#resources">Further Reading</a><ul class="nav"></ul></li></ul></div></div><div class="col-md-9" role="main"><div class="container-fluid content doc-content"><h1 id="introduction">Introduction</h1>
+
+<p>This guide for data scientists offers a high-level introduction to DeployR. It helps you understand, as a data scientist, how best to work with the product tools to deliver compelling R analytics solutions in collaboration with <a href="/documents/getting-started/application-developer">application developers</a>. </p>
+<p>In a nutshell, DeployR makes your R analytics (R scripts, models, and data files) easily consumable by any application. The sections that follow explain the steps you&#39;ll take to prepare those analytics and make them available to those who need them. They are:</p>
+<ol>
+<li><a href="#develop">Develop</a> your R scripts and other analytics with portability in mind</li>
+<li><a href="#test">Test</a> those analytics inside and outside of DeployR</li>
+<li><a href="#collaborate">Collaborate</a> with application developers to deliver powerful R analytic solutions</li>
+</ol>
+<div class="well well-sm"><strong>Note:</strong> For a general introduction to DeployR, read the <a href="/documents/getting-started/about">About DeployR </a> document.</div>
+
+<h1 id="develop">Develop Analytics</h1>
+
+<p>With DeployR, you can remain focused on creating the R code, models, and data files necessary to drive your analytics solutions without having to concern yourself with how these outputs are eventually <a href="/documents/getting-started/application-developer">used by application developers</a> in their software solutions. That also means that, with minimal change in your current workflow, you can continue developing your analytics with your preferred R integrated development environment (IDE), such as the R Productivity Environment (RPE), RStudio, or StatET. </p>
+<p>All it takes to prepare your R code for use in DeployR is a few simple portability enhancements, which you can make with your existing tool chain. Use the following functions from the  <code>deployrUtils</code> R package to <a href="/documents/dev/scientist-portable-code">make your R code portable</a>:</p>
+<ul>
+<li><p><a href="/documents/dev/scientist-portable-code/#pkgport">The <code>deployrPackage</code> function</a> guarantees package portability from your local environment to the DeployR server environment when you use it to declare all of the package dependencies in your R script. Packages declared using this function are automatically loaded at runtime, either in your local environment or on the DeployR server. If the packages declared are not yet installed, then they&#39;re automatically installed before being loaded.</p>
+</li>
+<li><p><a href="/documents/dev/scientist-portable-code/#inputport">The <code>deployrInput</code> function</a> guarantees script input portability when you use it to define the inputs required by your scripts along with their default values. </p>
+</li>
+<li><p><a href="/documents/dev/scientist-portable-code/#fileaccessport">The <code>deployrExternal</code> function</a> guarantees portability from your local environment to the DeployR server environment when you use it to reference the big data files from within your R scripts. </p>
+</li>
+</ul>
+<p>You can install <code>deployrUtils</code> locally <a href="https://github.com/deployr/deployrUtils/releases">from GitHub</a> using your IDE, R console, or terminal window with the following command: </p>
+<pre><code>install_github(&#39;deployr/deployrUtils&#39;)</code></pre>
+<p>Learn more on how to <a href="/documents/dev/scientist-portable-code">write portable R code using these functions</a>.</p>
+<div class="thumbnail"><img src="assets/img/rstudio.png" alt="Script in IDE"></div>
+
+<p>Once your R code, models, and data files are ready, you can <a href="#test">verify</a> their behavior in a DeployR server environment.
+<br>&nbsp;</p>
+<div class="well well-sm"><strong>Reproducibility Tip:</strong> Use the <code>checkpoint</code> package to make sure your script always has the same package dependency versions from a specific date across environments and users by pointing to the same fixed CRAN repository snapshot. When the exact same package dependencies are used, you get reproducible results.  This package is installed with Revolution R Open, and also available on CRAN.  <a href="http://go.microsoft.com/fwlink/?LinkID=698301/documents/rro/reproducibility/#timemachine">Learn more...</a></div>
+
+<h1 id="test">Test Analytics</h1>
+
+<p>Perhaps not surprisingly, the next step after developing your analytics is to test them.  The first step is to test your analytics in your local environment. Then, when you are ready, upload those analytics to the  DeployR server environment so you can test your R scripts in a live debugging environment.</p>
+<h3 id="testing-locally">Testing Locally</h3>
+<p>Testing locally involves running your R code within your local R integrated development environment as you always have.  If you encounter issues during your tests, simply refine your analytics and retest them. When satisfied with your results, the next step is to verify that you obtain the same results when testing remotely.</p>
+   <div class="thumbnail"><img src="assets/img/rstudio-test.png" alt="Login"></div>
+
+<h3 id="testing-remotely">Testing Remotely</h3>
+<p>Testing remotely involves executing your R scripts in the DeployR server environment. Doing so is easy when you use the web-based <a href="/documents/help/repo-man">Repository Manager</a> that ships with DeployR. In just a few clicks, you can upload and test your R scripts, models, and data files via the Repository Manager. Here&#39;s how:  </p>
+<ol>
+<li><p><a href="/documents/help/repo-man/index.html#a-login.htm" target="_blank">Log into</a> the web-based DeployR landing page. </p>
+<div class="thumbnail"><img src="assets/img/login1.png" alt="Login"></div>
+</li>
+<li><p>Open the Repository Manager tool.</p>
+</li>
+<li><p><a href="/documents/help/repo-man/index.html#b-dir-create.htm" target="_blank">Create a directory</a> that you can use to store your development copies of your R analytics. In our example, we&#39;ll call this directory you&#39;ll use for development and testing in DeployR, <code>fraud-score-dev</code>.  These copies of your R analytics won&#39;t be shared with the application developers. We&#39;ll do that in a later step in the <a href="#collaborate">Collaboration</a> section. </p>
+<div class="thumbnail"><img src="assets/img/newdir1.png" alt="New Directory"></div>
+</li>
+<li><p><a href="/documents/help/repo-man/index.html#c-file-create-upload.htm" target="_blank">Upload</a> your R scripts, models, and data files into that development directory. Those files are now <a href="/documents/getting-started/application-developer/#webservices">Analytics Web Services</a> that, with the proper permissions, can be consumed by any application.</p>
+<div class="thumbnail"><img src="assets/img/upload.png" alt="Upload"></span>
+</div>
+</li>
+<li><p><a href="/documents/help/repo-man/index.html#c-file-open.htm" target="_blank">Open the R script</a> you want to test.</p>
+<div class="thumbnail"><img src="assets/img/openfile.png" alt="Open File"></div>
+</li>
+<li><p><a href="/documents/help/repo-man/index.html#j-script-test.htm" target="_blank">Click <strong>Test</strong></a> on the right of the <strong>File Properties</strong> page to open the <strong>Test</strong> page. The <strong>Test</strong> page acts as a live debugging environment.</p>
+</li>
+<li><p><a href="/documents/help/repo-man/index.html#j-script-test-run.htm" target="_blank">Click <strong>Run</strong></a>  in the upper-right hand pane to execute the R script. As the script executes, you&#39;ll see the <a href="/documents/help/repo-man/index.html#j-script-test-2-console.htm" target="_blank">console output</a> in the bottom left pane. After execution, you can review the <a href="/documents/help/repo-man/index.html#j-script-test-4-artifacts.htm" target="_blank">response markup</a> in the bottom right pane. </p>
+<div class="thumbnail"><img src="assets/img/testpage.png" alt="Test Page"></div>
+
+<!-- Open script, then load model into workspace, then run script -->
+</li>
+<li><p>Verify that you experience the same R script behavior in the DeployR server environment as you did when you tested your R scripts locally.</p>
+<ul>
+<li><p>If you encounter issues or want to make further changes to your analytics, then you can refine and test your analytics locally before returning to the Repository Manager to upload and retest remotely again.</p>
+</li>
+<li><p>If you are ready to start <a href="#collaborate">collaborating with your application developers</a>, you can make your R scripts and other analytics available to them. </p>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="collaborate">Collaborate</h1>
+
+<p>Collaboration with the application developers on your team makes it possible to deliver sophisticated software solutions powered by R analytics. 
+Whenever you develop new analytics or improve existing ones, you must inform the application developers on your team and hand off those analytics as described in this section. </p>
+<p>How you share and collaborate on these R analytics depends on whether you plan to do so <a href="#howtoshare">on-server</a>, which requires access to a common DeployR server instance, or <a href="#noaccess">off-server</a>.</p>
+<p><br></p>
+<div class="thumbnail"><img src="assets/img/collaborate.png" alt="Collaborate"></div>
+
+<p>This document focuses on the roles and responsibilities of the data scientist. To learn more about the role of the application developer, read the <a href="/documents/getting-started/application-developer">Getting Started</a> guide for application developers.</p>
+<h2 id="approach">Guidance</h2>
+
+<p>We strongly recommend the following approach to collaboration:</p>
+<ol>
+<li>Share only stable, tested snapshots of your R analytic files with application developers. </li>
+<li>Provide the application developers with all necessary details regarding your R analytic files.</li>
+</ol>
+<h3 id="share-stable-tested-snapsots">Share Stable, Tested Snapsots</h3>
+<p>We recommend sharing your R analytic files with application developers prior to their final iteration. By releasing early versions or prototypes of your work, you make it possible for the application developers to begin their integration work. You can then continue refining, adding, and testing your R analytics in tandem. </p>
+<p>However, you don&#39;t want to share every iteration of your files either. As you develop and update your R analytics, certain modifications might result in code-breaking changes in an R script’s runtime behavior. For this reason, we strongly recommend sharing file snapshots only if they have been <strong>fully tested by you</strong> to minimize the chances of introducing errors when the application developers try them out.</p>
+<p>In practice, each snapshot of your R analytics should include completed functionality and/or changes that affects the application interface for which the application developers will need to accommodate. </p>
+<p>We also recommend, when working in DeployR, that you keep the development copies of your R analytics in a private and distinct directory from the directory where you&#39;ll share your stable snapshots with application developers.</p>
+<h3 id="provide-complete-details-to-application-developers">Provide Complete Details to Application Developers</h3>
+<p>Once you share a snapshot with application developers, you must let them know that this the snapshot is available and also provide them with <strong>any information that will help them integrate your R analytics</strong> into their application code. Rather than leave the developer guessing as to why their code no longer works, we strongly recommend that you not only to tell them which files are available, but perhaps more importantly, what has changed. Be sure to include:</p>
+<ul>
+<li>The list of new/updated filenames and their respective directories</li>
+<li>Any new/updated inputs required by your R script</li>
+<li>Any new/updated outputs generated by your R scripts</li>
+</ul>
+<div class="thumbnail"><img src="assets/img/email.png" alt="Communicate"></div>
+
+<h2 id="howtoshare">On-Server Collaboration</h2>
+
+
+<p>When the application developers have access to the same DeployR server instance as you, you can share stable, tested R analytics snapshots there.</p>
+<ol>
+<li><p><a href="/documents/help/repo-man/index.html#a-login.htm" target="_blank">Log into</a> the web-based <a href="/documents/help/repo-man">Repository Manager</a>.</p>
+<div class="thumbnail"><img src="assets/img/login1.png" alt="Login"></div>
+</li>
+<li><p>Open the Repository Manager tool.</p>
+</li>
+<li><p><a href="/documents/help/repo-man/index.html#b-dir-create.htm" target="_blank">Create a snapshot directory</a> for collaboration in which you&#39;ll share the snapshots of your R analytics with application developers. Keep in mind that each snapshot should be a stable and tested version of your R analytics. </p>
+<div class="alert alert-info"><strong>Tip! </strong> We recommend that you follow a convention when naming your project directories that enables those directories to be easily associated. In our example, the directory we used to upload and test these R analytics in DeployR before sharing them is called <code>fraud-score-dev</code>. And here, we&#39;ll name the snapshot directory <code>fraud-score</code>. </div>
+<div class="thumbnail"><img src="assets/img/newdir2.png" alt="New Directory"></div>
+</li>
+<li><p>Create a copy of each file from your development directory to the newly created project directory:</p>
+<p>a. <a href="/documents/help/repo-man/index.html#c-file-open.htm" target="_blank">Open each file</a>. The <strong>File Properties</strong> page appears.</p>
+<div class="thumbnail"><img src="assets/img/openfile.png" alt="Open File"></div>
+
+<p>b. In the <strong>File Properties</strong> page, choose <strong>Copy</strong> from the <strong>Manage</strong> menu. The <strong>Copy File</strong> dialog opens.</p>
+<div class="thumbnail"><img src="assets/img/copyfile.png" alt="Copy File"></div>
+
+<p>c. Enter a name for the file in the <strong>Name</strong> field. We recommend you use the same name as you have in your development directory. If a file by that name already exists, this will become the new Latest version of that file. The version history is available to file owners.</p>
+<p>d. Select the new directory you&#39;ve just created from the <strong>Directory</strong> drop down list.</p>
+<p>e. Click <strong>Copy</strong> to make the copy. The dialog closes and the <strong>Files</strong> tab appears on the screen.</p>
+<p>f. Repeat steps a - e for each file you are ready to share.</p>
+</li>
+<li><p>Add any application developers who will work with these files as owners of those files in the new directory so they can access, test, and download them:</p>
+<p>a. From the <strong>Files</strong> tab, click the name of the new directory under the <strong>My Files</strong> tree on the left side of the page.</p>
+<div class="thumbnail"><img src="assets/img/newdir2contents.png" alt="Contents of New Directory"></div>
+
+<p>b. <a href="/documents/help/repo-man/index.html#c-file-open.htm" target="_blank">Open each file</a> in the new directory. The <strong>File Properties</strong> page appears.</p>
+<p>c. Optionally, add notes to the application developers in the <strong>Description</strong> field. For example, you could let them know which values should be retrieved. </p>
+<p>d. Click <strong>Add/Remove</strong> to <a href="/documents/help/repo-man/index.html#e-file-properties-owners.htm">add application developers as owners</a> of the file.</p>
+   <div class="thumbnail"><img src="assets/img/addowner.png" alt="Add Owners"></div>
+
+<p>e. Repeat steps a - d for each file you&#39;ve just copied to the new directory.</p>
+</li>
+<li><p>Inform your application developers that new or updated analytics are available for integration. Be sure to provide them with any details that can help them integrate those analytics.</p>
+</li>
+</ol>
+<p>Now the application developer(s) can review the files in the Repository Manager. They can also test the R scripts in the Test page and explore the artifacts. Application developers can use the files in this instance of DeployR as they are, make copies of the files, set permissions on those files, or even download the files to use in a separate instance of DeployR.</p>
+<h2 id="noaccess">Off-Server Collaboration</h2>
+
+<p>If <a href="/documents/getting-started/application-developer">application developers</a> on your project do not have access to the same instance of DeployR as you, then you can share stable snapshots of your R analytics by:</p>
+<ul>
+<li>Sending the files directly to application developers via email, or</li>
+<li>Putting them on a secure shared resource such as shared NFS drive, OneDrive, or Dropbox.  </li>
+</ul>
+<p>Keep in mind that:</p>
+<ul>
+<li>It is critical that you provide the application developers with any details that can help them integrate those analytics. </li>
+<li>The files you share should be stable and tested snapshots of your R analytics.</li>
+</ul>
+<p>Once you&#39;ve shared those files, the application developers can upload the files into their DeployR server any way they want including through the <a href="/documents/help/repo-man/">Repository Manager</a>, using client libraries, or via the <a href="/documents/dev/api-doc/">raw API</a>. </p>
+<h1 id="resources">Further Reading</h1>
+
+<p>This section provides a quick summary of useful links for data scientists working with DeployR.</p>
+<h3 id="deployr-introduction-download">DeployR Introduction &amp; Download</h3>
+<ul>
+<li><a href="/documents/getting-started/about/">About DeployR</a> ~ Introductory guide on DeployR</li>
+<li><a href="/download/">Download DeployR</a> ~ DeployR Open downloads</li>
+<li><a href="/documents/admin/install/">Install &amp; Configure DeployR</a> ~ Installation and configuration instructions</li>
+</ul>
+<h3 id="guides-for-data-scientists">Guides for Data Scientists</h3>
+<ul>
+<li><a href="/documents/getting-started/administrator/">Getting Started for Data Scientists</a> ~ Learn about the Data Scientist&#39;s role in DeployR</li>
+<li><a href="/documents/dev/scientist-portable-code">How to Write Portable R Code with deployrUtils</a> ~ <code>deployrUtils</code> package documentation</li>
+<li><a href="/documents/help/repo-man/">Repository Manager Help</a> ~ Online help for the DeployR Repository Manager.</li>
+<li><a href="/documents/admin/throughput/#throughput">About Throughput</a> ~ Learn how to optimize your throughput</li>
+</ul>
+<h3 id="other-getting-started-guides">Other Getting Started Guides</h3>
+<ul>
+<li><a href="/documents/getting-started/application-developer/">For Application Developers</a></li>
+<li><a href="/documents/getting-started/administrator/">For Administrators</a></li>
+</ul>
+<h3 id="support-channels">Support Channels</h3>
+<ul>
+<li><a href="http://go.microsoft.com/fwlink/?LinkID=708535">DeployR Forum</a></li>
+</ul>
+</div></div></div>
+        </div>    
+      </div>
+      <div class="push"></div>
+    </div>
+
+    <!-- Footer
+    ================================================== -->
+
+    <footer class="widewrapper footer bs-footer" role="contentinfo">
+  <div class="container">
+    <div class="row footer">
+      <div class="col-sm-3">
+        <h4>Get Started</h4>
+        <ul class="grove-list">
+          <li><a href="/documents/getting-started/about">About DeployR</a></li>
+          <li><a href="/download">Download DeployR</a></li>
+          <li><a href="/documents/admin/install">Install DeployR</a></li>
+          <li><a href="/documents/admin/troubleshoot">Troubleshooting & Diagnostics</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>Develop</h4>
+        <ul class="grove-list">
+          <li><a href="/dev">Get Client Developer Tools</a></li>
+            <li><a href="/docanddown#rbroker">RBroker Framework</a></li>
+          <li><a href="/docanddown#clientlib">API Client Libraries</a></li>
+          <li><a target="_blank" href="/documents/dev/api-doc">API Reference Guide</a></li>
+          <li><a target="_blank" href="/documents/help/repo-man">Repository Manager</a></li>
+         <!-- <li><a href="/docanddown#integration">3rd Party Tool Integration</a></li>-->
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>Manage</h4>
+          <ul class="grove-list">
+            <li><a target="_blank" href="/documents/help/admin-console">Administration Console</a></li>
+            <li><a href="/documents/admin/security">Security Guide</a></li>
+            <li><a href="/documents/admin/throughput">Scale & Throughput</a></li>
+            <li><a href="/documents/admin/highavail">High Availability</a></li>
+            <li><a href="/documents/admin/bigdata">Managing Big Data</a></li>
+          </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>DeployR 8.1.0</h4>
+          <ul class="grove-list">
+            <li><a href="/license">License Information</a></li>
+      	    <li><a href="/documents/admin/whats-new/">What's New in 8.1.0</a></li>
+	          <li><a href="http://go.microsoft.com/fwlink/?LinkID=708535" target="_blank">Join the DeployR Forum</a></li>
+	          <li><a href="/releases/">Release Archives</a></li>
+          </ul>
+         <div><small> &copy; 2015 Microsoft Corporation</small></div>
+      </div>    
+    </div>
+  </div>          
+</footer> 
+
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<script src="../../../assets/js/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="../../../assets/js/vendor/modernizr/modernizr.js"></script>
+<script src="../../../assets/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<!-- Google Analytics (click event)
+================================================== -->
+
+<script>
+   $('.ga-track').on('click', function() {
+      try { 
+        var label = $(this).data('ga') || $(this).text();
+        ga('send', 'event', 'button', 'click', label);
+      } catch (err) {}
+   });
+</script>
+
+<!-- TOC
+================================================= -->
+<script>
+  // back to top
+  setTimeout(function () {
+     var $sideBar = $('.bs-sidebar');
+     if (!$sideBar) { return; }
+     $sideBar.affix({
+     offset: {
+     top: function () {
+        var offsetTop = $sideBar.offset().top
+        var sideBarMargin = parseInt($sideBar.children(0).css('margin-top'), 10)
+        var navOuterHeight = $('.bs-docs-nav').height()
+        return (this.top = offsetTop - navOuterHeight - sideBarMargin)
+      }
+      , bottom: function () {
+        return (this.bottom = $('.bs-footer').outerHeight(true))
+      }
+    }
+    })
+  }, 100)
+</script>
+
+<script>
+  $('.tab-content div').each(function( index ) {
+    if(index === 0) { $(this).addClass('active'); }
+  });
+
+  $('.code-tabs a').click(function (e) {
+  });
+
+</script>
+
+     
+  </body>
+</html>

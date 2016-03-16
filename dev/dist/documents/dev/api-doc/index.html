@@ -1,0 +1,429 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head>
+        <title>DeployR API 8.0.0</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link rel="stylesheet" href="./css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8" />
+        <link rel="stylesheet" href="./css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8" />
+    <script type="text/javascript">
+function addJsClass(el) {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+    </head>
+
+    <body class="body" onload="addJsClass();">
+        <div id="navigation">
+            <ul>
+                <li>
+                    <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                        <a href="./guide/index.html" class="button">Table of contents</a>
+                        <div id="nav-summary-childs" style="display:none;">
+                            
+                            <div class="toc-item" style="margin-left:0"><a href="./guide/introduction.html"><strong>1</strong><span>Introduction</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0"><a href="./guide/architecture.html"><strong>2</strong><span>Web Service API Architecture</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0"><a href="./guide/overview.html"><strong>3</strong><span>Web Service API Overview</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0"><a href="./guide/working.html"><strong>4</strong><span>Working with the Web Service APIs</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0"><a href="./guide/workingusers.html"><strong>5</strong><span>Working with the User APIs</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0"><a href="./guide/workingprojects.html"><strong>6</strong><span>Working with the Project APIs</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0"><a href="./guide/workingjobs.html"><strong>7</strong><span>Working with the Job APIs</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0"><a href="./guide/workingrepository.html"><strong>8</strong><span>Working with the Repository APIs</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0"><a href="./guide/workingeventstream.html"><strong>9</strong><span>Working with the Event Stream API</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0"><a href="./guide/encodings.html"><strong>10</strong><span>Web Service API Data Encodings</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0"><a href="./guide/explorer.html"><strong>11</strong><span>The API Explorer Tool</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0"><a href="./guide/741changehistory.html"><strong>12</strong><span>API Changes in 7.4.1</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0"><a href="./guide/74changehistory.html"><strong>13</strong><span>API Changes in 7.4</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0"><a href="./guide/73changehistory.html"><strong>14</strong><span>API Changes in 7.3</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0"><a href="./guide/72changehistory.html"><strong>15</strong><span>API Changes in 7.2</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0"><a href="./guide/71changehistory.html"><strong>16</strong><span>API Changes in 7.1</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0"><a href="./guide/70changehistory.html"><strong>17</strong><span>API Changes in 7.0</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0"><a href="./guide/62changehistory.html"><strong>18</strong><span>API Changes in 6.2</span></a></div>
+                            
+                        </div>
+                    </div>
+                </li>
+                <li class="separator selected">
+                    <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+                </li>
+            </ul>
+        </div>
+        <div id="header">
+            <div class="images clearfix">
+                
+                
+            </div>
+            <p>DeployR API</p>
+        </div>
+
+
+        <table id="colset" border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td id="col1">
+                    <div id="main" class="corner-all">
+
+                        <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                        <div class="project">
+                            <h1>DeployR API - Reference Documentation</h1>
+                            <p><strong>Authors:</strong> Microsoft Corporation</p>
+                            <p><strong>Version:</strong> 8.0.0</p>
+                            
+                        </div>
+
+                        
+                        <div id="table-of-content">
+                            <h2>Table of Contents</h2>
+                            
+                            <div class="toc-item" style="margin-left:0px"><a href="./guide/introduction.html"><strong>1</strong><span>Introduction</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/introduction.html#introrlang"><strong>1.1</strong><span>Introducing R</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/introduction.html#introappdev"><strong>1.2</strong><span>Introducing R for App Developers</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/introduction.html#introusers"><strong>1.3</strong><span>Introducing Users on the API</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/introduction.html#introprojects"><strong>1.4</strong><span>Introducing Projects on the API</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/introduction.html#anonymousprojects"><strong>1.4.1</strong><span>Anonymous Projects</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/introduction.html#authenticatedprojects"><strong>1.4.2</strong><span>Authenticated Projects</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/introduction.html#projectcollaboration"><strong>1.4.3</strong><span>Project Ownership &amp; Collaboration</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/introduction.html#introjobs"><strong>1.5</strong><span>Introducing Jobs on the API</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/introduction.html#introrepository"><strong>1.6</strong><span>Introducing the Repository on the API</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/introduction.html#introeventstream"><strong>1.7</strong><span>Introducing the Event Stream on the API</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0px"><a href="./guide/architecture.html"><strong>2</strong><span>Web Service API Architecture</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0px"><a href="./guide/overview.html"><strong>3</strong><span>Web Service API Overview</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/overview.html#overviewparameters"><strong>3.1</strong><span>API Parameters</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/overview.html#overviewcodes"><strong>3.2</strong><span>API Response Codes</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/overview.html#overviewusers"><strong>3.3</strong><span>User APIs Summary</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/overview.html#overviewprojects"><strong>3.4</strong><span>Project APIs Summary</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/overview.html#overviewjobs"><strong>3.5</strong><span>Job APIs Summary</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/overview.html#overviewrepository"><strong>3.6</strong><span>Repository APIs Summary</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/overview.html#overvieweventstream"><strong>3.7</strong><span>Event Stream APIs Summary</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/overview.html#overviewexplorer"><strong>3.8</strong><span>Learning the API Interactively</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0px"><a href="./guide/working.html"><strong>4</strong><span>Working with the Web Service APIs</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0px"><a href="./guide/workingusers.html"><strong>5</strong><span>Working with the User APIs</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/workingusers.html#userlogin"><strong>5.1</strong><span>/r/user/login</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/workingusers.html#userlogout"><strong>5.2</strong><span>/r/user/logout</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/workingusers.html#userabout"><strong>5.3</strong><span>/r/user/about</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/workingusers.html#userautosave"><strong>5.4</strong><span>/r/user/autosave</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/workingusers.html#userrelease"><strong>5.5</strong><span>/r/user/release</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0px"><a href="./guide/workingprojects.html"><strong>6</strong><span>Working with the Project APIs</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/workingprojects.html#projectmanagement"><strong>6.1</strong><span>Working with the Project Management APIs</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectcreate"><strong>6.1.1</strong><span>/r/project/create</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectpool"><strong>6.1.2</strong><span>/r/project/pool</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectrecycle"><strong>6.1.3</strong><span>/r/project/recycle</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectlist"><strong>6.1.4</strong><span>/r/project/list</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectping"><strong>6.1.5</strong><span>/r/project/ping</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectabout"><strong>6.1.6</strong><span>/r/project/about</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectaboutupdate"><strong>6.1.7</strong><span>/r/project/about/update</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectsave"><strong>6.1.8</strong><span>/r/project/save</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectsaveas"><strong>6.1.9</strong><span>/r/project/saveas</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectclose"><strong>6.1.10</strong><span>/r/project/close</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectgrant"><strong>6.1.11</strong><span>/r/project/grant</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectimport"><strong>6.1.12</strong><span>/r/project/import</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectexport"><strong>6.1.13</strong><span>/r/project/export</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectdelete"><strong>6.1.14</strong><span>/r/project/delete</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/workingprojects.html#projectexecution"><strong>6.2</strong><span>Working with the Project Execution APIs</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectexecutecode"><strong>6.2.1</strong><span>/r/project/execute/code</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectexecutescript"><strong>6.2.2</strong><span>/r/project/execute/script</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectexecuteinterrupt"><strong>6.2.3</strong><span>/r/project/execute/interrupt</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectexecuteconsole"><strong>6.2.4</strong><span>/r/project/execute/console</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectexecutehistory"><strong>6.2.5</strong><span>/r/project/execute/history</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectexecuteflush"><strong>6.2.6</strong><span>/r/project/execute/flush</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectexecuteresultlist"><strong>6.2.7</strong><span>/r/project/execute/result/list</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectexecuteresultdownload"><strong>6.2.8</strong><span>/r/project/execute/result/download</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectexecuteresultdelete"><strong>6.2.9</strong><span>/r/project/execute/result/delete</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/workingprojects.html#projectworkspace"><strong>6.3</strong><span>Working with the Project Workspace APIs</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectworkspacelist"><strong>6.3.1</strong><span>/r/project/workspace/list</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectworkspaceget"><strong>6.3.2</strong><span>/r/project/workspace/get</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectworkspaceupload"><strong>6.3.3</strong><span>/r/project/workspace/upload</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectworkspacetransfer"><strong>6.3.4</strong><span>/r/project/workspace/transfer</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectworkspacepush"><strong>6.3.5</strong><span>/r/project/workspace/push</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectworkspacesave"><strong>6.3.6</strong><span>/r/project/workspace/save</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectworkspacestore"><strong>6.3.7</strong><span>/r/project/workspace/store</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectworkspaceload"><strong>6.3.8</strong><span>/r/project/workspace/load</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectworkspacedelete"><strong>6.3.9</strong><span>/r/project/workspace/delete</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/workingprojects.html#projectdirectory"><strong>6.4</strong><span>Working with the Project Directory APIs</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectdirectorylist"><strong>6.4.1</strong><span>/r/project/directory/list</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectdirectoryupload"><strong>6.4.2</strong><span>/r/project/directory/upload</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectdirectorytransfer"><strong>6.4.3</strong><span>/r/project/directory/transfer</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectdirectorywrite"><strong>6.4.4</strong><span>/r/project/directory/write</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectdirectoryupdate"><strong>6.4.5</strong><span>/r/project/directory/update</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectdirectorystore"><strong>6.4.6</strong><span>/r/project/directory/store</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectdirectoryload"><strong>6.4.7</strong><span>/r/project/directory/load</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectdirectorydownload"><strong>6.4.8</strong><span>/r/project/directory/download</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectdirectorydelete"><strong>6.4.9</strong><span>/r/project/directory/delete</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/workingprojects.html#projectpackages"><strong>6.5</strong><span>Working with the Project Package APIs</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectpackagelist"><strong>6.5.1</strong><span>/r/project/package/list</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectpackageattach"><strong>6.5.2</strong><span>/r/project/package/attach</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingprojects.html#projectpackagedetach"><strong>6.5.3</strong><span>/r/project/package/detach</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0px"><a href="./guide/workingjobs.html"><strong>7</strong><span>Working with the Job APIs</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/workingjobs.html#joblist"><strong>7.1</strong><span>/r/job/list</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/workingjobs.html#jobsubmit"><strong>7.2</strong><span>/r/job/submit</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/workingjobs.html#jobschedule"><strong>7.3</strong><span>/r/job/schedule</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/workingjobs.html#jobquery"><strong>7.4</strong><span>/r/job/query</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/workingjobs.html#jobcancel"><strong>7.5</strong><span>/r/job/cancel</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/workingjobs.html#jobdelete"><strong>7.6</strong><span>/r/job/delete</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0px"><a href="./guide/workingrepository.html"><strong>8</strong><span>Working with the Repository APIs</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/workingrepository.html#repositorydirectory"><strong>8.1</strong><span>Working with the Repository Directory APIs</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingrepository.html#repositorydirectorylist"><strong>8.1.1</strong><span>/r/repository/directory/list</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingrepository.html#repositorydirectorycreate"><strong>8.1.2</strong><span>/r/repository/directory/create</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingrepository.html#repositorydirectoryrename"><strong>8.1.3</strong><span>/r/repository/directory/rename</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingrepository.html#repositorydirectorycopy"><strong>8.1.4</strong><span>/r/repository/directory/copy</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingrepository.html#repositorydirectorymove"><strong>8.1.5</strong><span>/r/repository/directory/move</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingrepository.html#repositorydirectoryupdate"><strong>8.1.6</strong><span>/r/repository/directory/update</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingrepository.html#repositorydirectoryarchive"><strong>8.1.7</strong><span>/r/repository/directory/archive</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingrepository.html#repositorydirectoryupload"><strong>8.1.8</strong><span>/r/repository/directory/upload</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingrepository.html#repositorydirectorydownload"><strong>8.1.9</strong><span>/r/repository/directory/download</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingrepository.html#repositorydirectorydelete"><strong>8.1.10</strong><span>/r/repository/directory/delete</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/workingrepository.html#repositoryfiles"><strong>8.2</strong><span>Working with the Repository File APIs</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingrepository.html#repositoryfilelist"><strong>8.2.1</strong><span>/r/repository/file/list</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingrepository.html#repositoryfilefetch"><strong>8.2.2</strong><span>/r/repository/file/fetch</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingrepository.html#repositoryfileupload"><strong>8.2.3</strong><span>/r/repository/file/upload</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingrepository.html#repositoryfiletransfer"><strong>8.2.4</strong><span>/r/repository/file/transfer</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingrepository.html#repositoryfilewrite"><strong>8.2.5</strong><span>/r/repository/file/write</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingrepository.html#repositoryfileupdate"><strong>8.2.6</strong><span>/r/repository/file/update</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingrepository.html#repositoryfilediff"><strong>8.2.7</strong><span>/r/repository/file/diff</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingrepository.html#repositoryfilerevert"><strong>8.2.8</strong><span>/r/repository/file/revert</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingrepository.html#repositoryfilegrant"><strong>8.2.9</strong><span>/r/repository/file/grant</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingrepository.html#repositoryfiledownload"><strong>8.2.10</strong><span>/r/repository/file/download</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingrepository.html#repositoryfiledelete"><strong>8.2.11</strong><span>/r/repository/file/delete</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingrepository.html#repositoryfilecopy"><strong>8.2.12</strong><span>/r/repository/file/copy</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingrepository.html#repositoryfilemove"><strong>8.2.13</strong><span>/r/repository/file/move</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/workingrepository.html#repositoryscripts"><strong>8.3</strong><span>Working with the Repository Script APIs</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingrepository.html#repositoryscriptlist"><strong>8.3.1</strong><span>/r/repository/script/list</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingrepository.html#repositoryscriptexecute"><strong>8.3.2</strong><span>/r/repository/script/execute</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingrepository.html#repositoryscriptrender"><strong>8.3.3</strong><span>/r/repository/script/render</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingrepository.html#repositoryscriptinterrupt"><strong>8.3.4</strong><span>/r/repository/script/interrupt</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/workingrepository.html#repositoryshell"><strong>8.4</strong><span>Working with the Repository Shell Script APIs</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:20px"><a href="./guide/workingrepository.html#repositoryshellexecute"><strong>8.4.1</strong><span>/r/repository/shell/execute</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0px"><a href="./guide/workingeventstream.html"><strong>9</strong><span>Working with the Event Stream API</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/workingeventstream.html#eventstream"><strong>9.1</strong><span>/r/event/stream</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0px"><a href="./guide/encodings.html"><strong>10</strong><span>Web Service API Data Encodings</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0px"><a href="./guide/explorer.html"><strong>11</strong><span>The API Explorer Tool</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/explorer.html#exploreroverview"><strong>11.1</strong><span>Quick Overview</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/explorer.html#explorerdetails"><strong>11.2</strong><span>Learning the API</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0px"><a href="./guide/741changehistory.html"><strong>12</strong><span>API Changes in 7.4.1</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/741changehistory.html#artifactsoff"><strong>12.1</strong><span>Standard Execution Model Changes</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0px"><a href="./guide/74changehistory.html"><strong>13</strong><span>API Changes in 7.4</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/74changehistory.html#clusterexecution"><strong>13.1</strong><span>New Grid Cluster Targeted Executions</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/74changehistory.html#phantomexecution"><strong>13.2</strong><span>New Project Phantom Executions</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/74changehistory.html#repositorylistexternal"><strong>13.3</strong><span>New External Repository Support</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/74changehistory.html#repositorylistfilters"><strong>13.4</strong><span>New Default and External Repository Filters</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/74changehistory.html#shellscriptexecution"><strong>13.5</strong><span>New Repository Shell Script Execution</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0px"><a href="./guide/73changehistory.html"><strong>14</strong><span>API Changes in 7.3</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/73changehistory.html#userreleasegrid"><strong>14.1</strong><span>New User Grid Resource Release API</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/73changehistory.html#preloadbydirectory"><strong>14.2</strong><span>Standard Execution Model Changes</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0px"><a href="./guide/72changehistory.html"><strong>15</strong><span>API Changes in 7.2</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0px"><a href="./guide/71changehistory.html"><strong>16</strong><span>API Changes in 7.1</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/71changehistory.html#repositorydirectorysupport"><strong>16.1</strong><span>New Repository Directory APIs</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/71changehistory.html#repositoryfiledirectorysupport"><strong>16.2</strong><span>Repository File API Changes</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/71changehistory.html#storedirectory"><strong>16.3</strong><span>Standard Execution Model Changes</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/71changehistory.html#projectrecyclepreserve"><strong>16.4</strong><span>Project Recycle API Parameter Changes</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0px"><a href="./guide/70changehistory.html"><strong>17</strong><span>API Changes in 7.0</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/70changehistory.html#blackboxprojects"><strong>17.1</strong><span>Blackbox Projects</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/70changehistory.html#standardexecutionmodel"><strong>17.2</strong><span>Standard Execution Model</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/70changehistory.html#executionchaining"><strong>17.3</strong><span>R Script Execution Chaining</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/70changehistory.html#repositoryrestrictedaccess"><strong>17.4</strong><span>Repository role-based restricted access</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:0px"><a href="./guide/62changehistory.html"><strong>18</strong><span>API Changes in 6.2</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/62changehistory.html#codeexecutioninputs"><strong>18.1</strong><span>DeployR-encoded R object inputs on code execution</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/62changehistory.html#directoryreference"><strong>18.2</strong><span>Project directory files</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/62changehistory.html#repositoryreference"><strong>18.3</strong><span>Repository filename, author and version</span></a></div>
+                            
+                            <div class="toc-item" style="margin-left:10px"><a href="./guide/62changehistory.html#repositoryversions"><strong>18.4</strong><span>Repository file version control</span></a></div>
+                            
+                            <div style="clear:both" ></div>
+                        </div>
+                        
+                        
+                    </div>
+                </td>
+                <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="./guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+            </tr>
+        </table>
+
+        <div id="footer">
+            Copyright (c) 2009-2016 Microsoft Corporation
+            
+        </div>
+
+
+
+<script type="text/javascript" src="./js/docs.js"></script>
+
+    </body>
+</html>

@@ -1,0 +1,234 @@
+/*<meta />*/
+
+body
+{
+	font-family: Arial;
+	color: #454545;
+}
+
+h1
+{
+	font-weight: bold;
+	font-size: 20pt;
+	color: #454545;
+}
+
+h2
+{
+	font-weight: bold;
+	font-size: 16pt;
+	margin-top: 1.25em;
+	margin-left: 10px;
+}
+
+h3
+{
+	font-weight: bold;
+	font-size: 14.0pt;
+	margin-left: 10px;
+}
+
+h4
+{
+	font-weight: bold;
+	font-size: 12.0pt;
+	margin-left: 10px;
+}
+
+h5
+{
+	font-weight: bold;
+	font-size: 10.0pt;
+	margin-left: 10px;
+}
+
+h6
+{
+	font-weight: bold;
+	font-size: 8.0pt;
+	margin-left: 10px;
+}
+
+p
+{
+	font-size: 11pt;
+	font-family: Arial;
+	margin-bottom: 3px;
+	margin-top: 12px;
+	margin-left: 10px;
+}
+
+ol,
+ul
+{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+img
+{
+	border: none;
+}
+
+a.Popup
+{
+	
+}
+
+MadCap|expandingHead
+{
+	cursor: hand;
+	text-decoration: none;
+	color: #d33f09;
+	font-size: 10;
+	font-style: normal;
+	font-weight: bold;
+	margin-left: 10px;
+}
+
+MadCap|expandingBody
+{
+	color: #777777;
+	font-style: italic;
+}
+
+MadCap|dropDownHotspot
+{
+	cursor: hand;
+	text-decoration: none;
+	color: #d33f09;
+	font-size: 10;
+	font-weight: bold;
+	font-style: normal;
+	margin-left: 10px;
+}
+
+p.task_title
+{
+	font-weight: bold;
+	margin-top: 24px;
+}
+
+span.screen
+{
+	font-weight: bold;
+	font-family: verdana;
+	font-size: 9.5pt;
+}
+
+ol
+{
+	font-size: 11pt;
+}
+
+ul
+{
+	font-size: 11pt;
+}
+
+code
+{
+	
+}
+
+li
+{
+	padding-top: 3px;
+}
+
+table
+{
+	background-color: #f0ffff;
+	border-spacing: 0px;
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	margin-left: 15px;
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+
+th
+{
+	border-left-style: solid;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+}
+
+td
+{
+	font-size: 13px;
+	border-left-style: solid;
+	border-left-width: 0px;
+	border-right-style: solid;
+	border-right-width: 0px;
+	border-top-style: solid;
+	border-top-width: 0px;
+	border-bottom-style: solid;
+	border-bottom-width: 0px;
+}
+
+caption
+{
+	font-weight: bold;
+	font-style: normal;
+	text-align: left;
+	font-family: Calibri;
+	font-size: 11pt;
+	padding-bottom: 6px;
+	padding-top: 20px;
+}
+
+span.Note
+{
+	color: #e23f08;
+	font-style: italic;
+}
+
+li.padded
+{
+	padding-top: 3px;
+	padding-bottom: 3px;
+}
+
+MadCap|relatedTopics
+{
+	color: #ffffff;
+	font-weight: bold;
+	background-color: #017AB7;
+	padding:3px;
+	padding-right:8px;
+}
+
+p.Code_example
+{
+	margin-bottom: 3px;
+	font-family: 'Courier New';
+	margin-top: 3px;
+	font-size: 9pt;
+	margin-left: 30px;
+}
+
+p.Concept
+{
+	margin-top: 30pt;
+}
+
+pre
+{
+	margin-left: 35px;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 9pt;
+}
+

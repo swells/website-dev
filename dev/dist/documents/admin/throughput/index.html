@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="DeployR - Simple R analytics integration for application developers.">
+<meta name="keywords" content="R,Simple,DeployR,Java,JavaScript,.NET,Statistics,Big Data">
+<meta name="author" content="Microsoft Corporation">
+<meta name="google-site-verification" content="BQWjliQil8coeYFDfd-nee7j5GDJ0p-6lU4abeJiAZU">
+
+<!--<time itemprop="buildDate" datetime="Wednesday, March 16th, 2016, 9:47:06 AM PDT"></time>-->
+
+<title>
+  DeployR &middot; Scale &amp; Throughput
+</title>
+
+<!-- Favicons -->
+<link rel="shortcut icon" href="../../../assets/img/favicon.png" type="image/png" >
+<link rel="icon" href="../../../assets/img/favicon.png" type="image/png">
+
+<!-- Bootstrap styles -->
+<link rel="stylesheet" href="../../../assets/css/vendor/bootstrap/bootstrap.min.css">
+
+<!-- Documentation extras -->
+<link href="../../../assets/css/github.css" rel="stylesheet">
+
+<!-- Glyphicons -->
+<link rel="stylesheet" href="../../../assets/css/vendor/glyphicons/glyphicons.min.css">
+<link rel="stylesheet" href="../../../assets/css/vendor/glyphicons/filetypes.min.css">
+<link rel="stylesheet" href="../../../assets/css/vendor/glyphicons/social.min.css">
+
+<!-- Google Webfonts -->
+<link href="//fonts.googleapis.com/css?family=Open+Sans:400,700,600" rel="stylesheet" type="text/css">
+
+<!-- LayerSlider styles -->
+<link rel="stylesheet" href="../../../assets/css/vendor/layerslider/layerslider.min.css" type="text/css">
+
+<!-- Grove Styles (switch for different color schemes, e.g. "styles-cleanblue.css") -->
+<link rel="stylesheet" href="../../../assets/css/styles-blue.css" id="grove-styles">
+
+<!-- Site Styles -->
+<link href="../../../assets/css/site.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <link rel="stylesheet" href="../../../assets/css/ie8.css">        
+  <script src="../../../assets/js/vendor/google/html5-3.6-respond-1.1.0.min.js"></script>
+<![endif]-->
+
+<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../../assets/js/vendor/jquery/jquery-1.9.1.min.js"><\/script>')</script>
+<!-- jQuery with jQuery Easing, and jQuery Transit JS -->
+     
+<!-- LayerSlider from Kreatura Media with Transitions -->
+<script src="../../../assets/js/vendor/layerslider/greensock.js" type="text/javascript"></script>
+<script src="../../../assets/js/vendor/layerslider/layerslider.transitions.js" type="text/javascript"></script>
+<script src="../../../assets/js/vendor/layerslider/layerslider.kreaturamedia.jquery.js" type="text/javascript"></script>
+
+<!-- Grove Layerslider initiation script -->
+<script src="../../../assets/js/grove-slider.js" type="text/javascript"></script>
+
+<!-- GA for DeployR-site -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-6984166-13', 'auto');
+  ga('send', 'pageview');
+</script>
+  </head>
+  <body data-spy="scroll" data-target="#sidenav">
+    <a class="sr-only" href="#content">Skip to main content</a>
+
+    <!-- master nav -->
+    <header>
+   <nav class="navbar navbar-default grove-navbar" role="navigation">
+      <div class="container">
+         <div class="navbar-header">
+            <a href="#" class="grove-toggle" data-toggle="collapse" data-target=".grove-nav">   
+            <i class="glyphicons show_lines"></i>  
+            </a>
+            <a href="/" class="navbar-brand">
+            <img src="../../../assets/img/rLogo.png" alt="DeployR"> DeployR
+            </a>
+         </div>
+         <div class="collapse navbar-collapse grove-nav">
+            <ul class="nav navbar-nav">
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Data Scientists <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/data-scientist">Getting Started</a></li>
+                <!--<li><a href="#">Learn-by-Example Tutorial</a></li>-->
+                     <li><a href="/documents/dev/scientist-portable-code">Portable R Code Guide</a></li>
+                     <li><a href="/documents/help/repo-man">Repository Manager Help</a></li>
+                     <li><a href="/documents/getting-started/data-scientist#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Application Developers <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/application-developer">Getting Started</a></li>
+                     <!--<li><a href="#">Learn-by-Example Tutorial</a></li>-->
+                     <li><a href="/documents/dev/rbroker">RBroker Framework Tutorial</a></li>
+                     <li><a href="/documents/dev/clientlib">Client Library Tutorial</a></li>
+                     <li><a href="/documents/dev/api-doc">API Reference Guide</a></li>
+                     <li><a href="/docanddown">Library Downloads</a></li>
+                     <li><a href="/documents/getting-started/application-developer/#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Administrators <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/administrator">Getting Started</a></li>
+                     <li><a href="/documents/admin/install">Installation & Configuration</a></li>
+                     <li><a href="/documents/admin/security">Security</a></li>
+                     <li><a href="/documents/admin/r-package-mgmt">R Package Management</a></li>
+                     <li><a href="/documents/help/admin-console">Administration Console Help</a></li>
+                     <li><a href="/documents/admin/troubleshoot">Troubleshooting</a></li>
+                     <li><a href="/documents/getting-started/administrator/#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">
+                  Community <b class="caret"></b>
+                  </a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="http://go.microsoft.com/fwlink/?LinkID=708535" target="_blank">Forum / Discussion Group</a></li>
+                     <li><a href="/faq">FAQs</a></li>
+                  </ul>
+               </li>
+              <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Download<b class="caret"></b></a>            
+                  <ul class="dropdown-menu pull-right">   
+                    <li><a href="/download">Download DeployR</a></li>
+                    <li><a href="/documents/admin/install">Install DeployR</a></li>
+                    <li><a href="/releases/">Release History</a></li>
+                  </ul>
+            </ul>
+         </div>
+         <!-- /.navbar-collapse -->
+      </div>
+   </nav>
+</header>
+
+
+    <!-- page title -->
+    <div class="widewrapper pagetitle strong-highlight">
+   <div class="container">
+      <h1>Scale &amp; Throughput <small></small></h1>
+      <span class="product-version">
+         Version 8.1.0
+         
+      </span>
+   </div>
+</div>
+  
+    <div class="widewrapper sf-wrapper">
+      <div class="container content" role="main">
+        <div>
+          
+<div class="row"><div class="col-md-3" id="sidenav"><div class="bs-sidebar hidden-print hidden-xs hidden-sm" role="complementary"><ul class="nav bs-sidenav"><li class="active"><a href="#intro">Introduction</a><ul class="nav"></ul></li><li><a href="#servercap">Tuning Server Capacity</a><ul class="nav"></ul></li><li><a href="#gridcap">Tuning Grid Capacity</a><ul class="nav"><li><a class="toc-section-0" href="#project">Project Workloads</a></li><li><a class="toc-section-0" href="#job">Asynchronous Job Workloads</a></li></ul></li><li><a href="#throughput">About Throughput</a><ul class="nav"><li><a class="toc-section-0" href="#understand">Understanding Throughput</a></li><li><a class="toc-section-0" href="#highvol">Configuring DeployR for High-Volume Throughput</a></li></ul></li></ul><div class="related"><h3 id="see-also">See Also</h3>
+<ul>
+<li><a href="../highavail/">DeployR &amp; Database High Availability</a></li>
+</ul>
+</div></div></div><div class="col-md-9" role="main"><div class="container-fluid content doc-content"><h1 id="intro">Introduction</h1>
+
+<p>DeployR is a server framework that exposes the R platform as a service allowing the integration of R statistics, analytics, and visualizations inside Web, desktop, and mobile applications. Within the server, a grid framework provides sophisticated load balancing capabilities for a single DeployR server instance. The overall capacity of your server and grid, in conjunction with the nature and volume of your anticipated workload, determines the runtime characteristics for the tasks that are executing within the DeployR environment.</p>
+<p>Some of the most common questions that arise when planning the configuration and provisioning of the DeployR server and grid are:</p>
+<ul>
+<li>How many users can I support?</li>
+<li>How many grid nodes do I need?</li>
+<li>What throughput can I expect?</li>
+</ul>
+<p>The answer to these questions will depend on the configuration and size of the server and grid resources allocated to your deployment.</p>
+<p>The information in this document will help you familiarize yourself with the central issues related to deployment, and also offers specific recommendations you can use to tailor your DeployR environment.</p>
+<p>While this document is primarily intended for DeployR administrators, the section <a href="#throughput">About Throughput</a> also helps application and R script developers optimize their throughput.</p>
+<div class="alert alert-success"><strong>Get More DeployR Power: </strong> 
+Multiple grid node support is available for <a href="/download/">DeployR Enterprise</a> only.
+</div>
+
+<h1 id="servercap">Tuning Server Capacity</h1>
+
+<p>DeployR offers the ability to expand and contract server capacity to effectively handle increasing workloads comprised of user sessions, live projects, and background jobs.</p>
+<p>When a single DeployR server instance is working with an arbitrarily large number of grid nodes, this server acts as the sole gatekeeper to the grid and all of its resources. It is for this reason that the server has the potential, under a certain load, to become a bottleneck at runtime.</p>
+<p>Whenever you increase the resources allocated to the DeployR server, thereby increasing its capacity, this server can handle a higher workload. The act of increasing or even decreasing the resources that are allocated to the server is referred to as <em>vertically scaling </em> the server.</p>
+<p>In theory, the more memory you allocate to a server, the more work it can perform. However, increasing the amount of allocated memory only works to a point, and part of the configuration process is to tune the system to your particular needs.</p>
+<p>By default, the DeployR server instance should be able to comfortably accommodate hundreds of concurrent users, each performing a moderate number of tasks. At runtime, each task consumes server resources regardless of whether that task is an authenticated operation running as a persistent project, an asynchronous operation running as a background job, or an anonymous operation running as a stateless project.</p>
+<p>All server resources are allocated on the Java Virtual Machine (JVM) heap, which is a finite block of dedicated memory. By default, DeployR attempts to allocate a JVM heap size of 1024MB, which is a required minimum system requirement in production environments.</p>
+<div class="alert alert-info"><strong>Take Action! </strong><br /> 
+If you expect or encounter a server load that exceeds the resources provided by the default DeployR configuration, use the JVM command line options -Xms and -Xmx to increase JVM heap space, and -Xss to reduce Java thread stack size used by the server. 
+
+You can allocate a JVM heap size of up to one fourth of the physical memory size of your server computer. For example, if your server computer has 8 GB of physical memory, allocate a heap size of no more than 2 GB.
+</div>
+
+<h1 id="gridcap">Tuning Grid Capacity</h1>
+
+<p>DeployR Enterprise offers the ability to expand and contract grid capacity to effectively handle increasing workloads comprised of user sessions, live projects, and background jobs.</p>
+<div class="alert alert-warning"><strong>Grid Framework Support: </strong> 
+<p>When you install DeployR main server, a single grid node is installed automatically for you. </p>
+<p>&nbsp;-&nbsp;With <strong>DeployR Open</strong>, this default node is installed on <code>localhost</code> with a <a href="/documents/help/admin-console/#Topics/node-properties.htm" target="_blank">fixed slot limit</a>. Expanding the grid with additional grid nodes to scale for increasing load is not supported for this edition.</p>
+<p>&nbsp;-&nbsp;With <strong>DeployR Enterprise</strong>, not only can you point this default grid node to a remote location and customize its slot limit, but you can also install and configure additional grid nodes to scale for increasing load. </p>
+
+<p><a href="http://go.microsoft.com/fwlink/?LinkID=698525">Get DeployR Enterprise today</a> to take advantage of great DeployR features like <a href="/documents/admin/security">enterprise security</a> and <a href="/documents/help/admin-console/#Topics/node-grid-intro.htm" target="_blank">a scalable grid framework</a>.  Note that DeployR Enterprise is part of Microsoft R Services.</p>
+
+</div>
+
+<p>Each node on the grid contributes its own processor, memory, and disk resources. These resources can be leveraged by the DeployR server to run R code as part of user authenticated, asynchronous, and anonymous operations.</p>
+<p>Whenever you increase the number of nodes on your DeployR grid, you effectively increase the grid’s capacity. Increasing or even decreasing the number of nodes on your grid is referred to as <em>horizontally scaling</em> the grid. An increased grid capacity enables the grid to perform more tasks on behalf of the server. Additionally, increasing or decreasing the resources allocated to the nodes on the grid further contributes to the grid’s horizontal scaling since those resources determine the slot limits. And, slot limits directly impact the overall grid capacity.</p>
+<p>By tuning settings under the <strong>Grid</strong> tab in the DeployR Enterprise Administration Console, a server administrator can horizontally scale the capacity of the grid at runtime. The server will automatically distribute the workload across all grid nodes.</p>
+<p>A well-configured grid maximizes throughput while minimizing resource contention. The best way to start planning the provisioning of your grid is to gain an understanding of the anticipated workload for this grid. With that workload in mind, you can then scale the grid to handle this load.</p>
+<p>The DeployR Enterprise server and grid deployment model can be described as follows, where N is defined as the optimal number of nodes on the grid: <code>Server[1] -&gt; Node[1..N]</code> Based on this deployment model, the appropriate value for <code>N</code>, when horizontally scaling the grid, will always be a function of the nature and the volume of the anticipated workload.</p>
+<p>The following scenarios demonstrate different deployment configurations based on specific workload expectations. These configurations are not mutually exclusive.</p>
+<h2 id="project">Project Workloads</h2>
+
+<p>When tuning your DeployR Enterprise grid’s capacity for the anticipated project workload, use the following formula to determine the optimal number of nodes (N) to have on your grid that can handle authenticated operations:</p>
+<div align=center>
+<img src="./assets/img/tuneprojects.png" alt="Formula">
+</div>
+
+<p>Where:</p>
+<ul>
+<li><p><code>N</code> is the optimal number of nodes required to handle the anticipated workload. For project workloads, these nodes must be configured to support authenticated operations. The system administrator can specify a node’s operating mode when creating or editing that node in the <strong>Grid</strong> tab of the DeployR Administration Console.</p>
+</li>
+<li><p><code>Max. Concurrent Users</code> is the maximum number of DeployR users you anticipate will work concurrently.</p>
+</li>
+<li><code>Max. Concurrent Projects</code> is the maximum number of projects a single user can work on concurrently. The system administrator can control the concurrent project limit using the Per-user authenticated limit setting in the <strong>Server Policies</strong> tab of the DeployR Administration Console.</li>
+<li><code>Average Slot Limit</code> is the average value for the <strong>Slot Limit</strong> setting for each of the grid nodes. The system administrator can set the value for each node’s <strong>Slot Limit</strong> in the <strong>Grid</strong> tab of the DeployR Administration Console.</li>
+</ul>
+<div class="alert alert-warning"><strong>Important! </strong> 
+To prevent resource exhaustion when provisioning the grid, carefully consider the processor, memory, and disk resources available on the node as you define the slot limit. For optimal throughput, the slot limit on a given node should equal the number of CPU cores on the node.
+</div>
+
+<div class="well well-sm"><strong>Note: </strong> For more on managing your grid, see the <a href="/documents/help/admin-console/#Topics/node-grid-intro.htm" target="_blank">Administration Console Help</a>.</div>
+
+<p><strong>Example</strong></p>
+<p>Let’s say that we have a DeployR Enterprise deployment with <code>50</code> authenticated users, each of which is actively working on their own projects. During the working day, each user may work on up to <code>3</code> different projects simultaneously. With as many as 50 users working on as many as three projects, the grid’s capacity must support <code>150</code> simultaneous, live projects in order to be capable of handling peak workloads. In this example, if each grid node is configured with sufficient resources for <code>30</code> slots, the appropriate value of <code>N</code> is at least <code>5</code> nodes dedicated to authenticated operations.</p>
+<div align=center>
+<img src="./assets/img/tuneprojects-example.png" alt="Formula">
+</div>
+
+
+<h2 id="job">Asynchronous Job Workloads</h2>
+
+<p>When tuning your DeployR Enterprise grid’s capacity for your anticipated asynchronous job workload, use the following formula to determine the optimal number of nodes (N) capable of handling asynchronous operations to have on your grid:</p>
+<div align=center>
+<img src="./assets/img/tuneasync.png" alt="Formula">
+</div>
+
+<p>Where:</p>
+<ul>
+<li><p><code>N</code> is the optimal number of nodes required to handle the anticipated workload. For job workloads, these nodes must be configured to support asynchronous operations. The system administrator can define a node’s operating mode when creating or editing that node in the <strong>Grid</strong> tab of the DeployR Administration Console. </p>
+</li>
+<li><p><code>Target Number of Jobs per Hour</code> is the average number of jobs to execute per hour.</p>
+</li>
+<li><code>Average Time to Complete Job</code> is an estimate of the average amount of time it should take to complete each job in the anticipated workload.</li>
+<li><p><code>3600</code> is the number of seconds in an hour.</p>
+</li>
+<li><p><code>Average Slot Limit</code> is the average value for the <strong>Slot Limit</strong> setting for each of the grid nodes. The system administrator can set the value for each node’s <strong>Slot Limit</strong> in the <strong>Grid</strong> tab of the DeployR Administration Console.</p>
+</li>
+</ul>
+<div class="alert alert-warning"><strong>Important! </strong> 
+To prevent resource exhaustion when provisioning the grid, carefully consider the processor, memory, and disk resources available on the node as you define the slot limit. For optimal throughput, the slot limit on a given node should equal the number of CPU cores on the node.
+</div>
+
+
+<div class="well well-sm"><strong>Note: </strong> For more on managing your grid, see the <a href="/documents/help/admin-console/#Topics/policies-properties.htm" target="_blank">Administration Console Help</a>.</div>
+
+<p><strong>Example</strong></p>
+<p>Let’s say that we have a DeployR Enterprise deployment where <code>1000</code> asynchronous jobs execute per hour (<code>3600</code> seconds). Let’s assume that given the nature of these jobs, the total execution time per job is an average of ten minutes (<code>600</code> seconds). </p>
+<p>If each grid node is configured with sufficient resources for <code>30</code> slots, then the optimal value of <code>N</code> is at least <code>6</code> nodes dedicated to asynchronous operations.</p>
+<div align=center>
+<img src="./assets/img/tuneasync-example.png" alt="Formula">
+</div>
+
+
+<h1 id="throughput">About Throughput</h1>
+
+<p>This chapter presents a description along with some examples to help you understand throughput and the impact that DeployR artifacts have on this throughput. <strong>Artifacts</strong> are workspace objects and working directory files that are generated during R code execution. Additionally, we highlight the settings needed to optimize DeployR for high-volume throughput.</p>
+<h2 id="understand">Understanding Throughput</h2>
+
+<p>DeployR throughput measures the number of tasks processed on the DeployR grid in a fixed time period. In practical terms, the throughput for your system is determined by your server and grid capacity in conjunction with the nature and volume of the tasks being processed.</p>
+<h3 id="asynchronous-job-workflow">Asynchronous Job Workflow</h3>
+<p>To illustrate the nature of a task, let’s begin with a summary of the basic workflow for an asynchronous job.</p>
+<div align=center>
+<img src="./assets/img/throughput1.png" alt="Workflow"><br />
+</div>
+
+<ol>
+<li><p>A DeployR user submits an asynchronous job. </p>
+</li>
+<li><p>The DeployR server queues the job for execution. </p>
+</li>
+<li><p>The server’s internal job scheduler sees a job queued for execution and attempts to locate an available slot on the grid in which to execute that job. Once located, the scheduler reserves the slot and dispatches the job onto that slot for execution.</p>
+</li>
+<li><p>When the job execution completes, the server captures a complete snapshot of the R session associated with that slot. Then, the server saves the snapshot as a persistent project in the server database and releases the slot so it is available for further tasks.</p>
+</li>
+</ol>
+<div class="alert alert-info"><strong>Tip! </strong> 
+By default, a snapshot of the R session is saved as a persistent DeployR project once a job has finished executing. As an alternative, use the <code>storenoproject</code> parameter when scheduling a job to instruct the server not to save a persistent project. If you specify that no project should be saved using the <code>storenoproject</code> parameter, you can still store specific artifacts to the repository. In certain scenarios, storing these artifacts to the repository rather than creating a persistent project can result in greatly improved throughput.
+</div>
+
+<h3 id="example">Example</h3>
+<p>To demonstrate how throughput is highly dependent on the nature of the tasks, see the following table for a side-by-side comparison of two jobs with very different natures that are executing on the grid. These jobs are contrived to clearly show how the nature of the task itself has significant impact on the observed throughput.</p>
+<table>
+<thead>
+<tr>
+<th>Sample R Code for Job</th>
+<th style="text-align:center">Sample R Code for Job</th>
+<th style="text-align:center">rnorm(1:300000)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Time needed to execute R code</td>
+<td style="text-align:center">1178 ms</td>
+<td style="text-align:center">1180 ms</td>
+</tr>
+<tr>
+<td>2.    Resulting size of R workspace</td>
+<td style="text-align:center">0.003 Mb</td>
+<td style="text-align:center">2.5 Mb</td>
+</tr>
+<tr>
+<td>3.    Time needed to save artifacts to the database</td>
+<td style="text-align:center">177 ms</td>
+<td style="text-align:center">1435 ms</td>
+</tr>
+<tr>
+<td>4.    Total job time<sup>1</sup></td>
+<td style="text-align:center">1580 ms</td>
+<td style="text-align:center">2850 ms</td>
+</tr>
+</tbody>
+</table>
+<p><sup>1</sup> <small>The time needed to spin up the job on its slot, execute the job, persist the data, spin down, and release the slot.</small></p>
+<p><br />From the data in this table, we can learn a lot about the nature of jobs:</p>
+<ol>
+<li><p>Almost the same amount of time was needed to execute the R code in both jobs.</p>
+</li>
+<li><p>The size of the R workspace generated by the second job is more than 500 times larger than the R workspace generated by the first job.</p>
+</li>
+<li><p>Due to the significant differences in the size of the artifacts generated by these jobs, it took eight times longer to save the artifacts (R workspace and directory data) from the second job to the DeployR database than it took to save the artifacts for the first job. </p>
+</li>
+<li><p>As a consequence of the artifacts generated and persisted, the total time taken to handle the second job from start to finish was nearly twice as much as the total time taken to handle the first job. </p>
+</li>
+</ol>
+<p>Beyond the time it takes to execute the R code for a job, we can see that if you are going to save a persistent project after your job finishes executing, then the size of the resulting artifacts have a big impact on the total job time. This simple and somewhat contrived example demonstrates a key point when trying to understand the nature of your persistent tasks and DeployR throughput: <strong>artifacts matter</strong>. </p>
+<p>Whether those artifacts are objects in the R workspace or files in the working directory, if the code you execute on a job leaves unnecessary artifacts behind, there can be very real consequences on the overall throughput of your grid. An unnecessary artifact is any workspace object or working directory file that is not required later when evaluating the final result of the job.</p>
+<div class="alert alert-info"><strong>Guideline for Responsible Usage to Maximize Throughput:  </strong> 
+Whenever tasks are performance-sensitive, the most effective step a user can take towards optimizing throughput for his or her own tasks is to ensure that the R code leaves no unnecessary artifacts behind. Minimal artifacts ensure minimal data is stored in the resulting persistent project. In some cases, it may be best to use the <code>storenoproject</code> parameter to skip the saving of a persistent project altogether, and instead, selectively store only specific workspace and directory data in the repository. </div>
+
+<h2 id="highvol">Configuring DeployR for High-Volume Throughput</h2>
+
+<p>The default runtime behavior of the DeployR server is determined by the settings in:</p>
+<ul>
+<li>The <strong>Server Policies</strong> tab in the Administration Console</li>
+<li>The DeployR external configuration file, <code>$DEPLOYR_HOME/deployr/deployr.groovy</code></li>
+</ul>
+<p>For most deployments, the default configuration delivers adequate server runtime performance and resource usage. However, in some deployments, where the workload is anticipated to be significantly high-volumed, a specialized DeployR configuration may be required.</p>
+<p>Typically, high-volume throughput deployments are characterized by a very large number of short-lived tasks that need to be executed as transactions without direct end-user participation or intervention. For such high-volume throughput deployments, the enabling of the following DeployR external configuration properties in the <code>deployr.groovy</code> file may be required: </p>
+<pre><code>deployr.node.validation.on.execution.disabled=true
+deployr.node.validation.on.heartbeat.disabled=true</code></pre>
+<p>Enabling these configuration properties results in a number of direct consequences on the runtime behavior of the DeployR server: </p>
+<ol>
+<li><p>The DeployR server becomes capable of executing hundreds of thousands of short-lived tasks without risking resource exhaustion.</p>
+</li>
+<li><p>Grid node validation at runtime is disabled, which means the grid&#39;s ability to self-heal when grid nodes fail and recover is no longer supported. </p>
+</li>
+</ol>
+<div class="alert alert-warning"><strong>Important! </strong> 
+Without self-healing, node failures on the grid may interfere with the future scheduling and execution of tasks on the grid. Therefore, we recommend that you enable these <code>deployr.groovy</code> file properties only if you determine that the default DeployR configuration fails under the anticipated loads.
+</div>
+</div></div></div>
+        </div>    
+      </div>
+      <div class="push"></div>
+    </div>
+
+    <!-- Footer
+    ================================================== -->
+
+    <footer class="widewrapper footer bs-footer" role="contentinfo">
+  <div class="container">
+    <div class="row footer">
+      <div class="col-sm-3">
+        <h4>Get Started</h4>
+        <ul class="grove-list">
+          <li><a href="/documents/getting-started/about">About DeployR</a></li>
+          <li><a href="/download">Download DeployR</a></li>
+          <li><a href="/documents/admin/install">Install DeployR</a></li>
+          <li><a href="/documents/admin/troubleshoot">Troubleshooting & Diagnostics</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>Develop</h4>
+        <ul class="grove-list">
+          <li><a href="/dev">Get Client Developer Tools</a></li>
+            <li><a href="/docanddown#rbroker">RBroker Framework</a></li>
+          <li><a href="/docanddown#clientlib">API Client Libraries</a></li>
+          <li><a target="_blank" href="/documents/dev/api-doc">API Reference Guide</a></li>
+          <li><a target="_blank" href="/documents/help/repo-man">Repository Manager</a></li>
+         <!-- <li><a href="/docanddown#integration">3rd Party Tool Integration</a></li>-->
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>Manage</h4>
+          <ul class="grove-list">
+            <li><a target="_blank" href="/documents/help/admin-console">Administration Console</a></li>
+            <li><a href="/documents/admin/security">Security Guide</a></li>
+            <li><a href="/documents/admin/throughput">Scale & Throughput</a></li>
+            <li><a href="/documents/admin/highavail">High Availability</a></li>
+            <li><a href="/documents/admin/bigdata">Managing Big Data</a></li>
+          </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>DeployR 8.1.0</h4>
+          <ul class="grove-list">
+            <li><a href="/license">License Information</a></li>
+      	    <li><a href="/documents/admin/whats-new/">What's New in 8.1.0</a></li>
+	          <li><a href="http://go.microsoft.com/fwlink/?LinkID=708535" target="_blank">Join the DeployR Forum</a></li>
+	          <li><a href="/releases/">Release Archives</a></li>
+          </ul>
+         <div><small> &copy; 2015 Microsoft Corporation</small></div>
+      </div>    
+    </div>
+  </div>          
+</footer> 
+
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<script src="../../../assets/js/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="../../../assets/js/vendor/modernizr/modernizr.js"></script>
+<script src="../../../assets/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<!-- Google Analytics (click event)
+================================================== -->
+
+<script>
+   $('.ga-track').on('click', function() {
+      try { 
+        var label = $(this).data('ga') || $(this).text();
+        ga('send', 'event', 'button', 'click', label);
+      } catch (err) {}
+   });
+</script>
+
+<!-- TOC
+================================================= -->
+<script>
+  // back to top
+  setTimeout(function () {
+     var $sideBar = $('.bs-sidebar');
+     if (!$sideBar) { return; }
+     $sideBar.affix({
+     offset: {
+     top: function () {
+        var offsetTop = $sideBar.offset().top
+        var sideBarMargin = parseInt($sideBar.children(0).css('margin-top'), 10)
+        var navOuterHeight = $('.bs-docs-nav').height()
+        return (this.top = offsetTop - navOuterHeight - sideBarMargin)
+      }
+      , bottom: function () {
+        return (this.bottom = $('.bs-footer').outerHeight(true))
+      }
+    }
+    })
+  }, 100)
+</script>
+
+<script>
+  $('.tab-content div').each(function( index ) {
+    if(index === 0) { $(this).addClass('active'); }
+  });
+
+  $('.code-tabs a').click(function (e) {
+  });
+
+</script>
+
+     
+  </body>
+</html>

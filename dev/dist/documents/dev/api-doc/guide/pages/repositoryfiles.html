@@ -1,0 +1,1153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>8.2 Working with the Repository File APIs 8.0.0</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/architecture.html"><strong>2</strong><span>Web Service API Architecture</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/overview.html"><strong>3</strong><span>Web Service API Overview</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/working.html"><strong>4</strong><span>Working with the Web Service APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingusers.html"><strong>5</strong><span>Working with the User APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingprojects.html"><strong>6</strong><span>Working with the Project APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingjobs.html"><strong>7</strong><span>Working with the Job APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingrepository.html"><strong>8</strong><span>Working with the Repository APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingeventstream.html"><strong>9</strong><span>Working with the Event Stream API</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/encodings.html"><strong>10</strong><span>Web Service API Data Encodings</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/explorer.html"><strong>11</strong><span>The API Explorer Tool</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/741changehistory.html"><strong>12</strong><span>API Changes in 7.4.1</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/74changehistory.html"><strong>13</strong><span>API Changes in 7.4</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/73changehistory.html"><strong>14</strong><span>API Changes in 7.3</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/72changehistory.html"><strong>15</strong><span>API Changes in 7.2</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/71changehistory.html"><strong>16</strong><span>API Changes in 7.1</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/70changehistory.html"><strong>17</strong><span>API Changes in 7.0</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/62changehistory.html"><strong>18</strong><span>API Changes in 6.2</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        
+    </div>
+    <p>DeployR API</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../../guide/workingjobs.html">&lt;&lt; <strong>7</strong><span>Working with the Job APIs</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../../guide/workingeventstream.html"><strong>9</strong><span>Working with the Event Stream API</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>8.2 Working with the Repository File APIs - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Microsoft Corporation</p>
+
+                    <p><strong>Version:</strong> 8.0.0</p>
+
+                    
+                </div>
+
+                
+                <div id="table-of-content">
+                    <h2>Table of Contents</h2>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#repositoryfilelist"><strong>8.1</strong><span>/r/repository/file/list</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#repositoryfilefetch"><strong>8.2</strong><span>/r/repository/file/fetch</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#repositoryfileupload"><strong>8.3</strong><span>/r/repository/file/upload</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#repositoryfiletransfer"><strong>8.4</strong><span>/r/repository/file/transfer</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#repositoryfilewrite"><strong>8.5</strong><span>/r/repository/file/write</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#repositoryfileupdate"><strong>8.6</strong><span>/r/repository/file/update</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#repositoryfilediff"><strong>8.7</strong><span>/r/repository/file/diff</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#repositoryfilerevert"><strong>8.8</strong><span>/r/repository/file/revert</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#repositoryfilegrant"><strong>8.9</strong><span>/r/repository/file/grant</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#repositoryfiledownload"><strong>8.10</strong><span>/r/repository/file/download</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#repositoryfiledelete"><strong>8.11</strong><span>/r/repository/file/delete</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#repositoryfilecopy"><strong>8.12</strong><span>/r/repository/file/copy</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#repositoryfilemove"><strong>8.13</strong><span>/r/repository/file/move</span></a>
+                    </div>
+                    
+                </div>
+                
+
+                
+
+<h2 id="repositoryfiles">8.2 Working with the Repository File APIs</h2>
+The Repository File APIs facilitate working with repository-managed files.<p class="paragraph"/>Because the repository supports versioned file storage multiple versions of any file can exist at any one time and any version can be retrieved upon request.<p class="paragraph"/>Each repository-managed file is uniquely identified on the API by the following parameters:
+<ol>
+<li><strong class="bold">filename</strong> - repository file name</li>
+<li><strong class="bold">author</strong> - repository file author</li>
+<li><strong class="bold">directory</strong> - (optional) repository directory name, if omitted, defaults to  <em class="italic">root</em>  directory.</li>
+<li><strong class="bold">version</strong> - (optional) repository file version</li>
+</ol><p class="paragraph"/>Access to each repository-managed file is controlled by a set of properties on the file:  <em class="italic">restricted</em> ,  <em class="italic">shared</em>  and  <em class="italic">published</em>  respectively. These properties can be used to control the visibility of the file to other users, both  <em class="italic">authenticated</em>  and  <em class="italic">anonymous</em>  users. There are four distinct access control levels:
+<ol>
+<li><strong class="bold">Private</strong> - the default access level, the file is visible to it's author(s) only.</li>
+<li><strong class="bold">Restricted</strong> - the file is visible to  <em class="italic">authenticated</em>  users that have been granted one or more of the roles indicated on the  <em class="italic">restricted</em>  property of the file.</li>
+<li><strong class="bold">Shared</strong> - the file is visible to all  <em class="italic">authenticated</em>  users when the  <em class="italic">shared</em>  property is true.</li>
+<li><strong class="bold">Public</strong> - the file is visible to all  <em class="italic">authenticated</em>  and all  <em class="italic">anonymous</em>  users when the  <em class="italic">published</em>  property is true.</li>
+</ol><p class="paragraph"/><h4>Repository File Retrieval</h4>
+<ol>
+<li>Retrieve a list of the files in the repository using the <a href="../guide/single.html#repositoryfilelist" class="guide">/r/repository/file/list</a> call.</li>
+<li>Retrieve individual files in the repository using the <a href="../guide/single.html#repositoryfiledownload" class="guide">/r/repository/file/download</a> call.</li>
+<li>Retrieve a list of files per repository-managed directory using the <a href="../guide/single.html#repositorydirectorylist" class="guide">/r/repository/directory/list</a> call.</li>
+<li>Retrieve one or more files from a repository-managed directory using the <a href="../guide/single.html#repositorydirectorydownload" class="guide">/r/repository/directory/download</a> call.</li>
+</ol><p class="paragraph"/><h4>Repository File Creation</h4>
+<ol>
+<li>Upload a file into the repository from the users computer using the <a href="../guide/single.html#repositoryfileupload" class="guide">/r/repository/file/upload</a> call.</li>
+<li>Transfer a file into the repository from a URL using the <a href="../guide/single.html#repositoryfiletransfer" class="guide">/r/repository/file/transfer</a> call.</li>
+<li>Write a text file into the repository using the <a href="../guide/single.html#repositoryfilewrite" class="guide">/r/repository/file/write</a> call.</li>
+</ol><p class="paragraph"/><h4>Repository File Version Control</h4>
+<ol>
+<li>Retrieve a list of all versions of a specific file in the repository using the <a href="../guide/single.html#repositoryfilelist" class="guide">/r/repository/file/list</a> call.</li>
+<li>Retrieve a generated diff between any version of a text-based file and the latest version of that file using the <a href="../guide/single.html#repositoryfilediff" class="guide">/r/repository/file/diff</a> call.</li>
+<li>Revert to an older version of specific file in the repository using the <a href="../guide/single.html#repositoryfilerevert" class="guide">/r/repository/file/revert</a> call.</li>
+</ol><p class="paragraph"/>
+
+
+<h2 id="repositoryfilelist">8.2.1 /r/repository/file/list</h2>
+This call lists repository-managed files.<p class="paragraph"/>The  <em class="italic">categoryFilter</em>  parameter can be used to filter the types of files returned on the response markup.
+The following values are supported on this parameter:
+<ul class="star">
+<li>R - returns only binary R object files with a .rData file extension</li>
+<li>script - returns only R scripts with a .R  or .r file extension</li>
+<li>data - returns only data files with a .csv or .xls file extension</li>
+<li>plot - returns only image files with a .png, .jpg or .svg file extension</li>
+<li>shell - returns only shell script files with a .sh, .bash, .csh or .bat file extension</li>
+<li>pdf - returns only PDF files with a .pdf file extension</li>
+<li>text - returns only text files with a .txt file extension</li>
+<li>other - returns any file type not matching the other file categories</li>
+</ul><p class="paragraph"/>For example, using a combination of the  <em class="italic">categoryFilter</em>  and  <em class="italic">directory</em>  parameters,
+a call can request only binary R object files found in a specific directory:
+/r/repository/file/list?categoryFilter=R&#38;directory=example.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>GET<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>filename - (optional) when specified, call returns a list of file versions for the filename</li>
+<li>directory - (optional) when specified, used in conjunction with filename parameter to identify specific file</li>
+<li>shared - (optional) if true, files that are  <em class="italic">restricted</em>  but visible or  <em class="italic">shared</em>  by other users are included in the response markup</li>
+<li>published - (optional) if true, files that are  <em class="italic">published</em>  by other users are included in the response markup</li>
+<li>categoryFilter - (optional) when specified list of files in response markup is limited to category: R (rData), script (R), data (csv, xls), plot (png, jpg, svg), shell (sh, bat), pdf, text, other</li>
+<li>external - (optional) if true, this call returns files found in the external repository, otherwise returns files found in the default repository</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/repository/file/list"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"repository"</span>: &#123;
+                <span class="java&#45;quote">"files"</span>: &#91;
+                    &#123;
+                        <span class="java&#45;quote">"filename"</span>: <span class="java&#45;quote">"data.csv"</span>,
+                        <span class="java&#45;quote">"directory"</span>: <span class="java&#45;quote">"root"</span>,
+                        <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Sample csv data."</span>
+                        <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                        <span class="java&#45;quote">"authors"</span>: &#91;
+                            <span class="java&#45;quote">"george"</span>
+                        &#93;,
+                        <span class="java&#45;quote">"version"</span>: <span class="java&#45;keyword">null</span>,
+                        <span class="java&#45;quote">"versionmsg"</span>: <span class="java&#45;keyword">null</span>,
+                        <span class="java&#45;quote">"latestby"</span>: <span class="java&#45;quote">"george"</span>,
+                        <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"text/plain"</span>,
+                        <span class="java&#45;quote">"category"</span>: <span class="java&#45;quote">"data"</span>,
+                        <span class="java&#45;quote">"tags"</span>: <span class="java&#45;keyword">null</span>,
+                        <span class="java&#45;quote">"length"</span>: 8,
+                        <span class="java&#45;quote">"md5"</span>: <span class="java&#45;quote">"ad5bbaaff7b8f27899b3471a41350b61"</span>,
+                        <span class="java&#45;quote">"lastModified"</span>: 1378391545018,
+                        <span class="java&#45;quote">"restricted"</span>: <span class="java&#45;keyword">null</span>,
+                        <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">false</span>,
+                        <span class="java&#45;quote">"published"</span>: <span class="java&#45;keyword">true</span>,
+                        <span class="java&#45;quote">"access"</span>: <span class="java&#45;quote">"Public"</span>,
+                        <span class="java&#45;quote">"url"</span>: <span class="java&#45;quote">"http://dhost:dport/deployr/r/repository/
+                        file/download/george/data.csv"</span>
+                    &#125;,
+                    &#123;
+                        <span class="java&#45;quote">"filename"</span>: <span class="java&#45;quote">"SavedX.rData"</span>,
+                        <span class="java&#45;quote">"directory"</span>: <span class="java&#45;quote">"root"</span>,
+                        <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Sample binary R object."</span>
+                        <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                        <span class="java&#45;quote">"authors"</span>: &#91;
+                            <span class="java&#45;quote">"george"</span>
+                        &#93;,
+                        <span class="java&#45;quote">"version"</span>: <span class="java&#45;keyword">null</span>,
+                        <span class="java&#45;quote">"versionmsg"</span>: <span class="java&#45;keyword">null</span>,
+                        <span class="java&#45;quote">"latestby"</span>: <span class="java&#45;quote">"george"</span>,
+                        <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"application/octet&#45;stream"</span>,
+                        <span class="java&#45;quote">"category"</span>: <span class="java&#45;quote">"R"</span>,
+                        <span class="java&#45;quote">"tags"</span>: <span class="java&#45;keyword">null</span>,
+                        <span class="java&#45;quote">"length"</span>: 74,
+                        <span class="java&#45;quote">"md5"</span>: <span class="java&#45;quote">"7083dd400b3345ebb75c4b8e41ad9d70"</span>,
+                        <span class="java&#45;quote">"lastModified"</span>: 1378391505577,
+                        <span class="java&#45;quote">"restricted"</span>: <span class="java&#45;keyword">null</span>,
+                        <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">false</span>,
+                        <span class="java&#45;quote">"published"</span>: <span class="java&#45;keyword">false</span>,
+                        <span class="java&#45;quote">"access"</span>: <span class="java&#45;quote">"Private"</span>,
+                        <span class="java&#45;quote">"url"</span>: <span class="java&#45;quote">"http://dhost:dport/deployr/r/repository/
+                        file/download/george/SavedX.rData"</span>
+                    &#125;,
+                    &#123;
+                        <span class="java&#45;quote">"filename"</span>: <span class="java&#45;quote">"demo.R"</span>,
+                        <span class="java&#45;quote">"directory"</span>: <span class="java&#45;quote">"root"</span>,
+                        <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Sample R script."</span>,
+                        <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                        <span class="java&#45;quote">"authors"</span>: &#91;
+                            <span class="java&#45;quote">"george"</span>
+                        &#93;,
+                        <span class="java&#45;quote">"version"</span>: <span class="java&#45;keyword">null</span>,
+                        <span class="java&#45;quote">"versionmsg"</span>: <span class="java&#45;keyword">null</span>,
+                        <span class="java&#45;quote">"latestby"</span>: <span class="java&#45;quote">"george"</span>,
+                        <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"text/plain"</span>,
+                        <span class="java&#45;quote">"category"</span>: <span class="java&#45;quote">"script"</span>,
+                        <span class="java&#45;quote">"tags"</span>: <span class="java&#45;keyword">null</span>,
+                        <span class="java&#45;quote">"length"</span>: 6,
+                        <span class="java&#45;quote">"md5"</span>: <span class="java&#45;quote">"77d7c62ca2bc4ac236235020fa3cb319"</span>,
+                        <span class="java&#45;quote">"lastModified"</span>: 1378391625616,
+                        <span class="java&#45;quote">"restricted"</span>: <span class="java&#45;quote">"MARKETING"</span>,
+                        <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">true</span>,
+                        <span class="java&#45;quote">"published"</span>: <span class="java&#45;keyword">false</span>,
+                        <span class="java&#45;quote">"access"</span>: <span class="java&#45;quote">"Restricted"</span>,
+                        <span class="java&#45;quote">"url"</span>: <span class="java&#45;quote">"http://dhost:dport/deployr/r/repository/
+                        file/download/george/demo.R"</span>
+                    &#125;
+                &#93;
+            &#125;,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"2E8E6E359A838FEA20A74CA65E10A031"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/repository/file/list<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;repository&#62;</span>
+      <span class="xml&#45;tag">&#60;files&#62;</span>
+        <span class="xml&#45;tag">&#60;file&#62;</span>
+          <span class="xml&#45;tag">&#60;filename&#62;</span>data.csv<span class="xml&#45;tag">&#60;/filename&#62;</span>
+          <span class="xml&#45;tag">&#60;directory&#62;</span>root<span class="xml&#45;tag">&#60;/directory&#62;</span>
+          <span class="xml&#45;tag">&#60;descr&#62;</span>Sample csv data.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+          <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+          <span class="xml&#45;tag">&#60;authors&#62;</span>
+            <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+          <span class="xml&#45;tag">&#60;/authors&#62;</span>
+          <span class="xml&#45;tag">&#60;version/&#62;</span>
+          <span class="xml&#45;tag">&#60;versionmsg/&#62;</span>
+          <span class="xml&#45;tag">&#60;latestby&#62;</span>george<span class="xml&#45;tag">&#60;/latestby&#62;</span>
+          <span class="xml&#45;tag">&#60;type&#62;</span>text/plain<span class="xml&#45;tag">&#60;/type&#62;</span>
+          <span class="xml&#45;tag">&#60;category&#62;</span>data<span class="xml&#45;tag">&#60;/category&#62;</span>
+          <span class="xml&#45;tag">&#60;tags/&#62;</span>
+          <span class="xml&#45;tag">&#60;length&#62;</span>8<span class="xml&#45;tag">&#60;/length&#62;</span>
+          <span class="xml&#45;tag">&#60;restricted/&#62;</span>
+          <span class="xml&#45;tag">&#60;published&#62;</span>true<span class="xml&#45;tag">&#60;/published&#62;</span>
+          <span class="xml&#45;tag">&#60;shared/&#62;</span>
+          <span class="xml&#45;tag">&#60;access&#62;</span>Public<span class="xml&#45;tag">&#60;/access&#62;</span>
+          <span class="xml&#45;tag">&#60;md5&#62;</span>ad5bbaaff7b8f27899b3471a41350b61<span class="xml&#45;tag">&#60;/md5&#62;</span>
+          <span class="xml&#45;tag">&#60;lastModified&#62;</span>1378391545018<span class="xml&#45;tag">&#60;/lastModified&#62;</span>
+          <span class="xml&#45;tag">&#60;url&#62;</span>http://dhost:dport/deployr/r/repository/
+          file/download/george/data.csv<span class="xml&#45;tag">&#60;/url&#62;</span>
+        <span class="xml&#45;tag">&#60;/file&#62;</span>
+        <span class="xml&#45;tag">&#60;file&#62;</span>
+          <span class="xml&#45;tag">&#60;filename&#62;</span>SavedX.rData<span class="xml&#45;tag">&#60;/filename&#62;</span>
+          <span class="xml&#45;tag">&#60;directory&#62;</span>root<span class="xml&#45;tag">&#60;/directory&#62;</span>
+          <span class="xml&#45;tag">&#60;descr&#62;</span>Sample binary R object.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+          <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+          <span class="xml&#45;tag">&#60;authors&#62;</span>
+            <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+          <span class="xml&#45;tag">&#60;/authors&#62;</span>
+          <span class="xml&#45;tag">&#60;version/&#62;</span>
+          <span class="xml&#45;tag">&#60;versionmsg/&#62;</span>
+          <span class="xml&#45;tag">&#60;latestby&#62;</span>george<span class="xml&#45;tag">&#60;/latestby&#62;</span>
+          <span class="xml&#45;tag">&#60;type&#62;</span>application/octet&#45;stream<span class="xml&#45;tag">&#60;/type&#62;</span>
+          <span class="xml&#45;tag">&#60;category&#62;</span>R<span class="xml&#45;tag">&#60;/category&#62;</span>
+          <span class="xml&#45;tag">&#60;tags/&#62;</span>
+          <span class="xml&#45;tag">&#60;length&#62;</span>74<span class="xml&#45;tag">&#60;/length&#62;</span>
+          <span class="xml&#45;tag">&#60;restricted/&#62;</span>
+          <span class="xml&#45;tag">&#60;shared/&#62;</span>
+          <span class="xml&#45;tag">&#60;published/&#62;</span>
+          <span class="xml&#45;tag">&#60;access&#62;</span>Private<span class="xml&#45;tag">&#60;/access&#62;</span>
+          <span class="xml&#45;tag">&#60;md5&#62;</span>7083dd400b3345ebb75c4b8e41ad9d70<span class="xml&#45;tag">&#60;/md5&#62;</span>
+          <span class="xml&#45;tag">&#60;lastModified&#62;</span>1378391505577<span class="xml&#45;tag">&#60;/lastModified&#62;</span>
+          <span class="xml&#45;tag">&#60;url&#62;</span>http://dhost:dport/deployr/r/repository/
+          file/download/george/SavedX.rData<span class="xml&#45;tag">&#60;/url&#62;</span>
+        <span class="xml&#45;tag">&#60;/file&#62;</span>
+        <span class="xml&#45;tag">&#60;file&#62;</span>
+          <span class="xml&#45;tag">&#60;filename&#62;</span>demo.R<span class="xml&#45;tag">&#60;/filename&#62;</span>
+          <span class="xml&#45;tag">&#60;directory&#62;</span>root<span class="xml&#45;tag">&#60;/root&#62;</span>
+          <span class="xml&#45;tag">&#60;descr&#62;</span>Sample R script.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+          <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+          <span class="xml&#45;tag">&#60;authors&#62;</span>
+            <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+          <span class="xml&#45;tag">&#60;/authors&#62;</span>
+          <span class="xml&#45;tag">&#60;version/&#62;</span>
+          <span class="xml&#45;tag">&#60;versionmsg/&#62;</span>
+          <span class="xml&#45;tag">&#60;latestby&#62;</span>george<span class="xml&#45;tag">&#60;/latestby&#62;</span>
+          <span class="xml&#45;tag">&#60;type&#62;</span>text/plain<span class="xml&#45;tag">&#60;/type&#62;</span>
+          <span class="xml&#45;tag">&#60;category&#62;</span>script<span class="xml&#45;tag">&#60;/category&#62;</span>
+          <span class="xml&#45;tag">&#60;tags/&#62;</span>
+          <span class="xml&#45;tag">&#60;length&#62;</span>6<span class="xml&#45;tag">&#60;/length&#62;</span>
+          <span class="xml&#45;tag">&#60;restricted&#62;</span>MARKETING<span class="xml&#45;tag">&#60;/restricted&#62;</span>
+          <span class="xml&#45;tag">&#60;shared&#62;</span>true<span class="xml&#45;tag">&#60;/shared&#62;</span>
+          <span class="xml&#45;tag">&#60;published/&#62;</span>
+          <span class="xml&#45;tag">&#60;access&#62;</span>Restricted<span class="xml&#45;tag">&#60;/access&#62;</span>
+          <span class="xml&#45;tag">&#60;md5&#62;</span>77d7c62ca2bc4ac236235020fa3cb319<span class="xml&#45;tag">&#60;/md5&#62;</span>
+          <span class="xml&#45;tag">&#60;lastModified&#62;</span>1378391625616<span class="xml&#45;tag">&#60;/lastModified&#62;</span>
+          <span class="xml&#45;tag">&#60;url&#62;</span>http://dhost:dport/deployr/r/repository/
+          file/download/george/demo.R<span class="xml&#45;tag">&#60;/url&#62;</span>
+        <span class="xml&#45;tag">&#60;/file&#62;</span>
+      <span class="xml&#45;tag">&#60;/files&#62;</span>
+    <span class="xml&#45;tag">&#60;/repository&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>2E8E6E359A838FEA20A74CA65E10A031<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div><p class="paragraph"/>
+
+
+<h2 id="repositoryfilefetch">8.2.2 /r/repository/file/fetch</h2>
+This call fetches the latest meta-data on a file in the repository.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>POST<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>filename - specifies the repository file name</li>
+<li>author - specifies the repository file author</li>
+<li>directory - (optional) specifies the target repository directory, defaults to root</li>
+<li>version - (optional) specifies the repository file version</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+filename=demo.R
+author=george
+directory=root</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/repository/file/fetch"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"repository"</span>: &#123;
+                <span class="java&#45;quote">"file"</span>: &#123;
+                    <span class="java&#45;quote">"filename"</span>: <span class="java&#45;quote">"demo.R"</span>,
+                    <span class="java&#45;quote">"directory"</span>: <span class="java&#45;quote">"root"</span>,
+                    <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Sample R script."</span>,
+                    <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                    <span class="java&#45;quote">"authors"</span>: &#91;
+                        <span class="java&#45;quote">"george"</span>
+                    &#93;,
+                    <span class="java&#45;quote">"version"</span>: <span class="java&#45;keyword">null</span>,
+                    <span class="java&#45;quote">"versionmsg"</span>: <span class="java&#45;keyword">null</span>,
+                    <span class="java&#45;quote">"latestby"</span>: <span class="java&#45;quote">"george"</span>,
+                    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"text/plain"</span>,
+                    <span class="java&#45;quote">"category"</span>: <span class="java&#45;quote">"script"</span>,
+                    <span class="java&#45;quote">"tags"</span>: <span class="java&#45;keyword">null</span>,
+                    <span class="java&#45;quote">"length"</span>: 6,
+                    <span class="java&#45;quote">"md5"</span>: <span class="java&#45;quote">"77d7c62ca2bc4ac236235020fa3cb319"</span>,
+                    <span class="java&#45;quote">"lastModified"</span>: 1378391625616,
+                    <span class="java&#45;quote">"restricted"</span>: <span class="java&#45;quote">"MARKETING"</span>,
+                    <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">true</span>,
+                    <span class="java&#45;quote">"published"</span>: <span class="java&#45;keyword">false</span>,
+                    <span class="java&#45;quote">"access"</span>: <span class="java&#45;quote">"Restricted"</span>,
+                    <span class="java&#45;quote">"url"</span>: <span class="java&#45;quote">"http://dhost:dport/deployr/r/repository/
+                    file/download/george/demo.R"</span>
+                &#125;
+            &#125;,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"2E8E6E359A838FEA20A74CA65E10A031"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/repository/file/fetch<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;repository&#62;</span>
+        <span class="xml&#45;tag">&#60;file&#62;</span>
+          <span class="xml&#45;tag">&#60;filename&#62;</span>demo.R<span class="xml&#45;tag">&#60;/filename&#62;</span>
+          <span class="xml&#45;tag">&#60;directory&#62;</span>root<span class="xml&#45;tag">&#60;/directory&#62;</span>
+          <span class="xml&#45;tag">&#60;descr&#62;</span>Sample R script.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+          <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+          <span class="xml&#45;tag">&#60;authors&#62;</span>
+            <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+          <span class="xml&#45;tag">&#60;/authors&#62;</span>
+          <span class="xml&#45;tag">&#60;version/&#62;</span>
+          <span class="xml&#45;tag">&#60;versionmsg/&#62;</span>
+          <span class="xml&#45;tag">&#60;latestby&#62;</span>george<span class="xml&#45;tag">&#60;/latestby&#62;</span>
+          <span class="xml&#45;tag">&#60;type&#62;</span>text/plain<span class="xml&#45;tag">&#60;/type&#62;</span>
+          <span class="xml&#45;tag">&#60;category&#62;</span>script<span class="xml&#45;tag">&#60;/category&#62;</span>
+          <span class="xml&#45;tag">&#60;tags/&#62;</span>
+          <span class="xml&#45;tag">&#60;length&#62;</span>6<span class="xml&#45;tag">&#60;/length&#62;</span>
+          <span class="xml&#45;tag">&#60;restricted&#62;</span>MARKETING<span class="xml&#45;tag">&#60;/restricted&#62;</span>
+          <span class="xml&#45;tag">&#60;shared&#62;</span>true<span class="xml&#45;tag">&#60;/shared&#62;</span>
+          <span class="xml&#45;tag">&#60;published/&#62;</span>
+          <span class="xml&#45;tag">&#60;access&#62;</span>Restricted<span class="xml&#45;tag">&#60;/access&#62;</span>
+          <span class="xml&#45;tag">&#60;md5&#62;</span>77d7c62ca2bc4ac236235020fa3cb319<span class="xml&#45;tag">&#60;/md5&#62;</span>
+          <span class="xml&#45;tag">&#60;lastModified&#62;</span>1378391625616<span class="xml&#45;tag">&#60;/lastModified&#62;</span>
+          <span class="xml&#45;tag">&#60;url&#62;</span>http://dhost:dport/deployr/r/repository/
+          file/download/george/demo.R<span class="xml&#45;tag">&#60;/url&#62;</span>
+        <span class="xml&#45;tag">&#60;/file&#62;</span>
+    <span class="xml&#45;tag">&#60;/repository&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>29A3689D527FCA9C2F949985B82C2A83<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div>
+
+
+
+<h2 id="repositoryfileupload">8.2.3 /r/repository/file/upload</h2>
+This call uploads a file from the user's computer to the repository.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>POST<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>filename - specifies the name of the file to upload</li>
+<li>file - ...file content...</li>
+<li>directory - (optional) specifies the target repository directory, defaults to root</li>
+<li>descr - (optional) specifies a description to associate with the uploaded file</li>
+<li>tags - (optional) specifies tag words to associate with the repository file</li>
+<li>restricted - (optional) comma-separated list of role names, which makes the file visible to  <em class="italic">authenticated</em>  users with these roles</li>
+<li>shared - (optional) if true, the file will be  <em class="italic">shared</em>  which makes the file visible to  <em class="italic">authenticated</em>  users</li>
+<li>published - (optional) if true, the file will be  <em class="italic">published</em>  which makes the file visible to  <em class="italic">authenticated</em>  and  <em class="italic">anonymous</em>  users</li>
+<li>newversion – (optional) if true, the repository will create new version rather than overwrite</li>
+<li>newversionmsg – (optional) if newversion is true, message to associate with new version</li>
+<li>inputs - (optional) specifies the inputs property on a repository-managed script</li>
+<li>outputs - (optional)specifies the outputs property on a repository-managed script</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+filename=demo.R
+file=...file content&#8230;
+descr=Sample R script.
+restricted=MARKETING</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/repository/file/upload"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"repository"</span>: &#123;
+                <span class="java&#45;quote">"file"</span>: &#123;
+                    <span class="java&#45;quote">"filename"</span>: <span class="java&#45;quote">"demo.R"</span>,
+                    <span class="java&#45;quote">"directory"</span>: <span class="java&#45;quote">"root"</span>,
+                    <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Sample R script."</span>,
+                    <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                    <span class="java&#45;quote">"authors"</span>: &#91;
+                        <span class="java&#45;quote">"george"</span>
+                    &#93;,
+                    <span class="java&#45;quote">"version"</span>: <span class="java&#45;keyword">null</span>,
+                    <span class="java&#45;quote">"versionmsg"</span>: <span class="java&#45;keyword">null</span>,
+                    <span class="java&#45;quote">"latestby"</span>: <span class="java&#45;quote">"george"</span>,
+                    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"text/plain"</span>,
+                    <span class="java&#45;quote">"category"</span>: <span class="java&#45;quote">"script"</span>,
+                    <span class="java&#45;quote">"tags"</span>: <span class="java&#45;keyword">null</span>,
+                    <span class="java&#45;quote">"length"</span>: 6,
+                    <span class="java&#45;quote">"md5"</span>: <span class="java&#45;quote">"77d7c62ca2bc4ac236235020fa3cb319"</span>,
+                    <span class="java&#45;quote">"lastModified"</span>: 1378391625616,
+                    <span class="java&#45;quote">"restricted"</span>: <span class="java&#45;quote">"MARKETING"</span>,
+                    <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">true</span>,
+                    <span class="java&#45;quote">"published"</span>: <span class="java&#45;keyword">false</span>,
+                    <span class="java&#45;quote">"access"</span>: <span class="java&#45;quote">"Restricted"</span>,
+                    <span class="java&#45;quote">"url"</span>: <span class="java&#45;quote">"http://dhost:dport/deployr/r/repository/file/download/george/demo.R"</span>
+                &#125;
+            &#125;,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"2E8E6E359A838FEA20A74CA65E10A031"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/repository/file/upload<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;repository&#62;</span>
+        <span class="xml&#45;tag">&#60;file&#62;</span>
+          <span class="xml&#45;tag">&#60;filename&#62;</span>demo.R<span class="xml&#45;tag">&#60;/filename&#62;</span>
+          <span class="xml&#45;tag">&#60;directory&#62;</span>root<span class="xml&#45;tag">&#60;/directory&#62;</span>
+          <span class="xml&#45;tag">&#60;descr&#62;</span>Sample R script.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+          <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+          <span class="xml&#45;tag">&#60;authors&#62;</span>
+            <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+          <span class="xml&#45;tag">&#60;/authors&#62;</span>
+          <span class="xml&#45;tag">&#60;version/&#62;</span>
+          <span class="xml&#45;tag">&#60;versionmsg/&#62;</span>
+          <span class="xml&#45;tag">&#60;latestby&#62;</span>george<span class="xml&#45;tag">&#60;/latestby&#62;</span>
+          <span class="xml&#45;tag">&#60;type&#62;</span>text/plain<span class="xml&#45;tag">&#60;/type&#62;</span>
+          <span class="xml&#45;tag">&#60;category&#62;</span>script<span class="xml&#45;tag">&#60;/category&#62;</span>
+          <span class="xml&#45;tag">&#60;tags/&#62;</span>
+          <span class="xml&#45;tag">&#60;length&#62;</span>6<span class="xml&#45;tag">&#60;/length&#62;</span>
+          <span class="xml&#45;tag">&#60;restricted&#62;</span>MARKETING<span class="xml&#45;tag">&#60;/restricted&#62;</span>
+          <span class="xml&#45;tag">&#60;shared&#62;</span>true<span class="xml&#45;tag">&#60;/shared&#62;</span>
+          <span class="xml&#45;tag">&#60;published/&#62;</span>
+          <span class="xml&#45;tag">&#60;access&#62;</span>Restricted<span class="xml&#45;tag">&#60;/access&#62;</span>
+          <span class="xml&#45;tag">&#60;md5&#62;</span>77d7c62ca2bc4ac236235020fa3cb319<span class="xml&#45;tag">&#60;/md5&#62;</span>
+          <span class="xml&#45;tag">&#60;lastModified&#62;</span>1378391625616<span class="xml&#45;tag">&#60;/lastModified&#62;</span>
+          <span class="xml&#45;tag">&#60;url&#62;</span>http://dhost:dport/deployr/r/repository/
+          file/download/george/demo.R<span class="xml&#45;tag">&#60;/url&#62;</span>
+        <span class="xml&#45;tag">&#60;/file&#62;</span>
+    <span class="xml&#45;tag">&#60;/repository&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>29A3689D527FCA9C2F949985B82C2A83<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div><p class="paragraph"/>
+
+
+<h2 id="repositoryfiletransfer">8.2.4 /r/repository/file/transfer</h2>
+This call transfers a file from a URL to the repository.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>POST<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>filename - specifies the name of the file to upload</li>
+<li>url - specifies a url of the file to upload</li>
+<li>directory - (optional) specifies the target repository directory, defaults to root</li>
+<li>descr - (optional) specifies a description to associate with the uploaded file</li>
+<li>tags - (optional) specifies tag words to associate with the repository file</li>
+<li>restricted - (optional) comma-separated list of role names, which makes the file visible to  <em class="italic">authenticated</em>  users with these roles</li>
+<li>shared - (optional) if true, the file is  <em class="italic">shared</em>  and visible to  <em class="italic">authenticated</em>  users</li>
+<li>published - (optional) if true, the file is  <em class="italic">published</em>  and visible to  <em class="italic">authenticated</em>  and  <em class="italic">anonymous</em>  users</li>
+<li>newversion – (optional) if true, the repository will create new version rather than overwrite</li>
+<li>newversionmsg – (optional) if newversion is true, message to associate with the new version</li>
+<li>inputs - (optional) specifies the inputs property on a repository-managed script</li>
+<li>outputs - (optional) specifies the outputs property on a repository-managed script</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+filename=demo.R
+url=http://acme.com/samples/demoScript.R
+descr=Sample R script.
+restricted=MARKETING</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/repository/file/transfer"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"repository"</span>: &#123;
+                <span class="java&#45;quote">"file"</span>: &#123;
+                    <span class="java&#45;quote">"filename"</span>: <span class="java&#45;quote">"demo.R"</span>,
+                    <span class="java&#45;quote">"directory"</span>: <span class="java&#45;quote">"root"</span>,
+                    <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Sample R script."</span>,
+                    <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                    <span class="java&#45;quote">"authors"</span>: &#91;
+                        <span class="java&#45;quote">"george"</span>
+                    &#93;,
+                    <span class="java&#45;quote">"version"</span>: <span class="java&#45;keyword">null</span>,
+                    <span class="java&#45;quote">"versionmsg"</span>: <span class="java&#45;keyword">null</span>,
+                    <span class="java&#45;quote">"latestby"</span>: <span class="java&#45;quote">"george"</span>,
+                    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"text/plain"</span>,
+                    <span class="java&#45;quote">"category"</span>: <span class="java&#45;quote">"script"</span>,
+                    <span class="java&#45;quote">"tags"</span>: <span class="java&#45;keyword">null</span>,
+                    <span class="java&#45;quote">"length"</span>: 6,
+                    <span class="java&#45;quote">"md5"</span>: <span class="java&#45;quote">"77d7c62ca2bc4ac236235020fa3cb319"</span>,
+                    <span class="java&#45;quote">"lastModified"</span>: 1378391625616,
+                    <span class="java&#45;quote">"restricted"</span>: <span class="java&#45;quote">"MARKETING"</span>,
+                    <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">true</span>,
+                    <span class="java&#45;quote">"published"</span>: <span class="java&#45;keyword">false</span>,
+                    <span class="java&#45;quote">"access"</span>: <span class="java&#45;quote">"Restricted"</span>,
+                    <span class="java&#45;quote">"url"</span>: <span class="java&#45;quote">"http://dhost:dport/deployr/r/repository/
+                    file/download/george/demo.R"</span>
+                &#125;
+            &#125;,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"2E8E6E359A838FEA20A74CA65E10A031"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/repository/file/transfer<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;repository&#62;</span>
+        <span class="xml&#45;tag">&#60;file&#62;</span>
+          <span class="xml&#45;tag">&#60;filename&#62;</span>demo.R<span class="xml&#45;tag">&#60;/filename&#62;</span>
+          <span class="xml&#45;tag">&#60;directory&#62;</span>root<span class="xml&#45;tag">&#60;/directory&#62;</span>
+          <span class="xml&#45;tag">&#60;descr&#62;</span>Sample R script.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+          <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+          <span class="xml&#45;tag">&#60;authors&#62;</span>
+            <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+          <span class="xml&#45;tag">&#60;/authors&#62;</span>
+          <span class="xml&#45;tag">&#60;version/&#62;</span>
+          <span class="xml&#45;tag">&#60;versionmsg/&#62;</span>
+          <span class="xml&#45;tag">&#60;latestby&#62;</span>george<span class="xml&#45;tag">&#60;/latestby&#62;</span>
+          <span class="xml&#45;tag">&#60;type&#62;</span>text/plain<span class="xml&#45;tag">&#60;/type&#62;</span>
+          <span class="xml&#45;tag">&#60;category&#62;</span>script<span class="xml&#45;tag">&#60;/category&#62;</span>
+          <span class="xml&#45;tag">&#60;tags/&#62;</span>
+          <span class="xml&#45;tag">&#60;length&#62;</span>6<span class="xml&#45;tag">&#60;/length&#62;</span>
+          <span class="xml&#45;tag">&#60;restricted&#62;</span>MARKETING<span class="xml&#45;tag">&#60;/restricted&#62;</span>
+          <span class="xml&#45;tag">&#60;shared&#62;</span>true<span class="xml&#45;tag">&#60;/shared&#62;</span>
+          <span class="xml&#45;tag">&#60;published/&#62;</span>
+          <span class="xml&#45;tag">&#60;access&#62;</span>Restricted<span class="xml&#45;tag">&#60;/access&#62;</span>
+          <span class="xml&#45;tag">&#60;md5&#62;</span>77d7c62ca2bc4ac236235020fa3cb319<span class="xml&#45;tag">&#60;/md5&#62;</span>
+          <span class="xml&#45;tag">&#60;lastModified&#62;</span>1378391625616<span class="xml&#45;tag">&#60;/lastModified&#62;</span>
+          <span class="xml&#45;tag">&#60;url&#62;</span>http://dhost:dport/deployr/r/repository/
+          file/download/george/demo.R<span class="xml&#45;tag">&#60;/url&#62;</span>
+        <span class="xml&#45;tag">&#60;/file&#62;</span>
+    <span class="xml&#45;tag">&#60;/repository&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>29A3689D527FCA9C2F949985B82C2A83<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div><p class="paragraph"/>
+
+
+<h2 id="repositoryfilewrite">8.2.5 /r/repository/file/write</h2>
+This call writes a text file to the repository.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>POST<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>filename - specifies the name of the file to upload</li>
+<li>text - specifies the text content of the file to upload</li>
+<li>directory - (optional) specifies the target repository directory, defaults to root</li>
+<li>descr - (optional) specifies a description to associate with the uploaded file</li>
+<li>tags - (optional) specifies tag words to associate with repository file</li>
+<li>restricted - (optional) comma-separated list of role names, which makes the file visible to  <em class="italic">authenticated</em>  users with these roles</li>
+<li>share - (optional) if true, file is  <em class="italic">shared</em>  and visible to  <em class="italic">authenticated</em>  users</li>
+<li>publish - (optional) if true, file is  <em class="italic">published</em>  and visible to  <em class="italic">authenticated</em>  and  <em class="italic">anonymous</em>  users</li>
+<li>newversion – (optional) if true, the repository creates a new version rather than overwrite</li>
+<li>newversionmsg – (optional) if newversion is true, message to associate with the new version</li>
+<li>inputs - (optional) specifies the inputs property on a repository-managed script</li>
+<li>outputs - (optional) specifies the outputs property on a repository-managed script</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+filename=demo.R
+text=x &#60;&#45; rnorm(10)
+descr=Sample R script.
+restricted=MARKETING</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/repository/file/write"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"repository"</span>: &#123;
+                <span class="java&#45;quote">"file"</span>: &#123;
+                    <span class="java&#45;quote">"filename"</span>: <span class="java&#45;quote">"demo.R"</span>,
+                    <span class="java&#45;quote">"directory"</span>: <span class="java&#45;quote">"root"</span>,
+                    <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Sample R script."</span>,
+                    <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                    <span class="java&#45;quote">"authors"</span>: &#91;
+                        <span class="java&#45;quote">"george"</span>
+                    &#93;,
+                    <span class="java&#45;quote">"version"</span>: <span class="java&#45;keyword">null</span>,
+                    <span class="java&#45;quote">"versionmsg"</span>: <span class="java&#45;keyword">null</span>,
+                    <span class="java&#45;quote">"latestby"</span>: <span class="java&#45;quote">"george"</span>,
+                    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"text/plain"</span>,
+                    <span class="java&#45;quote">"category"</span>: <span class="java&#45;quote">"script"</span>,
+                    <span class="java&#45;quote">"tags"</span>: <span class="java&#45;keyword">null</span>,
+                    <span class="java&#45;quote">"length"</span>: 6,
+                    <span class="java&#45;quote">"md5"</span>: <span class="java&#45;quote">"77d7c62ca2bc4ac236235020fa3cb319"</span>,
+                    <span class="java&#45;quote">"lastModified"</span>: 1378391625616,
+                    <span class="java&#45;quote">"restricted"</span>: <span class="java&#45;quote">"MARKETING"</span>,
+                    <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">true</span>,
+                    <span class="java&#45;quote">"published"</span>: <span class="java&#45;keyword">false</span>,
+                    <span class="java&#45;quote">"access"</span>: <span class="java&#45;quote">"Restricted"</span>,
+                    <span class="java&#45;quote">"url"</span>: <span class="java&#45;quote">"http://dhost:dport/deployr/r/repository/
+                    file/download/george/demo.R"</span>
+                &#125;
+            &#125;,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"2E8E6E359A838FEA20A74CA65E10A031"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/repository/file/write<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;repository&#62;</span>
+        <span class="xml&#45;tag">&#60;file&#62;</span>
+          <span class="xml&#45;tag">&#60;filename&#62;</span>demo.R<span class="xml&#45;tag">&#60;/filename&#62;</span>
+          <span class="xml&#45;tag">&#60;directory&#62;</span>root<span class="xml&#45;tag">&#60;/directory&#62;</span>
+          <span class="xml&#45;tag">&#60;descr&#62;</span>Sample R script.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+          <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+          <span class="xml&#45;tag">&#60;authors&#62;</span>
+            <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+          <span class="xml&#45;tag">&#60;/authors&#62;</span>
+          <span class="xml&#45;tag">&#60;version/&#62;</span>
+          <span class="xml&#45;tag">&#60;versionmsg/&#62;</span>
+          <span class="xml&#45;tag">&#60;latestby&#62;</span>george<span class="xml&#45;tag">&#60;/latestby&#62;</span>
+          <span class="xml&#45;tag">&#60;type&#62;</span>text/plain<span class="xml&#45;tag">&#60;/type&#62;</span>
+          <span class="xml&#45;tag">&#60;category&#62;</span>script<span class="xml&#45;tag">&#60;/category&#62;</span>
+          <span class="xml&#45;tag">&#60;tags/&#62;</span>
+          <span class="xml&#45;tag">&#60;length&#62;</span>6<span class="xml&#45;tag">&#60;/length&#62;</span>
+          <span class="xml&#45;tag">&#60;restricted&#62;</span>MARKETING<span class="xml&#45;tag">&#60;/restricted&#62;</span>
+          <span class="xml&#45;tag">&#60;shared&#62;</span>true<span class="xml&#45;tag">&#60;/shared&#62;</span>
+          <span class="xml&#45;tag">&#60;published/&#62;</span>
+          <span class="xml&#45;tag">&#60;access&#62;</span>Restricted<span class="xml&#45;tag">&#60;/access&#62;</span>
+          <span class="xml&#45;tag">&#60;md5&#62;</span>77d7c62ca2bc4ac236235020fa3cb319<span class="xml&#45;tag">&#60;/md5&#62;</span>
+          <span class="xml&#45;tag">&#60;lastModified&#62;</span>1378391625616<span class="xml&#45;tag">&#60;/lastModified&#62;</span>
+          <span class="xml&#45;tag">&#60;url&#62;</span>http://dhost:dport/deployr/r/repository/
+          file/download/george/demo.R<span class="xml&#45;tag">&#60;/url&#62;</span>
+        <span class="xml&#45;tag">&#60;/file&#62;</span>
+    <span class="xml&#45;tag">&#60;/repository&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>29A3689D527FCA9C2F949985B82C2A83<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div><p class="paragraph"/>
+
+
+<h2 id="repositoryfileupdate">8.2.6 /r/repository/file/update</h2>
+This call updates the properties on a repository-managed file.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>POST<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>filename - specifies the name of the repository file</li>
+<li>directory - (optional) specifies the target repository directory, defaults to root</li>
+<li>descr - (optional) specifies a description to associate with the repository file</li>
+<li>tags - (optional) specifies tag words to associate with the repository file</li>
+<li>restricted - (optional) comma-separated list of role names, which makes the file visible to  <em class="italic">authenticated</em>  users with these roles</li>
+<li>shared - (optional) if true, file is  <em class="italic">shared</em>  and visible to  <em class="italic">authenticated</em>  users</li>
+<li>published - (optional) if true, file is  <em class="italic">published</em>  and visible to  <em class="italic">authenticated</em>  and  <em class="italic">anonymous</em>  users</li>
+<li>inputs - (optional) specifies the inputs property on a repository-managed script</li>
+<li>outputs - (optional) specifies the outputs property on a repository-managed script</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+filename=demo.R
+descr=Sample R script has been updated.
+published=<span class="java&#45;keyword">true</span></pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/repository/file/update"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"repository"</span>: &#123;
+                <span class="java&#45;quote">"file"</span>: &#123;
+                    <span class="java&#45;quote">"filename"</span>: <span class="java&#45;quote">"demo.R"</span>,
+                    <span class="java&#45;quote">"directory"</span>: <span class="java&#45;quote">"root"</span>,
+                    <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Sample R script has been updated."</span>,
+                    <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                    <span class="java&#45;quote">"authors"</span>: &#91;
+                        <span class="java&#45;quote">"george"</span>
+                    &#93;,
+                    <span class="java&#45;quote">"version"</span>: <span class="java&#45;keyword">null</span>,
+                    <span class="java&#45;quote">"versionmsg"</span>: <span class="java&#45;keyword">null</span>,
+                    <span class="java&#45;quote">"latestby"</span>: <span class="java&#45;quote">"george"</span>,
+                    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"text/plain"</span>,
+                    <span class="java&#45;quote">"category"</span>: <span class="java&#45;quote">"script"</span>,
+                    <span class="java&#45;quote">"tags"</span>: <span class="java&#45;keyword">null</span>,
+                    <span class="java&#45;quote">"length"</span>: 6,
+                    <span class="java&#45;quote">"md5"</span>: <span class="java&#45;quote">"77d7c62ca2bc4ac236235020fa3cb319"</span>,
+                    <span class="java&#45;quote">"lastModified"</span>: 1378391625616,
+                    <span class="java&#45;quote">"restricted"</span>: <span class="java&#45;keyword">null</span>,
+                    <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">false</span>,
+                    <span class="java&#45;quote">"published"</span>: <span class="java&#45;keyword">true</span>,
+                    <span class="java&#45;quote">"access"</span>: <span class="java&#45;quote">"Public"</span>,
+                    <span class="java&#45;quote">"url"</span>: <span class="java&#45;quote">"http://dhost:dport/deployr/r/repository/
+                    file/download/george/demo.R"</span>
+                &#125;
+            &#125;,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"2E8E6E359A838FEA20A74CA65E10A031"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/repository/file/update<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;repository&#62;</span>
+        <span class="xml&#45;tag">&#60;file&#62;</span>
+          <span class="xml&#45;tag">&#60;filename&#62;</span>demo.R<span class="xml&#45;tag">&#60;/filename&#62;</span>
+          <span class="xml&#45;tag">&#60;directory&#62;</span>root<span class="xml&#45;tag">&#60;/directory&#62;</span>
+          <span class="xml&#45;tag">&#60;descr&#62;</span>Sample R script has been updated.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+          <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+          <span class="xml&#45;tag">&#60;authors&#62;</span>
+            <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+          <span class="xml&#45;tag">&#60;/authors&#62;</span>
+          <span class="xml&#45;tag">&#60;version/&#62;</span>
+          <span class="xml&#45;tag">&#60;versionmsg/&#62;</span>
+          <span class="xml&#45;tag">&#60;latestby&#62;</span>george<span class="xml&#45;tag">&#60;/latestby&#62;</span>
+          <span class="xml&#45;tag">&#60;type&#62;</span>text/plain<span class="xml&#45;tag">&#60;/type&#62;</span>
+          <span class="xml&#45;tag">&#60;category&#62;</span>script<span class="xml&#45;tag">&#60;/category&#62;</span>
+          <span class="xml&#45;tag">&#60;tags/&#62;</span>
+          <span class="xml&#45;tag">&#60;length&#62;</span>6<span class="xml&#45;tag">&#60;/length&#62;</span>
+          <span class="xml&#45;tag">&#60;restricted/&#62;</span>
+          <span class="xml&#45;tag">&#60;shared/&#62;</span>
+          <span class="xml&#45;tag">&#60;published&#62;</span>true<span class="xml&#45;tag">&#60;/published&#62;</span>
+          <span class="xml&#45;tag">&#60;access&#62;</span>Public<span class="xml&#45;tag">&#60;/access&#62;</span>
+          <span class="xml&#45;tag">&#60;md5&#62;</span>77d7c62ca2bc4ac236235020fa3cb319<span class="xml&#45;tag">&#60;/md5&#62;</span>
+          <span class="xml&#45;tag">&#60;lastModified&#62;</span>1378391625616<span class="xml&#45;tag">&#60;/lastModified&#62;</span>
+          <span class="xml&#45;tag">&#60;url&#62;</span>http://dhost:dport/deployr/r/repository/
+          file/download/george/demo.R<span class="xml&#45;tag">&#60;/url&#62;</span>
+        <span class="xml&#45;tag">&#60;/file&#62;</span>
+    <span class="xml&#45;tag">&#60;/repository&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>29A3689D527FCA9C2F949985B82C2A83<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div><p class="paragraph"/>
+
+
+<h2 id="repositoryfilediff">8.2.7 /r/repository/file/diff</h2>
+This call generates a diff between the current working copy of a file and a specific version found in the files version history.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>GET<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>filename - specifies the name of the repository file</li>
+<li>author - specifies the repository file author</li>
+<li>version - specifies the repository file version to diff against the current working copy</li>
+<li>directory - (optional) specifies the target repository directory, defaults to root</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>filename=demo.R
+author=george
+version=5022d53ff90c81559cb886f7</pre></div><p class="paragraph"/><strong class="bold">Response</strong><p class="paragraph"/>Content-Type: text/html
+
+
+
+<h2 id="repositoryfilerevert">8.2.8 /r/repository/file/revert</h2>
+This call reverts the current working copy of a file to a specific version found in the files version history.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>POST<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>filename - specifies the name of the repository file</li>
+<li>version - specifies the repository file version to revert into the current working copy</li>
+<li>directory - (optional) specifies the target repository directory, defaults to root</li>
+<li>descr - (optional) specifies a description to associate with the new current working copy</li>
+<li>restricted - (optional) comma-separated list of role names, which makes the file visible to  <em class="italic">authenticated</em>  users with these roles</li>
+<li>shared - (optional) if true, file is  <em class="italic">shared</em>  and visible to  <em class="italic">authenticated</em>  users</li>
+<li>published - (optional) if true, file is  <em class="italic">published</em>  and visible to  <em class="italic">authenticated</em>  and  <em class="italic">anonymous</em>  users</li>
+<li>newversion – (optional) if true, the repository will create new version rather than overwrite</li>
+<li>newversionmsg – (optional) if newversion is true, message to associate with the new version</li>
+<li>inputs - (optional) specifies the inputs property on a repository-managed script</li>
+<li>outputs - (optional) specifies the outputs property on a repository-managed script</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+filename=demo.R
+version=513a23630cf26b6cb73b6bdc
+newversion=<span class="java&#45;keyword">true</span>
+newversionmsg=Reverting to July 2013 version of script.</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/repository/file/revert"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"repository"</span>: &#123;
+                <span class="java&#45;quote">"file"</span>: &#123;
+                    <span class="java&#45;quote">"filename"</span>: <span class="java&#45;quote">"demo.R"</span>,
+                    <span class="java&#45;quote">"directory"</span>: <span class="java&#45;quote">"root"</span>,
+                    <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Sample R script."</span>,
+                    <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                    <span class="java&#45;quote">"authors"</span>: &#91;
+                        <span class="java&#45;quote">"george"</span>
+                    &#93;,
+                    <span class="java&#45;quote">"version"</span>: <span class="java&#45;keyword">null</span>,
+                    <span class="java&#45;quote">"versionmsg"</span>: <span class="java&#45;quote">"Reverted to July 2013 version of script."</span>,
+                    <span class="java&#45;quote">"latestby"</span>: <span class="java&#45;quote">"george"</span>,
+                    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"text/plain"</span>,
+                    <span class="java&#45;quote">"category"</span>: <span class="java&#45;quote">"script"</span>,
+                    <span class="java&#45;quote">"tags"</span>: <span class="java&#45;keyword">null</span>,
+                    <span class="java&#45;quote">"length"</span>: 6,
+                    <span class="java&#45;quote">"md5"</span>: <span class="java&#45;quote">"77d7c62ca2bc4ac236235020fa3cb319"</span>,
+                    <span class="java&#45;quote">"lastModified"</span>: 1378391625616,
+                    <span class="java&#45;quote">"restricted"</span>: <span class="java&#45;keyword">null</span>,
+                    <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">false</span>,
+                    <span class="java&#45;quote">"published"</span>: <span class="java&#45;keyword">false</span>,
+                    <span class="java&#45;quote">"access"</span>: <span class="java&#45;quote">"Private"</span>,
+                    <span class="java&#45;quote">"url"</span>: <span class="java&#45;quote">"http://dhost:dport/deployr/r/repository/
+                    file/download/george/demo.R"</span>
+                &#125;
+            &#125;,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"2E8E6E359A838FEA20A74CA65E10A031"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/repository/file/revert<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;repository&#62;</span>
+        <span class="xml&#45;tag">&#60;file&#62;</span>
+          <span class="xml&#45;tag">&#60;filename&#62;</span>demo.R<span class="xml&#45;tag">&#60;/filename&#62;</span>
+          <span class="xml&#45;tag">&#60;directory&#62;</span>root<span class="xml&#45;tag">&#60;/directory&#62;</span>
+          <span class="xml&#45;tag">&#60;descr&#62;</span>Sample R script."<span class="xml&#45;tag">&#60;/descr&#62;</span>
+          <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+          <span class="xml&#45;tag">&#60;authors&#62;</span>
+            <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+          <span class="xml&#45;tag">&#60;/authors&#62;</span>
+          <span class="xml&#45;tag">&#60;version/&#62;</span>
+          <span class="xml&#45;tag">&#60;versionmsg&#62;</span>Reverted to July 2013 version of script.<span class="xml&#45;tag">&#60;/versionmsg&#62;</span>
+          <span class="xml&#45;tag">&#60;latestby&#62;</span>george<span class="xml&#45;tag">&#60;/latestby&#62;</span>
+          <span class="xml&#45;tag">&#60;type&#62;</span>text/plain<span class="xml&#45;tag">&#60;/type&#62;</span>
+          <span class="xml&#45;tag">&#60;category&#62;</span>script<span class="xml&#45;tag">&#60;/category&#62;</span>
+          <span class="xml&#45;tag">&#60;tags/&#62;</span>
+          <span class="xml&#45;tag">&#60;length&#62;</span>6<span class="xml&#45;tag">&#60;/length&#62;</span>
+          <span class="xml&#45;tag">&#60;restricted/&#62;</span>
+          <span class="xml&#45;tag">&#60;shared/&#62;</span>
+          <span class="xml&#45;tag">&#60;published/&#62;</span>
+          <span class="xml&#45;tag">&#60;access&#62;</span>Private<span class="xml&#45;tag">&#60;/access&#62;</span>
+          <span class="xml&#45;tag">&#60;md5&#62;</span>77d7c62ca2bc4ac236235020fa3cb319<span class="xml&#45;tag">&#60;/md5&#62;</span>
+          <span class="xml&#45;tag">&#60;lastModified&#62;</span>1378391625616<span class="xml&#45;tag">&#60;/lastModified&#62;</span>
+          <span class="xml&#45;tag">&#60;url&#62;</span>http://dhost:dport/deployr/r/repository/
+          file/download/george/demo.R<span class="xml&#45;tag">&#60;/url&#62;</span>
+        <span class="xml&#45;tag">&#60;/file&#62;</span>
+    <span class="xml&#45;tag">&#60;/repository&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>29A3689D527FCA9C2F949985B82C2A83<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div>
+
+
+
+<h2 id="repositoryfilegrant">8.2.9 /r/repository/file/grant</h2>
+This call grants and/or revokes ownership rights on a repository-managed file.<p class="paragraph"/>If the caller is an owner of the file, the caller can:
+<ol>
+<li>Grant ownership rights to one or more  <em class="italic">authenticated</em>  users and/or</li>
+<li>Revoke ownership rights for one or more owners.</li>
+</ol><p class="paragraph"/>As this API call is provided to support collaborative workflows, it assumes fair not malicious usage by owners.<p class="paragraph"/>Revoking ownership rights is equivalent to the caller deleting the file on behalf of the owners indicated on the  <em class="italic">revokeauthor</em>  parameter. The caller can even revoke their own ownership on a file by specifying their own  <em class="italic">username</em>  on the  <em class="italic">revokeauthor</em>  parameter which is equivalent to calling the <a href="../guide/single.html#repositoryfiledelete" class="guide">/repository/file/delete</a> call.<p class="paragraph"/>Notes on parameters:
+<ol>
+<li>Unlike most repository APIs that require both  <em class="italic">filename</em>  and  <em class="italic">author</em>  parameters, there is no explicit  <em class="italic">author</em>  parameter on this call. The  <em class="italic">author</em>  is understood to be the caller.</li>
+<li>While the  <em class="italic">newauthor</em>  and  <em class="italic">revokeauthor</em>  parameters are shown as optional, a value must be provided for at least one of these two parameters, otherwise the call will fail and and error will be indicated in the response markup.</li>
+</ol><p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>POST<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>filename - specifies the name of the repository file</li>
+<li>newauthor - (optional) specifies a comma-separated list of grantee usernames</li>
+<li>revokeauthor - (optional) specifies a comma-separated list of revokee usernames</li>
+<li>directory - (optional) specifies the target repository directory, defaults to root</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+filename=demo.R
+newauthor=susan, henry
+revokeauthor=moe</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/repository/file/grant"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"repository"</span>: &#123;
+                <span class="java&#45;quote">"file"</span>: &#123;
+                    <span class="java&#45;quote">"filename"</span>: <span class="java&#45;quote">"demo.R"</span>,
+                    <span class="java&#45;quote">"directory"</span>: <span class="java&#45;quote">"root"</span>,
+                    <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Sample R script."</span>,
+                    <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                    <span class="java&#45;quote">"authors"</span>: &#91;
+                        <span class="java&#45;quote">"george"</span>,
+                        <span class="java&#45;quote">"susan"</span>,
+                        <span class="java&#45;quote">"henry"</span>
+                    &#93;,
+                    <span class="java&#45;quote">"version"</span>: <span class="java&#45;keyword">null</span>,
+                    <span class="java&#45;quote">"versionmsg"</span>: <span class="java&#45;keyword">null</span>,
+                    <span class="java&#45;quote">"latestby"</span>: <span class="java&#45;quote">"george"</span>,
+                    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"text/plain"</span>,
+                    <span class="java&#45;quote">"category"</span>: <span class="java&#45;quote">"script"</span>,
+                    <span class="java&#45;quote">"tags"</span>: <span class="java&#45;keyword">null</span>,
+                    <span class="java&#45;quote">"length"</span>: 6,
+                    <span class="java&#45;quote">"md5"</span>: <span class="java&#45;quote">"77d7c62ca2bc4ac236235020fa3cb319"</span>,
+                    <span class="java&#45;quote">"lastModified"</span>: 1378391625616,
+                    <span class="java&#45;quote">"restricted"</span>: <span class="java&#45;quote">"MARKETING"</span>,
+                    <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">true</span>,
+                    <span class="java&#45;quote">"published"</span>: <span class="java&#45;keyword">false</span>,
+                    <span class="java&#45;quote">"access"</span>: <span class="java&#45;quote">"Restricted"</span>,
+                    <span class="java&#45;quote">"url"</span>: <span class="java&#45;quote">"http://dhost:dport/deployr/r/repository/
+                    file/download/george/demo.R"</span>
+                &#125;
+            &#125;,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"2E8E6E359A838FEA20A74CA65E10A031"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/repository/file/grant<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;repository&#62;</span>
+        <span class="xml&#45;tag">&#60;file&#62;</span>
+          <span class="xml&#45;tag">&#60;filename&#62;</span>demo.R<span class="xml&#45;tag">&#60;/filename&#62;</span>
+          <span class="xml&#45;tag">&#60;directory&#62;</span>root<span class="xml&#45;tag">&#60;/directory&#62;</span>
+          <span class="xml&#45;tag">&#60;descr&#62;</span>Sample R script.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+          <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+          <span class="xml&#45;tag">&#60;authors&#62;</span>
+            <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+            <span class="xml&#45;tag">&#60;author&#62;</span>susan<span class="xml&#45;tag">&#60;/author&#62;</span>
+            <span class="xml&#45;tag">&#60;author&#62;</span>henry<span class="xml&#45;tag">&#60;/author&#62;</span>
+          <span class="xml&#45;tag">&#60;/authors&#62;</span>
+          <span class="xml&#45;tag">&#60;version/&#62;</span>
+          <span class="xml&#45;tag">&#60;versionmsg/&#62;</span>
+          <span class="xml&#45;tag">&#60;latestby&#62;</span>george<span class="xml&#45;tag">&#60;/latestby&#62;</span>
+          <span class="xml&#45;tag">&#60;type&#62;</span>text/plain<span class="xml&#45;tag">&#60;/type&#62;</span>
+          <span class="xml&#45;tag">&#60;category&#62;</span>script<span class="xml&#45;tag">&#60;/category&#62;</span>
+          <span class="xml&#45;tag">&#60;tags/&#62;</span>
+          <span class="xml&#45;tag">&#60;length&#62;</span>6<span class="xml&#45;tag">&#60;/length&#62;</span>
+          <span class="xml&#45;tag">&#60;restricted&#62;</span>MARKETING<span class="xml&#45;tag">&#60;/restricted&#62;</span>
+          <span class="xml&#45;tag">&#60;shared&#62;</span>true<span class="xml&#45;tag">&#60;/shared&#62;</span>
+          <span class="xml&#45;tag">&#60;published/&#62;</span>
+          <span class="xml&#45;tag">&#60;access&#62;</span>Restricted<span class="xml&#45;tag">&#60;/access&#62;</span>
+          <span class="xml&#45;tag">&#60;md5&#62;</span>77d7c62ca2bc4ac236235020fa3cb319<span class="xml&#45;tag">&#60;/md5&#62;</span>
+          <span class="xml&#45;tag">&#60;lastModified&#62;</span>1378391625616<span class="xml&#45;tag">&#60;/lastModified&#62;</span>
+          <span class="xml&#45;tag">&#60;url&#62;</span>http://dhost:dport/deployr/r/repository/
+          file/download/george/demo.R<span class="xml&#45;tag">&#60;/url&#62;</span>
+        <span class="xml&#45;tag">&#60;/file&#62;</span>
+    <span class="xml&#45;tag">&#60;/repository&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>29A3689D527FCA9C2F949985B82C2A83<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div><p class="paragraph"/>
+
+
+<h2 id="repositoryfiledownload">8.2.10 /r/repository/file/download</h2>
+This call downloads one-or-more repository-managed files.<p class="paragraph"/>When two or more files are being downloaded, the response type on this call is a zip archive file.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>GET<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>filename - comma-separated list of filenames to be downloaded</li>
+<li>author - comma-separated list of authors for named files</li>
+<li>directory - comma-separated list of directories for named files</li>
+<li>version - (optional) comma-separated list of versions for named files</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+name=demo.R
+author=george</pre></div><p class="paragraph"/><strong class="bold">Response</strong><p class="paragraph"/>Content-Type: file/content-type
+
+
+
+<h2 id="repositoryfiledelete">8.2.11 /r/repository/file/delete</h2>
+This call deletes one-or-more files from the repository.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>POST<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>filename - comma-separated list of filenames to be deleted</li>
+<li>directory - comma-separated list of directories for named files</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+filename=demo.R
+author=george</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/repository/file/delete"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"29A3689D527FCA9C2F949985B82C2A83"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/repository/file/delete<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>29A3689D527FCA9C2F949985B82C2A83<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div><p class="paragraph"/>
+
+
+<h2 id="repositoryfilecopy">8.2.12 /r/repository/file/copy</h2>
+This call copies one or more repository-managed files to the destination directory.<p class="paragraph"/>If the destination directory already contains a filename matching an incoming filename, then a new version of the file is automatically created.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>GET<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>filename - comma-separated list of filenames to be copied</li>
+<li>directory - comma-separated list of directories for named files</li>
+<li>destination - specifies the name of the destination  <em class="italic">user</em>  directory in the repository</li>
+<li>version - (optional) comma-separated list of versions for named files</li>
+<li>filerename - (optional) comma-separated list of new filenames for copied files identified on filename parameter</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+name=demo.R
+author=george
+directory=root
+destination=samples</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/repository/file/copy"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"29A3689D527FCA9C2F949985B82C2A83"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/repository/file/copy<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>29A3689D527FCA9C2F949985B82C2A83<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div>
+
+
+
+<h2 id="repositoryfilemove">8.2.13 /r/repository/file/move</h2>
+This call moves one or more repository-managed files to the destination directory.<p class="paragraph"/>If the destination directory already contains a filename matching an incoming filename, then a new version of the file is automatically created.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>GET<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>directory - comma-separated list of directories for named files</li>
+<li>filename - comma-separated list of filenames to be moved</li>
+<li>version - (optional) comma-separated list of versions for named files</li>
+<li>destination - specifies the name of the destination  <em class="italic">user</em>  directory in the repository</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+name=demo.R
+author=george
+directory=root
+destination=samples</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/repository/file/move"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"29A3689D527FCA9C2F949985B82C2A83"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/repository/file/move<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>29A3689D527FCA9C2F949985B82C2A83<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div>
+
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../../guide/workingjobs.html">&lt;&lt; <strong>7</strong><span>Working with the Job APIs</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../../guide/workingeventstream.html"><strong>9</strong><span>Working with the Event Stream API</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    Copyright (c) 2009-2016 Microsoft Corporation
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

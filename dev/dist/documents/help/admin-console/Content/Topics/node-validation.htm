@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="index.xml" data-mc-path-to-help-system="../../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-toc-path="The Grid">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" />
+        <link href="../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" />
+        <link href="../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" /><title>Node Validation and Errors</title>
+        <link href="../Resources/Stylesheets/admin-console-help.css" rel="stylesheet" type="text/css" />
+        <script src="../../Resources/Scripts/custom.modernizr.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/foundation.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/plugins.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/require.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/require.config.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkTop"><a href="../../index.html#Topics/node-validation.htm">Open topic with navigation</a>
+        </p>
+        <h2 class="Heading2">Node Validation and Errors</h2>
+        <p>The Administration Console performs a verification of node configurations whenever you:</p>
+        <ul class="ul_1">
+            <li class="ListBullet2_1" value="1">Display the <span class="UIElementChar">Grid</span> tab </li>
+            <li class="ListBullet2_1" value="2">Create or update a grid node configuration </li>
+            <li class="ListBullet2_1" value="3">Import a grid node configuration (<span class="VariablesPro">DeployR&#160;Enterprise</span> only)</li>
+        </ul>
+        <p>When you visit the <span class="UIElementChar">Grid</span> tab, any enabled nodes found to be unresponsive are highlighted to help you visually identify that these nodes are not operating properly.</p>
+        <p>When you attempt to create, update or import a node, the verification process is run. If an issue is detected, the following message appears: “<span class="span_1">Grid node details provided failed to validate, please check your node configuration and try again.</span>”&#160; </p>
+        <p>Common validation issues include:</p>
+        <ul class="ul_1">
+            <li class="ListBullet2_1" value="1">The configuration points to a grid node that is improperly installed or not yet installed.</li>
+            <li class="ListBullet2_1" value="2">The configuration points to a grid node that is currently unresponsive for any number of reasons including the RServe process not running on that node.</li>
+            <li class="ListBullet2_1" value="3">The node is behind a firewall or temporarily unreachable.</li>
+            <li class="ListBullet2_1" value="4">The node’s configuration details are incomplete such as an empty name field when the name is required.</li>
+        </ul>
+        <p>&#160;</p>
+        <p class="related"><a href="javascript:void(0);" class="MCHelpControl MCHelpControl-Related relatedTopics" data-mc-topics="Creating New Nodes|node-new.htm||Deleting Nodes |node-deleting.htm||Enabling or Disabling Nodes|node-enable-disable.htm||Exporting Node Configurations |node-exporting.htm||Grid Workload Distribution|node-workload-distribution.htm||Importing Node Configurations |node-importing.htm||Managing the Grid|node-grid-intro.htm||Node Operation Types|node-operations.htm||Node Properties|node-properties.htm||Viewing and Editing Nodes|node-view-edit.htm||Viewing or Stopping Slot Activity |node-slot-activity.htm"><span class="MCHelpControl-RelatedHotSpot_"><img class="MCHelpControl_Image_Icon" src="../../Skins/Default/Stylesheets/Images/transparent.gif" height="16" width="16" alt="Related Topics Icon" />Related Topics</span></a>
+        </p>
+    </body>
+</html>

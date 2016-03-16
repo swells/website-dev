@@ -1,0 +1,897 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>8.1 Working with the Repository Directory APIs 8.0.0</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/architecture.html"><strong>2</strong><span>Web Service API Architecture</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/overview.html"><strong>3</strong><span>Web Service API Overview</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/working.html"><strong>4</strong><span>Working with the Web Service APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingusers.html"><strong>5</strong><span>Working with the User APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingprojects.html"><strong>6</strong><span>Working with the Project APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingjobs.html"><strong>7</strong><span>Working with the Job APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingrepository.html"><strong>8</strong><span>Working with the Repository APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingeventstream.html"><strong>9</strong><span>Working with the Event Stream API</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/encodings.html"><strong>10</strong><span>Web Service API Data Encodings</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/explorer.html"><strong>11</strong><span>The API Explorer Tool</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/741changehistory.html"><strong>12</strong><span>API Changes in 7.4.1</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/74changehistory.html"><strong>13</strong><span>API Changes in 7.4</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/73changehistory.html"><strong>14</strong><span>API Changes in 7.3</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/72changehistory.html"><strong>15</strong><span>API Changes in 7.2</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/71changehistory.html"><strong>16</strong><span>API Changes in 7.1</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/70changehistory.html"><strong>17</strong><span>API Changes in 7.0</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/62changehistory.html"><strong>18</strong><span>API Changes in 6.2</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        
+    </div>
+    <p>DeployR API</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../../guide/workingjobs.html">&lt;&lt; <strong>7</strong><span>Working with the Job APIs</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../../guide/workingeventstream.html"><strong>9</strong><span>Working with the Event Stream API</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>8.1 Working with the Repository Directory APIs - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Microsoft Corporation</p>
+
+                    <p><strong>Version:</strong> 8.0.0</p>
+
+                    
+                </div>
+
+                
+                <div id="table-of-content">
+                    <h2>Table of Contents</h2>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#repositorydirectorylist"><strong>8.1</strong><span>/r/repository/directory/list</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#repositorydirectorycreate"><strong>8.2</strong><span>/r/repository/directory/create</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#repositorydirectoryrename"><strong>8.3</strong><span>/r/repository/directory/rename</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#repositorydirectorycopy"><strong>8.4</strong><span>/r/repository/directory/copy</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#repositorydirectorymove"><strong>8.5</strong><span>/r/repository/directory/move</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#repositorydirectoryupdate"><strong>8.6</strong><span>/r/repository/directory/update</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#repositorydirectoryarchive"><strong>8.7</strong><span>/r/repository/directory/archive</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#repositorydirectoryupload"><strong>8.8</strong><span>/r/repository/directory/upload</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#repositorydirectorydownload"><strong>8.9</strong><span>/r/repository/directory/download</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#repositorydirectorydelete"><strong>8.10</strong><span>/r/repository/directory/delete</span></a>
+                    </div>
+                    
+                </div>
+                
+
+                
+
+<h2 id="repositorydirectory">8.1 Working with the Repository Directory APIs</h2>
+The Repository Directory APIs facilitate working with repository-managed
+directories.<p class="paragraph"/>Repository-managed directories fall into two distinct categories:
+<ol>
+<li>User Directories</li>
+<li>System Directories</li>
+</ol><p class="paragraph"/><h4>User Directories</h4><p class="paragraph"/>Each  <em class="italic">authenticated</em>  user maintains their own set of private  <em class="italic">user</em> 
+directories. The set of  <em class="italic">user</em>  directories can be further divided into the
+following  <em class="italic">user</em>  directory types:
+<ol>
+<li>Root directory</li>
+<li>Custom directories</li>
+<li>Archived directories</li>
+</ol><p class="paragraph"/>By default, each  <em class="italic">authenticated</em>  user has access to their own  <em class="italic">root</em> 
+directory in the repository. When
+<a href="../guide/single.html#repositoryfiles" class="guide">Working with Repository Files</a>, all API calls default to
+operating on the  <em class="italic">root</em>  directory if a specific  <em class="italic">custom</em>  or  <em class="italic">archived</em> 
+directory is not specified on the  <em class="italic">directory</em>  parameter.<p class="paragraph"/>Each  <em class="italic">authenticated</em>  user can also create zero, one or more  <em class="italic">custom</em> 
+directories.  Each  <em class="italic">custom</em>  directory becomes a sub-directory of the  <em class="italic">root</em> 
+directory.  <em class="italic">Custom</em>  directories can be very useful to help manage logical
+groups of files across multiple projects, customers, applications etc.<p class="paragraph"/>Users can also archive the contents of their  <em class="italic">root</em>  directory or the
+contents of any of their  <em class="italic">custom</em>  directories within  <em class="italic">archived</em>  directories.
+This can be a very useful way to preserve old but valuable files over time
+while reducing day-to-day directory clutter.<p class="paragraph"/>By default,  <em class="italic">archived</em>  directories do not appear in the response markup when a
+user makes a call to
+<a href="../guide/single.html#repositorydirectorylist" class="guide">/r/repository/directory/list</a>. However,
+when the  <em class="italic">archived</em>  parameter is enabled on that call, any  <em class="italic">archived</em> 
+directories belonging to the user will appear in the response markup.<p class="paragraph"/>
+<h4>System Directories</h4><p class="paragraph"/> <em class="italic">System</em>  directories are virtual directories that exist only in the context
+of the response markup on the
+<a href="../guide/single.html#repositorydirectorylist" class="guide">/r/repository/directory/list</a> call. These
+directories are provided as a convenient way for a user working with the
+Repository Directory APIs to get access to repository-managed files that
+are  <em class="italic">shared</em>  or made  <em class="italic">public</em>  by other users.<p class="paragraph"/>There are just three  <em class="italic">system</em>  directories:
+<ol>
+<li>Restricted directory</li>
+<li>Shared directory</li>
+<li>Public directory</li>
+</ol><p class="paragraph"/>The  <em class="italic">Restricted</em>  system directory maintains a list of files that have been
+shared-with-restrictions by other  <em class="italic">authenticated</em>  users. These files will
+have had their access controls set to  <em class="italic">restricted</em>  access.<p class="paragraph"/>The  <em class="italic">Shared</em>  system directory maintains a list of files that have been
+ <em class="italic">shared</em>  by other  <em class="italic">authenticated</em>  users. These files will have had their
+access controls set to  <em class="italic">shared</em>  access.<p class="paragraph"/>The  <em class="italic">Public</em>  system directory maintains a list of files that have been
+ <em class="italic">published</em>  by other  <em class="italic">authenticated</em>  users. These files will have had
+their access controls set to  <em class="italic">public</em>  access.<p class="paragraph"/><strong class="bold">Important:</strong> As all files appearing in the  <em class="italic">system</em>  directories belong
+to other users, these files  can not be copied, moved, modified, archived or
+deleted using the Repository Directory APIs.<p class="paragraph"/>
+
+
+<h2 id="repositorydirectorylist">8.1.1 /r/repository/directory/list</h2>
+This call lists repository-managed directories.<p class="paragraph"/>By default, a list of the caller's  <em class="italic">user</em>  directories ( <em class="italic">root</em>  and  <em class="italic">custom</em> ) are returned in the response markup.<p class="paragraph"/>If the  <em class="italic">archived</em>  parameter is enabled then the list of the caller's  <em class="italic">user</em>  directories will include the caller's  <em class="italic">archived</em>  directories in the response markup.<p class="paragraph"/>A number of optional parameters are provided that allow the caller to request the addition of file lists for some or all directories:<p class="paragraph"/>If the  <em class="italic">userfiles</em>  parameter is enabled, the files in all of the caller's  <em class="italic">user</em>  directories are listed in the response markup. Note, depending on the number of files owned by the caller, when this parameter is enabled the response markup returned on this call can be a verbose.<p class="paragraph"/>If the  <em class="italic">directory</em>  parameter is specified then only the files in the directory indicated are returned in the response markup.<p class="paragraph"/>If the  <em class="italic">shared</em>  parameter is enabled then the files found in the  <em class="italic">Restriced</em>  and  <em class="italic">Shared</em>  system directories are returned in the response markup. If the  <em class="italic">published</em>  parameter is enabled then the files found in the  <em class="italic">Public</em>  system directory are returned in the response markup.<p class="paragraph"/>The  <em class="italic">categoryFilter</em>  parameter can be used to filter the types of files returned on the response markup.
+The following values are supported on this parameter:
+<ul class="star">
+<li>R - returns only binary R object files with a .rData file extension</li>
+<li>script - returns only R scripts with a .R  or .r file extension</li>
+<li>data - returns only data files with a .csv or .xls file extension</li>
+<li>plot - returns only image files with a .png, .jpg or .svg file extension</li>
+<li>shell - returns only shell script files with a .sh, .bash, .csh or .bat file extension</li>
+<li>pdf - returns only PDF files with a .pdf file extension</li>
+<li>text - returns only text files with a .txt file extension</li>
+<li>other - returns any file type not matching the other file categories</li>
+</ul><p class="paragraph"/>For example, using a combination of the  <em class="italic">categoryFilter</em>  and  <em class="italic">directory</em>  parameters,
+a call can request only binary R object files found in a specific directory:
+/r/repository/directory/list?categoryFilter=R&#38;directory=example.<p class="paragraph"/>Note: The  <em class="italic">metadata</em>  property in the response markup on this call is provided
+as a convenience for client application developers. It provides a complete
+list fo the  <em class="italic">user</em>  directories available to the current caller.<p class="paragraph"/>
+<strong class="bold">HTTP Method</strong><p class="paragraph"/>GET<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>archived - (optional) if true, files found in archived directories are included in the response markup</li>
+<li>userfiles - (optional), if true, files in all  <em class="italic">user</em>  directories are listed in the response markup</li>
+<li>directory - (optional), when specified, only files in the   <em class="italic">user</em>  directory indicated are listed in response markup</li>
+<li>shared - (optional) if true, files that are  <em class="italic">restricted</em>  but visible or  <em class="italic">shared</em>  by other users are included in the response markup</li>
+<li>published - (optional) if true, files that are  <em class="italic">published</em>  by other users are included in the response markup</li>
+<li>categoryFilter - (optional) when specified, the list of files in response markup is limited to category: R (rData), script (R), data (csv, xls), plot (png, jpg, svg), shell (sh, bat), pdf, text, other</li>
+<li>external - (optional) if true, this call returns directories found in the external repository, otherwise returns files found in the default repository</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+userfiles=<span class="java&#45;keyword">true</span>
+shared=<span class="java&#45;keyword">true</span>
+published=<span class="java&#45;keyword">true</span>
+archived=<span class="java&#45;keyword">false</span></pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/repository/directory/list"</span>
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"repository"</span>: &#123;
+                <span class="java&#45;quote">"directories"</span>: &#123;
+                    <span class="java&#45;quote">"user"</span>: &#91;
+                        &#123;
+                            <span class="java&#45;quote">"directory"</span>: <span class="java&#45;quote">"root"</span>,
+                            <span class="java&#45;quote">"files"</span>: &#91;&#93;
+                        &#125;,
+                        &#123;
+                            <span class="java&#45;quote">"directory"</span>: <span class="java&#45;quote">"demo"</span>,
+                            <span class="java&#45;quote">"files"</span>: &#91;&#93;
+                        &#125;,
+                        &#123;
+                            <span class="java&#45;quote">"directory"</span>: <span class="java&#45;quote">"projectX"</span>,
+                            <span class="java&#45;quote">"files"</span>: &#91;
+                                &#123;
+                                    <span class="java&#45;quote">"directory"</span>: <span class="java&#45;quote">"projectX"</span>,
+                                    <span class="java&#45;quote">"length"</span>: 74,
+                                    <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"ProjectX model."</span>,
+                                    <span class="java&#45;quote">"authors"</span>: &#91;
+                                        <span class="java&#45;quote">"george"</span>
+                                    &#93;,
+                                    <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">false</span>,
+                                    <span class="java&#45;quote">"restricted"</span>: <span class="java&#45;keyword">null</span>,
+                                    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"application/octet&#45;stream"</span>,
+                                    <span class="java&#45;quote">"url"</span>: <span class="java&#45;quote">"http://dhost:dport/deployr/r/repository/
+                                    file/download/george/projectX/SavedX.rData"</span>,
+                                    <span class="java&#45;quote">"filename"</span>: <span class="java&#45;quote">"SavedX.rData"</span>,
+                                    <span class="java&#45;quote">"access"</span>: <span class="java&#45;quote">"Private"</span>,
+                                    <span class="java&#45;quote">"versionmsg"</span>: <span class="java&#45;keyword">null</span>,
+                                    <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                                    <span class="java&#45;quote">"lastModified"</span>: 1392732311973,
+                                    <span class="java&#45;quote">"published"</span>: <span class="java&#45;keyword">false</span>,
+                                    <span class="java&#45;quote">"category"</span>: <span class="java&#45;quote">"R"</span>,
+                                    <span class="java&#45;quote">"tags"</span>: <span class="java&#45;keyword">null</span>,
+                                    <span class="java&#45;quote">"md5"</span>: <span class="java&#45;quote">"7083dd400b3345ebb75c4b8e41ad9d70"</span>,
+                                    <span class="java&#45;quote">"latestby"</span>: <span class="java&#45;quote">"george"</span>,
+                                    <span class="java&#45;quote">"version"</span>: <span class="java&#45;keyword">null</span>
+                                &#125;,
+                                &#123;
+                                    <span class="java&#45;quote">"directory"</span>: <span class="java&#45;quote">"projectX"</span>,
+                                    <span class="java&#45;quote">"length"</span>: 6,
+                                    <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Script to score model."</span>,
+                                    <span class="java&#45;quote">"authors"</span>: &#91;
+                                        <span class="java&#45;quote">"george"</span>
+                                    &#93;,
+                                    <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">false</span>,
+                                    <span class="java&#45;quote">"restricted"</span>: <span class="java&#45;keyword">null</span>,
+                                    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"text/plain"</span>,
+                                    <span class="java&#45;quote">"url"</span>: <span class="java&#45;quote">"http://dhost:dport/deployr/r/repository/
+                                    file/download/george/projectX/score.R"</span>,
+                                    <span class="java&#45;quote">"filename"</span>: <span class="java&#45;quote">"score.R"</span>,
+                                    <span class="java&#45;quote">"access"</span>: <span class="java&#45;quote">"Private"</span>,
+                                    <span class="java&#45;quote">"versionmsg"</span>: <span class="java&#45;keyword">null</span>,
+                                    <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                                    <span class="java&#45;quote">"lastModified"</span>: 1392732338343,
+                                    <span class="java&#45;quote">"published"</span>: <span class="java&#45;keyword">false</span>,
+                                    <span class="java&#45;quote">"category"</span>: <span class="java&#45;quote">"script"</span>,
+                                    <span class="java&#45;quote">"tags"</span>: <span class="java&#45;keyword">null</span>,
+                                    <span class="java&#45;quote">"md5"</span>: <span class="java&#45;quote">"77d7c62ca2bc4ac236235020fa3cb319"</span>,
+                                    <span class="java&#45;quote">"latestby"</span>: <span class="java&#45;quote">"george"</span>,
+                                    <span class="java&#45;quote">"version"</span>: <span class="java&#45;keyword">null</span>
+                                &#125;
+                            &#93;
+                        &#125;,
+                        &#123;
+                            <span class="java&#45;quote">"directory"</span>: <span class="java&#45;quote">"samples"</span>,
+                            <span class="java&#45;quote">"files"</span>: &#91;
+                                &#123;
+                                    <span class="java&#45;quote">"directory"</span>: <span class="java&#45;quote">"samples"</span>,
+                                    <span class="java&#45;quote">"length"</span>: 6,
+                                    <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Simple linear regression."</span>,
+                                    <span class="java&#45;quote">"authors"</span>: &#91;
+                                        <span class="java&#45;quote">"george"</span>
+                                    &#93;,
+                                    <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">false</span>,
+                                    <span class="java&#45;quote">"restricted"</span>: <span class="java&#45;keyword">null</span>,
+                                    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"text/plain"</span>,
+                                    <span class="java&#45;quote">"url"</span>: <span class="java&#45;quote">"http://dhost:dport/deployr/r/repository/
+                                    file/download/george/samples/regression.R"</span>,
+                                    <span class="java&#45;quote">"filename"</span>: <span class="java&#45;quote">"regression.R"</span>,
+                                    <span class="java&#45;quote">"access"</span>: <span class="java&#45;quote">"Private"</span>,
+                                    <span class="java&#45;quote">"versionmsg"</span>: <span class="java&#45;keyword">null</span>,
+                                    <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                                    <span class="java&#45;quote">"lastModified"</span>: 1392732363652,
+                                    <span class="java&#45;quote">"published"</span>: <span class="java&#45;keyword">false</span>,
+                                    <span class="java&#45;quote">"category"</span>: <span class="java&#45;quote">"script"</span>,
+                                    <span class="java&#45;quote">"tags"</span>: <span class="java&#45;keyword">null</span>,
+                                    <span class="java&#45;quote">"md5"</span>: <span class="java&#45;quote">"77d7c62ca2bc4ac236235020fa3cb319"</span>,
+                                    <span class="java&#45;quote">"latestby"</span>: <span class="java&#45;quote">"george"</span>,
+                                    <span class="java&#45;quote">"version"</span>: <span class="java&#45;keyword">null</span>
+                                &#125;
+                            &#93;
+                        &#125;,
+                        &#123;
+                            <span class="java&#45;quote">"directory"</span>: <span class="java&#45;quote">"demo.archive"</span>,
+                            <span class="java&#45;quote">"files"</span>: &#91;
+                                &#123;
+                                    <span class="java&#45;quote">"directory"</span>: <span class="java&#45;quote">"demo.archive"</span>,
+                                    <span class="java&#45;quote">"length"</span>: 6,
+                                    <span class="java&#45;quote">"descr"</span>: <span class="java&#45;keyword">null</span>,
+                                    <span class="java&#45;quote">"authors"</span>: &#91;
+                                        <span class="java&#45;quote">"george"</span>
+                                    &#93;,
+                                    <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">false</span>,
+                                    <span class="java&#45;quote">"restricted"</span>: <span class="java&#45;keyword">null</span>,
+                                    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"text/plain"</span>,
+                                    <span class="java&#45;quote">"url"</span>: <span class="java&#45;quote">"http://dhost:dport/deployr/r/repository/
+                                    file/download/george/demo.archive/test.R"</span>,
+                                    <span class="java&#45;quote">"filename"</span>: <span class="java&#45;quote">"test.R"</span>,
+                                    <span class="java&#45;quote">"access"</span>: <span class="java&#45;quote">"Private"</span>,
+                                    <span class="java&#45;quote">"versionmsg"</span>: <span class="java&#45;quote">"File archived from demo directory."</span>,
+                                    <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                                    <span class="java&#45;quote">"lastModified"</span>: 1392732699820,
+                                    <span class="java&#45;quote">"published"</span>: <span class="java&#45;keyword">false</span>,
+                                    <span class="java&#45;quote">"category"</span>: <span class="java&#45;quote">"script"</span>,
+                                    <span class="java&#45;quote">"tags"</span>: <span class="java&#45;keyword">null</span>,
+                                    <span class="java&#45;quote">"md5"</span>: <span class="java&#45;quote">"77d7c62ca2bc4ac236235020fa3cb319"</span>,
+                                    <span class="java&#45;quote">"latestby"</span>: <span class="java&#45;quote">"george"</span>,
+                                    <span class="java&#45;quote">"version"</span>: <span class="java&#45;keyword">null</span>
+                                &#125;
+                            &#93;
+                        &#125;
+                    &#93;,
+                    <span class="java&#45;quote">"system"</span>: &#91;
+                        &#123;
+                            <span class="java&#45;quote">"directory"</span>: <span class="java&#45;quote">"Restricted"</span>,
+                            <span class="java&#45;quote">"files"</span>: &#91;&#93;
+                        &#125;,
+                        &#123;
+                            <span class="java&#45;quote">"directory"</span>: <span class="java&#45;quote">"Shared"</span>,
+                            <span class="java&#45;quote">"files"</span>: &#91;&#93;
+                        &#125;,
+                        &#123;
+                            <span class="java&#45;quote">"directory"</span>: <span class="java&#45;quote">"Public"</span>,
+                            <span class="java&#45;quote">"files"</span>: &#91;
+                                &#123;
+                                    <span class="java&#45;quote">"tags"</span>: <span class="java&#45;keyword">null</span>,
+                                    <span class="java&#45;quote">"md5"</span>: <span class="java&#45;quote">"47ca3f5c0186b66e0eefbd2e1dedccba"</span>,
+                                    <span class="java&#45;quote">"length"</span>: 780,
+                                    <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Generate data and plot."</span>,
+                                    <span class="java&#45;quote">"version"</span>: <span class="java&#45;keyword">null</span>,
+                                    <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">false</span>,
+                                    <span class="java&#45;quote">"restricted"</span>: <span class="java&#45;keyword">null</span>,
+                                    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"text/plain"</span>,
+                                    <span class="java&#45;quote">"url"</span>: <span class="java&#45;quote">"http://dhost:dport/deployr/r/repository/
+                                    file/download/testuser/root/Histogram+of+Auto+Sales.R"</span>,
+                                    <span class="java&#45;quote">"filename"</span>: <span class="java&#45;quote">"Histogram of Auto Sales.R"</span>,
+                                    <span class="java&#45;quote">"access"</span>: <span class="java&#45;quote">"Public"</span>,
+                                    <span class="java&#45;quote">"versionmsg"</span>: <span class="java&#45;quote">"Script created on <span class="java&#45;keyword">import</span>."</span>,
+                                    <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"testuser"</span>,
+                                    <span class="java&#45;quote">"lastModified"</span>: 1377272257978,
+                                    <span class="java&#45;quote">"published"</span>: <span class="java&#45;keyword">true</span>,
+                                    <span class="java&#45;quote">"category"</span>: <span class="java&#45;quote">"script"</span>,
+                                    <span class="java&#45;quote">"outputs"</span>: <span class="java&#45;keyword">null</span>,
+                                    <span class="java&#45;quote">"directory"</span>: <span class="java&#45;quote">"root"</span>,
+                                    <span class="java&#45;quote">"inputs"</span>: <span class="java&#45;keyword">null</span>,
+                                    <span class="java&#45;quote">"latestby"</span>: <span class="java&#45;quote">"testuser"</span>,
+                                    <span class="java&#45;quote">"authors"</span>: &#91;
+                                        <span class="java&#45;quote">"testuser"</span>
+                                    &#93;
+                                &#125;
+                            &#93;
+                        &#125;
+                    &#93;,
+                    <span class="java&#45;quote">"metadata"</span>: &#123;
+                        <span class="java&#45;quote">"custom"</span>: &#91;
+                            <span class="java&#45;quote">"projectX"</span>,
+                            <span class="java&#45;quote">"root"</span>,
+                            <span class="java&#45;quote">"samples"</span>
+                        &#93;,
+                        <span class="java&#45;quote">"archived"</span>: &#91;
+                            <span class="java&#45;quote">"demo.archive"</span>
+                        &#93;
+                &#125;
+            &#125;,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"8C29BB49909ED679079FA2E83B0E79CA"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/repository/directory/list<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;repository&#62;</span>
+      <span class="xml&#45;tag">&#60;directories&#62;</span>
+        <span class="xml&#45;tag">&#60;users&#62;</span>
+          <span class="xml&#45;tag">&#60;user&#62;</span>
+            <span class="xml&#45;tag">&#60;directory&#62;</span>root<span class="xml&#45;tag">&#60;/directory&#62;</span>
+            <span class="xml&#45;tag">&#60;files/&#62;</span>
+          <span class="xml&#45;tag">&#60;/user&#62;</span>
+          <span class="xml&#45;tag">&#60;user&#62;</span>
+            <span class="xml&#45;tag">&#60;directory&#62;</span>projectX<span class="xml&#45;tag">&#60;/directory&#62;</span>
+            <span class="xml&#45;tag">&#60;files&#62;</span>
+              <span class="xml&#45;tag">&#60;file&#62;</span>
+                <span class="xml&#45;tag">&#60;shared/&#62;</span>
+                <span class="xml&#45;tag">&#60;restricted/&#62;</span>
+                <span class="xml&#45;tag">&#60;tags/&#62;</span>
+                <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+                <span class="xml&#45;tag">&#60;directory&#62;</span>projectX<span class="xml&#45;tag">&#60;/directory&#62;</span>
+                <span class="xml&#45;tag">&#60;versionmsg/&#62;</span>
+                <span class="xml&#45;tag">&#60;descr&#62;</span>ProjectX model.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+                <span class="xml&#45;tag">&#60;published/&#62;</span>
+                <span class="xml&#45;tag">&#60;filename&#62;</span>SavedX.rData<span class="xml&#45;tag">&#60;/filename&#62;</span>
+                <span class="xml&#45;tag">&#60;authors&#62;</span>
+                  <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+                <span class="xml&#45;tag">&#60;/authors&#62;</span>
+                <span class="xml&#45;tag">&#60;category&#62;</span>R<span class="xml&#45;tag">&#60;/category&#62;</span>
+                <span class="xml&#45;tag">&#60;version/&#62;</span>
+                <span class="xml&#45;tag">&#60;length&#62;</span>74<span class="xml&#45;tag">&#60;/length&#62;</span>
+                <span class="xml&#45;tag">&#60;type&#62;</span>application/octet&#45;stream<span class="xml&#45;tag">&#60;/type&#62;</span>
+                <span class="xml&#45;tag">&#60;md5&#62;</span>7083dd400b3345ebb75c4b8e41ad9d70<span class="xml&#45;tag">&#60;/md5&#62;</span>
+                <span class="xml&#45;tag">&#60;lastModified&#62;</span>1392732311973<span class="xml&#45;tag">&#60;/lastModified&#62;</span>
+                <span class="xml&#45;tag">&#60;latestby&#62;</span>george<span class="xml&#45;tag">&#60;/latestby&#62;</span>
+                <span class="xml&#45;tag">&#60;access&#62;</span>Private<span class="xml&#45;tag">&#60;/access&#62;</span>
+                <span class="xml&#45;tag">&#60;url&#62;</span>http://dhost:dport/deployr/r/repository/
+                file/download/george/projectX/SavedX.rData<span class="xml&#45;tag">&#60;/url&#62;</span>
+              <span class="xml&#45;tag">&#60;/file&#62;</span>
+              <span class="xml&#45;tag">&#60;file&#62;</span>
+                <span class="xml&#45;tag">&#60;shared/&#62;</span>
+                <span class="xml&#45;tag">&#60;restricted/&#62;</span>
+                <span class="xml&#45;tag">&#60;tags/&#62;</span>
+                <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+                <span class="xml&#45;tag">&#60;directory&#62;</span>projectX<span class="xml&#45;tag">&#60;/directory&#62;</span>
+                <span class="xml&#45;tag">&#60;versionmsg/&#62;</span>
+                <span class="xml&#45;tag">&#60;descr&#62;</span>Script to score model.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+                <span class="xml&#45;tag">&#60;published/&#62;</span>
+                <span class="xml&#45;tag">&#60;filename&#62;</span>score.R<span class="xml&#45;tag">&#60;/filename&#62;</span>
+                <span class="xml&#45;tag">&#60;authors&#62;</span>
+                  <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+                <span class="xml&#45;tag">&#60;/authors&#62;</span>
+                <span class="xml&#45;tag">&#60;category&#62;</span>script<span class="xml&#45;tag">&#60;/category&#62;</span>
+                <span class="xml&#45;tag">&#60;version/&#62;</span>
+                <span class="xml&#45;tag">&#60;length&#62;</span>6<span class="xml&#45;tag">&#60;/length&#62;</span>
+                <span class="xml&#45;tag">&#60;type&#62;</span>text/plain<span class="xml&#45;tag">&#60;/type&#62;</span>
+                <span class="xml&#45;tag">&#60;md5&#62;</span>77d7c62ca2bc4ac236235020fa3cb319<span class="xml&#45;tag">&#60;/md5&#62;</span>
+                <span class="xml&#45;tag">&#60;lastModified&#62;</span>1392732338343<span class="xml&#45;tag">&#60;/lastModified&#62;</span>
+                <span class="xml&#45;tag">&#60;latestby&#62;</span>george<span class="xml&#45;tag">&#60;/latestby&#62;</span>
+                <span class="xml&#45;tag">&#60;access&#62;</span>Private<span class="xml&#45;tag">&#60;/access&#62;</span>
+                <span class="xml&#45;tag">&#60;url&#62;</span>http://dhost:dport/deployr/r/repository/
+                file/download/george/projectX/score.R<span class="xml&#45;tag">&#60;/url&#62;</span>
+              <span class="xml&#45;tag">&#60;/file&#62;</span>
+            <span class="xml&#45;tag">&#60;/files&#62;</span>
+          <span class="xml&#45;tag">&#60;/user&#62;</span>
+          <span class="xml&#45;tag">&#60;user&#62;</span>
+            <span class="xml&#45;tag">&#60;directory&#62;</span>samples<span class="xml&#45;tag">&#60;/directory&#62;</span>
+            <span class="xml&#45;tag">&#60;files&#62;</span>
+              <span class="xml&#45;tag">&#60;file&#62;</span>
+                <span class="xml&#45;tag">&#60;shared/&#62;</span>
+                <span class="xml&#45;tag">&#60;restricted/&#62;</span>
+                <span class="xml&#45;tag">&#60;tags/&#62;</span>
+                <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+                <span class="xml&#45;tag">&#60;directory&#62;</span>samples<span class="xml&#45;tag">&#60;/directory&#62;</span>
+                <span class="xml&#45;tag">&#60;versionmsg/&#62;</span>
+                <span class="xml&#45;tag">&#60;descr&#62;</span>Simple linear regression.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+                <span class="xml&#45;tag">&#60;published/&#62;</span>
+                <span class="xml&#45;tag">&#60;filename&#62;</span>regression.R<span class="xml&#45;tag">&#60;/filename&#62;</span>
+                <span class="xml&#45;tag">&#60;authors&#62;</span>
+                  <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+                <span class="xml&#45;tag">&#60;/authors&#62;</span>
+                <span class="xml&#45;tag">&#60;category&#62;</span>script<span class="xml&#45;tag">&#60;/category&#62;</span>
+                <span class="xml&#45;tag">&#60;version/&#62;</span>
+                <span class="xml&#45;tag">&#60;length&#62;</span>6<span class="xml&#45;tag">&#60;/length&#62;</span>
+                <span class="xml&#45;tag">&#60;type&#62;</span>text/plain<span class="xml&#45;tag">&#60;/type&#62;</span>
+                <span class="xml&#45;tag">&#60;md5&#62;</span>77d7c62ca2bc4ac236235020fa3cb319<span class="xml&#45;tag">&#60;/md5&#62;</span>
+                <span class="xml&#45;tag">&#60;lastModified&#62;</span>1392732363652<span class="xml&#45;tag">&#60;/lastModified&#62;</span>
+                <span class="xml&#45;tag">&#60;latestby&#62;</span>george<span class="xml&#45;tag">&#60;/latestby&#62;</span>
+                <span class="xml&#45;tag">&#60;access&#62;</span>Private<span class="xml&#45;tag">&#60;/access&#62;</span>
+                <span class="xml&#45;tag">&#60;url&#62;</span>http://dhost:dport/deployr/r/repository/
+                file/download/george/samples/regression.R<span class="xml&#45;tag">&#60;/url&#62;</span>
+              <span class="xml&#45;tag">&#60;/file&#62;</span>
+            <span class="xml&#45;tag">&#60;/files&#62;</span>
+          <span class="xml&#45;tag">&#60;/user&#62;</span>
+          <span class="xml&#45;tag">&#60;user&#62;</span>
+            <span class="xml&#45;tag">&#60;directory&#62;</span>demo.archive<span class="xml&#45;tag">&#60;/directory&#62;</span>
+            <span class="xml&#45;tag">&#60;files&#62;</span>
+              <span class="xml&#45;tag">&#60;file&#62;</span>
+                <span class="xml&#45;tag">&#60;shared/&#62;</span>
+                <span class="xml&#45;tag">&#60;restricted/&#62;</span>
+                <span class="xml&#45;tag">&#60;tags/&#62;</span>
+                <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+                <span class="xml&#45;tag">&#60;directory&#62;</span>demo.archive<span class="xml&#45;tag">&#60;/directory&#62;</span>
+                <span class="xml&#45;tag">&#60;versionmsg&#62;</span>File archived from demo directory.<span class="xml&#45;tag">&#60;/versionmsg&#62;</span>
+                <span class="xml&#45;tag">&#60;descr/&#62;</span>
+                <span class="xml&#45;tag">&#60;published/&#62;</span>
+                <span class="xml&#45;tag">&#60;filename&#62;</span>test.R<span class="xml&#45;tag">&#60;/filename&#62;</span>
+                <span class="xml&#45;tag">&#60;authors&#62;</span>
+                  <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+                <span class="xml&#45;tag">&#60;/authors&#62;</span>
+                <span class="xml&#45;tag">&#60;category&#62;</span>script<span class="xml&#45;tag">&#60;/category&#62;</span>
+                <span class="xml&#45;tag">&#60;version/&#62;</span>
+                <span class="xml&#45;tag">&#60;length&#62;</span>6<span class="xml&#45;tag">&#60;/length&#62;</span>
+                <span class="xml&#45;tag">&#60;type&#62;</span>text/plain<span class="xml&#45;tag">&#60;/type&#62;</span>
+                <span class="xml&#45;tag">&#60;md5&#62;</span>77d7c62ca2bc4ac236235020fa3cb319<span class="xml&#45;tag">&#60;/md5&#62;</span>
+                <span class="xml&#45;tag">&#60;lastModified&#62;</span>1392732699820<span class="xml&#45;tag">&#60;/lastModified&#62;</span>
+                <span class="xml&#45;tag">&#60;latestby&#62;</span>george<span class="xml&#45;tag">&#60;/latestby&#62;</span>
+                <span class="xml&#45;tag">&#60;access&#62;</span>Private<span class="xml&#45;tag">&#60;/access&#62;</span>
+                <span class="xml&#45;tag">&#60;url&#62;</span>http://dhost:dport/deployr/r/repository/
+                file/download/george/demo.archive/test.R<span class="xml&#45;tag">&#60;/url&#62;</span>
+              <span class="xml&#45;tag">&#60;/file&#62;</span>
+            <span class="xml&#45;tag">&#60;/files&#62;</span>
+          <span class="xml&#45;tag">&#60;/user&#62;</span>
+        <span class="xml&#45;tag">&#60;/users&#62;</span>
+        <span class="xml&#45;tag">&#60;systems&#62;</span>
+          <span class="xml&#45;tag">&#60;system&#62;</span>
+            <span class="xml&#45;tag">&#60;directory&#62;</span>Restricted<span class="xml&#45;tag">&#60;/directory&#62;</span>
+            <span class="xml&#45;tag">&#60;files/&#62;</span>
+          <span class="xml&#45;tag">&#60;/system&#62;</span>
+          <span class="xml&#45;tag">&#60;system&#62;</span>
+            <span class="xml&#45;tag">&#60;directory&#62;</span>Shared<span class="xml&#45;tag">&#60;/directory&#62;</span>
+            <span class="xml&#45;tag">&#60;files/&#62;</span>
+          <span class="xml&#45;tag">&#60;/system&#62;</span>
+          <span class="xml&#45;tag">&#60;system&#62;</span>
+            <span class="xml&#45;tag">&#60;directory&#62;</span>Public<span class="xml&#45;tag">&#60;/directory&#62;</span>
+            <span class="xml&#45;tag">&#60;files&#62;</span>
+              <span class="xml&#45;tag">&#60;file&#62;</span>
+                <span class="xml&#45;tag">&#60;author&#62;</span>testuser<span class="xml&#45;tag">&#60;/author&#62;</span>
+                <span class="xml&#45;tag">&#60;authors&#62;</span>
+                  <span class="xml&#45;tag">&#60;author&#62;</span>testuser<span class="xml&#45;tag">&#60;/author&#62;</span>
+                <span class="xml&#45;tag">&#60;/authors&#62;</span>
+                <span class="xml&#45;tag">&#60;category&#62;</span>script<span class="xml&#45;tag">&#60;/category&#62;</span>
+                <span class="xml&#45;tag">&#60;descr&#62;</span>Generate data and plot.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+                <span class="xml&#45;tag">&#60;directory&#62;</span>root<span class="xml&#45;tag">&#60;/directory&#62;</span>
+                <span class="xml&#45;tag">&#60;filename&#62;</span>Histogram of Auto Sales.R<span class="xml&#45;tag">&#60;/filename&#62;</span>
+                <span class="xml&#45;tag">&#60;inputs/&#62;</span>
+                <span class="xml&#45;tag">&#60;outputs/&#62;</span>
+                <span class="xml&#45;tag">&#60;published&#62;</span>true<span class="xml&#45;tag">&#60;/published&#62;</span>
+                <span class="xml&#45;tag">&#60;restricted/&#62;</span>
+                <span class="xml&#45;tag">&#60;shared/&#62;</span>
+                <span class="xml&#45;tag">&#60;tags/&#62;</span>
+                <span class="xml&#45;tag">&#60;versionmsg&#62;</span>Script created on import.<span class="xml&#45;tag">&#60;/versionmsg&#62;</span>
+                <span class="xml&#45;tag">&#60;version/&#62;</span>
+                <span class="xml&#45;tag">&#60;length&#62;</span>780<span class="xml&#45;tag">&#60;/length&#62;</span>
+                <span class="xml&#45;tag">&#60;type&#62;</span>text/plain<span class="xml&#45;tag">&#60;/type&#62;</span>
+                <span class="xml&#45;tag">&#60;md5&#62;</span>47ca3f5c0186b66e0eefbd2e1dedccba<span class="xml&#45;tag">&#60;/md5&#62;</span>
+                <span class="xml&#45;tag">&#60;lastModified&#62;</span>1377272257978<span class="xml&#45;tag">&#60;/lastModified&#62;</span>
+                <span class="xml&#45;tag">&#60;latestby&#62;</span>testuser<span class="xml&#45;tag">&#60;/latestby&#62;</span>
+                <span class="xml&#45;tag">&#60;access&#62;</span>Public<span class="xml&#45;tag">&#60;/access&#62;</span>
+                <span class="xml&#45;tag">&#60;url&#62;</span>http://dhost:dport/deployr/r/repository/file/
+                download/testuser/root/Histogram+of+Auto+Sales.R<span class="xml&#45;tag">&#60;/url&#62;</span>
+              <span class="xml&#45;tag">&#60;/file&#62;</span>
+            <span class="xml&#45;tag">&#60;/files&#62;</span>
+          <span class="xml&#45;tag">&#60;/system&#62;</span>
+        <span class="xml&#45;tag">&#60;/systems&#62;</span>
+        <span class="xml&#45;tag">&#60;metadata&#62;</span>
+          <span class="xml&#45;tag">&#60;customs&#62;</span>
+            <span class="xml&#45;tag">&#60;custom&#62;</span>projectX<span class="xml&#45;tag">&#60;/custom&#62;</span>
+            <span class="xml&#45;tag">&#60;custom&#62;</span>root<span class="xml&#45;tag">&#60;/custom&#62;</span>
+            <span class="xml&#45;tag">&#60;custom&#62;</span>samples<span class="xml&#45;tag">&#60;/custom&#62;</span>
+          <span class="xml&#45;tag">&#60;/customs&#62;</span>
+          <span class="xml&#45;tag">&#60;archiveds&#62;</span>
+            <span class="xml&#45;tag">&#60;archived&#62;</span>demo.archive<span class="xml&#45;tag">&#60;/archived&#62;</span>
+          <span class="xml&#45;tag">&#60;/archiveds&#62;</span>
+        <span class="xml&#45;tag">&#60;/metadata&#62;</span>
+      <span class="xml&#45;tag">&#60;/directories&#62;</span>
+    <span class="xml&#45;tag">&#60;/repository&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>8C29BB49909ED679079FA2E83B0E79CA<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div><p class="paragraph"/>
+
+
+<h2 id="repositorydirectorycreate">8.1.2 /r/repository/directory/create</h2>
+This call creates a repository-managed  <em class="italic">custom</em>  directory.<p class="paragraph"/>If the name of the new  <em class="italic">custom</em>  directory is already in use by the caller the response markup will indicate an appropriate error.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>POST<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>directory - specifies the name of the new  <em class="italic">custom</em>  directory</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+directory=demo</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"33FD71038423B94D52808244C24B1737"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/repository/directory/create"</span>,
+            <span class="java&#45;quote">"repository"</span>: &#123;
+                <span class="java&#45;quote">"directory"</span>: &#123;
+                    <span class="java&#45;quote">"directory"</span>: <span class="java&#45;quote">"demo"</span>,
+                    <span class="java&#45;quote">"owner"</span>: <span class="java&#45;quote">"george"</span>
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/repository/directory/create<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>33FD71038423B94D52808244C24B1737<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+    <span class="xml&#45;tag">&#60;repository&#62;</span>
+      <span class="xml&#45;tag">&#60;directory&#62;</span>
+        <span class="xml&#45;tag">&#60;directory&#62;</span>demo<span class="xml&#45;tag">&#60;/directory&#62;</span>
+        <span class="xml&#45;tag">&#60;owner&#62;</span>george<span class="xml&#45;tag">&#60;/owner&#62;</span>
+      <span class="xml&#45;tag">&#60;/directory&#62;</span>
+    <span class="xml&#45;tag">&#60;/repository&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div><p class="paragraph"/>
+
+
+<h2 id="repositorydirectoryrename">8.1.3 /r/repository/directory/rename</h2>
+This call renames an existing repository-managed  <em class="italic">user</em>  directory ( <em class="italic">custom</em>  or  <em class="italic">archived</em> ).<p class="paragraph"/>When renaming a  <em class="italic">user</em>  directory, all files in the source directory are automatically moved to the destination directory. If the destination directory already exists the call will be rejected and the response markup will indicate an appropriate error.<p class="paragraph"/>You can use this call to convert an  <em class="italic">archived</em>  directory back into a  <em class="italic">custom</em>  directory, essentially  <em class="italic">unarchiving</em>  the archived directory.<p class="paragraph"/>Note: You can not rename the  <em class="italic">root</em>  directory. To move files from the  <em class="italic">root</em>  directory use the <a href="../guide/single.html#repositorydirectorymove" class="guide">/r/repository/directory/move</a> call.<p class="paragraph"/><strong class="bold">Important:</strong><p class="paragraph"/>This call will only move files that are owned by a single author to the destination directory. If a repository-managed file in the source directory has multiple authors, as a result of collaboration using the <a href="../guide/single.html#repositoryfilegrant" class="guide">/r/repository/file/grant</a> call, the file will not be moved to the destination directory and a warning to that affect will be indicated in the response markup.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>POST<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>directory - specifies the name of the  <em class="italic">user</em>  directory to be renamed,  <em class="italic">custom</em>  or  <em class="italic">archived</em> </li>
+<li>destination - specifies the new name for the destination  <em class="italic">custom</em>  directory</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+directory=demo
+destination=example</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"33FD71038423B94D52808244C24B1737"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/repository/directory/rename"</span>,
+            <span class="java&#45;quote">"repository"</span>: &#123;
+                <span class="java&#45;quote">"directory"</span>: &#123;
+                    <span class="java&#45;quote">"directory"</span>: <span class="java&#45;quote">"example"</span>,
+                    <span class="java&#45;quote">"owner"</span>: <span class="java&#45;quote">"george"</span>
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/repository/directory/rename<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>33FD71038423B94D52808244C24B1737<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+    <span class="xml&#45;tag">&#60;repository&#62;</span>
+      <span class="xml&#45;tag">&#60;directory&#62;</span>
+        <span class="xml&#45;tag">&#60;directory&#62;</span>example<span class="xml&#45;tag">&#60;/directory&#62;</span>
+        <span class="xml&#45;tag">&#60;owner&#62;</span>george<span class="xml&#45;tag">&#60;/owner&#62;</span>
+      <span class="xml&#45;tag">&#60;/directory&#62;</span>
+    <span class="xml&#45;tag">&#60;/repository&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div><p class="paragraph"/>
+
+
+<h2 id="repositorydirectorycopy">8.1.4 /r/repository/directory/copy</h2>
+This call copies one or more repository-managed files from a source  <em class="italic">user</em>  directory to a destination  <em class="italic">user</em>  directory.<p class="paragraph"/>If the  <em class="italic">filename</em>  parameter is specified, only those files indicated on that parameter are copied. Otherwise, all files in the source directory are copied.<p class="paragraph"/>To ensure copying files does not accidentally overwrite any existing files in the destination directory, all copied files are created as new versions in the destination directory.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>POST<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>directory - specifies the name of the source  <em class="italic">user</em>  directory</li>
+<li>destination - specifies the name of the destination  <em class="italic">user</em>  directory</li>
+<li>filename - (optional) comma-separated list of filenames to be copied. If omitted, all files in the source directory are copied</li>
+<li>filerename - (optional) comma-separated list of new filenames for copied files identified on filename parameter</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+directory=root
+destination=samples</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/repository/directory/copy"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"33FD71038423B94D52808244C24B1737"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/repository/directory/copy<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>33FD71038423B94D52808244C24B1737<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div><p class="paragraph"/>
+
+
+<h2 id="repositorydirectorymove">8.1.5 /r/repository/directory/move</h2>
+This call moves one or more repository-managed files from a source  <em class="italic">user</em>  directory to a destination  <em class="italic">user</em>  directory.<p class="paragraph"/>If the  <em class="italic">filename</em>  parameter is specified, only those files indicated on that parameter are moved. Otherwise, all files in the source directory are moved.<p class="paragraph"/>To ensure moving files does not accidentally overwrite any existing files in the destination directory, all moved files are created as new versions in the destination directory.<p class="paragraph"/><strong class="bold">Important:</strong><p class="paragraph"/>This call will only move files that are owned by a single author to the destination directory. If a repository-managed file in the source directory has multiple authors, as result of collaboration using the <a href="../guide/single.html#repositoryfilegrant" class="guide">/r/repository/file/grant</a> call, the file will not be moved to the destination directory and a warning to that affect will be indicated in the response markup.<p class="paragraph"/>
+<strong class="bold">HTTP Method</strong><p class="paragraph"/>POST<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>directory - specifies the name of the source  <em class="italic">user</em>  directory</li>
+<li>destination - specifies the name of the destination  <em class="italic">user</em>  directory</li>
+<li>filename - (optional) comma-separated list of filenames to be moved. If omitted, all files in the source directory are moved</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+directory=root
+destination=samples</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/repository/directory/move"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"33FD71038423B94D52808244C24B1737"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/repository/directory/move<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>33FD71038423B94D52808244C24B1737<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div><p class="paragraph"/>
+
+
+<h2 id="repositorydirectoryupdate">8.1.6 /r/repository/directory/update</h2>
+This call updates repository-managed file access controls by directory.<p class="paragraph"/>If the  <em class="italic">filename</em>  parameter is specified, only those files indicated on that parameter are updated. Otherwise, all files in the source directory are updated.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>POST<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>directory - specifies the name of the  <em class="italic">user</em>  directory,  <em class="italic">root</em>  or  <em class="italic">custom</em> </li>
+<li>filename - (optional) comma-separated list of filenames to be updated. If omitted, all files in the source directory are updated</li>
+<li>restricted - (optional) comma-separated list of role names, making files visible to  <em class="italic">authenticated</em>  users with these roles</li>
+<li>shared - (optional) if true, files are  <em class="italic">shared</em>  and visible to  <em class="italic">authenticated</em>  users</li>
+<li>published - (optional) if true, files are  <em class="italic">published</em>  and visible to  <em class="italic">authenticated</em>  and  <em class="italic">anonymous</em>  users</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+directory=demo
+shared=<span class="java&#45;keyword">true</span></pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/repository/directory/update"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"33FD71038423B94D52808244C24B1737"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/repository/directory/update<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>33FD71038423B94D52808244C24B1737<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div><p class="paragraph"/>
+
+
+<h2 id="repositorydirectoryarchive">8.1.7 /r/repository/directory/archive</h2>
+This call archives one or more repository-managed files from a source  <em class="italic">user</em>  directory ( <em class="italic">root</em>  or  <em class="italic">custom</em> ) to an  <em class="italic">archive</em>  directory.<p class="paragraph"/>If the value of the  <em class="italic">archive</em>  parameter indicates an existing  <em class="italic">archive</em>  directory then the files in the source directory are added to the existing archive. Otherwise, a new  <em class="italic">archive</em>  directory is automatically created on behalf of the caller.  <em class="italic">Archived</em>  directories automatically have a  <em class="italic">.archive</em>  postfix appended to their name if it is not supplied on the  <em class="italic">archive</em>  parameter value.<p class="paragraph"/>If all of the files in the source directory are successfully archived, the source directory is automatically deleted from the repository. If the source directory was  <em class="italic">root</em> , an empty  <em class="italic">root</em>  directory is preserved. If any of the files in the source directory are skipped or can not be archived (see following note), those files and the source directory are preserved.<p class="paragraph"/><strong class="bold">Important:</strong><p class="paragraph"/>This call will only archive files that are owned by a single author to the destination directory. If a repository-managed file in the source directory has multiple authors, as a result of collaboration using the <a href="../guide/single.html#repositoryfilegrant" class="guide">/r/repository/file/grant</a> call, the file will not be archived to the destination directory and a warning to that affect will be indicated in the response markup.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>POST<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>directory - specifies the name of the  <em class="italic">user</em>  directory to be archived,  <em class="italic">root</em>  or  <em class="italic">custom</em> </li>
+<li>archive - specifies the target name for the archived directory. If omitted, a .archive extension is automatically added</li>
+<li>filename - (optional) comma-separated list of filenames to be archived. If omitted all files in the source directory are archived</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+directory=example
+archive=savedExamples</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"33FD71038423B94D52808244C24B1737"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/repository/directory/archive"</span>,
+            <span class="java&#45;quote">"repository"</span>: &#123;
+                <span class="java&#45;quote">"directory"</span>: &#123;
+                    <span class="java&#45;quote">"directory"</span>: <span class="java&#45;quote">"savedExamples.archive"</span>,
+                    <span class="java&#45;quote">"owner"</span>: <span class="java&#45;quote">"george"</span>
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/repository/directory/archive<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>33FD71038423B94D52808244C24B1737<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+    <span class="xml&#45;tag">&#60;repository&#62;</span>
+      <span class="xml&#45;tag">&#60;directory&#62;</span>
+        <span class="xml&#45;tag">&#60;directory&#62;</span>savedExamples.archive<span class="xml&#45;tag">&#60;/directory&#62;</span>
+        <span class="xml&#45;tag">&#60;owner&#62;</span>george<span class="xml&#45;tag">&#60;/owner&#62;</span>
+      <span class="xml&#45;tag">&#60;/directory&#62;</span>
+    <span class="xml&#45;tag">&#60;/repository&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div><p class="paragraph"/>
+
+
+<h2 id="repositorydirectoryupload">8.1.8 /r/repository/directory/upload</h2>
+This call uploads a set of files in a zip archive into an existing repository-managed  <em class="italic">user</em>  directory ( <em class="italic">root</em>  ,  <em class="italic">custom</em>  or  <em class="italic">archived</em> ).<p class="paragraph"/>
+<strong class="bold">HTTP Method</strong><p class="paragraph"/>POST<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>file - ...zip archive file content...</li>
+<li>directory - specifies the name of the  <em class="italic">user</em>  directory into which the files are to be uploaded</li>
+<li>descr - (optional) specifies a description to associate with the uploaded file</li>
+<li>tags - (optional) specifies tag words to associate with the repository file</li>
+<li>restricted - (optional) comma-separated list of role names, which makes the file visible to  <em class="italic">authenticated</em>  users with these roles</li>
+<li>shared - (optional) if true, the file will be  <em class="italic">shared</em>  which makes the file visible to  <em class="italic">authenticated</em>  users</li>
+<li>published - (optional) if true, the file will be  <em class="italic">published</em>  which makes the file visible to  <em class="italic">authenticated</em>  and  <em class="italic">anonymous</em>  users</li>
+<li>newversion – (optional) if true, the repository will create new version rather than overwrite</li>
+<li>newversionmsg – (optional) if newversion is true, message to associate with new version</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+file=...file content&#8230;
+directory=demo
+newversion=<span class="java&#45;keyword">true</span>
+newversionmsg=File created on repository directory upload.</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/repository/directory/upload"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"33FD71038423B94D52808244C24B1737"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/repository/directory/upload<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>33FD71038423B94D52808244C24B1737<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div><p class="paragraph"/>
+
+
+<h2 id="repositorydirectorydownload">8.1.9 /r/repository/directory/download</h2>
+This call downloads one or more repository-managed files from a directory in the repository. The response type on this call is a zip archive file.<p class="paragraph"/>If the  <em class="italic">filename</em>  parameter is specified, only those files indicated on that parameter are downloaded. Otherwise, all files in the source directory are downloaded.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>GET<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>directory - specifies the name of the  <em class="italic">user</em>  directory to be downloaded</li>
+<li>filename - (optional) comma-separated list of filenames to be copied. If omitted, all files in the source directory are copied.</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json</pre></div><p class="paragraph"/><strong class="bold">Response</strong><p class="paragraph"/>Content-Type: application/zip<p class="paragraph"/>
+
+
+<h2 id="repositorydirectorydelete">8.1.10 /r/repository/directory/delete</h2>
+This call deletes a repository-managed  <em class="italic">user</em>  directory ( <em class="italic">root</em> ,  <em class="italic">custom</em>  or  <em class="italic">archived</em> ).<p class="paragraph"/>When deleting a  <em class="italic">user</em>  directory, all files in the directory are automatically deleted along with the directory. If the target directory is  <em class="italic">root</em> , an empty  <em class="italic">root</em>  directory is preserved.<p class="paragraph"/><p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>POST<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>directory - specifies the name of the  <em class="italic">user</em>  directory to be deleted</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+directory=demo</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/repository/directory/delete"</span>
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"33FD71038423B94D52808244C24B1737"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/repository/directory/delete<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>33FD71038423B94D52808244C24B1737<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div><p class="paragraph"/>
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../../guide/workingjobs.html">&lt;&lt; <strong>7</strong><span>Working with the Job APIs</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../../guide/workingeventstream.html"><strong>9</strong><span>Working with the Event Stream API</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    Copyright (c) 2009-2016 Microsoft Corporation
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

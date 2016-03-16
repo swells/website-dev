@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="index.xml" data-mc-path-to-help-system="../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-toc-path="">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" />
+        <link href="../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" />
+        <link href="../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" /><title>About File Properties</title>
+        <link href="Resources/Stylesheets/Styles.css" rel="stylesheet" type="text/css" />
+        <script src="../Resources/Scripts/custom.modernizr.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/foundation.min.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/plugins.min.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/require.min.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/require.config.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkTop"><a href="../index.html#e-file-properties.htm">Open topic with navigation</a>
+        </p>
+        <h1>About File Properties</h1>
+        <p>Each repository-managed file has a set of file properties.  While the following file properties are available for each version of a file in the <span class="MyVariablesrepo">Repository Manager</span>, only the <i>Latest</i> version of a file can be edited by its owners. </p>
+        <p>File properties can be broken down into three categories: basic file properties, ownership properties, and access control properties.</p>
+        <ol>
+            <li style="margin-top: 10px;" value="1"><b>Basic file properties</b> that identify the file, which are:<ul><li class="padded" value="1"><span class="screen">Name</span>. The path and name of the file. This name was defined when it was created and is not editable.</li><li class="padded" value="2"><span class="screen">Keywords</span>. Words used to tag a file. </li><li class="padded" value="3"><span class="screen">Description</span>. An optional annotation that describes this particular version of the file. This description can make it easier to identify the file in the Files list and useful to developers when they are trying to learn about the file.</li><li class="padded" value="4"><span class="screen">Version</span>. The version ID, latest modified date for that version, the user that initiated that version, and any comment specific to that version.<br /></li></ul></li>
+            <li value="2"><a name="AccessRights"></a><b>Access Rights properties</b> that allow a file owner to determine how a file is deployed by controlling who can access or interact with the file. Script files are deployed for execution. All other files, such as models and data files, are deployed for usage and download.  <ul><li class="padded" value="1"><span class="screen">Private</span> allows only the file owners to see the file. And in the case of scripts, only the owner(s) can execute the script on the API.
+</li><li class="padded" value="2"><span class="screen">Restricted</span> constrains access to the file using roles. By associating one or more roles with a file, you can constrain access and allow only those users who were granted at least one of the associated roles the ability to view the file in the <span class="MyVariablesrepo">Repository Manager</span> and on the API. And, in the case of scripts, execute that script on the API. For example, if you associate a custom role called <i>Marketing Dept</i> with your script, then all users with the <i>Marketing Dept</i> role can access that script. If none of the existing roles fit your needs, the <span class="MyVariablesprod">DeployR</span> administrator can create a new custom role for this purpose. If you choose this access right, you must enter one or more role(s).</li><li class="padded" value="3"><span class="screen">Shared</span> allows authenticated users to view the file in the <span class="MyVariablesrepo">Repository Manager</span> and on the API. And, in the case of scripts, execute that script on the API. </li><li class="padded" value="4"><span class="screen">Public</span> allows both authenticated users and anonymous users to view the file on the API. And, in the case of scripts, execute that script on the API. We recommend that you use careful consideration before exposing an R script to truly anonymous users. Note that you can only view the contents of R scripts in the <span class="MyVariablesrepo">Repository Manager</span> interface.</li></ul></li>
+            <li value="3"><b>Ownership properties</b> that support collaborative development. The <span class="screen">Owners</span> field lists the owners that can collaborate on that particular version of a file. You can <a href="e-file-properties-owners.htm">add or remove owners</a> to the Latest version of your file. Adding an owner does more than just allow a user to view a file or execute a script; it also allows that new owner to edit the file's content as well as add or remove owners from the file. If your objective is to permit other users and/or applications to execute a script, we recommend setting the appropriate access rights  as a means of controlling that access. In general, we do not recommend having multiple owners when a file is in production. </li>
+        </ol>
+        <p><span class="Note">Note:</span>&#160;Only a file's owners can <a href="e-file-properties-edit.htm">edit its file properties</a>. Changes are saved automatically.</p>
+        <p>&#160;</p>
+        <p><a href="javascript:void(0);" class="MCHelpControl MCHelpControl-Related relatedTopics" data-mc-topics="About DeployR's Repository Manager|a-introduction.htm||Adding and Removing Owners|e-file-properties-owners.htm||Deleting Files|c-file-delete.htm||Editing File Properties|e-file-properties-edit.htm||Sharing Files with Others|c-file-share.htm||Working with Directories|b-dir-intro.htm||Working with Files|c-file-intro.htm"><span class="MCHelpControl-RelatedHotSpot_"><img class="MCHelpControl_Image_Icon" src="../Skins/Default/Stylesheets/Images/transparent.gif" height="16" width="16" alt="Related Topics Icon" />Related Topics</span></a>
+        </p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+    </body>
+</html>

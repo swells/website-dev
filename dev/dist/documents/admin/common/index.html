@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="DeployR - Simple R analytics integration for application developers.">
+<meta name="keywords" content="R,Simple,DeployR,Java,JavaScript,.NET,Statistics,Big Data">
+<meta name="author" content="Microsoft Corporation">
+<meta name="google-site-verification" content="BQWjliQil8coeYFDfd-nee7j5GDJ0p-6lU4abeJiAZU">
+
+<!--<time itemprop="buildDate" datetime="Wednesday, March 16th, 2016, 9:47:06 AM PDT"></time>-->
+
+<title>
+  DeployR &middot; Common DeployR Administration Tasks
+</title>
+
+<!-- Favicons -->
+<link rel="shortcut icon" href="../../../assets/img/favicon.png" type="image/png" >
+<link rel="icon" href="../../../assets/img/favicon.png" type="image/png">
+
+<!-- Bootstrap styles -->
+<link rel="stylesheet" href="../../../assets/css/vendor/bootstrap/bootstrap.min.css">
+
+<!-- Documentation extras -->
+<link href="../../../assets/css/github.css" rel="stylesheet">
+
+<!-- Glyphicons -->
+<link rel="stylesheet" href="../../../assets/css/vendor/glyphicons/glyphicons.min.css">
+<link rel="stylesheet" href="../../../assets/css/vendor/glyphicons/filetypes.min.css">
+<link rel="stylesheet" href="../../../assets/css/vendor/glyphicons/social.min.css">
+
+<!-- Google Webfonts -->
+<link href="//fonts.googleapis.com/css?family=Open+Sans:400,700,600" rel="stylesheet" type="text/css">
+
+<!-- LayerSlider styles -->
+<link rel="stylesheet" href="../../../assets/css/vendor/layerslider/layerslider.min.css" type="text/css">
+
+<!-- Grove Styles (switch for different color schemes, e.g. "styles-cleanblue.css") -->
+<link rel="stylesheet" href="../../../assets/css/styles-blue.css" id="grove-styles">
+
+<!-- Site Styles -->
+<link href="../../../assets/css/site.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <link rel="stylesheet" href="../../../assets/css/ie8.css">        
+  <script src="../../../assets/js/vendor/google/html5-3.6-respond-1.1.0.min.js"></script>
+<![endif]-->
+
+<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../../assets/js/vendor/jquery/jquery-1.9.1.min.js"><\/script>')</script>
+<!-- jQuery with jQuery Easing, and jQuery Transit JS -->
+     
+<!-- LayerSlider from Kreatura Media with Transitions -->
+<script src="../../../assets/js/vendor/layerslider/greensock.js" type="text/javascript"></script>
+<script src="../../../assets/js/vendor/layerslider/layerslider.transitions.js" type="text/javascript"></script>
+<script src="../../../assets/js/vendor/layerslider/layerslider.kreaturamedia.jquery.js" type="text/javascript"></script>
+
+<!-- Grove Layerslider initiation script -->
+<script src="../../../assets/js/grove-slider.js" type="text/javascript"></script>
+
+<!-- GA for DeployR-site -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-6984166-13', 'auto');
+  ga('send', 'pageview');
+</script>
+  </head>
+  <body data-spy="scroll" data-target="#sidenav">
+    <a class="sr-only" href="#content">Skip to main content</a>
+
+    <!-- master nav -->
+    <header>
+   <nav class="navbar navbar-default grove-navbar" role="navigation">
+      <div class="container">
+         <div class="navbar-header">
+            <a href="#" class="grove-toggle" data-toggle="collapse" data-target=".grove-nav">   
+            <i class="glyphicons show_lines"></i>  
+            </a>
+            <a href="/" class="navbar-brand">
+            <img src="../../../assets/img/rLogo.png" alt="DeployR"> DeployR
+            </a>
+         </div>
+         <div class="collapse navbar-collapse grove-nav">
+            <ul class="nav navbar-nav">
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Data Scientists <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/data-scientist">Getting Started</a></li>
+                <!--<li><a href="#">Learn-by-Example Tutorial</a></li>-->
+                     <li><a href="/documents/dev/scientist-portable-code">Portable R Code Guide</a></li>
+                     <li><a href="/documents/help/repo-man">Repository Manager Help</a></li>
+                     <li><a href="/documents/getting-started/data-scientist#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Application Developers <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/application-developer">Getting Started</a></li>
+                     <!--<li><a href="#">Learn-by-Example Tutorial</a></li>-->
+                     <li><a href="/documents/dev/rbroker">RBroker Framework Tutorial</a></li>
+                     <li><a href="/documents/dev/clientlib">Client Library Tutorial</a></li>
+                     <li><a href="/documents/dev/api-doc">API Reference Guide</a></li>
+                     <li><a href="/docanddown">Library Downloads</a></li>
+                     <li><a href="/documents/getting-started/application-developer/#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Administrators <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/administrator">Getting Started</a></li>
+                     <li><a href="/documents/admin/install">Installation & Configuration</a></li>
+                     <li><a href="/documents/admin/security">Security</a></li>
+                     <li><a href="/documents/admin/r-package-mgmt">R Package Management</a></li>
+                     <li><a href="/documents/help/admin-console">Administration Console Help</a></li>
+                     <li><a href="/documents/admin/troubleshoot">Troubleshooting</a></li>
+                     <li><a href="/documents/getting-started/administrator/#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">
+                  Community <b class="caret"></b>
+                  </a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="http://go.microsoft.com/fwlink/?LinkID=708535" target="_blank">Forum / Discussion Group</a></li>
+                     <li><a href="/faq">FAQs</a></li>
+                  </ul>
+               </li>
+              <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Download<b class="caret"></b></a>            
+                  <ul class="dropdown-menu pull-right">   
+                    <li><a href="/download">Download DeployR</a></li>
+                    <li><a href="/documents/admin/install">Install DeployR</a></li>
+                    <li><a href="/releases/">Release History</a></li>
+                  </ul>
+            </ul>
+         </div>
+         <!-- /.navbar-collapse -->
+      </div>
+   </nav>
+</header>
+
+
+    <!-- page title -->
+    <div class="widewrapper pagetitle strong-highlight">
+   <div class="container">
+      <h1>Common DeployR Administration Tasks <small></small></h1>
+      <span class="product-version">
+         Version 8.1.0
+         
+      </span>
+   </div>
+</div>
+  
+    <div class="widewrapper sf-wrapper">
+      <div class="container content" role="main">
+        <div>
+          
+<div class="row"><div class="col-md-3" id="sidenav"><div class="bs-sidebar hidden-print hidden-xs hidden-sm" role="complementary"><ul class="nav bs-sidenav"><li class="active"><a href="#server">Starting and Stopping DeployR</a><ul class="nav"></ul></li><li><a href="#logs">Inspecting Server Logs</a><ul class="nav"></ul></li><li><a href="#data">Backing Up and Restoring Data</a><ul class="nav"><li><a class="toc-section-0" href="#backupdata">Backing Up Database Data</a></li><li><a class="toc-section-0" href="#restoredata">Restoring Database Data</a></li><li><a class="toc-section-0" href="#db-reset">Reinitialize the Database</a></li></ul></li><li><a href="#ports">Opening DeployR Ports</a><ul class="nav"></ul></li></ul><div class="related"><h3 id="more-information">More Information</h3>
+<ul>
+<li><a href="/documents/help/admin-console/">Administration Console Help</a></li>
+<li><a href="/documents/admin/troubleshoot">Diagnostics &amp; Troubleshooting</a></li>
+<li><a href="/documents/admin/install/#after">DeployR Configuration</a></li>
+</ul>
+</div></div></div><div class="col-md-9" role="main"><div class="container-fluid content doc-content"><h1 id="server">Starting and Stopping DeployR</h1>
+
+<h3 id="starting-deployr-services">Starting DeployR Services</h3>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-EkTQTOzpe-0" data-toggle="tab" data-type="">Linux</a></li><li class=""><a href="#tab-EkTQTOzpe-1" data-toggle="tab" data-type="">Windows</a></li><li class=""><a href="#tab-EkTQTOzpe-2" data-toggle="tab" data-type="">Mac OS X</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-EkTQTOzpe-0"><p>
+To start all DeployR-related services on the main server (not nodes) at once, type the following command:</p>
+<pre><code>/home/deployr-user/deployr/8.1.0/startAll.sh</code></pre>
+<p>To start the DeployR-related services individually on the main server (not nodes), type the following commands:</p>
+<pre><code>/home/deployr-user/deployr/8.1.0/tomcat/tomcat7.sh start
+/home/deployr-user/deployr/8.1.0/rserve/rserve.sh start
+/home/deployr-user/deployr/8.1.0/mongo/mongod.sh start</code></pre>
+<p></p></div><div class="tab-pane" id="tab-EkTQTOzpe-1"><p>
+&nbsp;
+At the DOS command prompt, type:</p>
+<pre><code>net start Apache-Tomcat-for-DeployR-8.1
+net start RServe8.0
+net start MongoDB-DeployR-8.1</code></pre>
+<p></p></div><div class="tab-pane" id="tab-EkTQTOzpe-2"><p>
+To start all DeployR-related services on the main server (not nodes) at once, type the following command:</p>
+<pre><code>/Users/deployr-user/deployr/8.1.0/startAll.sh</code></pre>
+<p>To start the DeployR-related services individually on the main server (not nodes), type the following commands:</p>
+<pre><code>/Users/deployr-user/deployr/8.1.0/tomcat/tomcat7.sh start
+/Users/deployr-user/deployr/8.1.0/rserve/rserve.sh start
+/Users/deployr-user/deployr/8.1.0/mongo/mongod.sh start</code></pre>
+<p></p></div></div><p></p>
+<p><p id="stopserver"></p> </p>
+<hr>
+<h3 id="stopping-deployr-services">Stopping DeployR Services</h3>
+<p>To stop DeployR-related services, type the following:</p>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-EkxTQp_Gpg-0" data-toggle="tab" data-type="">Linux</a></li><li class=""><a href="#tab-EkxTQp_Gpg-1" data-toggle="tab" data-type="">Windows</a></li><li class=""><a href="#tab-EkxTQp_Gpg-2" data-toggle="tab" data-type="">Mac OS X</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-EkxTQp_Gpg-0"><p>
+&nbsp;
+To stop all services on the main server (not nodes) at once, type the following command:</p>
+<pre><code>/home/deployr-user/deployr/8.1.0/stopAll.sh</code></pre>
+<p>To stop the services individually on the main server (not nodes), type the following commands:</p>
+<pre><code>/home/deployr-user/deployr/8.1.0/tomcat/tomcat7/bin/shutdown.sh
+/home/deployr-user/deployr/8.1.0/rserve/rserve.sh stop
+/home/deployr-user/deployr/8.1.0/mongo/mongod.sh stop</code></pre>
+<p></p></div><div class="tab-pane" id="tab-EkxTQp_Gpg-1"><p>
+&nbsp;
+At the DOS command prompt, type:</p>
+<pre><code>net stop Apache-Tomcat-for-DeployR-8.1
+net stop RServe8.0
+net stop MongoDB-DeployR-8.1</code></pre>
+<p></p></div><div class="tab-pane" id="tab-EkxTQp_Gpg-2"><p>
+&nbsp;
+To stop all services on the main server (not nodes) at once, type the following command:</p>
+<pre><code>/Users/deployr-user/deployr/8.1.0/stopAll.sh</code></pre>
+<p>To stop the services individually on the main server (not nodes), type the following commands:</p>
+<pre><code>/Users/deployr-user/deployr/8.1.0/tomcat/tomcat7/bin/shutdown.sh
+/Users/deployr-user/deployr/8.1.0/rserve/rserve.sh stop
+/Users/deployr-user/deployr/8.1.0/mongo/mongod.sh stop</code></pre>
+<p></p></div></div><p></p>
+<hr>
+<h1 id="logs">Inspecting Server Logs</h1>
+
+<p>The <code>catalina.out</code> server log file is found at the following location:</p>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-N1-amTdzag-0" data-toggle="tab" data-type="">Linux</a></li><li class=""><a href="#tab-N1-amTdzag-1" data-toggle="tab" data-type="">Windows</a></li><li class=""><a href="#tab-N1-amTdzag-2" data-toggle="tab" data-type="">Mac OS X</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-N1-amTdzag-0"><p></p>
+<pre><code>/home/deployr-user/deployr/8.1.0/tomcat/tomcat7/logs/catalina.out</code></pre>
+<p></p></div><div class="tab-pane" id="tab-N1-amTdzag-1"><p></p>
+<pre><code>C:\Program Files\Microsoft\DeployR\8.1\Apache_Tomcat\logs\catalina.out</code></pre>
+<p></p></div><div class="tab-pane" id="tab-N1-amTdzag-2"><p></p>
+<pre><code>/Users/deployr-user/deployr/8.1.0/tomcat/tomcat7/logs/catalina.out</code></pre>
+<p></p></div></div><p></p>
+<hr>
+<div class="well well-sm"><strong>Note: </strong> <a href="/documents/admin/troubleshoot/#logfiles">Look here </a> for more information on other log files associated with DeployR.</div>
+
+<p>By default, the DeployR server logs at the <code>INFO</code> level, which is 
+appropriate for production environments. The server emits <code>[DEPLOYR-EVENT]</code>
+log statements that provide a permanent record of the following:</p>
+<ol>
+<li>API Call / Response Events</li>
+<li>Authentication Events</li>
+<li>HTTP Session Events</li>
+<li>Grid R Session Events</li>
+</ol>
+<p>Each <code>[DEPLOYR-EVENT]</code> is rendered to the log file in a fixed format, which
+simplifies parsing and searching both manually or within log inspection
+tools. </p>
+<p>The following section describes the different <code>[DEPLOYR-EVENT]</code> that
+can be found in the server log file.</p>
+<h3 id="1-api-call-response-events">1. API Call / Response Events</h3>
+<p>The log file captures the following events related to API calls:</p>
+<ul>
+<li><code>[API-PRE]</code> - denoting the start of an API call including call
+ parameters.</li>
+<li><code>[RESPONSE]</code> - denoting the response generated for the call.</li>
+<li><code>[API-POST]</code> - denoting the end of an API call.</li>
+</ul>
+<p>For example:</p>
+<pre><code>[ INFO 08:29:15:218] ServerFilters DEPLOYR-EVENT[API-PRE][66.193.32.130][0FBAD0638F6BE1A859F3FF65E64FDD80][testuser][/deployr/r/project/create][format:json]
+
+[ INFO 08:29:15:292] ResponseBuilder DEPLOYR-EVENT[RESPONSE][0FBAD0638F6BE1A859F3FF65E64FDD80][deployr:[response:[success:true, call:/r/project/create, httpcookie:0FBAD0638F6BE1A859F3FF65E64FDD80, project:[project:PROJECT-bb21452e-9f4b-490e-9f1d-90c1ac7f9487, name:null, descr:null, longdescr:null, live:true, shared:false, cookie:null, origin:Project original., author:testuser, authors:[testuser], lastmodified:1404044955286]]]]
+
+[ INFO 08:29:15:295] ServerFilters DEPLOYR-EVENT[API-POST][66.193.32.130][0FBAD0638F6BE1A859F3FF65E64FDD80][testuser][/deployr/r/project/create]</code></pre>
+<h3 id="2-authentication-events">2. Authentication Events</h3>
+<p>The log file captures the following events related to user authentications:</p>
+<ul>
+<li><code>[SECURITY][AuthenticationSuccessEvent]</code> - denoting a successful user
+authentication.</li>
+<li><code>[SECURITY][AuthenticationFailureBadCredentialsEvent]</code> - denoting a
+failed user authentication.</li>
+</ul>
+<p>For example:</p>
+<pre><code>[ INFO 08:29:20:296] SecurityEventLogger DEPLOYR-EVENT[SECURITY][AuthenticationSuccessEvent][testuser]
+
+[ INFO 01:52:00:694] SecurityEventLogger DEPLOYR-EVENT[SECURITY][AuthenticationFailureBadCredentialsEvent][testuser]</code></pre>
+<h3 id="3-http-session-events">3. HTTP Session Events</h3>
+<p>The log file captures the following events related to HTTP session
+creation and release:</p>
+<ul>
+<li><code>[HTTP-SESSION]: CREATED</code> - denoting the creation of a HTTP session.</li>
+<li><code>[HTTP-SESSION]: RELEASED</code> - denoting the release of a HTTP session.</li>
+</ul>
+<p>For example:</p>
+<pre><code>[ INFO 01:51:58:967] HttpSessionListener DEPLOYR-EVENT[HTTP-SESSION]: CREATED [E5B10C188FE7DC25EA804CDF932AC85B]
+
+[ INFO 01:53:45:952] HttpSessionListener DEPLOYR-EVENT[HTTP-SESSION]: RELEASED [E5B10C188FE7DC25EA804CDF932AC85B][Mon Jun 30 01:51:58 EDT 2014][Mon Jun 30 01:53:27 EDT 2014][1]</code></pre>
+<h3 id="4-grid-r-session-events">4. Grid R Session Events</h3>
+<p>The log file captures the following events related to R session creation
+and release:</p>
+<ul>
+<li><code>[GRID-SESSION]: CREATED</code> - denoting the creation of an R session on
+the grid.</li>
+<li><code>[GRID-SESSION]: RELEASED</code> - denoting the release of an R session on
+the grid.</li>
+</ul>
+<p>For example:</p>
+<pre><code>[ INFO 08:29:15:287] LiveEngineService DEPLOYR-EVENT[GRID-SESSION]: CREATED LiveToken[E]: [66.193.32.130][0FBAD0638F6BE1A859F3FF65E64FDD80][PROJECT-bb21452e-9f4b-490e-9f1d-90c1ac7f9487][testuser] [Temporary Project false null NODE-6fb4583c-fa25-4854-b8ba-0600c30ec195 DeployR Default Node Authenticated ]
+
+[ INFO 08:29:16:909] LiveEngineService DEPLOYR-EVENT[GRID-SESSION]: RELEASED LiveToken[E]: [66.193.32.130][0FBAD0638F6BE1A859F3FF65E64FDD80][PROJECT-bb21452e-9f4b-490e-9f1d-90c1ac7f9487][testuser] [Temporary Project false projectClose NODE-6fb4583c-fa25-4854-b8ba-0600c30ec195 DeployR Default Node Authenticated ]</code></pre>
+<h3 id="tracing-related-log-events">Tracing Related Log Events</h3>
+<p>Related log events can be traced in a number of ways including but not
+limited to the use of the <code>HTTP session</code> identifier or a DeployR-managed <code>project</code>
+identifier. For example, using the <code>HTTP session</code> identifier makes the tracing of a series of log
+events representing an anonymous execution of a repository-managed R script
+simple as follows.</p>
+<pre><code>[ INFO 06:49:35:859] ServerFilters DEPLOYR-EVENT[API-PRE][180.183.148.137][2DD2302B91770E89333848DBB9505D0A][anonymous][/deployr/r/repository/script/execute][preloadfileversion:, preloadobjectauthor:, storeobject:, preloadfiledirectory:, preloadobjectname:, storefile:, format:json, preloadfileauthor:, version:, preloadobjectdirectory:, preloadfilename:, author:testuser, inputs:{}, storeworkspace:, storedirectory:, directory:root, storepublic:false, filename:Histogram of Auto Sales, graphics:png, robjects:, storenewversion:false, preloadobjectversion:]
+
+[ INFO 06:49:35:936] LiveEngineService DEPLOYR-EVENT[GRID-SESSION]: CREATED LiveToken[E]: [180.183.148.137][2DD2302B91770E89333848DBB9505D0A][STATELESS-8c3e26c7-84a3-4ab7-ab9a-f0e0155f1cf1][anonymous] [Stateless Project false null NODE-6fb4583c-fa25-4854-b8ba-0600c30ec195 DeployR Default Node Anonymous ]
+
+[ INFO 06:49:36:680] LiveEngineService DEPLOYR-EVENT[GRID-SESSION]: RELEASED LiveToken[E]: [180.183.148.137][2DD2302B91770E89333848DBB9505D0A][STATELESS-8c3e26c7-84a3-4ab7-ab9a-f0e0155f1cf1][anonymous] [Stateless Project false null NODE-6fb4583c-fa25-4854-b8ba-0600c30ec195 DeployR Default Node Anonymous ]
+
+[ INFO 06:49:36:714] ResponseBuilder DEPLOYR-EVENT[RESPONSE][2DD2302B91770E89333848DBB9505D0A][deployr:[response:[success:true, call:/r/repository/script/execute, httpcookie:2DD2302B91770E89333848DBB9505D0A, interrupted:false, workspace:[objects:[]], project:[project:STATELESS-8c3e26c7-84a3-4ab7-ab9a-f0e0155f1cf1, name:Project: Autosaved, descr:Autosaved by DeployR., shared:false, longdescr:null, origin:Project original., author:STATELESS, authors:[STATELESS], cookie:null, lastmodified:1404125376681, live:true], repository:[files:[]], execution:[console:     cars trucks suvs, code:, interrupted:false, results:[], artifacts:[[project:STATELESS-8c3e26c7-84a3-4ab7-ab9a-f0e0155f1cf1, category:plot, length:7285, lastmodified:1404125376000, filename:histogram.png, descr:null, type:image/png, url:http://184.106.156.59:8100/deployr/r/repository/script/directory/download/STATELESS-8c3e26c7-84a3-4ab7-ab9a-f0e0155f1cf1/histogram.png]], warnings:[], execution:EXEC-08dc2db6-496b-43fd-a9b8-60abbb6af18e, timeStart:1404125375865, timeCode:176, timeTotal:255, tag:null, actor:anonymous, resultsGenerated:0, resultsAvailable:0]]]]
+
+[ INFO 06:49:36:717] ServerFilters DEPLOYR-EVENT[API-POST][180.183.148.137][2DD2302B91770E89333848DBB9505D0A][anonymous][/deployr/r/repository/script/execute]</code></pre>
+<p>This sample log output captures an <code>/r/repository/script/execute</code> API call,
+originating from <code>180.183.148.137</code>, executed on behalf of an <code>anonymous</code> user,
+on HTTP session <code>2DD2302B91770E89333848DBB9505D0A</code>. The log output also
+indicates the time taken on the call as well as the response data returned on
+call completion.</p>
+<h1 id="data">Backing Up and Restoring Data</h1>
+
+<p>Follow these instructions to <a href="#backupdata">back up</a> and <a href="#restoredata">restore</a> your DeployR data or to <a href="#db-reset">reset the database</a> to its initial post-installation state.</p>
+<h2 id="backupdata">Backing Up Database Data</h2>
+
+<p>Follow these steps to back up the data in the database used by DeployR.</p>
+<ol>
+<li><p>Log into the machine as a user with administrator privileges.</p>
+</li>
+<li><p>Ensure all users are logged out of DeployR. As admin, you can always check the grid activity in the <strong>Grid</strong> tab of the Administration Console.</p>
+</li>
+<li><p>Run the database utility script as follows. </p>
+<p> </p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-V1MTXTdzTl-0" data-toggle="tab" data-type="">Linux / Mac OS X</a></li><li class=""><a href="#tab-V1MTXTdzTl-1" data-toggle="tab" data-type="">Windows</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-V1MTXTdzTl-0"><p></p>
+<p> Type the following at a command prompt:</p>
+<pre><code> cd &lt;8.1.0_Install_Dir&gt;/deployr/tools
+./databaseUtils.sh</code></pre>
+<p> </p></div><div class="tab-pane" id="tab-V1MTXTdzTl-1"><p></p>
+<p> A. Start a command prompt with full administrator permissions using the  <code>Run as Administrator</code> option. </p>
+<p> B. Type the following at a command prompt:</p>
+<pre><code>  cd &lt;8.1.0_Install_Dir&gt;\deployr\tools
+  /databaseUtils.bat</code></pre>
+<p> </p></div></div><p></p>
+<p>  Where <code>&lt;8.1.0_Install_Dir&gt;</code> is the full path to the DeployR 8.1.0 server installation directory.</p>
+</li>
+<li><p>When prompted by the script:</p>
+<ul>
+<li><p>Choose option <code>3</code> to back up the database. </p>
+</li>
+<li><p>Enter the path in which the database backup should be saved. </p>
+</li>
+</ul>
+</li>
+<li><p>Verify that the backup was successful by checking the contents of the directory where you dumped the database.</p>
+</li>
+</ol>
+<h2 id="restoredata">Restoring Database Data</h2>
+
+<p>Follow these steps to restore data into the database used by DeployR. Restoring will purge any data in database before restoring the data found in the database backup.</p>
+<ol>
+<li><p>Ensure all users are logged out of DeployR. As admin, you can always check the grid activity in the <strong>Grid</strong> tab of the Administration Console.</p>
+</li>
+<li><p>Run the database utility script as follows. </p>
+<p> </p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-NJX6Xpufax-0" data-toggle="tab" data-type="">Linux / Mac OS X</a></li><li class=""><a href="#tab-NJX6Xpufax-1" data-toggle="tab" data-type="">Windows</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-NJX6Xpufax-0"><p></p>
+<p> Type the following at a command prompt:</p>
+<pre><code> cd &lt;8.1.0_Install_Dir&gt;/deployr/tools
+./databaseUtils.sh</code></pre>
+<p> </p></div><div class="tab-pane" id="tab-NJX6Xpufax-1"><p></p>
+<p> A. Start a command prompt with full administrator permissions using the  <code>Run as Administrator</code> option. </p>
+<p> B. Type the following at a command prompt:</p>
+<pre><code>  cd &lt;8.1.0_Install_Dir&gt;\deployr\tools
+  /databaseUtils.bat</code></pre>
+<p> </p></div></div><p></p>
+<p>  Where <code>&lt;8.1.0_Install_Dir&gt;</code> is the full path to the DeployR 8.1.0 server installation directory.</p>
+</li>
+<li><p>When prompted by the script:</p>
+<ul>
+<li><p>Choose option <code>4</code> to restore the database. </p>
+</li>
+<li><p>Enter the path to your backup folder. By default, the backup path includes a date stamped folder and ends with the folder <code>deployr</code>.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="db-reset">Reinitialize the Database</h2>
+
+<p>Follow these steps to reinitialize the database used by DeployR. Reinitializing will reset the database to the default post-installation  state.</p>
+<ol>
+<li><p>Ensure all users are logged out of DeployR. As admin, you can always check the grid activity in the <strong>Grid</strong> tab of the Administration Console.</p>
+</li>
+<li><p>Run the database utility script as follows. </p>
+<p> </p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-41E6X6OMTx-0" data-toggle="tab" data-type="">Linux / Mac OS X</a></li><li class=""><a href="#tab-41E6X6OMTx-1" data-toggle="tab" data-type="">Windows</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-41E6X6OMTx-0"><p></p>
+<p> Type the following at a command prompt:</p>
+<pre><code> cd &lt;8.1.0_Install_Dir&gt;/deployr/tools
+./databaseUtils.sh</code></pre>
+<p> </p></div><div class="tab-pane" id="tab-41E6X6OMTx-1"><p></p>
+<p> A. Start a command prompt with full administrator permissions using the  <code>Run as Administrator</code> option. </p>
+<p> B. Type the following at a command prompt:</p>
+<pre><code>  cd &lt;8.1.0_Install_Dir&gt;\deployr\tools
+  /databaseUtils.bat</code></pre>
+<p> </p></div></div><p></p>
+<p>  Where <code>&lt;8.1.0_Install_Dir&gt;</code> is the full path to the DeployR 8.1.0 server installation directory.</p>
+<p>  When prompted by the script:</p>
+</li>
+<li><p>Choose option <code>2</code> to reinitialize the database. </p>
+</li>
+</ol>
+<h1 id="ports">Opening DeployR Ports</h1>
+
+
+</div></div></div>
+        </div>    
+      </div>
+      <div class="push"></div>
+    </div>
+
+    <!-- Footer
+    ================================================== -->
+
+    <footer class="widewrapper footer bs-footer" role="contentinfo">
+  <div class="container">
+    <div class="row footer">
+      <div class="col-sm-3">
+        <h4>Get Started</h4>
+        <ul class="grove-list">
+          <li><a href="/documents/getting-started/about">About DeployR</a></li>
+          <li><a href="/download">Download DeployR</a></li>
+          <li><a href="/documents/admin/install">Install DeployR</a></li>
+          <li><a href="/documents/admin/troubleshoot">Troubleshooting & Diagnostics</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>Develop</h4>
+        <ul class="grove-list">
+          <li><a href="/dev">Get Client Developer Tools</a></li>
+            <li><a href="/docanddown#rbroker">RBroker Framework</a></li>
+          <li><a href="/docanddown#clientlib">API Client Libraries</a></li>
+          <li><a target="_blank" href="/documents/dev/api-doc">API Reference Guide</a></li>
+          <li><a target="_blank" href="/documents/help/repo-man">Repository Manager</a></li>
+         <!-- <li><a href="/docanddown#integration">3rd Party Tool Integration</a></li>-->
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>Manage</h4>
+          <ul class="grove-list">
+            <li><a target="_blank" href="/documents/help/admin-console">Administration Console</a></li>
+            <li><a href="/documents/admin/security">Security Guide</a></li>
+            <li><a href="/documents/admin/throughput">Scale & Throughput</a></li>
+            <li><a href="/documents/admin/highavail">High Availability</a></li>
+            <li><a href="/documents/admin/bigdata">Managing Big Data</a></li>
+          </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>DeployR 8.1.0</h4>
+          <ul class="grove-list">
+            <li><a href="/license">License Information</a></li>
+      	    <li><a href="/documents/admin/whats-new/">What's New in 8.1.0</a></li>
+	          <li><a href="http://go.microsoft.com/fwlink/?LinkID=708535" target="_blank">Join the DeployR Forum</a></li>
+	          <li><a href="/releases/">Release Archives</a></li>
+          </ul>
+         <div><small> &copy; 2015 Microsoft Corporation</small></div>
+      </div>    
+    </div>
+  </div>          
+</footer> 
+
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<script src="../../../assets/js/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="../../../assets/js/vendor/modernizr/modernizr.js"></script>
+<script src="../../../assets/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<!-- Google Analytics (click event)
+================================================== -->
+
+<script>
+   $('.ga-track').on('click', function() {
+      try { 
+        var label = $(this).data('ga') || $(this).text();
+        ga('send', 'event', 'button', 'click', label);
+      } catch (err) {}
+   });
+</script>
+
+<!-- TOC
+================================================= -->
+<script>
+  // back to top
+  setTimeout(function () {
+     var $sideBar = $('.bs-sidebar');
+     if (!$sideBar) { return; }
+     $sideBar.affix({
+     offset: {
+     top: function () {
+        var offsetTop = $sideBar.offset().top
+        var sideBarMargin = parseInt($sideBar.children(0).css('margin-top'), 10)
+        var navOuterHeight = $('.bs-docs-nav').height()
+        return (this.top = offsetTop - navOuterHeight - sideBarMargin)
+      }
+      , bottom: function () {
+        return (this.bottom = $('.bs-footer').outerHeight(true))
+      }
+    }
+    })
+  }, 100)
+</script>
+
+<script>
+  $('.tab-content div').each(function( index ) {
+    if(index === 0) { $(this).addClass('active'); }
+  });
+
+  $('.code-tabs a').click(function (e) {
+  });
+
+</script>
+
+     
+  </body>
+</html>

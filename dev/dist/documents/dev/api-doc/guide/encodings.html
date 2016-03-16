@@ -1,0 +1,1014 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>10 Web Service API Data Encodings 8.0.0</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/architecture.html"><strong>2</strong><span>Web Service API Architecture</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/overview.html"><strong>3</strong><span>Web Service API Overview</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/working.html"><strong>4</strong><span>Working with the Web Service APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/workingusers.html"><strong>5</strong><span>Working with the User APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/workingprojects.html"><strong>6</strong><span>Working with the Project APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/workingjobs.html"><strong>7</strong><span>Working with the Job APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/workingrepository.html"><strong>8</strong><span>Working with the Repository APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/workingeventstream.html"><strong>9</strong><span>Working with the Event Stream API</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/encodings.html"><strong>10</strong><span>Web Service API Data Encodings</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/explorer.html"><strong>11</strong><span>The API Explorer Tool</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/741changehistory.html"><strong>12</strong><span>API Changes in 7.4.1</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/74changehistory.html"><strong>13</strong><span>API Changes in 7.4</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/73changehistory.html"><strong>14</strong><span>API Changes in 7.3</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/72changehistory.html"><strong>15</strong><span>API Changes in 7.2</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/71changehistory.html"><strong>16</strong><span>API Changes in 7.1</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/70changehistory.html"><strong>17</strong><span>API Changes in 7.0</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/62changehistory.html"><strong>18</strong><span>API Changes in 6.2</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        
+    </div>
+    <p>DeployR API</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../guide/workingeventstream.html">&lt;&lt; <strong>9</strong><span>Working with the Event Stream API</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../guide/explorer.html"><strong>11</strong><span>The API Explorer Tool</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>10 Web Service API Data Encodings - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Microsoft Corporation</p>
+
+                    <p><strong>Version:</strong> 8.0.0</p>
+
+                    
+                </div>
+
+                
+
+                
+
+<h1 id="encodings">10 Web Service API Data Encodings</h1>
+DeployR-specific encodings are used to encode R object data for use on the API.<p class="paragraph"/>Encoded object data can be returned from the server in the response markup on the following calls:
+<ul class="star">
+<li><a href="../guide/single.html#projectworkspacelist" class="guide">/r/project/workspace/list</a></li>
+<li><a href="../guide/single.html#projectworkspaceget" class="guide">/r/project/workspace/get</a></li>
+<li><a href="../guide/single.html#projectexecutecode" class="guide">/r/project/execute/code</a></li>
+<li><a href="../guide/single.html#projectexecutescript" class="guide">/r/project/execute/script</a></li>
+<li><a href="../guide/single.html#repositoryscriptexecute" class="guide">/r/repository/script/execute</a></li>
+</ul><p class="paragraph"/>Encoded object data can also be sent to the server as parameter values on the following calls:
+<ul class="star">
+<li><a href="../guide/single.html#projectworkspacepush" class="guide">/r/project/workspace/push</a></li>
+<li><a href="../guide/single.html#projectexecutescript" class="guide">/r/project/execute/script</a></li>
+<li><a href="../guide/single.html#repositoryscriptexecute" class="guide">/r/repository/script/execute</a></li>
+</ul><p class="paragraph"/>Each encoded object is defined by the following properties:
+<ul class="star">
+<li> <em class="italic">name</em>  - the name of the encoded object</li>
+<li> <em class="italic">type</em>  - the DeployR-specific encoding type for the encoded object</li>
+<li> <em class="italic">rclass</em>  - the underlying R class for the encoded object</li>
+<li> <em class="italic">value</em>  - the data encapsulated by the encoded object</li>
+</ul><p class="paragraph"/>When encoded objects are returned from the server in the response markup the purpose of the  <em class="italic">type</em>  property is to indicate to developers how to decode the encapsulated data for use within a client application. For example, an encoded vector object returned on the <a href="../guide/single.html#projectworkspaceget" class="guide">/r/project/workspace/get</a> call will appear in the response markup as follows:<p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"sample_vector"</span>,
+    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"vector"</span>,
+    <span class="java&#45;quote">"rclass"</span>: <span class="java&#45;quote">"character"</span>,
+    <span class="java&#45;quote">"value"</span>: &#91;
+        <span class="java&#45;quote">"a"</span>,
+        <span class="java&#45;quote">"b"</span>,
+        <span class="java&#45;quote">"c"</span>
+    &#93;
+&#125;</pre></div><p class="paragraph"/>In the preceding example, the encoded vector, named  <em class="italic">sample_vector</em> , indicates a  <em class="italic">type</em>  property with a value of  <em class="italic">vector</em> . This informs the client application that the  <em class="italic">value</em>  property on this encoded object will contain an array of values. Those values will match the values found in the vector object in the workspace.<p class="paragraph"/>When encoded objects are sent as parameters to the server, the client must name each object, and then provide values for the  <em class="italic">type</em>  and  <em class="italic">value</em>  properties for each of those objects. The  <em class="italic">rclass</em>  property is determined automatically by the server and need not be specified by the client application. For example, passing both an encoded logical and an encoded matrix as  <em class="italic">inputs</em>  on the <a href="../guide/single.html#projectworkspacepush" class="guide">/r/project/workspace/push</a> call is achieved as follows:<p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"sample_logical"</span> : &#123;
+        <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"primitive"</span>,
+        <span class="java&#45;quote">"value"</span> : <span class="java&#45;keyword">true</span>
+    &#125;,
+    <span class="java&#45;quote">"sample_matrix"</span>: &#123;
+        <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"matrix"</span>,
+        <span class="java&#45;quote">"value"</span>: &#91;
+            &#91;
+                1,
+                3,
+                12
+            &#93;,
+            &#91;
+                2,
+                11,
+                13
+            &#93;
+        &#93;
+    &#125;
+&#125;</pre></div><p class="paragraph"/>Note: In the case of  <em class="italic">primitive</em>  encodings the  <em class="italic">type</em>  property is optional and can therefore be omitted from the markup being sent to the server.<p class="paragraph"/><h4>DeployR Encoding Types</h4><p class="paragraph"/>The complete list of supported DeployR-encoding types is shown here. As indicated, these encodings can encode a wide range of different classes of R object:
+<ul class="star">
+<li> <em class="italic"><strong class="bold">primitive</strong></em>  type encodes R objects with class: character, integer, numeric and logical.</li>
+<li> <em class="italic"><strong class="bold">date</strong></em>  type encodes R objects with class: Date, POSIXct and POSIXlt.</li>
+<li> <em class="italic"><strong class="bold">vector</strong></em>  type encodes R objects with class: vector.</li>
+<li> <em class="italic"><strong class="bold">matrix</strong></em>  type encodes R objects with class: matrix.</li>
+<li> <em class="italic"><strong class="bold">factor</strong></em>  type encodes R objects with class: ordered and factor.</li>
+<li> <em class="italic"><strong class="bold">list</strong></em>  type encodes R objects with class: list.</li>
+<li> <em class="italic"><strong class="bold">dataframe</strong></em>  type encodes R objects with class: data.frame.</li>
+</ul><p class="paragraph"/><h4>Sample DeployR Encodings</h4><p class="paragraph"/>The following R code is provided for demonstration purposes. The code creates a wide range of R objects. After the following code, you will find sample JSON and XML response markup that demonstrates how each of the objects generated here is encoded on the API.<p class="paragraph"/><div class="code"><pre>&#35; primitive character
+x_character &#60;&#45; <span class="java&#45;quote">"c"</span><p class="paragraph"/>&#35; primitive integer
+x_integer &#60;&#45; as.integer(10)<p class="paragraph"/>&#35; primitive numeric (<span class="java&#45;object">double</span>)
+x_numeric &#60;&#45; 5<p class="paragraph"/>&#35; logical
+x_logical &#60;&#45; T<p class="paragraph"/>&#35; Date
+x_date &#60;&#45; Sys.Date()<p class="paragraph"/>&#35; <span class="java&#45;quote">"POSIXct"</span> <span class="java&#45;quote">"POSIXt"</span>
+x_posixct &#60;&#45; Sys.time()<p class="paragraph"/>&#35; vector (character)
+x_character_vector &#60;&#45; c(<span class="java&#45;quote">"a"</span>,<span class="java&#45;quote">"b"</span>,<span class="java&#45;quote">"c"</span>)<p class="paragraph"/>&#35; vector (integer)
+x_integer_vector &#60;&#45; as.integer(c(10:25))<p class="paragraph"/>&#35; vector (numeric)
+x_numeric_vector &#60;&#45; as.<span class="java&#45;object">double</span>(c(10:25))<p class="paragraph"/>&#35; matrix
+x_matrix &#60;&#45;  matrix(c(1,2,3, 11,12,13), nrow = 2, ncol=3)<p class="paragraph"/>&#35; ordered factor
+x_ordered_factor &#60;&#45; ordered(substring(<span class="java&#45;quote">"statistics"</span>, 1:10, 1:10), levels=c(<span class="java&#45;quote">"s"</span>,<span class="java&#45;quote">"t"</span>,<span class="java&#45;quote">"a"</span>,<span class="java&#45;quote">"c"</span>,<span class="java&#45;quote">"i"</span>))<p class="paragraph"/>&#35; unordered factor
+x_unordered_factor &#60;&#45; factor(substring(<span class="java&#45;quote">"statistics"</span>, 1:10, 1:10), levels=c(<span class="java&#45;quote">"s"</span>,<span class="java&#45;quote">"t"</span>,<span class="java&#45;quote">"a"</span>,<span class="java&#45;quote">"c"</span>,<span class="java&#45;quote">"i"</span>))<p class="paragraph"/>&#35;list
+x_list &#60;&#45; list(c(10:15),c(40:45))<p class="paragraph"/>&#35; data frame
+x_dataframe &#60;&#45; data.frame(c(10:15),c(40:45))</pre></div><p class="paragraph"/><h4>JSON Encodings on API Response Markup</h4><p class="paragraph"/>The following response markup contains annotations that describe each of the supported DeployR R object encodings:<p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"workspace"</span>: &#123;
+	      <span class="java&#45;quote">"objects"</span> : &#91;<p class="paragraph"/>		//
+		//  <em class="italic">DeployR Primitive Encodings</em> 
+		//<p class="paragraph"/>                &#123;
+                    <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"x_character"</span>,
+                    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"primitive"</span>,
+                    <span class="java&#45;quote">"rclass"</span>: <span class="java&#45;quote">"character"</span>,
+                    <span class="java&#45;quote">"value"</span>: <span class="java&#45;quote">"c"</span>
+                &#125;,<p class="paragraph"/>                &#123;
+                    <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"x_integer"</span>,
+                    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"primitive"</span>,
+                    <span class="java&#45;quote">"rclass"</span>: <span class="java&#45;quote">"integer"</span>,
+                    <span class="java&#45;quote">"value"</span>: 10
+                &#125;,<p class="paragraph"/>                &#123;
+                    <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"x_numeric"</span>,
+                    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"primitive"</span>,
+                    <span class="java&#45;quote">"rclass"</span>: <span class="java&#45;quote">"numeric"</span>,
+                    <span class="java&#45;quote">"value"</span>: 5
+                &#125;,<p class="paragraph"/>                &#123;
+                    <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"x_logical"</span>,
+                    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"primitive"</span>,
+                    <span class="java&#45;quote">"rclass"</span>: <span class="java&#45;quote">"logical"</span>,
+                    <span class="java&#45;quote">"value"</span>: <span class="java&#45;keyword">true</span>
+                &#125;,<p class="paragraph"/>
+		//
+		//  <em class="italic">DeployR Date Encodings</em> 
+		//<p class="paragraph"/>                &#123;
+                    <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"x_date"</span>,
+                    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"date"</span>,
+                    <span class="java&#45;quote">"rclass"</span>: <span class="java&#45;quote">"date"</span>,
+                    <span class="java&#45;quote">"value"</span>: <span class="java&#45;quote">"2011&#45;10&#45;04"</span>,
+                    <span class="java&#45;quote">"format"</span>: <span class="java&#45;quote">"yyyy&#45;MM&#45;dd"</span>
+                &#125;,<p class="paragraph"/>                &#123;
+                    <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"x_posixct"</span>,
+                    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"date"</span>,
+                    <span class="java&#45;quote">"rclass"</span>: <span class="java&#45;quote">"POSIXct"</span>,
+                    <span class="java&#45;quote">"value"</span>: <span class="java&#45;quote">"2011&#45;10&#45;05"</span>,
+                    <span class="java&#45;quote">"format"</span>: <span class="java&#45;quote">"yyyy&#45;MM&#45;dd HH:mm:ss Z"</span>
+                &#125;,<p class="paragraph"/>
+		//
+		//  <em class="italic">DeployR Vector Encodings</em> 
+		//<p class="paragraph"/>                &#123;
+                    <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"x_character_vector"</span>,
+                    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"vector"</span>,
+                    <span class="java&#45;quote">"rclass"</span>: <span class="java&#45;quote">"character"</span>,
+                    <span class="java&#45;quote">"value"</span>: &#91;
+                        <span class="java&#45;quote">"a"</span>,
+                        <span class="java&#45;quote">"b"</span>,
+                        <span class="java&#45;quote">"c"</span>
+                    &#93;
+                &#125;,<p class="paragraph"/>                &#123;
+                    <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"x_integer_vector"</span>,
+                    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"vector"</span>,
+                    <span class="java&#45;quote">"rclass"</span>: <span class="java&#45;quote">"integer"</span>,
+                    <span class="java&#45;quote">"value"</span>: &#91;
+                        10,
+                        11,
+                        12,
+                        13,
+                        14,
+                        15
+                    &#93;
+                &#125;,<p class="paragraph"/>                &#123;
+                    <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"x_numeric_vector"</span>,
+                    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"vector"</span>,
+                    <span class="java&#45;quote">"rclass"</span>: <span class="java&#45;quote">"numeric"</span>,
+                    <span class="java&#45;quote">"value"</span>: &#91;
+                        10,
+                        11,
+                        12,
+                        13,
+                        14,
+                        15
+                    &#93;
+                &#125;,<p class="paragraph"/>
+		//
+		//  <em class="italic">DeployR Matrix Encodings</em> 
+		//<p class="paragraph"/>                &#123;
+                    <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"x_matrix"</span>,
+                    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"matrix"</span>,
+                    <span class="java&#45;quote">"rclass"</span>: <span class="java&#45;quote">"matrix"</span>,
+                    <span class="java&#45;quote">"value"</span>: &#91;
+                        &#91;
+                            1,
+                            3,
+                            12
+                        &#93;,
+                        &#91;
+                            2,
+                            11,
+                            13
+                        &#93;
+                    &#93;
+                &#125;,<p class="paragraph"/>
+		//
+		//  <em class="italic">DeployR Factor Encodings</em> 
+		//<p class="paragraph"/>                &#123;
+                    <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"x_ordered_factor"</span>,
+                    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"factor"</span>,
+                    <span class="java&#45;quote">"rclass"</span>: <span class="java&#45;quote">"ordered"</span>,
+                    <span class="java&#45;quote">"value"</span>: &#91;
+                        <span class="java&#45;quote">"s"</span>,
+                        <span class="java&#45;quote">"t"</span>,
+                        <span class="java&#45;quote">"a"</span>,
+                        <span class="java&#45;quote">"t"</span>,
+                        <span class="java&#45;quote">"i"</span>,
+                        <span class="java&#45;quote">"s"</span>,
+                        <span class="java&#45;quote">"t"</span>,
+                        <span class="java&#45;quote">"i"</span>,
+                        <span class="java&#45;quote">"c"</span>,
+                        <span class="java&#45;quote">"s"</span>
+                    &#93;,
+                    <span class="java&#45;quote">"labels"</span>: &#91;
+                        <span class="java&#45;quote">"s"</span>,
+                        <span class="java&#45;quote">"t"</span>,
+                        <span class="java&#45;quote">"a"</span>,
+                        <span class="java&#45;quote">"c"</span>,
+                        <span class="java&#45;quote">"i"</span>
+                    &#93;,
+                    <span class="java&#45;quote">"ordered"</span>: <span class="java&#45;keyword">true</span>
+                &#125;,<p class="paragraph"/>                &#123;
+                    <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"x_unordered_factor"</span>,
+                    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"factor"</span>,
+                    <span class="java&#45;quote">"rclass"</span>: <span class="java&#45;quote">"factor"</span>,
+                    <span class="java&#45;quote">"value"</span>: &#91;
+                        <span class="java&#45;quote">"s"</span>,
+                        <span class="java&#45;quote">"t"</span>,
+                        <span class="java&#45;quote">"a"</span>,
+                        <span class="java&#45;quote">"t"</span>,
+                        <span class="java&#45;quote">"i"</span>,
+                        <span class="java&#45;quote">"s"</span>,
+                        <span class="java&#45;quote">"t"</span>,
+                        <span class="java&#45;quote">"i"</span>,
+                        <span class="java&#45;quote">"c"</span>,
+                        <span class="java&#45;quote">"s"</span>
+                    &#93;,
+                    <span class="java&#45;quote">"labels"</span>: &#91;
+                        <span class="java&#45;quote">"s"</span>,
+                        <span class="java&#45;quote">"t"</span>,
+                        <span class="java&#45;quote">"a"</span>,
+                        <span class="java&#45;quote">"c"</span>,
+                        <span class="java&#45;quote">"i"</span>
+                    &#93;,
+                    <span class="java&#45;quote">"ordered"</span>: <span class="java&#45;keyword">false</span>
+                &#125;,<p class="paragraph"/>
+		//
+		//  <em class="italic">DeployR List Encodings</em> 
+		//<p class="paragraph"/>                &#123;
+                    <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"x_list"</span>,
+                    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"list"</span>,
+                    <span class="java&#45;quote">"rclass"</span>: <span class="java&#45;quote">"list"</span>,
+                    <span class="java&#45;quote">"value"</span>: &#91;
+                        &#123;   <span class="java&#45;quote">"name"</span> : <span class="java&#45;quote">"1"</span>,
+                            <span class="java&#45;quote">"value"</span>: &#91;
+                                10,
+                                11,
+                                12,
+                                13,
+                                14,
+                                15
+                            &#93;,
+                            <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"vector"</span>,
+                            <span class="java&#45;quote">"rclass"</span>: <span class="java&#45;quote">"numeric"</span>
+                        &#125;,
+                        &#123;   <span class="java&#45;quote">"name"</span> : <span class="java&#45;quote">"2"</span>,
+                            <span class="java&#45;quote">"value"</span>: &#91;
+                                40,
+                                41,
+                                42,
+                                43,
+                                44,
+                                45
+                            &#93;,
+                            <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"vector"</span>,
+                            <span class="java&#45;quote">"rclass"</span>: <span class="java&#45;quote">"numeric"</span>
+                        &#125;
+                    &#93;
+                &#125;,<p class="paragraph"/>
+		//
+		//  <em class="italic">DeployR Dataframe Encodings</em> 
+		//<p class="paragraph"/>                &#123;
+                    <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"x_dataframe"</span>,
+                    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"dataframe"</span>,
+                    <span class="java&#45;quote">"rclass"</span>: <span class="java&#45;quote">"data.frame"</span>,
+                    <span class="java&#45;quote">"value"</span>: &#91;
+                        &#123;
+                            <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"vector"</span>,
+                            <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"c.10.15."</span>,
+                            <span class="java&#45;quote">"rclass"</span>: <span class="java&#45;quote">"numeric"</span>,
+                            <span class="java&#45;quote">"value"</span>: &#91;
+                                10,
+                                11,
+                                12,
+                                13,
+                                14,
+                                15
+                            &#93;
+                        &#125;,
+                        &#123;
+                            <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"vector"</span>,
+                            <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"c.40.45."</span>,
+                            <span class="java&#45;quote">"rclass"</span>: <span class="java&#45;quote">"numeric"</span>,
+                            <span class="java&#45;quote">"value"</span>: &#91;
+                                40,
+                                41,
+                                42,
+                                43,
+                                44,
+                                45
+                            &#93;
+                        &#125;
+                    &#93;
+                &#125;<p class="paragraph"/>              &#93;
+	    &#125;,
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/project/workspace/get"</span>,
+            <span class="java&#45;quote">"project"</span>: &#123;
+                <span class="java&#45;quote">"project"</span>: <span class="java&#45;quote">"PROJECT&#45;00c512b6&#45;84a4&#45;45ff&#45;b94a&#45;134cca8e0584"</span>,
+                <span class="java&#45;quote">"descr"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"owner"</span>: <span class="java&#45;quote">"testuser"</span>,
+                <span class="java&#45;quote">"live"</span>: <span class="java&#45;keyword">true</span>,
+                <span class="java&#45;quote">"origin"</span>: <span class="java&#45;quote">"Project original."</span>,
+                <span class="java&#45;quote">"name"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"projectcookie"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"longdescr"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"ispublic"</span>: <span class="java&#45;keyword">false</span>,
+                <span class="java&#45;quote">"lastmodified"</span>: <span class="java&#45;quote">"Wed, 5 Oct 2011 06:31:37 +0000"</span>
+            &#125;
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><h4>XML Encodings on API Response Markup</h4><p class="paragraph"/>The following response markup contains annotations that describe each of the supported DeployR R object encodings:<p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;workspace&#62;</span>
+      <span class="xml&#45;tag">&#60;objects&#62;</span><p class="paragraph"/>      //
+      //  <em class="italic">DeployR Primitive Encodings</em> 
+      //<p class="paragraph"/>      <span class="xml&#45;tag">&#60;object&#62;</span>
+        <span class="xml&#45;tag">&#60;name&#62;</span>x_character<span class="xml&#45;tag">&#60;/name&#62;</span>
+        <span class="xml&#45;tag">&#60;type&#62;</span>primitive<span class="xml&#45;tag">&#60;/type&#62;</span>
+        <span class="xml&#45;tag">&#60;rclass&#62;</span>character<span class="xml&#45;tag">&#60;/rclass&#62;</span>
+        <span class="xml&#45;tag">&#60;value&#62;</span>c<span class="xml&#45;tag">&#60;/value&#62;</span>
+      <span class="xml&#45;tag">&#60;/object&#62;</span><p class="paragraph"/>      <span class="xml&#45;tag">&#60;object&#62;</span>
+        <span class="xml&#45;tag">&#60;name&#62;</span>x_integer<span class="xml&#45;tag">&#60;/name&#62;</span>
+        <span class="xml&#45;tag">&#60;type&#62;</span>primitive<span class="xml&#45;tag">&#60;/type&#62;</span>
+        <span class="xml&#45;tag">&#60;rclass&#62;</span>integer<span class="xml&#45;tag">&#60;/rclass&#62;</span>
+        <span class="xml&#45;tag">&#60;value&#62;</span>10<span class="xml&#45;tag">&#60;/value&#62;</span>
+      <span class="xml&#45;tag">&#60;/object&#62;</span><p class="paragraph"/>      <span class="xml&#45;tag">&#60;object&#62;</span>
+        <span class="xml&#45;tag">&#60;name&#62;</span>x_numeric<span class="xml&#45;tag">&#60;/name&#62;</span>
+        <span class="xml&#45;tag">&#60;type&#62;</span>primitive<span class="xml&#45;tag">&#60;/type&#62;</span>
+        <span class="xml&#45;tag">&#60;rclass&#62;</span>numeric<span class="xml&#45;tag">&#60;/rclass&#62;</span>
+        <span class="xml&#45;tag">&#60;value&#62;</span>5.0<span class="xml&#45;tag">&#60;/value&#62;</span>
+      <span class="xml&#45;tag">&#60;/object&#62;</span><p class="paragraph"/>      <span class="xml&#45;tag">&#60;object&#62;</span>
+        <span class="xml&#45;tag">&#60;name&#62;</span>x_logical<span class="xml&#45;tag">&#60;/name&#62;</span>
+        <span class="xml&#45;tag">&#60;type&#62;</span>primitive<span class="xml&#45;tag">&#60;/type&#62;</span>
+        <span class="xml&#45;tag">&#60;rclass&#62;</span>logical<span class="xml&#45;tag">&#60;/rclass&#62;</span>
+        <span class="xml&#45;tag">&#60;value&#62;</span>true<span class="xml&#45;tag">&#60;/value&#62;</span>
+      <span class="xml&#45;tag">&#60;/object&#62;</span><p class="paragraph"/>
+      //
+      //  <em class="italic">DeployR Date Encodings</em> 
+      //<p class="paragraph"/>      <span class="xml&#45;tag">&#60;object&#62;</span>
+        <span class="xml&#45;tag">&#60;name&#62;</span>x_date<span class="xml&#45;tag">&#60;/name&#62;</span>
+        <span class="xml&#45;tag">&#60;type&#62;</span>date<span class="xml&#45;tag">&#60;/type&#62;</span>
+        <span class="xml&#45;tag">&#60;rclass&#62;</span>date<span class="xml&#45;tag">&#60;/rclass&#62;</span>
+        <span class="xml&#45;tag">&#60;value&#62;</span>2011&#45;10&#45;04<span class="xml&#45;tag">&#60;/value&#62;</span>
+        <span class="xml&#45;tag">&#60;format&#62;</span>yyyy&#45;MM&#45;dd<span class="xml&#45;tag">&#60;/format&#62;</span>
+      <span class="xml&#45;tag">&#60;/object&#62;</span><p class="paragraph"/>      <span class="xml&#45;tag">&#60;object&#62;</span>
+        <span class="xml&#45;tag">&#60;name&#62;</span>x_posixct<span class="xml&#45;tag">&#60;/name&#62;</span>
+        <span class="xml&#45;tag">&#60;type&#62;</span>date<span class="xml&#45;tag">&#60;/type&#62;</span>
+        <span class="xml&#45;tag">&#60;rclass&#62;</span>POSIXct<span class="xml&#45;tag">&#60;/rclass&#62;</span>
+        <span class="xml&#45;tag">&#60;value&#62;</span>2011&#45;10&#45;05<span class="xml&#45;tag">&#60;/value&#62;</span>
+	<span class="xml&#45;tag">&#60;format&#62;</span>yyyy&#45;MM&#45;dd HH:mm:ss Z<span class="xml&#45;tag">&#60;/format&#62;</span>
+      <span class="xml&#45;tag">&#60;/object&#62;</span><p class="paragraph"/>
+      //
+      //  <em class="italic">DeployR Vector Encodings</em> 
+      //<p class="paragraph"/>      <span class="xml&#45;tag">&#60;object&#62;</span>
+        <span class="xml&#45;tag">&#60;name&#62;</span>x_character_vector<span class="xml&#45;tag">&#60;/name&#62;</span>
+        <span class="xml&#45;tag">&#60;type&#62;</span>vector<span class="xml&#45;tag">&#60;/type&#62;</span>
+        <span class="xml&#45;tag">&#60;rclass&#62;</span>character<span class="xml&#45;tag">&#60;/rclass&#62;</span>
+        <span class="xml&#45;tag">&#60;values&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>a<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>b<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>c<span class="xml&#45;tag">&#60;/value&#62;</span>
+        <span class="xml&#45;tag">&#60;/values&#62;</span>
+      <span class="xml&#45;tag">&#60;/object&#62;</span><p class="paragraph"/>      <span class="xml&#45;tag">&#60;object&#62;</span>
+        <span class="xml&#45;tag">&#60;name&#62;</span>x_integer_vector<span class="xml&#45;tag">&#60;/name&#62;</span>
+        <span class="xml&#45;tag">&#60;type&#62;</span>vector<span class="xml&#45;tag">&#60;/type&#62;</span>
+        <span class="xml&#45;tag">&#60;rclass&#62;</span>integer<span class="xml&#45;tag">&#60;/rclass&#62;</span>
+        <span class="xml&#45;tag">&#60;values&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>10<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>11<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>12<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>13<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>14<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>15<span class="xml&#45;tag">&#60;/value&#62;</span>
+        <span class="xml&#45;tag">&#60;/values&#62;</span>
+      <span class="xml&#45;tag">&#60;/object&#62;</span><p class="paragraph"/>      <span class="xml&#45;tag">&#60;object&#62;</span>
+        <span class="xml&#45;tag">&#60;name&#62;</span>x_numeric_vector<span class="xml&#45;tag">&#60;/name&#62;</span>
+        <span class="xml&#45;tag">&#60;type&#62;</span>vector<span class="xml&#45;tag">&#60;/type&#62;</span>
+        <span class="xml&#45;tag">&#60;rclass&#62;</span>numeric<span class="xml&#45;tag">&#60;/rclass&#62;</span>
+        <span class="xml&#45;tag">&#60;values&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>10<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>11<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>12<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>13<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>14<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>15<span class="xml&#45;tag">&#60;/value&#62;</span>
+        <span class="xml&#45;tag">&#60;/values&#62;</span>
+      <span class="xml&#45;tag">&#60;/object&#62;</span><p class="paragraph"/>
+      //
+      //  <em class="italic">DeployR Matrix Encodings</em> 
+      //<p class="paragraph"/>      <span class="xml&#45;tag">&#60;object&#62;</span>
+        <span class="xml&#45;tag">&#60;name&#62;</span>x_matrix<span class="xml&#45;tag">&#60;/name&#62;</span>
+        <span class="xml&#45;tag">&#60;type&#62;</span>matrix<span class="xml&#45;tag">&#60;/type&#62;</span>
+        <span class="xml&#45;tag">&#60;rclass&#62;</span>matrix<span class="xml&#45;tag">&#60;/rclass&#62;</span>
+        <span class="xml&#45;tag">&#60;values&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>1.0, 3.0, 12.0<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>2.0, 11.0, 13.0<span class="xml&#45;tag">&#60;/value&#62;</span>
+        <span class="xml&#45;tag">&#60;/values&#62;</span>
+      <span class="xml&#45;tag">&#60;/object&#62;</span><p class="paragraph"/>
+      //
+      //  <em class="italic">DeployR Factor Encodings</em> 
+      //<p class="paragraph"/>      <span class="xml&#45;tag">&#60;object&#62;</span>
+        <span class="xml&#45;tag">&#60;name&#62;</span>x_ordered_factor<span class="xml&#45;tag">&#60;/name&#62;</span>
+        <span class="xml&#45;tag">&#60;type&#62;</span>factor<span class="xml&#45;tag">&#60;/type&#62;</span>
+        <span class="xml&#45;tag">&#60;rclass&#62;</span>ordered<span class="xml&#45;tag">&#60;/rclass&#62;</span>
+        <span class="xml&#45;tag">&#60;ordered&#62;</span>true<span class="xml&#45;tag">&#60;/ordered&#62;</span>
+        <span class="xml&#45;tag">&#60;values&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>s<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>t<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>a<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>t<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>i<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>s<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>t<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>i<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>c<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>s<span class="xml&#45;tag">&#60;/value&#62;</span>
+        <span class="xml&#45;tag">&#60;/values&#62;</span>
+        <span class="xml&#45;tag">&#60;labels&#62;</span>
+          <span class="xml&#45;tag">&#60;label&#62;</span>s<span class="xml&#45;tag">&#60;/label&#62;</span>
+          <span class="xml&#45;tag">&#60;label&#62;</span>t<span class="xml&#45;tag">&#60;/label&#62;</span>
+          <span class="xml&#45;tag">&#60;label&#62;</span>a<span class="xml&#45;tag">&#60;/label&#62;</span>
+          <span class="xml&#45;tag">&#60;label&#62;</span>c<span class="xml&#45;tag">&#60;/label&#62;</span>
+          <span class="xml&#45;tag">&#60;label&#62;</span>i<span class="xml&#45;tag">&#60;/label&#62;</span>
+        <span class="xml&#45;tag">&#60;/labels&#62;</span>
+      <span class="xml&#45;tag">&#60;/object&#62;</span><p class="paragraph"/>      <span class="xml&#45;tag">&#60;object&#62;</span>
+        <span class="xml&#45;tag">&#60;name&#62;</span>x_unordered_factor<span class="xml&#45;tag">&#60;/name&#62;</span>
+        <span class="xml&#45;tag">&#60;type&#62;</span>factor<span class="xml&#45;tag">&#60;/type&#62;</span>
+        <span class="xml&#45;tag">&#60;rclass&#62;</span>factor<span class="xml&#45;tag">&#60;/rclass&#62;</span>
+        <span class="xml&#45;tag">&#60;values&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>s<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>t<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>a<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>t<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>i<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>s<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>t<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>i<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>c<span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>s<span class="xml&#45;tag">&#60;/value&#62;</span>
+        <span class="xml&#45;tag">&#60;/values&#62;</span>
+        <span class="xml&#45;tag">&#60;labels&#62;</span>
+          <span class="xml&#45;tag">&#60;label&#62;</span>s<span class="xml&#45;tag">&#60;/label&#62;</span>
+          <span class="xml&#45;tag">&#60;label&#62;</span>t<span class="xml&#45;tag">&#60;/label&#62;</span>
+          <span class="xml&#45;tag">&#60;label&#62;</span>a<span class="xml&#45;tag">&#60;/label&#62;</span>
+          <span class="xml&#45;tag">&#60;label&#62;</span>c<span class="xml&#45;tag">&#60;/label&#62;</span>
+          <span class="xml&#45;tag">&#60;label&#62;</span>i<span class="xml&#45;tag">&#60;/label&#62;</span>
+        <span class="xml&#45;tag">&#60;/labels&#62;</span>
+        <span class="xml&#45;tag">&#60;ordered/&#62;</span>
+      <span class="xml&#45;tag">&#60;/object&#62;</span><p class="paragraph"/>
+      //
+      //  <em class="italic">DeployR List Encodings</em> 
+      //<p class="paragraph"/>      <span class="xml&#45;tag">&#60;object&#62;</span>
+        <span class="xml&#45;tag">&#60;type&#62;</span>list<span class="xml&#45;tag">&#60;/type&#62;</span>
+        <span class="xml&#45;tag">&#60;rclass&#62;</span>list<span class="xml&#45;tag">&#60;/rclass&#62;</span>
+        <span class="xml&#45;tag">&#60;values&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>
+            <span class="xml&#45;tag">&#60;name&#62;</span>1<span class="xml&#45;tag">&#60;/name&#62;</span>
+            <span class="xml&#45;tag">&#60;type&#62;</span>vector<span class="xml&#45;tag">&#60;/type&#62;</span>
+            <span class="xml&#45;tag">&#60;rclass&#62;</span>numeric<span class="xml&#45;tag">&#60;/rclass&#62;</span>
+            <span class="xml&#45;tag">&#60;values&#62;</span>
+              <span class="xml&#45;tag">&#60;value&#62;</span>10<span class="xml&#45;tag">&#60;/value&#62;</span>
+              <span class="xml&#45;tag">&#60;value&#62;</span>11<span class="xml&#45;tag">&#60;/value&#62;</span>
+              <span class="xml&#45;tag">&#60;value&#62;</span>12<span class="xml&#45;tag">&#60;/value&#62;</span>
+              <span class="xml&#45;tag">&#60;value&#62;</span>13<span class="xml&#45;tag">&#60;/value&#62;</span>
+              <span class="xml&#45;tag">&#60;value&#62;</span>14<span class="xml&#45;tag">&#60;/value&#62;</span>
+              <span class="xml&#45;tag">&#60;value&#62;</span>15<span class="xml&#45;tag">&#60;/value&#62;</span>
+            <span class="xml&#45;tag">&#60;/values&#62;</span>
+          <span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>
+            <span class="xml&#45;tag">&#60;name&#62;</span>2<span class="xml&#45;tag">&#60;/name&#62;</span>
+            <span class="xml&#45;tag">&#60;type&#62;</span>vector<span class="xml&#45;tag">&#60;/type&#62;</span>
+            <span class="xml&#45;tag">&#60;rclass&#62;</span>numeric<span class="xml&#45;tag">&#60;/rclass&#62;</span>
+            <span class="xml&#45;tag">&#60;values&#62;</span>
+              <span class="xml&#45;tag">&#60;value&#62;</span>40<span class="xml&#45;tag">&#60;/value&#62;</span>
+              <span class="xml&#45;tag">&#60;value&#62;</span>41<span class="xml&#45;tag">&#60;/value&#62;</span>
+              <span class="xml&#45;tag">&#60;value&#62;</span>42<span class="xml&#45;tag">&#60;/value&#62;</span>
+              <span class="xml&#45;tag">&#60;value&#62;</span>43<span class="xml&#45;tag">&#60;/value&#62;</span>
+              <span class="xml&#45;tag">&#60;value&#62;</span>44<span class="xml&#45;tag">&#60;/value&#62;</span>
+              <span class="xml&#45;tag">&#60;value&#62;</span>45<span class="xml&#45;tag">&#60;/value&#62;</span>
+            <span class="xml&#45;tag">&#60;/values&#62;</span>
+          <span class="xml&#45;tag">&#60;/value&#62;</span>
+        <span class="xml&#45;tag">&#60;/values&#62;</span>
+        <span class="xml&#45;tag">&#60;name&#62;</span>x_list<span class="xml&#45;tag">&#60;/name&#62;</span>
+      <span class="xml&#45;tag">&#60;/object&#62;</span><p class="paragraph"/>      //
+      //  <em class="italic">DeployR Dataframe Encodings</em> 
+      //<p class="paragraph"/>      <span class="xml&#45;tag">&#60;object&#62;</span>
+        <span class="xml&#45;tag">&#60;name&#62;</span>x_dataframe<span class="xml&#45;tag">&#60;/name&#62;</span>
+        <span class="xml&#45;tag">&#60;type&#62;</span>dataframe<span class="xml&#45;tag">&#60;/type&#62;</span>
+        <span class="xml&#45;tag">&#60;rclass&#62;</span>data.frame<span class="xml&#45;tag">&#60;/rclass&#62;</span>
+        <span class="xml&#45;tag">&#60;values&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>
+            <span class="xml&#45;tag">&#60;name&#62;</span>c.10.15.<span class="xml&#45;tag">&#60;/name&#62;</span>
+            <span class="xml&#45;tag">&#60;type&#62;</span>vector<span class="xml&#45;tag">&#60;/type&#62;</span>
+            <span class="xml&#45;tag">&#60;rclass&#62;</span>numeric<span class="xml&#45;tag">&#60;/rclass&#62;</span>
+            <span class="xml&#45;tag">&#60;values&#62;</span>
+              <span class="xml&#45;tag">&#60;value&#62;</span>10<span class="xml&#45;tag">&#60;/value&#62;</span>
+              <span class="xml&#45;tag">&#60;value&#62;</span>11<span class="xml&#45;tag">&#60;/value&#62;</span>
+              <span class="xml&#45;tag">&#60;value&#62;</span>12<span class="xml&#45;tag">&#60;/value&#62;</span>
+              <span class="xml&#45;tag">&#60;value&#62;</span>13<span class="xml&#45;tag">&#60;/value&#62;</span>
+              <span class="xml&#45;tag">&#60;value&#62;</span>14<span class="xml&#45;tag">&#60;/value&#62;</span>
+              <span class="xml&#45;tag">&#60;value&#62;</span>15<span class="xml&#45;tag">&#60;/value&#62;</span>
+            <span class="xml&#45;tag">&#60;/values&#62;</span>
+          <span class="xml&#45;tag">&#60;/value&#62;</span>
+          <span class="xml&#45;tag">&#60;value&#62;</span>
+            <span class="xml&#45;tag">&#60;name&#62;</span>c.40.45.<span class="xml&#45;tag">&#60;/name&#62;</span>
+            <span class="xml&#45;tag">&#60;type&#62;</span>vector<span class="xml&#45;tag">&#60;/type&#62;</span>
+            <span class="xml&#45;tag">&#60;rclass&#62;</span>numeric<span class="xml&#45;tag">&#60;/rclass&#62;</span>
+            <span class="xml&#45;tag">&#60;values&#62;</span>
+              <span class="xml&#45;tag">&#60;value&#62;</span>40<span class="xml&#45;tag">&#60;/value&#62;</span>
+              <span class="xml&#45;tag">&#60;value&#62;</span>41<span class="xml&#45;tag">&#60;/value&#62;</span>
+              <span class="xml&#45;tag">&#60;value&#62;</span>42<span class="xml&#45;tag">&#60;/value&#62;</span>
+              <span class="xml&#45;tag">&#60;value&#62;</span>43<span class="xml&#45;tag">&#60;/value&#62;</span>
+              <span class="xml&#45;tag">&#60;value&#62;</span>44<span class="xml&#45;tag">&#60;/value&#62;</span>
+              <span class="xml&#45;tag">&#60;value&#62;</span>45<span class="xml&#45;tag">&#60;/value&#62;</span>
+            <span class="xml&#45;tag">&#60;/values&#62;</span>
+          <span class="xml&#45;tag">&#60;/value&#62;</span>
+        <span class="xml&#45;tag">&#60;/values&#62;</span>
+      <span class="xml&#45;tag">&#60;/object&#62;</span><p class="paragraph"/>      <span class="xml&#45;tag">&#60;/objects&#62;</span>
+    <span class="xml&#45;tag">&#60;/workspace&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/project/workspace/get<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;project&#62;</span>
+      <span class="xml&#45;tag">&#60;projectPROJECT&#45;00c512b6&#45;84a4&#45;45ff&#45;b94a&#45;134cca8e0584&#60;/project&#62;</span>
+      <span class="xml&#45;tag">&#60;name/&#62;</span>
+      <span class="xml&#45;tag">&#60;descr/&#62;</span>
+      <span class="xml&#45;tag">&#60;longdescr/&#62;</span>
+      <span class="xml&#45;tag">&#60;live&#62;</span>true<span class="xml&#45;tag">&#60;/live&#62;</span>
+      <span class="xml&#45;tag">&#60;ispublic/&#62;</span>
+      <span class="xml&#45;tag">&#60;projectcookie/&#62;</span>
+      <span class="xml&#45;tag">&#60;origin&#62;</span>Project original.<span class="xml&#45;tag">&#60;/origin&#62;</span>
+      <span class="xml&#45;tag">&#60;owner&#62;</span>testuser<span class="xml&#45;tag">&#60;/owner&#62;</span>
+      <span class="xml&#45;tag">&#60;lastmodified&#62;</span>Wed, 5 Oct 2011 06:39:52 +0000<span class="xml&#45;tag">&#60;/lastmodified&#62;</span>
+    <span class="xml&#45;tag">&#60;/project&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div><p class="paragraph"/><p class="paragraph"/><h4>Sample JSON Encodings for Input Parameters on API</h4><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"x_character"</span>: &#123;
+        <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"primitive"</span>,
+        <span class="java&#45;quote">"value"</span>: <span class="java&#45;quote">"c"</span>
+    &#125;,
+    <span class="java&#45;quote">"x_integer"</span>: &#123;
+        <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"primitive"</span>,
+        <span class="java&#45;quote">"value"</span>: 10
+    &#125;,
+    <span class="java&#45;quote">"x_double"</span>: &#123;
+        <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"primitive"</span>,
+        <span class="java&#45;quote">"value"</span>: 5.5
+    &#125;,
+    <span class="java&#45;quote">"x_logical"</span>: &#123;
+        <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"primitive"</span>,
+        <span class="java&#45;quote">"value"</span>: <span class="java&#45;keyword">true</span>
+    &#125;,
+    <span class="java&#45;quote">"x_date"</span>: &#123;
+        <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"date"</span>,
+        <span class="java&#45;quote">"value"</span>: <span class="java&#45;quote">"2011&#45;10&#45;04"</span>,
+        <span class="java&#45;quote">"format"</span>: <span class="java&#45;quote">"yyyy&#45;MM&#45;dd"</span>
+    &#125;,
+    <span class="java&#45;quote">"x_posixct"</span>: &#123;
+        <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"date"</span>,
+        <span class="java&#45;quote">"value"</span>: <span class="java&#45;quote">"2011&#45;10&#45;05 12:13:14 &#45;0800"</span>,
+        <span class="java&#45;quote">"format"</span>: <span class="java&#45;quote">"yyyy&#45;MM&#45;dd HH:mm:ss Z"</span>
+    &#125;,
+    <span class="java&#45;quote">"x_character_vector"</span>: &#123;
+        <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"vector"</span>,
+        <span class="java&#45;quote">"value"</span>: &#91;
+            <span class="java&#45;quote">"a"</span>,
+            <span class="java&#45;quote">"b"</span>,
+            <span class="java&#45;quote">"c"</span>
+        &#93;
+    &#125;,
+    <span class="java&#45;quote">"x_integer_vector"</span>: &#123;
+        <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"vector"</span>,
+        <span class="java&#45;quote">"value"</span>: &#91;
+            10,
+            11,
+            12
+        &#93;
+    &#125;,
+    <span class="java&#45;quote">"x_double_vector"</span>: &#123;
+        <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"vector"</span>,
+        <span class="java&#45;quote">"value"</span>: &#91;
+            10,
+            11.1,
+            12.2
+        &#93;
+    &#125;,
+    <span class="java&#45;quote">"x_matrix"</span>: &#123;
+        <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"matrix"</span>,
+        <span class="java&#45;quote">"value"</span>: &#91;
+            &#91;
+                1,
+                3,
+                12
+            &#93;,
+            &#91;
+                2,
+                11,
+                13
+            &#93;
+        &#93;
+    &#125;,
+    <span class="java&#45;quote">"x_ordered_factor"</span>: &#123;
+        <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"factor"</span>,
+        <span class="java&#45;quote">"ordered"</span>: <span class="java&#45;keyword">true</span>,
+        <span class="java&#45;quote">"value"</span>: &#91;
+            <span class="java&#45;quote">"s"</span>,
+            <span class="java&#45;quote">"t"</span>,
+            <span class="java&#45;quote">"a"</span>,
+            <span class="java&#45;quote">"t"</span>,
+            <span class="java&#45;quote">"i"</span>,
+            <span class="java&#45;quote">"s"</span>,
+            <span class="java&#45;quote">"t"</span>,
+            <span class="java&#45;quote">"i"</span>,
+            <span class="java&#45;quote">"c"</span>,
+            <span class="java&#45;quote">"s"</span>
+        &#93;,
+        <span class="java&#45;quote">"labels"</span>: &#91;
+            <span class="java&#45;quote">"s"</span>,
+            <span class="java&#45;quote">"t"</span>,
+            <span class="java&#45;quote">"a"</span>,
+            <span class="java&#45;quote">"c"</span>,
+            <span class="java&#45;quote">"i"</span>
+        &#93;
+    &#125;,
+    <span class="java&#45;quote">"x_unordered_factor"</span>: &#123;
+        <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"factor"</span>,
+        <span class="java&#45;quote">"ordered"</span>: <span class="java&#45;keyword">false</span>,
+        <span class="java&#45;quote">"value"</span>: &#91;
+            <span class="java&#45;quote">"s"</span>,
+            <span class="java&#45;quote">"t"</span>,
+            <span class="java&#45;quote">"a"</span>,
+            <span class="java&#45;quote">"t"</span>,
+            <span class="java&#45;quote">"i"</span>,
+            <span class="java&#45;quote">"s"</span>,
+            <span class="java&#45;quote">"t"</span>,
+            <span class="java&#45;quote">"i"</span>,
+            <span class="java&#45;quote">"c"</span>,
+            <span class="java&#45;quote">"s"</span>
+        &#93;,
+        <span class="java&#45;quote">"labels"</span>: &#91;
+            <span class="java&#45;quote">"s"</span>,
+            <span class="java&#45;quote">"t"</span>,
+            <span class="java&#45;quote">"a"</span>,
+            <span class="java&#45;quote">"c"</span>,
+            <span class="java&#45;quote">"i"</span>
+        &#93;
+    &#125;,
+    <span class="java&#45;quote">"x_list"</span>: &#123;
+        <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"list"</span>,
+        <span class="java&#45;quote">"value"</span>: &#91;
+            &#123;
+                <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"first"</span>,
+                <span class="java&#45;quote">"value"</span>: &#91;
+                    10,
+                    11,
+                    12
+                &#93;,
+                <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"vector"</span>
+            &#125;,
+            &#123;
+                <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"second"</span>,
+                <span class="java&#45;quote">"value"</span>: &#91;
+                    40,
+                    41,
+                    42
+                &#93;,
+                <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"vector"</span>
+            &#125;
+        &#93;
+    &#125;,
+    <span class="java&#45;quote">"x_dataframe"</span>: &#123;
+        <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"dataframe"</span>,
+        <span class="java&#45;quote">"value"</span>: &#91;
+            &#123;
+                <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"first"</span>,
+                <span class="java&#45;quote">"value"</span>: &#91;
+                    10,
+                    11,
+                    12
+                &#93;,
+                <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"vector"</span>
+            &#125;,
+            &#123;
+                <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"second"</span>,
+                <span class="java&#45;quote">"value"</span>: &#91;
+                    40,
+                    41,
+                    42
+                &#93;,
+                <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"vector"</span>
+            &#125;
+        &#93;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><h4>Sample XML Encodings for Input Parameters on API</h4><p class="paragraph"/><div class="code"><pre>&#60;inputs&#62;
+    &#60;object&#62;
+        &#60;name&#62;x_character&#60;/name&#62;
+        &#60;type&#62;character&#60;/type&#62;
+        &#60;value&#62;c&#60;/value&#62;
+    &#60;/object&#62;
+    &#60;object&#62;
+        &#60;name&#62;x_integer&#60;/name&#62;
+        &#60;type&#62;numeric&#60;/type&#62;
+        &#60;value&#62;10&#60;/value&#62;
+    &#60;/object&#62;
+    &#60;object&#62;
+        &#60;name&#62;x_double&#60;/name&#62;
+        &#60;type&#62;numeric&#60;/type&#62;
+        &#60;value&#62;5.5&#60;/value&#62;
+    &#60;/object&#62;
+    &#60;object&#62;
+        &#60;name&#62;x_logical&#60;/name&#62;
+        &#60;type&#62;logical&#60;/type&#62;
+        &#60;value&#62;<span class="java&#45;keyword">true</span>&#60;/value&#62;
+    &#60;/object&#62;
+    &#60;object&#62;
+        &#60;name&#62;x_date&#60;/name&#62;
+        &#60;type&#62;date&#60;/type&#62;
+        &#60;rclass&#62;date&#60;/rclass&#62;
+        &#60;value&#62;2011&#45;10&#45;04&#60;/value&#62;
+        &#60;format&#62;yyyy&#45;MM&#45;dd&#60;/format&#62;
+    &#60;/object&#62;
+    &#60;object&#62;
+        &#60;name&#62;x_posixct&#60;/name&#62;
+        &#60;type&#62;date&#60;/type&#62;
+        &#60;rclass&#62;POSIXct&#60;/rclass&#62;
+        &#60;value&#62;2011&#45;10&#45;05 12:13:14 &#45;0800&#60;/value&#62;
+        &#60;format&#62;yyyy&#45;MM&#45;dd HH:mm:ss Z&#60;/format&#62;
+    &#60;/object&#62;
+    &#60;object&#62;
+        &#60;name&#62;x_character_vector&#60;/name&#62;
+        &#60;type&#62;vector&#60;/type&#62;
+        &#60;rclass&#62;numeric&#60;/rclass&#62;
+        &#60;values&#62;
+            &#60;value&#62;a&#60;/value&#62;
+            &#60;value&#62;b&#60;/value&#62;
+            &#60;value&#62;c&#60;/value&#62;
+        &#60;/values&#62;
+    &#60;/object&#62;
+    &#60;object&#62;
+        &#60;name&#62;x_numeric_vector&#60;/name&#62;
+        &#60;type&#62;vector&#60;/type&#62;
+        &#60;rclass&#62;numeric&#60;/rclass&#62;
+        &#60;values&#62;
+            &#60;value&#62;10&#60;/value&#62;
+            &#60;value&#62;11&#60;/value&#62;
+            &#60;value&#62;12&#60;/value&#62;
+        &#60;/values&#62;
+    &#60;/object&#62;
+    &#60;object&#62;
+        &#60;name&#62;x_matrix&#60;/name&#62;
+        &#60;type&#62;matrix&#60;/type&#62;
+        &#60;rclass&#62;numeric&#60;/rclass&#62;
+        &#60;values&#62;
+            &#60;value&#62;10,110&#60;/value&#62;
+            &#60;value&#62;11,111&#60;/value&#62;
+            &#60;value&#62;12,122&#60;/value&#62;
+        &#60;/values&#62;
+    &#60;/object&#62;
+    &#60;object&#62;
+        &#60;name&#62;x_ordered_factor&#60;/name&#62;
+        &#60;type&#62;factor&#60;/type&#62;
+        &#60;ordered&#62;<span class="java&#45;keyword">true</span>&#60;/ordered&#62;
+        &#60;values&#62;
+            &#60;value&#62;s&#60;/value&#62;
+            &#60;value&#62;t&#60;/value&#62;
+            &#60;value&#62;a&#60;/value&#62;
+            &#60;value&#62;t&#60;/value&#62;
+            &#60;value&#62;i&#60;/value&#62;
+            &#60;value&#62;s&#60;/value&#62;
+            &#60;value&#62;t&#60;/value&#62;
+            &#60;value&#62;i&#60;/value&#62;
+            &#60;value&#62;c&#60;/value&#62;
+            &#60;value&#62;s&#60;/value&#62;
+        &#60;/values&#62;
+        &#60;labels&#62;
+            &#60;label&#62;s&#60;/label&#62;
+            &#60;label&#62;t&#60;/label&#62;
+            &#60;label&#62;a&#60;/label&#62;
+            &#60;label&#62;c&#60;/label&#62;
+            &#60;label&#62;i&#60;/label&#62;
+        &#60;/labels&#62;
+    &#60;/object&#62;
+    &#60;object&#62;
+        &#60;name&#62;x_unordered_factor&#60;/name&#62;
+        &#60;type&#62;factor&#60;/type&#62;
+        &#60;ordered&#62;<span class="java&#45;keyword">false</span>&#60;/ordered&#62;
+        &#60;values&#62;
+            &#60;value&#62;s&#60;/value&#62;
+            &#60;value&#62;t&#60;/value&#62;
+            &#60;value&#62;a&#60;/value&#62;
+            &#60;value&#62;t&#60;/value&#62;
+            &#60;value&#62;i&#60;/value&#62;
+            &#60;value&#62;s&#60;/value&#62;
+            &#60;value&#62;t&#60;/value&#62;
+            &#60;value&#62;i&#60;/value&#62;
+            &#60;value&#62;c&#60;/value&#62;
+            &#60;value&#62;s&#60;/value&#62;
+        &#60;/values&#62;
+        &#60;labels&#62;
+            &#60;label&#62;s&#60;/label&#62;
+            &#60;label&#62;t&#60;/label&#62;
+            &#60;label&#62;a&#60;/label&#62;
+            &#60;label&#62;c&#60;/label&#62;
+            &#60;label&#62;i&#60;/label&#62;
+        &#60;/labels&#62;
+    &#60;/object&#62;
+    &#60;object&#62;
+        &#60;name&#62;x_list&#60;/name&#62;
+        &#60;type&#62;list&#60;/type&#62;
+        &#60;values&#62;
+            &#60;value&#62;
+                &#60;name&#62;first&#60;/name&#62;
+                &#60;type&#62;vector&#60;/type&#62;
+                &#60;rclass&#62;numeric&#60;/rclass&#62;
+                &#60;values&#62;
+                    &#60;value&#62;10&#60;/value&#62;
+                    &#60;value&#62;11&#60;/value&#62;
+                    &#60;value&#62;12&#60;/value&#62;
+                &#60;/values&#62;
+            &#60;/value&#62;
+            &#60;value&#62;
+                &#60;name&#62;second&#60;/name&#62;
+                &#60;type&#62;vector&#60;/type&#62;
+                &#60;rclass&#62;numeric&#60;/rclass&#62;
+                &#60;values&#62;
+                    &#60;value&#62;40&#60;/value&#62;
+                    &#60;value&#62;41&#60;/value&#62;
+                    &#60;value&#62;42&#60;/value&#62;
+                &#60;/values&#62;
+            &#60;/value&#62;
+        &#60;/values&#62;
+    &#60;/object&#62;
+    &#60;object&#62;
+        &#60;name&#62;x_dataframe&#60;/name&#62;
+        &#60;type&#62;dataframe&#60;/type&#62;
+        &#60;values&#62;
+            &#60;value&#62;
+                &#60;name&#62;first&#60;/name&#62;
+                &#60;type&#62;vector&#60;/type&#62;
+                &#60;rclass&#62;numeric&#60;/rclass&#62;
+                &#60;values&#62;
+                    &#60;value&#62;10&#60;/value&#62;
+                    &#60;value&#62;11&#60;/value&#62;
+                    &#60;value&#62;12&#60;/value&#62;
+                &#60;/values&#62;
+            &#60;/value&#62;
+            &#60;value&#62;
+                &#60;name&#62;second&#60;/name&#62;
+                &#60;type&#62;vector&#60;/type&#62;
+                &#60;rclass&#62;numeric&#60;/rclass&#62;
+                &#60;values&#62;
+                    &#60;value&#62;40&#60;/value&#62;
+                    &#60;value&#62;41&#60;/value&#62;
+                    &#60;value&#62;42&#60;/value&#62;
+                &#60;/values&#62;
+            &#60;/value&#62;
+        &#60;/values&#62;
+    &#60;/object&#62;
+&#60;/inputs&#62;</pre></div><p class="paragraph"/><h4>DeployR Encodings Made Easy</h4><p class="paragraph"/>To simplify life for those client developers using The DeployR API, we provide several client libraries for Java, JavaScript and .NET developers. A major benefit of using these client libraries is that they greatly simplify the creation of DeployR-encoded object data inputs to the server and the parsing of DeployR-encoded object data as outputs from the server.
+
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../guide/workingeventstream.html">&lt;&lt; <strong>9</strong><span>Working with the Event Stream API</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../guide/explorer.html"><strong>11</strong><span>The API Explorer Tool</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    Copyright (c) 2009-2016 Microsoft Corporation
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

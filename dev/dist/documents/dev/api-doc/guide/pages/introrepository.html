@@ -1,0 +1,184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>1.6 Introducing the Repository on the API 8.0.0</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/architecture.html"><strong>2</strong><span>Web Service API Architecture</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/overview.html"><strong>3</strong><span>Web Service API Overview</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/working.html"><strong>4</strong><span>Working with the Web Service APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingusers.html"><strong>5</strong><span>Working with the User APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingprojects.html"><strong>6</strong><span>Working with the Project APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingjobs.html"><strong>7</strong><span>Working with the Job APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingrepository.html"><strong>8</strong><span>Working with the Repository APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingeventstream.html"><strong>9</strong><span>Working with the Event Stream API</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/encodings.html"><strong>10</strong><span>Web Service API Data Encodings</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/explorer.html"><strong>11</strong><span>The API Explorer Tool</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/741changehistory.html"><strong>12</strong><span>API Changes in 7.4.1</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/74changehistory.html"><strong>13</strong><span>API Changes in 7.4</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/73changehistory.html"><strong>14</strong><span>API Changes in 7.3</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/72changehistory.html"><strong>15</strong><span>API Changes in 7.2</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/71changehistory.html"><strong>16</strong><span>API Changes in 7.1</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/70changehistory.html"><strong>17</strong><span>API Changes in 7.0</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/62changehistory.html"><strong>18</strong><span>API Changes in 6.2</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        
+    </div>
+    <p>DeployR API</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../../guide/architecture.html"><strong>2</strong><span>Web Service API Architecture</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>1.6 Introducing the Repository on the API - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Microsoft Corporation</p>
+
+                    <p><strong>Version:</strong> 8.0.0</p>
+
+                    
+                </div>
+
+                
+
+                
+
+<h2 id="introrepository">1.6 Introducing the Repository on the API</h2>
+The DeployR environment offers  <em class="italic">authenticated</em>  users versioned file storage by introducing the concept of a  <em class="italic">repository</em>  on the API. The repository provides a persistent store for user files of any type, including binary object files, plot image files, data files, simple text files and files containing blocks of R code which are referred to as <a href="../guide/single.html#repositoryscripts" class="guide">repository-managed scripts</a>.<p class="paragraph"/>Because the repository supports a versioned file system a full version history for each file is maintained and any version of a file can be retrieved upon request.<p class="paragraph"/>
+<h4>Repository-Managed Files</h4><p class="paragraph"/>Each user has access to a private repository store. Each file placed in that store will be maintained indefinitely by the server unless it is explicitly deleted by the user.<p class="paragraph"/>Repository-managed files can be easily loaded by users directly into <a href="../guide/single.html#anonymousprojects" class="guide">anonymous projects</a>, <a href="../guide/single.html#authenticatedprojects" class="guide">authenticated projects</a> as well as into jobs. For example, a binary object file in the repository can be loaded directly into a project workspace using the <a href="../guide/single.html#projectworkspaceload" class="guide">/r/project/workspace/load</a> call. A data file can be loaded directly into a project working directory using the <a href="../guide/single.html#projectdirectoryload" class="guide">/r/project/directory/load</a> call.<p class="paragraph"/>Conversely, objects in a project workspace and files in a project working directory can be stored directly to the repository using the <a href="../guide/single.html#projectworkspacestore" class="guide">/r/project/workspace/store</a> and <a href="../guide/single.html#projectdirectorystore" class="guide">/r/project/directory/store</a> calls respectively.<p class="paragraph"/>Repository-managed files can also be loaded directly into the workspace or working directory ahead of executing code on <a href="../guide/single.html#anonymousprojects" class="guide">anonymous projects</a> or an asynchronous  <em class="italic">job</em> .<p class="paragraph"/><blockquote class="note">
+Please refer to the section <a href="../guide/single.html#repositoryfiles" class="guide">Working with Repository Files</a> for further details.
+</blockquote><p class="paragraph"/><h4>Repository File Ownership &#38; Collaboration</h4><p class="paragraph"/>By default, files in a user's private repository are visible only to that user. Such user-based privacy is a central aspect of the DeployR security model. However, there are situations that can benefit from a more flexible access model for repository-managed files.<p class="paragraph"/><h4>Repository File Read-Only Collaboration</h4><p class="paragraph"/>A user may wish to share a file in their private repository by granting read-only access to fellow  <em class="italic">authenticated</em>  and/or  <em class="italic">anonymous</em>  users. Once read-only access has been granted to users they can download and view the file. In the case of a repository-managed script users can also execute the file.<p class="paragraph"/>To facilitate these kinds of workflows the <a href="../guide/single.html#repositoryfileupdate" class="guide">/r/repository/file/update</a> call allows users to toggle the read-only access controls on any of their repository-managed files.<p class="paragraph"/>Using this call to enable  <em class="italic">shared</em>  access on a file makes the file visible to  <em class="italic">authenticated</em>  users. Using this call to enable  <em class="italic">published</em>  access on a file makes the file visible to  <em class="italic">authenticated</em>  and  <em class="italic">anonymous</em>  users.<p class="paragraph"/><h4>Repository File Read-Write Collaboration</h4><p class="paragraph"/>At times the owner of a repository-managed file may also wish to grant read-write access on a file so that fellow  <em class="italic">authenticated</em>  users who are sharing the same DeployR server can actively collaborate on the development of a file. For example, consider a situation where the owner of a repository-managed script wishes to collaborate more closely on it's design and implementation with a select group of  <em class="italic">authenticated</em>  users.<p class="paragraph"/>To facilitate this kind of collaborative workflow a user can now grant authorship rights on a repository file to one or more  <em class="italic">authenticated</em>  users using the <a href="../guide/single.html#repositoryfilegrant" class="guide">/r/repository/file/grant</a> call. Once a user has been granted authorship rights on a repository-managed file the user now co-owns the file and has the ability to download, modify and even delete the file.<p class="paragraph"/><blockquote class="note">
+<strong class="bold">Important!</strong>
+When modifying a repository-managed file with multiple authors it is the responsibility of the users in the collaborative workflow to ensure the overall consistency of the file.
+</blockquote><p class="paragraph"/><blockquote class="note">
+<strong class="bold">Important!</strong> Deleting a repository-managed file with multiple authors simply revokes authorship rights to the file for the caller. After the call all other authors on the file will still have full access to the file. If the last remaining author deletes a repository-managed file, then the file is permanently deleted.
+</blockquote><p class="paragraph"/>
+<h4>Repository-Managed Scripts</h4><p class="paragraph"/>Repository-managed scripts are a special type of repository-managed file. Any file with a  <em class="italic">.r</em>  or a  <em class="italic">.R</em>  extension will be identified by the server as a repository-managed script.<p class="paragraph"/>These scripts are essentially blocks of R code with well-defined inputs and outputs. While scripts are technically also repository-managed files, they are designed to be exposed as an executable on the API.<p class="paragraph"/>Scripts can be created, managed and deployed using the standard Repository APIs or directly within the  <em class="italic">DeployR Repository Manager</em> . Please refer to the  <em class="italic"><strong class="bold">Repository Manager Help</strong></em>  guide for further details.<p class="paragraph"/> <em class="italic">Authenticated</em>  users can execute scripts within the context of any project using the <a href="../guide/single.html#projectexecutescript" class="guide">/r/project/execute/script</a> call. Both  <em class="italic">authenticated</em>  and  <em class="italic">anonymous</em>  users can execute scripts within the context of <a href="../guide/single.html#anonymousprojects" class="guide">anonymous projects</a> using the <a href="../guide/single.html#repositoryscriptexecute" class="guide">/r/repository/script/execute</a> and <a href="../guide/single.html#repositoryscriptrender" class="guide">/r/repository/script/render</a> calls.<p class="paragraph"/><blockquote class="note">
+Please refer to the section <a href="../guide/single.html#repositoryscripts" class="guide">Working with Repository Scripts</a> for a detailed description of repository-managed script-specific APIs.
+</blockquote><p class="paragraph"/><blockquote class="note">
+<strong class="bold">Important!</strong> Repository-managed scripts are files in the repository so all API calls described in the section <a href="../guide/single.html#repositoryfiles" class="guide">Working with Repository Files</a> are available to create and manage repository-managed scripts.
+</blockquote><p class="paragraph"/><h4>Repository-Managed Shell Scripts</h4><p class="paragraph"/>The Repository Shell Script APIs provide some shell script-specific
+functionality for repository-managed shell scripts.<p class="paragraph"/>Shell scripts can be .sh, .csh, .bash, or .bat files.<p class="paragraph"/>While shell scripts are technically also repository-managed files, shell scripts differ
+from other repository-managed files as they are executable on the DeployR server.<p class="paragraph"/>Due to the special security concerns associated with excuting shell
+scripts on the DeployR server only shell scripts owned by ADMINISTRATOR
+users can be executed on this API call. Any attempt to execute a shell
+script stored in the repository that is not owned by an ADMINISTRATOR
+user will be rejected.<p class="paragraph"/>Access to repository-managed shell scripts is controlled by the
+standard set of private, restricted, shared and public DeployR
+repository access controls on a file-by-file basis.<p class="paragraph"/><blockquote class="note">
+Please refer to the section <a href="../guide/single.html#repositoryshell" class="guide">Working with Repository Shell Scripts</a>
+for a detailed description of repository-managed shell script-specific APIs.
+</blockquote><p class="paragraph"/>
+
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item next-right"><a href="../../guide/architecture.html"><strong>2</strong><span>Web Service API Architecture</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    Copyright (c) 2009-2016 Microsoft Corporation
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

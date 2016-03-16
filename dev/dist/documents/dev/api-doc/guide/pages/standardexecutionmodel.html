@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>17.2 Standard Execution Model 8.0.0</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/architecture.html"><strong>2</strong><span>Web Service API Architecture</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/overview.html"><strong>3</strong><span>Web Service API Overview</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/working.html"><strong>4</strong><span>Working with the Web Service APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingusers.html"><strong>5</strong><span>Working with the User APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingprojects.html"><strong>6</strong><span>Working with the Project APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingjobs.html"><strong>7</strong><span>Working with the Job APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingrepository.html"><strong>8</strong><span>Working with the Repository APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingeventstream.html"><strong>9</strong><span>Working with the Event Stream API</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/encodings.html"><strong>10</strong><span>Web Service API Data Encodings</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/explorer.html"><strong>11</strong><span>The API Explorer Tool</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/741changehistory.html"><strong>12</strong><span>API Changes in 7.4.1</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/74changehistory.html"><strong>13</strong><span>API Changes in 7.4</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/73changehistory.html"><strong>14</strong><span>API Changes in 7.3</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/72changehistory.html"><strong>15</strong><span>API Changes in 7.2</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/71changehistory.html"><strong>16</strong><span>API Changes in 7.1</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/70changehistory.html"><strong>17</strong><span>API Changes in 7.0</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/62changehistory.html"><strong>18</strong><span>API Changes in 6.2</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        
+    </div>
+    <p>DeployR API</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../../guide/71changehistory.html">&lt;&lt; <strong>16</strong><span>API Changes in 7.1</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../../guide/62changehistory.html"><strong>18</strong><span>API Changes in 6.2</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>17.2 Standard Execution Model - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Microsoft Corporation</p>
+
+                    <p><strong>Version:</strong> 8.0.0</p>
+
+                    
+                </div>
+
+                
+
+                
+
+<h2 id="standardexecutionmodel">17.2 Standard Execution Model</h2>
+The DeployR API supports a standard set of pre-execution, on-execution, and post-execution parameters across all execution APIs:
+<ul class="star">
+<li><a href="../guide/single.html#projectexecutecode" class="guide">/r/project/execute/code</a></li>
+<li><a href="../guide/single.html#projectexecutescript" class="guide">/r/project/execute/script</a></li>
+<li><a href="../guide/single.html#repositoryscriptexecute" class="guide">/r/repository/script/execute</a></li>
+<li><a href="../guide/single.html#repositoryscriptrender" class="guide">/r/repository/script/render</a></li>
+<li><a href="../guide/single.html#jobsubmit" class="guide">/r/job/submit</a></li>
+<li><a href="../guide/single.html#jobschedule" class="guide">/r/job/schedule</a></li>
+</ul><p class="paragraph"/><strong class="bold">Summary of pre-execution parameters:</strong><p class="paragraph"/>The pre-execution parameters allow the caller to  <em class="italic">pre-heat</em>  the R session with binary R object data and file data taken from a number of different sources:<p class="paragraph"/>The  <em class="italic"><strong class="bold">inputs</strong></em>  parameter allows the caller to pass <a href="../guide/single.html#encodings" class="guide">DeployR-encoded</a> R object values as inputs. These inputs are turned into R objects in the workspace before the execution begins.<p class="paragraph"/>The  <em class="italic"><strong class="bold">csvinputs</strong></em>  parameter allows the caller to pass R object primitive values as comma-separated name/value pairs. These inputs are turned into R objects in the workspace before the execution begins.<p class="paragraph"/>The  <em class="italic"><strong class="bold">preloadbydirectory</strong></em>  parameter allows the caller to load all files within one or more repository-managed directories into the working directory before the execution begins.<p class="paragraph"/>The set of  <em class="italic"><strong class="bold">preloadfilename, preloadfiledirectory, preloadfileauthor</strong></em>  and optional  <em class="italic"><strong class="bold">preloadfileversion</strong></em>  parameters allow the caller to load one or more files from the repository into the working directory before the execution begins. When loading the file contents of more than one directory, use a comma-separated list of diretory names.<p class="paragraph"/>The set of  <em class="italic"><strong class="bold">preloadobjectname, preloadobjectdirectory, preloadobjectauthor</strong></em>  and optional  <em class="italic"><strong class="bold">preloadobjectversion</strong></em>  parameters allow the caller to load one or more binary R objects (.rData) from the repository into the workspace before the execution begins.<p class="paragraph"/>The set of  <em class="italic"><strong class="bold">adoptdirectory, adoptworkspace</strong></em>  and  <em class="italic"><strong class="bold">adoptpackages</strong></em>  parameters allow the caller to load a pre-existing project workspace, project working directory and/or project package dependencies before the execution begins.<p class="paragraph"/><strong class="bold">Summary of on-execution parameters:</strong><p class="paragraph"/>The following on-execution parameters allow the caller to control the R session environment:<p class="paragraph"/>The  <em class="italic"><strong class="bold">tag</strong></em>   parameter allows the caller to specify a tag that labels an execution.<p class="paragraph"/>The  <em class="italic"><strong class="bold">echooff</strong></em>  parameter controls whether R commands will appear in the console output on the execution.<p class="paragraph"/>The  <em class="italic"><strong class="bold">consoleoff</strong></em>  parameter controls whether console output is returned in the response markup following an execution.<p class="paragraph"/>The  <em class="italic"><strong class="bold">enableConsoleEvents</strong></em>  parameter controls whether console events are delivered on the event stream for the current execution.<p class="paragraph"/>The  <em class="italic"><strong class="bold">graphics</strong></em>  parameter allows the caller to specify the preferred R graphics device on the execution: png or svg.<p class="paragraph"/>The  <em class="italic"><strong class="bold">graphicswidth</strong></em>  parameter allows the caller to specify the preferred width for R graphics device images.<p class="paragraph"/>The  <em class="italic"><strong class="bold">graphicsheight</strong></em>  parameter allows the caller to specify the preferred height for R graphics device images.<p class="paragraph"/><strong class="bold">Summary of post-execution parameters:</strong><p class="paragraph"/>The following post-execution parameters allow the caller to retrieve data from the R session on the response markup and/or store data from the R session into the repository:<p class="paragraph"/>The  <em class="italic"><strong class="bold">storefile</strong></em>  parameter allows the caller to specify a comma-separated list of working directory files to be stored in the repository after the execution completes.<p class="paragraph"/>The  <em class="italic"><strong class="bold">storeobject</strong></em>  parameter allows the caller to specify a comma-separated list of workspace objects to be stored in the repository after the execution completes.<p class="paragraph"/>The  <em class="italic"><strong class="bold">storeworkspace</strong></em>  parameter allows the caller to store the entire workspace in the repository after the execution completes.<p class="paragraph"/>The  <em class="italic"><strong class="bold">storedirectory</strong></em>  parameter allows the caller to specify a target repository directory for stored files and objects after the execution completes.<p class="paragraph"/>The  <em class="italic"><strong class="bold">storenewversion</strong></em>  parameter allows the caller to create new versions of each stored file in the repository after the execution completes. By default, stored files overwrite any pre-existing file by the same name.<p class="paragraph"/>The  <em class="italic"><strong class="bold">storepublic</strong></em>  parameter allows the caller to assign public access to each stored file in the repository after the execution completes.<p class="paragraph"/>The  <em class="italic"><strong class="bold">storenoproject</strong></em>  parameter allows the caller to skip the persistence-to-project step after the execution of a job.<p class="paragraph"/>The  <em class="italic"><strong class="bold">infinity</strong></em> ,  <em class="italic"><strong class="bold">nan</strong></em>  and  <em class="italic"><strong class="bold">encodeDataFramePrimitiveAsVector</strong></em>  parameters allow the caller to control how DeployR-encoded R object data is encoded in the response markkup.<p class="paragraph"/>Beyond the clear benefits of DeployR exposing a standard set of pre and post execution parameters across all execution APIs, the addition of the  <em class="italic"><strong class="bold">store</strong></em>  parameters opens up fundamentally new ways to build DeployR applications thanks to more efficient data and execution workflows, particularly when used in conjunction with the  <em class="italic"><strong class="bold">preload</strong></em>  parameters.<p class="paragraph"/><blockquote class="note">
+The execution APIs also return a set of new properties in the response markup,  <em class="italic"><strong class="bold">timeStart</strong></em> ,  <em class="italic"><strong class="bold">timeCode</strong></em>  and  <em class="italic"><strong class="bold">timeTotal</strong></em> . These properties can be used to help you profile the runtime characteristics of your code, script and job executions on DeployR.
+</blockquote>
+
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../../guide/71changehistory.html">&lt;&lt; <strong>16</strong><span>API Changes in 7.1</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../../guide/62changehistory.html"><strong>18</strong><span>API Changes in 6.2</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    Copyright (c) 2009-2016 Microsoft Corporation
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="DeployR - Simple R analytics integration for application developers.">
+<meta name="keywords" content="R,Simple,DeployR,Java,JavaScript,.NET,Statistics,Big Data">
+<meta name="author" content="Microsoft Corporation">
+<meta name="google-site-verification" content="BQWjliQil8coeYFDfd-nee7j5GDJ0p-6lU4abeJiAZU">
+
+<!--<time itemprop="buildDate" datetime="Wednesday, March 16th, 2016, 9:47:06 AM PDT"></time>-->
+
+<title>
+  DeployR &middot; DeployR on Linux - Installation Guide
+</title>
+
+<!-- Favicons -->
+<link rel="shortcut icon" href="../../../../assets/img/favicon.png" type="image/png" >
+<link rel="icon" href="../../../../assets/img/favicon.png" type="image/png">
+
+<!-- Bootstrap styles -->
+<link rel="stylesheet" href="../../../../assets/css/vendor/bootstrap/bootstrap.min.css">
+
+<!-- Documentation extras -->
+<link href="../../../../assets/css/github.css" rel="stylesheet">
+
+<!-- Glyphicons -->
+<link rel="stylesheet" href="../../../../assets/css/vendor/glyphicons/glyphicons.min.css">
+<link rel="stylesheet" href="../../../../assets/css/vendor/glyphicons/filetypes.min.css">
+<link rel="stylesheet" href="../../../../assets/css/vendor/glyphicons/social.min.css">
+
+<!-- Google Webfonts -->
+<link href="//fonts.googleapis.com/css?family=Open+Sans:400,700,600" rel="stylesheet" type="text/css">
+
+<!-- LayerSlider styles -->
+<link rel="stylesheet" href="../../../../assets/css/vendor/layerslider/layerslider.min.css" type="text/css">
+
+<!-- Grove Styles (switch for different color schemes, e.g. "styles-cleanblue.css") -->
+<link rel="stylesheet" href="../../../../assets/css/styles-blue.css" id="grove-styles">
+
+<!-- Site Styles -->
+<link href="../../../../assets/css/site.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <link rel="stylesheet" href="../../../../assets/css/ie8.css">        
+  <script src="../../../../assets/js/vendor/google/html5-3.6-respond-1.1.0.min.js"></script>
+<![endif]-->
+
+<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery/jquery-1.9.1.min.js"><\/script>')</script>
+<!-- jQuery with jQuery Easing, and jQuery Transit JS -->
+     
+<!-- LayerSlider from Kreatura Media with Transitions -->
+<script src="../../../../assets/js/vendor/layerslider/greensock.js" type="text/javascript"></script>
+<script src="../../../../assets/js/vendor/layerslider/layerslider.transitions.js" type="text/javascript"></script>
+<script src="../../../../assets/js/vendor/layerslider/layerslider.kreaturamedia.jquery.js" type="text/javascript"></script>
+
+<!-- Grove Layerslider initiation script -->
+<script src="../../../../assets/js/grove-slider.js" type="text/javascript"></script>
+
+<!-- GA for DeployR-site -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-6984166-13', 'auto');
+  ga('send', 'pageview');
+</script>
+  </head>
+  <body data-spy="scroll" data-target="#sidenav">
+    <a class="sr-only" href="#content">Skip to main content</a>
+
+    <!-- master nav -->
+    <header>
+   <nav class="navbar navbar-default grove-navbar" role="navigation">
+      <div class="container">
+         <div class="navbar-header">
+            <a href="#" class="grove-toggle" data-toggle="collapse" data-target=".grove-nav">   
+            <i class="glyphicons show_lines"></i>  
+            </a>
+            <a href="/" class="navbar-brand">
+            <img src="../../../../assets/img/rLogo.png" alt="DeployR"> DeployR
+            </a>
+         </div>
+         <div class="collapse navbar-collapse grove-nav">
+            <ul class="nav navbar-nav">
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Data Scientists <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/data-scientist">Getting Started</a></li>
+                <!--<li><a href="#">Learn-by-Example Tutorial</a></li>-->
+                     <li><a href="/documents/dev/scientist-portable-code">Portable R Code Guide</a></li>
+                     <li><a href="/documents/help/repo-man">Repository Manager Help</a></li>
+                     <li><a href="/documents/getting-started/data-scientist#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Application Developers <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/application-developer">Getting Started</a></li>
+                     <!--<li><a href="#">Learn-by-Example Tutorial</a></li>-->
+                     <li><a href="/documents/dev/rbroker">RBroker Framework Tutorial</a></li>
+                     <li><a href="/documents/dev/clientlib">Client Library Tutorial</a></li>
+                     <li><a href="/documents/dev/api-doc">API Reference Guide</a></li>
+                     <li><a href="/docanddown">Library Downloads</a></li>
+                     <li><a href="/documents/getting-started/application-developer/#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Administrators <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/administrator">Getting Started</a></li>
+                     <li><a href="/documents/admin/install">Installation & Configuration</a></li>
+                     <li><a href="/documents/admin/security">Security</a></li>
+                     <li><a href="/documents/admin/r-package-mgmt">R Package Management</a></li>
+                     <li><a href="/documents/help/admin-console">Administration Console Help</a></li>
+                     <li><a href="/documents/admin/troubleshoot">Troubleshooting</a></li>
+                     <li><a href="/documents/getting-started/administrator/#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">
+                  Community <b class="caret"></b>
+                  </a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="http://go.microsoft.com/fwlink/?LinkID=708535" target="_blank">Forum / Discussion Group</a></li>
+                     <li><a href="/faq">FAQs</a></li>
+                  </ul>
+               </li>
+              <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Download<b class="caret"></b></a>            
+                  <ul class="dropdown-menu pull-right">   
+                    <li><a href="/download">Download DeployR</a></li>
+                    <li><a href="/documents/admin/install">Install DeployR</a></li>
+                    <li><a href="/releases/">Release History</a></li>
+                  </ul>
+            </ul>
+         </div>
+         <!-- /.navbar-collapse -->
+      </div>
+   </nav>
+</header>
+
+
+    <!-- page title -->
+    <div class="widewrapper pagetitle strong-highlight">
+   <div class="container">
+      <h1>DeployR on Linux - Installation Guide <small></small></h1>
+      <span class="product-version">
+         Version 8.1.0
+         
+      </span>
+   </div>
+</div>
+  
+    <div class="widewrapper sf-wrapper">
+      <div class="container content" role="main">
+        <div>
+          
+<div class="row"><div class="col-md-3" id="sidenav"><div class="bs-sidebar hidden-print hidden-xs hidden-sm" role="complementary"><ul class="nav bs-sidenav"><li class="active"><a href="#intro">Introduction</a><ul class="nav"></ul></li><li><a href="#sysreq">System Requirements on Linux</a><ul class="nav"></ul></li><li><a href="#install-linux">Installing DeployR</a><ul class="nav"><li><a class="toc-section-0" href="#preparing">Dependencies</a></li><li><a class="toc-section-0" href="#install-deployr-linux">DeployR Server Install</a></li><li><a class="toc-section-0" href="#install-deployr-nodes">DeployR Grid Node Install</a></li></ul></li><li><a href="#migrate">Migrating to DeployR 8.1</a><ul class="nav"></ul></li><li><a href="#after">Configuring DeployR</a><ul class="nav"><li><a class="toc-section-0" href="#update-firewall">Update Your Firewall</a></li><li><a class="toc-section-0" href="#change-pass">Set Passwords on Default Accounts</a></li><li><a class="toc-section-0" href="#public-access">Configuring Public Access</a></li><li><a class="toc-section-0" href="#config-grid">Configuring the DeployR Grid</a></li><li><a class="toc-section-0" href="#config_selinux">Configuring SELinux</a></li></ul></li><li><a href="#uninstall">Uninstalling DeployR</a><ul class="nav"></ul></li></ul><div class="related"><h3 id="more-resources">More Resources</h3>
+<ul>
+<li><a href="/documents/admin/whats-new/">What&#39;s new in 8.1.0</a></li>
+<li><a href="/documents/admin/troubleshoot">Diagnostics &amp; Troubleshooting</a></li>
+<li><a href="/documents/getting-started/administrator/">Getting Started - Admins</a></li>
+<li><a href="/documents/getting-started/data-scientist/">Getting Started - Data Scientist</a></li>
+<li><a href="/documents/getting-started/application-developer/">Getting Started - Application Developer</a></li>
+</ul>
+</div></div></div><div class="col-md-9" role="main"><div class="container-fluid content doc-content"><h1 id="intro">Introduction</h1>
+
+<div class="row">
+<div class="col-md-8">
+
+This installation guide describes how to:
+<ul>
+<li> Review the <a href="#sys-reqs">system requirements</a> for DeployR </li>
+<li>  <a href="#install-linux">Install</a> DeployR and its dependencies </li>
+<li>  <a href="#after">Configure</a> DeployR after installation </li>
+<li>  <a href="#migrate">Migrate</a> to the current version </li>
+<li>  <a href="#uninstall">Uninstall</a> DeployR </li>
+</ul>
+</div>
+   <div class="col-md-4">
+        <div class="logo linux"></div>
+        <div class="underlogo">
+        <strong>Install DeployR on Linux</strong>
+        </div>
+   </div>
+</div>
+<div class="alert alert-success"><strong>Get More DeployR Power: </strong> 
+<p><a href="http://go.microsoft.com/fwlink/?LinkID=698525">Get DeployR Enterprise today</a> to take advantage of great DeployR features like <a href="/documents/admin/security">enterprise security</a> and <a href="/documents/help/admin-console/#Topics/node-grid-intro.htm" target="_blank">a scalable grid framework</a>.  Note that DeployR Enterprise is part of Microsoft R Services.</p>
+
+</div>
+
+
+<h1 id="sysreq">System Requirements on Linux</h1>
+
+<p>
+Before you begin installing DeployR, verify that the computer meets the following minimum hardware and software requirements.<br>&nbsp;</p>
+
+<ul>
+<li><strong>Operating Systems</strong> (all 64-bit processor):</li>
+</ul>
+<p><table style="margin-left:45px; margin-top:-20px;">
+    <tr>
+    <th></th>
+    <th width=35%>DeployR Enterprise</th>
+    <th>DeployR Open</th>
+    </tr>
+    <tr>
+        <td><b>Fully Supported:</b></td>
+        <td>SUSE Linux Enterprise Server 11 (SP2)
+            <br/>CentOS / RHEL 5.8, 6.x </td>
+        <td>SUSE Linux Enterprise Server 11 (SP2)
+            <br/>CentOS / RHEL 5.8, 6.x, 7.0 </td>
+    </tr>
+    <tr>
+        <td><b>Experimental:<sup>&#43;</sup></b></td>
+        <td>N/A</td>
+        <td>OpenSUSE 13.1 
+            <br>Ubuntu 12.04, 14.04</td>
+    </tr><br>    </table>
+    <p style="margin-left:50px; margin-top:-15px; margin-bottom:25px;"><sup>&#43;</sup><small>DeployR Open is neither fully tested nor officially supported on those experimental platforms. Not recommended for production environments.</small>
+    </p></p>
+<ul>
+<li><p><strong>Hardware</strong>. Intel Pentium®-class processor; 3.0 GHz recommended</p>
+</li>
+<li><p><strong>Free disk space</strong>. 250 GB or more recommended</p>
+</li>
+<li><p><strong>RAM</strong>. 4 GB or more is recommended</p>
+</li>
+<li><p><strong>Java JVM heap size</strong>. 1 GB or more in production</p>
+</li>
+<li><p><strong>Swap space</strong>. 8 GB or more for larger data sets is recommended</p>
+</li>
+<li><p><strong>Internet access</strong>. To download DeployR and software dependencies as well as to interact with the Repository Manager, Administration Console, API Explorer Tool, and this comprehensive website.  If using Microsoft Internet Explorer, use version 8 or later.</p>
+</li>
+</ul>
+<div class="alert alert-warning"><strong>Important! </strong>We highly recommend installing DeployR on a <em>dedicated server machine</em>.</div>
+
+<h1 id="install-linux">Installing DeployR</h1>
+
+<div class="alert alert-warning"><strong>Important! </strong> 
+<ol>
+<li>If you already have a version of DeployR, follow the <a href="#migrate">migration instructions</a> first.</li>
+<li>We highly recommend installing DeployR on a dedicated machine.</li>
+<li>While it is technically possible to run instances of two different versions of DeployR side-by-side on a single machine, we strongly recommend that you <strong>dedicate one machine for each server instance</strong> that is <em>in production</em> so as to avoid resource contention.</li>
+<li>Review the <a href="#sysreq">system requirements &amp; supported OS</a> before you continue.</li>
+<li>Install the DeployR main server first any grid nodes.</li>
+</ol></div>
+
+<h2 id="preparing">Dependencies</h2>
+
+<p>Before you can install DeployR, you must manually install and configure the following dependencies.</p>
+<table>
+<thead>
+<tr>
+<th>Dependency</th>
+<th style="text-align:center">DeployR Server</th>
+<th style="text-align:center">DeployR Grid Node</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Java™ Runtime Environment 8 or 7u13 (or later)</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">No</td>
+</tr>
+<tr>
+<td>R Engine: <br/> - DeployR Enterprise: <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://go.microsoft.com/fwlink/?LinkID=698527" target="_blank">Microsoft R Services</a> 8.1 and its dependencies <br/> - DeployR Open: <br/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://go.microsoft.com/fwlink/?LinkID=698301" target="_blank">Revolution R Open</a> v8.0.x, 3.2.x or R v3.1.x, 3.2.x</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>DeployR Rserve 8.0.0</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>make, gcc, gfortran</td>
+<td style="text-align:center">Yes</td>
+<td style="text-align:center">Yes</td>
+</tr>
+<tr>
+<td>nfs-utils and nfs-utils-lib<br/><small>Note: On Ubuntu, install nfs-common to get nfs-utils.</small></td>
+<td style="text-align:center">Yes, for <br><a href="/documents/admin/bigdata">external directories</a></td>
+<td style="text-align:center">Yes, for <br><a href="/documents/admin/bigdata">external directories</a></td>
+</tr>
+</tbody>
+</table>
+<p></br>
+<strong> To install the required dependencies: </strong>
+</br></p>
+<ol>
+<li><p>On the main DeployR server, install <strong>Java™ Runtime Environment 8 or 7u13 (or later)</strong>, a dependency of DeployR, as follows. For more help installing Java or setting the path, refer to oracle.com.</p>
+<div class="well well-sm"><strong>Note:</strong> Java is only required on the main DeployR server. </div>
+
+<ul>
+<li><p><a href="http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html" target="_blank">Download the tar file from Oracle</a> and install it <strong>OR</strong> install using your local package manager. </p>
+</li>
+<li><p>Set <code>JAVA_HOME</code> to the installation path for the JDK or JRE you just installed. <br/>For example, if the installation path was <code>/usr/lib/jvm/jdk1.8.0_45/jre</code>, then the command would be:</p>
+<pre><code>export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_45/jre</code></pre>
+<p><br/></p>
+</li>
+</ul>
+</li>
+<li><p>Install R, another dependency, for your edition of DeployR. </p>
+<ul>
+<li><p><strong>DeployR Enterprise 8.1.0</strong> requires <a href="http://go.microsoft.com/fwlink/?LinkID=698527" target="_blank">Microsoft R Services 8.1</a>, which includes ScaleR for multi-processor and big data support. <strong>Follow the instructions provided with Microsoft R Services to install it as well as any of its dependencies.</strong> <a href="https://support.microsoft.com" target="_blank">Contact technical support</a> if you cannot find the proper version of Microsoft R Services. </p>
+</li>
+<li><p><strong>DeployR Open 8.1.0</strong> requires either <a href="http://go.microsoft.com/fwlink/?LinkID=698301" target="_blank">Revolution R Open</a>  v8.0.x, 3.2.x or R v3.1.x, 3.2.x. <a href="http://go.microsoft.com/fwlink/?LinkID=698301" target="_blank">Revolution R Open</a> is the enhanced distribution of R from Microsoft.
+<br/>&nbsp;</p>
+</li>
+</ul>
+</li>
+<li><p>Install <strong>DeployR Rserve 8.0.0</strong>, a dependency of DeployR, after Microsoft R Services, Revolution R Open, or R is installed as follows:</p>
+<p>A. <a href="https://github.com/Microsoft/deployr-rserve/releases/">Download the Linux tar file for DeployR Rserve 8.0.0, <code>deployrRserve_8.0.0.tar.gz</code></a>.</p>
+<p>B. Run the following command to install RServe:</p>
+<pre><code>R CMD INSTALL deployrRserve_8.0.0.tar.gz</code></pre>
+<p> <br/></p>
+</li>
+<li><p>Make sure the system repositories are up-to-date  prior to installing DeployR. The following commands <em>do not install anything</em>; however running them will ensure that the repositories contain the latest software:        </p>
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-N12QTdzal-0" data-toggle="tab" data-type="">Redhat / CentOS</a></li><li class=""><a href="#tab-N12QTdzal-1" data-toggle="tab" data-type="">Ubuntu</a></li><li class=""><a href="#tab-N12QTdzal-2" data-toggle="tab" data-type="">OpenSUSE / SLES</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-N12QTdzal-0"><p></p>
+<p>Run the following command:</p>
+<pre><code>sudo yum clean all</code></pre>
+<p></p></div><div class="tab-pane" id="tab-N12QTdzal-1"><p></p>
+<p>Run the following command:</p>
+<pre><code>sudo apt-get update</code></pre>
+<p></p></div><div class="tab-pane" id="tab-N12QTdzal-2"><p></p>
+<p>Run the following command:</p>
+<pre><code>sudo zypper clean --all</code></pre>
+<p></p></div></div><p>  </p>
+<p> <br/></p>
+</li>
+<li><p>Install the following packages (<code>make</code>, <code>gcc</code>, and <code>gfortran</code>) if missing:</p>
+<p> </p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-V1lnQpuf6l-0" data-toggle="tab" data-type="">Redhat / CentOS</a></li><li class=""><a href="#tab-V1lnQpuf6l-1" data-toggle="tab" data-type="">Ubuntu</a></li><li class=""><a href="#tab-V1lnQpuf6l-2" data-toggle="tab" data-type="">OpenSUSE / SLES</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-V1lnQpuf6l-0"><p></p>
+ <div class="well well-sm"><strong>Note: </strong> Install packages as <code>root</code> or a user with <code>sudo</code> permissions.</div>        
+
+<p>   A. Check if the packages are already installed.</p>
+<pre><code>yum list make gcc gfortran</code></pre>
+<p>   B. Install any missing packages:</p>
+<pre><code>#if make is missing, run 
+yum install make
+
+#if gcc is missing, run
+yum install gcc
+
+#if gfortran is missing, run
+yum install gfortran</code></pre>
+<p> </p></div><div class="tab-pane" id="tab-V1lnQpuf6l-1"><p></p>
+  <div class="well well-sm"><strong>Note: </strong> Install packages as <code>root</code> or a user with <code>sudo</code> permissions.</div>        
+
+<p>   A. Check if the packages are already installed.</p>
+<pre><code>dpkg -l make gcc gfortran</code></pre>
+<p>   B. Install any missing packages:</p>
+<pre><code>#if make is missing, run 
+sudo apt-get install make
+
+#if gcc is missing, run
+sudo apt-get install gcc
+
+#if gfortran is missing, run
+sudo apt-get install gfortran</code></pre>
+<p> </p></div><div class="tab-pane" id="tab-V1lnQpuf6l-2"><p></p>
+  <div class="well well-sm"><strong>Note: </strong> Install packages as <code>root</code> or a user with <code>sudo</code> permissions.</div>        
+
+<p>   A. Check if the packages are already installed.</p>
+<pre><code>  sudo zypper search -i make
+  sudo zypper search -i gcc 
+  sudo zypper search -i gfortran</code></pre>
+<p>   B. Install any missing packages:</p>
+<pre><code>#if make is missing, run 
+sudo zypper install make
+
+#if gcc is missing, run
+sudo zypper install gcc
+
+#if gfortran is missing, run
+sudo zypper install gfortran</code></pre>
+<p> </p></div></div><p></p>
+</li>
+</ol>
+<p><br/></p>
+<div align=center><span class="badge alert-success"><big><big><strong>-- The prerequisites are now installed. You can begin installing DeployR now. --</strong></big></big></span></div>
+&nbsp; 
+
+<h2 id="install-deployr-linux">DeployR Server Install</h2>
+
+The basic installation of DeployR will install the DeployR main server and configure a local H2 database on the same machine. If you wish to use a different database, you can configure DeployR to do so later as described in the steps below.
+
+<div class="alert alert-info"><strong>DeployR Enterprise Only: </strong> 
+In addition to this basic installation, DeployR Enterprise customers can also use a <a href="/documents/admin/install/d-dbswitch/">remote database for DeployR</a> or install <a href="#install-deployr-nodes">additional grid nodes</a> for optimized workload distribution. 
+</div>
+
+
+<p></p><ul class="code-tabs nav nav-tabs"><li class="active"><a href="#tab-VyZhmadGal-0" data-toggle="tab" data-type="">DeployR Enterprise</a></li><li class=""><a href="#tab-VyZhmadGal-1" data-toggle="tab" data-type="">DeployR Open</a></li></ul><div class="tab-content"><div class="tab-pane active" id="tab-VyZhmadGal-0"><p>
+The following steps are for installing DeployR Enterprise after installing <a href="#preparing">these dependencies</a>:</p>
+<ol>
+<li><p>Log into the operating system. </p>
+</li>
+<li><p>Create the <code>deployrdownload</code> directory and go to that directory. At the prompt, type:</p>
+<div class="well well-sm"><strong>Note: </strong> Examples are written for user <code>deployr-user</code>. For another user, update the commands accordingly.</div>
+
+<pre><code>mkdir /home/deployr-user/deployrdownload
+cd /home/deployr-user/deployrdownload</code></pre>
+</li>
+<li><p>Download the software, <code>DeployR-Enterprise-Linux-8.1.0.tar.gz</code>, using the link in your customer welcome letter. </p>
+</li>
+<li><p>Unzip the tar file contents, go the <code>installFiles</code> directory, and launch the installation script. At the prompt, type:</p>
+<pre><code>tar -xzf DeployR-Enterprise-Linux-8.1.0.tar.gz
+cd installFiles
+./installDeployREnterprise.sh</code></pre>
+</li>
+<li><p>When the installer starts, accept the terms of the agreement to continue.</p>
+</li>
+<li><p>From the installer menu, choose <code>Option 1</code>. This will install the DeployR server along with a local H2 database. </p>
+</li>
+<li><p>Follow the remaining onscreen installer prompts. If you will be keeping an older version of DeployR on this same machine for the purposes of migrating data, for example, then be sure to install this version in its own directory. </p>
+</li>
+<li><p>Set the administrator&#39;s password and run the diagnostic tests to verify the installation.</p>
+<ol>
+<li>Launch the DeployR administrator utility script:<pre><code>cd $DEPLOYR_HOME/deployr/tools/ 
+./adminUtility.sh</code></pre>
+</li>
+<li><p>From the main menu, enter <code>1</code> to set a password for the local DeployR <code>admin</code> account. </p>
+</li>
+<li><p>From the main menu, enter <code>4</code> to run the full <a href="/documents/admin/troubleshoot/#health">DeployR diagnostic tests</a>.  If there are any issues, you must solve them before continuing. Consult the <a href="/documents/admin/troubleshoot">Troubleshooting section</a> for additional help or post questions to our <a href="http://go.microsoft.com/fwlink/?LinkID=708535" target="_blank">DeployR Forum</a>.</p>
+</li>
+</ol>
+</li>
+<li><p>If you want to use a local or remote PostgreSQL database instead of the default local H2 database, you should configure that now as <a href="/documents/admin/install/d-dbswitch/">described here</a>. </p>
+</li>
+<li><p>If you are provisioning your server on a cloud service, configure that now. Follow these steps for <a href="/documents/admin/install/azure" target="_blank">Azure</a>
+or for <a href="/documents/admin/install/aws-setup" target="_blank">AWS EC2 instance</a>.</p>
+</li>
+</ol>
+<p></p></div><div class="tab-pane" id="tab-VyZhmadGal-1"><p></p>
+<p>The following steps are for installing DeployR Open after installing <a href="#preparing">these dependencies</a>:</p>
+<ol>
+<li><p>Log into the operating system. </p>
+</li>
+<li><p>Create the <code>deployrdownload</code> directory and go to that directory. At the prompt, type:</p>
+<div class="well well-sm"><strong>Note: </strong> Examples are written for user <code>deployr-user</code>. For another user, update the commands accordingly.</div>
+
+<pre><code>mkdir /home/deployr-user/deployrdownload
+cd /home/deployr-user/deployrdownload</code></pre>
+</li>
+<li><p><a href="/download/os">Download the install bundle </a> for DeployR Open, <code>DeployR-Open-Linux-8.1.0.tar.gz</code>.</p>
+</li>
+<li><p>Unzip the tar file contents, go the <code>installFiles</code> directory, and launch the installation script. At the prompt, type:</p>
+<pre><code>tar -xzf DeployR-Open-Linux-8.1.0.tar.gz
+cd installFiles
+./installDeployROpen.sh</code></pre>
+</li>
+<li><p>When the installer starts, accept the terms of the agreement to continue.</p>
+</li>
+<li><p>From the installer menu, choose <code>Option 1</code>. This will install the DeployR server along with a local H2 database. </p>
+</li>
+<li><p>Follow the remaining onscreen installer prompts. If you will be keeping an older version of DeployR on this same machine for the purposes of migrating data, for example, then be sure to install this version in its own directory.   </p>
+</li>
+<li><p>Set the administrator&#39;s password and run the diagnostic tests to verify the installation.</p>
+<ol>
+<li>Launch the DeployR administrator utility script:<pre><code>cd $DEPLOYR_HOME/deployr/tools/ 
+./adminUtility.sh</code></pre>
+</li>
+<li><p>From the main menu, enter <code>1</code> to set a password for the local DeployR <code>admin</code> account. </p>
+</li>
+<li><p>From the main menu, enter <code>4</code> to run the full <a href="/documents/admin/troubleshoot/#health">DeployR diagnostic tests</a>.  If there are any issues, you must solve them before continuing. Consult the <a href="/documents/admin/troubleshoot">Troubleshooting section</a> for additional help or post questions to our <a href="http://go.microsoft.com/fwlink/?LinkID=708535" target="_blank">DeployR Forum</a>.</p>
+</li>
+</ol>
+</li>
+<li><p>If you want to use a local or remote PostgreSQL database instead of the default local H2 database, you should configure that now as <a href="/documents/admin/install/d-dbswitch/">described here</a>. </p>
+</li>
+<li><p>If you are provisioning your server on a cloud service, configure that now. Follow these steps for <a href="/documents/admin/install/azure" target="_blank">Azure</a>
+or for <a href="/documents/admin/install/aws-setup" target="_blank">AWS EC2 instance</a>.</p>
+</li>
+</ol>
+<p></p></div></div><p>  </p>
+<p><br/></p>
+<div align=center><span class="badge alert-success"><big><big><strong>-- The basic installation of DeployR is now complete --</strong></big></big></span></div>
+
+<p><br/></p>
+<p><br/>   </p>
+<div class="alert alert-warning"><strong>What&#39;s Next After Installing?</strong> 
+
+<br/><span class="badge alert-info">1</span> <a href="#install-deployr-nodes">Add any additional grid nodes</a> (DeployR Enterprise only). 
+<br/><span class="badge alert-info">2</span>  Log in as <code>admin</code> with your newly defined password at <code>http&#58;//&lt;DEPLOYR_SERVER_IP&gt;:8100/deployr/landing</code>.
+<br/><span class="badge alert-info">3</span> <a href="#after">Finish configuring DeployR</a>. Follow the topics in that section in the order in which they are presented.
+<br/><span class="badge alert-info">4</span> <a href="/dev/">Download DeployR client-side developer tools</a>, including the RBroker framework and client libraries.
+<br/><span class="badge alert-info">5</span> <a href="/documents/help/admin-console/#Topics/user-intro.htm" target="_blank">Create any user accounts</a> in the Administration Console. Then, provide each user with their username and password as well as the address of the DeployR  landing page.
+<br/><span class="badge alert-info">6</span> Read the <a href="/documents/getting-started/administrator/">Administrator Getting Started</a> guide. Also available are the <a href="/documents/getting-started/data-scientist/">Data Scientist Getting Started</a> guide and the <a href="/documents/getting-started/application-developer/">Application Developer Getting Started</a> guide.
+</div>
+
+
+<h2 id="install-deployr-nodes">DeployR Grid Node Install</h2>
+
+<p>When you install the DeployR server, one local grid node is installed automatically for you. DeployR Open supports only this single node installed on <code>localhost</code> with a <a href="/documents/help/admin-console/#Topics/node-properties.htm" target="_blank">fixed slot limit</a>. DeployR Enterprise, on the otherhand, allows you to point this default grid node to a remote location, customize its slot limit, and even add additional grid nodes to scale for increasing load. 
+This option also assumes that you have already installed the main <a href="#install-deployr-linux">DeployR server</a>. </p>
+<div class="alert alert-info"><strong>Tips! </strong>
+<ul>
+<li>For help in determining the right number of grid nodes for you, refer to the <a href="/documents/admin/throughput/#gridcap">Scale &amp; Throughput</a> document.</li>
+<li>Once you have installed and configured one grid node, you can copy the files over from the server that has already been set up over to the next one.</li>
+<li>Install each grid node on a separate host machine.</li>
+</ul></div>
+
+<p>After installing the <a href="#install-deployr-linux">main server for DeployR Enterprise</a>, install each grid node on a separate machine as follows:</p>
+<ol>
+<li><p>Log into the operating system on the machine on which you will install the grid node. </p>
+</li>
+<li><p>Install Microsoft R Services and RServe <a href="#preparing">as described here</a> on the grid node machine.</p>
+</li>
+<li><p>Create the <code>deployrdownload</code> directory and go to that directory. At the prompt, type:</p>
+<div class="well well-sm"><strong>Note: </strong> Examples are written for user <code>deployr-user</code>. For another user, update the commands accordingly.</div>
+
+<pre><code>mkdir /home/deployr-user/deployrdownload
+cd /home/deployr-user/deployrdownload</code></pre>
+</li>
+<li><p>Download the software, <code>DeployR-Enterprise-Linux-8.1.0.tar.gz</code>, using the link in your customer welcome letter. </p>
+</li>
+<li><p>Unzip the tar file contents, go the <code>installFiles</code> directory, and launch the installation script. At the prompt, type:</p>
+<pre><code>tar -xzf DeployR-Enterprise-Linux-8.1.0.tar.gz
+cd installFiles
+./installDeployREnterprise.sh</code></pre>
+</li>
+<li><p>When the installer starts, accept the terms of the agreement to continue.</p>
+</li>
+<li><p>When prompted by the installer, choose installation option <code>2</code> and follow the onscreen installer prompts. This will install a remote grid node.  </p>
+</li>
+<li><p>Enter the directory path in which to install. If you will be keeping an older version of DeployR on this same machine for the purposes of migrating data, for example, then be sure to install this version in its own directory.</p>
+</li>
+<li><p>When the installer completes, log into the DeployR landing page. <p>After installing DeployR 8.1.0 and setting the password for the <code>admin</code> user account, you can log into the DeployR landing page.  The landing page is accessible at <code>http&#58;//&lt;DEPLOYR_SERVER_IP&gt;:8100/deployr/landing</code>, where <code>&lt;DEPLOYR_SERVER_IP&gt;</code> is the IP address of the DeployR main server machine. </p></p>
+<ol>
+<li>Go to the Adminstrative Console and <a href="#config-grid">configure each grid node</a>.</li>
+<li>Return to the landing page and run a <a href="/documents/admin/troubleshoot/#run-diagnostics">diagnostic check</a>. Consult the <a href="/documents/admin/troubleshoot">Troubleshooting section</a> for help or post questions to our <a href="http://go.microsoft.com/fwlink/?LinkID=708535" target="_blank">DeployR Forum</a>.
+<br/>
+<br/></li>
+</ol>
+</li>
+</ol>
+<div align=center><span class="badge alert-success"><big><big><strong>-- The grid node installation is now complete --</strong></big></big></span></div>
+<br/>&nbsp;
+
+<h1 id="migrate">Migrating to DeployR 8.1</h1>
+
+
+Please carefully follow these migration instructions to migrate users, R Scripts, projects, other DeployR data as well as to learn how to update/preserve client application files.
+
+
+<div class="alert alert-info"><strong>Important! </strong> If you want to upgrade or reinstall your version or R or Microsoft R Services, please <a href="/documents/admin/reinstallr/#reinstallr-intro">follow these instructions</a>.
+</div>
+
+<h2 id="migrating-data-from-previous-deployr-version-to-deployr-8-1-0-">Migrating Data from Previous DeployR Version to DeployR 8.1.0:</h2>
+<p>The following instructions will walk you through a migration of DeployR 8.0.0 or earlier to DeployR 8.1.0. </p>
+<ol>
+<li><p><strong>Do not uninstall</strong> your older version of DeployR until you have backed up the data you want to keep and completed the data migration.</p>
+</li>
+<li><p>Ensure your previous version of DeployR is running and that all users are logged out of the version.</p>
+</li>
+<li><p><a href="#install-linux">Install and configure</a> DeployR 8.1.0 and all its dependencies.</p>
+</li>
+<li><p>Ensure that all users are logged out of DeployR 8.1.0 as well.</p>
+</li>
+<li><p>Launch the DeployR 8.1.0 administrator utility script:</p>
+<pre><code>cd $DEPLOYR_HOME/deployr/tools/ 
+./adminUtility.sh</code></pre>
+</li>
+<li><p>From the main menu, enter <code>6</code> to migrate the data from the previous version.
+@@@@@@@ WHAT FILE GOES WHERE???? </p>
+</li>
+<li><p>Log into the DeployR 8.1.0 landing page. <p>After installing DeployR 8.1.0 and setting the password for the <code>admin</code> user account, you can log into the DeployR landing page.  The landing page is accessible at <code>http&#58;//&lt;DEPLOYR_SERVER_IP&gt;:8100/deployr/landing</code>, where <code>&lt;DEPLOYR_SERVER_IP&gt;</code> is the IP address of the DeployR main server machine. </p></p>
+</li>
+<li><p>From the landing page, open the DeployR 8.1.0 Administration Console.</p>
+</li>
+<li><p>IMPORT WHAT???@@@@@@@</p>
+</li>
+<li><p>In the <strong>Grid</strong> tab of the console, delete any of the old node configurations since those are version-specific and cannot be reused.</p>
+ <div class="alert alert-danger"><strong>Grid Framework Warning! </strong> 
+ Grid node configurations will not work after migration due to their dependence on a specific version of DeployR. After migrating, you will notice that the old grid configuration has been carried over to the newly installed DeployR version. However, since those grid nodes are not compatible with the DeployR  server, they appear highlighted in the Administration Console when you first start the  server. This highlighting indicates that a node is unresponsive. We recommend deleting these old grid nodes in the Administration Console the first time you log into the console.
+ </div>
+</li>
+<li><p>In the <strong>R Scripts</strong> tab of the console, repopulate the DeployR 8.1.0 example scripts that were lost when you migrated your data from a previous version of DeployR to version 8.1.0 in a step 5.</p>
+<p> A. Click <strong>Import R Scripts</strong>.</p>
+<p> B. Select the example script named <code>DeployR8.1_Example_Scripts.csv</code>. By default, this file is installed under <code>&lt;8.1.0_Install_Dir&gt;/deployr/</code>.</p>
+<p> C. Click <strong>Load</strong>.</p>
+<p> D. Choose <strong>Import All</strong>.</p>
+<p> E. Enter the username <code>testuser</code> for the field <strong>Assign username as author for the selected scripts</strong>.       </p>
+<p> F. Click <strong>Import</strong>.</p>
+</li>
+<li><p>Preserve and update any JavaScript client application files. Before you deploy any JavaScript client application files to DeployR 8.1.0, update the client files so that they use the current version of <code>jsDeployR</code> <a href="/docanddown/#clientlib">client library</a>.  After installation, update your application files to use the latest <a href="/documents/dev/client-jsdoc/">JavaScript API calls</a>. </p>
+</li>
+</ol>
+<h3 id="migrating-data-from-deployr-8-1-0-to-another-instance-of-deployr-8-1-0-">Migrating Data from DeployR 8.1.0 to Another Instance of DeployR 8.1.0:</h3>
+<p>@@@@@@@@@@@@@@@@@@@@@@</p>
+<p>@@@@@@@@@@@@@@@@@@@@@@</p>
+<p>@@@@@@@@@@@@@@@@@@@@@@</p>
+<p>@@@@@@@@@@@@@@@@@@@@@@</p>
+<h1 id="after">Configuring DeployR</h1>
+
+
+<div class="alert alert-danger"><strong>Important! </strong>
+For the best results, complete these configuration topics in the order in which they are presented.
+</div>
+
+<h2 id="update-firewall">Update Your Firewall</h2>
+
+
+<h3 id="automatic-firewall-updates">Automatic Firewall Updates</h3>
+<p>If you are using the IPTABLES firewall or equivalent service for your server, use the <code>iptables</code> command (or equivalent command/tool) to open the following ports:</p>
+<table>
+<thead>
+<tr>
+<th>Machine</th>
+<th>Ports</th>
+<th>Open Ports</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DeployR server machine</td>
+<td>Tomcat ports: <br/>- <code>8100</code> (Tomcat default port)<br/>- <code>8101</code> (Tomcat HTTPS port)</td>
+<td>To the outside</td>
+</tr>
+<tr>
+<td>DeployR server machine</td>
+<td>-&nbsp;<code>8106</code>&nbsp;(DeployR&nbsp;event&nbsp;console&nbsp;port)</td>
+<td>To the public IP of DeployR server AND to the public IP of <em>each</em> grid node machine<sup><small>1</small></sup></td>
+</tr>
+<tr>
+<td>Remote grid node machines <sup><small>1</small></sup><br/><small>(DeployR Enterprise only)</small></td>
+<td>RServe ports: <br/>- <code>8104</code> (RServe connection port)<br/>- <code>8105</code> (RServe cancel port)</td>
+<td>To the public IP of the DeployR server</td>
+</tr>
+</tbody>
+</table>
+<p><small><sup>1</sup> Only DeployR Enterprise offers the ability to expand your Grid for load distribution with <a href="/documents/admin/install/#install-node">additional grid nodes</a>.</small></p>
+<h3 id="manual-firewall-updates">Manual Firewall Updates</h3>
+<p>There are special cases in which you will need to update your firewall manually. They include:</p>
+<ul>
+<li><p>Whenever you use <strong>non-default port numbers</strong> for communications between DeployR and its dependencies, add those port numbers instead of those in the table above.</li></p>
+</li>
+<li><p>If connecting to a <strong>remote PostgreSQL database</strong>, be sure to open port 5432 to the public IP of the DeployR server. </li></p>
+</li>
+<li><p>If defining NFS ports for <strong>external directory support</strong>, see the Configuration section of the <a href="/documents/admin/bigdata/#configuration">Managing External Directories for Big Data</a> guide.</li></p>
+</li>
+</ul>
+<p><strong>Note: </strong> If provisioning DeployR on a <strong>cloud service</strong>, configure endpoints for these ports on <a href="/documents/admin/install/azure/#endpoints" target="_blank">Azure</a> or <a href="/documents/admin/install/aws-setup" target="_blank">AWS</a>, or enable port-forwarding for VirtualBox.</p>
+<h2 id="change-pass">Set Passwords on Default Accounts</h2>
+
+<p>DeployR is delivered with two user accounts: <code>admin</code> and <code>testuser</code>.  While these accounts are created during installation, they cannot be used until a password is set using the DeployR administrator utility as described below. </p>
+<p>To learn more about security and DeployR, see this <a href="/documents/admin/security/">Security</a> guide.</p>
+<h3 id="administrator-account">Administrator Account</h3>
+<p>Immediately after installing, you&#39;ll need to set a password for the default local DeployR administrator account, <code>admin</code>.</p>
+<p>Once you&#39;ve set the initial password here, you&#39;ll be able to manage user accounts directly in the <a href="/documents/help/admin-console/">DeployR Administration Console</a>, which is an easy-to-use web interface that facilitates the proper management and administration of your DeployR deployment.</p>
+<p><strong>To set the <code>admin</code> account password</strong>:</p>
+<ol>
+<li><p>Launch the DeployR administrator utility script:</p>
+<pre><code>cd $DEPLOYR_HOME/deployr/tools/ 
+./adminUtility.sh</code></pre>
+</li>
+<li><p>From the main menu, enter <code>1</code> to set a password for the local DeployR <code>admin</code> account. </p>
+</li>
+<li><p>When prompted, enter the user account name <code>admin</code>.</p>
+</li>
+<li><p>Enter a password for this account. Passwords must be 8-16 characters and contain at least 1 uppercase, 1 lowercase, 1 number and 1 special character. </p>
+</li>
+<li><p>Confirm the new password.</p>
+</li>
+<li><p>Exit the utility and test out the new password. <p>After installing DeployR 8.1.0 and setting the password for the <code>admin</code> user account, you can log into the DeployR landing page.  The landing page is accessible at <code>http&#58;//&lt;DEPLOYR_SERVER_IP&gt;:8100/deployr/landing</code>, where <code>&lt;DEPLOYR_SERVER_IP&gt;</code> is the IP address of the DeployR main server machine. </p></p>
+</li>
+</ol>
+<h3 id="test-account">Test Account</h3>
+<p>DeployR is also delivered with a test user account, <code>testuser</code>, you can use to interact with our examples and explore the product. </p>
+<p><strong>To set the <code>testuser</code> account password and enable the account</strong>:</p>
+<ol>
+<li><p>Set a password for this account in the same way you set the <code>admin</code> account password above. </p>
+</li>
+<li><p>Go to the <strong>Users</strong> tab and <a href="/documents/help/admin-console/#Topics/user-new-account.htm" target="_blank">use these instructions</a>.</p>
+</li>
+</ol>
+<p>@@@@@@@@@@@@@@@@@@@@@@@@@@</p>
+<h2 id="public-access">Configuring Public Access</h2>
+
+<p>When the wrong IP is defined, you will not be able to access to the DeployR landing page or other DeployR components after installation or reboot. In some cases, the wrong IP address may be automatically assigned during installation or when the machine is rebooted, and that address may not be the only IP address for this machine or may not be publicly accessible. If this case, you must update the server Web context address.</p>
+<p>To fix this issue, you must define the appropriate external server IP address and port number for the <strong>Server web context</strong> and disable the autodetection of the IP address. </p>
+<p><strong>To make changes to the IP address:</strong></p>
+<ol>
+<li><p>Launch the DeployR administrator utility script:</p>
+<pre><code>cd $DEPLOYR_HOME/deployr/tools/ 
+./adminUtility.sh</code></pre>
+</li>
+<li><p>From the main menu, enter <code>3</code> to set the server Web context. The submenu appears.</p>
+</li>
+<li><p>From the submenu, enter <code>A</code> to specify a different IP or fully qualified domain name (FQDN). <br>Note: For <a href="/documents/admin/install/azure/#set-context-azure">Azure</a> &amp; <a href="/documents/admin/install/aws-setup">AWS</a> services, set it to the external <strong>Public IP</strong>.   </p>
+</li>
+<li><p>Enter the IP or FQDN.</p>
+</li>
+<li><p>If Automatic IP Detection is ON, then turn it off by choosing <code>C</code> from the submenu.</p>
+</li>
+</ol>
+<h2 id="config-grid">Configuring the DeployR Grid</h2>
+
+<p>DeployR Enterprise offers the ability to expand your Grid framework for load distribution by installing and <a href="/documents/help/admin-console/#Topics/node-new.htm" target="_blank">configuring</a> additional grid nodes.</p>
+<p>After installing DeployR Enterprise server and any grid node machines, you must configure these grid nodes as follows:</p>
+<ol>
+<li><p>Log into the <strong>Administration Console</strong> as described in the <a href="#change-pass">preceding section</a>.</p>
+</li>
+<li><p>Click <strong>The Grid</strong> in the main menu. </p>
+</li>
+<li><p>If any additional grid nodes were installed, besides the DeployR  Default Node, click <strong>New Grid Node</strong> and configure the <strong>Name</strong>, <strong>Host</strong>, <strong>Operating Type</strong> and <strong>External Directory</strong> for each node <a href="/documents/help/admin-console/#Topics/node-new.htm" target="_blank">using these instructions</a>.</p>
+</li>
+</ol>
+<div class="well well-sm"><strong>Note: </strong> Grid node configurations are dependent on a specific version of DeployR; therefore, any migrated configurations are not forward compatible. You must redefine any grid nodes in the Administration Console. </div>
+
+<h2 id="config_selinux">Configuring SELinux</h2>
+
+<p>Configure SELinux to permit access to DeployR using one of these options:</p>
+<ul>
+<li><p>To benefit from the protection of SELinux, enable SELinux and configure the appropriate SELinux exception policies as described here: <a href="http://wiki.centos.org/HowTos/SELinux">http://wiki.centos.org/HowTos/SELinux</a> </p>
+</li>
+<li><p>Disable SELinux so that access to DeployR is allowed as follows:</p>
+<ol>
+<li>In <code>/etc/selinux/config</code>, set <code>SELINUX=disabled</code>.</li>
+<li>Save the changes.</li>
+<li>Reboot the machine.</li>
+</ol>
+</li>
+</ul>
+<h1 id="uninstall">Uninstalling DeployR</h1>
+
+<p>Follow these instructions uninstall on Linux.</p>
+<p>Remember to uninstall DeployR on both the main server and any other grid node machines.</p>
+   <div class="alert alert-warning"><strong>Important! </strong> Examples are written for user <code>deployr-user</code>. For another user, update the commands accordingly.</div>
+
+<p><strong>To uninstall the DeployR main server:</strong></p>
+<ol>
+<li><p>Launch the DeployR administrator utility script:</p>
+<pre><code>cd $DEPLOYR_HOME/deployr/tools/ 
+./adminUtility.sh</code></pre>
+</li>
+<li><p>From the main menu, enter <code>2</code> to stop the server. </p>
+</li>
+<li><p>Stop the server and exit the utility.</p>
+</li>
+<li><p>If you are using a PostgreSQL database for DeployR, then stop the process as described in the documentation for that database. </p>
+</li>
+<li><p>Remove DeployR, Tomcat and RServe directories. At the prompt, type:</p>
+<pre><code>rm -rf /home/deployr-user/deployr/8.1.0</code></pre>
+</li>
+<li><p>Remove extraneous files. At the prompt, type:</p>
+<pre><code>rm -rf /home/deployr-user/deployrdownload</code></pre>
+</li>
+<li><p>If you are using a PostgreSQL database for DeployR, then remove the associated directories. </p>
+</li>
+</ol>
+<p><br/>
+<strong>To uninstall remote grid nodes:</strong></p>
+<p>Repeat these steps on each grid node machine.</p>
+<ol>
+<li><p>Stop the RServe service. At the prompt, type:</p>
+<pre><code>/home/deployr-user/deployr/8.1.0/rserve/rserve.sh stop</code></pre>
+</li>
+<li><p>Remove DeployR and RServe directories. At the prompt, type:</p>
+<pre><code>rm -rf /home/deployr-user/deployr/8.1.0</code></pre>
+</li>
+<li><p>Remove the extraneous files and directory. At the prompt, type:</p>
+<pre><code>rm -rf /home/deployr-user/deployrdownload</code></pre>
+</li>
+</ol>
+</div></div></div>
+        </div>    
+      </div>
+      <div class="push"></div>
+    </div>
+
+    <!-- Footer
+    ================================================== -->
+
+    <footer class="widewrapper footer bs-footer" role="contentinfo">
+  <div class="container">
+    <div class="row footer">
+      <div class="col-sm-3">
+        <h4>Get Started</h4>
+        <ul class="grove-list">
+          <li><a href="/documents/getting-started/about">About DeployR</a></li>
+          <li><a href="/download">Download DeployR</a></li>
+          <li><a href="/documents/admin/install">Install DeployR</a></li>
+          <li><a href="/documents/admin/troubleshoot">Troubleshooting & Diagnostics</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>Develop</h4>
+        <ul class="grove-list">
+          <li><a href="/dev">Get Client Developer Tools</a></li>
+            <li><a href="/docanddown#rbroker">RBroker Framework</a></li>
+          <li><a href="/docanddown#clientlib">API Client Libraries</a></li>
+          <li><a target="_blank" href="/documents/dev/api-doc">API Reference Guide</a></li>
+          <li><a target="_blank" href="/documents/help/repo-man">Repository Manager</a></li>
+         <!-- <li><a href="/docanddown#integration">3rd Party Tool Integration</a></li>-->
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>Manage</h4>
+          <ul class="grove-list">
+            <li><a target="_blank" href="/documents/help/admin-console">Administration Console</a></li>
+            <li><a href="/documents/admin/security">Security Guide</a></li>
+            <li><a href="/documents/admin/throughput">Scale & Throughput</a></li>
+            <li><a href="/documents/admin/highavail">High Availability</a></li>
+            <li><a href="/documents/admin/bigdata">Managing Big Data</a></li>
+          </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>DeployR 8.1.0</h4>
+          <ul class="grove-list">
+            <li><a href="/license">License Information</a></li>
+      	    <li><a href="/documents/admin/whats-new/">What's New in 8.1.0</a></li>
+	          <li><a href="http://go.microsoft.com/fwlink/?LinkID=708535" target="_blank">Join the DeployR Forum</a></li>
+	          <li><a href="/releases/">Release Archives</a></li>
+          </ul>
+         <div><small> &copy; 2015 Microsoft Corporation</small></div>
+      </div>    
+    </div>
+  </div>          
+</footer> 
+
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<script src="../../../../assets/js/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="../../../../assets/js/vendor/modernizr/modernizr.js"></script>
+<script src="../../../../assets/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<!-- Google Analytics (click event)
+================================================== -->
+
+<script>
+   $('.ga-track').on('click', function() {
+      try { 
+        var label = $(this).data('ga') || $(this).text();
+        ga('send', 'event', 'button', 'click', label);
+      } catch (err) {}
+   });
+</script>
+
+<!-- TOC
+================================================= -->
+<script>
+  // back to top
+  setTimeout(function () {
+     var $sideBar = $('.bs-sidebar');
+     if (!$sideBar) { return; }
+     $sideBar.affix({
+     offset: {
+     top: function () {
+        var offsetTop = $sideBar.offset().top
+        var sideBarMargin = parseInt($sideBar.children(0).css('margin-top'), 10)
+        var navOuterHeight = $('.bs-docs-nav').height()
+        return (this.top = offsetTop - navOuterHeight - sideBarMargin)
+      }
+      , bottom: function () {
+        return (this.bottom = $('.bs-footer').outerHeight(true))
+      }
+    }
+    })
+  }, 100)
+</script>
+
+<script>
+  $('.tab-content div').each(function( index ) {
+    if(index === 0) { $(this).addClass('active'); }
+  });
+
+  $('.code-tabs a').click(function (e) {
+  });
+
+</script>
+
+     
+  </body>
+</html>

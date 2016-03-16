@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="DeployR - Simple R analytics integration for application developers.">
+<meta name="keywords" content="R,Simple,DeployR,Java,JavaScript,.NET,Statistics,Big Data">
+<meta name="author" content="Microsoft Corporation">
+<meta name="google-site-verification" content="BQWjliQil8coeYFDfd-nee7j5GDJ0p-6lU4abeJiAZU">
+
+<!--<time itemprop="buildDate" datetime="Wednesday, March 16th, 2016, 9:47:06 AM PDT"></time>-->
+
+<title>
+  DeployR &middot; Switching Databases for DeployR
+</title>
+
+<!-- Favicons -->
+<link rel="shortcut icon" href="../../../../assets/img/favicon.png" type="image/png" >
+<link rel="icon" href="../../../../assets/img/favicon.png" type="image/png">
+
+<!-- Bootstrap styles -->
+<link rel="stylesheet" href="../../../../assets/css/vendor/bootstrap/bootstrap.min.css">
+
+<!-- Documentation extras -->
+<link href="../../../../assets/css/github.css" rel="stylesheet">
+
+<!-- Glyphicons -->
+<link rel="stylesheet" href="../../../../assets/css/vendor/glyphicons/glyphicons.min.css">
+<link rel="stylesheet" href="../../../../assets/css/vendor/glyphicons/filetypes.min.css">
+<link rel="stylesheet" href="../../../../assets/css/vendor/glyphicons/social.min.css">
+
+<!-- Google Webfonts -->
+<link href="//fonts.googleapis.com/css?family=Open+Sans:400,700,600" rel="stylesheet" type="text/css">
+
+<!-- LayerSlider styles -->
+<link rel="stylesheet" href="../../../../assets/css/vendor/layerslider/layerslider.min.css" type="text/css">
+
+<!-- Grove Styles (switch for different color schemes, e.g. "styles-cleanblue.css") -->
+<link rel="stylesheet" href="../../../../assets/css/styles-blue.css" id="grove-styles">
+
+<!-- Site Styles -->
+<link href="../../../../assets/css/site.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <link rel="stylesheet" href="../../../../assets/css/ie8.css">        
+  <script src="../../../../assets/js/vendor/google/html5-3.6-respond-1.1.0.min.js"></script>
+<![endif]-->
+
+<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery/jquery-1.9.1.min.js"><\/script>')</script>
+<!-- jQuery with jQuery Easing, and jQuery Transit JS -->
+     
+<!-- LayerSlider from Kreatura Media with Transitions -->
+<script src="../../../../assets/js/vendor/layerslider/greensock.js" type="text/javascript"></script>
+<script src="../../../../assets/js/vendor/layerslider/layerslider.transitions.js" type="text/javascript"></script>
+<script src="../../../../assets/js/vendor/layerslider/layerslider.kreaturamedia.jquery.js" type="text/javascript"></script>
+
+<!-- Grove Layerslider initiation script -->
+<script src="../../../../assets/js/grove-slider.js" type="text/javascript"></script>
+
+<!-- GA for DeployR-site -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-6984166-13', 'auto');
+  ga('send', 'pageview');
+</script>
+  </head>
+  <body data-spy="scroll" data-target="#sidenav">
+    <a class="sr-only" href="#content">Skip to main content</a>
+
+    <!-- master nav -->
+    <header>
+   <nav class="navbar navbar-default grove-navbar" role="navigation">
+      <div class="container">
+         <div class="navbar-header">
+            <a href="#" class="grove-toggle" data-toggle="collapse" data-target=".grove-nav">   
+            <i class="glyphicons show_lines"></i>  
+            </a>
+            <a href="/" class="navbar-brand">
+            <img src="../../../../assets/img/rLogo.png" alt="DeployR"> DeployR
+            </a>
+         </div>
+         <div class="collapse navbar-collapse grove-nav">
+            <ul class="nav navbar-nav">
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Data Scientists <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/data-scientist">Getting Started</a></li>
+                <!--<li><a href="#">Learn-by-Example Tutorial</a></li>-->
+                     <li><a href="/documents/dev/scientist-portable-code">Portable R Code Guide</a></li>
+                     <li><a href="/documents/help/repo-man">Repository Manager Help</a></li>
+                     <li><a href="/documents/getting-started/data-scientist#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Application Developers <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/application-developer">Getting Started</a></li>
+                     <!--<li><a href="#">Learn-by-Example Tutorial</a></li>-->
+                     <li><a href="/documents/dev/rbroker">RBroker Framework Tutorial</a></li>
+                     <li><a href="/documents/dev/clientlib">Client Library Tutorial</a></li>
+                     <li><a href="/documents/dev/api-doc">API Reference Guide</a></li>
+                     <li><a href="/docanddown">Library Downloads</a></li>
+                     <li><a href="/documents/getting-started/application-developer/#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Administrators <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/administrator">Getting Started</a></li>
+                     <li><a href="/documents/admin/install">Installation & Configuration</a></li>
+                     <li><a href="/documents/admin/security">Security</a></li>
+                     <li><a href="/documents/admin/r-package-mgmt">R Package Management</a></li>
+                     <li><a href="/documents/help/admin-console">Administration Console Help</a></li>
+                     <li><a href="/documents/admin/troubleshoot">Troubleshooting</a></li>
+                     <li><a href="/documents/getting-started/administrator/#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">
+                  Community <b class="caret"></b>
+                  </a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="http://go.microsoft.com/fwlink/?LinkID=708535" target="_blank">Forum / Discussion Group</a></li>
+                     <li><a href="/faq">FAQs</a></li>
+                  </ul>
+               </li>
+              <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Download<b class="caret"></b></a>            
+                  <ul class="dropdown-menu pull-right">   
+                    <li><a href="/download">Download DeployR</a></li>
+                    <li><a href="/documents/admin/install">Install DeployR</a></li>
+                    <li><a href="/releases/">Release History</a></li>
+                  </ul>
+            </ul>
+         </div>
+         <!-- /.navbar-collapse -->
+      </div>
+   </nav>
+</header>
+
+
+    <!-- page title -->
+    <div class="widewrapper pagetitle strong-highlight">
+   <div class="container">
+      <h1>Switching Databases for DeployR <small></small></h1>
+      <span class="product-version">
+         Version 8.1.0
+         
+      </span>
+   </div>
+</div>
+  
+    <div class="widewrapper sf-wrapper">
+      <div class="container content" role="main">
+        <div>
+          
+<div class="row"><div class="col-md-3" id="sidenav"><div class="bs-sidebar hidden-print hidden-xs hidden-sm" role="complementary"><ul class="nav bs-sidenav"><li class="active"><a href="#intro">Introduction</a><ul class="nav"></ul></li><li><a href="#win">Using SQL Server with DeployR</a><ul class="nav"></ul></li><li><a href="#lin">Using PostgreSQL with DeployR</a><ul class="nav"></ul></li></ul></div></div><div class="col-md-9" role="main"><div class="container-fluid content doc-content"><h1 id="intro">Introduction</h1>
+
+<p>DeployR relies on an H2 database by default. However, you can use one of these databases instead:</p>
+<ul>
+<li><p><a href="#win">On <strong>Windows</strong></a>, you can use local <strong>SQL Server database</strong> as a replacement for H2 locally, or use remote SQL Server database instead. You can also use SQL Server for high availability on your Windows machine.</p>
+</li>
+<li><p><a href="#lin">On <strong>Linux</strong></a>, you can use local <strong>PostgreSQL database</strong> as a replacement for H2 locally, or use remote PostgreSQL database instead.</p>
+</li>
+</ul>
+<p>After installing DeployR, <strong>but before using it</strong>, you can configure DeployR to use a different database.</p>
+<h1 id="win">Using SQL Server with DeployR</h1>
+
+<p>If you want to use a local or remote SQL Server database for DeployR instead of the default local H2 database, you&#39;ll need to:</p>
+<ol>
+<li><p>Install and configure SQL Server as described for that product.    </p>
+</li>
+<li><p><a href="https://msdn.microsoft.com/library/mt590198.aspx">Download the JDBC driver</a> for the version of the database you installed and copy them under <strong>both</strong> of the following folders:</p>
+<ul>
+<li><p><code>$DEPLOYR_HOME\Apache_Tomcat\lib</code> </p>
+</li>
+<li><p><code>$DEPLOYR_HOME\deployr\tools\lib</code> </p>
+</li>
+</ul>
+</li>
+<li><p>Stop the DeployR server.</p>
+<ol>
+<li><p>Launch the DeployR administrator utility script:</p>
+<pre><code>cd C:\Program Files\Microsoft\DeployR\8.1\deployr\ 
+adminUtility.bat</code></pre>
+</li>
+<li><p>From the main menu, choose <code>Option 1</code> to stop the DeployR Server.</p>
+</li>
+</ol>
+</li>
+<li><p>Update the database properties to point to the new database as follows: </p>
+<ol>
+<li><p>Open <code>deployr.groovy</code>, which is the DeployR server external configuration file.</p>
+</li>
+<li><p>Locate the  <code>dataSource</code> property block.</p>
+</li>
+<li><p>Replace the contents of that block with these properties: </p>
+<pre><code>dataSource {
+     dbCreate = &quot;update&quot;
+     driverClassName = &quot;com.microsoft.sqlserver.jdbc.SQLServerDriver&quot;
+     url = &quot;jdbc:sqlserver://localhost;instanceName=SQLEXPRESS;database=TestDB2;integratedSecurity=true;&quot;
+}</code></pre>
+<p><strong>Note:</strong> If you are using a remote database, use the IP address or FQDN of the remote machine rather than <code>localhost</code>.</p>
+</li>
+</ol>
+</li>
+<li><p>If you are connecting to a remote SQL Server database, be sure to open the database port to the public IP of the DeployR server. </p>
+</li>
+<li><p>Test the connection to the database.</p>
+<ol>
+<li><p>Launch the <code>adminUtility</code> script again.</p>
+</li>
+<li><p>From the main menu, choose <code>Option 5</code> to test the database connection. If there are any issues, you must solve them before continuing.</p>
+</li>
+<li><p>Once the connection test passes, return the main menu.</p>
+</li>
+<li><p>From the main menu, choose <code>Option 1</code> to restart DeployR-related services.</p>
+</li>
+<li><p>Once the DeployR server has been successfully restarted, return the main menu.</p>
+</li>
+<li><p>From the main menu, choose <code>Option 3</code> to run the full <a href="/documents/admin/troubleshoot/#health">DeployR diagnostic tests</a>.  If there are any issues, you must solve them before continuing. </p>
+</li>
+</ol>
+</li>
+</ol>
+<h1 id="lin">Using PostgreSQL with DeployR</h1>
+
+<p>If you want to use a local or remote PostgreSQL database for DeployR instead of the default local H2 database, you&#39;ll need to:</p>
+<ol>
+<li><p>Install and configure PostgreSQL as described for that product.    </p>
+</li>
+<li><p><a href="http://www.postgresql.org/">Download the JDBC driver</a> for the version of the database you installed and copy them under <strong>both</strong> of the following folders:</p>
+<ul>
+<li><p><code>$DEPLOYR_HOME/tomcat/tomcat7/lib</code> </p>
+</li>
+<li><p><code>$DEPLOYR_HOME/deployr/tools/lib</code> </p>
+</li>
+</ul>
+</li>
+<li><p>Stop the DeployR server.</p>
+<ol>
+<li>Launch the DeployR administrator utility script:<pre><code>cd $DEPLOYR_HOME/deployr/tools/ 
+./adminUtility.sh</code></pre>
+</li>
+</ol>
+</li>
+<li><p>From the main menu, choose <code>Option 1</code> to stop the DeployR Server.</p>
+</li>
+<li><p>Update the database properties to point to the new database as follows: </p>
+<ol>
+<li><p>Open <code>deployr.groovy</code>, which is the DeployR server external configuration file.</p>
+</li>
+<li><p>Locate the  <code>dataSource</code> property block.</p>
+</li>
+<li><p>Replace the contents of that block with these properties: </p>
+<pre><code>  dataSource {
+              dbCreate = &quot;update&quot;
+              driverClassName = &quot;org.postgresql.Driver&quot;
+              url = &quot;jdbc:postgresql://localhost:5432/deployr&quot;
+              pooled = true
+              username = &quot;sa&quot;
+              properties {
+              maxActive = -1
+              minEvictableIdleTimeMillis=1800000
+              timeBetweenEvictionRunsMillis=1800000
+              numTestsPerEvictionRun=3
+              testOnBorrow=true
+              testWhileIdle=true
+              testOnReturn=true
+              validationQuery=&quot;SELECT 1&quot;
+              }
+          }</code></pre>
+<p><strong>Note:</strong> If you are using a remote database, use the IP address or FQDN of the remote machine rather than <code>localhost</code>.</p>
+</li>
+</ol>
+</li>
+<li><p>If you are connecting to a remote PostgreSQL database, be sure to open the database port to the public IP of the DeployR server. </p>
+</li>
+<li><p>Test the connection to the database.</p>
+<ol>
+<li><p>Launch the <code>adminUtility</code> script again.  </p>
+</li>
+<li><p>From the main menu, choose <code>Option 5</code> to test the database connection. If there are any issues, you must solve them before continuing.</p>
+</li>
+<li><p>Once the connection test passes, return the main menu.</p>
+</li>
+<li><p>From the main menu, choose <code>Option 1</code> to restart DeployR-related services.</p>
+</li>
+<li><p>Once the DeployR server has been successfully restarted, return the main menu.</p>
+</li>
+<li><p>From the main menu, choose <code>Option 3</code> to run the full <a href="/documents/admin/troubleshoot/#health">DeployR diagnostic tests</a>.  If there are any issues, you must solve them before continuing.     </p>
+</li>
+</ol>
+</li>
+</ol>
+</div></div></div>
+        </div>    
+      </div>
+      <div class="push"></div>
+    </div>
+
+    <!-- Footer
+    ================================================== -->
+
+    <footer class="widewrapper footer bs-footer" role="contentinfo">
+  <div class="container">
+    <div class="row footer">
+      <div class="col-sm-3">
+        <h4>Get Started</h4>
+        <ul class="grove-list">
+          <li><a href="/documents/getting-started/about">About DeployR</a></li>
+          <li><a href="/download">Download DeployR</a></li>
+          <li><a href="/documents/admin/install">Install DeployR</a></li>
+          <li><a href="/documents/admin/troubleshoot">Troubleshooting & Diagnostics</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>Develop</h4>
+        <ul class="grove-list">
+          <li><a href="/dev">Get Client Developer Tools</a></li>
+            <li><a href="/docanddown#rbroker">RBroker Framework</a></li>
+          <li><a href="/docanddown#clientlib">API Client Libraries</a></li>
+          <li><a target="_blank" href="/documents/dev/api-doc">API Reference Guide</a></li>
+          <li><a target="_blank" href="/documents/help/repo-man">Repository Manager</a></li>
+         <!-- <li><a href="/docanddown#integration">3rd Party Tool Integration</a></li>-->
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>Manage</h4>
+          <ul class="grove-list">
+            <li><a target="_blank" href="/documents/help/admin-console">Administration Console</a></li>
+            <li><a href="/documents/admin/security">Security Guide</a></li>
+            <li><a href="/documents/admin/throughput">Scale & Throughput</a></li>
+            <li><a href="/documents/admin/highavail">High Availability</a></li>
+            <li><a href="/documents/admin/bigdata">Managing Big Data</a></li>
+          </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>DeployR 8.1.0</h4>
+          <ul class="grove-list">
+            <li><a href="/license">License Information</a></li>
+      	    <li><a href="/documents/admin/whats-new/">What's New in 8.1.0</a></li>
+	          <li><a href="http://go.microsoft.com/fwlink/?LinkID=708535" target="_blank">Join the DeployR Forum</a></li>
+	          <li><a href="/releases/">Release Archives</a></li>
+          </ul>
+         <div><small> &copy; 2015 Microsoft Corporation</small></div>
+      </div>    
+    </div>
+  </div>          
+</footer> 
+
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<script src="../../../../assets/js/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="../../../../assets/js/vendor/modernizr/modernizr.js"></script>
+<script src="../../../../assets/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<!-- Google Analytics (click event)
+================================================== -->
+
+<script>
+   $('.ga-track').on('click', function() {
+      try { 
+        var label = $(this).data('ga') || $(this).text();
+        ga('send', 'event', 'button', 'click', label);
+      } catch (err) {}
+   });
+</script>
+
+<!-- TOC
+================================================= -->
+<script>
+  // back to top
+  setTimeout(function () {
+     var $sideBar = $('.bs-sidebar');
+     if (!$sideBar) { return; }
+     $sideBar.affix({
+     offset: {
+     top: function () {
+        var offsetTop = $sideBar.offset().top
+        var sideBarMargin = parseInt($sideBar.children(0).css('margin-top'), 10)
+        var navOuterHeight = $('.bs-docs-nav').height()
+        return (this.top = offsetTop - navOuterHeight - sideBarMargin)
+      }
+      , bottom: function () {
+        return (this.bottom = $('.bs-footer').outerHeight(true))
+      }
+    }
+    })
+  }, 100)
+</script>
+
+<script>
+  $('.tab-content div').each(function( index ) {
+    if(index === 0) { $(this).addClass('active'); }
+  });
+
+  $('.code-tabs a').click(function (e) {
+  });
+
+</script>
+
+     
+  </body>
+</html>

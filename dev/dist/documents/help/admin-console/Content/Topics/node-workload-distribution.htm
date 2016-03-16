@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="index.xml" data-mc-path-to-help-system="../../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-toc-path="The Grid">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" />
+        <link href="../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" />
+        <link href="../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" /><title>Grid Workload Distribution</title>
+        <link href="../Resources/Stylesheets/admin-console-help.css" rel="stylesheet" type="text/css" />
+        <script src="../../Resources/Scripts/custom.modernizr.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/foundation.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/plugins.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/require.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/require.config.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkTop"><a href="../../index.html#Topics/node-workload-distribution.htm">Open topic with navigation</a>
+        </p>
+        <h2 class="Heading2">Grid Workload Distribution</h2>
+        <table style="width: 100%;border-left-style: solid;border-left-width: 1px;border-right-style: solid;border-right-width: 1px;border-top-style: solid;border-top-width: 1px;border-bottom-style: solid;border-bottom-width: 1px; background-color: #d7f1dd;">
+            <col />
+            <tbody>
+                <tr style="background-color: #d7f1dd;">
+                    <td style="background-color: #d7f1dd;"><span class="Important">Important!</span> &#160; <span style="font-weight: bold;" class="VariablesPro">DeployR&#160;Enterprise</span> supports an extensible grid framework, providing load balancing capabilities across a network of node resources. Since the <span style="font-weight: bold;" class="VariablesOSS">DeployR&#160;Open</span>  supports a static grid framework of a single, local grid node with a fixed slot limit, the information in this topic does not apply.</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>There are two workload distribution models supported by the <span class="VariablesBrand">DeployR</span> grid:</p>
+        <ol>
+            <li value="1"><a href="#operationcluster">Operation-cluster model</a>
+            </li>
+            <li value="2"><a href="#namedcluster">Named-cluster model</a>
+            </li>
+        </ol>
+        <p>Each node on the grid is assigned an <a href="node-operations.htm">operation type</a>: authenticated, asynchronous, anonymous, or mixed mode. The operation type for a node indicates the types of operations that the node will accept at runtime. For example, a grid node configured for authenticated operations will only accept authenticated (project) operations at runtime and never accept asynchronous or anonymous operations. A grid node configured for 'mixed mode' accepts all types of operations. </p>
+        <p>The operation type assigned to a node and the cluster named for the request (if one was named) are the biggest determinants in how the workload is distributed. In the absence of a specified custom cluster name, the workload is automatically spread across nodes of the same operation type using the <a href="#operationcluster">operation-cluster</a> model. However, you can further optimize that distribution by allowing a custom cluster to be named for an operation, which then follows the <a href="#namedcluster">named-cluster</a> workload distribution model.</p>
+        <h3 class="Heading3"><a name="operationcluster"></a>Operation-Clusters Workload Distribution</h3>
+        <p>The set of nodes dedicated to the same operation type are automatically members of the same operation-cluster. In this way, the operation-cluster workload distribution model provides a simple and automatic way to partition the workload on the grid. There are four operation-clusters, one for each type of operation (authenticated, asynchronous, or anonymous) and one for mixed mode nodes.</p>
+        <p>The specific manner in which an operation is allocated onto a node using the operation-cluster workload distribution model is a function of:</p>
+        <ul>
+            <li value="1">The type of operation being requested (authenticated, asynchronous, or anonymous)</li>
+            <li value="2">The number of nodes on the grid that match the operation-cluster identity</li>
+            <li value="3">The current workload for those nodes</li>
+        </ul>
+        <p>If a request does not name a custom cluster, the grid begins by determining the operation type for that request, then identifying all nodes configured for that type of operation, and finally sending the request to the node with the least burden to minimize resource contention and to maximize throughput.</p>
+        <p>When all of the nodes of a custom cluster are busy, any additional requests for that cluster will be rejected. Whenever an operation-cluster on the grid or the entire grid is operating a maximum capacity, any additional requests for authenticated or anonymous operations will be rejected and any additional requests for asynchronous operations will be queued.</p>
+        <p>For example, if the grid determines that a request is made for an asynchronous job, the grid will look for all nodes with the asynchronous type, and then send the request to the least busy node in that operation-cluster. However, if all nodes within the asynchronous operation-cluster are busy, then the request is funneled to the least burdened node of mixed mode type.</p>
+        <h3 class="Heading3"><a name="namedcluster"></a>Named-Clusters Workload Distribution</h3>
+        <p>While the default <a href="#operationcluster">operation-cluster model</a> works well in many cases, there are some limitations to that model when operations within a single operation-cluster do not share the exact same runtime characteristics. To address this situation, the named-cluster workload distribution model was introduced in <span class="VariablesBrand">DeployR</span> 7.4 to allow administrators to <a href="node-properties.htm">assign custom cluster names</a> to nodes. </p>
+        <p>As an example, it is not uncommon that  authenticated operations that would otherwise execute on the same authenticated operation-cluster differ in need from one another. Some authenticated operations may require nodes that deliver fast processing power, while other authenticated operations may require nodes that deliver large amounts of memory. Named-cluster workload distribution solves this problem by allowing the administrator to designate a custom cluster name for an individual or groups of nodes on the grid that are intended for special purpose operations, such as "high-cpu" or "high-mem". Once a custom cluster has been designate to at least one node in the grid,  individual operations can be targeted for execution within that named custom cluster, which ensures suitable runtime resources are available on the node where an operation eventually executes.</p>
+        <p>The specific manner in which an operation is allocated onto a node using this model is a function of:</p>
+        <ul>
+            <li value="1">The custom cluster's identity specified as an API parameter for the operation being requested</li>
+            <li value="2">The number of nodes on the grid that match the name of the custom cluster</li>
+            <li value="3">The current workload for those nodes</li>
+        </ul>
+        <p>Whenever a custom cluster has been named for the requested operation, the grid begins by identifying the nodes that fall within that cluster, then sends the request to the node within that cluster that has the least burden to minimize resource contention and to maximize throughput.</p>
+        <p>When all of the nodes of a custom cluster are busy, any additional requests for that cluster are funneled to a node configured for the mixed mode operation type, if one is available. Whenever a custom cluster on the grid or the entire grid is operating a maximum capacity, any additional requests for authenticated or anonymous operations will be rejected and any additional requests for asynchronous operations will be queued.</p>
+        <p>For example, if the grid determines that a request is made for an operation to use the "high-mem"cluster, the grid will look for all nodes within the "high-mem" cluster and then send the request to the least busy node within that cluster. However, if all nodes within the "high-mem" cluster are busy, then the request is funneled to the least burdened node of mixed mode type.</p>
+        <p>Any node can belong to a custom cluster if the administrator has assigned the node to a that cluster by entering its custom name in the  <span class="UIElementChar">Cluster name</span> <a href="node-properties.htm">field</a>. Custom cluster names are not case-sensitive. </p>
+        <p class="related"><a href="javascript:void(0);" class="MCHelpControl MCHelpControl-Related relatedTopics" data-mc-topics="Creating New Nodes|node-new.htm||Deleting Nodes |node-deleting.htm||Enabling or Disabling Nodes|node-enable-disable.htm||Exporting Node Configurations |node-exporting.htm||Importing Node Configurations |node-importing.htm||Managing the Grid|node-grid-intro.htm||Node Operation Types|node-operations.htm||Node Properties|node-properties.htm||Node Validation and Errors|node-validation.htm||Viewing and Editing Nodes|node-view-edit.htm||Viewing or Stopping Slot Activity |node-slot-activity.htm"><span class="MCHelpControl-RelatedHotSpot_"><img class="MCHelpControl_Image_Icon" src="../../Skins/Default/Stylesheets/Images/transparent.gif" height="16" width="16" alt="Related Topics Icon" />Related Topics</span></a>
+        </p>
+    </body>
+</html>

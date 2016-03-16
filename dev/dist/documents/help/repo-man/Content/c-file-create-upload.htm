@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="index.xml" data-mc-path-to-help-system="../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-toc-path="Working with Files">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" />
+        <link href="../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" />
+        <link href="../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" /><title>Uploading Files</title>
+        <link href="Resources/Stylesheets/Styles.css" rel="stylesheet" type="text/css" />
+        <script src="../Resources/Scripts/custom.modernizr.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/foundation.min.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/plugins.min.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/require.min.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/require.config.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkTop"><a href="../index.html#c-file-create-upload.htm">Open topic with navigation</a>
+        </p>
+        <h1>Uploading Files</h1>
+        <p><b>Important!</b> See the <a href="http://deployr.revolutionanalytics.com/documents/dev/scientist-portable-code/" target="_blank">Writing Portable R Code</a> guide on  to learn how to make your code run  consistently both locally and on the <span class="MyVariablesprod">DeployR</span> server.</p>
+        <p>While small revisions are possible through the <span class="MyVariablesrepo">Repository Manager</span>, the bulk of your script development should take place outside of <span class="MyVariablesprod">DeployR</span> prior to uploading. Once  ready, you can use the  <span class="MyVariablesrepo">Repository Manager</span> to upload the files needed for your applications to the <span class="MyVariablesprod">DeployR</span> server repository. To upload several files, first put them in a zip file and then upload the zip.</p>
+        <p>If you attempt to upload a file into a directory containing a file by the same name, then a new version of the file will be created in the repository. For example, let's say you decide to upload file test.R from your local file system to the directory Samples, but the directory Samples already has a file by that same name, test.R. In that case, upon upload the contents of your local test.R becomes the new <i><a href="d-file-versions.htm">Latest </a></i> version of  test.R in the directory Samples. The owners, keywords, and description of the file test.R remain unchanged. To see the contents of file test.R as they were before the upload, look in the <a href="d-file-versions.htm">version history</a>.</p>
+        <p><span class="Note">Note</span>:&#160;Since you cannot rename a file upon upload, make any changes to the name of a file before uploading.</p>
+        <p class="task_title">To upload a file:</p>
+        <ol>
+            <li value="1">Go to the <span class="screen">Files</span> tab.</li>
+            <li value="2">Click the <span class="screen">Actions</span> menu drop list.</li>
+            <li value="3">From the menus, choose <span class="screen">Upload File</span>. The <span class="screen">Upload</span> dialog appears.</li>
+            <li value="4">Select the file you want to upload from your local machine using the <span class="screen">Browse</span> button. Choose an individual file or a zip of several files.</li>
+            <li value="5">Select the directory under <span class="screen">My Files</span> in which you want to store your file. If that directory doesn't exist yet, then <a href="b-dir-create.htm">create the directory</a> before coming back here to upload the file.</li>
+            <li value="6">If you are uploading a zip file, choose whether to extract files upon upload. Choices are:<ul><li value="1"><span class="screen">Extract files into directory</span>. All files, regardless of the directory structure in the zip file, will be extracted into a single directory. </li><li value="2"><span class="screen">Upload the zip file without extracting files</span>. The zip file will be uploaded as a zip file.</li></ul></li>
+            <li value="7">Click <span class="screen">Upload</span>.</li>
+        </ol>
+        <p>&#160;</p>
+        <p><a href="javascript:void(0);" class="MCHelpControl MCHelpControl-Related relatedTopics" data-mc-topics="About DeployR's Repository Manager|a-introduction.htm||Creating Directories|b-dir-create.htm||Editing File Properties|e-file-properties-edit.htm||Opening Files|c-file-open.htm||Working with Directories|b-dir-intro.htm||Working with Files|c-file-intro.htm||Working with Historical Versions|d-file-versions.htm"><span class="MCHelpControl-RelatedHotSpot_"><img class="MCHelpControl_Image_Icon" src="../Skins/Default/Stylesheets/Images/transparent.gif" height="16" width="16" alt="Related Topics Icon" />Related Topics</span></a>
+        </p>
+        <p>&#160;</p>
+    </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="index.xml" data-mc-path-to-help-system="../../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-toc-path="Permissions with Roles">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" />
+        <link href="../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" />
+        <link href="../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" /><title>Predefined System Roles</title>
+        <link href="../Resources/Stylesheets/admin-console-help.css" rel="stylesheet" type="text/css" />
+        <script src="../../Resources/Scripts/custom.modernizr.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/foundation.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/plugins.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/require.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/require.config.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkTop"><a href="../../index.html#Topics/role-default.htm">Open topic with navigation</a>
+        </p>
+        <h2 class="Heading2">Predefined System Roles</h2>
+        <p>The following <span class="VariablesBrand">DeployR</span> system roles are shipped with <span class="VariablesBrand">DeployR</span> and can be assigned to user accounts.</p>
+        <p>  <![CDATA[ ]]></p>
+        <table class="table_2">
+            <col style="width: 108pt;" />
+            <tr>
+                <td class="td_2">
+                    <p class="TableHeading">Role Name</p>
+                </td>
+                <td class="td_3">
+                    <p class="TableHeading">Role Description</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_4">
+                    <p class="Code_1">ADMINISTRATOR</p>
+                </td>
+                <td class="td_5">
+                    <p class="TableData">The <span class="Code_1">ADMINISTRATOR </span>role identifies the user as an administrator. <a href="user-defaults.htm">There is <span class="span_2">only</span> one administrator for the console</a>, and that is the user <span class="Code_1">admin</span>. </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_4">
+                    <p class="Code_1">POWER_USER</p>
+                </td>
+                <td class="td_5">
+                    <p class="TableData">Users with this role are granted permissions to access the full API and to install R packages. Full access includes the ability to execute scripts and arbitrary blocks of R code. </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_4">
+                    <p class="Code_1">BASIC_USER</p>
+                </td>
+                <td class="td_5">
+                    <p class="TableData">Users with this role are granted permissions to access the full API with the exception of being able to execute arbitrary blocks of R code on the API. However, they can execute R scripts. </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_4">
+                    <p class="Code_1">PACKAGE_MANAGER</p>
+                </td>
+                <td class="td_5">
+                    <p class="TableData">Users with this role are granted permissions to install R packages using the <span class="Code_1">install.packages()</span> command. By default, <span class="Code_1">ADMINISTRATOR</span> and <span class="Code_1">POWER_USER</span> have implicit <span class="Code_1">PACKAGE_MANAGER</span> rights, while <span class="Code_1">BASIC_USER</span> does not.</p>
+                </td>
+            </tr>
+        </table>
+        <p>&#160;</p>
+        <p><a href="javascript:void(0);" class="MCHelpControl MCHelpControl-Related relatedTopics" data-mc-topics=" Viewing, Editing, and Assigning Roles|role-view-edit.htm||Creating Custom Roles|role-new.htm||Deleting Custom Roles |role-deleting.htm||Exporting Roles |role-exporting.htm||Importing Roles |role-importing.htm||Managing Permissions with Roles|role-intro.htm"><span class="MCHelpControl-RelatedHotSpot_"><img class="MCHelpControl_Image_Icon" src="../../Skins/Default/Stylesheets/Images/transparent.gif" height="16" width="16" alt="Related Topics Icon" />Related Topics</span></a>
+        </p>
+    </body>
+</html>

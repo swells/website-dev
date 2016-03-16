@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>8.1.5 /r/repository/file/publish 2.0</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/architecture.html"><strong>2</strong><span>Web Service API Architecture</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/overview.html"><strong>3</strong><span>Web Service API Overview</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/working.html"><strong>4</strong><span>Working with the Web Service APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingusers.html"><strong>5</strong><span>Working with the User APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingprojects.html"><strong>6</strong><span>Working with the Project APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingjobs.html"><strong>7</strong><span>Working with the Job APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingrepository.html"><strong>8</strong><span>Working with the Repository APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/encodings.html"><strong>9</strong><span>Web Service API Data Encodings</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/libraries.html"><strong>10</strong><span>Web Service API Client Libraries</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/explorer.html"><strong>11</strong><span>The API Explorer Tool</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        
+    </div>
+    <p>RevoDeployR API</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../../guide/workingjobs.html">&lt;&lt; <strong>7</strong><span>Working with the Job APIs</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../../guide/encodings.html"><strong>9</strong><span>Web Service API Data Encodings</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>8.1.5 /r/repository/file/publish - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Revolution Analytics</p>
+
+                    <p><strong>Version:</strong> 2.0</p>
+                </div>
+
+                
+
+                
+
+<h2 id="repositoryfilepublish">8.1.5 /r/repository/file/publish</h2>
+This call publishes a repository-managed file to the  <em class="italic">public</em>  repository.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>POST<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on call: json or xml</li>
+<li>repo - specifies the repository name</li>
+<li>name - specifies the repository file name</li>
+<li>version - (optional) specifies the repository file version</li>
+<li>descr - (optional) specifies a description to associate with the published file</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+repo=testuser
+name=hello.txt
+version=
+descr=Sample publication.</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/repository/file/publish"</span>,
+            <span class="java&#45;quote">"repository"</span>: &#123;
+                <span class="java&#45;quote">"file"</span>: &#123;
+                    <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Sample publication."</span>,
+                    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"text/plain"</span>,
+                    <span class="java&#45;quote">"repo"</span>: <span class="java&#45;quote">"<span class="java&#45;keyword">public</span>"</span>,
+                    <span class="java&#45;quote">"size"</span>: 12,
+                    <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"hello.txt"</span>,
+                    <span class="java&#45;quote">"url"</span>: <span class="java&#45;quote">"http://host/deployr/r/repository/file/download/
+			<span class="java&#45;keyword">public</span>/1316681907451/hello.txt"</span>,
+                    <span class="java&#45;quote">"version"</span>: <span class="java&#45;quote">"1316681907451"</span>,
+                    <span class="java&#45;quote">"ispublic"</span>: <span class="java&#45;keyword">true</span>
+                &#125;
+            &#125;
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/repository/file/publish<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;repository&#62;</span>
+      <span class="xml&#45;tag">&#60;file&#62;</span>
+        <span class="xml&#45;tag">&#60;name&#62;</span>hello.txt<span class="xml&#45;tag">&#60;/name&#62;</span>
+        <span class="xml&#45;tag">&#60;repo&#62;</span>public<span class="xml&#45;tag">&#60;/repo&#62;</span>
+        <span class="xml&#45;tag">&#60;descr&#62;</span>Sample publication.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+        <span class="xml&#45;tag">&#60;size&#62;</span>12<span class="xml&#45;tag">&#60;/size&#62;</span>
+        <span class="xml&#45;tag">&#60;type&#62;</span>text/plain<span class="xml&#45;tag">&#60;/type&#62;</span>
+        <span class="xml&#45;tag">&#60;version&#62;</span>1316681974423<span class="xml&#45;tag">&#60;/version&#62;</span>
+        <span class="xml&#45;tag">&#60;ispublic&#62;</span>true<span class="xml&#45;tag">&#60;/ispublic&#62;</span>
+        <span class="xml&#45;tag">&#60;url&#62;</span>http://host/deployr/r/repository/file/download/
+		public/1316681907451/hello.txt<span class="xml&#45;tag">&#60;/url&#62;</span>
+      <span class="xml&#45;tag">&#60;/file&#62;</span>
+    <span class="xml&#45;tag">&#60;/repository&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div><p class="paragraph"/>
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../../guide/workingjobs.html">&lt;&lt; <strong>7</strong><span>Working with the Job APIs</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../../guide/encodings.html"><strong>9</strong><span>Web Service API Data Encodings</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                    <div class="menu-block"><h1 class="menu-title" onclick="toggleRef(this.parentNode.childNodes[1])">Client Library Sample Code</h1><div class="menu-sub">
+                        
+                            
+                            <div class="menu-item"><a href="../../ref/Client%20Library%20Sample%20Code/Java%20Client%20Library.html">Java Client Library</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../../ref/Client%20Library%20Sample%20Code/Javascript%20Client%20Library.html">Javascript Client Library</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../../ref/Client%20Library%20Sample%20Code/dotNET%20Client%20Library.html">dotNET Client Library</a>
+                            </div>
+                            
+                            </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    Copyright (c) Revolution Analytics 2011.
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

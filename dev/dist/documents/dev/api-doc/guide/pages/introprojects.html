@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>1.4 Introducing Projects on the API 8.0.0</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/architecture.html"><strong>2</strong><span>Web Service API Architecture</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/overview.html"><strong>3</strong><span>Web Service API Overview</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/working.html"><strong>4</strong><span>Working with the Web Service APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingusers.html"><strong>5</strong><span>Working with the User APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingprojects.html"><strong>6</strong><span>Working with the Project APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingjobs.html"><strong>7</strong><span>Working with the Job APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingrepository.html"><strong>8</strong><span>Working with the Repository APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingeventstream.html"><strong>9</strong><span>Working with the Event Stream API</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/encodings.html"><strong>10</strong><span>Web Service API Data Encodings</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/explorer.html"><strong>11</strong><span>The API Explorer Tool</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/741changehistory.html"><strong>12</strong><span>API Changes in 7.4.1</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/74changehistory.html"><strong>13</strong><span>API Changes in 7.4</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/73changehistory.html"><strong>14</strong><span>API Changes in 7.3</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/72changehistory.html"><strong>15</strong><span>API Changes in 7.2</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/71changehistory.html"><strong>16</strong><span>API Changes in 7.1</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/70changehistory.html"><strong>17</strong><span>API Changes in 7.0</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/62changehistory.html"><strong>18</strong><span>API Changes in 6.2</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        
+    </div>
+    <p>DeployR API</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../../guide/architecture.html"><strong>2</strong><span>Web Service API Architecture</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>1.4 Introducing Projects on the API - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Microsoft Corporation</p>
+
+                    <p><strong>Version:</strong> 8.0.0</p>
+
+                    
+                </div>
+
+                
+                <div id="table-of-content">
+                    <h2>Table of Contents</h2>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#anonymousprojects"><strong>1.1</strong><span>Anonymous Projects</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#authenticatedprojects"><strong>1.2</strong><span>Authenticated Projects</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#projectcollaboration"><strong>1.3</strong><span>Project Ownership &amp; Collaboration</span></a>
+                    </div>
+                    
+                </div>
+                
+
+                
+
+<h2 id="introprojects">1.4 Introducing Projects on the API</h2>
+A  <em class="italic">project</em>  on the DeployR API represents an R session.<p class="paragraph"/>Most R users are accustomed to working with R interactively in an R console window. In this environment users can input commands to manipulate, analyze, visualize and interpret object and file data in the R session. The set of objects in the R session are collectively known as the  <em class="italic">workspace</em> . The set of files in the R session are collectively known as the  <em class="italic">working directory</em> . The R session environment also supports libraries, which allows the functionality found in R packages to be loaded by the user on-demand.<p class="paragraph"/>The DeployR environment supports these same set of functionalities by introducing the concept of  <em class="italic">projects</em>  on the API. As with working in an R console window, all operations on project APIs are synchronous, where requests are processed serially and blocked until completion.<p class="paragraph"/>DeployR supports a number of different types of projects, each of which is designed to support distinct workflows within client applications. The following sections discuss the different types of projects available:<p class="paragraph"/>
+
+
+<h2 id="anonymousprojects">1.4.1 Anonymous Projects</h2>
+An  <em class="italic">anonymous project</em>  is a project created by an  <em class="italic">anonymous</em>  user. There are two types of  <em class="italic">anonymous</em>  project:
+<ol>
+<li>Stateless Project</li>
+<li>HTTP Blackbox Project</li>
+</ol><p class="paragraph"/> <em class="italic">Stateless</em>  and  <em class="italic">HTTP Blackbox</em>  projects can be created using the following API calls:
+<ol>
+<li><a href="../guide/single.html#repositoryscriptexecute" class="guide">/r/repository/script/execute</a> | Executes a repository-managed script on an anonymous project</li>
+<li><a href="../guide/single.html#repositoryscriptrender" class="guide">/r/repository/script/render</a> | Executes a repository-managed script on an anonymous project and renders outputs to HTML</li>
+</ol><p class="paragraph"/>Note:  <em class="italic">Anonymous</em>  users are not permitted to work directly with the <a href="../guide/single.html#overviewprojects" class="guide">Project APIs</a>, those APIs are only available to  <em class="italic">authenticated</em>  users.<p class="paragraph"/><h4>Stateless Projects</h4><p class="paragraph"/>Stateless projects are useful when an application needs to make a one-off request on an R session. Once the service request has responded with the results of the execution the R session is shutdown and permanently deleted by the server.<p class="paragraph"/><h4>HTTP Blackbox Projects</h4><p class="paragraph"/>With the introduction of  <em class="italic">HTTP blackbox</em>  projects, stateful R sessions are now available to  <em class="italic">anonymous</em>  users. HTTP blackbox projects are useful when an application needs to maintain the same R session for the duration of an  <em class="italic">anonymous</em>  user's HTTP session. Once the HTTP session expires or the server detects that the  <em class="italic">anonymous</em>  user has been idle (default: 15 minutes idle timeout) the HTTP blackbox project and all associated state are permanently deleted by the server. There can only be one HTTP blackbox project live on a HTTP session at any given time.<p class="paragraph"/>To execute an R script on a HTTP blackbox project, enable the  <em class="italic"><strong class="bold">blackbox</strong></em>  parameter on the following calls:
+<ol>
+<li><a href="../guide/single.html#repositoryscriptexecute" class="guide">/r/repository/script/execute</a> | Executes a repository-managed script on an anonymous project</li>
+<li><a href="../guide/single.html#repositoryscriptrender" class="guide">/r/repository/script/render</a> | Executes a repository-managed script on an anonymous project and renders outputs to HTML</li>
+</ol><p class="paragraph"/>There are two types of data that can be returned when executing an R script on a HTTP blackbox project:
+<ol>
+<li>Unnamed plots generated by the R graphics device on the execution are returned as results</li>
+<li>Named workspace objects identified on the  <em class="italic">robjects</em>  parameter can be returned as DeployR-encoded R objects</li>
+</ol><p class="paragraph"/>All files in a HTTP blackbox project's working directory are completely hidden from the user.<p class="paragraph"/>These calls also support a  <em class="italic"><strong class="bold">recycle</strong></em>  parameter that can be used when working with HTTP blackbox projects. When this parameter is enabled the underlying R session is recycled before the execution occurs. Recycling an R session deletes all R objects from the workspace and all files from the working directory. The ability to  <em class="italic">recycle</em>  a HTTP blackbox project gives an  <em class="italic">anonymous</em>  user control over the R session lifecycle.<p class="paragraph"/>To interrupt an execution on the HTTP blackbox project on the current HTTP session use the following call:
+<ol>
+<li><a href="../guide/single.html#repositoryscriptinterrupt" class="guide">/r/repository/script/interrupt</a> | Interrupts an execution on a HTTP blackbox project</li>
+</ol><p class="paragraph"/>
+
+
+<h2 id="authenticatedprojects">1.4.2 Authenticated Projects</h2>
+An  <em class="italic">authenticated project</em>  is a project created by an  <em class="italic">authenticated</em>  user. There are three types of  <em class="italic">authenticated</em>  project:
+<ol>
+<li>Temporary Project</li>
+<li>User Blackbox Project</li>
+<li>Persistent Project</li>
+</ol><p class="paragraph"/> <em class="italic">Authenticatd projects</em>  can be created using the following API calls:
+<ol>
+<li><a href="../guide/single.html#projectcreate" class="guide">/r/project/create</a> | Creates a new temporary, user blackbox or persistent project</li>
+<li><a href="../guide/single.html#projectpool" class="guide">/r/project/pool</a> | Creates a pool of temporary projects</li>
+</ol><p class="paragraph"/> <em class="italic">Authenticated</em>  users own projects. Each  <em class="italic">authenticated</em>  user can create zero, one or more projects. Each project is allocated its own workspace and working directory on the server and maintains its own set of R package dependencies along with a full R command history. A user can execute R code on a project using the <a href="../guide/single.html#projectexecutecode" class="guide">/r/project/execute/code</a> and <a href="../guide/single.html#projectexecutescript" class="guide">/r/project/execute/script</a> calls and retrieve the R command history for the project using the <a href="../guide/single.html#projectexecutehistory" class="guide">/r/project/execute/history</a> call.<p class="paragraph"/>Note: Given an  <em class="italic">authenticated</em>  user can do everything an  <em class="italic">anonymous</em>  user can do on the API it is possible for an  <em class="italic">authenticated</em>  user to create and work with  <em class="italic">anonymous projects</em>  as described in the section <a href="../guide/single.html#anonymousprojects" class="guide">Anonymous Projects</a>.<p class="paragraph"/><h4>Temporary Projects</h4><p class="paragraph"/>Temporary projects are useful when an application needs to maintain the same R session for the duration of an  <em class="italic">authenticated</em>  user's session within the application. Once the user makes an explicit call on <a href="../guide/single.html#projectclose" class="guide">/r/project/close</a> or simply signs-out of the application the temporary project and all associated state are permanently deleted by the server.<p class="paragraph"/>A user can create a temporary project by omitting the  <em class="italic">name</em>  parameter on the <a href="../guide/single.html#projectcreate" class="guide">/r/project/create</a> call or they can create a pool of temporary projects using the <a href="../guide/single.html#projectpool" class="guide">/r/project/pool</a> call.<p class="paragraph"/><blockquote class="note">
+<strong class="bold">Important!</strong> All  <em class="italic">unnamed projects</em>  are  <em class="italic">temporary projects</em> .
+</blockquote><p class="paragraph"/><h4>User Blackbox Projects</h4><p class="paragraph"/>A user blackbox project is a special type of temporary project that limits API access on the underlying R session. User blackbox projects are most useful when an application developer wants to associate a temporary project with a user without granting that user unfettered access to the underlying R session.<p class="paragraph"/>There are two types of data  that can be returned when executing an R script on a user blackbox project:
+<ol>
+<li>Unnamed plots generated by the R graphics device on the execution are returned as results</li>
+<li>Named workspace objects identified on the  <em class="italic">robjects</em>  parameter can be returned as DeployR-encoded R objects</li>
+</ol><p class="paragraph"/>All files in a user blackbox project's working directory are completely hidden from the user.<p class="paragraph"/>User blackbox projects can be created using the  <em class="italic">blackbox</em>  parameter on the following API calls:
+<ul class="star">
+<li><a href="../guide/single.html#projectcreate" class="guide">/r/project/create</a> | Creates a new project</li>
+<li><a href="../guide/single.html#projectpool" class="guide">/r/project/pool</a> | Creates a pool of temporary projects</li>
+</ul><p class="paragraph"/>User blackbox projects permit only the following subset of project-related API calls:
+<ul class="star">
+<li><a href="../guide/single.html#projectexecutescript" class="guide">/r/project/execute/script</a> | Executes a script on project</li>
+<li><a href="../guide/single.html#projectexecuteinterrupt" class="guide">/r/project/execute/interrupt</a> | Interrupts a code execution on project</li>
+<li><a href="../guide/single.html#projectping" class="guide">/r/project/ping</a> | Pings a project</li>
+<li><a href="../guide/single.html#projectrecycle" class="guide">/r/project/recycle</a> | Recycles a project R session</li>
+<li><a href="../guide/single.html#projectclose" class="guide">/r/project/close</a> | Closes a project</li>
+</ul><p class="paragraph"/>This set of API calls on user blackbox projects are collectively known as the  <em class="italic">User Blackbox API Controls</em> .<p class="paragraph"/>A user blackbox project also ensure that none of the R code from the R scripts that are executed on that project is ever returned in the response markup.<p class="paragraph"/><h4>Persistent Projects</h4><p class="paragraph"/>Persistent projects are useful when an application needs to maintain the same R session across multiple user sessions within the application. A persistent project is stored indefinitely in the server unless it is explicitly deleted by the user. Whenever users return to the server their own persistent projects are available so that, users can pick up where they last left off. In this way, persistent projects can be developed over days, weeks, months even years.<p class="paragraph"/>The server stores the following state for each persistent project:
+<ul class="star">
+<li>Project workspace.</li>
+<li>Project working directory.</li>
+<li>Project package dependencies.</li>
+<li>Project R command history and associated results.</li>
+</ul><p class="paragraph"/>An  <em class="italic">authenticated</em>  user can create a persistent project by specifying a value for the  <em class="italic">name</em>  parameter on the <a href="../guide/single.html#projectcreate" class="guide">/r/project/create</a> call. Alternatively, if a user is working on a temporary project then that project can become persistent once the user makes a call on <a href="../guide/single.html#projectsave" class="guide">/r/project/save</a> which has the effect of naming the project.<p class="paragraph"/><blockquote class="note">
+<strong class="bold">Important!</strong> All  <em class="italic">named projects</em>  are  <em class="italic">persistent projects</em> .
+</blockquote><p class="paragraph"/><blockquote class="note">
+Please refer to the section <a href="../guide/single.html#workingprojects" class="guide">Working with Projects</a> for a detailed description of all  <em class="italic">authenticated project</em>  related APIs.
+</blockquote><p class="paragraph"/>
+
+
+
+<h2 id="projectcollaboration">1.4.3 Project Ownership & Collaboration</h2>
+As noted,  each  <em class="italic">authenticated</em>  user can create zero, one or more projects. Each newly created project is by default privately owned, and visible only to it's creator. Such user-based privacy is a central aspect of the DeployR security model. However, there are scenarios in which a more flexible access model for projects would benefit users by facilitating collaboration among them.<p class="paragraph"/><h4>Persistent Project Read-Only Collaboration</h4><p class="paragraph"/>A project owner may wish to share a project by granting read-only access to fellow  <em class="italic">authenticated</em>  users on the same DeployR server. Once read-only access has been granted it facilitates discussions, demonstrations and so on.<p class="paragraph"/>To facilitate these kinds of workflows the <a href="../guide/single.html#projectaboutupdate" class="guide">/r/project/about/update</a> call allows users to toggle the read-only "shared" access controls on any of their private projects. Using this call to enable shared/read-only access on a project makes the project visible to all authenticated users. Using this call to disable shared/read-only access on a project makes the project invisible to all but the project owner(s).<p class="paragraph"/><h4>Persistent Project Read-Write Collaboration </h4><p class="paragraph"/>At times a project owner may also wish to grant read-write access on a project to fellow  <em class="italic">authenticated</em>  users sharing the same DeployR server so they can actively collaborate on the development of a project. This type of project collaboration would be beneficial, for example, as part of a planned multistage development or simply to permit work on the project to continue when the original project owner goes on vacation.<p class="paragraph"/>To facilitate these kinds of workflows a project owner can now grant authorship rights on a project to one or more  <em class="italic">authenticated</em>  users using the <a href="../guide/single.html#projectgrant" class="guide">/r/project/grant</a> call. Once a user has been granted authorship rights on a project they effectively co-own the project and can view, modify and even delete the project. Where mutiple users have been granted authorship rights on a project the server ensures that only one user can be actively working on the project at any one time.<p class="paragraph"/><blockquote class="note">
+<strong class="bold">Important!</strong> Deleting a project with multiple authors simply revokes authorship rights to the project for the caller. After the call, all other authors on the project still have full access to the project. If the last remaining author deletes a project, then the project is permanently deleted.
+</blockquote>
+
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item next-right"><a href="../../guide/architecture.html"><strong>2</strong><span>Web Service API Architecture</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    Copyright (c) 2009-2016 Microsoft Corporation
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

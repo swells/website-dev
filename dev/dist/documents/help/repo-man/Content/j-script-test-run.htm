@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="index.xml" data-mc-path-to-help-system="../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-toc-path="Testing and Debugging Scripts">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" />
+        <link href="../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" />
+        <link href="../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" /><title>Running Scripts in&#160;Test Page</title>
+        <link href="Resources/Stylesheets/Styles.css" rel="stylesheet" type="text/css" />
+        <script src="../Resources/Scripts/custom.modernizr.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/foundation.min.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/plugins.min.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/require.min.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/require.config.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkTop"><a href="../index.html#j-script-test-run.htm">Open topic with navigation</a>
+        </p>
+        <h1>Running Scripts in&#160;Test Page</h1>
+        <p>Any <span class="MyVariablesprod">DeployR</span> user who can access a script can also test that script by running the script, changing the <a href="j-script-test-3-inputs.htm">input values</a>, and then running it again in the <span class="screen">Test</span> page. </p>
+        <p><span class="Note">Note:</span>&#160;When debugging a script, you may need to <a href="j-script-test-run-interrupt.htm">interrupt an execution</a>.</p>
+        <h2>Running Entire Scripts with Default Inputs or No Inputs</h2>
+        <p>You can run a script in the <span class="screen">Test</span> page using the script's source code as-is regardless of whether or not any inputs were defined using <a href="j-script-test-3-inputs.htm"><code>deployrInput()</code></a>. </p>
+        <p class="task_title">To run a script with the default values and inputs:</p>
+        <ol>
+            <li value="1"><a href="c-file-open.htm">Open</a> the script and go to the <a href="j-script-test.htm"><span class="screen">Test</span> page</a>.</li>
+            <li value="2">Make no changes in the <span class="screen"><span style="mc-tag-and-class: span;" class="MyVariablesPane_Input">Script Execution Parameters</span></span> pane.</li>
+            <li value="3">Click  <span class="screen">Run</span> in the toolbar. This script is run in its entirety. Any artifacts are then displayed in the <a href="j-script-test-4-artifacts.htm"><span class="screen"><span class="MyVariablesPane_Output">Artifacts</span></span></a> pane.</li>
+        </ol>
+        <h2>Running Entire Scripts with Modified Inputs</h2>
+        <p>You can supply new and modified input values for a script, and then pass those inputs those inputs values when executing the script. </p>
+        <p>Supply new input values in the following ways:<br /></p>
+        <ul>
+            <li value="1">Defining temporary <a href="j-script-test-3-inputs.htm#QuickInputs">primitive input values</a> on-the-fly</li>
+            <li value="2">Modifying the value of any <code><a href="j-script-test-3-inputs.htm#R%C2%A0Code">deployrInput()</a></code> widgets</li>
+            <li value="3">Editing the <a href="j-script-test-1-code.htm">source code</a> to add, remove, or update any <code>deployrInput()</code> functions (available to script-owners only)</li>
+        </ul>
+        <p>For tips and guidance on how to develop portable R code using the <code>deployrInput</code> function from the <span class="MyVariablesdeployrpackage">deployrUtils</span> package, see the <a href="http://deployr.revolutionanalytics.com/documents/dev/scientist-portable-code/" target="_blank">Writing Portable R Code</a> guide on the <span class="MyVariablesprod">DeployR</span> website.</p>
+        <p class="task_title">To run a script new and modified input values:</p>
+        <ol>
+            <li value="1"><a href="c-file-open.htm">Open</a> the script.</li>
+            <li value="2">Go to the <a href="j-script-test.htm"><span class="screen">Test</span> page</a>.</li>
+            <li value="3"><a href="j-script-test-3-inputs.htm">Supply input values</a>. </li>
+            <li value="4">In the <span class="screen"><span style="mc-tag-and-class: span;" class="MyVariablesPane_Input">Script Execution Parameters</span></span> pane, click  <span class="screen">Run</span> in the toolbar<span>. The input values are passed along from this pane, and the script is run in its entirety.</span></li>
+        </ol>
+        <h2>Running Snippets of Code</h2>
+        <p>If you own the script and have <a href="a-permissions-policies.htm"><code style="font-weight: bold;">POWER_USER</code></a> permissions, you can run a snippet of code directly from the <span class="screen"><span class="MyVariablesPane_Code">Source</span></span>  pane. In this way, you can make small changes to your R code and run only the lines you want to test. You can even select a variable name, for example, and run that to see its contents.</p>
+        <p><span class="Note">Note:</span>&#160;Running code from the <span class="screen"><span class="MyVariablesPane_Code">Source</span></span> pane will run the selected code as-is without taking into account any modified values or <span class="screen">Quick Inputs</span> defined in the <span class="screen"><span class="MyVariablesPane_Input">Script Execution Parameters</span></span> pane. </p>
+        <p class="task_title">To run code selections:</p>
+        <ol>
+            <li value="1"><a href="c-file-open.htm">Open</a> the script</li>
+            <li value="2"> Go to the <a href="j-script-test.htm"><span class="screen">Test</span> page</a>.</li>
+            <li value="3">In the <span class="screen"><span class="MyVariablesPane_Code">Source</span> <![CDATA[ ]]></span>pane, select the code that you want to run. If no code is selected, the current line is used.</li>
+            <li value="4">Press<code> Ctrl-Enter</code> on Windows/Linux or <code>Command-Enter</code> on MAC. The code is executed on the server and the response is displayed in the <span class="screen"><span class="MyVariableseventpane">Debug Console Output</span> <![CDATA[ ]]></span> and <span class="screen"><span style="mc-tag-and-class: span;" class="MyVariablesPane_Output">Artifacts</span> <![CDATA[ ]]></span>panes. </li>
+        </ol>
+        <p>&#160;</p>
+        <p><a href="javascript:void(0);" class="MCHelpControl MCHelpControl-Related relatedTopics" data-mc-topics="Clearing the R Session Working Directory or Workspace|j-manipulate-sess-clear-data.htm||Inspecting the Source Code|j-script-test-1-code.htm||Interrupting Code Executions|j-script-test-run-interrupt.htm||Loading Data into the R Session|j-manipulate-sess-load-data.htm||Manipulating the Underlying R Session|j-manipulate-session.htm||Reviewing Debug Console Output|j-script-test-2-console.htm||Reviewing Execution Artifacts|j-script-test-4-artifacts.htm||Saving Script Changes|j-script-test-save.htm||Supplying Input Values|j-script-test-3-inputs.htm||Testing and Debugging Scripts|j-script-test.htm"><span class="MCHelpControl-RelatedHotSpot_"><img class="MCHelpControl_Image_Icon" src="../Skins/Default/Stylesheets/Images/transparent.gif" height="16" width="16" alt="Related Topics Icon" />Related Topics</span></a>
+        </p>
+    </body>
+</html>

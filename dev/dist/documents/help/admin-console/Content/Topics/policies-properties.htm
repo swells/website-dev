@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="index.xml" data-mc-path-to-help-system="../../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-toc-path="Server Policies">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" />
+        <link href="../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" />
+        <link href="../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" /><title>Server Policy Properties</title>
+        <link href="../Resources/Stylesheets/admin-console-help.css" rel="stylesheet" type="text/css" />
+        <script src="../../Resources/Scripts/custom.modernizr.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/foundation.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/plugins.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/require.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/require.config.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkTop"><a href="../../index.html#Topics/policies-properties.htm">Open topic with navigation</a>
+        </p>
+        <h2 class="Heading2">Server Policy Properties</h2>
+        <p>There are a number of settings that can be defined for each server. They are grouped into the following categories:</p>
+        <ul>
+            <li value="1"><a href="#basic">Basic settings</a>
+            </li>
+            <li value="2"><a href="#auth">Authenticated Operation Policies
+</a>
+            </li>
+            <li value="3"><a href="#asynchronous">Asynchronous Operation Policies</a>
+            </li>
+            <li value="4"><a href="#anonymous">Anonymous Operation Policies
+</a>
+            </li>
+            <li value="5"><a href="#persistence">Project Persistence Policies</a>
+            </li>
+            <li value="6"><a href="#concurrent">Concurrent Operation Policies</a>
+            </li>
+            <li value="7"><a href="#eventstream">Event Stream Access Policies</a>
+            </li>
+            <li value="8"><a href="#server-runtime">Server Runtime Policies</a>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <h4 class="Heading4"><a name="basic"></a>Basic Settings</h4>
+        <table class="table_2">
+            <col style="width: 154px;" />
+            <col />
+            <tr>
+                <td class="td_6">
+                    <p class="TableHeading">Properties</p>
+                </td>
+                <td class="td_7">
+                    <p class="TableHeading">Description</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">Server name</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">Descriptive name for the server that is used in the R script developer summary page to identify this server instance.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1"><a name="admin-web-context"></a>Server web context</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">This is the base URL representing the IP&#160;address and Servlet Web application context for the live <span class="VariablesBrand">DeployR</span> server. The base URL for the Servlet Web application context defaults to <span class="Code_1">\deployr</span>. </p>
+                    <p class="TableData">By default, the server tries to automatically detect the machine’s IP address each time the server machine is rebooted. This IP address is then used to construct the URL displayed in this field. You can disable this function using the setting below this one on this page.</p>
+                    <p class="TableData">If the administrator wants to change the Web application context for the server, then they must update the Web application context component of this URL accordingly. Use a valid IP address and port number, and follow the format: <pre>http://xx.xx.xx.xx:<span class="Variableshttp_port">8000</span>/deployr</pre> or (<a href="../../../../admin/security/#httpson" target="_blank">if HTTPS is enabled</a>) <pre>https://xx.xx.xx.xx:<span class="Variableshttps_port">8001</span>/deployr</pre></p>
+                    <p class="TableData">In some cases, the auto-detection process may return an IP address that is not the one that the administrator intended for <span class="VariablesBrand">DeployR</span>. For example, if the server host machine is configured to support multiple IP addresses, then there is a chance that the wrong address is auto-detected. In another case, when <span class="VariablesBrand">DeployR</span> is installed on an Azure (<a href="../../../../admin/install/azure" target="_blank">see doc</a>) or AWS EC2 instance, then the internal IP might be detected rather that the external IP. And, in another example, the IP address that once worked may no longer be the right number.&#160; There may also be times when the lease on a dynamically-allocated IP address expires, thereby causing the host machine to acquire a new IP address while the server is live. </p>
+                    <p class="TableData">To remedy these cases, the administrator can override the IP that was auto-detected by replacing the IP number in the URL listed in this field with the desired IP address. This fix will work until the next time the server machine is restarted. After booting, the IP auto-detection process is run again and the IP number in the <span class="UIElementChar">Server Web context</span> URL is refreshed. </p>
+                    <p class="TableData"><b>Important!</b> There may be times where you cannot reach the Administration Console due to this issue. In this case, <a href="../../../../admin/troubleshoot/#servernoconnect" target="_blank">run the <code>setWebContext.sh</code> script</a> to update this value and disable autodetection.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">Disable IP auto-detection</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">To impose an IP address, enter the correct IP address in the <span class="UIElementChar">Server Web context</span> field and then set <span class="UIElementChar">Disable IP auto-detection</span> to <span class="Code_1">True</span>.</p>
+                    <p class="TableData">If you set this option to <span class="Code_1">True</span> by selecting the checkbox, you will turn off the auto-detection process and the IP number listed in the <span class="UIElementChar">Server Web context</span> URL will persist across server reboots. </p>
+                    <p class="TableData">If set to <span class="Code_1">False</span> (no check), then auto-detection is enabled and the server machine will try to automatically detect and refresh the machine’s IP address each time the server machine is rebooted. This IP address is then used to create the URL displayed in <span class="UIElementChar">Server Web context</span> field.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">Default R boundary</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">Name of an R boundary to be applied as the system-wide default. Grid node boundaries takes precedence over boundaries associated with users. Likewise, grid node R boundaries and user R boundaries take precedence over this default R boundary. If no other boundary is specified, then the default system-wide boundary is applied.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">Console idle timeout</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">The length of idle time in seconds before a session in the Administration Console expires.</p>
+                </td>
+            </tr>
+        </table>
+        <h4 class="Heading4"><a name="auth"></a>Authenticated Operation Policies</h4>
+        <p>These policies govern how <a href="node-operations.htm">authenticated operations</a> are handled. Authenticated operations refer to operations on projects requested by authenticated users. These operations are executed on grid nodes designated for either <span class="Code_1">authenticated </span>or <span class="Code_1">mixed</span> operation modes. </p>
+        <p class="Table_Title">&#160;</p>
+        <table class="table_2">
+            <col style="width: 152px;" />
+            <col />
+            <tr>
+                <td class="td_6">
+                    <p class="TableHeading">Properties</p>
+                </td>
+                <td class="td_7">
+                    <p class="TableHeading">Description</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">HTTPS encrypted</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">By default this option is unchecked, which sets it to <span class="Code_1">False</span>, where incoming calls on the API can be made over a plain HTTP connection. If set to <span class="Code_1">True</span>, the server only accepts incoming API calls over an encrypted channel (HTTPS). For more information, see the <strong><a href="http://deployr.revolutionanalytics.com/documents/admin/security#https" target="_blank">Security for DeployR</a></strong> guide for your version on the product website.</p>
+                    <p><b style="font-style: italic;">Note:</b>&#160;If you enable HTTPS for one or more operations types, you must also provide a valid HTTPS URL in the Server web context property on this page.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">IP filter</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">The name of the filter to be applied to all authenticated operations. If defined, then only authenticated users who connect from a qualified IP address (as defined by the filter) can make calls on the API.</p>
+                    <p class="TableData">The <a href="filter-intro.htm">IP filtering</a> restrictions specified on a server context determines the full publicly accessible exposure of that server context.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">API timeout</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">The length of time in seconds that an authenticated user can remain idle while connected to the server before the HTTP session is automatically timed-out and disconnected.&#160;</p>
+                </td>
+            </tr>
+        </table>
+        <h4 class="Heading4"><a name="asynchronous"></a>Asynchronous Operation Policies</h4>
+        <p>These policies govern how <a href="node-operations.htm">asynchronous operations</a> are handled. Asynchronous operations are scheduled jobs executing in the background on behalf of authenticated users. These jobs are executed on grid nodes designated for either <span class="Code_1">asynchronous </span>or <span class="Code_1">mixed</span> operation modes. </p>
+        <p class="Table_Title">&#160;</p>
+        <table class="table_2">
+            <col style="width: 151px;" />
+            <col />
+            <tr>
+                <td class="td_6">
+                    <p class="TableHeading">Properties</p>
+                </td>
+                <td class="td_7">
+                    <p class="TableHeading">Description</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">HTTPS encrypted</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">By default this option is unchecked, which sets it to <span class="Code_1">False</span>, where calls on the API can be made over a plain HTTP connection. If set to <span class="Code_1">true</span>, the server will only accept API calls over an encrypted channel (HTTPS). For more information, see the <strong><a href="http://deployr.revolutionanalytics.com/documents/admin/security#https" target="_blank">Security for DeployR</a></strong> guide for your version on the product website.</p>
+                    <p class="TableData"><b style="font-style: italic;">Note:</b>&#160;If you enable HTTPS for one or more operations types, you must also provide a valid HTTPS URL in the Server web context property on this page.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">IP filter</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">The filter to be applied to all authenticated operations. If defined, then only jobs from authenticated users who connect from a qualified IP address can make calls on the API. The <a href="filter-intro.htm">IP filtering</a> restrictions specified on a server context determines the full publicly accessible exposure of that server context.  </p>
+                </td>
+            </tr>
+        </table>
+        <h4 class="Heading4"><a name="anonymous"></a>Anonymous Operation Policies</h4>
+        <p>These policies govern how <a href="node-operations.htm">anonymous operations</a> are handled. Anonymous operations are executed on grid nodes designated for either <span class="Code_1">anonymous</span> or <span class="Code_1">mixed</span> operation modes. Anonymous operations refer to operations from users executing scripts anonymously. </p>
+        <p class="Table_Title">&#160;</p>
+        <table class="table_2">
+            <col style="width: 150px;" />
+            <col />
+            <tr>
+                <td class="td_6">
+                    <p class="TableHeading">Properties</p>
+                </td>
+                <td class="td_7">
+                    <p class="TableHeading">Description</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">HTTPS encrypted</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">By default this option is unchecked, which sets it to <span class="Code_1">False</span>, where scripts can be executed over a plain HTTP connection. If set to <span class="Code_1">true</span>, the server only accepts script execution requests over an encrypted channel (HTTPS). For more information, see the <strong><a href="http://deployr.revolutionanalytics.com/documents/admin/security#https" target="_blank">Security for DeployR</a></strong> guide for your version on the product website.</p>
+                    <p><b style="font-style: italic;">Note:</b>&#160;If you enable HTTPS for one or more operations types, you must also provide a valid HTTPS URL in the Server web context property on this page.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">IP filter</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">The name of the filter to be applied to all anonymous operations.  If selected, then only anonymous users who connect from a qualified IP address (as defined by the filter) can execute R scripts on the API. </p>
+                    <p class="TableData">The <a href="filter-intro.htm">IP filtering</a> restrictions specified on a server context determines the full publicly accessible exposure of that server context. </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">API timeout</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">The length of time in seconds an anonymous operation remains live on the grid before it is automatically terminated. The automatic termination will release all resources associated with that operation.</p>
+                </td>
+            </tr>
+        </table>
+        <h4 class="Heading4"><a name="persistence"></a>Project Persistence Policies</h4>
+        <p>These policies govern certain project behaviors and limits.</p>
+        <p class="Table_Title">&#160;</p>
+        <table class="table_2">
+            <col style="width: 149px;" />
+            <col />
+            <tr>
+                <td class="td_6">
+                    <p class="TableHeading">Properties</p>
+                </td>
+                <td class="td_7">
+                    <p class="TableHeading">Description</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">History storage limit</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">The maximum storage size in bytes for snapshots of <span class="Code_1">PNG</span> and <span class="Code_1">SVG</span> plots generated by the R graphics device associated with a project over its lifespan. </p>
+                    <p class="TableData"><span class="UIElementChar">Note</span>: This setting does not impact the size of a project’s working directory.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">History depth limit</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">The maximum depth of the execution command history retained for each project. When the limit is reached, each new execution will flush the oldest one from the history. When an execution is flushed from the history, all associated plots and R console output are permanently deleted.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">Autosave temporary projects</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">By default, this is unchecked, which sets the value to <span class="Code_1">False,</span> where temporary projects are not auto-saved when a project is closed or when a user logs out or times out on their connection. When <span class="Code_1">True</span>, temporary projects become candidates for auto-saving. Whether projects are auto-saved on close, logout, or timeout depends on the value of the <span class="Code_1">autosave</span> flag set when a user logs in on the API. For more information on autosaving, see the <span class="span_1">API Reference Guide</span>.</p>
+                </td>
+            </tr>
+        </table>
+        <h4 class="Heading4"><a name="concurrent"></a>Concurrent Operation Policies</h4>
+        <p>These policies govern the runtime grid usage limits on the number of concurrent operations that can be run simultaneously in the system by a given user.</p>
+        <p>Since these policies are disabled by default, no limits are enforced. This default behavior means that each user can take as many slots as desired on the grid framework until there are no more available slots. We typically recommend that these settings remain disabled if the <span class="VariablesBrand">DeployR</span> server is being used:</p>
+        <ul>
+            <li value="1">By a single individual, which is quite common with <span class="VariablesOSS">DeployR&#160;Open</span></li>
+            <li value="2">To service a specific client application, which is common, for example, when an RBroker pool is in use</li>
+        </ul>
+        <p>While leaving them disabled is typically recommended, enabling the policies can be quite useful in controlling slot usage on a per-user (operation type) basis.</p>
+        <p> </p>
+        <table class="table_2">
+            <col style="width: 151px;" />
+            <col />
+            <tr>
+                <td class="td_10">
+                    <p class="TableHeading">Properties</p>
+                </td>
+                <td class="td_7">
+                    <p class="TableHeading">Description</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">Enabled</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">When enabled/checked, the policies are in effect and enforced. If disabled/unchecked, the limits are ignored.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">Per-user authenticated limit</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">This value limits the number of live projects that a given authenticated user can run simultaneously on the grid. Whenever the number of live projects reaches this limit, all further requests to work on new projects are rejected on the API until one or more existing live projects are closed.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">Per-user asynchronous limit</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">This value limits the number of scheduled jobs that a given authenticated user can run simultaneously on the grid. Whenever the number of scheduled jobs awaiting execution exceeds this limit for a given user, every pending job for that user remains queued until one or more of the currently running jobs complete. </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">Per HTTP anonymous limit</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">The value specified here limits the number of concurrent R scripts that an anonymous user at a given HTTP address can run simultaneously on the grid. Where the number of executing R scripts reaches this limit all further requests by the user to execute R scripts will be rejected on the API until one or more of the existing R script executions complete.</p>
+                </td>
+            </tr>
+        </table>
+        <h4 class="Heading4"><a name="eventstream"></a>Event Stream Access Policies</h4>
+        <p>These settings limit access to the event streams. There are three distinct event streams pushed by <span class="VariablesBrand">DeployR</span>.</p>
+        <ul class="ul_1">
+            <li class="ListBullet2_1" value="1">The authenticated event stream allows authenticated users to see their own server-wide or HTTP-session specific execution and job lifecycle events. By default, this stream is accessible to all authenticated users. Access to this stream can be restricted using a role-based access control defined here.</li>
+            <li class="ListBullet2_1" value="2">The anonymous event stream allows anonymous users to see execution events within their current HTTP session. Access to this event stream can be disabled in the <span class="UIElementChar">Server Policies</span> tab.</li>
+            <li class="ListBullet2_1" value="3">The management event stream allows authenticated users to see server runtime events, including grid activity and security access events. By default this stream is accessible to&#160;<span class="Code_1">admin</span>&#160;only.&#160;Access to this stream can be restricted using a role-based access control specified here.</li>
+            <p>&#160;</p>
+        </ul>
+        <table class="table_2">
+            <col style="width: 151px;" />
+            <col />
+            <tr>
+                <td class="td_10">
+                    <p class="TableHeading">Properties</p>
+                </td>
+                <td class="td_7">
+                    <p class="TableHeading">Description</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_11">
+                    <p class="Code_1">Authenticated event stream restriction</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">Only those authenticated users assigned to the role defined for this property have permission to view their event stream. By default, all authenticated users can access the authenticated event stream. For example, the administrator might restrict access only to those users assigned the <span class="Code_1">POWER_USER</span> role. </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_11">
+                    <p class="Code_1">Disable anonymous event stream</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">When selected, the anonymous event stream is off.&#160; When this checkbox is unselected, the anonymous stream pushes events to anonymous users. </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_11">
+                    <p class="Code_1">Management event stream restriction</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">Only those authenticated users assigned to the role defined here can access the management event stream. By default, only <span class="Code_1">admin</span> can access this stream. </p>
+                </td>
+            </tr>
+        </table>
+        <h4 class="Heading4"><a name="server-runtime"></a>Server Runtime Policies</h4>
+        <table class="table_2">
+            <col style="width: 150px;" />
+            <col />
+            <tr>
+                <td class="td_6">
+                    <p class="TableHeading">Properties</p>
+                </td>
+                <td class="td_7">
+                    <p class="TableHeading">Description</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">Max upload size</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">This setting specifies the largest file size that can be uploaded to the server. This includes file uploads to both projects and the repository.</p>
+                    <p class="TableData"><span class="span_1">Tip</span>: Use the <span class="VariablesBrand">DeployR</span> external data directories to store larger files to avoid the limitations set here.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">Generate relative URLs</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">When enabled/true, the URLs returned in the API response markup are relative URLs. By default or when disabled, the URLs returned in the response markup are absolute URLs.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">Log level</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">Specifies the server logging level. Options are: <span class="UIElementChar">WARN</span>, <span class="UIElementChar">INFO</span>, and <span class="UIElementChar">DEBUG</span>. If you change this setting, the new level will take effect immediately. Any changes you make here persist until the server is restarted. After the server is restarted, the log level reverts to the default log level specified in the external configuration file, <span class="Code_1">deployr.groovy</span>.</p>
+                </td>
+            </tr>
+        </table>
+        <p>&#160;</p>
+        <p class="related"><a href="javascript:void(0);" class="MCHelpControl MCHelpControl-Related relatedTopics" data-mc-topics="Managing Server Policies|policies-intro.htm||Viewing and Editing Server Policies|policies-edit.htm"><span class="MCHelpControl-RelatedHotSpot_"><img class="MCHelpControl_Image_Icon" src="../../Skins/Default/Stylesheets/Images/transparent.gif" height="16" width="16" alt="Related Topics Icon" />Related Topics</span></a>
+        </p>
+    </body>
+</html>

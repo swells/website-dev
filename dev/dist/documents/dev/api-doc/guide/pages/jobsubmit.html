@@ -1,0 +1,261 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>7.2 /r/job/submit 8.0.0</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/architecture.html"><strong>2</strong><span>Web Service API Architecture</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/overview.html"><strong>3</strong><span>Web Service API Overview</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/working.html"><strong>4</strong><span>Working with the Web Service APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingusers.html"><strong>5</strong><span>Working with the User APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingprojects.html"><strong>6</strong><span>Working with the Project APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingjobs.html"><strong>7</strong><span>Working with the Job APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingrepository.html"><strong>8</strong><span>Working with the Repository APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingeventstream.html"><strong>9</strong><span>Working with the Event Stream API</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/encodings.html"><strong>10</strong><span>Web Service API Data Encodings</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/explorer.html"><strong>11</strong><span>The API Explorer Tool</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/741changehistory.html"><strong>12</strong><span>API Changes in 7.4.1</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/74changehistory.html"><strong>13</strong><span>API Changes in 7.4</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/73changehistory.html"><strong>14</strong><span>API Changes in 7.3</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/72changehistory.html"><strong>15</strong><span>API Changes in 7.2</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/71changehistory.html"><strong>16</strong><span>API Changes in 7.1</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/70changehistory.html"><strong>17</strong><span>API Changes in 7.0</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/62changehistory.html"><strong>18</strong><span>API Changes in 6.2</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        
+    </div>
+    <p>DeployR API</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../../guide/workingprojects.html">&lt;&lt; <strong>6</strong><span>Working with the Project APIs</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../../guide/workingrepository.html"><strong>8</strong><span>Working with the Repository APIs</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>7.2 /r/job/submit - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Microsoft Corporation</p>
+
+                    <p><strong>Version:</strong> 8.0.0</p>
+
+                    
+                </div>
+
+                
+
+                
+
+<h2 id="jobsubmit">7.2 /r/job/submit</h2>
+This call submits a job for background execution on behalf of the user.<p class="paragraph"/>To submit the execution of an arbitrary block of R code the caller must provide a value on the  <em class="italic">code</em>  parameter.<p class="paragraph"/>To submit the execution of a single repository-managed script the caller must provide parameter values for  <em class="italic">rscriptname</em> ,  <em class="italic">rscriptauthor</em>  and optionally  <em class="italic">rscriptdirectory</em>  and  <em class="italic">rscriptversion</em> .  To submit the execution of a chain of repository-managed scripts the caller must provide a comma-separated list of values on the  <em class="italic">rscriptname</em> ,  <em class="italic">rscriptauthor</em>  and optionally  <em class="italic">rscriptdirectory</em>  and  <em class="italic">rscriptversion</em>  parameters.<p class="paragraph"/>To submit the execution of a single external script the caller must provide a valid URL or file path using the  <em class="italic">externalsource</em>  parameter. To submit the execution of a chain of external scripts the caller must provide a comma-separated list of values on the  <em class="italic">externalsource</em>  parameter. Note, to submit the execution of an external script the caller must have been granted the POWER_USER role.<p class="paragraph"/>Note: A chained execution executes each of the scripts identified on the call in a sequential fashion on the R session for the job, with execution occurring in the order specified on the parameter list.<p class="paragraph"/>Please see the <a href="../guide/single.html#standardexecutionmodel" class="guide">Standard Execution Model</a> section in this guide for further details about the parameters on this call.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>POST<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>name – job name</li>
+<li>descr – (optional) job description</li>
+<li>code – (optional) R code to execute on job</li>
+<li>rscriptname – (optional) comma-separated list of repository-managed script filenames to execute on job</li>
+<li>rscriptdirectory - (optional) comma-separated list of repository-managed directories for scripts, defaults to root</li>
+<li>rscriptauthor – (optional) comma-separated list of authors, one author per rscriptname</li>
+<li>rscriptversion – (optional) comma-separated list of versions, one version per rscriptname</li>
+<li>externalsource – (optional) comma-separated list of URLs or file paths to external scripts</li>
+</ul><p class="paragraph"/> <em class="italic">Pre-Execution Parameters</em> 
+<ul class="star">
+<li>inputs - (optional) DeployR-encoded inputs</li>
+<li>csvinputs - (optional) comma-separated list of primitive name/value inputs</li>
+<li>preloadbydirectory - (optional) comma-separated list of repository directory names</li>
+<li>preloadfilename - (optional) comma-separated list of repository filenames</li>
+<li>preloadfiledirectory - (optional) comma-separated list of directories, one directory per preloadfilename</li>
+<li>preloadfileauthor - (optional) comma-separated list of authors, one author per preloadfilename</li>
+<li>preloadfileversion - (optional) comma-separated list of versions, one version per preloadfilename</li>
+<li>preloadobjectname - (optional) comma-separated list of repository object (.rData) filenames</li>
+<li>preloadobjectdirectory - (optional) comma-separated list of directories, one directory per preloadobjectname</li>
+<li>preloadobjectauthor - (optional) comma-separated list of authors, one author per preloadobjectname</li>
+<li>preloadobjectversion - (optional) comma-separated list of versions, one version per preloadobjectname</li>
+<li>adoptworkspace – _(optional) identifies project whose workspace is to be adopted</li>
+<li>adoptdirectory – _(optional) identifies project whose directory is to be adopted</li>
+<li>adoptpackages – _(optional) identifies project whose package dependencies are to be adopted</li>
+</ul><p class="paragraph"/> <em class="italic">On-Execution Parameters</em> 
+<ul class="star">
+<li>cluster – _(optional) identifies a grid node cluster for targeted execution</li>
+<li>priority - (optional) specifies the scheduling priority for the job: low (default), medium or high</li>
+<li>tag - (optional) specifies a tag that labels the execution</li>
+<li>echooff - (optional) if true R commands will not appear in the console output saved on the project execution history for the job</li>
+<li>consoleoff - (optional) if true console output is not saved on the project execution history for the job</li>
+<li>artifactsoff - (optional) when enabled, artfiacts generated in the working directory are neither cached to the database nor reported in the response markup</li>
+<li>enableConsoleEvents - (optional) if true console events are delivered on the event stream when the job executes</li>
+<li>graphics - (optional) specifies preferred R graphics device for execution: png or svg</li>
+<li>graphicswidth - (optional) specifies preferred width for R graphics device images</li>
+<li>graphicsheight - (optional) specifies preferred height for R graphics device images</li>
+</ul><p class="paragraph"/> <em class="italic">Post-Execution Parameters</em> 
+<ul class="star">
+<li>storefile - (optional) comma-separated list of working directory filenames</li>
+<li>storeobject - (optional) comma-separated list of workspace object names</li>
+<li>storeworkspace - (optional) filename (.rData) where workspace contents will be saved in the repository</li>
+<li>storedirectory - (optional)  repository directory for stored files and objects after the execution completes, defaults to root</li>
+<li>storenewversion - (optional) if true, ensures each file stored in repository results in new version being created if needed</li>
+<li>storepublic - (optional) if true, publishes each file stored in the repository</li>
+<li>storenoproject - (optional) if true, no project persistence following job execution</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+name=Submitted Analysis
+descr=Demonstrates job submission.
+rscriptname=Histogram of Auto Sales
+rscriptauthor=testuser</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/job/submit"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"job"</span> : &#123;
+                <span class="java&#45;quote">"job"</span>: <span class="java&#45;quote">"JOB&#45;91baaca8&#45;574d&#45;4703&#45;b225&#45;97e64ec63e70"</span>,
+                <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"Submitted Analysis"</span>,
+                <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Demonstrates job submission."</span>
+                <span class="java&#45;quote">"schedstart"</span>: 0,
+                <span class="java&#45;quote">"schedrepeat"</span>: 0,
+                <span class="java&#45;quote">"schedinterval"</span>: 0,
+                <span class="java&#45;quote">"priority"</span>: <span class="java&#45;quote">"low"</span>,
+                <span class="java&#45;quote">"onrepeat"</span>: 0,
+                <span class="java&#45;quote">"tag"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"timeStart"</span>: 0,
+                <span class="java&#45;quote">"timeCode"</span>: 0,
+                <span class="java&#45;quote">"timeTotal"</span>: 0,
+                <span class="java&#45;quote">"status"</span>: <span class="java&#45;quote">"Queued"</span>,
+                <span class="java&#45;quote">"statusMsg"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"project"</span>: <span class="java&#45;keyword">null</span>
+            &#125;,
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/job/submit<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;job&#62;</span>
+        <span class="xml&#45;tag">&#60;job&#62;</span>JOB&#45;91baaca8&#45;574d&#45;4703&#45;b225&#45;97e64ec63e70<span class="xml&#45;tag">&#60;/job&#62;</span>
+        <span class="xml&#45;tag">&#60;name&#62;</span>Submitted Analysis<span class="xml&#45;tag">&#60;/name&#62;</span>
+        <span class="xml&#45;tag">&#60;descr&#62;</span>Demonstrates job submission.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+        <span class="xml&#45;tag">&#60;schedstart/&#62;</span>
+        <span class="xml&#45;tag">&#60;schedrepeat/&#62;</span>
+        <span class="xml&#45;tag">&#60;schedinterval/&#62;</span>
+        <span class="xml&#45;tag">&#60;onrepeat/&#62;</span>
+        <span class="xml&#45;tag">&#60;tag/&#62;</span>
+        <span class="xml&#45;tag">&#60;priority&#62;</span>low<span class="xml&#45;tag">&#60;/priority&#62;</span>
+        <span class="xml&#45;tag">&#60;timeStart&#62;</span>0<span class="xml&#45;tag">&#60;/timeStart&#62;</span>
+        <span class="xml&#45;tag">&#60;timeCode/&#62;</span>
+        <span class="xml&#45;tag">&#60;timeTotal&#62;</span>0<span class="xml&#45;tag">&#60;/timeTotal&#62;</span>
+        <span class="xml&#45;tag">&#60;status&#62;</span>Queued<span class="xml&#45;tag">&#60;/status&#62;</span>
+        <span class="xml&#45;tag">&#60;statusMsg&#62;</span><span class="xml&#45;tag">&#60;/statusMsg&#62;</span>
+        <span class="xml&#45;tag">&#60;project&#62;</span><span class="xml&#45;tag">&#60;/project&#62;</span>
+    <span class="xml&#45;tag">&#60;/job&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div><p class="paragraph"/>
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../../guide/workingprojects.html">&lt;&lt; <strong>6</strong><span>Working with the Project APIs</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../../guide/workingrepository.html"><strong>8</strong><span>Working with the Repository APIs</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    Copyright (c) 2009-2016 Microsoft Corporation
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

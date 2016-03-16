@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="DeployR - Simple R analytics integration for application developers.">
+<meta name="keywords" content="R,Simple,DeployR,Java,JavaScript,.NET,Statistics,Big Data">
+<meta name="author" content="Microsoft Corporation">
+<meta name="google-site-verification" content="BQWjliQil8coeYFDfd-nee7j5GDJ0p-6lU4abeJiAZU">
+
+<!--<time itemprop="buildDate" datetime="Wednesday, March 16th, 2016, 9:47:06 AM PDT"></time>-->
+
+<title>
+  DeployR &middot; Getting Started - Administrators
+</title>
+
+<!-- Favicons -->
+<link rel="shortcut icon" href="../../../assets/img/favicon.png" type="image/png" >
+<link rel="icon" href="../../../assets/img/favicon.png" type="image/png">
+
+<!-- Bootstrap styles -->
+<link rel="stylesheet" href="../../../assets/css/vendor/bootstrap/bootstrap.min.css">
+
+<!-- Documentation extras -->
+<link href="../../../assets/css/github.css" rel="stylesheet">
+
+<!-- Glyphicons -->
+<link rel="stylesheet" href="../../../assets/css/vendor/glyphicons/glyphicons.min.css">
+<link rel="stylesheet" href="../../../assets/css/vendor/glyphicons/filetypes.min.css">
+<link rel="stylesheet" href="../../../assets/css/vendor/glyphicons/social.min.css">
+
+<!-- Google Webfonts -->
+<link href="//fonts.googleapis.com/css?family=Open+Sans:400,700,600" rel="stylesheet" type="text/css">
+
+<!-- LayerSlider styles -->
+<link rel="stylesheet" href="../../../assets/css/vendor/layerslider/layerslider.min.css" type="text/css">
+
+<!-- Grove Styles (switch for different color schemes, e.g. "styles-cleanblue.css") -->
+<link rel="stylesheet" href="../../../assets/css/styles-blue.css" id="grove-styles">
+
+<!-- Site Styles -->
+<link href="../../../assets/css/site.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <link rel="stylesheet" href="../../../assets/css/ie8.css">        
+  <script src="../../../assets/js/vendor/google/html5-3.6-respond-1.1.0.min.js"></script>
+<![endif]-->
+
+<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../../assets/js/vendor/jquery/jquery-1.9.1.min.js"><\/script>')</script>
+<!-- jQuery with jQuery Easing, and jQuery Transit JS -->
+     
+<!-- LayerSlider from Kreatura Media with Transitions -->
+<script src="../../../assets/js/vendor/layerslider/greensock.js" type="text/javascript"></script>
+<script src="../../../assets/js/vendor/layerslider/layerslider.transitions.js" type="text/javascript"></script>
+<script src="../../../assets/js/vendor/layerslider/layerslider.kreaturamedia.jquery.js" type="text/javascript"></script>
+
+<!-- Grove Layerslider initiation script -->
+<script src="../../../assets/js/grove-slider.js" type="text/javascript"></script>
+
+<!-- GA for DeployR-site -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-6984166-13', 'auto');
+  ga('send', 'pageview');
+</script>
+  </head>
+  <body data-spy="scroll" data-target="#sidenav">
+    <a class="sr-only" href="#content">Skip to main content</a>
+
+    <!-- master nav -->
+    <header>
+   <nav class="navbar navbar-default grove-navbar" role="navigation">
+      <div class="container">
+         <div class="navbar-header">
+            <a href="#" class="grove-toggle" data-toggle="collapse" data-target=".grove-nav">   
+            <i class="glyphicons show_lines"></i>  
+            </a>
+            <a href="/" class="navbar-brand">
+            <img src="../../../assets/img/rLogo.png" alt="DeployR"> DeployR
+            </a>
+         </div>
+         <div class="collapse navbar-collapse grove-nav">
+            <ul class="nav navbar-nav">
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Data Scientists <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/data-scientist">Getting Started</a></li>
+                <!--<li><a href="#">Learn-by-Example Tutorial</a></li>-->
+                     <li><a href="/documents/dev/scientist-portable-code">Portable R Code Guide</a></li>
+                     <li><a href="/documents/help/repo-man">Repository Manager Help</a></li>
+                     <li><a href="/documents/getting-started/data-scientist#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Application Developers <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/application-developer">Getting Started</a></li>
+                     <!--<li><a href="#">Learn-by-Example Tutorial</a></li>-->
+                     <li><a href="/documents/dev/rbroker">RBroker Framework Tutorial</a></li>
+                     <li><a href="/documents/dev/clientlib">Client Library Tutorial</a></li>
+                     <li><a href="/documents/dev/api-doc">API Reference Guide</a></li>
+                     <li><a href="/docanddown">Library Downloads</a></li>
+                     <li><a href="/documents/getting-started/application-developer/#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Administrators <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/administrator">Getting Started</a></li>
+                     <li><a href="/documents/admin/install">Installation & Configuration</a></li>
+                     <li><a href="/documents/admin/security">Security</a></li>
+                     <li><a href="/documents/admin/r-package-mgmt">R Package Management</a></li>
+                     <li><a href="/documents/help/admin-console">Administration Console Help</a></li>
+                     <li><a href="/documents/admin/troubleshoot">Troubleshooting</a></li>
+                     <li><a href="/documents/getting-started/administrator/#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">
+                  Community <b class="caret"></b>
+                  </a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="http://go.microsoft.com/fwlink/?LinkID=708535" target="_blank">Forum / Discussion Group</a></li>
+                     <li><a href="/faq">FAQs</a></li>
+                  </ul>
+               </li>
+              <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Download<b class="caret"></b></a>            
+                  <ul class="dropdown-menu pull-right">   
+                    <li><a href="/download">Download DeployR</a></li>
+                    <li><a href="/documents/admin/install">Install DeployR</a></li>
+                    <li><a href="/releases/">Release History</a></li>
+                  </ul>
+            </ul>
+         </div>
+         <!-- /.navbar-collapse -->
+      </div>
+   </nav>
+</header>
+
+
+    <!-- page title -->
+    <div class="widewrapper pagetitle strong-highlight">
+   <div class="container">
+      <h1>Getting Started - Administrators <small></small></h1>
+      <span class="product-version">
+         Version 8.1.0
+         
+      </span>
+   </div>
+</div>
+  
+    <div class="widewrapper sf-wrapper">
+      <div class="container content" role="main">
+        <div>
+          
+<div class="row"><div class="col-md-3" id="sidenav"><div class="bs-sidebar hidden-print hidden-xs hidden-sm" role="complementary"><ul class="nav bs-sidenav"><li class="active"><a href="#introduction">Introduction</a><ul class="nav"></ul></li><li><a href="#security">Security Policies</a><ul class="nav"></ul></li><li><a href="#package">R Package Policies</a><ul class="nav"></ul></li><li><a href="#runtime">Runtime Policies</a><ul class="nav"><li><a class="toc-section-0" href="#console">General</a></li><li><a class="toc-section-0" href="#availability">Availability</a></li><li><a class="toc-section-0" href="#scalability">Scalability & Throughput</a></li></ul></li><li><a href="#bigdata">Big Data Policies</a><ul class="nav"></ul></li><li><a href="#trouble">Troubleshooting</a><ul class="nav"></ul></li><li><a href="#resources">Further Reading</a><ul class="nav"></ul></li></ul></div></div><div class="col-md-9" role="main"><div class="container-fluid content doc-content"><h1 id="introduction">Introduction</h1>
+
+<p>This guide is for system administrators of DeployR, the <em>R Integration Server</em>. If you are responsible for creating or maintaining an evaluation or a production deployment of the DeployR server, then this guide is for you.</p>
+<p>As an administrator, your key responsibilities are to ensure the DeployR server is properly provisioned and configured to meet the demands of your user community. In this context, the following policies are of central importance:</p>
+<ul>
+<li>Server <a href="#security">security policies</a>, which include user authentication and authorization</li>
+<li>Server <a href="#package">R package management policies</a></li>
+<li>Server <a href="#runtime">runtime policies</a>, which affect availability, scalability, and throughput</li>
+</ul>
+<p>Whenever your policies fail to deliver the expected runtime behavior or performance, you&#39;ll need to <a href="#trouble">troubleshoot</a> your deployment. For that we provide diagnostic tools and numerous recommendations.</p>
+<p>But first, you must install the server. A comprehensive installation guide with instructions for Linux, Windows and OS X deployments is available <a href="/documents/admin/install">here</a>.</p>
+<div class="well well-sm"><strong>Note:</strong> For a general introduction to DeployR, read the <a href="/documents/getting-started/about">About DeployR </a> document.</div>
+
+<h1 id="security">Security Policies</h1>
+
+<p>User access to the DeployR server and the services offered on its <a href="/documents/dev/api-doc/">API</a> are entirely under your control as the server administrator. The principal method of granting access to DeployR is to use the <a href="/documents/help/admin-console">Administration Console</a> to create <a href="/documents/help/admin-console/#Topics/user-intro.htm">user accounts</a> for each member of your community.</p>
+<p>The creation of user accounts establishes a trust relationship between your user community and the DeployR server. Your users can then supply simple <code>username</code> and <code>password</code> credentials in order to verify their identity to the server. You can grant additional <a href="/documents/help/admin-console/#Topics/role-intro.htm">permissions</a> on a user-by-user basis to expose further functionality and data on the server.</p>
+<p>However, basic user authentication and authorization are only one small part of the full set of <a href="/documents/admin/security">DeployR security</a> features, which includes full HTTPS/SSL encryption support, IP filters, and <code>password</code> format and auto-locking policies. <a href="/download">DeployR Enterprise edition</a> also offers seamless integration with popular enterprise security solutions.</p>
+<p>The full set of DeployR security features available to you as a system administrator are detailed in this <a href="/documents/admin/security/">Security guide</a>.</p>
+<h1 id="package">R Package Policies</h1>
+
+<p>The primary function of the DeployR server is to support the execution of R code on behalf of client applications. One of your key objectives as a DeployR administrator is to ensure a reliable, consistent execution environment for that code.</p>
+<p>The R code developed and deployed by <a href="/documents/getting-started/data-scientist">data scientists</a> within your community will frequently depend on one or more R packages. Those R packages may be hosted on <a href="http://cran.r-project.org/">CRAN</a>, <a href="http://go.microsoft.com/fwlink/?LinkID=698301">MRAN</a>, <a href="https://github.com/">github</a>, in your own local CRAN repository or elsewhere.</p>
+<p>Making sure that these R package dependencies are available to the code executing on the DeployR server requires active participation from you, the administrator. There are two R package management policies you can adopt for your deployment, which are detailed in this <a href="/documents/admin/r-package-mgmt/">R Package Management guide</a>.</p>
+<h1 id="runtime">Runtime Policies</h1>
+
+<p>The DeployR server supports a wide range of runtime policies that affect many aspects of the server runtime environment. As an administrator, you can select the preferred policies that best reflect the needs of your user community.</p>
+<h2 id="console">General</h2>
+
+<p>The <a href="/documents/help/admin-console">Administration Console</a> offers a <a href="/documents/help/admin-console/#Topics/policies-intro.htm">Server Policies</a> tab within which can be found a wide range of policy configuration options, including:</p>
+<ul>
+<li>Global settings such as server name, default server boundary, and so on</li>
+<li>Project persistence policies governing resource usage (sizes and autosave)</li>
+<li>Runtime policies governing authenticated, asynchronous, and anonymous operations</li>
+<li>Runtime policies governing concurrent operation limits, file upload limits, and event stream access</li>
+</ul>
+<p>The full set of general policy options available with the <strong>Server Policies</strong> tab are detailed in this <a href="/documents/help/admin-console/#Topics/policies-intro.htm">online help topic</a>.</p>
+<h2 id="availability">Availability</h2>
+
+<p>The DeployR product consists of a number of software components that combine to deliver the full capabilities of the R Integration Server: the server, the grid and the database. Each component can be configured for High Availability (HA) in order to deliver a robust, reliable runtime environment.</p>
+<p>For a discussion of the available server, grid, and database HA policy options, see the <a href="/documents/admin/highavail/">DeployR High Availability Guide</a>.</p>
+<h2 id="scalability">Scalability &amp; Throughput</h2>
+
+<p>In the context of a discussion on DeployR server runtime policies, the topics of scalability and throughput are closely related. 
+Some of the most common questions that arise when planning the configuration and provisioning of the DeployR server and grid are:</p>
+<ul>
+<li>How many users can I support?</li>
+<li>How many grid nodes do I need?</li>
+<li>What throughput can I expect?</li>
+</ul>
+<p>The answer to these questions will ultimately depend on the configuration and size of the server and grid resources allocated to your deployment.</p>
+<p>For detailed information and recommendations on tuning the server and grid for optimal throughput, read the <a href="/documents/admin/throughput/">DeployR Scale &amp; Throughput Guide</a>.</p>
+<h1 id="bigdata">Big Data Policies</h1>
+
+<p>There may be times when your DeployR user community needs access to genuinely large data files, or big data. </p>
+<p>When such files are stored in the DeployR Repository or at any network-accessible URI, the R code executing on the DeployR server can load the desired file data on-demand.  However, physically moving big data is expensive both in terms of bandwidth and throughput. </p>
+<p>To alleviate this overhead, the DeployR server supports a set of NFS-mounted directories dedicated to managing large data files. We refer to these directories as &#39;big data&#39; external directories. As an administrator, you can enable this service by:</p>
+<ol>
+<li><p><a href="/documents/admin/bigdata/#configuration">Configuring</a>  the big data directories within your deployment.</p>
+</li>
+<li><p>Informing your DeployR users that they must <a href="/documents/admin/bigdata/#usage">use the R function, <code>deployrExternal</code></a> in their R code to reference big data files within these directories. </p>
+</li>
+</ol>
+<p>For the complete configuration and usage documentation, read the guide &quot;<a href="/documents/admin/bigdata/">Managing External Directories for Big Data</a>&quot;.</p>
+<h1 id="trouble">Troubleshooting</h1>
+
+<p>There is no doubt that, as an administrator, you&#39;ve experienced failures with servers, networks, and systems&mdash;most probably at the very inopportune times. Likewise, your chosen runtime policies may sometime fail to deliver the runtime behavior or performance needed by your community of users.</p>
+<p>When those failures occur in the DeployR environment, we recommend you first turn to the <a href="/documents/admin/troubleshoot">DeployR diagnostic testing tool </a> to attempt to identify the underlying cause of the problem. </p>
+<p>Beyond the diagnostics tool, the <a href="/documents/admin/troubleshoot/#solutions">Troubleshooting</a> documentation offers suggestions and recommendations for common problems with known solutions. </p>
+<h1 id="resources">Further Reading</h1>
+
+<p>This section provides a quick summary of useful links for administrators working with DeployR.</p>
+<h3 id="deployr-introduction-download">DeployR Introduction &amp; Download</h3>
+<ul>
+<li><a href="/documents/getting-started/about/">About DeployR</a> </li>
+<li><a href="/download/">DeployR Server Download</a></li>
+<li><a href="/documents/admin/install/">Installation &amp; Configuration</a></li>
+</ul>
+<h3 id="administrator-guides">Administrator Guides</h3>
+<ul>
+<li><a href="/documents/getting-started/administrator/">Getting Started for Administrators</a></li>
+<li><a href="/documents/admin/security">Security</a></li>
+<li><a href="/documents/admin/r-package-mgmt">R Package Management</a></li>
+<li><a href="/documents/help/admin-console">Administration Console Help</a></li>
+<li><a href="/documents/admin/highavail">Server, Grid &amp; Database High Availability</a></li>
+<li><a href="/documents/admin/throughput">Scale &amp; Throughput</a></li>
+<li><a href="/documents/admin/bigdata">Managing External Directories for Big Data</a></li>
+<li><a href="/documents/admin/troubleshoot">Diagnostic Testing &amp; Troubleshooting</a></li>
+<li><a href="/documents/admin/install/">Migrating Data</a></li>
+<li><a href="/documents/admin/common/">Common DeployR Administration Tasks</a></li>
+<li><a href="/documents/admin/reinstallr/">Reinstalling  Microsoft R Services, Revolution R Open, or R</a></li>
+<li><a href="/documents/admin/hadoop-impersonation/">Using Hadoop Impersonation and DeployR</a></li>
+</ul>
+<h3 id="other-getting-started-guides">Other Getting Started Guides</h3>
+<ul>
+<li><a href="/documents/getting-started/data-scientist/">For Data Scientists</a></li>
+<li><a href="/documents/getting-started/application-developer/">For Application Developers</a></li>
+</ul>
+<h3 id="support-channels">Support Channels</h3>
+<ul>
+<li><a href="http://go.microsoft.com/fwlink/?LinkID=708535">DeployR Forum</a></li>
+</ul>
+</div></div></div>
+        </div>    
+      </div>
+      <div class="push"></div>
+    </div>
+
+    <!-- Footer
+    ================================================== -->
+
+    <footer class="widewrapper footer bs-footer" role="contentinfo">
+  <div class="container">
+    <div class="row footer">
+      <div class="col-sm-3">
+        <h4>Get Started</h4>
+        <ul class="grove-list">
+          <li><a href="/documents/getting-started/about">About DeployR</a></li>
+          <li><a href="/download">Download DeployR</a></li>
+          <li><a href="/documents/admin/install">Install DeployR</a></li>
+          <li><a href="/documents/admin/troubleshoot">Troubleshooting & Diagnostics</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>Develop</h4>
+        <ul class="grove-list">
+          <li><a href="/dev">Get Client Developer Tools</a></li>
+            <li><a href="/docanddown#rbroker">RBroker Framework</a></li>
+          <li><a href="/docanddown#clientlib">API Client Libraries</a></li>
+          <li><a target="_blank" href="/documents/dev/api-doc">API Reference Guide</a></li>
+          <li><a target="_blank" href="/documents/help/repo-man">Repository Manager</a></li>
+         <!-- <li><a href="/docanddown#integration">3rd Party Tool Integration</a></li>-->
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>Manage</h4>
+          <ul class="grove-list">
+            <li><a target="_blank" href="/documents/help/admin-console">Administration Console</a></li>
+            <li><a href="/documents/admin/security">Security Guide</a></li>
+            <li><a href="/documents/admin/throughput">Scale & Throughput</a></li>
+            <li><a href="/documents/admin/highavail">High Availability</a></li>
+            <li><a href="/documents/admin/bigdata">Managing Big Data</a></li>
+          </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>DeployR 8.1.0</h4>
+          <ul class="grove-list">
+            <li><a href="/license">License Information</a></li>
+      	    <li><a href="/documents/admin/whats-new/">What's New in 8.1.0</a></li>
+	          <li><a href="http://go.microsoft.com/fwlink/?LinkID=708535" target="_blank">Join the DeployR Forum</a></li>
+	          <li><a href="/releases/">Release Archives</a></li>
+          </ul>
+         <div><small> &copy; 2015 Microsoft Corporation</small></div>
+      </div>    
+    </div>
+  </div>          
+</footer> 
+
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<script src="../../../assets/js/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="../../../assets/js/vendor/modernizr/modernizr.js"></script>
+<script src="../../../assets/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<!-- Google Analytics (click event)
+================================================== -->
+
+<script>
+   $('.ga-track').on('click', function() {
+      try { 
+        var label = $(this).data('ga') || $(this).text();
+        ga('send', 'event', 'button', 'click', label);
+      } catch (err) {}
+   });
+</script>
+
+<!-- TOC
+================================================= -->
+<script>
+  // back to top
+  setTimeout(function () {
+     var $sideBar = $('.bs-sidebar');
+     if (!$sideBar) { return; }
+     $sideBar.affix({
+     offset: {
+     top: function () {
+        var offsetTop = $sideBar.offset().top
+        var sideBarMargin = parseInt($sideBar.children(0).css('margin-top'), 10)
+        var navOuterHeight = $('.bs-docs-nav').height()
+        return (this.top = offsetTop - navOuterHeight - sideBarMargin)
+      }
+      , bottom: function () {
+        return (this.bottom = $('.bs-footer').outerHeight(true))
+      }
+    }
+    })
+  }, 100)
+</script>
+
+<script>
+  $('.tab-content div').each(function( index ) {
+    if(index === 0) { $(this).addClass('active'); }
+  });
+
+  $('.code-tabs a').click(function (e) {
+  });
+
+</script>
+
+     
+  </body>
+</html>

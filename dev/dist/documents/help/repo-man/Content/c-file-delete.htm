@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="index.xml" data-mc-path-to-help-system="../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-toc-path="Working with Files">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" />
+        <link href="../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" />
+        <link href="../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" /><title>Deleting Files</title>
+        <link href="Resources/Stylesheets/Styles.css" rel="stylesheet" type="text/css" />
+        <script src="../Resources/Scripts/custom.modernizr.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/foundation.min.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/plugins.min.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/require.min.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/require.config.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkTop"><a href="../index.html#c-file-delete.htm">Open topic with navigation</a>
+        </p>
+        <h1>Deleting Files</h1>
+        <p>Only the sole owner of a file can delete the file (and all of its previous versions) permanently. </p>
+        <p>When you attempt to delete a file you own, <span class="MyVariablesprod">DeployR</span> checks to see if there are other owners. If there are other owners, then you are removed as an owner and the file is no longer editable by you; however the file and its version history remain available in the repository to the other owners. But, if you are the sole owner at the time you attempt to delete this file, the file and all its versions will be permanently deleted from the repository. </p>
+        <p>After you delete a file, you may see that file under <span class="screen">Other Files</span> in the <span class="screen">Files</span> tab. If so, this is due to the fact that the file had multiple owners <i>and</i> the file's <a href="e-file-properties.htm#AccessRights">access rights</a> were set to <span class="screen">Restricted</span>, <span class="screen">Shared</span>, or <span class="screen"> Public</span>. In this case, you might be able to see the file in your <span class="screen">Files</span> tab, but you will not be able to edit that file since you are no longer its owner. <span class="MCExpanding MCExpanding_Open expanding"><a href="javascript:void(0);" class="MCExpandingHead MCExpandingHotSpot expandingHead MCExpandingHotSpot_">&gt; Click to show/hide the flowchart for deleting files.<br></br><img class="MCExpanding_Image_Icon" src="../Skins/Default/Stylesheets/Images/transparent.gif" height="11" width="16" alt="Closed" data-mc-alt2="Open" /></a><span class="MCExpandingBody expandingBody"><img src="Resources/Images/workflowdeletefile.png" title="Workflow:&#160;Deleting Files"></img></span></span></p>
+        <p><span class="Note">Note:</span> You cannot delete a previous version of a file without deleting the entire file history. </p>
+        <p class="task_title">To delete a file or yourself as its owner:</p>
+        <ol>
+            <li value="1">From the <span class="screen">Files</span> tab, select the file in the table. The <span class="screen">Manage</span> dropdown menu appears. </li>
+            <li value="2">In the <span class="screen">Manage</span> dropdown menu,  choose <span class="screen">Delete</span>.</li>
+            <li value="3">Confirm that you want to delete the file(s). If you are not the sole owner, then you will be stripped of your ownership rights and the file(s) will no longer appear in any directory under <span class="screen">My Files</span>.</li>
+        </ol>
+        <p>&#160;</p>
+        <p><a href="javascript:void(0);" class="MCHelpControl MCHelpControl-Related relatedTopics" data-mc-topics="About File Properties|e-file-properties.htm||Adding and Removing Owners|e-file-properties-owners.htm||Deleting Directories|b-dir-delete.htm||Working with Directories|b-dir-intro.htm||Working with Files|c-file-intro.htm"><span class="MCHelpControl-RelatedHotSpot_"><img class="MCHelpControl_Image_Icon" src="../Skins/Default/Stylesheets/Images/transparent.gif" height="16" width="16" alt="Related Topics Icon" />Related Topics</span></a>
+        </p>
+    </body>
+</html>

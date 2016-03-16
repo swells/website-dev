@@ -1,0 +1,1138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>6.2 Working with the Project Execution APIs 8.0.0</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/architecture.html"><strong>2</strong><span>Web Service API Architecture</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/overview.html"><strong>3</strong><span>Web Service API Overview</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/working.html"><strong>4</strong><span>Working with the Web Service APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingusers.html"><strong>5</strong><span>Working with the User APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingprojects.html"><strong>6</strong><span>Working with the Project APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingjobs.html"><strong>7</strong><span>Working with the Job APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingrepository.html"><strong>8</strong><span>Working with the Repository APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/workingeventstream.html"><strong>9</strong><span>Working with the Event Stream API</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/encodings.html"><strong>10</strong><span>Web Service API Data Encodings</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/explorer.html"><strong>11</strong><span>The API Explorer Tool</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/741changehistory.html"><strong>12</strong><span>API Changes in 7.4.1</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/74changehistory.html"><strong>13</strong><span>API Changes in 7.4</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/73changehistory.html"><strong>14</strong><span>API Changes in 7.3</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/72changehistory.html"><strong>15</strong><span>API Changes in 7.2</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/71changehistory.html"><strong>16</strong><span>API Changes in 7.1</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/70changehistory.html"><strong>17</strong><span>API Changes in 7.0</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../../guide/62changehistory.html"><strong>18</strong><span>API Changes in 6.2</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        
+    </div>
+    <p>DeployR API</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../../guide/workingusers.html">&lt;&lt; <strong>5</strong><span>Working with the User APIs</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../../guide/workingjobs.html"><strong>7</strong><span>Working with the Job APIs</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>6.2 Working with the Project Execution APIs - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Microsoft Corporation</p>
+
+                    <p><strong>Version:</strong> 8.0.0</p>
+
+                    
+                </div>
+
+                
+                <div id="table-of-content">
+                    <h2>Table of Contents</h2>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#projectexecutecode"><strong>6.1</strong><span>/r/project/execute/code</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#projectexecutescript"><strong>6.2</strong><span>/r/project/execute/script</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#projectexecuteinterrupt"><strong>6.3</strong><span>/r/project/execute/interrupt</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#projectexecuteconsole"><strong>6.4</strong><span>/r/project/execute/console</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#projectexecutehistory"><strong>6.5</strong><span>/r/project/execute/history</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#projectexecuteflush"><strong>6.6</strong><span>/r/project/execute/flush</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#projectexecuteresultlist"><strong>6.7</strong><span>/r/project/execute/result/list</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#projectexecuteresultdownload"><strong>6.8</strong><span>/r/project/execute/result/download</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#projectexecuteresultdelete"><strong>6.9</strong><span>/r/project/execute/result/delete</span></a>
+                    </div>
+                    
+                </div>
+                
+
+                
+
+<h2 id="projectexecution">6.2 Working with the Project Execution APIs</h2>
+Callers can use the project execution APIs to facilitate the execution of R code and the retrieval of the project's execution history associated results.<p class="paragraph"/><h4>R Code Execution</h4><p class="paragraph"/>There are two ways to execute R code on a project:
+<ol>
+<li>Execute a block of R code directly using the <a href="../guide/single.html#projectexecutecode" class="guide">/r/project/execute/code</a> call.</li>
+<li>Execute a repository-managed script using the <a href="../guide/single.html#projectexecutescript" class="guide">/r/project/execute/script</a> call.</li>
+</ol><p class="paragraph"/><blockquote class="note">
+<strong class="bold">Important!</strong> Any project execution can be interrupted using the <a href="../guide/single.html#projectexecuteinterrupt" class="guide">/r/project/execute/interrupt</a> call.
+</blockquote><p class="paragraph"/><h4>R Code Execution History</h4><p class="paragraph"/>To retrieve the R code execution history on a project, use the <a href="../guide/single.html#projectexecutehistory" class="guide">/r/project/execute/history</a> call.<p class="paragraph"/><h4>R Code Execution Artifacts</h4><p class="paragraph"/>Artifacts are files, that are explicitly named in R code and written to the project's working directory.<p class="paragraph"/>To retrieve an artifact on a project, use the <a href="../guide/single.html#projectdirectorydownload" class="guide">/r/project/directory/download</a> call.<p class="paragraph"/><h4>R Code Execution Results</h4><p class="paragraph"/>Results are files, that are implicitly named in R code, generated by the R graphics device and stored as part of a project's execution history.<p class="paragraph"/>To retrieve results on a project, use the <a href="../guide/single.html#projectexecuteresultdownload" class="guide">/r/project/execute/result/download</a> call.
+
+
+
+<h2 id="projectexecutecode">6.2.1 /r/project/execute/code</h2>
+This call executes a block of R code on the R session identified by the  <em class="italic">project</em>  parameter.<p class="paragraph"/>Please see the <a href="../guide/single.html#standardexecutionmodel" class="guide">Standard Execution Model</a> section in this guide for further details about the parameters on this call.<p class="paragraph"/><strong class="bold">Some key data indicated in the response markup on this call:</strong>
+<ul class="star">
+<li> <em class="italic">code</em>  - indicates the code that has been executed</li>
+<li> <em class="italic">console</em>  - indicates the R console output resulting from the execution</li>
+<li> <em class="italic">results</em>  - indicates the list of files generated by the R graphics device</li>
+<li> <em class="italic">artifacts</em>  - indicates the list of files generated or modified in the working directory</li>
+<li> <em class="italic">objects</em>  - indicates the list of R objects returned from the workspace</li>
+<li> <em class="italic">files</em>  - indicates the list of files and objects stored in the repository after the execution completes</li>
+<li> <em class="italic">interrupted</em>  - indicates the interrupted status of execution</li>
+<li> <em class="italic">error</em>  - on failure, indicates the reason for failure</li>
+<li> <em class="italic">errorCode</em>  - on failure, indicates the <a href="../guide/single.html#overviewcodes" class="guide">error code</a> for failure</li>
+</ul><p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>POST<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>project – specifies the project identifier</li>
+<li>code – specifies the block of R code</li>
+</ul><p class="paragraph"/> <em class="italic">Pre-Execution Parameters</em> 
+<ul class="star">
+<li>inputs - (optional) DeployR-encoded inputs</li>
+<li>csvinputs - (optional) comma-separated list of primitive name/value inputs</li>
+<li>preloadbydirectory - (optional) comma-separated list of repository directory names</li>
+<li>preloadfilename - (optional) comma-separated list of repository filenames</li>
+<li>preloadfiledirectory - (optional) comma-separated list of directories, one directory per preloadfilename</li>
+<li>preloadfileauthor - (optional) comma-separated list of authors, one author per preloadfilename</li>
+<li>preloadfileversion - (optional) comma-separated list of versions, one version per preloadfilename</li>
+<li>preloadobjectname - (optional) comma-separated list of repository object (.rData) filenames</li>
+<li>preloadobjectdirectory - (optional) comma-separated list of directories, one directory per preloadobjectname</li>
+<li>preloadobjectauthor - (optional) comma-separated list of authors, one author per preloadobjectname</li>
+<li>preloadobjectversion - (optional) comma-separated list of versions, one version per preloadobjectname</li>
+<li>adoptworkspace – _(optional) identifies project whose workspace is to be adopted</li>
+<li>adoptdirectory – _(optional) identifies project whose directory is to be adopted</li>
+<li>adoptpackages – _(optional) identifies project whose package dependencies are to be adopted</li>
+</ul><p class="paragraph"/> <em class="italic">On-Execution Parameters</em> 
+<ul class="star">
+<li>phantom - (optional) if true the execution is treated as a <a href="../guide/single.html#phantomexecution" class="guide">phantom execution</a></li>
+<li>tag - (optional) specifies a tag that labels the execution</li>
+<li>echooff - (optional) if true R commands will not appear in the console output</li>
+<li>consoleoff - (optional) if true console output is not returned in the response markup</li>
+<li>artifactsoff - (optional) when enabled, artfiacts generated in the working directory are neither cached to the database nor reported in the response markup</li>
+<li>enableConsoleEvents - (optional) if true console events are delivered on the event stream</li>
+<li>graphics - (optional) specifies preferred R graphics device for execution: png or svg</li>
+<li>graphicswidth - (optional) specifies preferred width for R graphics device images</li>
+<li>graphicsheight - (optional) specifies preferred height for R graphics device images</li>
+</ul><p class="paragraph"/> <em class="italic">Post-Execution Parameters</em> 
+<ul class="star">
+<li>robjects – (optional) specifies a comma-separated list of objects for retrieval following the execution</li>
+<li>storefile - (optional) comma-separated list of working directory filenames</li>
+<li>storeobject - (optional) comma-separated list of workspace object names</li>
+<li>storeworkspace - (optional) filename (.rData) where workspace contents will be saved in the repository</li>
+<li>storedirectory - (optional)  repository directory for stored files and objects after the execution completes, defaults to root</li>
+<li>storenewversion - (optional) if true, ensures each file stored in repository results in new version being created if needed</li>
+<li>storepublic - (optional) if true, publishes each file stored in the repository</li>
+<li>infinity - (optional) specifies custom value for Infinity appearing in R object data returned on call, otherwise Infinity is represented by 0x7ff0000000000000L</li>
+<li>nan - (optional) specifies custom value for NaN appearing in R object data returned on call, otherwise NaN is represented by null</li>
+<li>encodeDataFramePrimitiveAsVector - (optional) if true, data.frame primitives are encoded vectors in R object data returned on call</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+project=PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca
+code=x &#60;&#45; c(1:50);plot(x);png(<span class="java&#45;quote">"namedPlot.png"</span>);plot(x);</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/project/execute/code"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"interrupted"</span>: <span class="java&#45;keyword">false</span>,
+            <span class="java&#45;quote">"project"</span>: &#123;
+                <span class="java&#45;quote">"project"</span>: <span class="java&#45;quote">"PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca"</span>,
+                <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"Demo Analysis"</span>,
+                <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Predicting retail sales, updated."</span>
+                <span class="java&#45;quote">"longdescr"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                <span class="java&#45;quote">"authors"</span>: &#91;
+                    <span class="java&#45;quote">"george"</span>,
+                    <span class="java&#45;quote">"testuser"</span>
+                &#93;,
+                <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">false</span>,
+                <span class="java&#45;quote">"lastmodified"</span>: 1378308723041,
+                <span class="java&#45;quote">"live"</span>: <span class="java&#45;keyword">true</span>,
+                <span class="java&#45;quote">"cookie"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"origin"</span>: <span class="java&#45;quote">"Project original."</span>
+            &#125;,
+            <span class="java&#45;quote">"execution"</span>: &#123;
+                <span class="java&#45;quote">"code"</span>: <span class="java&#45;quote">"x &#60;&#45; c(1:50)&#114;plot(x)&#114;png(&#34;namedPlot.png&#34;)&#114;plot(x)"</span>,
+                <span class="java&#45;quote">"execution"</span>: <span class="java&#45;quote">"EXEC&#45;4d60922e&#45;9ff8&#45;44ec&#45;9ac9&#45;b358f6356c38"</span>,
+                <span class="java&#45;quote">"tag"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"timeStart"</span>: 1378315243221,
+                <span class="java&#45;quote">"timeCode"</span>: 102,
+                <span class="java&#45;quote">"timeTotal"</span>: 820,
+                <span class="java&#45;quote">"actor"</span>: <span class="java&#45;quote">"george"</span>,
+                <span class="java&#45;quote">"console"</span>: <span class="java&#45;quote">"&#110;&#62; x &#60;&#45; c(1:50)&#110;&#110;&#62; plot(x)&#110;&#110;&#62;
+                png(&#34;namedPlot.png&#34;)&#110;&#110;&#62; plot(x)&#110;"</span>,
+                <span class="java&#45;quote">"resultsAvailable"</span>: 1,
+                <span class="java&#45;quote">"resultsGenerated"</span>: 1,
+                <span class="java&#45;quote">"results"</span>: &#91;
+                    &#123;
+                        <span class="java&#45;quote">"execution"</span>: <span class="java&#45;quote">"EXEC&#45;4d60922e&#45;9ff8&#45;44ec&#45;9ac9&#45;b358f6356c38"</span>,
+                        <span class="java&#45;quote">"filename"</span>: <span class="java&#45;quote">"unnamedplot001.png"</span>,
+                        <span class="java&#45;quote">"length"</span>: 6642,
+                        <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"image/png"</span>,
+                        <span class="java&#45;quote">"md5"</span>: <span class="java&#45;quote">"67ec8f704613be81c47af1bfc1c6bc5b"</span>,
+                        <span class="java&#45;quote">"url"</span>: <span class="java&#45;quote">"http://184.106.178.37:7000/deployr/r/project/
+                        execute/result/download/
+                        PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca/
+                        EXEC&#45;4d60922e&#45;9ff8&#45;44ec&#45;9ac9&#45;b358f6356c38/unnamedplot001.png"</span>
+                    &#125;
+                &#93;,
+                <span class="java&#45;quote">"artifacts"</span>: &#91;
+                    &#123;
+                        <span class="java&#45;quote">"filename"</span>: <span class="java&#45;quote">"namedPlot.png"</span>,
+                        <span class="java&#45;quote">"descr"</span>: <span class="java&#45;keyword">null</span>,
+                        <span class="java&#45;quote">"length"</span>: 6642,
+                        <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"image/png"</span>,
+                        <span class="java&#45;quote">"project"</span>: <span class="java&#45;quote">"PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca"</span>,
+                        <span class="java&#45;quote">"category"</span>: <span class="java&#45;quote">"plot"</span>,
+                        <span class="java&#45;quote">"lastmodified"</span>: 1378315300000
+                        <span class="java&#45;quote">"url"</span>: <span class="java&#45;quote">"http://184.106.178.37:7000/deployr/r/project/
+                        directory/download/
+                        PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca/namedPlot.png"</span>,
+                    &#125;
+                &#93;,
+                <span class="java&#45;quote">"warnings"</span>: &#91;&#93;,
+                <span class="java&#45;quote">"info"</span>: &#91;&#93;,
+                <span class="java&#45;quote">"help"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"interrupted"</span>: <span class="java&#45;keyword">false</span>
+            &#125;,
+            <span class="java&#45;quote">"workspace"</span>: &#123;
+                <span class="java&#45;quote">"objects"</span>: &#91;&#93;
+            &#125;,
+            <span class="java&#45;quote">"repository"</span>: &#123;
+                <span class="java&#45;quote">"files"</span>: &#91;&#93;
+            &#125;,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"9E118026E704B05FEBC2BFBC1E225644"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/project/execute/code<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;interrupted/&#62;</span>
+    <span class="xml&#45;tag">&#60;project&#62;</span>
+      <span class="xml&#45;tag">&#60;project&#62;</span>PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca<span class="xml&#45;tag">&#60;/project&#62;</span>
+      <span class="xml&#45;tag">&#60;name&#62;</span>Demo Analysis<span class="xml&#45;tag">&#60;/name&#62;</span>
+      <span class="xml&#45;tag">&#60;descr&#62;</span>Predicting retail sales, updated.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+      <span class="xml&#45;tag">&#60;longdescr/&#62;</span>
+      <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;authors&#62;</span>
+        <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+        <span class="xml&#45;tag">&#60;author&#62;</span>testuser<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;/authors&#62;</span>
+      <span class="xml&#45;tag">&#60;shared/&#62;</span>
+      <span class="xml&#45;tag">&#60;lastmodified&#62;</span>1378308723041<span class="xml&#45;tag">&#60;/lastmodified&#62;</span>
+      <span class="xml&#45;tag">&#60;live&#62;</span>true<span class="xml&#45;tag">&#60;/live&#62;</span>
+      <span class="xml&#45;tag">&#60;cookie&#62;</span>&#60;!&#91;CDATA&#91;  &#93;&#93;&#62;<span class="xml&#45;tag">&#60;/cookie&#62;</span>
+      <span class="xml&#45;tag">&#60;origin&#62;</span>Project original.<span class="xml&#45;tag">&#60;/origin&#62;</span>
+    <span class="xml&#45;tag">&#60;/project&#62;</span>
+    <span class="xml&#45;tag">&#60;execution&#62;</span>
+      <span class="xml&#45;tag">&#60;code&#62;</span>&#60;!&#91;CDATA&#91;
+        x <span class="xml&#45;tag">&#60;&#45; c(1:50)
+        plot(x)
+        png(<span class="xml&#45;quote">"namedPlot.png"</span>)
+        plot(x) &#93;&#93;&#62;</span>
+      <span class="xml&#45;tag">&#60;/code&#62;</span>
+      <span class="xml&#45;tag">&#60;tag/&#62;</span>
+      <span class="xml&#45;tag">&#60;timeStart&#62;</span>1378315675484<span class="xml&#45;tag">&#60;/timeStart&#62;</span>
+      <span class="xml&#45;tag">&#60;timeCode&#62;</span>92<span class="xml&#45;tag">&#60;/timeCode&#62;</span>
+      <span class="xml&#45;tag">&#60;timeTotal&#62;</span>227<span class="xml&#45;tag">&#60;/timeTotal&#62;</span>
+      <span class="xml&#45;tag">&#60;actor&#62;</span>george<span class="xml&#45;tag">&#60;/actor&#62;</span>
+      <span class="xml&#45;tag">&#60;console&#62;</span>&#60;!&#91;CDATA&#91; 
+        &#62; x <span class="xml&#45;tag">&#60;&#45; c(1:50)<p class="paragraph"/>        &#62;</span> plot(x)<p class="paragraph"/>        &#62; png(<span class="xml&#45;quote">"namedPlot.png"</span>)<p class="paragraph"/>        &#62; plot(x) &#93;&#93;&#62;
+      <span class="xml&#45;tag">&#60;/console&#62;</span>
+      <span class="xml&#45;tag">&#60;results&#62;</span>
+        <span class="xml&#45;tag">&#60;result&#62;</span>
+          <span class="xml&#45;tag">&#60;filename&#62;</span>unnamedplot001.png<span class="xml&#45;tag">&#60;/filename&#62;</span>
+          <span class="xml&#45;tag">&#60;length&#62;</span>6642<span class="xml&#45;tag">&#60;/length&#62;</span>
+          <span class="xml&#45;tag">&#60;type&#62;</span>image/png<span class="xml&#45;tag">&#60;/type&#62;</span>
+          <span class="xml&#45;tag">&#60;md5&#62;</span>67ec8f704613be81c47af1bfc1c6bc5b<span class="xml&#45;tag">&#60;/md5&#62;</span>
+          <span class="xml&#45;tag">&#60;execution&#62;</span>EXEC&#45;5881967c&#45;1fe3&#45;46ca&#45;9c3c&#45;ae073f2c34ad<span class="xml&#45;tag">&#60;/execution&#62;</span>
+          <span class="xml&#45;tag">&#60;url&#62;</span>http://184.106.178.37:7000/deployr/r/project/execute/
+          result/download/
+          PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca/
+          EXEC&#45;5881967c&#45;1fe3&#45;46ca&#45;9c3c&#45;ae073f2c34ad/unnamedplot001.png<span class="xml&#45;tag">&#60;/url&#62;</span>
+        <span class="xml&#45;tag">&#60;/result&#62;</span>
+      <span class="xml&#45;tag">&#60;/results&#62;</span>
+      <span class="xml&#45;tag">&#60;artifacts&#62;</span>
+        <span class="xml&#45;tag">&#60;artifact&#62;</span>
+          <span class="xml&#45;tag">&#60;filename&#62;</span>namedPlot.png<span class="xml&#45;tag">&#60;/filename&#62;</span>
+          <span class="xml&#45;tag">&#60;descr/&#62;</span>
+          <span class="xml&#45;tag">&#60;length&#62;</span>6642<span class="xml&#45;tag">&#60;/length&#62;</span>
+          <span class="xml&#45;tag">&#60;type&#62;</span>image/png<span class="xml&#45;tag">&#60;/type&#62;</span>
+          <span class="xml&#45;tag">&#60;project&#62;</span>PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca<span class="xml&#45;tag">&#60;/project&#62;</span>
+          <span class="xml&#45;tag">&#60;category&#62;</span>plot<span class="xml&#45;tag">&#60;/category&#62;</span>
+          <span class="xml&#45;tag">&#60;lastmodified&#62;</span>1378315731000<span class="xml&#45;tag">&#60;/lastmodified&#62;</span>
+          <span class="xml&#45;tag">&#60;url&#62;</span>http://184.106.178.37:7000/deployr/r/project/directory/
+          download/PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca/namedPlot.png<span class="xml&#45;tag">&#60;/url&#62;</span>
+        <span class="xml&#45;tag">&#60;/artifact&#62;</span>
+      <span class="xml&#45;tag">&#60;/artifacts&#62;</span>
+      <span class="xml&#45;tag">&#60;warnings&#62;</span>
+        <span class="xml&#45;tag">&#60;warning&#62;</span><span class="xml&#45;tag">&#60;/warning&#62;</span>
+      <span class="xml&#45;tag">&#60;/warnings&#62;</span>
+      <span class="xml&#45;tag">&#60;infos/&#62;</span>
+      <span class="xml&#45;tag">&#60;help/&#62;</span>
+      <span class="xml&#45;tag">&#60;execution&#62;</span>EXEC&#45;5881967c&#45;1fe3&#45;46ca&#45;9c3c&#45;ae073f2c34ad<span class="xml&#45;tag">&#60;/execution&#62;</span>
+      <span class="xml&#45;tag">&#60;resultsGenerated&#62;</span>1<span class="xml&#45;tag">&#60;/resultsGenerated&#62;</span>
+      <span class="xml&#45;tag">&#60;resultsAvailable&#62;</span>1<span class="xml&#45;tag">&#60;/resultsAvailable&#62;</span>
+    <span class="xml&#45;tag">&#60;/execution&#62;</span>
+    <span class="xml&#45;tag">&#60;workspace&#62;</span>
+      <span class="xml&#45;tag">&#60;objects/&#62;</span>
+    <span class="xml&#45;tag">&#60;/workspace&#62;</span>
+    <span class="xml&#45;tag">&#60;repository&#62;</span>
+      <span class="xml&#45;tag">&#60;files/&#62;</span>
+    <span class="xml&#45;tag">&#60;/repository&#62;</span>
+    <span class="xml&#45;tag">&#60;interrupted/&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>9E118026E704B05FEBC2BFBC1E225644<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div>
+
+
+
+<h2 id="projectexecutescript">6.2.2 /r/project/execute/script</h2>
+This call executes repository-managed scripts or external scripts on the R session identified by the  <em class="italic">project</em>  parameter.<p class="paragraph"/>To execute a single repository-managed script the caller must provide parameter values for  <em class="italic">filename</em> ,  <em class="italic">author</em>  and optionally  <em class="italic">directory</em>  and  <em class="italic">version</em> .  To execute a chain of repository-managed scripts the caller must provide a comma-separated list of values on the  <em class="italic">filename</em> ,  <em class="italic">author</em>  and optionally  <em class="italic">directory</em>  and  <em class="italic">version</em>  parameters.<p class="paragraph"/>To execute a single external script the caller must provide a valid URL or file path using the  <em class="italic">externalsource</em>  parameter. To execute a chain of external scripts the caller must provide a comma-separated list of values on the  <em class="italic">externalsource</em>  parameter. Note, that in order to execute an external script, the caller must have been granted the POWER_USER role.<p class="paragraph"/>Note: A chained execution executes each of the scripts identified on the call in a sequential fashion on the R session, with execution occurring in the order specified on the parameter list.<p class="paragraph"/>Please see the <a href="../guide/single.html#standardexecutionmodel" class="guide">Standard Execution Model</a> section in this guide for further details about the parameters on this call.<p class="paragraph"/><strong class="bold">Some key data indicated in the response markup on this call:</strong>
+<ul class="star">
+<li> <em class="italic">console</em>  - indicates the R console output resulting from the execution</li>
+<li> <em class="italic">results</em>  - indicates the list of files generated by the R graphics device</li>
+<li> <em class="italic">artifacts</em>  - indicates the list of files generated or modified in the working directory</li>
+<li> <em class="italic">objects</em>  - indicates the list of R objects returned from the workspace</li>
+<li> <em class="italic">files</em>  - indicates the list of files and objects stored in the repository after the execution completes</li>
+<li> <em class="italic">interrupted</em>  - indicates the interrupted status of execution</li>
+<li> <em class="italic">error</em>  - on failure, indicates the reason for failure</li>
+<li> <em class="italic">errorCode</em>  - on failure, indicates the <a href="../guide/single.html#overviewcodes" class="guide">error code</a> for failure</li>
+</ul><p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>POST<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>project – specifies the project identifier</li>
+<li>filename – (optional) comma-separated list of repository-managed script filenames</li>
+<li>directory - (optional) comma-separated list of repository-managed directories for scripts, defaults to root</li>
+<li>author – (optional) comma-separated list of authors, one author per filename</li>
+<li>version – (optional) comma-separated list of versions, one version per filename</li>
+<li>externalsource – (optional) comma-separated list of URLs or file paths to external scripts</li>
+</ul><p class="paragraph"/> <em class="italic">Pre-Execution Parameters</em> 
+<ul class="star">
+<li>inputs - (optional) DeployR-encoded inputs</li>
+<li>csvinputs - (optional) comma-separated list of primitive name/value inputs</li>
+<li>preloadbydirectory - (optional) comma-separated list of repository directory names</li>
+<li>preloadfilename - (optional) comma-separated list of repository filenames</li>
+<li>preloadfiledirectory - (optional) comma-separated list of directories, one directory per preloadfilename</li>
+<li>preloadfileauthor - (optional) comma-separated list of authors, one author per preloadfilename</li>
+<li>preloadfileversion - (optional) comma-separated list of versions, one version per preloadfilename</li>
+<li>preloadobjecgtname - (optional) comma-separated list of repository object (.rData) filenames</li>
+<li>preloadobjectdirectory - (optional) comma-separated list of directories, one directory per preloadobjectname</li>
+<li>preloadobjectauthor - (optional) comma-separated list of authors, one author per preloadobjectname</li>
+<li>preloadobjectversion - (optional) comma-separated list of versions, one version per preloadobjectname</li>
+<li>adoptworkspace – _(optional) identifies project whose workspace is to be adopted</li>
+<li>adoptdirectory – _(optional) identifies project whose directory is to be adopted</li>
+<li>adoptpackages – _(optional) identifies project whose package dependencies are to be adopted</li>
+</ul><p class="paragraph"/> <em class="italic">On-Execution Parameters</em> 
+<ul class="star">
+<li>phantom - (optional) if true the execution is treated as a <a href="../guide/single.html#phantomexecution" class="guide">phantom execution</a></li>
+<li>tag - (optional) specifies a tag that labels the execution</li>
+<li>echooff - (optional) if true R commands will not appear in the console output</li>
+<li>consoleoff - (optional) if true console output is not returned in the response markup</li>
+<li>artifactsoff - (optional) when enabled, artfiacts generated in the working directory are neither cached to the database nor reported in the response markup</li>
+<li>enableConsoleEvents - (optional) if true console events are delivered on the event stream</li>
+<li>graphics - (optional) specifies preferred R graphics device for execution: png or svg</li>
+<li>graphicswidth - (optional) specifies preferred width for R graphics device images</li>
+<li>graphicsheight - (optional) specifies preferred height for R graphics device images</li>
+</ul><p class="paragraph"/> <em class="italic">Post-Execution Parameters</em> 
+<ul class="star">
+<li>robjects – (optional) specifies a comma-separated list of objects for retrieval following the execution</li>
+<li>storefile - (optional) comma-separated list of working directory filenames</li>
+<li>storeobject - (optional) comma-separated list of workspace object names</li>
+<li>storeworkspace - (optional) filename (.rData) where workspace contents will be saved in the repository</li>
+<li>storedirectory - (optional)  repository directory for stored files and objects after the execution completes, defaults to root</li>
+<li>storenewversion - (optional) if true, ensures each file stored in repository results in new version being created if needed</li>
+<li>storepublic - (optional) if true, publishes each file stored in the repository</li>
+<li>infinity - (optional) specifies custom value for Infinity appearing in R object data returned on call, otherwise Infinity is represented by 0x7ff0000000000000L</li>
+<li>nan - (optional) specifies custom value for NaN appearing in R object data returned on call, otherwise NaN is represented by null</li>
+<li>encodeDataFramePrimitiveAsVector - (optional) if true, data.frame primitives are encoded vectors in R object data returned on call</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+project=PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca
+filename=Histogram of Auto Sales
+author=testuser</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/project/execute/script"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>
+            <span class="java&#45;quote">"interrupted"</span>: <span class="java&#45;keyword">false</span>,
+            <span class="java&#45;quote">"project"</span>: &#123;
+                <span class="java&#45;quote">"project"</span>: <span class="java&#45;quote">"PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca"</span>,
+                <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"Demo Analysis"</span>,
+                <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Predicting retail sales, updated."</span>
+                <span class="java&#45;quote">"longdescr"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                <span class="java&#45;quote">"authors"</span>: &#91;
+                    <span class="java&#45;quote">"george"</span>,
+                    <span class="java&#45;quote">"testuser"</span>
+                &#93;,
+                <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">false</span>,
+                <span class="java&#45;quote">"lastmodified"</span>: 1378308723041,
+                <span class="java&#45;quote">"live"</span>: <span class="java&#45;keyword">true</span>,
+                <span class="java&#45;quote">"cookie"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"origin"</span>: <span class="java&#45;quote">"Project original."</span>,
+            &#125;,
+            <span class="java&#45;quote">"execution"</span>: &#123;
+                <span class="java&#45;quote">"code"</span>: <span class="java&#45;quote">"&#35; Create a vector of auto sales <span class="java&#45;keyword">for</span> each category
+of vechicles. &#114;&#110;&#35; The value contains the number of units sold each
+weekday:&#114;&#110;&#35; (i.e. 1 car sold on Monday, 3 cars sold on Tuesday...)&#114;&#110;
+cars &#60;&#45; c(1, 3, 6, 4, 9)&#114;&#110;trucks &#60;&#45; c(2, 5, 4, 5, 12)&#114;&#110;suvs &#60;&#45;
+c(4,4,6,6,16)&#114;&#110; &#114;&#110;&#35; Create a table from the vectors.&#114;&#110;autos_data
+&#60;&#45; cbind(cars, trucks, suvs)&#114;&#110; &#114;&#110;&#35; Show the the table.&#114;&#110;
+print(autos_data)&#114;&#110; &#114;&#110;&#35; Send the plot to a file called histogram.png.
+&#114;&#110;png(&#34;histogram.png&#34;)&#114;&#110; &#114;&#110;&#35; Create a histogram of auto sales.
+&#114;&#110;barplot(as.matrix(autos_data), main=&#34;Autos&#34;, ylab= &#34;Total&#34;,
+beside=TRUE, col=rainbow(5))&#114;&#110; &#114;&#110;&#35; Place the legend at the top&#45;left
+corner with no frame, using rainbow colors.&#114;&#110;legend(&#34;topleft&#34;,
+c(&#34;Mon&#34;,&#34;Tue&#34;,&#34;Wed&#34;,&#34;Thu&#34;,&#34;Fri&#34;), cex=0.6, bty=&#34;n&#34;,
+fill=rainbow(5))&#114;&#110;&#35; Restore the plot device.&#114;&#110;dev.off()&#114;&#110;"</span>,
+                <span class="java&#45;quote">"resultsAvailable"</span>: 0,
+                <span class="java&#45;quote">"actor"</span>: <span class="java&#45;quote">"george"</span>,
+                <span class="java&#45;quote">"tag"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"interrupted"</span>: <span class="java&#45;keyword">false</span>,
+                <span class="java&#45;quote">"timeStart"</span>: 1378316295608,
+                <span class="java&#45;quote">"timeCode"</span>: 74
+                <span class="java&#45;quote">"timeTotal"</span>: 373,
+                <span class="java&#45;quote">"resultsGenerated"</span>: 0,
+                <span class="java&#45;quote">"resultsAvailable"</span>: 0,
+                <span class="java&#45;quote">"execution"</span>: <span class="java&#45;quote">"EXEC&#45;38bc9824&#45;9dc8&#45;4d42&#45;90d3&#45;9cb5d9d366b1"</span>,
+                <span class="java&#45;quote">"console"</span>: <span class="java&#45;quote">"&#110;&#62; &#35; Create a vector of auto sales <span class="java&#45;keyword">for</span> each
+category of vechicles. &#110;&#62; &#35; The value contains the number of units sold
+each weekday:&#110;&#62; &#35; (i.e. 1 car sold on Monday, 3 cars sold on Tuesday...)&#110;&#62;
+cars &#60;&#45; c(1, 3, 6, 4, 9)&#110;&#110;&#62; trucks &#60;&#45; c(2, 5, 4, 5, 12)&#110;&#110;&#62;
+suvs &#60;&#45; c(4,4,6,6,16)&#110;&#110;&#62; &#35; Create a table from the vectors.&#110;&#62;
+autos_data &#60;&#45; cbind(cars, trucks, suvs)&#110;&#110;&#62; &#35; Show the the table.&#110;&#62;
+print(autos_data)&#110;     cars trucks suvs&#110;&#91;1,&#93;    1      2    4&#110;&#91;2,&#93;
+    3      5    4&#110;&#91;3,&#93;    6      4    6&#110;&#91;4,&#93;    4      5    6&#110;
+&#91;5,&#93;    9     12   16&#110;&#110;&#62; &#35; Send the plot to a file called histogram.png.
+&#110;&#62; png(&#34;histogram.png&#34;)&#110;&#110;&#62; &#35; Create a histogram of auto sales.&#110;&#62;
+barplot(as.matrix(autos_data), main=&#34;Autos&#34;, ylab= &#34;Total&#34;,  beside=TRUE,
+col=rainbow(5))&#110;&#110;&#62; &#35; Place the legend at the top&#45;left corner with no frame,
+using rainbow colors.&#110;&#62; legend(&#34;topleft&#34;, c(&#34;Mon&#34;,&#34;Tue&#34;,&#34;Wed&#34;,
+&#34;Thu&#34;,&#34;Fri&#34;), cex=0.6, bty=&#34;n&#34;, fill=rainbow(5))&#110;&#110;&#62; &#35; Restore the plot
+device.&#110;&#62; dev.off()&#110;png &#110;  2 &#110;"</span>,
+                <span class="java&#45;quote">"results"</span>: &#91;&#93;,
+                <span class="java&#45;quote">"artifacts"</span>: &#91;
+                    &#123;
+                        <span class="java&#45;quote">"filename"</span>: <span class="java&#45;quote">"histogram.png"</span>,
+                        <span class="java&#45;quote">"descr"</span>: <span class="java&#45;keyword">null</span>,
+                        <span class="java&#45;quote">"length"</span>: 7285,
+                        <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"image/png"</span>,
+                        <span class="java&#45;quote">"category"</span>: <span class="java&#45;quote">"plot"</span>,
+                        <span class="java&#45;quote">"url"</span>: <span class="java&#45;quote">"http://184.106.178.37:7000/deployr/r/
+                        project/directory/download/
+                        PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca/histogram.png"</span>,
+                        <span class="java&#45;quote">"project"</span>: <span class="java&#45;quote">"PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca"</span>,
+                        <span class="java&#45;quote">"lastmodified"</span>: 1378316352000
+                    &#125;
+                &#93;,
+                <span class="java&#45;quote">"warnings"</span>: &#91;
+                &#93;
+            &#125;,
+            <span class="java&#45;quote">"repository"</span>: &#123;
+                <span class="java&#45;quote">"files"</span>: &#91;&#93;
+            &#125;,
+            <span class="java&#45;quote">"workspace"</span>: &#123;
+                <span class="java&#45;quote">"objects"</span>: &#91;&#93;
+            &#125;,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"9E118026E704B05FEBC2BFBC1E225644"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/project/execute/script<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;interrupted/&#62;</span>
+    <span class="xml&#45;tag">&#60;project&#62;</span>
+      <span class="xml&#45;tag">&#60;project&#62;</span>PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca<span class="xml&#45;tag">&#60;/project&#62;</span>
+      <span class="xml&#45;tag">&#60;name&#62;</span>Demo Analysis<span class="xml&#45;tag">&#60;/name&#62;</span>
+      <span class="xml&#45;tag">&#60;descr&#62;</span>Predicting retail sales, updated.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+      <span class="xml&#45;tag">&#60;shared/&#62;</span>
+      <span class="xml&#45;tag">&#60;longdescr/&#62;</span>
+      <span class="xml&#45;tag">&#60;origin&#62;</span>Project original.<span class="xml&#45;tag">&#60;/origin&#62;</span>
+      <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;authors&#62;</span>
+        <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+        <span class="xml&#45;tag">&#60;author&#62;</span>testuser<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;/authors&#62;</span>
+      <span class="xml&#45;tag">&#60;cookie&#62;</span>&#60;!&#91;CDATA&#91;  &#93;&#93;&#62;<span class="xml&#45;tag">&#60;/cookie&#62;</span>
+      <span class="xml&#45;tag">&#60;lastmodified&#62;</span>1378308723041<span class="xml&#45;tag">&#60;/lastmodified&#62;</span>
+      <span class="xml&#45;tag">&#60;live&#62;</span>true<span class="xml&#45;tag">&#60;/live&#62;</span>
+    <span class="xml&#45;tag">&#60;/project&#62;</span>
+    <span class="xml&#45;tag">&#60;execution&#62;</span>
+      <span class="xml&#45;tag">&#60;code&#62;</span>&#60;!&#91;CDATA&#91; &#35; Create a vector of auto sales for each category of vechicles.<p class="paragraph"/>&#35; The value contains the number of units sold each weekday:<p class="paragraph"/>&#35; (i.e. 1 car sold on Monday, 3 cars sold on Tuesday...)<p class="paragraph"/>cars <span class="xml&#45;tag">&#60;&#45; c(1, 3, 6, 4, 9)<p class="paragraph"/>trucks &#60;&#45; c(2, 5, 4, 5, 12)<p class="paragraph"/>suvs &#60;&#45; c(4,4,6,6,16)<p class="paragraph"/><p class="paragraph"/>&#35; Create a table from the vectors.<p class="paragraph"/>autos_data &#60;&#45; cbind(cars, trucks, suvs)<p class="paragraph"/><p class="paragraph"/>&#35; Show the the table.<p class="paragraph"/>print(autos_data)<p class="paragraph"/><p class="paragraph"/>&#35; Send the plot to a file called histogram.png.<p class="paragraph"/>png(<span class="xml&#45;quote">"histogram.png"</span>)<p class="paragraph"/><p class="paragraph"/>&#35; Create a histogram of auto sales.<p class="paragraph"/>barplot(as.matrix(autos_data), main=<span class="xml&#45;quote">"Autos"</span>, ylab= <span class="xml&#45;quote">"Total"</span>,  beside=TRUE, col=rainbow(5))<p class="paragraph"/><p class="paragraph"/>&#35; Place the legend at the top&#45;left corner with no frame, using rainbow colors.<p class="paragraph"/>legend(<span class="xml&#45;quote">"topleft"</span>, c(<span class="xml&#45;quote">"Mon"</span>,<span class="xml&#45;quote">"Tue"</span>,<span class="xml&#45;quote">"Wed"</span>,<span class="xml&#45;quote">"Thu"</span>,<span class="xml&#45;quote">"Fri"</span>), cex=0.6, bty=<span class="xml&#45;quote">"n"</span>, fill=rainbow(5))<p class="paragraph"/>&#35; Restore the plot device.<p class="paragraph"/>dev.off()<p class="paragraph"/> &#93;&#93;&#62;</span>
+      <span class="xml&#45;tag">&#60;/code&#62;</span>
+      <span class="xml&#45;tag">&#60;execution&#62;</span>EXEC&#45;ea762407&#45;a609&#45;4e18&#45;973b&#45;570168e95641<span class="xml&#45;tag">&#60;/execution&#62;</span>
+      <span class="xml&#45;tag">&#60;actor&#62;</span>george<span class="xml&#45;tag">&#60;/actor&#62;</span>
+      <span class="xml&#45;tag">&#60;tag/&#62;</span>
+      <span class="xml&#45;tag">&#60;timeStart&#62;</span>1378316603645<span class="xml&#45;tag">&#60;/timeStart&#62;</span>
+      <span class="xml&#45;tag">&#60;timeCode&#62;</span>62<span class="xml&#45;tag">&#60;/timeCode&#62;</span>
+      <span class="xml&#45;tag">&#60;timeTotal&#62;</span>213<span class="xml&#45;tag">&#60;/timeTotal&#62;</span>
+      <span class="xml&#45;tag">&#60;resultsGenerated/&#62;</span>
+      <span class="xml&#45;tag">&#60;resultsAvailable/&#62;</span>
+      <span class="xml&#45;tag">&#60;console&#62;</span>&#60;!&#91;CDATA&#91; 
+&#62; &#35; Create a vector of auto sales for each category of vechicles. 
+&#62; &#35; The value contains the number of units sold each weekday:
+&#62; &#35; (i.e. 1 car sold on Monday, 3 cars sold on Tuesday...)
+&#62; cars <span class="xml&#45;tag">&#60;&#45; c(1, 3, 6, 4, 9)<p class="paragraph"/>&#62;</span> trucks <span class="xml&#45;tag">&#60;&#45; c(2, 5, 4, 5, 12)<p class="paragraph"/>&#62;</span> suvs <span class="xml&#45;tag">&#60;&#45; c(4,4,6,6,16)<p class="paragraph"/>&#62;</span> &#35; Create a table from the vectors.
+&#62; autos_data <span class="xml&#45;tag">&#60;&#45; cbind(cars, trucks, suvs)<p class="paragraph"/>&#62;</span> &#35; Show the the table.
+&#62; print(autos_data)
+     cars trucks suvs
+&#91;1,&#93;    1      2    4
+&#91;2,&#93;    3      5    4
+&#91;3,&#93;    6      4    6
+&#91;4,&#93;    4      5    6
+&#91;5,&#93;    9     12   16<p class="paragraph"/>&#62; &#35; Send the plot to a file called histogram.png.
+&#62; png(<span class="xml&#45;quote">"histogram.png"</span>)<p class="paragraph"/>&#62; &#35; Create a histogram of auto sales.
+&#62; barplot(as.matrix(autos_data), main=<span class="xml&#45;quote">"Autos"</span>, ylab= <span class="xml&#45;quote">"Total"</span>,  beside=TRUE, col=rainbow(5))<p class="paragraph"/>&#62; &#35; Place the legend at the top&#45;left corner with no frame, using rainbow colors.
+&#62; legend(<span class="xml&#45;quote">"topleft"</span>, c(<span class="xml&#45;quote">"Mon"</span>,<span class="xml&#45;quote">"Tue"</span>,<span class="xml&#45;quote">"Wed"</span>,<span class="xml&#45;quote">"Thu"</span>,<span class="xml&#45;quote">"Fri"</span>), cex=0.6, bty=<span class="xml&#45;quote">"n"</span>, fill=rainbow(5))<p class="paragraph"/>&#62; &#35; Restore the plot device.
+&#62; dev.off()
+png 
+  2 
+ &#93;&#93;&#62;<span class="xml&#45;tag">&#60;/console&#62;</span>
+      <span class="xml&#45;tag">&#60;results/&#62;</span>
+      <span class="xml&#45;tag">&#60;artifacts&#62;</span>
+        <span class="xml&#45;tag">&#60;artifact&#62;</span>
+          <span class="xml&#45;tag">&#60;project&#62;</span>PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca<span class="xml&#45;tag">&#60;/project&#62;</span>
+          <span class="xml&#45;tag">&#60;category&#62;</span>plot<span class="xml&#45;tag">&#60;/category&#62;</span>
+          <span class="xml&#45;tag">&#60;length&#62;</span>7285<span class="xml&#45;tag">&#60;/length&#62;</span>
+          <span class="xml&#45;tag">&#60;lastmodified&#62;</span>1378316660000<span class="xml&#45;tag">&#60;/lastmodified&#62;</span>
+          <span class="xml&#45;tag">&#60;filename&#62;</span>histogram.png<span class="xml&#45;tag">&#60;/filename&#62;</span>
+          <span class="xml&#45;tag">&#60;descr/&#62;</span>
+          <span class="xml&#45;tag">&#60;type&#62;</span>image/png<span class="xml&#45;tag">&#60;/type&#62;</span>
+          <span class="xml&#45;tag">&#60;url&#62;</span>http://184.106.178.37:7000/deployr/r/project/
+          directory/download/
+          PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca/histogram.png<span class="xml&#45;tag">&#60;/url&#62;</span>
+        <span class="xml&#45;tag">&#60;/artifact&#62;</span>
+      <span class="xml&#45;tag">&#60;/artifacts&#62;</span>
+      <span class="xml&#45;tag">&#60;interrupted/&#62;</span>
+      <span class="xml&#45;tag">&#60;warnings&#62;</span><span class="xml&#45;tag">&#60;/warnings&#62;</span>
+    <span class="xml&#45;tag">&#60;/execution&#62;</span>
+    <span class="xml&#45;tag">&#60;workspace&#62;</span>
+      <span class="xml&#45;tag">&#60;objects/&#62;</span>
+    <span class="xml&#45;tag">&#60;/workspace&#62;</span>
+    <span class="xml&#45;tag">&#60;repository&#62;</span>
+      <span class="xml&#45;tag">&#60;files/&#62;</span>
+    <span class="xml&#45;tag">&#60;/repository&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>9E118026E704B05FEBC2BFBC1E225644<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div><p class="paragraph"/>
+
+
+<h2 id="projectexecuteinterrupt">6.2.3 /r/project/execute/interrupt</h2>
+This call interrupts the current execution on specified project.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>POST<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>project – specifies the project identifier</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+project=PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/project/execute/interrupt"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"interrupted"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"project"</span>: &#123;
+                <span class="java&#45;quote">"project"</span>: <span class="java&#45;quote">"PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca"</span>,
+                <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"Demo Analysis"</span>,
+                <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Predicting retail sales, updated."</span>
+                <span class="java&#45;quote">"longdescr"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                <span class="java&#45;quote">"authors"</span>: &#91;
+                    <span class="java&#45;quote">"george"</span>,
+                    <span class="java&#45;quote">"testuser"</span>
+                &#93;,
+                <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">false</span>,
+                <span class="java&#45;quote">"lastmodified"</span>: 1378308723041,
+                <span class="java&#45;quote">"live"</span>: <span class="java&#45;keyword">false</span>,
+                <span class="java&#45;quote">"cookie"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"origin"</span>: <span class="java&#45;quote">"Project original."</span>
+            &#125;,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"675987FAFA41B1F169CFC5AB3EC5F563"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/project/execute/interrupt<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;interrupted&#62;</span>true<span class="xml&#45;tag">&#60;/interrupted&#62;</span>
+    <span class="xml&#45;tag">&#60;project&#62;</span>
+      <span class="xml&#45;tag">&#60;project&#62;</span>PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca<span class="xml&#45;tag">&#60;/project&#62;</span>
+      <span class="xml&#45;tag">&#60;name&#62;</span>Demo Analysis<span class="xml&#45;tag">&#60;/name&#62;</span>
+      <span class="xml&#45;tag">&#60;descr&#62;</span>Predicting retail sales, updated.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+      <span class="xml&#45;tag">&#60;longdescr/&#62;</span>
+      <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;authors&#62;</span>
+        <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+        <span class="xml&#45;tag">&#60;author&#62;</span>testuser<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;/authors&#62;</span>
+      <span class="xml&#45;tag">&#60;shared/&#62;</span>
+      <span class="xml&#45;tag">&#60;lastmodified&#62;</span>1378308723041<span class="xml&#45;tag">&#60;/lastmodified&#62;</span>
+      <span class="xml&#45;tag">&#60;cookie&#62;</span>&#60;!&#91;CDATA&#91;  &#93;&#93;&#62;<span class="xml&#45;tag">&#60;/cookie&#62;</span>
+      <span class="xml&#45;tag">&#60;live/&#62;</span>
+      <span class="xml&#45;tag">&#60;origin&#62;</span>Project original.<span class="xml&#45;tag">&#60;/origin&#62;</span>
+    <span class="xml&#45;tag">&#60;/project&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>675987FAFA41B1F169CFC5AB3EC5F563<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div><p class="paragraph"/>
+
+
+<h2 id="projectexecuteconsole">6.2.4 /r/project/execute/console</h2>
+This call retrieves the R console output for the latest execution on specified project.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>GET<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>project – specifies the project identifier</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+project=PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/project/execute/console"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"project"</span>: &#123;
+                <span class="java&#45;quote">"project"</span>: <span class="java&#45;quote">"PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca"</span>,
+                <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"Demo Analysis"</span>,
+                <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Predicting retail sales, updated."</span>,
+                <span class="java&#45;quote">"longdescr"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                <span class="java&#45;quote">"authors"</span>: &#91;
+                    <span class="java&#45;quote">"george"</span>,
+                    <span class="java&#45;quote">"testuser"</span>
+                &#93;,
+                <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">false</span>,
+                <span class="java&#45;quote">"lastmodified"</span>: 1378308723041,
+                <span class="java&#45;quote">"live"</span>: <span class="java&#45;keyword">true</span>,
+                <span class="java&#45;quote">"cookie"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"origin"</span>: <span class="java&#45;quote">"Project original."</span>
+            &#125;,
+            <span class="java&#45;quote">"execution"</span>: &#123;
+                <span class="java&#45;quote">"console"</span>: <span class="java&#45;quote">"&#110;&#62; x &#60;&#45; rnorm(5)&#110;"</span>
+            &#125;,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"675987FAFA41B1F169CFC5AB3EC5F563"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/project/execute/console<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;project&#62;</span>
+      <span class="xml&#45;tag">&#60;project&#62;</span>PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca<span class="xml&#45;tag">&#60;/project&#62;</span>
+      <span class="xml&#45;tag">&#60;name&#62;</span>Demo Analysis<span class="xml&#45;tag">&#60;/name&#62;</span>
+      <span class="xml&#45;tag">&#60;descr&#62;</span>Predicting retail sales, updated.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+      <span class="xml&#45;tag">&#60;longdescr/&#62;</span>
+      <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;authors&#62;</span>
+        <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+        <span class="xml&#45;tag">&#60;author&#62;</span>testuser<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;/authors&#62;</span>
+      <span class="xml&#45;tag">&#60;shared/&#62;</span>
+      <span class="xml&#45;tag">&#60;lastmodified&#62;</span>1378308723041<span class="xml&#45;tag">&#60;/lastmodified&#62;</span>
+      <span class="xml&#45;tag">&#60;cookie&#62;</span>&#60;!&#91;CDATA&#91;  &#93;&#93;&#62;<span class="xml&#45;tag">&#60;/cookie&#62;</span>
+      <span class="xml&#45;tag">&#60;live&#62;</span>true<span class="xml&#45;tag">&#60;/live&#62;</span>
+      <span class="xml&#45;tag">&#60;origin&#62;</span>Project original.<span class="xml&#45;tag">&#60;/origin&#62;</span>
+    <span class="xml&#45;tag">&#60;/project&#62;</span>
+    <span class="xml&#45;tag">&#60;execution&#62;</span>
+      <span class="xml&#45;tag">&#60;console&#62;</span>&#60;!&#91;CDATA&#91; 
+&#62; x <span class="xml&#45;tag">&#60;&#45; rnorm(5)
+ &#93;&#93;&#62;</span><span class="xml&#45;tag">&#60;/console&#62;</span>
+    <span class="xml&#45;tag">&#60;/execution&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>675987FAFA41B1F169CFC5AB3EC5F563<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div><p class="paragraph"/>
+
+
+<h2 id="projectexecutehistory">6.2.5 /r/project/execute/history</h2>
+This call retrieves the execution history for the specified project.<p class="paragraph"/>Some of the key data indicated for each history item in the response markup on this call include:
+<ul class="star">
+<li> <em class="italic">code</em>  - indicates the code that has been executed</li>
+<li> <em class="italic">console</em>  - indicates the R console output resulting from the code execution</li>
+<li> <em class="italic">resultsGenerated</em>  - indicates the number of generated results on the execution</li>
+<li> <em class="italic">resultsAvailable</em>  - indicates the number of generated results still stored on the execution</li>
+<li> <em class="italic">resourceUsage</em>  - indicates the current storage byte count for results on the execution</li>
+<li> <em class="italic">execution</em>  - indicates the execution identifier, which can then be used on <a href="../guide/single.html#projectexecuteresultdownload" class="guide">/r/project/execution/result/download</a> call to retrieve results</li>
+<li> <em class="italic">interrupted</em>  - indicates the interrupted status of execution</li>
+<li> <em class="italic">error</em>  - on failure, indicates the reason for failure</li>
+<li> <em class="italic">errorCode</em>  - on failure, indicates the <a href="../guide/single.html#overviewcodes" class="guide">error code</a> for failure</li>
+</ul><p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>GET<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies the markup encoding on the call: json or xml</li>
+<li>project – specifies the project identifier</li>
+<li>filterdepth - specifies the max number of executions to be returned in the history</li>
+<li>execution - (optional) specifies the comma-separated list of execution identifiers on which to filter history</li>
+<li>filtertag - (optional) specifies the execution tag on which to filter history</li>
+<li>reversed - (optional) if true, the execution history is returned in a reverse-chronological order</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+project=PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca
+filterdepth=100</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/project/execute/history"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"project"</span>: &#123;
+                <span class="java&#45;quote">"project"</span>: <span class="java&#45;quote">"PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca"</span>,
+                <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"Demo Analysis"</span>,
+                <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Predicting retail sales."</span>,
+                <span class="java&#45;quote">"longdescr"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                <span class="java&#45;quote">"authors"</span>: &#91;
+                    <span class="java&#45;quote">"george"</span>
+                &#93;,
+                <span class="java&#45;quote">"lastmodified"</span>: 1378319703711,
+                <span class="java&#45;quote">"live"</span>: <span class="java&#45;keyword">true</span>,
+                <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">false</span>,
+                <span class="java&#45;quote">"cookie"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"origin"</span>: <span class="java&#45;quote">"Project original."</span>,
+            &#125;,
+            <span class="java&#45;quote">"execution"</span>: &#123;
+                <span class="java&#45;quote">"history"</span>: &#91;
+                    &#123;
+                        <span class="java&#45;quote">"code"</span>: <span class="java&#45;quote">"x &#60;&#45; rnorm(5)"</span>,
+                        <span class="java&#45;quote">"actor"</span>: <span class="java&#45;quote">"george"</span>,
+                        <span class="java&#45;quote">"tag"</span>: <span class="java&#45;keyword">null</span>,
+                        <span class="java&#45;quote">"timeStart"</span>: 1378319697120,
+                        <span class="java&#45;quote">"timeCode"</span>: 35,
+                        <span class="java&#45;quote">"timeTotal"</span>: 106,
+                        <span class="java&#45;quote">"resultsGenerated"</span>: 0,
+                        <span class="java&#45;quote">"resultsAvailable"</span>: 0,
+                        <span class="java&#45;quote">"resourceUsage"</span>: 17,
+                        <span class="java&#45;quote">"console"</span>: <span class="java&#45;quote">"&#110;&#62; x &#60;&#45; rnorm(5)&#110;"</span>,
+                        <span class="java&#45;quote">"execution"</span>: <span class="java&#45;quote">"EXEC&#45;82d99c82&#45;8c26&#45;4a71&#45;9576&#45;23d40d51b388"</span>,
+                        <span class="java&#45;quote">"onDate"</span>: 1378319697231,
+                        <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+                        <span class="java&#45;quote">"interrupted"</span>: <span class="java&#45;keyword">false</span>,
+                        <span class="java&#45;quote">"warnings"</span>: <span class="java&#45;keyword">null</span>,
+                        <span class="java&#45;quote">"error"</span>: <span class="java&#45;keyword">null</span>,
+                        <span class="java&#45;quote">"errorCode"</span>: <span class="java&#45;keyword">null</span>
+                    &#125;,
+                    &#123;
+                        <span class="java&#45;quote">"code"</span>: <span class="java&#45;quote">"plot(x)"</span>,
+                        <span class="java&#45;quote">"actor"</span>: <span class="java&#45;quote">"george"</span>,
+                        <span class="java&#45;quote">"tag"</span>: <span class="java&#45;keyword">null</span>,
+                        <span class="java&#45;quote">"timeStart"</span>: 1378319702391
+                        <span class="java&#45;quote">"timeCode"</span>: 61,
+                        <span class="java&#45;quote">"timeTotal"</span>: 266,
+                        <span class="java&#45;quote">"resultsGenerated"</span>: 1,
+                        <span class="java&#45;quote">"resultsAvailable"</span>: 1,
+                        <span class="java&#45;quote">"resourceUsage"</span>: 3234,
+                        <span class="java&#45;quote">"console"</span>: <span class="java&#45;quote">"&#110;&#62; plot(x)&#110;"</span>,
+                        <span class="java&#45;quote">"execution"</span>: <span class="java&#45;quote">"EXEC&#45;0808900b&#45;8dfb&#45;43ac&#45;a2ef&#45;f697715b3c8f"</span>,
+                        <span class="java&#45;quote">"onDate"</span>: 1378319702662,
+                        <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+                        <span class="java&#45;quote">"interrupted"</span>: <span class="java&#45;keyword">false</span>,
+                        <span class="java&#45;quote">"warnings"</span>: <span class="java&#45;keyword">null</span>,
+                        <span class="java&#45;quote">"error"</span>: <span class="java&#45;keyword">null</span>,
+                        <span class="java&#45;quote">"errorCode"</span>: <span class="java&#45;keyword">null</span>
+                    &#125;
+                &#93;
+            &#125;,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"675987FAFA41B1F169CFC5AB3EC5F563"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/project/execute/history<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;project&#62;</span>
+      <span class="xml&#45;tag">&#60;project&#62;</span>PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca<span class="xml&#45;tag">&#60;/project&#62;</span>
+      <span class="xml&#45;tag">&#60;name&#62;</span>Demo Analysis<span class="xml&#45;tag">&#60;/name&#62;</span>
+      <span class="xml&#45;tag">&#60;descr&#62;</span>Predicting retail sales.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+      <span class="xml&#45;tag">&#60;longdescr/&#62;</span>
+      <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;authors&#62;</span>
+        <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;/authors&#62;</span>
+      <span class="xml&#45;tag">&#60;shared/&#62;</span>
+      <span class="xml&#45;tag">&#60;lastmodified&#62;</span>1378320038069<span class="xml&#45;tag">&#60;/lastmodified&#62;</span>
+      <span class="xml&#45;tag">&#60;live&#62;</span>true<span class="xml&#45;tag">&#60;/live&#62;</span>
+      <span class="xml&#45;tag">&#60;cookie&#62;</span>&#60;!&#91;CDATA&#91;  &#93;&#93;&#62;<span class="xml&#45;tag">&#60;/cookie&#62;</span>
+      <span class="xml&#45;tag">&#60;origin&#62;</span>Project original.<span class="xml&#45;tag">&#60;/origin&#62;</span>
+    <span class="xml&#45;tag">&#60;/project&#62;</span>
+    <span class="xml&#45;tag">&#60;execution&#62;</span>
+      <span class="xml&#45;tag">&#60;historys&#62;</span>
+        <span class="xml&#45;tag">&#60;history&#62;</span>
+          <span class="xml&#45;tag">&#60;code&#62;</span>&#60;!&#91;CDATA&#91; x <span class="xml&#45;tag">&#60;&#45; rnorm(5) &#93;&#93;&#62;</span><span class="xml&#45;tag">&#60;/code&#62;</span>
+          <span class="xml&#45;tag">&#60;actor&#62;</span>george<span class="xml&#45;tag">&#60;/actor&#62;</span>
+          <span class="xml&#45;tag">&#60;tag/&#62;</span>
+          <span class="xml&#45;tag">&#60;timeStart&#62;</span>1378319697120<span class="xml&#45;tag">&#60;/timeStart&#62;</span>
+          <span class="xml&#45;tag">&#60;timeCode&#62;</span>35<span class="xml&#45;tag">&#60;/timeCode&#62;</span>
+          <span class="xml&#45;tag">&#60;timeTotal&#62;</span>106<span class="xml&#45;tag">&#60;/timeTotal&#62;</span>
+          <span class="xml&#45;tag">&#60;resultsGenerated/&#62;</span>
+          <span class="xml&#45;tag">&#60;resultsAvailable/&#62;</span>
+          <span class="xml&#45;tag">&#60;resourceUsage&#62;</span>17<span class="xml&#45;tag">&#60;/resourceUsage&#62;</span>
+          <span class="xml&#45;tag">&#60;console&#62;</span>&#60;!&#91;CDATA&#91; 
+&#62; x <span class="xml&#45;tag">&#60;&#45; rnorm(5)
+ &#93;&#93;&#62;</span><span class="xml&#45;tag">&#60;/console&#62;</span>
+          <span class="xml&#45;tag">&#60;execution&#62;</span>EXEC&#45;82d99c82&#45;8c26&#45;4a71&#45;9576&#45;23d40d51b388<span class="xml&#45;tag">&#60;/execution&#62;</span>
+          <span class="xml&#45;tag">&#60;onDate&#62;</span>1378319697231<span class="xml&#45;tag">&#60;/onDate&#62;</span>
+          <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+          <span class="xml&#45;tag">&#60;interrupted/&#62;</span>
+          <span class="xml&#45;tag">&#60;warnings&#62;</span><span class="xml&#45;tag">&#60;/warnings&#62;</span>
+          <span class="xml&#45;tag">&#60;error/&#62;</span>
+          <span class="xml&#45;tag">&#60;errorCode/&#62;</span>
+        <span class="xml&#45;tag">&#60;/history&#62;</span>
+        <span class="xml&#45;tag">&#60;history&#62;</span>
+          <span class="xml&#45;tag">&#60;code&#62;</span>&#60;!&#91;CDATA&#91; plot(x) &#93;&#93;&#62;<span class="xml&#45;tag">&#60;/code&#62;</span>
+          <span class="xml&#45;tag">&#60;tag/&#62;</span>
+          <span class="xml&#45;tag">&#60;actor&#62;</span>george<span class="xml&#45;tag">&#60;/actor&#62;</span>
+          <span class="xml&#45;tag">&#60;timeStart&#62;</span>1378319702391<span class="xml&#45;tag">&#60;/timeStart&#62;</span>
+          <span class="xml&#45;tag">&#60;timeCode&#62;</span>61<span class="xml&#45;tag">&#60;/timeCode&#62;</span>
+          <span class="xml&#45;tag">&#60;timeTotal&#62;</span>266<span class="xml&#45;tag">&#60;/timeTotal&#62;</span>
+          <span class="xml&#45;tag">&#60;resultsGenerated&#62;</span>1<span class="xml&#45;tag">&#60;/resultsGenerated&#62;</span>
+          <span class="xml&#45;tag">&#60;resultsAvailable&#62;</span>1<span class="xml&#45;tag">&#60;/resultsAvailable&#62;</span>
+          <span class="xml&#45;tag">&#60;resourceUsage&#62;</span>3234<span class="xml&#45;tag">&#60;/resourceUsage&#62;</span>
+          <span class="xml&#45;tag">&#60;console&#62;</span>&#60;!&#91;CDATA&#91; 
+&#62; plot(x)
+ &#93;&#93;&#62;<span class="xml&#45;tag">&#60;/console&#62;</span>
+          <span class="xml&#45;tag">&#60;execution&#62;</span>EXEC&#45;0808900b&#45;8dfb&#45;43ac&#45;a2ef&#45;f697715b3c8f<span class="xml&#45;tag">&#60;/execution&#62;</span>
+          <span class="xml&#45;tag">&#60;onDate&#62;</span>1378319702662<span class="xml&#45;tag">&#60;/onDate&#62;</span>
+          <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+          <span class="xml&#45;tag">&#60;interrupted/&#62;</span>
+          <span class="xml&#45;tag">&#60;warnings&#62;</span><span class="xml&#45;tag">&#60;/warnings&#62;</span>
+          <span class="xml&#45;tag">&#60;error/&#62;</span>
+          <span class="xml&#45;tag">&#60;errorCode/&#62;</span>
+        <span class="xml&#45;tag">&#60;/history&#62;</span>
+      <span class="xml&#45;tag">&#60;/historys&#62;</span>
+    <span class="xml&#45;tag">&#60;/execution&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>675987FAFA41B1F169CFC5AB3EC5F563<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div><p class="paragraph"/>
+
+
+<h2 id="projectexecuteflush">6.2.6 /r/project/execute/flush</h2>
+This call flushes executions in the history on the specified project.<p class="paragraph"/>Flushing an execution deletes both the R console output and the generated results associated with that execution but does not remove the execution itself from the history. By omitting the  <em class="italic">execution</em>  parameter, the caller can flush every execution in the history on the specified project.<p class="paragraph"/>This flushing facility is provided to help users manage the levels of resource usage associated with their  <em class="italic">persistent</em>  projects.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>POST<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>project – specifies the project identifier</li>
+<li>execution - (optional) comma-separated list of execution identifiers</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+project=PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca
+execution=EXEC&#45;ab611f28&#45;922f&#45;4bdc&#45;9659&#45;f0b83aca032b</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/project/execute/flush"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"project"</span>: &#123;
+                <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"Demo Analysis"</span>,
+                <span class="java&#45;quote">"project"</span>: <span class="java&#45;quote">"PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca"</span>,
+                <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Predicting retail sales."</span>
+                <span class="java&#45;quote">"longdescr"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                <span class="java&#45;quote">"authors"</span>: &#91;
+                    <span class="java&#45;quote">"george"</span>
+                &#93;,
+                <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">false</span>,
+                <span class="java&#45;quote">"lastmodified"</span>: 1378320424751,
+                <span class="java&#45;quote">"live"</span>: <span class="java&#45;keyword">true</span>,
+                <span class="java&#45;quote">"cookie"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"origin"</span>: <span class="java&#45;quote">"Project original."</span>
+            &#125;,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"675987FAFA41B1F169CFC5AB3EC5F563"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/project/execute/flush<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;project&#62;</span>
+      <span class="xml&#45;tag">&#60;project&#62;</span>PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca<span class="xml&#45;tag">&#60;/project&#62;</span>
+      <span class="xml&#45;tag">&#60;name&#62;</span>Demo Analysis<span class="xml&#45;tag">&#60;/name&#62;</span>
+      <span class="xml&#45;tag">&#60;descr&#62;</span>Predicting retail sales.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+      <span class="xml&#45;tag">&#60;longdescr/&#62;</span>
+      <span class="xml&#45;tag">&#60;shared/&#62;</span>
+      <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;authors&#62;</span>
+        <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;/authors&#62;</span>
+      <span class="xml&#45;tag">&#60;lastmodified&#62;</span>1378320371107<span class="xml&#45;tag">&#60;/lastmodified&#62;</span>
+      <span class="xml&#45;tag">&#60;live&#62;</span>true<span class="xml&#45;tag">&#60;/live&#62;</span>
+      <span class="xml&#45;tag">&#60;cookie&#62;</span>&#60;!&#91;CDATA&#91;  &#93;&#93;&#62;<span class="xml&#45;tag">&#60;/cookie&#62;</span>
+      <span class="xml&#45;tag">&#60;origin&#62;</span>Project original.<span class="xml&#45;tag">&#60;/origin&#62;</span>
+    <span class="xml&#45;tag">&#60;/project&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>675987FAFA41B1F169CFC5AB3EC5F563<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div><p class="paragraph"/>
+
+
+<h2 id="projectexecuteresultlist">6.2.7 /r/project/execute/result/list</h2>
+This call lists the execution results for the specified project.<p class="paragraph"/>By specifying a value for the  <em class="italic">execution</em>  parameter the caller can limit the response to those results found on a specific execution or set of executions.<p class="paragraph"/><blockquote class="note">
+<strong class="bold">Important!</strong> The URLs returned in the response markup on this call remain valid for as long as the results remain part of the project.
+</blockquote><p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>GET<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>project – specifies the project identifier</li>
+<li>execution - (optional) specifies a comma-separated list of execution identifiers</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+project=PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca
+execution=EXEC&#45;76b503a3&#45;3c2f&#45;4114&#45;b4b2&#45;e3b1b6f88657</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/project/execute/result/list"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"project"</span>: &#123;
+                <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"Demo Analysis"</span>,
+                <span class="java&#45;quote">"project"</span>: <span class="java&#45;quote">"PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca"</span>,
+                <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Predicting retail sales."</span>
+                <span class="java&#45;quote">"longdescr"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                <span class="java&#45;quote">"authors"</span>: &#91;
+                    <span class="java&#45;quote">"george"</span>
+                &#93;,
+                <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">false</span>,
+                <span class="java&#45;quote">"lastmodified"</span>: 1378320574509,
+                <span class="java&#45;quote">"live"</span>: <span class="java&#45;keyword">true</span>,
+                <span class="java&#45;quote">"cookie"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"origin"</span>: <span class="java&#45;quote">"Project original."</span>,
+            &#125;,
+            <span class="java&#45;quote">"execution"</span>: &#123;
+                <span class="java&#45;quote">"results"</span>: &#91;
+                    &#123;
+                        <span class="java&#45;quote">"filename"</span>: <span class="java&#45;quote">"unnamedplot001.png"</span>,
+                        <span class="java&#45;quote">"length"</span>: 3223,
+                        <span class="java&#45;quote">"md5"</span>: <span class="java&#45;quote">"b9e84e5690bcba3cbee03b73b0c9a9f7"</span>,
+                        <span class="java&#45;quote">"execution"</span>: <span class="java&#45;quote">"EXEC&#45;76b503a3&#45;3c2f&#45;4114&#45;b4b2&#45;e3b1b6f88657"</span>,
+                        <span class="java&#45;quote">"url"</span>: <span class="java&#45;quote">"http://dhost:dport/deployr/r/project/execute
+                        /result/download/
+                        PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca/
+                        EXEC&#45;76b503a3&#45;3c2f&#45;4114&#45;b4b2&#45;e3b1b6f88657/unnamedplot001.png"</span>,
+                        <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"image/png"</span>
+                    &#125;
+                &#93;
+            &#125;,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"675987FAFA41B1F169CFC5AB3EC5F563"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/project/execute/result/list<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;project&#62;</span>
+      <span class="xml&#45;tag">&#60;project&#62;</span>PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca<span class="xml&#45;tag">&#60;/project&#62;</span>
+      <span class="xml&#45;tag">&#60;name&#62;</span>Demo Analysis<span class="xml&#45;tag">&#60;/name&#62;</span>
+      <span class="xml&#45;tag">&#60;descr&#62;</span>Predicting retail sales.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+      <span class="xml&#45;tag">&#60;longdescr/&#62;</span>
+      <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;authors&#62;</span>
+        <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;/authors&#62;</span>
+      <span class="xml&#45;tag">&#60;shared/&#62;</span>
+      <span class="xml&#45;tag">&#60;lastmodified&#62;</span>1378320693248<span class="xml&#45;tag">&#60;/lastmodified&#62;</span>
+      <span class="xml&#45;tag">&#60;live&#62;</span>true<span class="xml&#45;tag">&#60;/live&#62;</span>
+      <span class="xml&#45;tag">&#60;cookie&#62;</span>&#60;!&#91;CDATA&#91;  &#93;&#93;&#62;<span class="xml&#45;tag">&#60;/cookie&#62;</span>
+      <span class="xml&#45;tag">&#60;origin&#62;</span>Project original.<span class="xml&#45;tag">&#60;/origin&#62;</span>
+    <span class="xml&#45;tag">&#60;/project&#62;</span>
+    <span class="xml&#45;tag">&#60;execution&#62;</span>
+      <span class="xml&#45;tag">&#60;results&#62;</span>
+        <span class="xml&#45;tag">&#60;result&#62;</span>
+          <span class="xml&#45;tag">&#60;filename&#62;</span>unnamedplot001.png<span class="xml&#45;tag">&#60;/filename&#62;</span>
+          <span class="xml&#45;tag">&#60;length&#62;</span>3223<span class="xml&#45;tag">&#60;/length&#62;</span>
+          <span class="xml&#45;tag">&#60;type&#62;</span>image/png<span class="xml&#45;tag">&#60;/type&#62;</span>
+          <span class="xml&#45;tag">&#60;md5&#62;</span>b9e84e5690bcba3cbee03b73b0c9a9f7<span class="xml&#45;tag">&#60;/md5&#62;</span>
+          <span class="xml&#45;tag">&#60;execution&#62;</span>EXEC&#45;76b503a3&#45;3c2f&#45;4114&#45;b4b2&#45;e3b1b6f88657<span class="xml&#45;tag">&#60;/execution&#62;</span>
+          <span class="xml&#45;tag">&#60;url&#62;</span>http://184.106.178.37:7000/deployr/r/project/execute/result/
+          download/PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca/
+          EXEC&#45;76b503a3&#45;3c2f&#45;4114&#45;b4b2&#45;e3b1b6f88657/unnamedplot001.png<span class="xml&#45;tag">&#60;/url&#62;</span>
+        <span class="xml&#45;tag">&#60;/result&#62;</span>
+      <span class="xml&#45;tag">&#60;/results&#62;</span>
+    <span class="xml&#45;tag">&#60;/execution&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>675987FAFA41B1F169CFC5AB3EC5F563<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div><p class="paragraph"/>
+
+
+<h2 id="projectexecuteresultdownload">6.2.8 /r/project/execute/result/download</h2>
+This call downloads the execution results for the specified project.<p class="paragraph"/>By specifying a value for the  <em class="italic">execution</em>  parameter the caller can download only results on the specified executions. By specifying a value for the  <em class="italic">filename</em>  parameter the caller can download a specific result on the specified execution.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>GET<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>project – specifies the project identifier</li>
+<li>execution - (optional) specifies a comma-separated list of execution identifiers</li>
+<li>filename - (optional) specifies a result file name</li>
+<li>inline - (optional) if true, the  <em class="italic">Content-Disposition</em>  response header indicating  <em class="italic">attachment</em>  is omitted</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+project=PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca
+execution=EXEC&#45;76b503a3&#45;3c2f&#45;4114&#45;b4b2&#45;e3b1b6f88657</pre></div><p class="paragraph"/><strong class="bold">Response</strong><p class="paragraph"/>If a value for the  <em class="italic">filename</em>  parameter is specified on the call, then:<p class="paragraph"/>Content-Type: result/content-type<p class="paragraph"/>If the  <em class="italic">filename</em>  parameter is omitted on the call, then:<p class="paragraph"/>Content-Type: application/zip
+
+
+
+<h2 id="projectexecuteresultdelete">6.2.9 /r/project/execute/result/delete</h2>
+This call deletes the execution results for the specified project.<p class="paragraph"/>By specifying a value for the  <em class="italic">execution</em>  parameter the caller can delete only those results on the specified executions. By specifying a value for the  <em class="italic">filename</em>  parameter the caller can delete a specific result on the specified executions.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>POST<p class="paragraph"/><strong class="bold">Request Format</strong><p class="paragraph"/>Content-Type: application/x-www-form-urlencoded; charset=utf-8<p class="paragraph"/><strong class="bold">Parameters</strong>
+<ul class="star">
+<li>format – specifies markup encoding on the call: json or xml</li>
+<li>project – specifies the project identifier</li>
+<li>execution - (optional) specifies a comma-separated list of execution identifiers</li>
+<li>filename - (optional) specifies a result file name</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>format=json
+project=PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca
+execution=EXEC&#45;76b503a3&#45;3c2f&#45;4114&#45;b4b2&#45;e3b1b6f88657</pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/project/execute/result/delete"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"project"</span>: &#123;
+                <span class="java&#45;quote">"project"</span>: <span class="java&#45;quote">"PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca"</span>,
+                <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"Demo Analysis"</span>,
+                <span class="java&#45;quote">"descr"</span>: <span class="java&#45;quote">"Predicting retail sales."</span>
+                <span class="java&#45;quote">"longdescr"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"author"</span>: <span class="java&#45;quote">"george"</span>,
+                <span class="java&#45;quote">"authors"</span>: &#91;
+                    <span class="java&#45;quote">"george"</span>
+                &#93;,
+                <span class="java&#45;quote">"shared"</span>: <span class="java&#45;keyword">false</span>,
+                <span class="java&#45;quote">"lastmodified"</span>: 1378321012255,
+                <span class="java&#45;quote">"live"</span>: <span class="java&#45;keyword">true</span>,
+                <span class="java&#45;quote">"cookie"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"origin"</span>: <span class="java&#45;quote">"Project original."</span>
+            &#125;,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"675987FAFA41B1F169CFC5AB3EC5F563"</span>
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/><strong class="bold">Response Markup (XML)</strong><p class="paragraph"/><div class="code"><pre><span class="xml&#45;tag">&#60;deployr&#62;</span>
+  <span class="xml&#45;tag">&#60;response&#62;</span>
+    <span class="xml&#45;tag">&#60;call&#62;</span>/r/project/execute/result/delete<span class="xml&#45;tag">&#60;/call&#62;</span>
+    <span class="xml&#45;tag">&#60;success&#62;</span>true<span class="xml&#45;tag">&#60;/success&#62;</span>
+    <span class="xml&#45;tag">&#60;project&#62;</span>
+      <span class="xml&#45;tag">&#60;project&#62;</span>PROJECT&#45;e2edd15f&#45;dd67&#45;42f6&#45;8d82&#45;90a2a5a669ca<span class="xml&#45;tag">&#60;/project&#62;</span>
+      <span class="xml&#45;tag">&#60;name&#62;</span>Demo Analysis<span class="xml&#45;tag">&#60;/name&#62;</span>
+      <span class="xml&#45;tag">&#60;descr&#62;</span>Predicting retail sales.<span class="xml&#45;tag">&#60;/descr&#62;</span>
+      <span class="xml&#45;tag">&#60;longdescr/&#62;</span>
+      <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;authors&#62;</span>
+        <span class="xml&#45;tag">&#60;author&#62;</span>george<span class="xml&#45;tag">&#60;/author&#62;</span>
+      <span class="xml&#45;tag">&#60;/authors&#62;</span>
+      <span class="xml&#45;tag">&#60;shared/&#62;</span>
+      <span class="xml&#45;tag">&#60;lastmodified&#62;</span>1378320957506<span class="xml&#45;tag">&#60;/lastmodified&#62;</span>
+      <span class="xml&#45;tag">&#60;live&#62;</span>true<span class="xml&#45;tag">&#60;/live&#62;</span>
+      <span class="xml&#45;tag">&#60;cookie&#62;</span>&#60;!&#91;CDATA&#91;  &#93;&#93;&#62;<span class="xml&#45;tag">&#60;/cookie&#62;</span>
+      <span class="xml&#45;tag">&#60;origin&#62;</span>Project original.<span class="xml&#45;tag">&#60;/origin&#62;</span>
+    <span class="xml&#45;tag">&#60;/project&#62;</span>
+    <span class="xml&#45;tag">&#60;httpcookie&#62;</span>675987FAFA41B1F169CFC5AB3EC5F563<span class="xml&#45;tag">&#60;/httpcookie&#62;</span>
+  <span class="xml&#45;tag">&#60;/response&#62;</span>
+<span class="xml&#45;tag">&#60;/deployr&#62;</span></pre></div><p class="paragraph"/>
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../../guide/workingusers.html">&lt;&lt; <strong>5</strong><span>Working with the User APIs</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../../guide/workingjobs.html"><strong>7</strong><span>Working with the Job APIs</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    Copyright (c) 2009-2016 Microsoft Corporation
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

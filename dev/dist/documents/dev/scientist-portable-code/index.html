@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="DeployR - Simple R analytics integration for application developers.">
+<meta name="keywords" content="R,Simple,DeployR,Java,JavaScript,.NET,Statistics,Big Data">
+<meta name="author" content="Microsoft Corporation">
+<meta name="google-site-verification" content="BQWjliQil8coeYFDfd-nee7j5GDJ0p-6lU4abeJiAZU">
+
+<!--<time itemprop="buildDate" datetime="Wednesday, March 16th, 2016, 9:47:06 AM PDT"></time>-->
+
+<title>
+  DeployR &middot; Writing Portable R Code
+</title>
+
+<!-- Favicons -->
+<link rel="shortcut icon" href="../../../assets/img/favicon.png" type="image/png" >
+<link rel="icon" href="../../../assets/img/favicon.png" type="image/png">
+
+<!-- Bootstrap styles -->
+<link rel="stylesheet" href="../../../assets/css/vendor/bootstrap/bootstrap.min.css">
+
+<!-- Documentation extras -->
+<link href="../../../assets/css/github.css" rel="stylesheet">
+
+<!-- Glyphicons -->
+<link rel="stylesheet" href="../../../assets/css/vendor/glyphicons/glyphicons.min.css">
+<link rel="stylesheet" href="../../../assets/css/vendor/glyphicons/filetypes.min.css">
+<link rel="stylesheet" href="../../../assets/css/vendor/glyphicons/social.min.css">
+
+<!-- Google Webfonts -->
+<link href="//fonts.googleapis.com/css?family=Open+Sans:400,700,600" rel="stylesheet" type="text/css">
+
+<!-- LayerSlider styles -->
+<link rel="stylesheet" href="../../../assets/css/vendor/layerslider/layerslider.min.css" type="text/css">
+
+<!-- Grove Styles (switch for different color schemes, e.g. "styles-cleanblue.css") -->
+<link rel="stylesheet" href="../../../assets/css/styles-blue.css" id="grove-styles">
+
+<!-- Site Styles -->
+<link href="../../../assets/css/site.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <link rel="stylesheet" href="../../../assets/css/ie8.css">        
+  <script src="../../../assets/js/vendor/google/html5-3.6-respond-1.1.0.min.js"></script>
+<![endif]-->
+
+<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../../assets/js/vendor/jquery/jquery-1.9.1.min.js"><\/script>')</script>
+<!-- jQuery with jQuery Easing, and jQuery Transit JS -->
+     
+<!-- LayerSlider from Kreatura Media with Transitions -->
+<script src="../../../assets/js/vendor/layerslider/greensock.js" type="text/javascript"></script>
+<script src="../../../assets/js/vendor/layerslider/layerslider.transitions.js" type="text/javascript"></script>
+<script src="../../../assets/js/vendor/layerslider/layerslider.kreaturamedia.jquery.js" type="text/javascript"></script>
+
+<!-- Grove Layerslider initiation script -->
+<script src="../../../assets/js/grove-slider.js" type="text/javascript"></script>
+
+<!-- GA for DeployR-site -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-6984166-13', 'auto');
+  ga('send', 'pageview');
+</script>
+  </head>
+  <body data-spy="scroll" data-target="#sidenav">
+    <a class="sr-only" href="#content">Skip to main content</a>
+
+    <!-- master nav -->
+    <header>
+   <nav class="navbar navbar-default grove-navbar" role="navigation">
+      <div class="container">
+         <div class="navbar-header">
+            <a href="#" class="grove-toggle" data-toggle="collapse" data-target=".grove-nav">   
+            <i class="glyphicons show_lines"></i>  
+            </a>
+            <a href="/" class="navbar-brand">
+            <img src="../../../assets/img/rLogo.png" alt="DeployR"> DeployR
+            </a>
+         </div>
+         <div class="collapse navbar-collapse grove-nav">
+            <ul class="nav navbar-nav">
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Data Scientists <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/data-scientist">Getting Started</a></li>
+                <!--<li><a href="#">Learn-by-Example Tutorial</a></li>-->
+                     <li><a href="/documents/dev/scientist-portable-code">Portable R Code Guide</a></li>
+                     <li><a href="/documents/help/repo-man">Repository Manager Help</a></li>
+                     <li><a href="/documents/getting-started/data-scientist#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Application Developers <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/application-developer">Getting Started</a></li>
+                     <!--<li><a href="#">Learn-by-Example Tutorial</a></li>-->
+                     <li><a href="/documents/dev/rbroker">RBroker Framework Tutorial</a></li>
+                     <li><a href="/documents/dev/clientlib">Client Library Tutorial</a></li>
+                     <li><a href="/documents/dev/api-doc">API Reference Guide</a></li>
+                     <li><a href="/docanddown">Library Downloads</a></li>
+                     <li><a href="/documents/getting-started/application-developer/#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Administrators <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/administrator">Getting Started</a></li>
+                     <li><a href="/documents/admin/install">Installation & Configuration</a></li>
+                     <li><a href="/documents/admin/security">Security</a></li>
+                     <li><a href="/documents/admin/r-package-mgmt">R Package Management</a></li>
+                     <li><a href="/documents/help/admin-console">Administration Console Help</a></li>
+                     <li><a href="/documents/admin/troubleshoot">Troubleshooting</a></li>
+                     <li><a href="/documents/getting-started/administrator/#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">
+                  Community <b class="caret"></b>
+                  </a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="http://go.microsoft.com/fwlink/?LinkID=708535" target="_blank">Forum / Discussion Group</a></li>
+                     <li><a href="/faq">FAQs</a></li>
+                  </ul>
+               </li>
+              <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Download<b class="caret"></b></a>            
+                  <ul class="dropdown-menu pull-right">   
+                    <li><a href="/download">Download DeployR</a></li>
+                    <li><a href="/documents/admin/install">Install DeployR</a></li>
+                    <li><a href="/releases/">Release History</a></li>
+                  </ul>
+            </ul>
+         </div>
+         <!-- /.navbar-collapse -->
+      </div>
+   </nav>
+</header>
+
+
+    <!-- page title -->
+    <div class="widewrapper pagetitle strong-highlight">
+   <div class="container">
+      <h1>Writing Portable R Code <small></small></h1>
+      <span class="product-version">
+         Version 8.1.0
+         
+      </span>
+   </div>
+</div>
+  
+    <div class="widewrapper sf-wrapper">
+      <div class="container content" role="main">
+        <div>
+          
+<div class="row"><div class="col-md-3" id="sidenav"><div class="bs-sidebar hidden-print hidden-xs hidden-sm" role="complementary"><ul class="nav bs-sidenav"><li class="active"><a href="#introduction">Introduction</a><ul class="nav"></ul></li><li><a href="#pkgport">Package Portability</a><ul class="nav"></ul></li><li><a href="#inputport">Input Portability</a><ul class="nav"></ul></li><li><a href="#fileaccessport">Portable Access to Data Files</a><ul class="nav"></ul></li><li><a href="#usage">Usage</a><ul class="nav"></ul></li></ul></div></div><div class="col-md-9" role="main"><div class="container-fluid content doc-content"><h1 id="introduction">Introduction</h1>
+
+<p>As a data scientist, you need to aware of several R portability issues that arise when developing R analytics for use in your local R environment and in the DeployR server environment.  They are:</p>
+<ol>
+<li><a href="#pkgport">Package portability</a></li>
+<li><a href="#inputport">Input portability</a></li>
+<li><a href="#fileaccessport">Portable access to data files</a></li>
+</ol>
+<p>These portability issues can be solved when you use the functions in the <code>deployrUtils</code> package.</p>
+<ul>
+<li>Use <code>deployrPackage()</code> to declare your package dependencies in your R code.</li>
+<li>Use <code>deployrInput()</code> to declare the required inputs along with default values in your R code.</li>
+<li>Use <code>deployrExternal()</code> to access big data files from your R code.</li>
+</ul>
+<p>The steps for using and testing the package functions in your R code locally and then testing them again in the DeployR server environment are described in the <a href="#usage">Usage</a> section at the end of this document.  </p>
+<h1 id="pkgport">Package Portability</h1>
+
+<p>Let&#39;s begin with some sample R code demonstrating how to declare your package dependencies in a portable manner:</p>
+<pre><code>## Ensures this package dependency is installed &amp; loaded from the start
+deployrPackage(&quot;ggplot2&quot;)</code></pre>
+<p>Traditional R package management primarily involves using <code>install.packages()</code> to install R packages from CRAN or a local repository in your local environment and <code>library()</code> to load packages at runtime. </p>
+<p>When preparing portable R code for use both locally and in DeployR server environment, R package management recommendations differ slightly since the R script will be run in a remote server environment whenever executed on the DeployR server. </p>
+<p>Unlike your local environment, you do not control that remote environment as a data scientist. Since that remote environment is entirely independent, it is also potentially different from your local environment, which means that your R code might not be portable if that remote environment doesn&#39;t have all the packages your R scripts need.  </p>
+<div class="alert alert-info"><strong>Solution: </strong> 
+Always declare your package dependencies  in your R code using the <code>deployrPackage()</code>. 
+</div>
+
+<p>To ensure your R code runs consistently in your local environment and in the DeployR server environment, always use the <code>deployrPackage</code> function from the <code>deployrUtils</code> package in your R code. To learn how to get the package, use its functions locally, and test them in DeployR, read the <a href="#usage">Usage</a> section. </p>
+<p>In a nutshell, using the  <code>deployrPackage</code> function safeguards your R code by making certain that:</p>
+<ul>
+<li>The necessary packages are loaded and available to your R code at runtime.</li>
+<li>Your R code is portable across your local environment and the DeployR server environment.</li>
+</ul>
+<p>When you use the  <code>deployrPackage</code> function, you can avoid issues such as having tested your R code locally, and then discovering that your R code fails when executed in the DeployR server environment due to one or more missing package dependencies.</p>
+<h1 id="inputport">Input Portability</h1>
+
+<p>Let&#39;s begin with some sample R code demonstrating how to declare your required script inputs in a portable manner:</p>
+<pre><code>## Creates an integer variable named &#39;age&#39; if it does not already exist
+deployrInput(&#39;{ &quot;name&quot;: &quot;age&quot;, &quot;label&quot;: &quot;Age&quot;, &quot;render&quot;: &quot;integer&quot;, &quot;default&quot;: 6 } &#39;)</code></pre>
+<p>The R scripts you develop and deploy to the DeployR server environment are ultimately executed as <a href="/documents/getting-started/application-developer/#webservices">Analytics Web Services</a> by client applications. Most commonly, these R scripts expect input data to be provided by this application upon execution. In order for these inputs to be provided, the application developer who is integrating the R scripts must first know which inputs are required.  </p>
+<p>As a data scientist creating analytics for use in DeployR, you are responsible for providing the application developers not only with the necessary analytics, but also helping them understand the inputs required by those analytics. </p>
+<p>Whenever a required input is missing at runtime, the R script will fail. Missing inputs present a real problem not only in production, but also when testing R scripts in multiple environments. </p>
+<div class="alert alert-info"><strong>Solution: </strong> 
+Always declare the inputs required by your R code and assign them default values using <code>deployrInput()</code>.
+</div>
+
+<p>The  <code>deployrInput</code> function, provided by the <code>deployrUtils</code> package, enables you to specify the inputs required for your scripts directly in your R code along with the default value for each input. Using the <code>deployrInput</code> function, you can ensure your code is portable while providing clear guidance to your client application developers as to which script inputs their application will be required to supply.  To learn how to get the package, use its functions locally, and test them in DeployR, read the <a href="#usage">Usage</a> section. </p>
+<p>In a nutshell, the <code>deployrInput</code> function allows you to:</p>
+<ol>
+<li>Declare the required inputs for your script.</li>
+<li>Assign default values for those inputs.</li>
+</ol>
+<p>When you declare your required inputs (and default values) using the <code>deployrInput</code> function, your script will be portable and run successfully even when no input values are passed. These default values are ideal for developing and testing your scripts both locally and in the DeployR server environment since they guarantee that the script can always execute and return the same results across environments unless, of course, those default values are overwritten programmatically by an application.</p>
+<h1 id="fileaccessport">Portable Access to Data Files</h1>
+
+<p>Let&#39;s begin with some sample R code demonstrating how to reference your data files in a portable manner:</p>
+<pre><code>    ## READ CSV FILE
+    ## Locally: finds in current working directory
+    ## In DeployR: finds in user&#39;s external directory
+    data &lt;- read.csv(file = deployrExternal(&quot;data.csv&quot;))</code></pre>
+<p>Whenever the data files with which you need to work are too big to be copied from the Web or copied from your local machine to the server, you can ask your administrator to store those files on your behalf in &#39;big data&#39; external directories on the DeployR main server. Since you&#39;re likely to use a copy or subset of the data in your local environment for development and testing purposes, it becomes interesting to reference those files in a portable manner so that data can be accessed whenever you run the R code locally or on the DeployR server. </p>
+<div class="alert alert-info"><strong>Solution: </strong> 
+Always reference your big data files using <code>deployrExternal()</code>.
+</div>
+
+<p>In a nutshell, the <code>deployrExternal</code> function provides you with a consistent way of referencing these big data files for reading and writing; thereby, making your R code portable across your local environment and the DeployR server environment.</p>
+<p>All you have to do is:</p>
+<ol>
+<li>Ask your DeployR administrator to physically store a copy of your big data file in the appropriate external directory on the DeployR server on your behalf. </li>
+<li>Reference the data file using the <code>deployrExternal</code> function in your R code. </li>
+</ol>
+<p>Then, when the R code executes locally, the function looks for a data file by that name in the current working directory of your R session.  And when the R code executes remotely on the DeployR server, the function looks for a data file by that name in the dedicated external directories without requiring you to know the exact path of the file on the DeployR server.  </p>
+<p>When you use the <code>deployrExternal</code>  function, you can avoid issues such as having tested your R code locally, and then having to change how you reference the data file when running it up on the DeployR server. </p>
+<h1 id="usage">Usage</h1>
+
+<p>The following steps describe how to use the functions in the <code>deployrUtils</code> package to ensure the portability of your R code.</p>
+<div class="well well-sm"><strong>Note: </strong> For the complete package help, use <code>library(help=&quot;deployrUtils&quot;)</code> in your IDE.</div>
+
+
+<p><strong>Part 1. In your local environment: </strong></p>
+<ol>
+<li><p>Install <code>deployrUtils</code> locally <a href="https://github.com/deployr/deployrUtils/releases">from GitHub</a> using your IDE, R console, or terminal window with the following command: </p>
+<pre><code>install_github(&#39;deployr/deployrUtils&#39;)</code></pre>
+</li>
+<li><p>Declare package dependencies using <code>deployrPackage()</code> at the top of your script in your preferred IDE. Consult the package help for more details.</p>
+</li>
+<li><p>Declare each script input individually and assign default values using <code>deployrInput()</code> in your R code. Consult the package help for more details.</p>
+</li>
+<li><p>Reference each big data file using <code>deployrExternal()</code> in your R code. Consult the package help for more details. Make sure you ask your DeployR administrator to physically store a copy of your big data file in the appropriate external directory on the DeployR server on your behalf.</p>
+</li>
+<li><p>Test the script locally with those default values.</p>
+<div class="thumbnail"><img src="assets/img/rcode.png" alt="Script"></div>
+
+</li>
+</ol>
+<p><strong>Part 2. In the DeployR Repository Manager:</strong></p>
+<p>Note: The <code>deployrUtils</code> package is preinstalled in the DeployR server environment.</p>
+<ol>
+<li><p><a href="/documents/help/repo-man/index.html#a-login.htm" target="_blank">Log into</a> the Repository Manager. </p>
+<div class="thumbnail"><img src="assets/img/login1.png" alt="Login"></div>
+</li>
+<li><p><a href="/documents/help/repo-man/index.html#c-file-create-upload.htm" target="_blank">Upload</a> your script to the DeployR repository.      </p>
+<div class="thumbnail"><img src="assets/img/upload.png" alt="Upload"></div>
+</li>
+<li><p><a href="/documents/getting-started/data-scientist/#test">Verify</a> that the script&#39;s behavior remains consistent across environments by running that script using its default values in the <a href="/documents/help/repo-man/index.html#j-script-test.htm">Test page</a> before handing it off to the application developer(s).  </p>
+<div class="well well-sm"><strong>Note: </strong> If your script fails on the DeployR server due to one or more missing package dependencies, please contact your DeployR server administrator with details. See the <a href="/documents/admin/r-package-mgmt/">Administrator Guidelines</a>. </div>
+<div class="well well-sm"><strong>Note: </strong> If your script fails on the DeployR server because the data file could not be found, ask your DeployR administrator to verify that the files you sent him or her were, in fact, deployed to the external directories.</div>
+<div class="thumbnail"><img src="assets/img/testpage.png" alt="Test Page"></div>
+
+</li>
+</ol>
+</div></div></div>
+        </div>    
+      </div>
+      <div class="push"></div>
+    </div>
+
+    <!-- Footer
+    ================================================== -->
+
+    <footer class="widewrapper footer bs-footer" role="contentinfo">
+  <div class="container">
+    <div class="row footer">
+      <div class="col-sm-3">
+        <h4>Get Started</h4>
+        <ul class="grove-list">
+          <li><a href="/documents/getting-started/about">About DeployR</a></li>
+          <li><a href="/download">Download DeployR</a></li>
+          <li><a href="/documents/admin/install">Install DeployR</a></li>
+          <li><a href="/documents/admin/troubleshoot">Troubleshooting & Diagnostics</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>Develop</h4>
+        <ul class="grove-list">
+          <li><a href="/dev">Get Client Developer Tools</a></li>
+            <li><a href="/docanddown#rbroker">RBroker Framework</a></li>
+          <li><a href="/docanddown#clientlib">API Client Libraries</a></li>
+          <li><a target="_blank" href="/documents/dev/api-doc">API Reference Guide</a></li>
+          <li><a target="_blank" href="/documents/help/repo-man">Repository Manager</a></li>
+         <!-- <li><a href="/docanddown#integration">3rd Party Tool Integration</a></li>-->
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>Manage</h4>
+          <ul class="grove-list">
+            <li><a target="_blank" href="/documents/help/admin-console">Administration Console</a></li>
+            <li><a href="/documents/admin/security">Security Guide</a></li>
+            <li><a href="/documents/admin/throughput">Scale & Throughput</a></li>
+            <li><a href="/documents/admin/highavail">High Availability</a></li>
+            <li><a href="/documents/admin/bigdata">Managing Big Data</a></li>
+          </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>DeployR 8.1.0</h4>
+          <ul class="grove-list">
+            <li><a href="/license">License Information</a></li>
+      	    <li><a href="/documents/admin/whats-new/">What's New in 8.1.0</a></li>
+	          <li><a href="http://go.microsoft.com/fwlink/?LinkID=708535" target="_blank">Join the DeployR Forum</a></li>
+	          <li><a href="/releases/">Release Archives</a></li>
+          </ul>
+         <div><small> &copy; 2015 Microsoft Corporation</small></div>
+      </div>    
+    </div>
+  </div>          
+</footer> 
+
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<script src="../../../assets/js/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="../../../assets/js/vendor/modernizr/modernizr.js"></script>
+<script src="../../../assets/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<!-- Google Analytics (click event)
+================================================== -->
+
+<script>
+   $('.ga-track').on('click', function() {
+      try { 
+        var label = $(this).data('ga') || $(this).text();
+        ga('send', 'event', 'button', 'click', label);
+      } catch (err) {}
+   });
+</script>
+
+<!-- TOC
+================================================= -->
+<script>
+  // back to top
+  setTimeout(function () {
+     var $sideBar = $('.bs-sidebar');
+     if (!$sideBar) { return; }
+     $sideBar.affix({
+     offset: {
+     top: function () {
+        var offsetTop = $sideBar.offset().top
+        var sideBarMargin = parseInt($sideBar.children(0).css('margin-top'), 10)
+        var navOuterHeight = $('.bs-docs-nav').height()
+        return (this.top = offsetTop - navOuterHeight - sideBarMargin)
+      }
+      , bottom: function () {
+        return (this.bottom = $('.bs-footer').outerHeight(true))
+      }
+    }
+    })
+  }, 100)
+</script>
+
+<script>
+  $('.tab-content div').each(function( index ) {
+    if(index === 0) { $(this).addClass('active'); }
+  });
+
+  $('.code-tabs a').click(function (e) {
+  });
+
+</script>
+
+     
+  </body>
+</html>

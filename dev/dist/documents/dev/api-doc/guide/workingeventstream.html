@@ -1,0 +1,534 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>9 Working with the Event Stream API 8.0.0</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/architecture.html"><strong>2</strong><span>Web Service API Architecture</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/overview.html"><strong>3</strong><span>Web Service API Overview</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/working.html"><strong>4</strong><span>Working with the Web Service APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/workingusers.html"><strong>5</strong><span>Working with the User APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/workingprojects.html"><strong>6</strong><span>Working with the Project APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/workingjobs.html"><strong>7</strong><span>Working with the Job APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/workingrepository.html"><strong>8</strong><span>Working with the Repository APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/workingeventstream.html"><strong>9</strong><span>Working with the Event Stream API</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/encodings.html"><strong>10</strong><span>Web Service API Data Encodings</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/explorer.html"><strong>11</strong><span>The API Explorer Tool</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/741changehistory.html"><strong>12</strong><span>API Changes in 7.4.1</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/74changehistory.html"><strong>13</strong><span>API Changes in 7.4</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/73changehistory.html"><strong>14</strong><span>API Changes in 7.3</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/72changehistory.html"><strong>15</strong><span>API Changes in 7.2</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/71changehistory.html"><strong>16</strong><span>API Changes in 7.1</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/70changehistory.html"><strong>17</strong><span>API Changes in 7.0</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/62changehistory.html"><strong>18</strong><span>API Changes in 6.2</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        
+    </div>
+    <p>DeployR API</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../guide/workingrepository.html">&lt;&lt; <strong>8</strong><span>Working with the Repository APIs</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../guide/encodings.html"><strong>10</strong><span>Web Service API Data Encodings</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>9 Working with the Event Stream API - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Microsoft Corporation</p>
+
+                    <p><strong>Version:</strong> 8.0.0</p>
+
+                    
+                </div>
+
+                
+                <div id="table-of-content">
+                    <h2>Table of Contents</h2>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#eventstream"><strong>9.1</strong><span>/r/event/stream</span></a>
+                    </div>
+                    
+                </div>
+                
+
+                
+
+<h1 id="workingeventstream">9 Working with the Event Stream API</h1>
+The event stream API is unique within the DeployR API as it supports push notifications from the DeployR server to client applications. Notifications correspond to discrete events that occur within the DeployR server. There are four distinct event categories:
+<ol>
+<li>Stream Lifecycle events</li>
+<li>Execution events</li>
+<li>Job Lifecycle events</li>
+<li>Management events</li>
+</ol><p class="paragraph"/><h4>Stream Lifecycle Events</h4><p class="paragraph"/>Stream lifecycle events occur when a client application successfully connects to or disconnects from an event stream on the server. There are two stream lifecycle events:
+<ol>
+<li>streamConnectEvent</li>
+<li>streamDisconnectEvent</li>
+</ol><p class="paragraph"/>The data passed on the  <em class="italic">streamConnectEvent</em>  allows the client application to determine the type of event stream connection established with the server:  <em class="italic">authenticated, anonymous, or management</em>  event stream. The nature of an event stream connection determines the nature of the events that can be delivered on that stream. More details can be found on event stream types below.<p class="paragraph"/>The  <em class="italic">streamDisconnectEvent</em>  informs a client application that the event stream has been disconnected by the server. Following a  <em class="italic">streamDisconnectEvent</em>  no further events will arrive at the client on that event stream.<p class="paragraph"/>
+<h4>Execution Events</h4><p class="paragraph"/>Execution events occur when an R session is executing R code (on behalf of an <a href="../guide/single.html#anonymousprojects" class="guide">anonymous project</a>, <a href="../guide/single.html#authenticatedprojects" class="guide">authenticated project</a> or on behalf of a job) or when an execute API call fails. There are three distinct types of Execution events:
+<ol>
+<li>executionConsoleEvent</li>
+<li>executionRevoEvent</li>
+<li>executionErrorEvent</li>
+</ol><p class="paragraph"/>An  <em class="italic">executionConsoleEvent</em>  pushes R console output generated by an R session to the event stream. Console events are automatically pushed to the event stream each time you execute R code.<p class="paragraph"/>An  <em class="italic">executionRevoEvent</em>  pushes DeployR-encoded R object data generated by an R session to the event stream. These events require an explicit call to a DeployR-specific R function called revoEvent(). To retrieve the DeployR-encoded value of any R object in your workspace as a  <em class="italic">executionRevoEvent</em> , add a call to the revoEvent() function in your R code or script and pass the object name as a parameter to this function, for example:<p class="paragraph"/><div class="code"><pre>x &#60;&#45; rnorm(10)
+revoEvent(x)</pre></div><p class="paragraph"/>An  <em class="italic">executionErrorEvent</em>  pushes an error message when an execute API call fails for any reason. These events occur when the caller attempts to execute R code that is syntactically invalid or when parameters such as  <em class="italic">inputs</em>  or  <em class="italic">preloads</em>  passed on the call are invalid.<p class="paragraph"/>
+<h4>Job Lifecycle Events</h4><p class="paragraph"/>Job lifecycle events occur each time a  <em class="italic">Job</em>  transitions to a new state in its lifecycle, for example when moving from  <em class="italic">QUEUED</em>  to  <em class="italic">RUNNING</em>  state or when moving from  <em class="italic">RUNNING</em>  to  <em class="italic">COMPLETED</em>  or  <em class="italic">FAILED</em>  state. There is just one type of lifecycle event:
+<ol>
+<li>jobLifecycleEvent</li>
+</ol><p class="paragraph"/>Job lifecycle events make it simple for client applications to track the progress of background jobs without having to continuously poll the server for status updates.<p class="paragraph"/>
+<h4>Management Events</h4><p class="paragraph"/>Management events occur when important runtime conditions are detected by the server. These are the distinct types of Management events:
+<ol>
+<li>gridActivityEvent</li>
+<li>gridWarningEvent</li>
+<li>gridHeartbeatEvent</li>
+<li>securityLoginEvent</li>
+<li>securityLogoutEvent</li>
+</ol><p class="paragraph"/>A  <em class="italic">gridActivityEvent</em>  is pushed to the event stream when a slot on the grid is either activated or deactivated on behalf of an <a href="../guide/single.html#anonymousprojects" class="guide">anonymous project</a>, <a href="../guide/single.html#authenticatedprojects" class="guide">authenticated project</a> or on behalf of a job. This type of event provides realtime visibility onto grid activity at runtime.<p class="paragraph"/>A  <em class="italic">gridWarningEvent</em>  is pushed to the event stream when activity on the grid runs up against limits defined by the  <em class="italic">Concurrent Operation Policies</em>  under  <em class="italic">Server Policies</em>  in the DeployR Administration Console or whenever demands on the grid exceed available grid resources. This type of event signals resource contention and possibly even resource exhaustion and should therefore be of particular interest to the administrator for a DeployR instance.<p class="paragraph"/>A  <em class="italic">gridHeartbeatEvent</em>  is pushed periodically by the server. This type of event provides a detailed summary of slot activity across all nodes on the grid. This event when used in conjunction with  <em class="italic">gridActivityEvent</em>  and  <em class="italic">gridWarningEvent</em>  provides 100% visibility across all live grid activity at runtime.<p class="paragraph"/>The  <em class="italic">securityLoginEvent</em>  and  <em class="italic">securityLogoutEvent</em>  events are pushed to the event stream when users login or logout of the server respectively.<p class="paragraph"/>
+<h4>Authenticated, Anonymous and Management Event Streams</h4><p class="paragraph"/>The nature of an event stream connection determines the nature of the events that can be delivered on that stream. Both the current authenticated status of the caller on the <a href="../guide/single.html#eventstream" class="guide">/r/event/stream</a> API call and the parameters passed on that call determine the ultimate nature of the event stream connection. The following event stream connection types exist:
+<ol>
+<li>Authenticated event stream</li>
+<li>Anonymous event stream</li>
+<li>Management event stream</li>
+</ol><p class="paragraph"/>All streams push a  <em class="italic">streamHandshakeEvent</em>  event when a connection if first established. The <strong class="bold">Authenticated event stream</strong> pushes execution and job lifecycle events related to a specific  <em class="italic">authenticated user</em> .  The <strong class="bold">Anonymous event stream</strong> pushes only execution events within the anonymous HTTP Session.  The <strong class="bold">Management event stream</strong> pushes server-wide  <em class="italic">management events</em> .<p class="paragraph"/>
+
+
+
+<h2 id="eventstream">9.1 /r/event/stream</h2>
+This call connects to one of the following event streams: authenticated, anonymous, or management.<p class="paragraph"/>Both the current authenticated status of the caller on this call and the parameters passed on the call determine the ultimate nature of the event stream connection.<p class="paragraph"/>By default, authenticated event streams deliver server-wide execution and job lifecycle events for the authenticated user. If the  <em class="italic">httpEventOnly</em>  parameter is specified then an authenticated event stream will see only execution events associated with the current HTTP session.<p class="paragraph"/><strong class="bold">HTTP Method</strong><p class="paragraph"/>WEBSOCKET<p class="paragraph"/>
+<strong class="bold">Parameters</strong>
+<ul class="star">
+<li>managementEventOnly - (optional) if specified, then event stream connection type is management</li>
+<li>httpEventOnly – (optional) if specified, then execution events are limited to events associated with the current HTTP session</li>
+<li>revoEventOnly – (optional) if specified, then execution  <em class="italic">executionConsoleEvent</em>  events are suppressed on the stream</li>
+</ul><p class="paragraph"/> <em class="italic"><strong class="bold">Examples</strong></em> <p class="paragraph"/><div class="code"><pre>managementEventOnly=<span class="java&#45;keyword">true</span></pre></div><p class="paragraph"/><strong class="bold">Response Markup (JSON)</strong><p class="paragraph"/><div class="code"><pre>//
+// Note: The event property in the response markup contains a complete,
+// self&#45;contained description <span class="java&#45;keyword">for</span> the event.
+//<p class="paragraph"/>// Event: streamConnectEvent<p class="paragraph"/>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"event"</span>: &#123;
+                <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"streamConnectEvent"</span>,
+                <span class="java&#45;quote">"context"</span>: <span class="java&#45;quote">"testuser"</span>,
+                <span class="java&#45;quote">"whoami"</span>: <span class="java&#45;quote">"testuser"</span>,
+                <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"7E25FE0FEB5E41454AB6A054FB697EA7"</span>,
+                <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>
+            &#125;,
+            <span class="java&#45;quote">"whoami"</span>: <span class="java&#45;quote">"testuser"</span>,
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"<span class="java&#45;keyword">null</span>"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"7E25FE0FEB5E41454AB6A054FB697EA7"</span>
+        &#125;
+    &#125;
+&#125;<p class="paragraph"/>// Event: streamDisconnectEvent<p class="paragraph"/>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"event"</span>: &#123;
+                <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"streamDisconnectEvent"</span>,
+                <span class="java&#45;quote">"context"</span>: <span class="java&#45;quote">"testuser"</span>,
+                <span class="java&#45;quote">"whoami"</span>: <span class="java&#45;quote">"testuser"</span>,
+                <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>
+            &#125;,
+            <span class="java&#45;quote">"whoami"</span>: <span class="java&#45;quote">"testuser"</span>,
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"<span class="java&#45;keyword">null</span>"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>
+        &#125;
+    &#125;
+&#125;<p class="paragraph"/><p class="paragraph"/>// Event: executionConsoleEvent<p class="paragraph"/>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"event"</span>: &#123;
+                <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"executionConsoleEvent"</span>,
+                <span class="java&#45;quote">"context"</span>: <span class="java&#45;quote">"PROJECT&#45;53d17dec&#45;07ad&#45;4323&#45;ae7a&#45;e4219df4c300"</span>,
+                <span class="java&#45;quote">"http"</span>: <span class="java&#45;quote">"7E25FE0FEB5E41454AB6A054FB697EA7"</span>,
+                <span class="java&#45;quote">"output"</span>: <span class="java&#45;quote">"&#110;&#62; x &#60;&#45; rnorm(3)&#110;"</span>,
+                <span class="java&#45;quote">"object"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+                <span class="java&#45;quote">"error"</span>: <span class="java&#45;keyword">null</span>
+            &#125;,
+            <span class="java&#45;quote">"whoami"</span>: <span class="java&#45;quote">"testuser"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/event/stream"</span>,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"7E25FE0FEB5E41454AB6A054FB697EA7"</span>
+        &#125;
+    &#125;
+&#125;<p class="paragraph"/>
+//
+// Event: executionConsoleEvent (error)
+//
+// A non&#45;<span class="java&#45;keyword">null</span> error property indicates an R error.
+//<p class="paragraph"/>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"event"</span>: &#123;
+                <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"executionConsoleEvent"</span>,
+                <span class="java&#45;quote">"context"</span>: <span class="java&#45;quote">"PROJECT&#45;1b1ffafa&#45;f6e8&#45;468b&#45;a4a1&#45;1323743496b7"</span>,
+                <span class="java&#45;quote">"http"</span>: <span class="java&#45;quote">"6A8C8D0B1CB161B8D140F78267363F87"</span>,
+                <span class="java&#45;quote">"output"</span>: <span class="java&#45;quote">"object 'y' not found"</span>,
+                <span class="java&#45;quote">"object"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">false</span>,
+                <span class="java&#45;quote">"error"</span>: <span class="java&#45;quote">"object 'y' not found"</span>
+            &#125;,
+            <span class="java&#45;quote">"whoami"</span>: <span class="java&#45;quote">"testuser"</span>,
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/event/stream"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"6A8C8D0B1CB161B8D140F78267363F87"</span>
+        &#125;
+    &#125;
+&#125;<p class="paragraph"/>
+// Event: executionRevoEvent<p class="paragraph"/>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"event"</span>: &#123;
+                <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"executionRevoEvent"</span>,
+                <span class="java&#45;quote">"context"</span>: <span class="java&#45;quote">"PROJECT&#45;53d17dec&#45;07ad&#45;4323&#45;ae7a&#45;e4219df4c300"</span>,
+                <span class="java&#45;quote">"http"</span>: <span class="java&#45;quote">"7E25FE0FEB5E41454AB6A054FB697EA7"</span>,
+                <span class="java&#45;quote">"output"</span>: <span class="java&#45;quote">"&#62; revoEvent(x)&#110;"</span>,
+                <span class="java&#45;quote">"object"</span>: &#123;
+                    <span class="java&#45;quote">"rclass"</span>: <span class="java&#45;quote">"numeric"</span>,
+                    <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"x"</span>,
+                    <span class="java&#45;quote">"value"</span>: &#91;
+                        0.6928559348535657,
+                        &#45;0.4710822416485657,
+                        &#45;0.5175046426793741
+                    &#93;,
+                    <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"vector"</span>
+                &#125;,
+                <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+                <span class="java&#45;quote">"error"</span>: <span class="java&#45;keyword">null</span>
+            &#125;,
+            <span class="java&#45;quote">"whoami"</span>: <span class="java&#45;quote">"testuser"</span>,
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/event/stream"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"7E25FE0FEB5E41454AB6A054FB697EA7"</span>
+        &#125;
+    &#125;
+&#125;<p class="paragraph"/>// Event: executionErrorEvent<p class="paragraph"/>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/event/stream"</span>,
+            <span class="java&#45;quote">"whoami"</span>: <span class="java&#45;quote">"testuser"</span>,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"E56973C85A9E8A527CDC234958476152"</span>,
+            <span class="java&#45;quote">"event"</span>: &#123;
+                <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"executionErrorEvent"</span>,
+                <span class="java&#45;quote">"context"</span>: <span class="java&#45;quote">"PROJECT&#45;7656fec9&#45;8882&#45;4c0c&#45;a366&#45;10fca02df173"</span>,
+                <span class="java&#45;quote">"http"</span>: <span class="java&#45;quote">"E56973C85A9E8A527CDC234958476152"</span>,
+                <span class="java&#45;quote">"output"</span>: <span class="java&#45;quote">"unexpected symbol&#110;1: x y&#110; ^"</span>,
+                <span class="java&#45;quote">"object"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">false</span>,
+                <span class="java&#45;quote">"error"</span>: <span class="java&#45;quote">"unexpected symbol&#110;1: x y&#110; ^"</span>
+            &#125;
+        &#125;
+    &#125;
+&#125;<p class="paragraph"/>
+// Event: jobLifecycleEvent<p class="paragraph"/>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"event"</span>: &#123;
+                <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"jobLifecycleEvent"</span>,
+                <span class="java&#45;quote">"context"</span>: <span class="java&#45;quote">"JOB&#45;ef2d7ead&#45;2278&#45;48bb&#45;a344&#45;585febfad550"</span>,
+                <span class="java&#45;quote">"jobname"</span>: <span class="java&#45;quote">"Sample Job"</span>,
+                <span class="java&#45;quote">"jobowner"</span>: <span class="java&#45;quote">"testuser"</span>,
+                <span class="java&#45;quote">"jobdescr"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"jobpriority"</span>: <span class="java&#45;quote">"low"</span>,
+                <span class="java&#45;quote">"jobstatus"</span>: <span class="java&#45;quote">"Completed"</span>,
+                <span class="java&#45;quote">"jobstatusmsg"</span>: <span class="java&#45;quote">"Job successfully executed to completion."</span>,
+                <span class="java&#45;quote">"jobproject"</span>: <span class="java&#45;quote">"PROJECT&#45;35e56b83&#45;5b11&#45;43b9&#45;a494&#45;635685923ede"</span>
+            &#125;,
+            <span class="java&#45;quote">"whoami"</span>: <span class="java&#45;quote">"testuser"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/event/stream"</span>
+        &#125;
+    &#125;
+&#125;<p class="paragraph"/>//
+// Management Event Stream events follow:
+//<p class="paragraph"/>//
+// Event: gridActivityEvent
+//
+// The isLive property indicates activity start or stop.
+//<p class="paragraph"/>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"event"</span>: &#123;
+                <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"gridActivityEvent"</span>,
+                <span class="java&#45;quote">"context"</span>: <span class="java&#45;quote">"PROJECT&#45;ee994678&#45;e0c4&#45;4df4&#45;bca4&#45;72c4b31f032d"</span>,
+                <span class="java&#45;quote">"activity"</span>: <span class="java&#45;quote">"Project: Sample Project"</span>,
+                <span class="java&#45;quote">"owner"</span>: <span class="java&#45;quote">"testuser"</span>,
+                <span class="java&#45;quote">"http"</span>: <span class="java&#45;quote">"2AEC4C4168B04FA5350A4C6924F46AC4"</span>,
+                <span class="java&#45;quote">"node"</span>: <span class="java&#45;quote">"DeployR Default Node"</span>,
+                <span class="java&#45;quote">"nodetype"</span>: <span class="java&#45;quote">"Authenticated"</span>,
+                <span class="java&#45;quote">"isLive"</span>: <span class="java&#45;keyword">true</span>
+            &#125;,
+            <span class="java&#45;quote">"whoami"</span>: <span class="java&#45;quote">"testuser"</span>,
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/event/stream"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"2AEC4C4168B04FA5350A4C6924F46AC4"</span>
+        &#125;
+    &#125;
+&#125;<p class="paragraph"/>//
+// Event: gridWarningEvent
+//
+// The errorcode property indicates the specific warning.
+//<p class="paragraph"/>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"event"</span>: &#123;
+                <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"gridWarningEvent"</span>,
+                <span class="java&#45;quote">"context"</span>: <span class="java&#45;quote">"Concurrent authenticated project limit (1) reached <span class="java&#45;keyword">for</span> user testuser."</span>,
+                <span class="java&#45;quote">"error"</span>: <span class="java&#45;quote">"Concurrent authenticated project limit (1) reached <span class="java&#45;keyword">for</span> user testuser."</span>,
+                <span class="java&#45;quote">"errorcode"</span>: <span class="java&#45;quote">"910"</span>
+            &#125;,
+            <span class="java&#45;quote">"whoami"</span>: <span class="java&#45;quote">"deployr"</span>,
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/event/stream"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"grid"</span>
+        &#125;
+    &#125;
+&#125;<p class="paragraph"/>//
+// Event: gridHeartbeatEvent
+//
+// Each node on the grid has an entry in the list found
+// on the nodes property.
+//
+// The slotactivity property on each node details the
+// current slot activity <span class="java&#45;keyword">for</span> that node.
+//
+// The <span class="java&#45;quote">"active"</span> property on each node indicates <span class="java&#45;keyword">if</span> the
+// grid node is currently responsive. If <span class="java&#45;keyword">false</span>, the node
+// is temporarily out&#45;of&#45;service.
+//<p class="paragraph"/>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/event/stream"</span>,
+            <span class="java&#45;quote">"whoami"</span>: <span class="java&#45;quote">"deployr"</span>,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"grid"</span>,
+            <span class="java&#45;quote">"event"</span>: &#123;
+                <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"gridHeartbeatEvent"</span>,
+                <span class="java&#45;quote">"context"</span>: <span class="java&#45;quote">"184.106.156.235:7000"</span>,
+                <span class="java&#45;quote">"totalnodes"</span>: 2,
+                <span class="java&#45;quote">"enablednodes"</span>: 2,
+                <span class="java&#45;quote">"activenodes"</span>: 2,
+                <span class="java&#45;quote">"totalslots"</span>: 200,
+                <span class="java&#45;quote">"activeslots"</span>: 2,
+                <span class="java&#45;quote">"nodes"</span>: &#91;
+                    &#123;
+                        <span class="java&#45;quote">"node"</span>: <span class="java&#45;quote">"NODE&#45;1d02719e&#45;c834&#45;4033&#45;8351&#45;dd869afd79dc"</span>,
+                        <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"DeployR Default Node"</span>,
+                        <span class="java&#45;quote">"description"</span>: <span class="java&#45;quote">"Default R processing node, mixed function."</span>,
+                        <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"Mixed Mode"</span>,
+                        <span class="java&#45;quote">"enabled"</span>: <span class="java&#45;keyword">true</span>,
+                        <span class="java&#45;quote">"active"</span>: <span class="java&#45;keyword">true</span>,
+                        <span class="java&#45;quote">"slotlimit"</span>: 100,
+                        <span class="java&#45;quote">"slotcount"</span>: 1,
+                        <span class="java&#45;quote">"slotactivity"</span>: &#91;
+                            &#123;
+                                <span class="java&#45;quote">"actor"</span>: <span class="java&#45;quote">"admin"</span>,
+                                <span class="java&#45;quote">"activity"</span>: <span class="java&#45;quote">"PROJECT&#45;421d6011&#45;8b5c&#45;4695&#45;9da9&#45;9bccbccca9c5"</span>,
+                                <span class="java&#45;quote">"context"</span>: <span class="java&#45;quote">"Temporary Project"</span>,
+                                <span class="java&#45;quote">"node"</span>: <span class="java&#45;quote">"DeployR Default Node"</span>,
+                                <span class="java&#45;quote">"nodetype"</span>: <span class="java&#45;quote">"Authenticated"</span>,
+                                <span class="java&#45;quote">"actorhttp"</span>: <span class="java&#45;quote">"D5C545B028A1A046FC80FC924084EA51"</span>,
+                                <span class="java&#45;quote">"actorip"</span>: <span class="java&#45;quote">"75.147.180.59"</span>
+                            &#125;
+                        &#93;
+                    &#125;,
+                    &#123;
+                        <span class="java&#45;quote">"node"</span>: <span class="java&#45;quote">"NODE&#45;77854d45&#45;3a70&#45;48f2&#45;ba7f&#45;2c91ca162935"</span>,
+                        <span class="java&#45;quote">"name"</span>: <span class="java&#45;quote">"Auxiliary Node"</span>,
+                        <span class="java&#45;quote">"description"</span>: <span class="java&#45;quote">"Remote R processing node, mixed function."</span>,
+                        <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"Mixed Mode"</span>,
+                        <span class="java&#45;quote">"enabled"</span>: <span class="java&#45;keyword">true</span>,
+                        <span class="java&#45;quote">"active"</span>: <span class="java&#45;keyword">true</span>,
+                        <span class="java&#45;quote">"slotlimit"</span>: 100,
+                        <span class="java&#45;quote">"slotcount"</span>: 1,
+                        <span class="java&#45;quote">"slotactivity"</span>: &#91;
+                            &#123;
+                                <span class="java&#45;quote">"actor"</span>: <span class="java&#45;quote">"testuser"</span>,
+                                <span class="java&#45;quote">"activity"</span>: <span class="java&#45;quote">"JOB&#45;55c6b4ff&#45;a5b1&#45;4c67&#45;a886&#45;b16cd976e54f"</span>,
+                                <span class="java&#45;quote">"context"</span>: <span class="java&#45;quote">"Job: Demo Job."</span>,
+                                <span class="java&#45;quote">"node"</span>: <span class="java&#45;quote">"Auxiliary Node"</span>,
+                                <span class="java&#45;quote">"nodetype"</span>: <span class="java&#45;quote">"Asynchronous"</span>,
+                                <span class="java&#45;quote">"actorhttp"</span>: <span class="java&#45;keyword">null</span>,
+                                <span class="java&#45;quote">"actorip"</span>: <span class="java&#45;keyword">null</span>
+                            &#125;
+                        &#93;
+                    &#125;
+                &#93;
+            &#125;
+        &#125;
+    &#125;
+&#125;
+// Event: securityLoginEvent<p class="paragraph"/>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"event"</span>: &#123;
+                <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"securityLoginEvent"</span>,
+                <span class="java&#45;quote">"context"</span>: <span class="java&#45;quote">"2B58D80182E3234940E201902017DD69"</span>,
+                <span class="java&#45;quote">"http"</span>: <span class="java&#45;quote">"2B58D80182E3234940E201902017DD69"</span>,
+                <span class="java&#45;quote">"username"</span>: <span class="java&#45;quote">"testuser"</span>,
+                <span class="java&#45;quote">"displayname"</span>: <span class="java&#45;quote">"DeployR API Test Account"</span>,
+                <span class="java&#45;quote">"error"</span>: <span class="java&#45;keyword">null</span>
+            &#125;,
+            <span class="java&#45;quote">"whoami"</span>: <span class="java&#45;quote">"testuser"</span>,
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/event/stream"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"2B58D80182E3234940E201902017DD69"</span>
+        &#125;
+    &#125;
+&#125;<p class="paragraph"/>
+//
+// Event: securityLoginEvent (failure)
+//
+// A non&#45;<span class="java&#45;keyword">null</span> error property indicates login failure.
+//<p class="paragraph"/>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"event"</span>: &#123;
+                <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"securityLoginEvent"</span>,
+                <span class="java&#45;quote">"context"</span>: <span class="java&#45;quote">"3AC5F8F978999C786E72FBC87BA4A273"</span>,
+                <span class="java&#45;quote">"http"</span>: <span class="java&#45;quote">"3AC5F8F978999C786E72FBC87BA4A273"</span>,
+                <span class="java&#45;quote">"username"</span>: <span class="java&#45;quote">"george"</span>,
+                <span class="java&#45;quote">"displayname"</span>: <span class="java&#45;keyword">null</span>,
+                <span class="java&#45;quote">"error"</span>: <span class="java&#45;quote">"User george could not be authenticated."</span>
+            &#125;,
+            <span class="java&#45;quote">"whoami"</span>: <span class="java&#45;quote">"george"</span>,
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/event/stream"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"3AC5F8F978999C786E72FBC87BA4A273"</span>,
+        &#125;
+    &#125;
+&#125;<p class="paragraph"/>
+// Event: securityLogoutEvent<p class="paragraph"/>&#123;
+    <span class="java&#45;quote">"deployr"</span>: &#123;
+        <span class="java&#45;quote">"response"</span>: &#123;
+            <span class="java&#45;quote">"event"</span>: &#123;
+                <span class="java&#45;quote">"type"</span>: <span class="java&#45;quote">"securityLogoutEvent"</span>,
+                <span class="java&#45;quote">"context"</span>: <span class="java&#45;quote">"15DBF1BF7F2A19EF535588B634342C98"</span>,
+                <span class="java&#45;quote">"http"</span>: <span class="java&#45;quote">"15DBF1BF7F2A19EF535588B634342C98"</span>,
+                <span class="java&#45;quote">"username"</span>: <span class="java&#45;quote">"testuser"</span>,
+                <span class="java&#45;quote">"displayname"</span>: <span class="java&#45;quote">"DeployR API Test Account"</span>,
+                <span class="java&#45;quote">"error"</span>: <span class="java&#45;keyword">null</span>
+            &#125;
+            <span class="java&#45;quote">"whoami"</span>: <span class="java&#45;quote">"testuser"</span>,
+            <span class="java&#45;quote">"call"</span>: <span class="java&#45;quote">"/r/event/stream"</span>,
+            <span class="java&#45;quote">"success"</span>: <span class="java&#45;keyword">true</span>,
+            <span class="java&#45;quote">"httpcookie"</span>: <span class="java&#45;quote">"15DBF1BF7F2A19EF535588B634342C98"</span>,
+        &#125;
+    &#125;
+&#125;</pre></div><p class="paragraph"/>
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../guide/workingrepository.html">&lt;&lt; <strong>8</strong><span>Working with the Repository APIs</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../guide/encodings.html"><strong>10</strong><span>Web Service API Data Encodings</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    Copyright (c) 2009-2016 Microsoft Corporation
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

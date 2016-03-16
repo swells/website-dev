@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="index.xml" data-mc-path-to-help-system="../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-toc-path="About [%=MyVariables.repo%]">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" />
+        <link href="../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" />
+        <link href="../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" /><title>Permissions &amp;&#160;Policies</title>
+        <link href="Resources/TableStyles/Basic.css" rel="stylesheet" data-mc-stylesheet-type="table" />
+        <link href="Resources/Stylesheets/Styles.css" rel="stylesheet" type="text/css" />
+        <script src="../Resources/Scripts/custom.modernizr.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/foundation.min.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/plugins.min.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/require.min.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/require.config.js" type="text/javascript">
+        </script>
+        <script src="../Resources/Scripts/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkTop"><a href="../index.html#a-permissions-policies.htm">Open topic with navigation</a>
+        </p>
+        <h1>Permissions &amp;&#160;Policies</h1>
+        <p>The operations you can perform in the <span class="MyVariablesprod">DeployR</span> <span class="MyVariablesrepo">Repository Manager</span> and on the APIs is largely dependent on your permissions and the server policies.</p>
+        <h2>Permissions</h2>
+        <p>The answers to the following questions determine most of the operations you can perform on a file. </p>
+        <ol>
+            <li value="1">Are you an <a href="e-file-properties-owners.htm">owner</a> of the file?&#160;See possible owner <a href="c-file-intro.htm">operations.</a></li>
+            <li value="2">Do you have shared, restricted, or public <a href="e-file-properties.htm#AccessRights">access rights</a> on the file? See possible <a href="c-file-intro.htm">operations.</a></li>
+            <li value="3">Were you assigned the <code style="font-weight: bold;">POWER_USER</code> role by the  administrator? If so, you can run arbitrary code selections on the scripts you own in <span class="screen"><span style="mc-tag-and-class: span;" class="MyVariablesPane_Code">Source</span> <![CDATA[ ]]></span>pane in the <span class="screen">Test</span> page.</li>
+        </ol>
+        <h2><a name="Policies"></a>Policies</h2>
+        <p>The ability to view, load, and download files you do not own  is also determined by the server-wide policies set by your administrator. One such policy affects whether a non-owner with <a href="e-file-properties.htm#AccessRights">access rights</a> to a file is permitted to see or load the contents of that file. See the table below to learn about which operations are available to you with the default policy and those permitted if the policy is changed by your administrator.</p>
+        <p>  <![CDATA[ ]]></p>
+        <table style="width: 100%;border-left-style: solid;border-left-width: 1px;border-right-style: solid;border-right-width: 1px;border-top-style: solid;border-top-width: 1px;border-bottom-style: solid;border-bottom-width: 1px;border-collapse: collapse;mc-table-style: url('Resources/TableStyles/Basic.css');" class="TableStyle-Basic" cellspacing="0">
+            <col class="TableStyle-Basic-Column-Column1" />
+            <col class="TableStyle-Basic-Column-Column1" />
+            <col class="TableStyle-Basic-Column-Column1" />
+            <tbody>
+                <tr class="TableStyle-Basic-Body-Body1">
+                    <td class="TableStyle-Basic-BodyE-Column1-Body1">&#160;</td>
+                    <td style="font-weight: bold;" class="TableStyle-Basic-BodyE-Column1-Body1">Default Policy</td>
+                    <td style="font-weight: bold;" class="TableStyle-Basic-BodyD-Column1-Body1">Owner-Only Policy</td>
+                </tr>
+                <tr class="TableStyle-Basic-Body-Body1">
+                    <td style="font-weight: bold;" class="TableStyle-Basic-BodyE-Column1-Body1">Owners</td>
+                    <td style="font-size: 11pt;" class="TableStyle-Basic-BodyE-Column1-Body1">
+                        <ul>
+                            <li style="font-size: 10pt;" value="1">See the file listed under <span class="screen">My Files</span></li>
+                            <li style="font-size: 10pt;" value="2">See the file properties</li>
+                            <li style="font-size: 10pt;" value="3">Download the file</li>
+                            <li style="font-size: 10pt;" value="4">Load the file into the R session</li>
+                            <li style="font-size: 10pt;" value="5">If a script, view and edit the source code</li>
+                            <li style="font-size: 10pt;" value="6">If a script, test and debug the script</li>
+                        </ul>
+                    </td>
+                    <td style="font-size: 11pt;" class="TableStyle-Basic-BodyD-Column1-Body1">
+                        <ul>
+                            <li style="font-size: 10pt;" value="1">See the file listed under <span class="screen">My Files</span></li>
+                            <li style="font-size: 10pt;" value="2">See the file properties</li>
+                            <li style="font-size: 10pt;" value="3">Download the file</li>
+                            <li style="font-size: 10pt;" value="4">Load the file into the R session</li>
+                            <li style="font-size: 10pt;" value="5">If a script, view and edit the source code</li>
+                            <li style="font-size: 10pt;" value="6">If a script, test and debug the script</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr class="TableStyle-Basic-Body-Body1">
+                    <td style="font-weight: bold;" class="TableStyle-Basic-BodyB-Column1-Body1">Non-owners*</td>
+                    <td style="font-size: 10pt;" class="TableStyle-Basic-BodyB-Column1-Body1">
+                        <ul>
+                            <li style="font-size: 10pt;" value="1">See restricted, shared and public files under <span class="screen">Other Files</span> <![CDATA[ ]]></li>
+                            <li style="font-size: 10pt;" value="2">See the file properties</li>
+                            <li style="font-size: 10pt;" value="3">Load the file into the R session</li>
+                            <li style="font-size: 10pt;" value="4">If a script, view the source code</li>
+                            <li style="font-size: 10pt;" value="5">If a script, test the script</li>
+                        </ul>
+                    </td>
+                    <td style="font-size: 10pt;" class="TableStyle-Basic-BodyA-Column1-Body1">
+                        <ul>
+                            <li style="font-size: 10pt;" value="1">See restricted, shared and public files listed under <span class="screen">Other Files</span></li>
+                            <li style="font-size: 10pt;" value="2">See the file properties</li>
+                            <li style="font-size: 10pt;" value="3">If a script, test the script</li>
+                        </ul>
+                        <p style="font-size: 10pt;">&#160;</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p style="font-style: italic;font-size: 10pt;">*If this table, we assume that a non-owner has access rights to the file.</p>
+        <p>&#160;</p>
+    </body>
+</html>

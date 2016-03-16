@@ -1,0 +1,559 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+                      "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+    <title>11 Web Service API Client Libraries 8.0</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link rel="stylesheet" href="../css/main.css" type="text/css" media="screen, print" title="Style" charset="utf-8"/>
+    <link rel="stylesheet" href="../css/pdf.css" type="text/css" media="print" title="PDF" charset="utf-8"/>
+    <script type="text/javascript">
+function addJsClass() {
+    var classes = document.body.className.split(" ");
+    classes.push("js");
+    document.body.className = classes.join(" ");
+}
+    </script>
+</head>
+
+<body class="body" onload="addJsClass();">
+<div id="navigation">
+    <ul>
+        <li>
+            <div id="nav-summary" onmouseover="toggleNavSummary(false)" onmouseout="toggleNavSummary(true)">
+                <a href="../guide/index.html" class="button">Table of contents</a>
+
+                <div id="nav-summary-childs" style="display:none;">
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/introduction.html"><strong>1</strong><span>Introduction</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/architecture.html"><strong>2</strong><span>Web Service API Architecture</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/overview.html"><strong>3</strong><span>Web Service API Overview</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/working.html"><strong>4</strong><span>Working with the Web Service APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/workingusers.html"><strong>5</strong><span>Working with the User APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/workingprojects.html"><strong>6</strong><span>Working with the Project APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/workingjobs.html"><strong>7</strong><span>Working with the Job APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/workingrepository.html"><strong>8</strong><span>Working with the Repository APIs</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/workingeventstream.html"><strong>9</strong><span>Working with the Event Stream API</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/encodings.html"><strong>10</strong><span>Web Service API Data Encodings</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/libraries.html"><strong>11</strong><span>Web Service API Client Libraries</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/explorer.html"><strong>12</strong><span>The API Explorer Tool</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/80changehistory.html"><strong>13</strong><span>API Changes in 8.0</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/72changehistory.html"><strong>14</strong><span>API Changes in 7.2</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/71changehistory.html"><strong>15</strong><span>API Changes in 7.1</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/70changehistory.html"><strong>16</strong><span>API Changes in 7.0</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0"><a href="../guide/62changehistory.html"><strong>17</strong><span>API Changes in 6.2</span></a>
+                    </div>
+                    
+                </div>
+            </div>
+        </li>
+        <li class="separator selected">
+            <a id="ref-button" onclick="localToggle(); return false;" href="#">Quick Reference</a>
+        </li>
+    </ul>
+</div>
+<div id="header">
+    <div class="images clearfix">
+        
+        
+    </div>
+    <p>DeployR API</p>
+</div>
+
+
+<table id="colset" border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td id="col1">
+            <div id="main" class="corner-all">
+
+                
+                    <div class="toc-item prev-left"><a href="../guide/encodings.html">&lt;&lt; <strong>10</strong><span>Web Service API Data Encodings</span></a></div>
+                
+
+                <span id='toggle-col1' class="toggle">(<a href="#" onclick="localToggle(); return false;">Quick Reference</a>)</span>
+
+                
+                    <div class="toc-item next-right"><a href="../guide/explorer.html"><strong>12</strong><span>The API Explorer Tool</span> >></a></div>
+                
+
+
+                <div class="project">
+                    <h1>11 Web Service API Client Libraries - Reference Documentation</h1>
+
+                    <p><strong>Authors:</strong> Revolution Analytics</p>
+
+                    <p><strong>Version:</strong> 8.0</p>
+
+                    
+                </div>
+
+                
+                <div id="table-of-content">
+                    <h2>Table of Contents</h2>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#javalibrary"><strong>11.1</strong><span>Java Client Library</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#javascriptlibrary"><strong>11.2</strong><span>JavaScript Client Library</span></a>
+                    </div>
+                    
+                    <div class="toc-item" style="margin-left:0px"><a href="#dotnetlibrary"><strong>11.3</strong><span>.NET Client Library</span></a>
+                    </div>
+                    
+                </div>
+                
+
+                
+
+<h1 id="libraries">11 Web Service API Client Libraries</h1>
+To simplify integration with the R platform using the DeployR API, Revolution Analytics provides several client libraries for JavaScript, Java and .NET developers. A major benefit of using these client libraries is that they simplify making calls, encoding data, and handling response markup on the API.<p class="paragraph"/>Example usage of these client libraries is detailed in the following sections.
+
+
+
+<h2 id="javalibrary">11.1 Java Client Library</h2>
+<h4>1. Establishing a client connection with the DeployR server</h4><p class="paragraph"/>The first step for any client application using this API is to establish a connection with the DeployR server. A connection is established as follows:<p class="paragraph"/><div class="code"><pre>// In <span class="java&#45;keyword">this</span> example, the DeployR server is live on localhost.
+<span class="java&#45;object">String</span> deployrServerUrl = <span class="java&#45;quote">"http://localhost:8080/deployr"</span>;<p class="paragraph"/>RClient rClient = RClientFactory.createClient(deployrServerUrl);</pre></div><p class="paragraph"/><h4>2. Authenticating a user with the DeployR server</h4><p class="paragraph"/>In order to gain access to the full API a client application begins by allowing a user to authenticate with the server. Once authenticated the user can then work on <a href="../guide/single.html#introprojects" class="guide">projects</a>, submit or schedule <a href="../guide/single.html#introjobs" class="guide">jobs</a> and work with <a href="../guide/single.html#introrepository" class="guide">repository-managed</a> files and scripts.<p class="paragraph"/>User basic authentication is achieved as follows:<p class="paragraph"/><div class="code"><pre>RUser rUser = rClient.login(<span class="java&#45;keyword">new</span> RBasicAuthentication(<span class="java&#45;quote">"testuser"</span>, <span class="java&#45;quote">"secret"</span>));</pre></div><p class="paragraph"/><h4>3. Working with Project Services</h4><p class="paragraph"/>Once the user is authenticated, they can start to take advantage of the full set of services provided by the DeployR API. The following code shows how the Java client library can be used to simplify working with project-related services.<p class="paragraph"/> <em class="italic"><strong class="bold">3.1 Create a persistent project on behalf of the authenticated user</strong></em> 
+<div class="code"><pre>RProject rProject = rUser.createProject(<span class="java&#45;quote">"Demo Project"</span>, <span class="java&#45;quote">"Simple demo project."</span>);</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">3.2 Create some R object data in the project's workspace by executing code</strong></em> 
+<div class="code"><pre>RProjectExecution rExecutionData = rProject.executeCode(<span class="java&#45;quote">"x &#60;&#45; rnorm(5)"</span>);</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">3.3 Create some R object data in the project's workspace by pushing DeployR-encoded data</strong></em> 
+<div class="code"><pre>// Prepare R object vector data.
+List&#60;<span class="java&#45;object">Double</span>&#62; vectorValues = Arrays.asList(10, 11, 12, 13, 14);<p class="paragraph"/>// Use RDataFactory to encode R object data.
+RData encodedVector = RDataFactory.createNumericVector(<span class="java&#45;quote">"y"</span>, vectorValues);<p class="paragraph"/>// Push encoded R object to project's workspace.
+rProject.pushObject(encodedVector);</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">3.4 Create some R object data in the project's workspace by loading serialized object data from the user's file repository</strong></em> 
+<div class="code"><pre>// Retrieve list of files in the user's repository.
+List&#60;RRepositoryFile&#62; repoFiles = rUser.listFiles();<p class="paragraph"/>// Assume first item in list references file named z.rData.
+RRepository repoFile = repoFiles.get(0);<p class="paragraph"/>// Load serialized object data from repository file into project's workspace.
+rProject.loadObject(repoFile);</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">3.5 Generate plots of R object data in the project's workspace by executing code</strong></em> 
+<div class="code"><pre>RProjectExecution projectExecution = rProject.executeCode(<span class="java&#45;quote">"plot(x,y); plot(y,z);"</span>);</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">3.6 Retrieve generated plots from the last execution on the project</strong></em> 
+<div class="code"><pre>List&#60;RProjectResult&#62; results = projectExecution.listResults();<p class="paragraph"/>// Iterate over results on the execution.
+<span class="java&#45;keyword">for</span>(RProjectResult result : results) &#123;<p class="paragraph"/>    <span class="java&#45;object">String</span> filename = result.about().filename;
+    URL plot = result.about().url;
+    // Do something with the plot...<p class="paragraph"/>&#125;</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">3.7 Save R object data from the project's workspace to a file in the project's working directory</strong></em> 
+<div class="code"><pre>RProjectFile projectFile = rProject.saveObject(<span class="java&#45;quote">"x"</span>, <span class="java&#45;quote">"<span class="java&#45;object">Object</span> x saved from workspace."</span>, <span class="java&#45;keyword">false</span>);</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">3.8 Store R object data from the project's workspace to a file in the user's file repository</strong></em> 
+<div class="code"><pre>RRepositoryFile repositoryFile = rProject.storeObject(<span class="java&#45;quote">"y"</span>, <span class="java&#45;quote">"<span class="java&#45;object">Object</span> y stored from Demo Project workspace."</span>,
+                                                          <span class="java&#45;keyword">true</span>, <span class="java&#45;keyword">null</span>, <span class="java&#45;keyword">false</span>, <span class="java&#45;keyword">false</span>);</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">3.9 Close the persistent project that, in-turn, automatically saves the project for the user</strong></em> 
+<div class="code"><pre>rProject.close();</pre></div><p class="paragraph"/><h4>4. Working with Job Services</h4><p class="paragraph"/>An  <em class="italic">authenticated</em>  user can also take advantage of job-related services. The following code shows how the Java client library can be used to simplify working with jobs.<p class="paragraph"/>
+ <em class="italic"><strong class="bold">4.1 Submit a job for background execution</strong></em> 
+<div class="code"><pre>RJob rJob = rUser.submitJobCode(<span class="java&#45;quote">"Demo Job"</span>, <span class="java&#45;quote">"Brief description of demo job."</span>, <span class="java&#45;quote">"x &#60;&#45; c(1:10); plot(x,x);"</span>);</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">4.2 Query the status of the job</strong></em>  
+<div class="code"><pre>RJobDetails rJobDetails = rJob.query();</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">4.3 When the job has run to completion the user can access the results within the associated project</strong></em> 
+<div class="code"><pre><span class="java&#45;keyword">if</span>(rJobDetails.status.equals(RJob.COMPLETED)) &#123;<p class="paragraph"/>    RProject jProject = rUser.getProject(rJobDetails.project);<p class="paragraph"/>    // Retrieve results within the project's history, workspace and working directory.<p class="paragraph"/>&#125;</pre></div><p class="paragraph"/>
+<h4>5. Working with Repository File Services</h4><p class="paragraph"/>An  <em class="italic">authenticated</em>  user can also take advantage of services related to repository-managed files. The following code shows how the Java client library can be used to simplify working with repository files.<p class="paragraph"/> <em class="italic"><strong class="bold">5.1 List files in the user's file repository</strong></em> 
+<div class="code"><pre>List&#60;RRepositoryFile&#62; repoFiles = rUser.listFiles();<p class="paragraph"/>// Iterate over files in the repository.
+<span class="java&#45;keyword">for</span>(RRepositoryFile repoFile : repoFiles) &#123;<p class="paragraph"/>    <span class="java&#45;object">String</span> fileName = repoFile.about().filename;
+    <span class="java&#45;object">String</span> fileType = repoFile.about().type;
+    <span class="java&#45;object">int</span>    fileSize = repoFile.about().size;
+    URL    fileUrl  = repoFile.about().url;<p class="paragraph"/>&#125;</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">5.2 Upload file to user's file repository</strong></em> 
+<div class="code"><pre>File file = <span class="java&#45;keyword">new</span> File(<span class="java&#45;quote">"file.pdf"</span>);<p class="paragraph"/>RepoUploadOptions options = <span class="java&#45;keyword">new</span> RepoUploadOptions();
+options.filename = <span class="java&#45;quote">"report.pdf"</span>;
+options.descr = <span class="java&#45;quote">"Demonstrate uploading file to repository."</span>;<p class="paragraph"/>RRepositoryFile repoFile = rUser.uploadFile(file, options);</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">5.3 Write text file to user's file repository</strong></em> 
+<div class="code"><pre><span class="java&#45;object">String</span> text = <span class="java&#45;quote">"Hello world."</span>;<p class="paragraph"/>RepoUploadOptions options = <span class="java&#45;keyword">new</span> RepoUploadOptions();
+options.filename = <span class="java&#45;quote">"hello.txt"</span>;
+options.descr = <span class="java&#45;quote">"Demonstrate writing file to repository."</span>;<p class="paragraph"/>RRepositoryFile repoFile = rUser.writeFile(text, options);</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">5.4 Transfer file to user's file repository</strong></em> 
+<div class="code"><pre>URL url = <span class="java&#45;keyword">new</span> URL(<span class="java&#45;quote">"http://some/file.csv"</span>);<p class="paragraph"/>RepoUploadOptions options = <span class="java&#45;keyword">new</span> RepoUploadOptions();
+options.filename = <span class="java&#45;quote">"data.csv"</span>;
+options.descr = <span class="java&#45;quote">"Demonstrate transfering file to repository."</span>;
+options.newversion = <span class="java&#45;keyword">true</span>;<p class="paragraph"/>RRepositoryFile repoFile = rUser.transferFile(url, options);</pre></div><p class="paragraph"/><h4>6. Working with Repository Script Services</h4><p class="paragraph"/>Both  <em class="italic">anonymous</em>  and  <em class="italic">authenticated</em>  user can also take advantage of services related to repository-managed scripts. The following code shows how the Java client library can be used to simplify working with repository scripts.<p class="paragraph"/> <em class="italic"><strong class="bold">6.1 Stateless R script execution</strong></em> 
+<div class="code"><pre>// Establish connection with the DeployR server.
+RClient rClient = RClientFactory.createClient(deployrServerUrl);<p class="paragraph"/>// Anonymous users <span class="java&#45;keyword">do</span> not authenticate.<p class="paragraph"/>// Execute R script anonymously in the context of a stateless project.
+// R scripts are identified by file name, file author and optionally a file version.
+RScriptExecution exec = rClient.executeScript(<span class="java&#45;quote">"Histogram of Auto Sales"</span>, <span class="java&#45;quote">"testuser"</span>, <span class="java&#45;keyword">null</span>);</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">6.2 Project R script execution</strong></em> 
+<div class="code"><pre>// Retrieve project.
+RProject rProject = rUser.getProject(projectId);<p class="paragraph"/>// Execute R script in the context of a stateful, persistent project.
+// R scripts are identified by file name, file author and optionally a file version.
+RProjectExecution exec = rProject.executeScript(<span class="java&#45;quote">"Histogram of Auto Sales"</span>, <span class="java&#45;quote">"testuser"</span>, <span class="java&#45;keyword">null</span>);</pre></div>
+
+
+
+<h2 id="javascriptlibrary">11.2 JavaScript Client Library</h2>
+<h4>1. Establishing a client connection with the DeployR server</h4><p class="paragraph"/>The first step for most client applications using this API is to establish a connection with the DeployR server. In the case of JavaScript, the client connection is implicit due to the security boundaries enforced by the same-origin policy in the browser.<p class="paragraph"/><div class="code"><pre>// n/a</pre></div><p class="paragraph"/><h4>2. Authenticating a user with the DeployR server</h4><p class="paragraph"/>In order to gain access to the full API a client application must first allow a user to authenticate with the server. Once authenticated the user can then work on <a href="../guide/single.html#introprojects" class="guide">projects</a>, submit or schedule <a href="../guide/single.html#introjobs" class="guide">jobs</a> and work with <a href="../guide/single.html#introrepository" class="guide">repository</a> managed files and scripts.<p class="paragraph"/>User basic authentication is achieved as follows:<p class="paragraph"/><div class="code"><pre><span class="java&#45;keyword">var</span> rUser;<p class="paragraph"/><span class="java&#45;keyword">var</span> config = &#123;
+	username: <span class="java&#45;quote">"testuser"</span>,
+	password: <span class="java&#45;quote">"secret"</span>
+&#125;;<p class="paragraph"/><span class="java&#45;keyword">var</span> callback = &#123;
+	success : function (result) &#123;
+		rUser = result.deployr.response.user;
+	&#125;,
+	failure: function (result) &#123;
+		alert(result);
+	&#125;
+&#125;;<p class="paragraph"/>Y.DeployR.userLogin(config, callback);</pre></div><p class="paragraph"/><h4>3. Working with Project Services</h4><p class="paragraph"/>Once the user is authenticated, they can start to take advantage of the full set of services provided by the DeployR API. The following code shows how the JavaScript client library can be used to simplify working with project-related services.<p class="paragraph"/> <em class="italic"><strong class="bold">3.1 Create a persistent project on behalf of the authenticated user</strong></em> 
+<div class="code"><pre><span class="java&#45;keyword">var</span> rProject;<p class="paragraph"/><span class="java&#45;keyword">var</span> config = &#123;
+	projectname: <span class="java&#45;quote">"Demo Project"</span>,
+	projectdescr: <span class="java&#45;quote">"Simple demo project."</span>
+&#125;;<p class="paragraph"/><span class="java&#45;keyword">var</span> callback = &#123;
+	success : function (result) &#123;
+		rProject = result.deployr.response.project;
+	&#125;,
+	failure: function (result) &#123;
+		alert(result);
+	&#125;
+&#125;;<p class="paragraph"/>Y.DeployR.projectCreate(config, callback);</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">3.2 Create some R object data in the project's workspace by executing code</strong></em> 
+<div class="code"><pre><span class="java&#45;keyword">var</span> rExecutionData;<p class="paragraph"/><span class="java&#45;keyword">var</span> config = &#123;
+	project: rProject.project,
+	code: <span class="java&#45;quote">"x &#60;&#45; c(1:5)"</span>
+&#125;;<p class="paragraph"/><span class="java&#45;keyword">var</span> callback = &#123;
+	success : function (result) &#123;
+		rExecutionData = result.deployr.response;
+	&#125;,
+	failure: function (result) &#123;
+		alert(result);
+	&#125;
+&#125;;<p class="paragraph"/>Y.DeployR.projectExecuteCode(config, callback);</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">3.3 Create some R object data in the project's workspace by pushing DeployR-encoded data</strong></em> 
+<div class="code"><pre>// Prepare R object vector data.
+<span class="java&#45;keyword">var</span> vectorValues = &#91;10, 11, 12, 13, 14&#93;;<p class="paragraph"/>// Use RDataFactory to encode R object data.
+<span class="java&#45;keyword">var</span> encodedVector &#45; Y.Revolution.RDataFactory.createNumericVector(<span class="java&#45;quote">"y"</span>, vectorValues);<p class="paragraph"/><span class="java&#45;keyword">var</span> config = &#123;
+	project: rProject.project,
+	inputs : &#91;encodedVector&#93;
+&#125;;<p class="paragraph"/><span class="java&#45;keyword">var</span> callback = &#123;
+	success : function (result) &#123; &#125;,
+	failure: function (result) &#123;
+		alert(result);
+	&#125;
+&#125;;<p class="paragraph"/>// Push encoded R object to project's workspace.
+Y.DeployR.projectWorkspacePush(config, callback);</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">3.4 Create some R object data in the project's workspace by loading serialized object data from the user's file repository</strong></em> 
+<div class="code"><pre>// Retrieve list of files in the user's repository.
+<span class="java&#45;keyword">var</span> repoFiles;<p class="paragraph"/><span class="java&#45;keyword">var</span> listCallback = &#123;
+	success : function (result) &#123;
+		<span class="java&#45;keyword">var</span> repoFiles = result.deployr.response.repository.files;
+		// Assume first item in list references file named z.rData.
+		<span class="java&#45;keyword">var</span> repoFile = repoFiles&#91;0&#93;;<p class="paragraph"/>		<span class="java&#45;keyword">var</span> loadConfig = &#123;
+			project: rProject.project,
+			repo: <span class="java&#45;quote">"testuser"</span>,
+			name: repoFile.name
+		&#125;;<p class="paragraph"/>		<span class="java&#45;keyword">var</span> loadCallback = &#123;
+			success : function(result) &#123; &#125;,
+			failure: function (result) &#123;
+				alert(result);
+			&#125;
+		&#125;;<p class="paragraph"/>		// Load serialized object data from repository file into project's workspace.
+		Y.DeployR.projectWorkspaceLoad(loadConfig, loadCallback);
+	&#125;,
+	failure: function (result) &#123;
+		alert(result);
+	&#125;
+&#125;;<p class="paragraph"/>Y.DeployR.repositoryFileList(&#123; &#125;, listCallback);</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">3.5 Generate plots of R object data in the project's workspace by executing code</strong></em> 
+<div class="code"><pre><span class="java&#45;keyword">var</span> rExecutionPlots;<p class="paragraph"/><span class="java&#45;keyword">var</span> config = &#123;
+	project: rProject.project,
+	code: <span class="java&#45;quote">"plot(x,y); plot(y,z);"</span>
+&#125;;<p class="paragraph"/><span class="java&#45;keyword">var</span> callback = &#123;
+	success : function (result) &#123;
+		rExecutionPlots = result.deployr.response;
+	&#125;,
+	failure: function (result) &#123;
+		alert(result);
+	&#125;
+&#125;;<p class="paragraph"/>Y.DeployR.projectExecuteCode(config, callback);</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">3.6 Retrieve generated plots from the last execution on the project</strong></em> 
+<div class="code"><pre><span class="java&#45;keyword">var</span> results = rExecutionPlots.results;<p class="paragraph"/>// Iterate over results on the execution.
+<span class="java&#45;keyword">for</span>(<span class="java&#45;keyword">var</span> i in results) &#123;<p class="paragraph"/>    <span class="java&#45;keyword">var</span> result = results&#91;i&#93;;
+    URL plot = result.url;
+    // Do something with the plot...<p class="paragraph"/>&#125;</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">3.7 Save R object data from the project's workspace to a file in the project's working directory</strong></em> 
+<div class="code"><pre><span class="java&#45;keyword">var</span> projectFile;<p class="paragraph"/><span class="java&#45;keyword">var</span> config = &#123;
+	project: rProject.project,
+	name: <span class="java&#45;quote">"x"</span>,
+	descr: <span class="java&#45;quote">"<span class="java&#45;object">Object</span> x saved from workspace."</span>,
+	version: <span class="java&#45;keyword">false</span>
+&#125;;<p class="paragraph"/><span class="java&#45;keyword">var</span> callback = &#123;
+	success : function (result) &#123;
+		projectFile = result.deployr.response.directory.file;
+	&#125;,
+	failure: function (result) &#123;
+		alert(result);
+	&#125;
+&#125;;<p class="paragraph"/>Y.DeployR.projectWorkspaceSave(config, callback);</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">3.8 Store R object data from the project's workspace to a file in the user's file repository</strong></em> 
+<div class="code"><pre><span class="java&#45;keyword">var</span> repositoryFile;<p class="paragraph"/><span class="java&#45;keyword">var</span> config = &#123;
+	project: rProject.project,
+	name: <span class="java&#45;quote">"y"</span>,
+	descr: <span class="java&#45;quote">"<span class="java&#45;object">Object</span> y stored from Demo Project workspace."</span>,
+	version: <span class="java&#45;keyword">true</span>
+&#125;;<p class="paragraph"/><span class="java&#45;keyword">var</span> callback = &#123;
+	success : function (result) &#123;
+		repositoryFile = result.deployr.response.repository.file;
+	&#125;,
+	failure: function (result) &#123;
+		alert(result);
+	&#125;
+&#125;;<p class="paragraph"/>Y.DeployR.projectWorkspaceStore(config, callback);</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">3.9 Close the persistent project that will automatically save the project for the user</strong></em> 
+<div class="code"><pre><span class="java&#45;keyword">var</span> config = &#123;
+	project: rProject.project
+&#125;;<p class="paragraph"/><span class="java&#45;keyword">var</span> callback = &#123;
+	success : function (result) &#123; &#125;,
+	failure: function (result) &#123;
+		alert(result);
+	&#125;
+&#125;;<p class="paragraph"/>Y.DeployR.projectClose(config, callback);</pre></div><p class="paragraph"/><h4>4. Working with Job Services</h4><p class="paragraph"/>An authenticated user can also take advantage of job-related services. The following code shows how the JavaScript client library can be used to simplify working with jobs.<p class="paragraph"/>
+ <em class="italic"><strong class="bold">4.1 Submit a job for background execution</strong></em> 
+<div class="code"><pre><span class="java&#45;keyword">var</span> rJob;
+<span class="java&#45;keyword">var</span> config = &#123;
+	name: <span class="java&#45;quote">"Demo Job"</span>,
+	descr: <span class="java&#45;quote">"Brief description of demo job."</span>,
+	code: <span class="java&#45;quote">"x &#60;&#45; c(1:10); plot(x,x);"</span>
+&#125;;<p class="paragraph"/><span class="java&#45;keyword">var</span> callback = &#123;
+	success : function (result) &#123;
+		rJob = result.deployr.response.job;
+	&#125;,
+	failure: function (result) &#123;
+		alert(result);
+	&#125;
+&#125;;<p class="paragraph"/>Y.DeployR.jobSubmit(config, callback);</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">4.2 Query the status of the job</strong></em> 
+<div class="code"><pre><span class="java&#45;keyword">var</span> rJobDetails;<p class="paragraph"/><span class="java&#45;keyword">var</span> config = &#123;
+	job: rJob.job
+&#125;;<p class="paragraph"/><span class="java&#45;keyword">var</span> callback = &#123;
+	success : function (result) &#123;
+		rJobDetails = result.deployr.response.job;
+	&#125;,
+	failure: function (result) &#123;
+		alert(result);
+	&#125;
+&#125;;<p class="paragraph"/>Y.DeployR.jobQuery(config, callback);</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">4.3 When the job has run to completion the user can access the results within the associated project</strong></em> 
+<div class="code"><pre>// Poll using job query until status indicates completed job.
+rJobDetails = result.deployr.response.job<p class="paragraph"/><span class="java&#45;keyword">if</span>(rJobDetails.status === 'Completed') &#123;<p class="paragraph"/>    // Job has come to completion, now list all R Objects in workspace and display<p class="paragraph"/>    function displayWorkspace(result) &#123;
+        // <span class="java&#45;keyword">do</span> something with workspace
+        <span class="java&#45;keyword">var</span> workspace = result.deployr.response.workspace, 
+        robjects = workspace.objects;<p class="paragraph"/>        <span class="java&#45;keyword">for</span>(<span class="java&#45;keyword">var</span> index = 0; index &#60; robjects.length; index++) &#123;
+            <span class="java&#45;keyword">var</span> robject = robjects&#91;index&#93;, 
+            rtype = robject.type, 
+            rclass = robject.rclass, 
+            rname = robject.name;<p class="paragraph"/>            // &#45;&#45; Display information &#45;&#45;
+        &#125;
+    &#125;;<p class="paragraph"/>    // List workspace based on project id provided in the Job Results.
+    <span class="java&#45;keyword">var</span> pid = rJobDetails.project;<p class="paragraph"/>    R.DeployR.io('/r/project/workspace/list', &#123;
+        data: &#123; format: 'json', project: pid &#125;,
+        on: &#123;
+            success: displayWorkspace,
+            scope: <span class="java&#45;keyword">this</span>
+        &#125;
+    &#125;);<p class="paragraph"/>&#125;</pre></div><p class="paragraph"/>
+<h4>5. Working with Repository File Services</h4><p class="paragraph"/>An authenticated user can also take advantage of services related to repository-managed files. The following code shows how the JavaScript client library can be used to simplify working with repository files.<p class="paragraph"/> <em class="italic"><strong class="bold">5.1 List files in the user's file repository</strong></em> 
+<div class="code"><pre><span class="java&#45;keyword">var</span> config = &#123;
+	format: <span class="java&#45;quote">"json"</span>
+&#125;;<p class="paragraph"/><span class="java&#45;keyword">var</span> callback = &#123;
+	success : function (result) &#123;
+		<span class="java&#45;keyword">var</span> repoFiles = result.deployr.response.repository.files;<p class="paragraph"/>		// Iterate over files in the repository.
+		<span class="java&#45;keyword">for</span>(<span class="java&#45;keyword">var</span> i in repoFiles) &#123;<p class="paragraph"/>                    <span class="java&#45;keyword">var</span> repoFile = repoFiles&#91;i&#93;;<p class="paragraph"/>                    <span class="java&#45;keyword">var</span> fileName = repoFile.name;
+		    <span class="java&#45;keyword">var</span> fileType = repoFile.type;
+		    <span class="java&#45;keyword">var</span> fileSize = repoFile.size;
+		    <span class="java&#45;keyword">var</span> fileUrl  = repoFile.url;<p class="paragraph"/>		&#125;
+	&#125;,
+	failure: function (result) &#123;
+		alert(result);
+	&#125;
+&#125;;<p class="paragraph"/>Y.DeployR.repositoryFileList(config, callback);</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">5.2 Upload file to user's file repository</strong></em> 
+<div class="code"><pre>// This code assumes an HTML form similar to the following:
+//
+//	&#60;form enctype=<span class="java&#45;quote">"multipart/form&#45;data"</span> method=<span class="java&#45;quote">"post"</span> id=<span class="java&#45;quote">"uploadForm"</span> name=<span class="java&#45;quote">"uploadForm"</span>&#62;
+//		&#60;input type=<span class="java&#45;quote">"file"</span> id=<span class="java&#45;quote">"uploadFile"</span> name=<span class="java&#45;quote">"uploadFile"</span>/&#62;
+//	&#60;/form&#62;<p class="paragraph"/><span class="java&#45;keyword">var</span> repoFile;<p class="paragraph"/><span class="java&#45;keyword">var</span> config = &#123;
+	formId: <span class="java&#45;quote">"uploadForm"</span>,
+	name: <span class="java&#45;quote">"uploadFile"</span>,
+	descr: <span class="java&#45;quote">"Demonstrate uploading file to repository."</span>
+&#125;;<p class="paragraph"/><span class="java&#45;keyword">var</span> callback = &#123;
+	success : function (result) &#123;
+		repoFile = result.deployr.response.repository.files&#91;0&#93;;
+	&#125;,
+	failure: function (result) &#123;
+		alert(result);
+	&#125;
+&#125;;<p class="paragraph"/>Y.DeployR.repositoryFileUpload(config, callback);</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">5.3 Write text file to user's file repository</strong></em> 
+<div class="code"><pre><span class="java&#45;keyword">var</span> text = <span class="java&#45;quote">"Hello world."</span>;
+<span class="java&#45;keyword">var</span> repoFile;<p class="paragraph"/><span class="java&#45;keyword">var</span> config = &#123;
+	name: <span class="java&#45;quote">"hello.txt"</span>,
+	descr: <span class="java&#45;quote">"Demonstrate writing file to repository."</span>;
+&#125;;<p class="paragraph"/><span class="java&#45;keyword">var</span> callback = &#123;
+	success : function (result) &#123;
+		repoFile = result.deployr.response.repository.file;
+	&#125;,
+	failure: function (result) &#123;
+		alert(result);
+	&#125;
+&#125;;<p class="paragraph"/>Y.DeployR.repositoryFileWrite(config, callback);</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">5.4 Transfer file to user's file repository</strong></em> 
+<div class="code"><pre><span class="java&#45;keyword">var</span> repoFile;<p class="paragraph"/><span class="java&#45;keyword">var</span> config = &#123;
+	name: <span class="java&#45;quote">"data.csv"</span>,
+	url: <span class="java&#45;quote">"http://some/file.csv"</span>,
+	descr: <span class="java&#45;quote">"Demonstrate transfering file to repository."</span>,
+	version: <span class="java&#45;keyword">true</span>
+&#125;;<p class="paragraph"/><span class="java&#45;keyword">var</span> callback = &#123;
+	success : function (result) &#123;
+		repoFile = result.deployr.response.repository.file;
+	&#125;,
+	failure: function (result) &#123;
+		alert(result);
+	&#125;
+&#125;;<p class="paragraph"/>Y.DeployR.repositoryFileTransfer(config, callback);</pre></div><p class="paragraph"/><h4>6. Working with Repository Script Services</h4><p class="paragraph"/>Both anonymous and authenticated user can also take advantage of services related to repository-managed scripts. The following code shows how the JavaScript client library can be used to simplify working with repository scripts.<p class="paragraph"/> <em class="italic"><strong class="bold">6.1 Stateless R script execution</strong></em> 
+<div class="code"><pre><span class="java&#45;keyword">var</span> exec;<p class="paragraph"/><span class="java&#45;keyword">var</span> config = &#123;
+	rscript: <span class="java&#45;quote">"Histogram of Auto Sales"</span>
+&#125;;<p class="paragraph"/><span class="java&#45;keyword">var</span> callback = &#123;
+	success : function (result) &#123;
+		exec = result.deployr.response.execution;
+	&#125;,
+	failure: function (result) &#123;
+		alert(result);
+	&#125;
+&#125;;<p class="paragraph"/>// Execute R script anonymously in the context of a stateless, temporary project.
+Y.DeployR.repositoryScriptExecute(config, callback);</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">6.2 Project R script execution</strong></em> 
+<div class="code"><pre><span class="java&#45;keyword">var</span> exec;<p class="paragraph"/><span class="java&#45;keyword">var</span> config = &#123;
+	rscript: <span class="java&#45;quote">"Histogram of Auto Sales"</span>,
+	project: projectId
+&#125;;<p class="paragraph"/><span class="java&#45;keyword">var</span> callback = &#123;
+	success : function (result) &#123;
+		exec = result.deployr.response.execution;
+	&#125;,
+	failure: function (result) &#123;
+		alert(result);
+	&#125;
+&#125;;<p class="paragraph"/>// Execute R script in the context of a stateful, persistent project.
+Y.DeployR.projectExecuteScript(config, callback);</pre></div><p class="paragraph"/>
+
+
+<h2 id="dotnetlibrary">11.3 .NET Client Library</h2>
+<h4>1. Establishing a client connection with the DeployR server</h4><p class="paragraph"/>The first step for any client application using this API is to establish a connection with the DeployR server. A connection is established as follows:<p class="paragraph"/><div class="code"><pre>'In <span class="java&#45;keyword">this</span> example, the DeployR server is live on localhost.
+Dim deployrServerUrl As <span class="java&#45;object">String</span>
+Dim client As RClient<p class="paragraph"/>deployrServerUrl = <span class="java&#45;quote">"http://localhost:80/deployr"</span>
+client = RClientFactory.createClient(deployrServerUrl)</pre></div><p class="paragraph"/><h4>2. Authenticating a user with the DeployR server</h4><p class="paragraph"/>In order to gain access to the full API a client application must first allow a user to authenticate with the server. Once authenticated the user can then work on <a href="../guide/single.html#introprojects" class="guide">projects</a>, submit or schedule <a href="../guide/single.html#introjobs" class="guide">jobs</a> and work with <a href="../guide/single.html#introrepository" class="guide">repository</a> managed files and scripts.<p class="paragraph"/>User basic authentication is achieved as follows:<p class="paragraph"/><div class="code"><pre>Dim user As RUser
+user = client.login(New RBasicAuthentication(<span class="java&#45;quote">"testuser"</span>, <span class="java&#45;quote">"secret"</span>))</pre></div><p class="paragraph"/><h4>3. Working with Project Services</h4><p class="paragraph"/>Once the user is authenticated, they can start to take advantage of the full set of services provided by the DeployR API. The following code shows how the .NET client library can be used to simplify working with project-related services.<p class="paragraph"/> <em class="italic"><strong class="bold">3.1 Create a persistent project on behalf of the authenticated user</strong></em> 
+<div class="code"><pre>Dim project As RProject
+project = user.createProject(<span class="java&#45;quote">"Demo Project"</span>, <span class="java&#45;quote">"Simple demo project."</span>)</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">3.2 Create some R object data in the project's workspace by executing code</strong></em> 
+<div class="code"><pre>Dim execution As RProjectExecution
+execution = project.executeCode(<span class="java&#45;quote">"x &#60;&#45; c(1:5)"</span>)</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">3.3 Create some R object data in the project's workspace by pushing DeployR-encoded data</strong></em> 
+<div class="code"><pre>'Prepare R object vector data.
+Dim input() As <span class="java&#45;object">Double</span> = &#123;10, 11, 12, 13, 14&#125;
+Dim vectorValues As New List(Of <span class="java&#45;object">Double</span>?)(input)<p class="paragraph"/>'Use RDataFactory to encode R object data.
+Dim encodedVector As RData
+encodedVector = RDataFactory.createNumericVector(<span class="java&#45;quote">"y"</span>, vectorValues)<p class="paragraph"/>'Push encoded R object to project's workspace.
+project.pushObject(encodedVector)</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">3.4 Create some R object data in the project's workspace by loading serialized object data from the user's file repository</strong></em> 
+<div class="code"><pre>'Retrieve list of files in the user's repository.
+Dim repoFiles = New List(Of RRepositoryFile)
+repoFiles = user.listFiles()<p class="paragraph"/>'Assume first item in list references file named z.rData.
+Dim repoFile As RRepositoryFile
+repoFile = repoFiles(0)<p class="paragraph"/>'Load serialized object data from repository file into project's workspace.
+project.loadObject(repoFile)</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">3.5 Generate plots of R object data in the project's workspace by executing code</strong></em> 
+<div class="code"><pre>Dim execution As RProjectExecution
+execution = project.executeCode(<span class="java&#45;quote">"plot(x,y); plot(y,z);"</span>)</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">3.6 Retrieve generated plots from the last execution on the project</strong></em> 
+<div class="code"><pre>Dim results As List(Of RProjectResult)
+results = execution.listResults()<p class="paragraph"/>'Iterate over results on the execution.
+Dim plot As <span class="java&#45;object">String</span>
+For Each result In results
+    plot = result.about.url
+    'Do something with the plot&#8230;
+Next</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">3.7 Save R object data from the project's workspace to a file in the project's working directory</strong></em> 
+<div class="code"><pre>Dim projectFile As RProjectFile
+projectFile = project.saveObject(<span class="java&#45;quote">"x"</span>, <span class="java&#45;quote">"<span class="java&#45;object">Object</span> x saved from workspace."</span>, False)</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">3.8 Store R object data from the project's workspace to a file in the user's file repository</strong></em> 
+<div class="code"><pre>Dim repositoryFile As RRepositoryFile
+repositoryFile = project.storeObject(<span class="java&#45;quote">"y"</span>, <span class="java&#45;quote">"<span class="java&#45;object">Object</span> y stored from Demo Project workspace."</span>, False, False, False, False)</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">3.9 Close the persistent project that will automatically save the project for the user</strong></em> 
+<div class="code"><pre>project.close()</pre></div><p class="paragraph"/><h4>4. Working with Job Services</h4><p class="paragraph"/>An authenticated user can also take advantage of job-related services. The following code shows how the .NET client library can be used to simplify working with jobs.<p class="paragraph"/>
+ <em class="italic"><strong class="bold">4.1 Submit a job for background execution</strong></em> 
+<div class="code"><pre>Dim job As RJob
+job = user.submitJobCode(<span class="java&#45;quote">"Demo Job"</span>, <span class="java&#45;quote">"Brief description of demo job."</span>, <span class="java&#45;quote">"x &#60;&#45; c(1:10); plot(x,x);"</span>)</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">4.2 Query the status of the job</strong></em>  
+<div class="code"><pre>Dim jobDetails As RJobDetails
+jobDetails = job.query()</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">4.3 When the job has run to completion the user can access the results within the associated project</strong></em> 
+<div class="code"><pre>Dim jobProject As RProject
+If (jobDetails.status = RJob.COMPLETED) Then
+    'Retrieve results within the project's history, workspace and working directory.
+    jobProject = user.getProject(jobDetails.project)
+End If</pre></div><p class="paragraph"/>
+<h4>5. Working with Repository File Services</h4><p class="paragraph"/>An authenticated user can also take advantage of services related to repository-managed files. The following code shows how the .NET client library can be used to simplify working with repository files.<p class="paragraph"/> <em class="italic"><strong class="bold">5.1 List files in the user's file repository</strong></em> 
+<div class="code"><pre>Dim repoFiles As List(Of RRepositoryFile)
+repoFiles = user.listFiles()<p class="paragraph"/>'iterate over the list of repository files
+For Each repoFile In repoFiles
+    '<span class="java&#45;keyword">do</span> something with the repository file
+    repoFile.about.filename
+Next</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">5.2 Upload file to user's file repository</strong></em> 
+<div class="code"><pre>Dim path As <span class="java&#45;object">String</span> = <span class="java&#45;quote">"c:/temp/file.pdf"</span>
+Dim options As New RepoUploadOptions
+Dim repoFile As RRepositoryFile<p class="paragraph"/>options.filename = <span class="java&#45;quote">"report.pdf"</span>
+options.descr = <span class="java&#45;quote">"Demonstrate uploading file to repository"</span><p class="paragraph"/>repoFile = user.uploadFile(path, options)</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">5.3 Write text file to user's file repository</strong></em> 
+<div class="code"><pre>Dim text As <span class="java&#45;object">String</span> = <span class="java&#45;quote">"Hello world."</span>
+Dim options As New RepoUploadOptions
+Dim repoFile As RRepositoryFile<p class="paragraph"/>options.filename = <span class="java&#45;quote">"hello.txt"</span>
+options.descr = <span class="java&#45;quote">"Demonstrate writing file to repository."</span><p class="paragraph"/>repoFile = user.writeFile(text, options)</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">5.4 Transfer file to user's file repository</strong></em> 
+<div class="code"><pre>Dim url As <span class="java&#45;object">String</span> = <span class="java&#45;quote">"http://some/file.csv"</span>
+Dim options As New RepoUploadOptions
+Dim repoFile As RRepositoryFile<p class="paragraph"/>options.filename = <span class="java&#45;quote">"data.csv"</span>
+options.descr = <span class="java&#45;quote">"Demonstrate transfering file to repository."</span>
+options.newversion = True<p class="paragraph"/>repoFile = user.transferFile(url, options)</pre></div><p class="paragraph"/><h4>6. Working with Repository Script Services</h4><p class="paragraph"/>Both anonymous and authenticated user can also take advantage of services related to repository-managed scripts. The following code shows how the .NET client library can be used to simplify working with repository scripts.<p class="paragraph"/> <em class="italic"><strong class="bold">6.1 Stateless R script execution</strong></em> 
+<div class="code"><pre>'Establish connection with the DeployR server.
+Dim client As RClient
+client = RClientFactory.createClient(deployrServerUrl)<p class="paragraph"/>'Anonymous users <span class="java&#45;keyword">do</span> not authenticate.<p class="paragraph"/>'Execute R script anonymously in the context of a stateless, temporary project.
+Dim execution As RScriptExecution
+execution = client.executeScript(<span class="java&#45;quote">"Histogram of Auto Sales"</span>, <span class="java&#45;quote">"testuser"</span>, <span class="java&#45;quote">""</span>)</pre></div><p class="paragraph"/> <em class="italic"><strong class="bold">6.2 Project R script execution</strong></em> 
+<div class="code"><pre>'Retrieve project.
+project = user.getProject(projectId);<p class="paragraph"/>'Execute R script in the context of a stateful, persistent project.
+Dim execution As RProjectExecution
+execution = project.executeScript(<span class="java&#45;quote">"Histogram of Auto Sales"</span>, <span class="java&#45;quote">"testuser"</span>, <span class="java&#45;quote">""</span>)</pre></div><p class="paragraph"/>
+
+
+                <div style="clear:both;margin-top:15px;"></div>
+                
+                    <div class="toc-item prev-left"><a href="../guide/encodings.html">&lt;&lt; <strong>10</strong><span>Web Service API Data Encodings</span></a></div>
+                
+                    <div class="toc-item next-right"><a href="../guide/explorer.html"><strong>12</strong><span>The API Explorer Tool</span> >></a></div>
+                
+                <div style="clear:both"></div>
+            </div>
+        </td>
+        <td id="col2">
+            <div class="local clearfix">
+                <div class="local-title">
+                    <a href="../guide/index.html" target="mainFrame">Quick Reference</a>
+                    <span class="toggle">(<a href="#" onclick="localToggle(); return false;">hide</a>)</span>
+                </div>
+                <div class="menu">
+                    
+                    <div class="menu-block"><h1 class="menu-title" onclick="toggleRef(this.parentNode.childNodes[1])">Client Library Sample Code</h1><div class="menu-sub">
+                        
+                            
+                            <div class="menu-item"><a href="../ref/Client%20Library%20Sample%20Code/Java%20Client%20Library.html">Java Client Library</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../ref/Client%20Library%20Sample%20Code/Javascript%20Client%20Library.html">Javascript Client Library</a>
+                            </div>
+                            
+                            <div class="menu-item"><a href="../ref/Client%20Library%20Sample%20Code/dotNET%20Client%20Library.html">dotNET Client Library</a>
+                            </div>
+                            
+                            </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<div id="footer">
+    Copyright (c) Revolution Analytics 2013-1014.
+    
+</div>
+
+<script type="text/javascript" src="../js/docs.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+<meta name="description" content="DeployR - Simple R analytics integration for application developers.">
+<meta name="keywords" content="R,Simple,DeployR,Java,JavaScript,.NET,Statistics,Big Data">
+<meta name="author" content="Microsoft Corporation">
+<meta name="google-site-verification" content="BQWjliQil8coeYFDfd-nee7j5GDJ0p-6lU4abeJiAZU">
+
+<!--<time itemprop="buildDate" datetime="Wednesday, March 16th, 2016, 9:47:06 AM PDT"></time>-->
+
+<title>
+  DeployR &middot; Configuring CA Single Sign-On for DeployR
+</title>
+
+<!-- Favicons -->
+<link rel="shortcut icon" href="../../../../assets/img/favicon.png" type="image/png" >
+<link rel="icon" href="../../../../assets/img/favicon.png" type="image/png">
+
+<!-- Bootstrap styles -->
+<link rel="stylesheet" href="../../../../assets/css/vendor/bootstrap/bootstrap.min.css">
+
+<!-- Documentation extras -->
+<link href="../../../../assets/css/github.css" rel="stylesheet">
+
+<!-- Glyphicons -->
+<link rel="stylesheet" href="../../../../assets/css/vendor/glyphicons/glyphicons.min.css">
+<link rel="stylesheet" href="../../../../assets/css/vendor/glyphicons/filetypes.min.css">
+<link rel="stylesheet" href="../../../../assets/css/vendor/glyphicons/social.min.css">
+
+<!-- Google Webfonts -->
+<link href="//fonts.googleapis.com/css?family=Open+Sans:400,700,600" rel="stylesheet" type="text/css">
+
+<!-- LayerSlider styles -->
+<link rel="stylesheet" href="../../../../assets/css/vendor/layerslider/layerslider.min.css" type="text/css">
+
+<!-- Grove Styles (switch for different color schemes, e.g. "styles-cleanblue.css") -->
+<link rel="stylesheet" href="../../../../assets/css/styles-blue.css" id="grove-styles">
+
+<!-- Site Styles -->
+<link href="../../../../assets/css/site.css" rel="stylesheet">
+
+<!--[if lt IE 9]>
+  <link rel="stylesheet" href="../../../../assets/css/ie8.css">        
+  <script src="../../../../assets/js/vendor/google/html5-3.6-respond-1.1.0.min.js"></script>
+<![endif]-->
+
+<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
+<script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery/jquery-1.9.1.min.js"><\/script>')</script>
+<!-- jQuery with jQuery Easing, and jQuery Transit JS -->
+     
+<!-- LayerSlider from Kreatura Media with Transitions -->
+<script src="../../../../assets/js/vendor/layerslider/greensock.js" type="text/javascript"></script>
+<script src="../../../../assets/js/vendor/layerslider/layerslider.transitions.js" type="text/javascript"></script>
+<script src="../../../../assets/js/vendor/layerslider/layerslider.kreaturamedia.jquery.js" type="text/javascript"></script>
+
+<!-- Grove Layerslider initiation script -->
+<script src="../../../../assets/js/grove-slider.js" type="text/javascript"></script>
+
+<!-- GA for DeployR-site -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-6984166-13', 'auto');
+  ga('send', 'pageview');
+</script>
+  </head>
+  <body data-spy="scroll" data-target="#sidenav">
+    <a class="sr-only" href="#content">Skip to main content</a>
+
+    <!-- master nav -->
+    <header>
+   <nav class="navbar navbar-default grove-navbar" role="navigation">
+      <div class="container">
+         <div class="navbar-header">
+            <a href="#" class="grove-toggle" data-toggle="collapse" data-target=".grove-nav">   
+            <i class="glyphicons show_lines"></i>  
+            </a>
+            <a href="/" class="navbar-brand">
+            <img src="../../../../assets/img/rLogo.png" alt="DeployR"> DeployR
+            </a>
+         </div>
+         <div class="collapse navbar-collapse grove-nav">
+            <ul class="nav navbar-nav">
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Data Scientists <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/data-scientist">Getting Started</a></li>
+                <!--<li><a href="#">Learn-by-Example Tutorial</a></li>-->
+                     <li><a href="/documents/dev/scientist-portable-code">Portable R Code Guide</a></li>
+                     <li><a href="/documents/help/repo-man">Repository Manager Help</a></li>
+                     <li><a href="/documents/getting-started/data-scientist#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Application Developers <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/application-developer">Getting Started</a></li>
+                     <!--<li><a href="#">Learn-by-Example Tutorial</a></li>-->
+                     <li><a href="/documents/dev/rbroker">RBroker Framework Tutorial</a></li>
+                     <li><a href="/documents/dev/clientlib">Client Library Tutorial</a></li>
+                     <li><a href="/documents/dev/api-doc">API Reference Guide</a></li>
+                     <li><a href="/docanddown">Library Downloads</a></li>
+                     <li><a href="/documents/getting-started/application-developer/#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Administrators <b class="caret"></b></a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="/documents/getting-started/administrator">Getting Started</a></li>
+                     <li><a href="/documents/admin/install">Installation & Configuration</a></li>
+                     <li><a href="/documents/admin/security">Security</a></li>
+                     <li><a href="/documents/admin/r-package-mgmt">R Package Management</a></li>
+                     <li><a href="/documents/help/admin-console">Administration Console Help</a></li>
+                     <li><a href="/documents/admin/troubleshoot">Troubleshooting</a></li>
+                     <li><a href="/documents/getting-started/administrator/#resources">More...</a></li>
+                  </ul>
+               </li>
+               <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">
+                  Community <b class="caret"></b>
+                  </a>            
+                  <ul class="dropdown-menu">
+                     <li><a href="http://go.microsoft.com/fwlink/?LinkID=708535" target="_blank">Forum / Discussion Group</a></li>
+                     <li><a href="/faq">FAQs</a></li>
+                  </ul>
+               </li>
+              <li class="dropdown">
+                  <a href="#" data-toggle="dropdown">Download<b class="caret"></b></a>            
+                  <ul class="dropdown-menu pull-right">   
+                    <li><a href="/download">Download DeployR</a></li>
+                    <li><a href="/documents/admin/install">Install DeployR</a></li>
+                    <li><a href="/releases/">Release History</a></li>
+                  </ul>
+            </ul>
+         </div>
+         <!-- /.navbar-collapse -->
+      </div>
+   </nav>
+</header>
+
+
+    <!-- page title -->
+    <div class="widewrapper pagetitle strong-highlight">
+   <div class="container">
+      <h1>Configuring CA Single Sign-On for DeployR <small></small></h1>
+      <span class="product-version">
+         Version 8.1.0
+         
+      </span>
+   </div>
+</div>
+  
+    <div class="widewrapper sf-wrapper">
+      <div class="container content" role="main">
+        <div>
+          
+<div class="row"><div class="col-md-3" id="sidenav"><div class="bs-sidebar hidden-print hidden-xs hidden-sm" role="complementary"><ul class="nav bs-sidenav"><li class="active"><a href="#siteminder">Configuring CA Single Sign-On</a><ul class="nav"><li><a class="toc-section-0" href="#agent">Create the Agent</a></li><li><a class="toc-section-0" href="#group">Create the Agent Group</a></li><li><a class="toc-section-0" href="#agentconfig">Create Agent Configuration Object</a></li><li><a class="toc-section-0" href="#newagentconfig">Configure Agent Configuration Object</a></li><li><a class="toc-section-0" href="#newdomain">Create the Domain</a></li><li><a class="toc-section-0" href="#newrealm">Create the Realm &amp; Sub-Realms</a></li><li><a class="toc-section-0" href="#newresponses">Create Responses</a></li><li><a class="toc-section-0" href="#respgroup">Create Response Groups</a></li><li><a class="toc-section-0" href="#newpolicy">Create the Policy</a></li></ul></li></ul></div></div><div class="col-md-9" role="main"><div class="container-fluid content doc-content"><h1 id="siteminder">Configuring CA Single Sign-On</h1>
+
+<p>This document is written as a guide for CA Single Sign-On (formerly known as SiteMinder) administrators interested in configuring CA Single Sign-On policies for use with DeployR. It is not meant to be a complete step-by-step manual, but rather offer enough instruction to permit experienced administrators to perform the necessary steps to configure for DeployR. Please consult the <a href="http://support.ca.com/">CA website</a> for the complete CA Single Sign-On documentation.</p>
+<h2 id="agent">Create the Agent</h2>
+
+<p>The first step to configuring CA Single Sign-On for DeployR is to create an agent.</p>
+<p><strong>To create an agent:</strong></p>
+<ol>
+<li><p>In the Administrative interface for CA Single Sign-On, click on the <strong>Infrastructure</strong> tab.</p>
+</li>
+<li><p>Click <strong>Agent</strong>. </p>
+</li>
+<li><p>Click <strong>Agents</strong>. </p>
+</li>
+<li><p>Click <strong>Create a new object of type Agent</strong>.  </p>
+</li>
+<li><p>Click <strong>OK</strong>.</p>
+<div class="thumbnail" align="center"><img src="./assets/img/001-createagent.jpg" alt="Create Agent"></div> 
+</li>
+<li><p>In the <strong>Name</strong> field, enter the name <code>deployr</code>. </p>
+</li>
+<li><p>Click <strong>Submit</strong>.</p>
+</li>
+</ol>
+<h2 id="group">Create the Agent Group</h2>
+
+<p>The second step is to create an Agent Group.</p>
+<p><strong>To create an agent group:</strong></p>
+<ol>
+<li><p>In the Administrative interface for CA Single Sign-On, click on the <strong>Infrastructure</strong> tab.</p>
+</li>
+<li><p>Click <strong>Agent</strong>. </p>
+</li>
+<li><p>Click <strong>Agent Groups</strong>. </p>
+</li>
+<li><p>Click <strong>Create Agent Group</strong>.  </p>
+</li>
+<li><p>Click <strong>Create a new object of type Agent Group</strong>.</p>
+</li>
+<li><p>Click <strong>OK</strong>.  </p>
+<div class="thumbnail" align="center"><img src="./assets/img/002-createagentgroup.jpg" alt="Create Agent Group"></div> 
+</li>
+<li><p>In the <strong>Name</strong> field, enter the name <code>deployrGroup</code>.</p>
+</li>
+<li><p>Click <strong>Add/Remove</strong> button.</p>
+<div class="thumbnail" align="center"><img src="./assets/img/003-createagentgroup2.jpg" alt="Create Agent Group"></div> 
+</li>
+<li><p>Select the <code>deployr</code> agent from the list of available members and move it to <strong>Selected Members</strong>. </p>
+</li>
+<li><p>Click <strong>OK</strong>. </p>
+</li>
+<li><p>Click <strong>Submit</strong>.</p>
+</li>
+</ol>
+<h2 id="agentconfig">Create Agent Configuration Object</h2>
+
+<p><strong>To create agent configuration objects:</strong></p>
+<ol>
+<li><p>Click <strong>Infrastructure, Agent Configuration Objects, Create Agent Group</strong>. </p>
+</li>
+<li><p>Click <strong>Create Agent Configuration</strong>.  </p>
+<div class="thumbnail" align="center"><img src="./assets/img/004-createagentconfig.jpg" alt="Create Agent Configuration"></div> 
+</li>
+<li><p>Select <strong>Create a copy of an object of type Agent Configuration</strong>. </p>
+</li>
+<li><p>Select <code>ApacheDefaultsSettings</code>. </p>
+<div class="thumbnail" align="center"><img src="./assets/img/005-modifyagentconfig.jpg" alt="Modify Agent Configuration"></div> 
+</li>
+<li><p>In the <strong>Name</strong> field, enter the name <code>deployrApacheSettings</code>.</p>
+</li>
+<li><p>Click on <strong>Submit</strong>.</p>
+</li>
+</ol>
+<h2 id="newagentconfig">Configure Agent Configuration Object</h2>
+
+<p><strong>To configure new agent configuration objects:</strong></p>
+<ol>
+<li><p>Click on the pencil icon next to the <code>deployrApacheSettings</code> object to enter the configuration page.</p>
+<div class="thumbnail" align="center"><img src="./assets/img/006.jpg" alt="Configuration page"></div> 
+</li>
+<li><p>In the table, click on the pencil icon next to <code>DefaultAgentName</code>.</p>
+</li>
+<li><p>Enter the agent name that was created above. </p>
+</li>
+<li><p>Remove the preceding #.   </p>
+</li>
+<li><p>Click <strong>OK</strong>.</p>
+<div class="thumbnail" align="center"><img src="./assets/img/007.jpg" alt="Modify Agent Configuration"></div> 
+</li>
+<li><p>In the table, click on the pencil icon to the left of <code>BadUrlChars</code>.  </p>
+</li>
+<li><p>Update the <strong>Value</strong> to the following characters: <code>//,./,/.,/*,*.,~,\</code></p>
+</li>
+<li><p>Click <strong>OK</strong>.</p>
+<div class="thumbnail" align="center"><img src="./assets/img/008.jpg" alt="Modify Agent Configuration"></div> 
+</li>
+<li><p>Click on the pencil icon next to <code>LogoffUri</code>.</p>
+</li>
+<li><p>Change the <strong>Value</strong> to: <code>/logout.html</code>    </p>
+</li>
+<li><p>Remove preceding <code>#</code> character in the <strong>Name</strong> field. </p>
+</li>
+<li><p>Click <strong>OK</strong>.</p>
+</li>
+<li><p>Click <strong>Submit</strong> to save all changes. </p>
+</li>
+</ol>
+<h2 id="newdomain">Create the Domain</h2>
+
+<p>A domain is a logical grouping of resources associated with one or more user directories.</p>
+<p><strong>To create a new domain</strong>:</p>
+<ol>
+<li><p>In the Administrative interface for CA Single Sign-On, click on the <strong>Policies</strong> tab.</p>
+</li>
+<li><p>Click <strong>Domain -&gt; Domains</strong>. </p>
+</li>
+<li><p>Click <strong>Create Domain</strong>. </p>
+</li>
+<li><p>In the <strong>General</strong> tab, enter <code>deployrDomain</code> in the <strong>Name</strong> field.</p>
+<div class="thumbnail" align="center"><img src="./assets/img/009.jpg" alt="Create New Domain"></div> 
+</li>
+<li><p>In the <strong>User Directory</strong> window, click <strong>Create</strong> and fill in the following info:</p>
+<div class="thumbnail" align="center"><img src="./assets/img/010.jpg" alt="Create User Directory"></div> 
+</li>
+<li><p>Click <strong>Submit</strong>. </p>
+</li>
+</ol>
+<h2 id="newrealm">Create the Realm &amp; Sub-Realms</h2>
+
+<p>A realm defines a group of resources with the same security or personalization requirements. Each realm can only be associated with one agent/agent group and with one authorization scheme.</p>
+<p>Conceptually, a realm is the door that protects the resources.  </p>
+<p><strong>To create a realm</strong>:</p>
+<ol>
+<li><p>Click the <strong>Realms</strong> tab. </p>
+</li>
+<li><p>Click <strong>Create Realm</strong>.</p>
+</li>
+<li><p>Enter the following information in the form.</p>
+<div class="thumbnail" align="center"><img src="./assets/img/011.jpg" alt="Create User Directory"></div> 
+</li>
+<li><p>In the <strong>Rules</strong> section, click <strong>Create</strong>. </p>
+</li>
+<li><p>Enter the following information in the form.</p>
+<div class="thumbnail" align="center"><img src="./assets/img/012.jpg" alt="Create User Directory"></div> 
+</li>
+<li><p>Create the following sub-realms for your configuration using the values in the following table. There are no rules associated with the sub-realms.  </p>
+<div class="thumbnail" align="center"><img src="./assets/img/013.jpg" alt="Create Realm"></div> 
+
+</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>ResourceFilter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>deployrDirectoryRealm</code></td>
+<td><code>/r/repository/script/directory</code></td>
+</tr>
+<tr>
+<td><code>deployrDownloadRealm</code></td>
+<td><code>/r/repository/script/Download</code></td>
+</tr>
+<tr>
+<td><code>deployrExecuteRealm</code></td>
+<td><code>/r/repository/script/Execute</code></td>
+</tr>
+<tr>
+<td><code>deployrLogoutRealm</code></td>
+<td><code>/r/user/logout</code></td>
+</tr>
+<tr>
+<td><code>deployrAboutRealm</code></td>
+<td><code>/r/user/about</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="newresponses">Create Responses</h2>
+
+<p>A response returns information to the web agent or redirects the user to another site and must be paired with a rule.  It can be a static response or a value from Active Directory. Responses are only available to protected resources.</p>
+<p><strong>To create responses</strong>:</p>
+<ol>
+<li><p>Click on <strong>Policies</strong> -&gt; <strong>Domain</strong> -&gt; <strong>Create Responses</strong>. </p>
+</li>
+<li><p>Enter the following information in the form.</p>
+<div class="thumbnail" align="center"><img src="./assets/img/014.jpg" alt="Create Response"></div> 
+</li>
+<li><p>Click <strong>Create Response Attribute</strong>. The <strong>Create Response Attribute</strong> window appears.</p>
+</li>
+<li><p>Fill in the information as shown in the image below.</p>
+<div class="thumbnail" align="center"><img src="./assets/img/015.jpg" alt="Create Response Attribute"></div> 
+</li>
+<li><p>Click <strong>OK</strong>.</p>
+</li>
+<li><p>Click <strong>Submit</strong>. </p>
+</li>
+</ol>
+<h2 id="respgroup">Create Response Groups</h2>
+
+<ol>
+<li><p>Click <strong>Policies</strong> -&gt; <strong>Domain</strong> -&gt; <strong>Response Groups</strong>. </p>
+</li>
+<li><p>Click <strong>Create Response Group</strong>. </p>
+</li>
+<li><p>Enter the following information in the form.</p>
+<div class="thumbnail" align="center"><img src="./assets/img/016.jpg" alt="Create Response"></div> 
+</li>
+<li><p>Click <strong>Add/Remove</strong> and add <code>deployrGroupResponse</code>.</p>
+<div class="thumbnail" align="center"><img src="./assets/img/017.jpg" alt="Create Response"></div> 
+</li>
+<li><p>Move <code>deployrGroupResponse</code> from <strong>Available Members</strong> to <strong>Selected Members</strong>. </p>
+</li>
+<li><p>Click <strong>OK</strong></p>
+</li>
+<li><p>Click <strong>Submit</strong>. </p>
+</li>
+</ol>
+<h2 id="newpolicy">Create the Policy</h2>
+
+<p>Policies define how users can interact with resources. When a user creates policies in the <strong>Policy Server User Interface</strong>, he or she links together (binds) objects that identify users, resources, and actions associated with the resources.</p>
+<ol>
+<li><p>Click <strong>Policies</strong> -&gt; <strong>Domain</strong> -&gt; <strong>Domain Policies</strong>.  </p>
+</li>
+<li><p>Click <strong>Create Policy</strong>. </p>
+</li>
+<li><p>Fill in the following information in the form. </p>
+<div class="thumbnail" align="center"><img src="./assets/img/018.jpg" alt="Create Policy"></div> 
+</li>
+<li><p>Click the <strong>Users</strong> tab.</p>
+<div class="thumbnail" align="center"><img src="./assets/img/019.jpg" alt="Add Members"></div> 
+</li>
+<li><p>Click <strong>Add Members</strong>.</p>
+<div class="thumbnail" align="center"><img src="./assets/img/020.jpg" alt="Add Members"></div> 
+</li>
+<li><p>Select <code>CN=scriptGroup,OU=engineering,DC=revolution,DC=com</code>.</p>
+</li>
+<li><p>Click <strong>OK</strong>. </p>
+<div class="thumbnail" align="center"><img src="./assets/img/021.jpg" alt="Add Members"></div> 
+</li>
+<li><p>Click <strong>Add Rule</strong> and select <code>GeneralRuleDeployr</code>.</p>
+</li>
+<li><p>Click <strong>OK</strong></p>
+</li>
+<li><p>Click <strong>Submit</strong>. </p>
+</li>
+</ol>
+</div></div></div>
+        </div>    
+      </div>
+      <div class="push"></div>
+    </div>
+
+    <!-- Footer
+    ================================================== -->
+
+    <footer class="widewrapper footer bs-footer" role="contentinfo">
+  <div class="container">
+    <div class="row footer">
+      <div class="col-sm-3">
+        <h4>Get Started</h4>
+        <ul class="grove-list">
+          <li><a href="/documents/getting-started/about">About DeployR</a></li>
+          <li><a href="/download">Download DeployR</a></li>
+          <li><a href="/documents/admin/install">Install DeployR</a></li>
+          <li><a href="/documents/admin/troubleshoot">Troubleshooting & Diagnostics</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>Develop</h4>
+        <ul class="grove-list">
+          <li><a href="/dev">Get Client Developer Tools</a></li>
+            <li><a href="/docanddown#rbroker">RBroker Framework</a></li>
+          <li><a href="/docanddown#clientlib">API Client Libraries</a></li>
+          <li><a target="_blank" href="/documents/dev/api-doc">API Reference Guide</a></li>
+          <li><a target="_blank" href="/documents/help/repo-man">Repository Manager</a></li>
+         <!-- <li><a href="/docanddown#integration">3rd Party Tool Integration</a></li>-->
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>Manage</h4>
+          <ul class="grove-list">
+            <li><a target="_blank" href="/documents/help/admin-console">Administration Console</a></li>
+            <li><a href="/documents/admin/security">Security Guide</a></li>
+            <li><a href="/documents/admin/throughput">Scale & Throughput</a></li>
+            <li><a href="/documents/admin/highavail">High Availability</a></li>
+            <li><a href="/documents/admin/bigdata">Managing Big Data</a></li>
+          </ul>
+      </div>
+      <div class="col-sm-3">
+        <h4>DeployR 8.1.0</h4>
+          <ul class="grove-list">
+            <li><a href="/license">License Information</a></li>
+      	    <li><a href="/documents/admin/whats-new/">What's New in 8.1.0</a></li>
+	          <li><a href="http://go.microsoft.com/fwlink/?LinkID=708535" target="_blank">Join the DeployR Forum</a></li>
+	          <li><a href="/releases/">Release Archives</a></li>
+          </ul>
+         <div><small> &copy; 2015 Microsoft Corporation</small></div>
+      </div>    
+    </div>
+  </div>          
+</footer> 
+
+    
+    <!-- JS and analytics only. -->
+    <!-- Bootstrap core JavaScript
+================================================== -->
+<script src="../../../../assets/js/vendor/bootstrap/bootstrap.min.js"></script>
+<script src="../../../../assets/js/vendor/modernizr/modernizr.js"></script>
+<script src="../../../../assets/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<!-- Google Analytics (click event)
+================================================== -->
+
+<script>
+   $('.ga-track').on('click', function() {
+      try { 
+        var label = $(this).data('ga') || $(this).text();
+        ga('send', 'event', 'button', 'click', label);
+      } catch (err) {}
+   });
+</script>
+
+<!-- TOC
+================================================= -->
+<script>
+  // back to top
+  setTimeout(function () {
+     var $sideBar = $('.bs-sidebar');
+     if (!$sideBar) { return; }
+     $sideBar.affix({
+     offset: {
+     top: function () {
+        var offsetTop = $sideBar.offset().top
+        var sideBarMargin = parseInt($sideBar.children(0).css('margin-top'), 10)
+        var navOuterHeight = $('.bs-docs-nav').height()
+        return (this.top = offsetTop - navOuterHeight - sideBarMargin)
+      }
+      , bottom: function () {
+        return (this.bottom = $('.bs-footer').outerHeight(true))
+      }
+    }
+    })
+  }, 100)
+</script>
+
+<script>
+  $('.tab-content div').each(function( index ) {
+    if(index === 0) { $(this).addClass('active'); }
+  });
+
+  $('.code-tabs a').click(function (e) {
+  });
+
+</script>
+
+     
+  </body>
+</html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" lang="en-us" xml:lang="en-us" data-mc-search-type="Stem" data-mc-help-system-file-name="index.xml" data-mc-path-to-help-system="../../" data-mc-target-type="WebHelp2" data-mc-runtime-file-type="Topic" data-mc-preload-images="false" data-mc-in-preview-mode="false" data-mc-toc-path="The Grid">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="../../Skins/Default/Stylesheets/Slideshow.css" rel="stylesheet" type="text/css" />
+        <link href="../../Skins/Default/Stylesheets/TextEffects.css" rel="stylesheet" type="text/css" />
+        <link href="../../Skins/Default/Stylesheets/Topic.css" rel="stylesheet" type="text/css" /><title>Node Properties</title>
+        <link href="../Resources/Stylesheets/admin-console-help.css" rel="stylesheet" type="text/css" />
+        <script src="../../Resources/Scripts/custom.modernizr.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/jquery.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/foundation.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/plugins.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/require.min.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/require.config.js" type="text/javascript">
+        </script>
+        <script src="../../Resources/Scripts/MadCapAll.js" type="text/javascript">
+        </script>
+    </head>
+    <body>
+        <p class="MCWebHelpFramesetLink MCWebHelpFramesetLinkTop"><a href="../../index.html#Topics/node-properties.htm">Open topic with navigation</a>
+        </p>
+        <h2 class="Heading2">Node Properties</h2>
+        <h4 class="Heading4">Basic Settings</h4>
+        <table class="table_2">
+            <col style="width: 99pt;" />
+            <tr>
+                <td class="td_6">
+                    <p class="TableHeading">Properties</p>
+                </td>
+                <td class="td_7">
+                    <p class="TableHeading">Description</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">Enabled</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">If checked, the node is available for processing operations on the grid. (<span class="VariablesPro">DeployR&#160;Enterprise</span> only)</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">Name</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">This name is displayed in the node list in the Administration Console.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">Description</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">This optional node description is visible only in the node list.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">Host</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">This is the hostname or IP on which the node is configured. </p>
+                    <p class="TableData">&#160;</p>
+                    <p class="TableData"><i>Note:</i>&#160;For <span class="VariablesOSS">DeployR&#160;Open</span>, the default node cannot be changed from localhost. Upgrade to <span class="VariablesPro">DeployR&#160;Enterprise</span> to configure remote grid nodes.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">Operating type</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">This is the type of node <a href="node-operations.htm">operation mode</a>: authenticated, anonymous, asynchronous, or mixed. </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">Cluster name</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">This field is optional. Specifies the name of the custom node cluster to which this node will be (or is already) assigned. Custom cluster names are not case-sensitive. Learn more about the <a href="node-workload-distribution.htm#namedcluster">named-cluster workload distribution model</a>.</p>
+                </td>
+            </tr>
+        </table>
+        <h4 class="Heading4">Runtime Constraints</h4>
+        <p>These constraints govern limits for processor and memory usage at runtime.</p>
+        <p class="Table_Title">&#160;</p>
+        <table class="table_2">
+            <col style="width: 90pt;" />
+            <tr>
+                <td class="td_6">
+                    <p class="TableHeading">Properties</p>
+                </td>
+                <td class="td_7">
+                    <p class="TableHeading">Description</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">Slot limit</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">This property determines the maximum number of concurrent operations permitted on a given node. To illustrate a case for adjusting the slot limit, consider a node dedicated to memory intensive operations.&#160; You may want to lower the slot limit to minimize the risk that concurrently executing operations on the node might exhaust the memory. <br /><br /><i>Note:</i>&#160;For <span class="VariablesOSS">DeployR&#160;Open</span>, a fixed slot limit of 12 is imposed. Upgrade to <span class="VariablesPro">DeployR&#160;Enterprise</span> to unlock slot limits.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">R boundary</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">This property specifies an R boundary that was created in this console. This R boundary is used to impose CPU usage limits for a given node.&#160; The R boundary applies to each slot individually.</p>
+                </td>
+            </tr>
+        </table>
+        <h4 class="Heading4">RServe Runtime and Security Configuration</h4>
+        <p>After a default installation of <span class="VariablesBrand">DeployR</span>_, it is highly unlikely that these settings require any editing under most operating conditions. However, if <span class="VariablesBrand">DeployR</span>_ is in conflict with another application on the server machine or if you have made edits to the file <span class="Code_1">Rserv.conf</span>, you must mirror your changes here as well. </p>
+        <p>&#160;</p>
+        <table class="table_2">
+            <col style="width: 99pt;" />
+            <tr>
+                <td class="td_6">
+                    <p class="TableHeading">Properties</p>
+                </td>
+                <td class="td_6">
+                    <p class="TableHeading">Description</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">Port</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">This property lists the port defined during installation on which RServe is listening.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">Console output size limit</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">This is the upper limit, expressed in bytes, imposed on the communication between <span class="VariablesBrand">DeployR</span>_ server and the Rserve session.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="TableData"><span class="Code_1">Username </span>
+                    </p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">If a username was defined in <span class="Code_1">Rserv.conf</span>, enter it here.</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">Password</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">If a password was defined in <span class="Code_1">Rserv.conf</span>, enter it here.</p>
+                </td>
+            </tr>
+        </table>
+        <h4 class="Heading4">External Directory Configuration (<span class="VariablesPro">DeployR&#160;Enterprise</span> Only)</h4>
+        <p>If the external data directories are properly configured across all grid nodes and an R script updates the data in the external directory, then those updates are automatically mirrored across all nodes without any manual or external intervention by the admin.</p>
+        <p>&#160;</p>
+        <table class="table_2">
+            <col style="width: 63pt;" />
+            <tr>
+                <td class="td_6">
+                    <p class="TableHeading">Properties</p>
+                </td>
+                <td class="td_6">
+                    <p class="TableHeading">Description</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">Storage context</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">This setting must reflect the <span class="span_2">full</span> path on that node’s machine to the directory defined for external data usage. (<span class="VariablesPro">DeployR&#160;Enterprise</span> only)</p>
+                    <p class="p_6">New node on Linux: </p>
+                    <ul class="ul_3">
+                        <li class="ListBullet_1" value="1">For each new node, update this path. If a node was installed by:<br />The non-root user, <span class="Code_1">deployr-user</span>, then the path would be: <br /><span class="Code_1"><span class="Variableslinux_path">/home/deployr-user/deployr/8.0.0/</span>deployr/external/data</span></li>
+                    </ul>
+                    <ul class="ul_3">
+                        <li class="ListBullet_1" value="1"><span class="Code_1">root</span>, then the full path would be:<span class="Code_1"><br /> /opt/deployr/<span class="VariablesVersion-Linux">8.0.0</span>/deployr/external/data</span></li>
+                    </ul>
+                    <p class="TableData">&#160;</p>
+                    <p class="TableData"><span class="span_6">New nodes on Windows</span>: <span class="span_5"><br /></span>For each new node, update the path to: <br /><span class="Code_1">C:/Revolution/<span class="VariablesBrand">DeployR</span>-Node-<span class="VariablesVersion-Win">8.0</span>/deployr/external/data</span></p>
+                </td>
+            </tr>
+        </table>
+        <h4 class="Heading4"><a name="slots"></a>Slots in Use</h4>
+        <p>You can see which slots are currently in use and how they are being used by a particular node in the <span class="UIElementChar">Slots In Use</span> section. For each slot, you can review the following details:</p>
+        <p class="Table_Title">&#160;</p>
+        <table class="table_2">
+            <col style="width: 90pt;" />
+            <tr>
+                <td class="td_6">
+                    <p class="TableHeading">Slot Details</p>
+                </td>
+                <td class="td_6">
+                    <p class="TableHeading">Description</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">Type</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData_1">Lists the slot’s operating mode, which is interesting for mixed-mode nodes</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">Context</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">Provides the name of project, job, or script being executed</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="TableData"><span class="Code_1">Started</span> <![CDATA[ ]]></p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">Specifies the time that has elapsed since execution commenced</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="TableData"><span class="Code_1">Owner</span> and<span class="Code_1"> Owner address</span></p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">Lists the username of person or IP address who initiated the request </p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">HTTP Session</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">Lists the unique id for this HTTP session</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="td_8">
+                    <p class="Code_1">Event Stream</p>
+                </td>
+                <td class="td_9">
+                    <p class="TableData">Provides a link to open the event console</p>
+                </td>
+            </tr>
+        </table>
+        <p>You can force the termination of a current operation on slot, by clicking the <span class="UIElementChar">Shutdown</span> link. </p>
+        <p>&#160;</p>
+        <p class="related"><a href="javascript:void(0);" class="MCHelpControl MCHelpControl-Related relatedTopics" data-mc-topics="Creating New Nodes|node-new.htm||Deleting Nodes |node-deleting.htm||Enabling or Disabling Nodes|node-enable-disable.htm||Exporting Node Configurations |node-exporting.htm||Grid Workload Distribution|node-workload-distribution.htm||Importing Node Configurations |node-importing.htm||Managing the Grid|node-grid-intro.htm||Node Operation Types|node-operations.htm||Node Validation and Errors|node-validation.htm||Viewing and Editing Nodes|node-view-edit.htm||Viewing or Stopping Slot Activity |node-slot-activity.htm"><span class="MCHelpControl-RelatedHotSpot_"><img class="MCHelpControl_Image_Icon" src="../../Skins/Default/Stylesheets/Images/transparent.gif" height="16" width="16" alt="Related Topics Icon" />Related Topics</span></a>
+        </p>
+    </body>
+</html>
